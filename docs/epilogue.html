@@ -1,0 +1,932 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Epilogue – Advanced Classical Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./acknowledgements.html" rel="next">
+<link href="./references.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./epilogue.html">Epilogue</a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./figures/acm.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Advanced Classical Mechanics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended Books</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">I: Special Relativity</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./principle_relativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Principle of relativity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lorentz_transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lorentz transformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./space_time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minkowski space-time</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducing 4-vectors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">II: Fields and tensors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">III: Lagrangian field theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./single_particle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Single-particle Lagrangian</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./symmetries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic 4-potential</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_lagrangian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Lagrangian approach to EM</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 5</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem_sheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem sheets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./epilogue.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Epilogue</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#overview" id="toc-overview" class="nav-link active" data-scroll-target="#overview">Overview</a></li>
+  <li><a href="#further-special-relativity" id="toc-further-special-relativity" class="nav-link" data-scroll-target="#further-special-relativity">Further Special Relativity</a></li>
+  <li><a href="#general-relativity" id="toc-general-relativity" class="nav-link" data-scroll-target="#general-relativity">General Relativity</a></li>
+  <li><a href="#quantum-field-theory" id="toc-quantum-field-theory" class="nav-link" data-scroll-target="#quantum-field-theory">Quantum Field Theory</a></li>
+  <li><a href="#gauge-theories" id="toc-gauge-theories" class="nav-link" data-scroll-target="#gauge-theories">Gauge Theories</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Epilogue</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>It feels like we have come a long way since the first lecture about special relativity. Let’s try to summarise the main steps we have made, before looking at how these ideas get generalized in further theories.</p>
+<section id="overview" class="level1">
+<h1>Overview</h1>
+<p>In Part I, we considered how to write down expressions that are Lorentz invariant (for scalars), or covariant, taking on the same <em>form</em> in all inertial reference frames, following the principle of relativity, namely that all inertial frames should be equivalent for the formulation of physical laws. Following the invariance of the spacetime interval between two events, we developed our notion of 4-vectors and one-forms, whose components keep track of minus signs, based on the Minkowski metric <span class="math inline">\(\eta_{\mu\nu}.\)</span> We recognised that relativistic energy and momentum are related as the 4-momentum <span class="math inline">\(P^{\mu},\)</span> and that fields are continuous functions of spacetime, such as 4-velocity fields and 4-currents. The 4-momentum flux of a matter field is given by the symmetric, rank 2 stress energy tensor <span class="math inline">\(T^{\mu\nu}_{\mathrm{matter}}.\)</span></p>
+<p>In Part II, we saw that the Lagrangian <span class="math inline">\(L\)</span> for a classical mechanical system with a finite number of degrees of freedom can be generalized to continuously many degrees of freedom, via a Lagrangian density <span class="math inline">\(\mathcal{L},\)</span> whose Euler-Lagrange equation is a PDE, involving space and time derivatives on an equal footing. In fact, if <span class="math inline">\(\mathcal{L}\)</span> is a Lorentz scalar, the Euler-Lagrange equation, on varying invariant or covariant field quantities, is itself relativistically covariant, automatically giving covariant field equations. This involves the divergence theorem in four dimensional spacetime, and the full solution of a problem requires specifying boundary conditions on a four-dimensional spacetime volume <span class="math inline">\(\Omega.\)</span></p>
+<p>The d’Alembert equation (with wave speed <span class="math inline">\(c\)</span>) is the simplest relativistic wave equation, and this in principle can be solved using Fourier methods with appropriate boundary conditions, and we identify the Fourier representation as a relativistic plane wave superposition. More complicated Lagrangians involve source terms (leading to inhomogeneous field equations), or higher-than-quadratic field combinations (leading to nonlinear equations).</p>
+<p>We realized that conservation laws for fields correspond to finding 4-currents which are divergenceless, and proved Noether’s theorem which finds such currents based on symmetry of <span class="math inline">\(\mathcal{L}\)</span> under some continuous symmetry of ‘field space’. Separately, in the problems class, we saw that a similar argument makes the stress-energy tensor divergenceless when the field sees, through its Lagrangian, Minkowski spacetime as homogeneous.</p>
+<p>In Part III, we saw how Maxwell’s equations could be put into a covariant form by realizing the components of <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> are components of the rank 2 antisymmetric Faraday tensor <span class="math inline">\(F^{\mu\nu},\)</span> and that there are two relativistic Maxwell equations. <span class="math inline">\(V\)</span> and <span class="math inline">\(\boldsymbol{A}\)</span> are naturally components of the 4-potential <span class="math inline">\(A^{\mu},\)</span> and electromagnetism can naturally be put into the Lagrangian framework if the varied field is the 4-potential itself. However, we do not have a full, fundamental Lagrangian approach to electrodynamics without a field theory for matter, which motivated us to consider relativistic quantum mechanics.</p>
+<p>In Part IV, we saw that a way of constructing quantum mechanical matter field equations was to equate the action of the energy operator on a (relativistic) wavefunction with a relativistic expression for the energy in terms of the momentum operator acting on the wavefunction. We also noticed that the continuity of probability density is a conservation law related to the noetherian symmetry of global gauge (phase) invariance of the wavefunction, and, when the quantum particle is charged, interactions with the electromagnetic field imply that gauge transformations of the electromagnetic potentials are related to a local gauge symmetry on the wavefunction.</p>
+<p>We first considered the Klein-Gordon equation, which is like the d’Alembert equation with an extra term proportional to the particle’s Compton wavenumber squared times the wavefunction. Although the KG equation has many desirable features for a relativistic quantum wave equation, we rejected it due to its being second order in time (so we cannot propagate it only knowing the initial wavefunction), and that the current arising from gauge transformations has a possibly negative density where we would expect to see a nonnegative probability density.</p>
+<p>This led to us to consider Dirac’s approach of a multicomponent wavefunction, which in turn led to the definition of the Dirac equation in both Hamiltonian and relativistically covariant forms. Gauge transformations of the Dirac equation (involving the 4-component Dirac spinor <span class="math inline">\(\psi\)</span> and its adjoint <span class="math inline">\(\overline{\psi}\)</span>) indeed now lead to a divergenceless 4-current whose 0-component is now positive definite. We saw how Dirac proposed to resolve the paradox of negative energy states (which have their own plane wave solutions) with the idea of a ‘sea’ of filled negative energy states; now we interpret these negative energy states as related to antimatter (although we have not discussed how). When interactions are included, the Dirac equation, in the nonrelativistic limit, becomes the Pauli equation, and we concluded by writing down a Lagrangian which encompasses charged matter and the electromagnetic field, coupled by an interaction term, based on the Lorentz force Lagrangian involving the electromagnetic 4-potential and the Dirac 4-current.</p>
+<p>We now outline how many of these concepts generalize and are utilized in further fundamental theories of contemporary physics.</p>
+</section>
+<section id="further-special-relativity" class="level1">
+<h1>Further Special Relativity</h1>
+<p>The linear relativistic field equations we derived and discussed in the course can be put into the table below, depending on whether they include a mass or are massless, and according to their spin (i.e.&nbsp;the number of independent field components), ignoring interactions.</p>
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th style="text-align: center;">spin</th>
+<th style="text-align: center;">massless equation</th>
+<th style="text-align: center;">massive equation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: center;">0</td>
+<td style="text-align: center;">d’Alembert equation</td>
+<td style="text-align: center;">Klein-Gordon equation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\square^2\varphi = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\square^2\varphi + \left(\tfrac{m c}{\hbar}\right)^2 \varphi = 0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1/2</td>
+<td style="text-align: center;">massless Dirac (‘neutrino’/Weyl) equation</td>
+<td style="text-align: center;">Dirac equation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\gamma^{\mu}\partial_{\mu} \psi = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\gamma^{\mu}\partial_{\mu} \psi + {\rm i} \tfrac{m c}{\hbar} \psi = 0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">1</td>
+<td style="text-align: center;">Maxwell equation (homogeneous)</td>
+<td style="text-align: center;">Homogeneous Proca equation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\partial_{\mu} F^{\mu\nu} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\partial_{\mu} F^{\mu\nu} + \left(\tfrac{m c}{\hbar}\right)^2 A^{\nu} = 0\)</span></td>
+</tr>
+<tr class="odd">
+<td style="text-align: center;">3/2</td>
+<td style="text-align: center;">massless Rarita-Schwinger equation</td>
+<td style="text-align: center;">massive Rarita-Schwinger equation</td>
+</tr>
+<tr class="even">
+<td style="text-align: center;"></td>
+<td style="text-align: center;"><span class="math inline">\(\gamma_{\nu} \partial_{\rho} \psi_{\sigma} + \gamma_{\rho} \partial_{\sigma} \psi_{\nu} + \gamma_{\sigma} \partial_{\nu} \psi_{\rho} = 0\)</span></td>
+<td style="text-align: center;"><span class="math inline">\(\varepsilon^{\mu\nu\rho\sigma} \gamma^5 \gamma_{\nu} \partial_{\rho} \psi_{\sigma} + \tfrac{m c}{2\hbar}[\gamma^{\mu},\gamma^{\nu}] \psi_{\nu} = 0\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>In fact, if we were to continue, we would see the (empty space) Einstein equation for general relativity in the massless spin 2 slot, and the inhomogeneous form as the full Einstein field equation. Feynman, in the <code>Feynman Lectures on Gravitation</code>, shows how it is in principle possible to build up a classical field theory using symmetry arguments to show the relevant field is a massless, traceless symmetric rank 2 tensor (i.e.&nbsp;spin 2), and then forcing the resulting Lagrangian to be gauge invariant; the connection with the curvature of space is only made after the field equations are written down.</p>
+<p>In fact, these field equations follow from the mathematical structure of the Poincaré group of all Lorentz transformations and spacetime translations. Using the representation theory of this group as matrices, Bargmann and Wigner (<em>Proc Nat Acad Sci USA</em> <strong>34</strong> (1948) 211-23) showed that each of the group’s ‘irreducible representations’ are labelled by a continuous parameter (the mass <span class="math inline">\(m\)</span>) and a discrete parameter (the spin), and there is a unique relativistic wave equation for each pair. For massive particles in their rest frame, the spin is equivalent to that of a nonrelativistic particle, and there are the same number of independent components. For massless ‘particles’ with null 4-momentum, however, the set of relevant Lorentz transformations keeping the state fixed is equivalent to the <em>2-dimensional euclidean group</em> (i.e.&nbsp;2D rotations and translations), which leads to the restriction to only two spin states, parallel and antiparallel to the corresponding null vector: this accounts for why plane waves corresponding to massless fields (EM, gravity) are transverse to their direction of propagation.</p>
+<p>One encounters particular difficulties in trying to derive a sensible physical interpretation from solutions of equations for massive particles when the spin gets high, beginning with the Rarita-Schwinger equation (introduced in <em>Phys Rev</em> <strong>60</strong> (1941) 61). As argued by Velo and Zwanziger (<em>Phys Rev</em> <strong>186</strong> (1969) 1137-41; <strong>188</strong> (1969) 2218-22), the wavefronts of a charged RS field, and other massive spin <span class="math inline">\(&gt; 1\)</span> fields, can propagate faster than <span class="math inline">\(c,\)</span> in conflict with usual notions of causality. Thus matter fields appear to be mainly made up of Klein-Gordon, Proca and Dirac fields; in fact, the only fundamental massive particles in the standard model with spin 0 are Higgs bosons.… It turns out that other fundamental interactions, beyond EM and gravity, can be explained using multicomponent generalizations of the gauge transformation relationship between the EM potential and the phase of a wavefunction: the corresponding classical wave equations are nonlinear, ‘nonabelian’ (i.e.&nbsp;matrix-valued) <em>Yang-Mills theories</em>, as discussed below.</p>
+</section>
+<section id="general-relativity" class="level1">
+<h1>General Relativity</h1>
+<p>Einstein’s original motivation for General Relativity was to widen the class of frames in which the formulation of physics is equivalent. Rather than only consider inertial frames, we now describe <em>all</em> frames of reference on spacetime – ‘general covariance’. Geometrically, this is equivalent to considering arbitrary curvilinear coordinates on spacetime, and the class of allowed transformations is widened to include any coordinate system. Each generalized frame/coordinate system is specified by a metric <span class="math inline">\(g_{\mu\nu},\)</span> which is now a tensor with respect to <em>all</em> coordinate transformations. In particular, <span class="math inline">\(g_{\mu\nu}\)</span> is now typically a function of position (representing the changing nature of the coordinates), and the coordinate axes are typically oblique, leading to a more complicated relationship between covariant and contravariant tensor components under the new class of transformations.</p>
+<p>With this more general setup, physics can allow a description where the spacetime manifold itself might be curved (and therefore cannot not admit globally defined inertial frames). On a local scale, however, spacetime is assumed to be Minkowski: in a small neighbourhood of a spacetime event, a frame which looks locally inertial can always be found. Care is needed to have a tensorial notion of derivatives in this general setting (since derivatives <span class="math inline">\(\partial_{\mu}\)</span> depend on the geometry of the frame of reference); <em>covariant derivatives</em> <span class="math inline">\(\nabla_{\mu}\)</span> are properly tensorial, and defined as the usual spacetime derivatives in each event’s local inertial frame. Formally, the covariant derivative is defined <span class="math display">\[\nabla_{\mu} C^{\nu} = \partial_{\mu} C^{\nu} + \Gamma^{\nu}_{\mu \rho} C^{\rho},\quad \nabla_{\mu} C_{\nu} = \partial_{\mu} C_{\nu} - \Gamma^{\rho}_{\mu \nu} C_{\rho}.\]</span> The <span class="math inline">\(\Gamma^{\nu}_{\mu \rho}\)</span> are called <em>Christoffel symbols</em> or <em>connection coefficients</em>, and they are not themselves tensors; they can be found as coordinate derivatives of the metric tensor.</p>
+<p>The covariant derivative bears some similarity to the gauge covariant derivative for a quantum matter field coupled to the EM field, although they are fundamentally different (and cannot be easily combined, leading to some of the difficulties in describing charged matter fields in GR). In particular, covariant derivatives do not commute, <span class="math display">\[[\nabla_{\mu},\nabla_{\nu}]C^{\sigma} = R^{\sigma}_{\phantom{\sigma}\rho \mu\nu} C^{\rho},\]</span> where <span class="math inline">\(R^{\sigma}_{\phantom{\sigma}\rho \mu\nu}\)</span> is the <em>Riemann curvature tensor</em>, which is a rank 4 tensor expressing the curvature of spacetime. As a form of generalized curl, it satisfies a Bianchi identity <span class="math display">\[\nabla_{\tau} R^{\sigma}_{\phantom{\sigma}\rho \mu\nu} + \nabla_{\mu} R^{\sigma}_{\phantom{\sigma}\rho \nu\tau} + \nabla_{\nu} R^{\sigma}_{\phantom{\sigma}\rho \tau\mu} = 0,\]</span> as well as several symmetries between its indices, leading to 20 independent components.</p>
+<p>The contraction <span class="math inline">\(R^{\sigma}_{\phantom{\sigma}\mu\sigma\nu}\equiv R_{\mu\nu}\)</span> defines the symmetric <em>Ricci tensor</em> with 10 independent components, in turn whose contraction <span class="math inline">\(R^{\mu}_{\phantom{\mu}\mu} \equiv R\)</span> gives the <em>curvature scalar</em>. Einstein defined a curvature tensor <span class="math inline">\(G^{\mu\nu} = R^{\mu\nu} - \tfrac{1}{2}g^{\mu\nu} R\)</span> which is divergence-free, and the Einstein field equations are <span class="math display">\[G^{\mu\nu} = \frac{8 \pi G}{c^4} T^{\mu\nu},\]</span> whose source term is the total stress-energy tensor of all energy-momentum (matter, EM fields, ...). This equation is nonlinear, and hence very difficult to solve in general.</p>
+<p>In general relativity, gravity appears as a form of ‘fictitious force’ arising from choice of a non-inertial coordinate system. Other phenomena should be described in usual tensorial form, albeit with covariant derivatives; in GR, Maxwell’s equations are written <span class="math display">\[\nabla_{\mu} F_{\nu\rho} + \nabla_{\nu} F_{\rho\mu} + \nabla_{\rho} F_{\mu\nu} = 0, \qquad \nabla_{\mu}F^{\mu \nu} = \mu_0 J^{\nu}.\]</span></p>
+<p>General Relativity can also be cast in a Lagrangian form, as originally suggested by Hilbert. The corresponding ‘Einstein-Hilbert action’ has a strikingly simple form: <span class="math display">\[\mathcal{S} = \int (C R + \mathcal{L}) \sqrt{-g}{\rm d}^4 x,\]</span> where <span class="math inline">\(C\)</span> is a constant, <span class="math inline">\(R\)</span> is the curvature scalar, <span class="math inline">\(\mathcal{L}\)</span> is the Lagrangian density for matter and EM fields, and <span class="math inline">\(g\)</span> is the determinant of the metric tensor at each point. (In special relativity, we could ignore <span class="math inline">\(\sqrt{-g}\)</span> because the determinant of the Minkowski metric is always <span class="math inline">\(-1.\)</span>) The Euler-Lagrange equations, on varying the metric tensor, give the correct Einstein field equations.</p>
+</section>
+<section id="quantum-field-theory" class="level1">
+<h1>Quantum Field Theory</h1>
+<p>Quantum field theory is a natural extension of this course: our approach to quantum matter fields did not include multiple quantum particles, which can only be described when ‘fields are quantized’. This procedure is rooted in the fact that our relativistic field equations (with mass—and hence <span class="math inline">\(\hbar\)</span>—or otherwise) are all classical PDEs, expressing equations of motion for field variables continuous over space and time.</p>
+<p>In a fixed Lorentz frame, one can find wave fields oscillating at a fixed frequency <span class="math inline">\(\omega\)</span> with time dependence <span class="math inline">\(\cos \omega t.\)</span> <em>Quantizing the field</em> consists of quantizing this as a ‘classical harmonic oscillator’ (even if it is a quantum wave), giving, for each frequency <span class="math inline">\(\omega,\)</span> quantized energy (frequency) eigenstates <span class="math inline">\(\hbar \omega (n+\tfrac{1}{2}),\)</span> with a corresponding ‘occupation number’ <span class="math inline">\(n.\)</span> The ladder nature of the quantum harmonic oscillator spectrum implies going up (or down) by <span class="math inline">\(N\)</span> steps requires <span class="math inline">\(N\)</span> ‘quanta’ of <span class="math inline">\(\hbar \omega,\)</span> and for the EM field, these ‘quantized field vibrations’ are photons!</p>
+<p>This procedure is sometimes called ‘second quantization’: we already had one Hilbert space describing the modes of the field, and now to each Fourier frequency <span class="math inline">\(\omega\)</span>, we associate an extra harmonic oscillator Hilbert space! The quantized field excitations must satisfy the correct particle statistics on exchange (Bose-Einstein or Fermi-Dirac), and thus fermion field modes can only have an occupation number of 0 or 1. The quantization of free fields is straightforward, but not necessarily informative. Interactions must also be built in, and how this complicates matters is easier perhaps to see in the ‘Lagrangian approach’ to second quantization, rather than the Hamiltonian ‘canonical field quantization’ above.</p>
+<p>The ‘Lagrangian approach’ is based on the path integral approach to quantum mechanics, where quantum probability amplitudes relating initial and final states are found by the sum <span class="math inline">\(\sum_{\mathrm{all\,paths}}\exp\left(\frac{\rm i}{\hbar}\mathcal{S}\right).\)</span> The paths consist of all possible sequences of values, over all times, that the degrees of freedom the corresponding classical Lagrangian <span class="math inline">\(L\)</span> may take, and this approach is completely dual to the usual Hamiltonian picture of Hilbert spaces, operators, etc. The classical equations of motion arise in the semiclassical limit, as the exponentials in the path sum oscillate very rapidly apart from when <span class="math inline">\(\mathcal{S}\)</span> does not change much when the path is varied, i.e.&nbsp;when the Euler-Lagrange equations are satisfied.</p>
+<p>Now, classical fields have an action too, but rather than sum over all paths, we now take a <em>functional integral</em> over all <em>spacetime field configurations</em> which satisfy our given boundary conditions on our chosen spacetime volume <span class="math inline">\(\Omega.\)</span> Once again, the classical field equations arise when the action is stationary with respect to field variations, but now, there are always small fluctuations around, which are usually interpreted as particle-antiparticle pairs appearing in the vacuum (which also enters the canonical quantization picture from the ‘zero point energy’ <span class="math inline">\(\hbar \omega/2\)</span> for each frequency).</p>
+<p>For ‘Quantum Electrodynamics’, the action is that corresponding to <span class="math inline">\(\mathcal{L}_{\mathrm{QED}}\)</span> as derived in the lectures. The free Dirac term, and the EM field term, are complicated but calculable, as the Lagrangian is quadratic in those terms, so the functional integral can be treated as a generalized Gaussian. However, the interactions, involving a cubic product of <span class="math inline">\(\psi, \overline{\psi}\)</span> and <span class="math inline">\(A_{\mu},\)</span> cannot be evaluated analytically. Nevertheless, since the coupling constant is small—it can be taken to be the dimensionless fine structure constant <span class="math inline">\(\alpha = q^2/2\pi \varepsilon_0 \hbar c \approx 1/137\)</span>—the cubic term in the Lagrangian in the exponential can be Taylor expanded within the functional integral. The resulting series (with gaussians in the free field Lagrangians) can be interpreted combinatorially via ‘Feynman diagrams’, made up of ‘interaction vertices’, each one originating from the cubic interaction term in the full QED Lagrangian.</p>
+<p>This theory has many mathematical problems which physicists have learned to get around or reinterpret, and all calculations are based on evaluating perturbation series. Nevertheless, precise experiments agree extremely well with quantum electrodynamic predictions, and the theory arises directly on generalizing classical relativistic field theory.</p>
+</section>
+<section id="gauge-theories" class="level1">
+<h1>Gauge Theories</h1>
+<p>The great success of QED inspired the quest to find alternative quantum field theories to describe the other two fundamental forces, the weak and strong nuclear forces, again starting with Lagrangian field theories. Given that protons and neutrons have very similar properties apart from charge, Heisenberg suggested that they were in fact two orthogonal ‘isospin’ states of some 2-spinor in the internal field space of a ‘nucleon’ particle. That is, instead of being independent Dirac particles, they are two components of an ‘isospin doublet’ <span class="math inline">\((p,n),\)</span> and the corresponding Lagrangian should be invariant to <span class="math inline">\(2\times 2\)</span> unitary transformations of this 2-spinor, by analogy with the usual Lagrangian of a quantum wave being invariant to transformations of the complex phase.</p>
+<p>However, it is not immediately obvious what sorts of fields/potentials arise from such nonabelian (i.e.&nbsp;noncommuting) gauge transformations of multicomponent fields. Yang and Mills (<em>Phys Rev</em> <strong>96</strong> (1954) 191-5) observed that, since all <span class="math inline">\(N \times N\)</span> unitary transformations can be represented by <span class="math inline">\(U = \exp\left({\rm i} \sum_k \tau^k \ell_{k}\right),\)</span> that is as exponentials of sets of generators <span class="math inline">\(\ell_k\)</span> (which are hermitian <span class="math inline">\(N \times N\)</span> matrices), nonabelian Yang-Mills potentials can be defined <span class="math inline">\(A^k_{\mu} \ell_{k}\)</span> (with the summation convention on <span class="math inline">\(k\)</span>). These potential matrices couple to matter via generalizations of the gauge covariant derivative, and give rise to (nonlinear, nonabelian) ‘fields’ similar to the Faraday tensor.</p>
+<p>The original attempts to describe the strong nuclear force with <span class="math inline">\(2\times 2\)</span> unitary matrices failed. However, in the 1960s, Gell-Mann showed that a generalization based on <span class="math inline">\(3\times 3\)</span> unitary transformations could describe the strong nuclear force in terms of quarks and colour interactions, and in the 1970s, Salam, Weinberg and Glashow showed that the weak force can be understood from an SU(2) <span class="math inline">\(\times\)</span> U(1) ‘broken symmetry’ from a larger invariance combined with electromagnetism, the ‘electroweak force’.</p>
+<p>Although all of these further theories require generalizations, including curved spaces, operator-valued fields or matrix-valued potentials, they are rooted firmly in the language of relativistic field theory. I hope that your knowledge from this course of relativistically covariant fields, Lorentz invariant Lagrangians, Noetherian symmetries, etc, should help you in the future in trying to understand these fundamental theories of the universe!</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./references.html" class="pagination-link" aria-label="References">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">References</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./acknowledgements.html" class="pagination-link" aria-label="Acknowledgements">
+        <span class="nav-page-text">Acknowledgements</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

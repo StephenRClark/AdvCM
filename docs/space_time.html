@@ -1,0 +1,1160 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>3&nbsp; Minkowski space-time – Advanced Classical Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./example_class1.html" rel="next">
+<link href="./lorentz_transform.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./principle_relativity.html">I: Special Relativity</a></li><li class="breadcrumb-item"><a href="./space_time.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minkowski space-time</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./figures/acm.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Advanced Classical Mechanics</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended Books</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">I: Special Relativity</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./principle_relativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Principle of relativity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lorentz_transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lorentz transformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./space_time.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minkowski space-time</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducing 4-vectors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">II: Fields and tensors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">III: Lagrangian field theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./single_particle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Single-particle Lagrangian</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./symmetries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic 4-potential</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_lagrangian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Lagrangian approach to EM</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 5</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem_sheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem sheets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Epilogue</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#lorentz-boost" id="toc-lorentz-boost" class="nav-link active" data-scroll-target="#lorentz-boost"><span class="header-section-number">3.1</span> Lorentz boost</a></li>
+  <li><a href="#finding-the-cbart-and-barx-axes" id="toc-finding-the-cbart-and-barx-axes" class="nav-link" data-scroll-target="#finding-the-cbart-and-barx-axes"><span class="header-section-number">3.2</span> Finding the <span class="math inline">\(c\bar{t}\)</span> and <span class="math inline">\(\bar{x}\)</span>-axes</a></li>
+  <li><a href="#space-time-interval" id="toc-space-time-interval" class="nav-link" data-scroll-target="#space-time-interval"><span class="header-section-number">3.3</span> Space-time interval</a></li>
+  <li><a href="#proper-time" id="toc-proper-time" class="nav-link" data-scroll-target="#proper-time"><span class="header-section-number">3.4</span> Proper time</a></li>
+  <li><a href="#sec-time-length" id="toc-sec-time-length" class="nav-link" data-scroll-target="#sec-time-length"><span class="header-section-number">3.5</span> Time dilation and length contraction</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./principle_relativity.html">I: Special Relativity</a></li><li class="breadcrumb-item"><a href="./space_time.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minkowski space-time</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minkowski space-time</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this lecture we will explore the implications of special relativity on the structure of space and time.</p>
+<section id="lorentz-boost" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="lorentz-boost"><span class="header-section-number">3.1</span> Lorentz boost</h2>
+<div class="page-columns page-full"><p>In the last lecture we derived a transformation  between inertial frames based on the light-speed postulate as <span class="math display">\[
+{\bf \Lambda}(v) = \frac{1}{\sqrt{1-v^2/c^2}}\left(\begin{array}{cc}
+  1 &amp; -v/c^2 \\
+  -v &amp; 1
+\end{array}\right).
+\]</span> which connects coordinates as <span class="math display">\[\left(
+\begin{array}{c}
+  \bar{t}\\
+  \bar{x}  
+\end{array}\right) = {\bf \Lambda}(v)\left(
+\begin{array}{c}
+  t\\
+  x  
+\end{array}\right).
+\]</span> This form is inconvenient because the time coordinate has different units to the spatial one, and as a result the matrix elements of <span class="math inline">\({\bf \Lambda}(v)\)</span> have mixed units.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Technically what we derived is a special type of transformation called a <em>boost</em>, since it connects frames which differ only by a relative velocity, and not via a spatial translation or rotation. From now on we will use the word <em>transformation</em> to mean any general connection between frames.</span></div></div>
+<div class="callout callout-style-default callout-important callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Important
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Note - we will slightly adjust our notation from this point on in order to treat space and time on an equal footing.</p>
+</div>
+</div>
+<p>Since we have a relativistic invariant speed <span class="math inline">\(c\)</span> available to us we will from now on always rescale time from <span class="math inline">\(t\)</span> to <span class="math inline">\(ct\)</span>. Introducing the dimensionless speed <span class="math inline">\(\beta = v/c\)</span> we then redefine our Lorentz boost as <span id="eq-lorentz_boost"><span class="math display">\[
+{\bf \Lambda}(\beta) = \gamma(\beta)\left(\begin{array}{cc}
+  1 &amp; -\beta \\
+  -\beta &amp; 1
+\end{array}\right),
+\tag{3.1}\]</span></span> with <span class="math display">\[
+\gamma(\beta) = \frac{1}{\sqrt{1-\beta^2}},
+\]</span> connecting coordinates as <span class="math display">\[\left(
+\begin{array}{c}
+  c\bar{t}\\
+  \bar{x}  
+\end{array}\right) = {\bf \Lambda}(\beta)\left(
+\begin{array}{c}
+  ct\\
+  x  
+\end{array}\right).
+\]</span> Notice now that the Lorentz boost <span class="math inline">\({\bf \Lambda}(\beta)\)</span> is dimensionless. We will now draw space-time diagrams correspondingly using a <span class="math inline">\(ct\)</span> and <span class="math inline">\(x\)</span> axes:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/space_time.png" class="img-fluid figure-img" width="200"></p>
+<figcaption>A space-time diagram of the form we will use from now on. The diagonal line at 45<span class="math inline">\(^\circ\)</span> is the world-line of a light beam. The dahsed horizontal line is the line of simultaneity in frame <span class="math inline">\(S\)</span>. The <span class="math inline">\(ct\)</span> axis is the world-line of a observer at the spatial origin of <span class="math inline">\(S\)</span>.</figcaption>
+</figure>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Lorentz transformations as hyperbolic rotations</strong></p>
+<p>There is a remarkable way of rewriting the Lorentz boost in <a href="#eq-lorentz_boost" class="quarto-xref">Equation&nbsp;<span>3.1</span></a> which makes its natural connection to spatial rotation. Using the determinant, show that the 1+1D Lorentz boost <span class="math inline">\({\bf \Lambda}(\beta)\)</span> can be written in terms of hyperbolic trig functions as <span class="math display">\[
+{\bf \Lambda}(\beta) = \left(
+\begin{array}{cc}
+  \cosh(\xi) &amp; -\sinh(\xi)\\
+  -\sinh(\xi) &amp; \cosh(\xi)  
+\end{array}\right).
+\]</span> What is the dimensionless parameter <span class="math inline">\(\xi\)</span> in terms of the dimensionless boost velocity <span class="math inline">\(\beta\)</span>, and what happens as <span class="math inline">\(v\rightarrow 0\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Lorentz transformations as hyperbolic rotations</strong></p>
+<p>Solution …</p>
+</div>
+</div>
+</div>
+</section>
+<section id="finding-the-cbart-and-barx-axes" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="finding-the-cbart-and-barx-axes"><span class="header-section-number">3.2</span> Finding the <span class="math inline">\(c\bar{t}\)</span> and <span class="math inline">\(\bar{x}\)</span>-axes</h2>
+<p>A key feature of space-time diagrams with our new coordinates is that a light ray from the original is always a line at 45<span class="math inline">\(^\circ\)</span> from the <span class="math inline">\(x\)</span>-axis. The motion of any object that is subluminal will always be above this 45<span class="math inline">\(^\circ\)</span> line. The line it traces out is called its <em>world-line</em>. The world-line of an observer in their rest-frame <span class="math inline">\(S\)</span> is along the <span class="math inline">\(ct\)</span>-axis. Lines parallel to this observer’s <span class="math inline">\(x\)</span>-axis are lines of simultaneity, i.e.&nbsp;they connect all events which this observer measures as happening at the same time.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/arctan.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>When viewed in frame <span class="math inline">\(S\)</span> the <span class="math inline">\(c\bar{t}\)</span> axis of frame <span class="math inline">\(\bar{S}\)</span> makes an angle <span class="math inline">\(\theta = {\rm tan}^{-1}(\beta)\)</span>, plotted on the right, from the <span class="math inline">\(ct\)</span> axis of frame <span class="math inline">\(S\)</span>, as shown on the left.</figcaption>
+</figure>
+</div>
+<p>The world-line of point <span class="math inline">\(P\)</span>, the spatial origin of frame <span class="math inline">\(\bar{S}\)</span>, makes an angle <span class="math inline">\(\theta = {\rm tan}^{-1}(\beta)\)</span> with the <span class="math inline">\(ct\)</span>-axis. This world-line is parallel with the <span class="math inline">\(c\bar{t}\)</span>-axis of frame <span class="math inline">\(\bar{S}\)</span>.</p>
+<p>A crucial question is where does the <span class="math inline">\(\bar{x}\)</span>-axis lie on this space-time diagram in frame <span class="math inline">\(S\)</span>? In Galilean relativity <span class="math inline">\(ct = c\bar{t}\)</span> so <span class="math inline">\(x\)</span> and <span class="math inline">\(\bar{x}\)</span> are parallel. This is <strong>not</strong> the case in special relativity. By symmetry, one can guess the <span class="math inline">\(\bar{x}\)</span>-axis will be an angle <span class="math inline">\(\theta\)</span> from the <span class="math inline">\(x\)</span>-axis. We can confirm this by picking three equally spaced points along the <span class="math inline">\(\bar{x}\)</span>-axis in <span class="math inline">\(\bar{S}\)</span> at <span class="math inline">\(\bar{t}=0\)</span>, the spatial origin <span class="math inline">\(P\)</span>, <span class="math inline">\(K\)</span> and <span class="math inline">\(J\)</span>. Next we shoot light rays from <span class="math inline">\(P\)</span> and <span class="math inline">\(J\)</span> towards the middle point <span class="math inline">\(K\)</span>. These meet at a space-time point <span class="math inline">\(R\)</span> on the world-line of <span class="math inline">\(K\)</span>. This situation in <span class="math inline">\(\bar{S}\)</span> is shown here:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/xbar_axis.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>.</figcaption>
+</figure>
+</div>
+<p>Now we transform this set of points into frame <span class="math inline">\(S\)</span>. The world-line of <span class="math inline">\(P\)</span> is the <span class="math inline">\(c\bar{t}\)</span>-axis we determined above. The world-lines of <span class="math inline">\(K\)</span> and <span class="math inline">\(J\)</span> are parallel to the <span class="math inline">\(c\bar{t}\)</span>-axis and will still be equally spaced (although their separation will be different - see shortly). Next, we locate <span class="math inline">\(R\)</span> as the intersection of the world-line of <span class="math inline">\(K\)</span> with a light ray from <span class="math inline">\(P\)</span>. Then we project a light ray from <span class="math inline">\(R\)</span> backwards and where it intersects the world-line of <span class="math inline">\(J\)</span> is the event <span class="math inline">\(J\)</span> itself. Finally, we draw a line through <span class="math inline">\(P\)</span> and <span class="math inline">\(J\)</span>, its intersection with the world-line of <span class="math inline">\(K\)</span> is the point <span class="math inline">\(K\)</span> itself. This line is the <span class="math inline">\(\bar{x}\)</span> axis and is an angle <span class="math inline">\(\theta\)</span>, as expected, from the <span class="math inline">\(x\)</span>-axis in frame <span class="math inline">\(S\)</span>.</p>
+</section>
+<section id="space-time-interval" class="level2 page-columns page-full" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="space-time-interval"><span class="header-section-number">3.3</span> Space-time interval</h2>
+<p>Let’s consider the point <span class="math inline">\(P\)</span> with coordinates <span class="math inline">\((ct_P, x_P)\)</span> in <span class="math inline">\(S\)</span> and ask <em>what is its distance from the origin <span class="math inline">\(O\)</span>?</em> The value for the distance should be computable by some recipe from the coordinates in some frame. Yet the notion of distance between points is a geometrical one, so we expect whatever value we obtain should be independent of the reference frame we used to compute it. This means that if we use the same recipe in <span class="math inline">\(\bar S\)</span> to compute the distance using that frame’s coordinates we should get exactly same final answer. Its value should be invariant under the transformations between frames. If our space-time had an Euclidean geometry then we would calculate the distance as: <span id="eq-distance"><span class="math display">\[
+{\rm dist}^2(P,O) = (ct_P - 0)^2 + (x_P - 0)^2,
+\tag{3.2}\]</span></span> which is just the sum of the squares of the difference in coordinates of the two points <span class="math inline">\(P\)</span> and <span class="math inline">\(O\)</span>. This distance is Galilean invariant, since as we saw in the last lecture coordinate differences are invariant under Galilean transformations. However, correspondingly this distance measure is <strong>not</strong> Lorentz invariant and is therefore unsuitable for the special theory of relativity.</p>
+<p>The following distance measure, called the <em>space-time interval</em>, is Lorentz invariant: <span id="eq-interval"><span class="math display">\[
+\Delta S^2(P,O) = (ct_P - 0)^2 - (x_P - 0)^2.
+\tag{3.3}\]</span></span> The only modification compared to <a href="#eq-distance" class="quarto-xref">Equation&nbsp;<span>3.2</span></a> is the negative sign between the terms. However, as we shall see, this reflects a profound change in space-time from having Euclidean to Minkowski geometry. In frame <span class="math inline">\(\bar S\)</span> the same <span class="math inline">\((c{\rm time})^2 - ({\rm space})^2\)</span> recipe for computing the space-time interval gives: <span id="eq-interval"><span class="math display">\[
+\Delta S^2(P,O) = (c\bar{t}_P)^2,
+\tag{3.4}\]</span></span> since <span class="math inline">\(P\)</span> is that frame’s spatial origin. You are now invited to show that this result is Lorentz invariant.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>2. Invariance of the space-time interval</strong></p>
+<p>Show that the space-time interval in <a href="#eq-interval" class="quarto-xref">Equation&nbsp;<span>3.4</span></a> is Lorentz invariant as stated.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>2. Invariance of the space-time interval</strong></p>
+<p>We have that in frame <span class="math inline">\(S\)</span> the interval is: <span class="math display">\[
+\Delta S^2(P,O) = (ct_P)^2 - x_P^2,
+\]</span> while we know that in frame <span class="math inline">\(\bar S\)</span> it is given by: <span class="math display">\[
+\Delta S^2(P,O) = (c\bar{t}_P)^2.
+\]</span> Our task is to show these two expressions are indeed equal. To do this we inverse Lorentz transform from <span class="math inline">\(\bar{S}\)</span> to <span class="math inline">\(S\)</span> as <span class="math display">\[\left(
+\begin{array}{c}
+  ct_P\\
+  x_P  
+\end{array}\right) =\gamma(\beta)\left(\begin{array}{cc}
+  1 &amp; \beta \\
+  \beta &amp; 1
+\end{array}\right)\left(
+\begin{array}{c}
+  c\bar{t}_P\\
+  0  
+\end{array}\right),
+\]</span> getting <span class="math inline">\(ct_P = \gamma(\beta)c\bar{t}_P\)</span> and <span class="math inline">\(x_P = \beta\gamma(\beta)c\bar{t}_P\)</span>, so <span class="math display">\[
+\begin{align}
+    \Delta S^2(P,O) &amp;= (ct_P)^2 - x_P^2, \\
+    &amp;= \gamma(\beta)^2(c\bar{t}_P)^2 - \beta^2\gamma(\beta)^2(c\bar{t}_P)^2, \\
+    &amp;= (c\bar{t}_P)^2\gamma(\beta)(1-\beta^2), \\
+    &amp;= (c\bar{t}_P)^2.
+\end{align}
+\]</span> So the expressions are identical, as required.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>It is a matter of convention whether the time or space term have the negative sign. In general relativity <em>space – time</em> is commonly used, while in particle physics <em>time – space</em> is preferred. As <a href="#eq-interval" class="quarto-xref">Equation&nbsp;<span>3.4</span></a> indicates in this course we will adopt the latter convention.</p>
+</div>
+</div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/interval.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>The space-time interval between <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span> and <span class="math inline">\(P\)</span> and <span class="math inline">\(R\)</span> is shown on the left. On the right we divide up space-time into three regions, time-like, null, and space-like separated based on the sign of <span class="math inline">\(\Delta S^2\)</span> from the origin.</figcaption>
+</figure>
+</div>
+<p>The interval <span class="math inline">\(\Delta S^2\)</span> from the origin tells us something important about the nature of the separation between events <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span>. Specifically, we can classify the separation into three distinct types based on the sign of <span class="math inline">\(\Delta S^2\)</span>:</p>
+<ol type="1">
+<li><p><strong>Time-like separation</strong>: If <span class="math inline">\(\Delta S^2 &gt; 0\)</span>, the separation is time-like. This means that there exists a reference frame (with a <span class="math inline">\(c\bar{t}\)</span>-axis going through <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span>) in which the two events occur at the same spatial location but at different times. Events with time-like separation can influence each other causally.</p></li>
+<li><p><strong>Space-like separation</strong>: If <span class="math inline">\(\Delta S^2 &lt; 0\)</span>, the separation is space-like. This means that there exists a reference frame in which the two events occur simultaneously (with an <span class="math inline">\(\bar{x}\)</span>-axis going through <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span>) but at different spatial locations. Events with space-like separation cannot influence each other causally, as they are outside each other’s light cones.</p></li>
+<li><p><strong>Light-like (or null) separation</strong>: If <span class="math inline">\(\Delta S^2 = 0\)</span>, the separation is light-like. This means that the two events are connected by a light signal. In this case, the events lie on the boundary of the light cone and can be connected by a photon traveling at the speed of light.</p></li>
+</ol>
+<p>These classifications are fundamental in understanding the causal structure of space-time in the special theory of relativity.</p>
+<div class="page-columns page-full"><p>There is nothing special about the origin in the calculation of the space-time interval. The interval between two points <span class="math inline">\(P\)</span> and <span class="math inline">\(R\)</span> is given by <span id="eq-interval-general"><span class="math display">\[
+\Delta S^2(P,R) = (ct_P - ct_R)^2 - (x_P - x_R)^2 = c^2\Delta t^2 - \Delta x^2,
+\tag{3.5}\]</span></span> where in the last expression we emphasise that it is calculated from the squares of coordinate differences. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">The generalisation of the interval to 1+3D space-time, which we will discuss more in a later lecture, is straightforward as <span class="math inline">\(\Delta S^2 = c^2\Delta t^2 - \Delta x^2 - \Delta y^2 - \Delta z^2\)</span>.</span></div></div>
+</section>
+<section id="proper-time" class="level2 page-columns page-full" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="proper-time"><span class="header-section-number">3.4</span> Proper time</h2>
+<p>Let’s consider the time-like separated points <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span> a bit more closely. As mentioned above, another frame of reference <span class="math inline">\(\bar{S}\)</span> moving relative to <span class="math inline">\(S\)</span> always exists whose <span class="math inline">\(c\bar{t}\)</span> axis goes through <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span>. In frame <span class="math inline">\(\bar{S}\)</span> the point <span class="math inline">\(P\)</span> occurs at the spatial origin so its only non-zero coordinate is its time <span class="math inline">\(c\bar{t}_P\)</span>.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/proper_time.png" class="img-fluid figure-img" width="250"></p>
+<figcaption>For time-like separated points <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span> a frame <span class="math inline">\(\bar{S}\)</span> exists whose <span class="math inline">\(c\bar{t}\)</span> axis cuts through both points. In <span class="math inline">\(\bar{S}\)</span> only time lapses between <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span>. This time is called the <em>proper time</em>.</figcaption>
+</figure>
+</div>
+<p>Our aim now is to compute what <span class="math inline">\(c\bar{t}_P\)</span> is in terms <span class="math inline">\(ct_P\)</span> and <span class="math inline">\(x_P\)</span>. We do this by using the Lorentz transformation connecting them: <span class="math display">\[\left(
+\begin{array}{c}
+  c\bar{t}_P\\
+  0  
+\end{array}\right) = \gamma(\beta)\left(\begin{array}{cc}
+  1 &amp; -\beta \\
+  -\beta &amp; 1
+\end{array}\right)\left(
+\begin{array}{c}
+  ct_P\\
+  x_P  
+\end{array}\right).
+\]</span> The spatial coordinate gives <span class="math inline">\(0 = \gamma(\beta)(x_P - \beta c t_P)\)</span>, and since <span class="math inline">\(\gamma(\beta) \neq 0\)</span> this gives the sensible relation <span class="math display">\[
+\beta = \frac{1}{c}\left(\frac{x_P}{t_P}\right) = \frac{v}{c}.
+\]</span> The time coordinate gives: <span class="math display">\[
+c\bar{t}_P = \gamma(\beta)(ct_P - \beta c x_P) = \gamma(\beta)ct_P\left(1 -  \left(\frac{x_P}{ct_P}\right)^2\right),
+\]</span> <span class="math display">\[
+= \frac{1}{\sqrt{1-\left(\frac{x_P}{ct_P}\right)^2}}ct_P\left(1 -  \left(\frac{x_P}{ct_P}\right)^2\right),
+\]</span> <span class="math display">\[
+= \sqrt{(ct_P)^2-x_P^2} = \sqrt{\Delta S^2(O,P)} = s.
+\]</span> The time-elapsed in frame <span class="math inline">\(\bar{S}\)</span> is precisely the (positive) square-root of the space-time interval between <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span>. This is called the <em>proper time</em>.</p>
+<div class="page-columns page-full"><p>Although proper time is derived from a specific reference frame <span class="math inline">\(\bar{S}\)</span> comoving with the world-line between <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span>, it is a crucial concept in relativity. This is because all observers of events <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span> can from these events alone reconstruct the frame <span class="math inline">\(\bar{S}\)</span> and compute the time elapsed in it. So while the proper time is not a Lorentz invariant, it does have a similar special status because it is intrinsic to the observed events. So all observers can compute it and will agree on its value. As we shall see it is the preferred time coordinate in which to describe relativistic motion. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">We would never ascribe significance to the time measured in some other arbitrary frame precisely because it is external to the physics being observed and so we can’t guarantee all observers will know or have access to this frame.</span></div></div>
+</section>
+<section id="sec-time-length" class="level2 page-columns page-full" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="sec-time-length"><span class="header-section-number">3.5</span> Time dilation and length contraction</h2>
+<p>Let’s now consider the unit ticks marks (in whatever units we choose) along the <span class="math inline">\(ct\)</span> and <span class="math inline">\(x\)</span> axes of frame <span class="math inline">\(S\)</span>. We know that from the origin the interval is <span class="math inline">\(\Delta S^2  = 1\)</span> for the time tick along the <span class="math inline">\(ct\)</span>-axis, and <span class="math inline">\(\Delta S^2  = -1\)</span> for the space tick along the <span class="math inline">\(x\)</span>-axis. We can now ask if we move along <span class="math inline">\(x\)</span> what are the time coordinates <span class="math inline">\(ct_+\)</span> of points with <span class="math inline">\(\Delta S^2  = 1\)</span> and <span class="math inline">\(ct_-\)</span> with <span class="math inline">\(\Delta S^2  = -1\)</span>. The answer is simply: <span class="math display">\[
+ct_+ = \sqrt{1+x^2},
+\]</span> and <span class="math display">\[
+ct_- = \sqrt{x^2-1},
+\]</span> respectively. These curves are <em>hyperbola</em>, that is they are conic section, formed by the intersection of a plane and a double cone (i.e.&nbsp;the light cone). Armed with these curves we can now determine where the unit ticks marks are along the <span class="math inline">\(c\bar{t}\)</span> and <span class="math inline">\(\bar{x}\)</span> axes of frame <span class="math inline">\(\bar{S}\)</span> as viewed in frame <span class="math inline">\(S\)</span>. The picture is shown here:</p>
+<div id="fig-time_length" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-time_length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/time_dilation.png" class="img-fluid figure-img" width="350">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time_length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;3.1: The <span class="math inline">\(c\bar{t}\)</span> and <span class="math inline">\(\bar{x}\)</span> axes of frmae <span class="math inline">\(\bar{S}\)</span> are overlaid with the curves <span class="math inline">\(ct_+\)</span> of <span class="math inline">\(\Delta S^2 = 1\)</span> and <span class="math inline">\(ct_-\)</span> of <span class="math inline">\(\Delta S^2 = -1\)</span>. Together these allow us to derive time dilation and length contraction.
+</figcaption>
+</figure>
+</div>
+<p>There is quite a bit of physics in this diagram. The blue curve of <span class="math inline">\(ct_+\)</span> intersects the <span class="math inline">\(c\bar{t}\)</span>-axis at exactly the unit tick mark along this axis. Note from the picture that the time coordinate of this point is <span class="math inline">\(\tau &gt; 1\)</span>. A unit of time in <span class="math inline">\(\bar{S}\)</span> thus appears to take longer in <span class="math inline">\(S\)</span>. This is <em>time dilation</em>. The intersection of the green curve <span class="math inline">\(ct_-\)</span> with the <span class="math inline">\(\bar{x}\)</span> gives the unit tick mark along this axis. To determine the length of this tick mark in <span class="math inline">\(S\)</span> we follow the world-line of the unit tick, which is parallel to the <span class="math inline">\(c\bar{t}\)</span>-axis, back to the <span class="math inline">\(x\)</span>-axis. One might ask why we can’t just look at the <span class="math inline">\(x\)</span> coordinate of the unit tick and infer its length? If we did it would seem like we would get length expansion! But this isn’t correct since we would have then measured the front and end of a moving object at different times. The notion of “length” in a given frame requires we ascertain the location of the front and end of the object at the <strong>same</strong> time in that frame, specifically as they simultaneously cross the <span class="math inline">\(x\)</span>-axis. From the picture we see this gives a length <span class="math inline">\(\ell &lt; 1\)</span>, so the a unit of length in <span class="math inline">\(\bar{S}\)</span> appears smaller in <span class="math inline">\(S\)</span>. This is <em>length contraction</em>.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 3</strong>.</span></div></div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Time dilation and length contraction</strong></p>
+<p>In <a href="#fig-time_length" class="quarto-xref">Figure&nbsp;<span>3.1</span></a> we have argued that there is time dilation and length contraction between the unit intervals along the coordinate axes of <span class="math inline">\(S\)</span> and <span class="math inline">\(\bar{S}\)</span>. Work out the expressions for the time <span class="math inline">\(\tau\)</span> and length <span class="math inline">\(\ell\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Time dilation and length contraction</strong></p>
+<p>The time coordinate <span class="math inline">\(\tau\)</span> in <span class="math inline">\(S\)</span> of the unit tick of time in <span class="math inline">\(\bar{S}\)</span> is found easily by inverse Lorentz boosting from <span class="math inline">\(\bar{S}\)</span> to <span class="math inline">\(S\)</span>: <span class="math display">\[\left(
+\begin{array}{c}
+  \tau\\
+  x_\tau  
+\end{array}\right) =\gamma(\beta)\left(\begin{array}{cc}
+  1 &amp; \beta \\
+  \beta &amp; 1
+\end{array}\right)\left(
+\begin{array}{c}
+  \bar{1}\\
+  0  
+\end{array}\right),
+\]</span> using that <span class="math inline">\(\gamma(-\beta) = \gamma(\beta)\)</span>. We quickly find that <span class="math inline">\(\tau = \gamma(\beta)\)</span>, and hence <span class="math inline">\(\tau \geq 1\)</span>, which is time dilation. For <span class="math inline">\(\ell\)</span> we first compute the coordinates of the unit tick of length in <span class="math inline">\(\bar{S}\)</span>: <span class="math display">\[\left(
+\begin{array}{c}
+  ct_\ell\\
+  x_\ell  
+\end{array}\right) =\gamma(\beta)\left(\begin{array}{cc}
+  1 &amp; \beta \\
+  \beta &amp; 1
+\end{array}\right)\left(
+\begin{array}{c}
+  0\\
+  \bar{1}  
+\end{array}\right),
+\]</span> and find that <span class="math inline">\(x_\ell = \gamma(\beta)\)</span> occuring at a time <span class="math inline">\(ct_\ell = \gamma(\beta)\beta\)</span>. This looks like length expansion, but we now have to project the <span class="math inline">\(x_\ell\)</span> coordinate back along its world-line to <span class="math inline">\(t=0\)</span> to get <span class="math inline">\(\ell\)</span>. Its world-line is given by <span class="math inline">\(x_\ell = \ell + \beta ct_\ell\)</span>, so <span class="math inline">\(\ell = x_\ell - \beta ct_\ell\)</span> gives: <span class="math display">\[
+\ell = \gamma(\beta)(1-\beta^2) = \frac{1}{\gamma(\beta)},
+\]</span> showing that <span class="math inline">\(\ell \leq 1\)</span>, which is length contraction.</p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./lorentz_transform.html" class="pagination-link" aria-label="Lorentz transformation">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lorentz transformation</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./example_class1.html" class="pagination-link" aria-label="Example Class 1">
+        <span class="nav-page-text">Example Class 1</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

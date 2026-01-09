@@ -423,40 +423,42 @@ window.Quarto = {
 </thead>
 <tbody>
 <tr class="odd">
-<td><span class="math inline">\(\boldsymbol{a}\)</span></td>
-<td>3-vector <span class="math inline">\(\left(
-\begin{array}{c}
-a_1 \\
-a_2 \\
-a_3
-\end{array}
-\right)\)</span>, typically lowercase italicised letter</td>
+<td><span class="math inline">\(\vec{a}\)</span></td>
+<td>abstract 3-vector, typically lower case roman letter</td>
 </tr>
 <tr class="even">
 <td><span class="math inline">\(\vec{A}\)</span></td>
-<td>4-vector <span class="math inline">\(\left(
-\begin{array}{c}
-a_0 \\
-\boldsymbol{a}
-\end{array}
-\right)\)</span>, typically uppercase italicised letter</td>
+<td>abstract 4-vector, typically upper case roman letter</td>
 </tr>
 <tr class="odd">
+<td><span class="math inline">\(\pmb{\symbb{T}}\)</span></td>
+<td>tensor, typically uppercase letters (exception below)</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\pmb{\symbb{g}}\)</span></td>
+<td>metric tensor</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\boldsymbol{a}\)</span></td>
+<td>column vector <span class="math inline">\(\left(
+\begin{array}{c}
+a_0 \\
+\vdots
+\end{array}
+\right)\)</span>, dimension depends on whether it represents the components of a 3- or 4-vector in a particular frame</td>
+</tr>
+<tr class="even">
 <td><span class="math inline">\(\mathbf{A}\)</span></td>
 <td>matrix <span class="math inline">\(\left(
 \begin{array}{cc}
-A_{11} &amp; \cdots \\
+A_{00} &amp; \cdots \\
 \vdots &amp; \ddots
 \end{array}
 \right)\)</span>, typically uppercase roman letter, dimensions of matrix depend on context</td>
 </tr>
-<tr class="even">
-<td><span class="math inline">\(\pmb{\symbb{T}}\)</span></td>
-<td>tensor, typically uppercase letters (exception below)</td>
-</tr>
 <tr class="odd">
-<td><span class="math inline">\(\pmb{\symbb{g}}\)</span></td>
-<td>metric tensor, elements <span class="math inline">\(\eta^{\mu\nu} = \left(
+<td><span class="math inline">\(\eta^{\mu\nu}\)</span></td>
+<td>metric tensor elements <span class="math inline">\(\left(
 \begin{array}{cccc}
 1 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; -1 &amp; 0 &amp; 0 \\

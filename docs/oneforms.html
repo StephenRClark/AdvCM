@@ -397,7 +397,7 @@ window.Quarto = {
 <p>In the last lecture we stated that the length of a 4-vector <span class="math inline">\(||\vec{X}||\)</span> is given by the space-time interval between <span class="math inline">\(O\)</span> and <span class="math inline">\(X\)</span> as: <span class="math display">\[
 ||\vec{X}||^2 = \Delta S^2(0,X).
 \]</span> The representation of this 4-vector in frame <span class="math inline">\(S\)</span> was packaged up into a column vector <span class="math display">\[
-{\underline X} = \left(
+\boldsymbol{X} = \left(
 \begin{array}{c}
   x^0 \\
   x^1 \\
@@ -405,12 +405,12 @@ window.Quarto = {
   x^3
 \end{array}\right),
 \]</span> and from <span class="math inline">\(S^2(0,X) = (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2\)</span> we got: <span id="eq-length"><span class="math display">\[
-||\vec{X}||^2 = {\underline X}^T\,\underline{\underline \eta}\,{\underline X},
-\tag{5.1}\]</span></span> using the metric <span class="math inline">\(\underline{\underline \eta} = {\rm diag}(1,-1,-1,-1)\)</span>. Converting <a href="#eq-length" class="quarto-xref">Equation&nbsp;<span>5.1</span></a> into index notation gives: <span id="eq-length-index"><span class="math display">\[
+||\vec{X}||^2 = \boldsymbol{X}^T\,\boldsymbol{\eta}\,\boldsymbol{X},
+\tag{5.1}\]</span></span> using the metric <span class="math inline">\(\boldsymbol{\eta} = {\rm diag}(1,-1,-1,-1)\)</span>. Converting <a href="#eq-length" class="quarto-xref">Equation&nbsp;<span>5.1</span></a> into index notation gives: <span id="eq-length-index"><span class="math display">\[
 ||\vec{X}||^2 = \eta_{\mu\nu}x^\mu x^\nu,
-\tag{5.2}\]</span></span> where <span class="math inline">\(\eta_{\mu\nu} = [\underline{\underline \eta}]_{\mu\nu}\)</span> is the metric. In another frame <span class="math inline">\(\bar S\)</span> we have <span id="eq-length-index-sbar"><span class="math display">\[
+\tag{5.2}\]</span></span> where <span class="math inline">\(\eta_{\mu\nu} = [\boldsymbol{\eta}]_{\mu\nu}\)</span> are the components of the metric. In another frame <span class="math inline">\(\bar S\)</span> we have <span id="eq-length-index-sbar"><span class="math display">\[
 ||\vec{X}||^2 = \eta_{\bar{\mu}\bar{\nu}}x^{\bar \mu} x^{\bar \nu},
-\tag{5.3}\]</span></span> where <span class="math inline">\(\eta_{\bar{\mu}\bar{\nu}} = [\underline{\underline \eta}]_{\bar{\mu}\bar{\nu}}\)</span> takes its elements from the same matrix <span class="math inline">\(\underline{\underline \eta}\)</span>. This means that <span class="math display">\[
+\tag{5.3}\]</span></span> where <span class="math inline">\(\eta_{\bar{\mu}\bar{\nu}} = [\boldsymbol{\eta}]_{\bar{\mu}\bar{\nu}}\)</span> takes its elements from the same matrix <span class="math inline">\(\boldsymbol{\eta}\)</span>. This means that <span class="math display">\[
 \eta_{\bar{\alpha}\bar{\beta}} = \eta_{\mu\nu}\Lambda^{\mu}_{\bar \alpha}\Lambda^\nu_{\bar \beta}.
 \]</span> as you are now invited to show.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Objects which have exactly the same form in every inertial frame are considered to be <em>symbols</em>. We will encounter two in this course, <span class="math inline">\(\eta\)</span> and the totally antisymmetric (or Levi-Civita) symbol <span class="math inline">\(\epsilon\)</span> which will appear later.</span></div></div>
@@ -431,11 +431,11 @@ window.Quarto = {
 x^{\bar{\mu}} = \Lambda^{\bar{\mu}}_\nu x^\nu,
 \]</span> in <a href="#eq-length-index" class="quarto-xref">Equation&nbsp;<span>5.2</span></a> twice, and the invariance of the space-time interval to show that the equivalent expression in <span class="math inline">\(\bar S\)</span> is: <span class="math display">\[
 ||\vec{X}||^2 = \eta_{\bar{\mu}\bar{\nu}}x^\bar{\mu} x^\bar{\nu},
-\]</span> with <span class="math inline">\(\eta_{\bar{\mu}\bar{\nu}} = [\underline{\underline \eta}]_{\bar{\mu}\bar{\nu}}\)</span> such that <span id="eq-metric-transform-sbar"><span class="math display">\[
+\]</span> with <span class="math inline">\(\eta_{\bar{\mu}\bar{\nu}} = [\boldsymbol{\eta}]_{\bar{\mu}\bar{\nu}}\)</span> such that <span id="eq-metric-transform-sbar"><span class="math display">\[
 \eta_{\bar{\alpha}\bar{\mu}} = \eta_{\mu\nu}\Lambda^{\mu}_{\bar \alpha}\Lambda^\nu_{\bar \beta},
 \tag{5.4}\]</span></span> thereby demonstrating that the metric <span class="math inline">\(\eta\)</span> has the same elements in every inertial frame.</p>
 <p><strong>2. Equivalence to matrix expression</strong></p>
-<p>Invert <a href="#eq-metric-transform-sbar" class="quarto-xref">Equation&nbsp;<span>5.4</span></a> and convert it into a matrix-vector expression to show it is identical with the constraint <span class="math inline">\(\underline{\underline \eta} = \underline{\underline \Lambda}^{\rm T}\,\underline{\underline \eta}\,\underline{\underline \Lambda}\)</span> found in the last lecture.</p>
+<p>Invert <a href="#eq-metric-transform-sbar" class="quarto-xref">Equation&nbsp;<span>5.4</span></a> and convert it into a matrix-vector expression to show it is identical with the constraint <span class="math inline">\(\boldsymbol{\eta} = \boldsymbol{\Lambda}^{\rm T}\,\boldsymbol{\eta}\,\boldsymbol{\Lambda}\)</span> found in the last lecture.</p>
 </div>
 </div>
 </div>
@@ -460,7 +460,7 @@ x^{\bar{\mu}} = \Lambda^{\bar{\mu}}_\nu x^\nu,
 \end{align}
 \]</span> We can identify the elements of <span class="math inline">\(\Theta_{\bar{\alpha}\bar{\beta}}\)</span> because we know that in frame <span class="math inline">\(\bar S\)</span> the space-time interval is <span class="math inline">\(S^2(0,X) = (x^\bar{0})^2 - (x^\bar{1})^2 - (x^\bar{2})^2 - (x^\bar{3})^2\)</span>, hence <span class="math display">\[
 ||\vec{X}||^2 = \eta_{\bar{\mu}\bar{\nu}}x^\bar{\mu} x^\bar{\nu},
-\]</span> with <span class="math inline">\(\eta_{\bar{\mu}\bar{\nu}} = [\underline{\underline \eta}]_{\bar{\mu}\bar{\nu}}\)</span>. For this to be consistent we must therefore have that <span class="math inline">\(\Theta_{\bar{\mu}\bar{\nu}} = \eta_{\bar{\mu}\bar{\nu}}\)</span>, meaning that: <span class="math display">\[
+\]</span> with <span class="math inline">\(\eta_{\bar{\mu}\bar{\nu}} = [\boldsymbol{\eta}]_{\bar{\mu}\bar{\nu}}\)</span>. For this to be consistent we must therefore have that <span class="math inline">\(\Theta_{\bar{\mu}\bar{\nu}} = \eta_{\bar{\mu}\bar{\nu}}\)</span>, meaning that: <span class="math display">\[
 \eta_{\bar{\alpha}\bar{\beta}} = \eta_{\mu\nu}\Lambda^{\mu}_{\bar \alpha}\Lambda^\nu_{\bar \beta}.
 \]</span></p>
 <p><strong>2. Equivalence to matrix expression</strong></p>
@@ -474,21 +474,21 @@ x^{\bar{\mu}} = \Lambda^{\bar{\mu}}_\nu x^\nu,
 \eta_{\mu\nu} = \Lambda^{\bar \alpha}_\mu \Lambda^{\bar \beta}_\nu\eta_{\bar{\alpha}\bar{\beta}}.
 \tag{5.5}\]</span></span> Converting this expression into matrix-vector notation and reorganising to be consistent with matrix multiplication we arrive at: <span class="math display">\[
 \begin{align}
-    [\underline{\underline \eta}]_{\mu\nu} &amp;= \sum_{\bar{\alpha},\bar{\beta}=0}^3 [\underline{\underline \Lambda}]_{\bar{\alpha}\mu} [\underline{\underline \Lambda}]_{\bar{\beta\nu}} [\underline{\underline \eta}]_{\bar{\alpha}\bar{\beta}}, \\
-    &amp;= \sum_{\bar{\alpha},\bar{\beta}=0}^3 [\underline{\underline \Lambda}^{\rm T}]_{\mu\bar{\alpha}} [\underline{\underline \eta}]_{\bar{\alpha}\bar{\beta}} [\underline{\underline \Lambda}]_{\bar{\beta\nu}}, \\
-    &amp;= [\underline{\underline \Lambda}^{\rm T}\,\underline{\underline \eta}\,\underline{\underline \Lambda}]_{\mu\nu}.
+    [\boldsymbol{\eta}]_{\mu\nu} &amp;= \sum_{\bar{\alpha},\bar{\beta}=0}^3 [\boldsymbol{\Lambda}]_{\bar{\alpha}\mu} [\boldsymbol{\Lambda}]_{\bar{\beta\nu}} [\boldsymbol{\eta}]_{\bar{\alpha}\bar{\beta}}, \\
+    &amp;= \sum_{\bar{\alpha},\bar{\beta}=0}^3 [\boldsymbol{\Lambda}^{\rm T}]_{\mu\bar{\alpha}} [\boldsymbol{\eta}]_{\bar{\alpha}\bar{\beta}} [\boldsymbol{\Lambda}]_{\bar{\beta\nu}}, \\
+    &amp;= [\boldsymbol{\Lambda}^{\rm T}\,\boldsymbol{\eta}\,\boldsymbol{\Lambda}]_{\mu\nu}.
 \end{align}
-\]</span> Hence, we have shown that <a href="#eq-metric-transform" class="quarto-xref">Equation&nbsp;<span>5.5</span></a> is equivalent to the matrix expression <span class="math inline">\(\underline{\underline \eta} = \underline{\underline \Lambda}^{\rm T}\,\underline{\underline \eta}\,\underline{\underline \Lambda}\)</span> found in the last lecture.</p>
+\]</span> Hence, we have shown that <a href="#eq-metric-transform" class="quarto-xref">Equation&nbsp;<span>5.5</span></a> is equivalent to the matrix expression <span class="math inline">\(\boldsymbol{\eta} = \boldsymbol{\Lambda}^{\rm T}\,\boldsymbol{\eta}\,\boldsymbol{\Lambda}\)</span> found in the last lecture.</p>
 </div>
 </div>
 </div>
 <p>In Euclidean 3D space we have a scalar (or dot) product which takes two 3-vectors <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span> and returns a scalar: <span class="math display">\[
-\vec{a}\cdot\vec{b} = {\underline a}^{\rm T}{\underline b} = a_xb_x + a_yb_y + a_zb_z.
-\]</span> which is symmetric in its arguments <span class="math inline">\(\vec{a}\cdot\vec{b} = \vec{b}\cdot\vec{a}\)</span>. The length of a vector is then a special case as <span class="math inline">\(||\vec{r}||^2 = \vec{r}\cdot\vec{r}\)</span>. So more generally we see that the orthogonality of rotations <span class="math inline">\(\underline{\underline R}^{\rm T}\underline{\underline R} = \mathbb{1}\)</span> ensures the invariance of the scalar product: <span class="math display">\[
-\vec{a}\cdot\vec{b} = \bar{\underline a}^{\rm T}\bar{\underline b} = {\underline a}^{\rm T}\underline{\underline R}^{\rm T}\underline{\underline R}\,{\underline b} = {\underline a}^{\rm T}{\underline b}.
+\vec{a}\cdot\vec{b} = {\boldsymbol{a}}^{\rm T}{\boldsymbol{b}} = a_xb_x + a_yb_y + a_zb_z.
+\]</span> which is symmetric in its arguments <span class="math inline">\(\vec{a}\cdot\vec{b} = \vec{b}\cdot\vec{a}\)</span>. The length of a vector is then a special case as <span class="math inline">\(||\vec{r}||^2 = \vec{r}\cdot\vec{r}\)</span>. So more generally we see that the orthogonality of rotations <span class="math inline">\(\mathbf{R}^{\rm T}\mathbf{R} = \mathbb{1}\)</span> ensures the invariance of the scalar product: <span class="math display">\[
+\vec{a}\cdot\vec{b} = \bar{\boldsymbol{a}}^{\rm T}\bar{\boldsymbol{b}} = {\boldsymbol{a}}^{\rm T}\mathbf{R}^{\rm T}\mathbf{R}\,{\boldsymbol{b}} = {\boldsymbol{a}}^{\rm T}{\boldsymbol{b}}.
 \]</span> Since <span class="math inline">\(\vec{a}\cdot\vec{b} = ||\vec{a}||\,||\vec{b}|| \cos(\phi)\)</span> we see that rotations preserve not only the length but also the angle <span class="math inline">\(\phi\)</span> between 3-vectors.</p>
 <p>For 4-vectors <span class="math inline">\(\vec{A}\)</span> and <span class="math inline">\(\vec{B}\)</span> in Minkowski space-time we can similarly construct a scalar product as: <span class="math display">\[
-\vec{A}\cdot\vec{B} = \underline{A}^{\rm T}\,\underline{\underline \eta}\,{\underline B} = A^0B^0 - A^1B^1 - A^2B^2 - A^3B^3,
+\vec{A}\cdot\vec{B} = \underline{A}^{\rm T}\,\boldsymbol{\eta}\,{\underline B} = A^0B^0 - A^1B^1 - A^2B^2 - A^3B^3,
 \]</span> which in index notation is <span id="eq-scalar-prod"><span class="math display">\[
 \vec{A}\cdot\vec{B} = \eta_{\mu\nu}A^\mu B^\nu.
 \tag{5.6}\]</span></span> Again we see that <span class="math inline">\(\vec{A}\cdot\vec{B} = \vec{B}\cdot\vec{A}\)</span> owing to the metric being diagonal and hence symmetric. We can easily confirm that the scalar product is Lorentz invariant based on knowing already that the length or space-time interval is. Take: <span class="math display">\[
@@ -640,7 +640,7 @@ Q_{\bar{\mu}} = \Lambda^{\nu}_{\bar{\mu}} Q_\nu.
 </div>
 <p>Given one-forms are memebers of a dual vector space <span class="math inline">\(\mathcal{M}^*\)</span> we expect they should also have their own scalar-product defining the length of a one-form and orthogonality between them. Moreover, this scalar-product should be a Lorentz invariant quantity. Analogous with 4-vectors we can define the scalar-product between two one-forms <span class="math inline">\(\tilde{Q}\)</span> and <span class="math inline">\(\tilde{P}\)</span> as <span id="eq-oneform_scalarprod"><span class="math display">\[
     \tilde{Q}\cdot\tilde{P} = Q_0P_0 - Q_1P_1 - Q_2P_2 - Q_3P_3 = \eta^{\mu\nu}Q_\mu P_\nu,
-\tag{5.7}\]</span></span> where <span class="math inline">\(\eta^{\mu\nu} = [\underline{\underline \eta}]_{\mu\nu}\)</span> has elements derived from the same <span class="math inline">\(\underline{\underline \eta}\)</span> matrix used above in the section <a href="./oneforms.html#sec-metric_trans">Scalar-product of 4-vectors</a> earlier. The proof that <a href="#eq-oneform_scalarprod" class="quarto-xref">Equation&nbsp;<span>5.7</span></a> is Lorentz invariant is identical to that earlier for 4-vectors just with <span class="math inline">\(\underline{\underline \Lambda}\)</span> replaced with <span class="math inline">\(\underline{\underline \Lambda}^{-1}\)</span>.</p>
+\tag{5.7}\]</span></span> where <span class="math inline">\(\eta^{\mu\nu} = [\boldsymbol{\eta}]_{\mu\nu}\)</span> has elements derived from the same <span class="math inline">\(\boldsymbol{\eta}\)</span> matrix used above in the section <a href="./oneforms.html#sec-metric_trans">Scalar-product of 4-vectors</a> earlier. The proof that <a href="#eq-oneform_scalarprod" class="quarto-xref">Equation&nbsp;<span>5.7</span></a> is Lorentz invariant is identical to that earlier for 4-vectors just with <span class="math inline">\(\boldsymbol{\Lambda}\)</span> replaced with <span class="math inline">\(\boldsymbol{\Lambda}^{-1}\)</span>.</p>
 <!--- This might be a good place to stop the lecture here --->
 </section>
 <section id="sec-fields" class="level2 page-columns page-full" data-number="5.3">

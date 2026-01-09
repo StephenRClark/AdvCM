@@ -395,15 +395,15 @@ window.Quarto = {
 <section id="describing-the-motion-of-a-particle" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="describing-the-motion-of-a-particle"><span class="header-section-number">7.1</span> Describing the motion of a particle</h2>
 <p>Thus far we have spent a lot of time discussing constructing a general tensorial formalism for describing the physics in a relativistically covariant way between observers. It is time now for us to consider what the implications are of this formalism are for the motion of a single particle. In Newtonian classical mechanics the motion of a particle is described by a 3-vector <span class="math display">\[
-{\underline r}(t) = \left(
+\boldsymbol{r}(t) = \left(
 \begin{array}{c}
   x(t) \\
   y(t) \\
   z(t)
 \end{array}\right),
-\]</span> parameterised by the universal time <span class="math inline">\(t\)</span>. The motion of a particle in space and time then follows by solving Newton’s 2nd law which involves derivatives of <span class="math inline">\({\underline r}(t)\)</span> with <span class="math inline">\(t\)</span> as <span class="math display">\[
-\frac{{\rm d}^2}{{\rm d}t^2}{\underline r}(t) = {\underline F}(t),
-\]</span> where <span class="math inline">\({\underline F}(t)\)</span> is the net force acting on the particle at any instance in time.</p>
+\]</span> parameterised by the universal time <span class="math inline">\(t\)</span>. The motion of a particle in space and time then follows by solving Newton’s 2nd law which involves derivatives of <span class="math inline">\({\boldsymbol{r}}(t)\)</span> with <span class="math inline">\(t\)</span> as <span class="math display">\[
+\frac{{\rm d}^2}{{\rm d}t^2}{\boldsymbol{r}}(t) = {\boldsymbol{F}}(t),
+\]</span> where <span class="math inline">\({\boldsymbol{F}}(t)\)</span> is the net force acting on the particle at any instance in time.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/trajectory_t.png" class="img-fluid figure-img" width="250"></p>
@@ -420,19 +420,19 @@ X^\mu(t) = \left(
 \end{array}\right) = \left(
 \begin{array}{c}
   ct \\
-  {\underline r}(t)
+  {\boldsymbol{r}}(t)
 \end{array}\right),
 \]</span> thereby describing its trajectory through space-time. Naturally, we will need to consider its derivates with respect to its parameter giving <span class="math display">\[
 \frac{{\rm d}}{{\rm d}t}X^\mu(t) = \left(
 \begin{array}{c}
   c \\
-  \frac{{\rm d}}{{\rm d}t}{\underline r}(t)
+  \frac{{\rm d}}{{\rm d}t}{\boldsymbol{r}}(t)
 \end{array}\right) = \left(
 \begin{array}{c}
   c \\
-  {\underline v}(t)
+  {\boldsymbol{v}}(t)
 \end{array}\right),
-\]</span> where <span class="math inline">\({\underline v}(t)\)</span> is the 3-velocity of the particle.</p>
+\]</span> where <span class="math inline">\({\boldsymbol{v}}(t)\)</span> is the 3-velocity of the particle.</p>
 <p>The problem with this formulation is that it is <strong>not</strong> relativistically covariant. This is because time <span class="math inline">\(t\)</span> is a coordinate of this frame <span class="math inline">\(S\)</span>. Other inertial observers will have differing records of the time describing the motion of this particle. Consequently, despite its appearance the derivative <span class="math inline">\(\frac{{\rm d}}{{\rm d}t}X^\mu(t)\)</span> is <strong>not</strong> a bonifide 4-vector since it does not transform between frames in the correct way.</p>
 </section>
 <section id="introducing-the-4-velocity" class="level2" data-number="7.2">
@@ -448,13 +448,13 @@ X^\mu(t) = \left(
 </div>
 <p>We now compute the length of <span class="math inline">\(\delta X^\mu(t)\)</span> as <span class="math display">\[
   \delta X^\mu(t)\delta X_\mu(t) = \delta s^2 = (c\delta t)^2 - (v \delta t)^2 = (c\delta t)^2\left(1-\frac{v^2}{c^2}\right),
-\]</span> where <span class="math inline">\(v = \sqrt{{\underline v}\cdot{\underline v}}\)</span> is the speed of the particle at <span class="math inline">\(X^\mu(t)\)</span> relative to frame <span class="math inline">\(S\)</span>. In the limit <span class="math inline">\(\delta t \rightarrow 0\)</span> we have <span class="math display">\[
+\]</span> where <span class="math inline">\(v = \sqrt{{\boldsymbol{v}}\cdot{\boldsymbol{v}}}\)</span> is the speed of the particle at <span class="math inline">\(X^\mu(t)\)</span> relative to frame <span class="math inline">\(S\)</span>. In the limit <span class="math inline">\(\delta t \rightarrow 0\)</span> we have <span class="math display">\[
   \frac{{\rm d}s}{{\rm d}(ct)} = \sqrt{1-\frac{v^2}{c^2}} = \frac{1}{\gamma(\beta)},
 \]</span> recalling that <span class="math inline">\(\beta = v/c\)</span>. This indicates to us that a time-interval <span class="math inline">\(c\delta t\)</span> is <span class="math inline">\(\gamma(\beta)\)</span> longer than the interval <span class="math inline">\(\delta s\)</span>. Using this we can now compute the derivative of <span class="math inline">\(X^\mu(t)\)</span> with respects to <span class="math inline">\(s\)</span> rather than <span class="math inline">\(t\)</span> as <span class="math display">\[
 \frac{{\rm d}}{{\rm d}s}X^\mu(s) = \frac{{\rm d}(ct)}{{\rm d}s} \frac{{\rm d}}{{\rm d}(ct)}X^\mu(t) = \gamma(\beta) \left(
 \begin{array}{c}
   1 \\
-  {\underline v}(t)/c
+  {\boldsymbol{v}}(t)/c
 \end{array}\right).
 \]</span> This derivative is a bonifide 4-vector since <span class="math inline">\(s\)</span> does not transform between frames. It defines a key kinematic quantity called the <strong>4-velocity</strong> <span class="math inline">\(\vec{U}\)</span> <span class="math display">\[
   U^\mu(s) = \frac{{\rm d}}{{\rm d}s}X^\mu(s),
@@ -470,13 +470,13 @@ X^\mu(t) = \left(
     X^{\bar \mu}(s) = \left(
 \begin{array}{c}
   s \\
-  {\underline 0}
+  {\boldsymbol{0}}
 \end{array}\right),
 \]</span> hence the 4-velocity in this frame is just <span class="math display">\[
 \frac{{\rm d}}{{\rm d}s}X^{\bar \mu}(s) = \left(
 \begin{array}{c}
   1 \\
-  {\underline 0}
+  {\boldsymbol{0}}
 \end{array}\right).
 \]</span> Notice that even it is rest-frame the particle has a non-zero 4-velocity! We are free to use the MCRF <span class="math inline">\(\bar S\)</span> in which to compute the length of <span class="math inline">\(\vec{U}\)</span> as <span class="math display">\[
     \vec{U}\cdot\vec{U} = U^{\bar \mu}(s)U_{\bar \mu}(s) = 1.
@@ -484,13 +484,13 @@ X^\mu(t) = \left(
 U^\mu(s)= \gamma(\beta) \left(
 \begin{array}{c}
   1 \\
-  {\underline v}(s)/c
+  {\boldsymbol{v}}(s)/c
 \end{array}\right),
 \tag{7.1}\]</span></span> which gives <span class="math display">\[
     \vec{U}\cdot\vec{U} = U^{\mu}(s)U_{\mu}(s) = \gamma(\beta)^2(1-\beta^2) = 1,
 \]</span> as expected. We can also sanity check what we get if we Lorentz transform <span class="math inline">\(\vec{U}\)</span> from <span class="math inline">\(\bar S\)</span> back to frame <span class="math inline">\(S\)</span> as <span class="math display">\[
     U^\mu(s) = \Lambda^\mu_{\bar \nu} U^{\bar \nu}(s),
-\]</span> which, assuming frame <span class="math inline">\(S\)</span> is moving <span class="math inline">\({\underline v} = -v{\underline e}_1\)</span> relative to the particle, gives <span class="math display">\[
+\]</span> which, assuming frame <span class="math inline">\(S\)</span> is moving <span class="math inline">\({\boldsymbol{v}} = -v{\boldsymbol{e}}_1\)</span> relative to the particle, gives <span class="math display">\[
 \left(\begin{array}{cccc}
   \gamma(\beta) &amp; \gamma(\beta)\beta &amp; 0 &amp; 0 \\
   \gamma(\beta)\beta &amp; \gamma(\beta) &amp; 0 &amp; 0 \\
@@ -509,27 +509,27 @@ U^\mu(s)= \gamma(\beta) \left(
   0\\
   0  
 \end{array}\right).
-\]</span> Assuming a general velocity <span class="math inline">\({\underline v}\)</span> gives <a href="#eq-4velocity" class="quarto-xref">Equation&nbsp;<span>7.1</span></a>. We have thus established the 4-velocity is a sensible 4-vector with unit length.</p>
+\]</span> Assuming a general velocity <span class="math inline">\({\boldsymbol{v}}\)</span> gives <a href="#eq-4velocity" class="quarto-xref">Equation&nbsp;<span>7.1</span></a>. We have thus established the 4-velocity is a sensible 4-vector with unit length.</p>
 </section>
 <section id="energy-and-momentum" class="level2" data-number="7.3">
 <h2 data-number="7.3" class="anchored" data-anchor-id="energy-and-momentum"><span class="header-section-number">7.3</span> Energy and momentum</h2>
-<p>In Newtonian mechanics the 3-velocity <span class="math inline">\({\underline v}\)</span> and the 3-momentum <span class="math inline">\(m{\underline v}\)</span> are key quantities describing kinematics. In relativistic mechanics these are <strong>not</strong> useful quantities to build our description around since they are not relativistically covariant. We need 4-vectors not 3-vectors. For this reason we instead use the 4-velocity <span class="math inline">\(\vec{U}\)</span> and construct a 4-momentum from it as <span class="math display">\[
+<p>In Newtonian mechanics the 3-velocity <span class="math inline">\({\boldsymbol{v}}\)</span> and the 3-momentum <span class="math inline">\(m{\boldsymbol{v}}\)</span> are key quantities describing kinematics. In relativistic mechanics these are <strong>not</strong> useful quantities to build our description around since they are not relativistically covariant. We need 4-vectors not 3-vectors. For this reason we instead use the 4-velocity <span class="math inline">\(\vec{U}\)</span> and construct a 4-momentum from it as <span class="math display">\[
   \vec{P} = mc\,\vec{U}.
 \]</span> We multiply <span class="math inline">\(\vec{U}\)</span> by <span class="math inline">\(c\)</span> so it has the units of velocity, and then by mass <span class="math inline">\(m\)</span> of the particle to give units of momentum. Both these quantities are Lorentz scalars and so do not effect the transformation properties of <span class="math inline">\(\vec{U}\)</span>, meaning <span class="math inline">\(\vec{P}\)</span> is a valid 4-vector. It is instructive to examine its components <span id="eq-4momentum"><span class="math display">\[
 P^\mu=  \left(
 \begin{array}{c}
   \gamma m c \\
-  \gamma {\underline v}
+  \gamma {\boldsymbol{v}}
 \end{array}\right), = \left(
 \begin{array}{c}
   \mathcal{E}/c \\
-  {\underline p}
+  {\boldsymbol{p}}
 \end{array}\right)
-\tag{7.2}\]</span></span> where we see that the time-component <span class="math inline">\(P^0\)</span> is related to the relativistic energy <span class="math inline">\(\mathcal{E} = \gamma mc^2\)</span>, while the spatial components are the relativistic 3-momentum <span class="math inline">\({\underline p} = \gamma m {\underline v}\)</span> familiar from 2nd year special relativity.</p>
-<p>It is worth pausing for a moment to reflect on <span class="math inline">\(\vec{P}\)</span>. We have conjured up the key quantities of relativistic kinematics <span class="math inline">\(\mathcal{E}\)</span> and <span class="math inline">\(\underline p\)</span> by using just 4-velocity <span class="math inline">\(\vec{U}\)</span>, which is itself just the tangent of the particle’s world-line. We know that <span class="math inline">\(\mathcal{E}\)</span> and <span class="math inline">\(\underline p\)</span> change from frame to frame, however the 4-momentum <span class="math inline">\(\vec{P}\)</span> constructed bundles them together into a bonifide 4-vector such that the transformation of these quantities between frames is now compactly captured by a Lorentz transformation <span class="math display">\[
+\tag{7.2}\]</span></span> where we see that the time-component <span class="math inline">\(P^0\)</span> is related to the relativistic energy <span class="math inline">\(\mathcal{E} = \gamma mc^2\)</span>, while the spatial components are the relativistic 3-momentum <span class="math inline">\({\boldsymbol{p}} = \gamma m {\boldsymbol{v}}\)</span> familiar from 2nd year special relativity.</p>
+<p>It is worth pausing for a moment to reflect on <span class="math inline">\(\vec{P}\)</span>. We have conjured up the key quantities of relativistic kinematics <span class="math inline">\(\mathcal{E}\)</span> and <span class="math inline">\(\boldsymbol{p}\)</span> by using just 4-velocity <span class="math inline">\(\vec{U}\)</span>, which is itself just the tangent of the particle’s world-line. We know that <span class="math inline">\(\mathcal{E}\)</span> and <span class="math inline">\(\boldsymbol{p}\)</span> change from frame to frame, however the 4-momentum <span class="math inline">\(\vec{P}\)</span> constructed bundles them together into a bonifide 4-vector such that the transformation of these quantities between frames is now compactly captured by a Lorentz transformation <span class="math display">\[
     P^{\bar \nu} = \Lambda^{\bar \nu}_\mu P^\mu.
 \]</span> This is highly elegant. Yet, there is more beauty to come if we compute the length of <span class="math inline">\(\vec{P}\)</span> as <span class="math display">\[
-    P^\mu P_\mu = \frac{\mathcal{E}^2}{c^2} - {\underline p}\cdot {\underline p}.
+    P^\mu P_\mu = \frac{\mathcal{E}^2}{c^2} - {\boldsymbol{p}}\cdot {\boldsymbol{p}}.
 \]</span> However, equally we have that <span class="math display">\[
     P^\mu P_\mu = m^2c^2 U^\mu U_\mu = (mc)^2
 \]</span> hence, the fixed unit length of <span class="math inline">\(\vec{U}\)</span> means that <span class="math display">\[
@@ -549,14 +549,14 @@ P^\mu=  \left(
 \]</span> does apply, but the content of this equation is not Newton’s 2nd law due to the 4-vector nature of the quantities. For example, the 4-acceleration can be written as <span id="eq-4acceleration_expand"><span class="math display">\[
     A^\mu=  \gamma^2\left(
 \begin{array}{c}
-  \gamma^2 \frac{{\underline v}\cdot{\underline a}}{c} \\
-  \gamma^2 \frac{{\underline v}\cdot{\underline a}}{c^2}{\underline v} + {\underline a}
+  \gamma^2 \frac{{\boldsymbol{v}}\cdot{\boldsymbol{a}}}{c} \\
+  \gamma^2 \frac{{\boldsymbol{v}}\cdot{\boldsymbol{a}}}{c^2}{\boldsymbol{v}} + {\boldsymbol{a}}
 \end{array}\right)
-\tag{7.4}\]</span></span> where <span class="math inline">\(\underline v\)</span> is the 3-velocity and <span class="math inline">\(\underline a\)</span> is the 3-acceleration. As is apparent <span class="math inline">\(\vec{A}\)</span> is not trivially related to either of these quantities, due to derivatives of the <span class="math inline">\(\gamma\)</span> factors. Notice that in the MCRF, where <span class="math inline">\({\underline v} = {\underline 0}\)</span> and <span class="math inline">\(\gamma = 1\)</span>, the 4-acceleration simplifies to <span class="math display">\[
-    \lim_{{\underline v}\rightarrow 0} A^\mu =  \left(
+\tag{7.4}\]</span></span> where <span class="math inline">\(\boldsymbol{v}\)</span> is the 3-velocity and <span class="math inline">\(\boldsymbol{a}\)</span> is the 3-acceleration. As is apparent <span class="math inline">\(\vec{A}\)</span> is not trivially related to either of these quantities, due to derivatives of the <span class="math inline">\(\gamma\)</span> factors. Notice that in the MCRF, where <span class="math inline">\({\boldsymbol{v}} = {\boldsymbol{0}}\)</span> and <span class="math inline">\(\gamma = 1\)</span>, the 4-acceleration simplifies to <span class="math display">\[
+    \lim_{{\boldsymbol{v}}\rightarrow 0} A^\mu =  \left(
 \begin{array}{c}
   0 \\
-    {\underline a}
+    {\boldsymbol{a}}
 \end{array}\right),
 \]</span> The implication of this is that the magnitude of the 4-acceleration, which is Lorentz scalar, is equal to the proper acceleration the particle experiences in its MCRF. There are additional geometrical features we can glean about <span class="math inline">\(\vec{A}\)</span> and <span class="math inline">\(\vec{F}\)</span> which we will explore in the next examples class.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 7</strong>.</span></div></div>
@@ -573,9 +573,9 @@ P^\mu=  \left(
 <div id="callout-1" class="callout-1-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>1. Local time on a particle’s worldline, 4-velocity and 4-momentum</strong></p>
-<p>Let a particle’s world-line be given by <span class="math inline">\(x^\mu(s)\)</span>, parametrized by proper time <span class="math inline">\(s\)</span> as experienced by the particle. At a moment <span class="math inline">\(s = s_0\)</span> on this world-line, in the particle’s instantaneous rest frame (specified by barred components), <span class="math inline">\(x^{\bar \mu}(s_0) = (s_0, {\underline 0})\)</span>.</p>
+<p>Let a particle’s world-line be given by <span class="math inline">\(x^\mu(s)\)</span>, parametrized by proper time <span class="math inline">\(s\)</span> as experienced by the particle. At a moment <span class="math inline">\(s = s_0\)</span> on this world-line, in the particle’s instantaneous rest frame (specified by barred components), <span class="math inline">\(x^{\bar \mu}(s_0) = (s_0, {\boldsymbol{0}})\)</span>.</p>
 <ol type="a">
-<li><p>Argue that, after a Lorentz boost <span class="math inline">\(\Lambda^\nu_{\bar \mu}\)</span> by velocity <span class="math inline">\(\underline v\)</span> to a different frame (specified by unbarred components), the particle’s instantaneous coordinates are <span class="math inline">\(x^\mu(s_0) = (ct_0, {\underline r}_0) = \gamma(\beta)(s_0, s_0{\underline v}/c)\)</span>, where <span class="math inline">\(v = |{\underline v}|\)</span> and <span class="math inline">\(\beta = v/c\)</span>. Interpret this result in terms of time dilation.</p></li>
+<li><p>Argue that, after a Lorentz boost <span class="math inline">\(\Lambda^\nu_{\bar \mu}\)</span> by velocity <span class="math inline">\(\boldsymbol{v}\)</span> to a different frame (specified by unbarred components), the particle’s instantaneous coordinates are <span class="math inline">\(x^\mu(s_0) = (ct_0, {\boldsymbol{r}}_0) = \gamma(\beta)(s_0, s_0{\boldsymbol{v}}/c)\)</span>, where <span class="math inline">\(v = |{\boldsymbol{v}}|\)</span> and <span class="math inline">\(\beta = v/c\)</span>. Interpret this result in terms of time dilation.</p></li>
 <li><p>What is the 4-velocity in the unbarred frame, <span class="math inline">\(U^\mu(s_0)\)</span>, at this instant? Is this consistent with what you expect?</p></li>
 <li><p>Now consider the 4-momentum <span class="math inline">\(P^\mu(s_0)\)</span> in the unbarred frame. Is this consistent with the relation between relativistic energy and relativistic 3-momentum?</p></li>
 </ol>

@@ -405,26 +405,26 @@ window.Quarto = {
 \varphi(x) = f(x_\mu q^\mu, x_\mu x^\mu, q_\mu q^\mu),
 \]</span> where <span class="math inline">\(f(\cdot)\)</span> is now an arbitrary 3-variable function.</p>
 <p>We already know a form of field with this dependence – <em>plane waves</em> travelling with a wave speed of <span class="math inline">\(c\)</span>. They have the general form <span class="math display">\[
-    \varphi(ct,{\underline r}) = a\, e^{i(\omega t - {\underline k}\cdot{\underline r})},
-\]</span> where <span class="math inline">\(a\)</span> is a Lorentz scalar amplitude, <span class="math inline">\(\omega\)</span> is the angular frequency and <span class="math inline">\(\underline k\)</span> is the 3-wave-vector of the wave. If this plane-wave is to be a Lorentz scalar field then we need that the phase of the wave <span class="math display">\[
-    \theta(x) = \omega t - {\underline k}\cdot{\underline r},
+    \varphi(ct,{\boldsymbol{r}}) = a\, e^{i(\omega t - {\boldsymbol{k}}\cdot{\boldsymbol{r}})},
+\]</span> where <span class="math inline">\(a\)</span> is a Lorentz scalar amplitude, <span class="math inline">\(\omega\)</span> is the angular frequency and <span class="math inline">\(\boldsymbol{k}\)</span> is the 3-wave-vector of the wave. If this plane-wave is to be a Lorentz scalar field then we need that the phase of the wave <span class="math display">\[
+    \theta(x) = \omega t - {\boldsymbol{k}}\cdot{\boldsymbol{r}},
 \]</span> is a Lorentz scalar. Specifically, all inertial observers must agree on the value of the phase at a given point in space-time. The reason for this is that the “event” that the wave reached it maximum extent, or has a node, is something every observer can agree on. They won’t agree on the coordinates ascribed to this event, or the time elapsed and distance between pairs of such events, but they will agree that one occured a given point.</p>
-<p>This tells us that <span class="math inline">\(\theta(x)\)</span> must be a scalar-product between <span class="math inline">\(\vec{X}\)</span> and another 4-vector. Or in otherwords we can the scalar <span class="math inline">\(\omega\)</span> and 3-vector <span class="math inline">\(\underline k\)</span> into a 4-wave-vector <span class="math inline">\(\vec{K}\)</span> with components in some frame <span class="math inline">\(S\)</span> as <span class="math display">\[
+<p>This tells us that <span class="math inline">\(\theta(x)\)</span> must be a scalar-product between <span class="math inline">\(\vec{X}\)</span> and another 4-vector. Or in otherwords we can the scalar <span class="math inline">\(\omega\)</span> and 3-vector <span class="math inline">\(\boldsymbol{k}\)</span> into a 4-wave-vector <span class="math inline">\(\vec{K}\)</span> with components in some frame <span class="math inline">\(S\)</span> as <span class="math display">\[
 k^\mu = \left(\begin{array}{c} \omega/c \\
-{\underline k} \end{array}\right).
-\]</span> This sensibly links <span class="math inline">\(\omega\)</span> with the time component, and <span class="math inline">\(\underline k\)</span> with the spatial components. Naturally both <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\underline k\)</span> for a given wave differ between inertial frames as described by a standard Lorentz transformation <span class="math display">\[
+{\boldsymbol{k}} \end{array}\right).
+\]</span> This sensibly links <span class="math inline">\(\omega\)</span> with the time component, and <span class="math inline">\(\boldsymbol{k}\)</span> with the spatial components. Naturally both <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\boldsymbol{k}\)</span> for a given wave differ between inertial frames as described by a standard Lorentz transformation <span class="math display">\[
 k^{\bar \nu} = \Lambda^{\bar \nu}_\mu k^\mu.
-\]</span> This indicates that transforming between inertial frames mixes <span class="math inline">\(\omega\)</span> and components of <span class="math inline">\(\underline k\)</span>. Using <span class="math inline">\(\vec{K}\)</span> we can express a plane-wave in a covariant form <span class="math display">\[
+\]</span> This indicates that transforming between inertial frames mixes <span class="math inline">\(\omega\)</span> and components of <span class="math inline">\(\boldsymbol{k}\)</span>. Using <span class="math inline">\(\vec{K}\)</span> we can express a plane-wave in a covariant form <span class="math display">\[
     \varphi(x) = a\, e^{i k_\mu x^\mu},
 \]</span> recalling that <span class="math display">\[
 k_\mu = \left(\begin{array}{c} \omega/c \\
--{\underline k} \end{array}\right),
+-{\boldsymbol{k}} \end{array}\right),
 \]</span> so the scalar-product of the 4-wave-vector and the space-time 4-vector is <span class="math display">\[
-    k_\mu x^\mu = (\omega/c)ct - {\underline k}\cdot{\underline r}.
+    k_\mu x^\mu = (\omega/c)ct - {\boldsymbol{k}}\cdot{\boldsymbol{r}}.
 \]</span> Consequently, the phase factor of the plane-wave is a Lorentz invariant, e.g.&nbsp;a Lorentz scalar linear functional, with the plane-wave itself given by its complex exponential <span class="math display">\[
     \tilde{\varphi}(\vec{X})  = a\, e^{i \vec{K}\cdot\vec{X}},
 \]</span> making explicit that it is also a Lorentz scalar (non-linear) functional of space-time <span class="math inline">\(\vec{X}\)</span>. We characterise the type of plane-wave by the Lorentz scalar <span class="math inline">\(\vec{K}\cdot\vec{K}\)</span> which is <span class="math display">\[
-    \vec{K}\cdot\vec{K} = k_\mu k^\mu = \left(\frac{\omega}{c}\right)^2 - {\underline k}\cdot{\underline k}.
+    \vec{K}\cdot\vec{K} = k_\mu k^\mu = \left(\frac{\omega}{c}\right)^2 - {\boldsymbol{k}}\cdot{\boldsymbol{k}}.
 \]</span> If <span class="math inline">\(k_\mu k^\mu &gt; 0\)</span> it tell us <span class="math inline">\(\vec{K}\)</span> is time-like, if <span class="math inline">\(k_\mu k^\mu = 0\)</span> then it is light-like, or if <span class="math inline">\(k_\mu k^\mu &lt; 0\)</span> it is space-like.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
@@ -488,16 +488,16 @@ Types of plane-waves
     \partial_\mu\partial^\mu \varphi(x) = (ik^\mu)(ik_\mu)\varphi(x) = -k_\mu k^\mu \varphi(x) = 0.
 \]</span> Given the plane-wave <span class="math inline">\(\varphi(x) \neq 0\)</span> unless its amplitude <span class="math inline">\(a = 0\)</span> it can only be a general solution to the wave-equation if <span class="math inline">\(k_\mu k^\mu = 0\)</span>. Hence the 4-wave-vector must be a lightlike 4-vector.</p>
 <p>This implies that the wave solutions to the wave-equation are controlled by the dispersion relation <span id="eq-wave_dispersion"><span class="math display">\[
-    k_\mu k^\mu = \left(\frac{\omega}{c}\right)^2 - \underline{k}\cdot\underline{k} = \left(\frac{\omega}{c}\right)^2 - |\underline{k}|^2 = 0,
+    k_\mu k^\mu = \left(\frac{\omega}{c}\right)^2 - \boldsymbol{k}\cdot\boldsymbol{k} = \left(\frac{\omega}{c}\right)^2 - |\boldsymbol{k}|^2 = 0,
 \tag{8.3}\]</span></span> or more compactly <span class="math display">\[
-    \omega = \pm c|\underline{k}|.
-\]</span> If we applied the Einstein-Planck relation <span class="math inline">\(\mathcal{E} = \hbar\omega\)</span> and the de-Broglie relation <span class="math inline">\(\underline{p} = \hbar\underline{k}\)</span> embodying wave-particle duality in quantum mechanics then we see that the dispersion relation <a href="#eq-wave_dispersion" class="quarto-xref">Equation&nbsp;<span>8.3</span></a> becomes <span class="math inline">\(\mathcal{E}^2 = p^2c^2\)</span>. This is the relativistic energy-momentum relation for a massless particle and consistent with the fact that plane-wave solutions of the wave-equation have a wave speed of <span class="math inline">\(c\)</span>.</p>
+    \omega = \pm c|\boldsymbol{k}|.
+\]</span> If we applied the Einstein-Planck relation <span class="math inline">\(\mathcal{E} = \hbar\omega\)</span> and the de-Broglie relation <span class="math inline">\(\boldsymbol{p} = \hbar\boldsymbol{k}\)</span> embodying wave-particle duality in quantum mechanics then we see that the dispersion relation <a href="#eq-wave_dispersion" class="quarto-xref">Equation&nbsp;<span>8.3</span></a> becomes <span class="math inline">\(\mathcal{E}^2 = p^2c^2\)</span>. This is the relativistic energy-momentum relation for a massless particle and consistent with the fact that plane-wave solutions of the wave-equation have a wave speed of <span class="math inline">\(c\)</span>.</p>
 <div class="page-columns page-full"><p>Consider the modified wave-equation <span id="eq-kg_eq"><span class="math display">\[
     \left(\partial_\nu\partial^\nu + \alpha\right)\varphi(x) = 0,
 \tag{8.4}\]</span></span> where <span class="math inline">\(\alpha&gt;0\)</span> is a Lorentz scalar. Inserting a plane-wave into <a href="#eq-kg_eq" class="quarto-xref">Equation&nbsp;<span>8.4</span></a> now gives <span class="math display">\[
      \left(-k_\mu k^\mu + \alpha\right)\varphi(x) = 0.
 \]</span> and so plane-wave solutions require that <span class="math inline">\(k_\mu k^\mu = \alpha &gt; 0\)</span>, meaning they have time-like 4-wave-vector. Identifying <span class="math inline">\(\alpha = m^2c^2/\hbar^2\)</span> makes <a href="#eq-kg_eq" class="quarto-xref">Equation&nbsp;<span>8.4</span></a> the Klein-Gordon equation describing particle with mass <span class="math inline">\(m&gt;0\)</span>. The dispersion relation then becomes <span id="eq-kg_wave_dispersion"><span class="math display">\[
-  (\hbar\omega)^2 = |\hbar\underline{k}|^2c^2 + m^2c^4, \quad \implies \quad \mathcal{E}^2 = p^2c^2 + m^2c^4,
+  (\hbar\omega)^2 = |\hbar\boldsymbol{k}|^2c^2 + m^2c^4, \quad \implies \quad \mathcal{E}^2 = p^2c^2 + m^2c^4,
 \tag{8.5}\]</span></span> and hence obeys the relativistic energy-momentum relation for a massive particle.  It is worth contrasting that plane-waves with space-like 4-wave-vectors are not solutions to any causal, stable relativistic wave equation. They do not describe propagating waves and instead arise as solutions of Poisson type equations.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">We will briefly consider quantum wave-equations at the end of this course (non-examinable). One issue which is apparent here already is that <span class="math inline">\(\mathcal{E} = \pm \sqrt{p^2c^2+m^2c^4}\)</span> admits both positive and negative solutions. This is no issue for an angular frequency of a classical wave but once ascribed to the energy of a particle serious problems arise.</span></div></div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
@@ -538,7 +538,7 @@ Types of plane-waves
 </section>
 <section id="field-describing-a-fluid" class="level2 page-columns page-full" data-number="8.3">
 <h2 data-number="8.3" class="anchored" data-anchor-id="field-describing-a-fluid"><span class="header-section-number">8.3</span> Field describing a fluid</h2>
-<p>Fields don’t have to be Lorentz scalar, they can be any covariant object such as a 4-vector <span class="math inline">\(\vec{A}(\vec{X})\)</span> or tensor <span class="math inline">\({\boldsymbol T}(\vec{X})\)</span>. The field is now described by components in a given frame, e.g.&nbsp;<span class="math inline">\(A^\mu(x)\)</span> or <span class="math inline">\(T^{\mu\nu}(x)\)</span>, and their value at any given point in space-time does <strong>not</strong> have to be agreed upon by all observers. Instead the components of the field should transform appropriately between frames as <span class="math display">\[
+<p>Fields don’t have to be Lorentz scalar, they can be any covariant object such as a 4-vector <span class="math inline">\(\vec{A}(\vec{X})\)</span> or tensor <span class="math inline">\(\pmb{\symbb{T}}(\vec{X})\)</span>. The field is now described by components in a given frame, e.g.&nbsp;<span class="math inline">\(A^\mu(x)\)</span> or <span class="math inline">\(T^{\mu\nu}(x)\)</span>, and their value at any given point in space-time does <strong>not</strong> have to be agreed upon by all observers. Instead the components of the field should transform appropriately between frames as <span class="math display">\[
     A^{\bar \mu}({\bar x}) = \Lambda^{\bar \mu}_\nu A^\nu(x), \quad T^{\bar{\mu}\bar{\nu}}({\bar x}) = \Lambda^{\bar \mu}_\sigma \Lambda^{\bar \nu}_\kappa T^{\sigma\kappa}(x).
 \]</span> An inituitive example of a 4-vector field is to imagine space is filled with a continuous fluid of particles and <span class="math inline">\(\vec{U}(\vec{X})\)</span> represents the 4-velocity of all particles inside an infinitesmal volume around the point <span class="math inline">\(\vec{X}\)</span>. Being a 4-velocity means that it obeys <span class="math display">\[
     \vec{U}(\vec{X})\cdot\vec{U}(\vec{X}) = 1, \quad \forall \vec{X}.
@@ -621,9 +621,9 @@ showing that the density in any other frame <span class="math inline">\(S\)</spa
 </section>
 <section id="particle-current-density-and-the-continuity-equation" class="level2" data-number="8.4">
 <h2 data-number="8.4" class="anchored" data-anchor-id="particle-current-density-and-the-continuity-equation"><span class="header-section-number">8.4</span> Particle current density and the continuity equation</h2>
-<p>For a non-relativistic fluid with density <span class="math inline">\(\rho({\underline r},t)\)</span> and 3-velocity field <span class="math inline">\({\underline v}({\underline r},t)\)</span> then we can form a 3-current density field as <span class="math display">\[
-    {\underline j}({\underline r},t) = \rho({\underline r},t)\,{\underline v}({\underline r},t).
-\]</span> From this computing <span class="math inline">\({\underline j}({\underline r},t)\cdot d {\underline A}\)</span> gives the flux of particles crossing an area <span class="math inline">\(d {\underline A}\)</span> per unit time. The relativistic generalisation of this quantity is the 4-current density <span id="eq-4curr"><span class="math display">\[
+<p>For a non-relativistic fluid with density <span class="math inline">\(\rho({\boldsymbol{r}},t)\)</span> and 3-velocity field <span class="math inline">\({\boldsymbol{v}}({\boldsymbol{r}},t)\)</span> then we can form a 3-current density field as <span class="math display">\[
+    {\boldsymbol{j}}({\boldsymbol{r}},t) = \rho({\boldsymbol{r}},t)\,{\boldsymbol{v}}({\boldsymbol{r}},t).
+\]</span> From this computing <span class="math inline">\({\boldsymbol{j}}({\boldsymbol{r}},t)\cdot d {\boldsymbol{A}}\)</span> gives the flux of particles crossing an area <span class="math inline">\(d {\boldsymbol{A}}\)</span> per unit time. The relativistic generalisation of this quantity is the 4-current density <span id="eq-4curr"><span class="math display">\[
     \vec{j}(\vec{X}) = \rho_0(\vec{X})\vec{U}({\vec X})c.
 \tag{8.7}\]</span></span> We have to include a factor of <span class="math inline">\(c\)</span> to ensure the correct units since <span class="math inline">\(\vec{U}({\vec X})\)</span> is dimensionless. Since <span class="math inline">\(\vec{j}(\vec{X})\)</span> is constructed from Lorentz scalars multiplying a 4-vector field <span class="math inline">\(\vec{U}({\vec X})\)</span> then it is also a genuine 4-vector field.</p>
 <p>Evaluating the 4-current density in the comoving frame <span class="math inline">\(\bar S\)</span> at <span class="math inline">\(\vec{X}\)</span> we get <span class="math display">\[
@@ -631,24 +631,24 @@ j^{\bar \mu}(\vec{X}) = \rho_0(\vec{X})c\left(\begin{array}{c} 1 \\
 0\\
 0\\
 0 \end{array}\right),
-\]</span> Since frame <span class="math inline">\(S\)</span> is travelling <span class="math inline">\({\underline v}(\vec{X})\)</span> relative to <span class="math inline">\(\bar S\)</span> then we can write the 4-current density in <span class="math inline">\(S\)</span> as <span class="math display">\[
+\]</span> Since frame <span class="math inline">\(S\)</span> is travelling <span class="math inline">\({\boldsymbol{v}}(\vec{X})\)</span> relative to <span class="math inline">\(\bar S\)</span> then we can write the 4-current density in <span class="math inline">\(S\)</span> as <span class="math display">\[
 j^{\bar \mu}(\vec{X}) = \rho_0(\vec{X})c\left(\begin{array}{c} \gamma \\
-\gamma{\underline v}(\vec{X})/c\end{array}\right) = \left(\begin{array}{c} \gamma \rho_0(\vec{X})c \\
-\gamma \rho_0(\vec{X}){\underline v}(\vec{X})\end{array}\right) = \left(\begin{array}{c} \rho(\vec{X})c \\
-\rho(\vec{X}){\underline v}(\vec{X})\end{array}\right),
+\gamma{\boldsymbol{v}}(\vec{X})/c\end{array}\right) = \left(\begin{array}{c} \gamma \rho_0(\vec{X})c \\
+\gamma \rho_0(\vec{X}){\boldsymbol{v}}(\vec{X})\end{array}\right) = \left(\begin{array}{c} \rho(\vec{X})c \\
+\rho(\vec{X}){\boldsymbol{v}}(\vec{X})\end{array}\right),
 \]</span> after identifying the density <span class="math inline">\(\rho(\vec{X})\)</span> in frame <span class="math inline">\(S\)</span>. The general form for a 4-current density is then <span id="eq-4curr-gen"><span class="math display">\[
 j^{\bar \mu}(\vec{X}) = \left(\begin{array}{c} \rho(\vec{X})c \\
-{\underline j}(\vec{X})\end{array}\right),
-\tag{8.8}\]</span></span> where <span class="math inline">\({\underline j}(\vec{X})\)</span> is the 3-current density.</p>
-<p>For low energies (below pair creation) we expect the conservation of particle number for the fluid. This means that any frame <span class="math inline">\(S\)</span> the flux of particles into and out of the frame’s volume element <span class="math inline">\(\delta V\)</span> described by <span class="math inline">\({\underline j}({\underline r},t)\)</span> controls the rate of change of density <span class="math inline">\(\rho({\underline r},t)\)</span> in that volume.</p>
+{\boldsymbol{j}}(\vec{X})\end{array}\right),
+\tag{8.8}\]</span></span> where <span class="math inline">\({\boldsymbol{j}}(\vec{X})\)</span> is the 3-current density.</p>
+<p>For low energies (below pair creation) we expect the conservation of particle number for the fluid. This means that any frame <span class="math inline">\(S\)</span> the flux of particles into and out of the frame’s volume element <span class="math inline">\(\delta V\)</span> described by <span class="math inline">\({\boldsymbol{j}}({\boldsymbol{r}},t)\)</span> controls the rate of change of density <span class="math inline">\(\rho({\boldsymbol{r}},t)\)</span> in that volume.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/continuity.png" class="img-fluid figure-img" width="200"></p>
-<figcaption>The density <span class="math inline">\(\rho(\vec{X})\)</span> inside the volume element <span class="math inline">\(\delta V\)</span> at <span class="math inline">\(\vec{X}\)</span> depicted here for 1+3D space-time can only change if the 3-current density <span class="math inline">\({\underline j}(\vec{X})\)</span> has a non-zero flux across the boundaries of the volume.</figcaption>
+<figcaption>The density <span class="math inline">\(\rho(\vec{X})\)</span> inside the volume element <span class="math inline">\(\delta V\)</span> at <span class="math inline">\(\vec{X}\)</span> depicted here for 1+3D space-time can only change if the 3-current density <span class="math inline">\({\boldsymbol{j}}(\vec{X})\)</span> has a non-zero flux across the boundaries of the volume.</figcaption>
 </figure>
 </div>
 <p>This conservation is described by the continuity equation <span id="eq-continuity_simple"><span class="math display">\[
-    \frac{\partial}{\partial t}\rho({\underline r},t) + \nabla \cdot {\underline j}({\underline r},t) = 0,
+    \frac{\partial}{\partial t}\rho({\boldsymbol{r}},t) + \nabla \cdot {\boldsymbol{j}}({\boldsymbol{r}},t) = 0,
 \tag{8.9}\]</span></span> familiar from electromagnetism. This equation has a very elegant relativistic form. Using <a href="#eq-dmu" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> and <a href="#eq-4curr-gen" class="quarto-xref">Equation&nbsp;<span>8.8</span></a> then <a href="#eq-continuity_simple" class="quarto-xref">Equation&nbsp;<span>8.9</span></a> reduces to <span class="math display">\[
     \partial_\mu j^\mu(\vec{X}) = 0.
 \]</span> Whenever the 4-current field <span class="math inline">\(j^\mu(\vec{X})\)</span> describes the flow of a conserved quantity then it will have zero 4-divergence. In the next part of the course we will repeatedly encounter the continuity equation in this form describing numerous different physical quantities.</p>
@@ -666,12 +666,12 @@ j^{\bar \mu}_{\rm matter}(\vec{X}) \overset{?}{=} \left(\begin{array}{c} mc^2\rh
     j^{\nu}_{\rm matter}(\vec{X}) = \Lambda^\nu_{\bar \mu} j^{\bar \mu}_{\rm matter}(\vec{X}),
 \]</span> then we get <span class="math display">\[
     j^{\mu}_{\rm matter}(\vec{X}) \overset{?}{=} \left(\begin{array}{c} \gamma mc^2\rho_0(\vec{X}) \\
-\gamma m c \rho_0(\vec{X}) {\underline v}(\vec{X})
+\gamma m c \rho_0(\vec{X}) {\boldsymbol{v}}(\vec{X})
 \end{array}\right).
 \]</span> which is incorrect because <span class="math inline">\(\gamma mc^2\rho_0(\vec{X})\)</span> is <strong>not</strong> the energy density in frame <span class="math inline">\(S\)</span>.</p>
 <p>In frame <span class="math inline">\(S\)</span> each particle has energy <span class="math inline">\(\gamma mc^2\)</span> and there is a density <span class="math inline">\(\rho(\vec{X})\)</span>, so the energy of the volume element <span class="math inline">\(\delta V\)</span> is <span class="math inline">\(\mathcal{E}(\vec{X}) = \gamma mc^2\rho(\vec{X})\delta V\)</span>. Writing this in terms of the comoving density using <a href="#eq-density" class="quarto-xref">Equation&nbsp;<span>8.6</span></a> then gives <span class="math inline">\(\mathcal{E}(\vec{X}) = \gamma^2 mc^2\rho_0(\vec{X})\delta V\)</span>. Crucially, we see that it has a factor of <span class="math inline">\(\gamma^2\)</span>, one from the relativistic energy and one from the density enhancement by length contraction. No 4-vector quantity can ever acquire a factor of <span class="math inline">\(\gamma^2\)</span> via a Lorentz transformation.</p>
-<p>What this observation tells us is that energy density must instead be a component of a rank-2 tensor field. This is the stress-energy tensor <span class="math inline">\(\boldsymbol{T}(\vec{X})\)</span>. To finish up let’s consider the simplest possible example – the stress-energy tensor of “dust” given by <span class="math display">\[
-    \boldsymbol{T}_{\rm dust}(\vec{X}) = mc^2\rho_0(\vec{X})\vec{U}({\vec X})\otimes\vec{U}({\vec X}).  
+<p>What this observation tells us is that energy density must instead be a component of a rank-2 tensor field. This is the stress-energy tensor <span class="math inline">\(\pmb{\symbb{T}}(\vec{X})\)</span>. To finish up let’s consider the simplest possible example – the stress-energy tensor of “dust” given by <span class="math display">\[
+    \pmb{\symbb{T}}_{\rm dust}(\vec{X}) = mc^2\rho_0(\vec{X})\vec{U}({\vec X})\otimes\vec{U}({\vec X}).  
 \]</span> In a general frame <span class="math inline">\(S\)</span> it has components <span class="math display">\[
     T^{\mu\nu}_{\rm dust}(\vec{X}) = mc^2\rho_0(\vec{X})U^\mu({\vec X})U^\nu({\vec X}),  
 \]</span><br>
@@ -680,7 +680,7 @@ T^{{\bar \mu}{\bar \nu}}_{\rm dust}(\vec{X}) = \left(\begin{array}{cccc} mc^2\rh
 0 &amp; 0 &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 \\
 0&amp; 0 &amp; 0 &amp; 0 \end{array}\right),
-\tag{8.10}\]</span></span> with the energy density as the time-time component <span class="math inline">\(T^{00}\)</span>. Transforming this tensor into frame <span class="math inline">\(S\)</span> travelling <span class="math inline">\({\underline v} = -v{\underline e}_x\)</span> relative to <span class="math inline">\(\bar S\)</span> gives <span id="eq-vx_dust"><span class="math display">\[
+\tag{8.10}\]</span></span> with the energy density as the time-time component <span class="math inline">\(T^{00}\)</span>. Transforming this tensor into frame <span class="math inline">\(S\)</span> travelling <span class="math inline">\({\boldsymbol{v}} = -v{\boldsymbol{e}}_x\)</span> relative to <span class="math inline">\(\bar S\)</span> gives <span id="eq-vx_dust"><span class="math display">\[
 T^{\mu\nu}_{\rm dust}(\vec{X}) = \left(\begin{array}{cccc} \gamma^2 mc^2\rho_0(\vec{X}) &amp; \gamma^2 mvc\rho_0(\vec{X}) &amp; 0 &amp; 0 \\
 \gamma^2 mvc\rho_0(\vec{X}) &amp; \gamma^2 mv^2\rho_0(\vec{X}) &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 0 \\
@@ -707,9 +707,9 @@ T^{\mu\nu}_{\rm dust}(\vec{X}) = \left(\begin{array}{cccc} \gamma^2 mc^2\rho_0(\
 \gamma\beta &amp; \gamma &amp; 0 &amp; 0 \\
 0 &amp; 0 &amp; 1 &amp; 0 \\
 0 &amp; 0 &amp; 0 &amp; 1 \end{array}\right),
-\]</span> assuming <span class="math inline">\(S\)</span> is moving with a velocity <span class="math inline">\({\underline v} = -v{\underline e}_x\)</span> relative to <span class="math inline">\(\bar{S}\)</span>. Express <a href="#eq-tensor_trans" class="quarto-xref">Equation&nbsp;<span>8.12</span></a> as a matrix multiplication applied to <a href="#eq-comoving_dust" class="quarto-xref">Equation&nbsp;<span>8.10</span></a> and derive the result quoted in <a href="#eq-vx_dust" class="quarto-xref">Equation&nbsp;<span>8.11</span></a>.</p>
+\]</span> assuming <span class="math inline">\(S\)</span> is moving with a velocity <span class="math inline">\({\boldsymbol{v}} = -v{\boldsymbol{e}}_x\)</span> relative to <span class="math inline">\(\bar{S}\)</span>. Express <a href="#eq-tensor_trans" class="quarto-xref">Equation&nbsp;<span>8.12</span></a> as a matrix multiplication applied to <a href="#eq-comoving_dust" class="quarto-xref">Equation&nbsp;<span>8.10</span></a> and derive the result quoted in <a href="#eq-vx_dust" class="quarto-xref">Equation&nbsp;<span>8.11</span></a>.</p>
 <p><strong>4. Energy and momentum fluxes</strong></p>
-<p>Take 1+3D space-time and consider a uniform fluid of particles with number density <span class="math inline">\(n\)</span> all moving in unison with a 3-momentum <span class="math inline">\({\bf p} = m{\bf v}\)</span> and energy <span class="math inline">\(E\)</span> in our frame <span class="math inline">\(S\)</span>. The fluid thus has an energy density <span class="math inline">\(nE\)</span> and a momentum densities <span class="math inline">\(np_x, np_y, np_z\)</span>, in <span class="math inline">\(S\)</span>. Since the particles are moving then both all 4 of these quantities are being transported across space, as described by a flux (amount per unit area per unit time). Now imagine we are monitoring the particles crossing the <span class="math inline">\(x\)</span>-<span class="math inline">\(y\)</span>, <span class="math inline">\(x\)</span>-<span class="math inline">\(z\)</span> and <span class="math inline">\(y\)</span>-<span class="math inline">\(z\)</span> planes in time.</p>
+<p>Take 1+3D space-time and consider a uniform fluid of particles with number density <span class="math inline">\(n\)</span> all moving in unison with a 3-momentum <span class="math inline">\(\boldsymbol{p} = m\boldsymbol{v}\)</span> and energy <span class="math inline">\(E\)</span> in our frame <span class="math inline">\(S\)</span>. The fluid thus has an energy density <span class="math inline">\(nE\)</span> and a momentum densities <span class="math inline">\(np_x, np_y, np_z\)</span>, in <span class="math inline">\(S\)</span>. Since the particles are moving then both all 4 of these quantities are being transported across space, as described by a flux (amount per unit area per unit time). Now imagine we are monitoring the particles crossing the <span class="math inline">\(x\)</span>-<span class="math inline">\(y\)</span>, <span class="math inline">\(x\)</span>-<span class="math inline">\(z\)</span> and <span class="math inline">\(y\)</span>-<span class="math inline">\(z\)</span> planes in time.</p>
 <ol type="a">
 <li><p>What is the energy flux across these planes?</p></li>
 <li><p>What is the flux of <span class="math inline">\(y\)</span>-momentum crossing the <span class="math inline">\(y\)</span>-<span class="math inline">\(z\)</span> plane? Argue that for momentum there are 9 quantities describing its flux in 3D space.</p></li>

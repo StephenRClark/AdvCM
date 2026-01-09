@@ -416,7 +416,7 @@ window.Quarto = {
 <p>Armed with basis 4-vectors in <span class="math inline">\(S\)</span> any 4-vector like <span class="math inline">\(\vec{X}\)</span> is expanded as: <span id="eq-4vector-expand"><span class="math display">\[
 \vec{X} = ct\,\vec{e}_{ct} + x\,\vec{e}_x + y\,\vec{e}_y + z\,\vec{e}_z,
 \tag{4.2}\]</span></span> where the expansion coefficients are just the coordinates of the point <span class="math inline">\(X\)</span> where the vector ends, as expected since it starts at <span class="math inline">\(O\)</span>. We can arrange these expansion coefficients of <span class="math inline">\(\vec{X}\)</span> in the basis of <span class="math inline">\(S\)</span> into a column vector as: <span class="math display">\[
-{\underline X} = \left(
+{\boldsymbol{X}} = \left(
 \begin{array}{c}
   ct \\
   x \\
@@ -425,15 +425,15 @@ window.Quarto = {
 \end{array}\right) = \left(
 \begin{array}{c}
   ct \\
-  {\underline r}
+  {\boldsymbol{r}}
 \end{array}\right),
-\]</span> Notice that we have introduced a new symbol <span class="math inline">\(\underline X\)</span> for this column vector, and also used <span class="math inline">\({\underline r} = (x,y,z)^{\rm T}\)</span> which is the conventional position column vector in 3D space. This is because <span class="math inline">\(\underline X\)</span> is a concrete representation of the geometrical 4-vector <span class="math inline">\(\vec{X}\)</span> in a particular frame <span class="math inline">\(S\)</span>. The distinction is highlighted by obtaining another representation of <span class="math inline">\(\vec{X}\)</span> in frame <span class="math inline">\(\bar{S}\)</span> via a Lorentz transformation as <span class="math display">\[\left(
+\]</span> Notice that we have introduced a new symbol <span class="math inline">\(\boldsymbol{X}\)</span> for this column vector, and also used <span class="math inline">\({\boldsymbol{r}} = (x,y,z)^{\rm T}\)</span> which is the conventional position column vector in 3D space. This is because <span class="math inline">\(\boldsymbol{X}\)</span> is a concrete representation of the geometrical 4-vector <span class="math inline">\(\vec{X}\)</span> in a particular frame <span class="math inline">\(S\)</span>. The distinction is highlighted by obtaining another representation of <span class="math inline">\(\vec{X}\)</span> in frame <span class="math inline">\(\bar{S}\)</span> via a Lorentz transformation as <span class="math display">\[\left(
 \begin{array}{c}
   c\bar{t} \\
   \bar{x} \\
   \bar{y} \\
   \bar{z}
-\end{array}\right) = \underline{\underline \Lambda}\left(
+\end{array}\right) = \mathbf{\Lambda}\left(
 \begin{array}{c}
   ct \\
   x \\
@@ -441,39 +441,39 @@ window.Quarto = {
   z
 \end{array}\right).
 \]</span> or more compactly <span class="math display">\[
-\underline{\bar{X}} = \underline{\underline \Lambda}\,{\underline X},
-\]</span> where <span class="math inline">\(\underline{\underline \Lambda}\)</span> is a <span class="math inline">\(4 \times 4\)</span> matrix describing the Lorentz transformation. As a result we have two different column vectors <span class="math inline">\(\underline X\)</span> and <span class="math inline">\(\underline{\bar{X}}\)</span> representing the same geometrical 4-vector <span class="math inline">\(\vec{X}\)</span>.</p>
+\bar{\boldsymbol{X}} = \mathbf{\Lambda}\,{\boldsymbol{X}},
+\]</span> where <span class="math inline">\(\mathbf{\Lambda}\)</span> is a <span class="math inline">\(4 \times 4\)</span> matrix describing the Lorentz transformation. As a result we have two different column vectors <span class="math inline">\(\boldsymbol{X}\)</span> and <span class="math inline">\(\bar{\boldsymbol{X}}\)</span> representing the same geometrical 4-vector <span class="math inline">\(\vec{X}\)</span>.</p>
 </section>
 <section id="sec-metric" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="sec-metric"><span class="header-section-number">4.2</span> Minkowski metric</h2>
-<p>In 3D Euclidean space we can compute the length squared of any 3-vector <span class="math inline">\(\vec{r}\)</span> using a quadratic form involving its column vector representation <span class="math inline">\(\underline r\)</span> in some coordinate system as: <span class="math display">\[
-||\vec{r}||^2 = {\underline r}^{\rm T}{\underline r} = x^2 + y^2 + z^2.
+<p>In 3D Euclidean space we can compute the length squared of any 3-vector <span class="math inline">\(\vec{r}\)</span> using a quadratic form involving its column vector representation <span class="math inline">\(\boldsymbol{r}\)</span> in some coordinate system as: <span class="math display">\[
+||\vec{r}||^2 = {\boldsymbol{r}}^{\rm T}{\boldsymbol{r}} = x^2 + y^2 + z^2.
 \]</span> In Minkowski 1+3D space-time the equivalent expression for a 4-vector <span class="math inline">\(\vec{X}\)</span> in frame <span class="math inline">\(S\)</span> is: <span class="math display">\[
-||\vec{X}||^2 = {\underline X}^{\rm T}\,\underline{\underline \eta}\,{\underline X} = (ct)^2 - x^2 - y^2 - z^2,
+||\vec{X}||^2 = {\boldsymbol{X}}^{\rm T}\,\boldsymbol{\eta}\,{\boldsymbol{X}} = (ct)^2 - x^2 - y^2 - z^2,
 \]</span> where we now have to sandwich a <span class="math inline">\(4\times 4\)</span> diagonal matrix <span id="eq-metric"><span class="math display">\[
-\underline{\underline \eta} = \left(\begin{array}{cccc}
+\boldsymbol{\eta} = \left(\begin{array}{cccc}
   1 &amp; 0 &amp; 0 &amp; 0 \\
   0 &amp; -1 &amp; 0 &amp; 0 \\
   0 &amp; 0 &amp; -1 &amp; 0 \\
   0 &amp; 0 &amp; 0 &amp; -1
 \end{array}\right) = {\rm diag}(1,-1,-1,-1),
-\tag{4.3}\]</span></span> in the middle of the form. The matrix <span class="math inline">\(\underline{\underline{\eta}}\)</span> is called the <em>Minkowski metric</em>.</p>
-<p>An important class of transformation in 3D Euclidean space which connect different coordinates systems are rotations given in general by <span class="math inline">\(3\times 3\)</span> matrix <span class="math inline">\(\underline{\underline  R}\)</span>. For example, a rotation about the <span class="math inline">\(x\)</span> axis by an angle <span class="math inline">\(\theta\)</span> is: <span class="math display">\[
-\underline{\underline{R_x}}(\theta) = \left(\begin{array}{cccc}
+\tag{4.3}\]</span></span> in the middle of the form. The matrix <span class="math inline">\(\boldsymbol{\eta}\)</span> is a representation of the <em>Minkowski metric</em>.</p>
+<p>An important class of transformation in 3D Euclidean space which connect different coordinates systems are rotations given in general by <span class="math inline">\(3\times 3\)</span> matrix <span class="math inline">\(\mathbf{R}\)</span>. For example, a rotation about the <span class="math inline">\(x\)</span> axis by an angle <span class="math inline">\(\theta\)</span> is: <span class="math display">\[
+\mathbf{R}_x(\theta) = \left(\begin{array}{cccc}
   1 &amp; 0 &amp; 0 \\
   0 &amp; \cos(\theta) &amp; \sin(\theta) \\
   0 &amp; -\sin(\theta) &amp; \cos(\theta)
 \end{array}\right).
-\]</span> So if <span class="math inline">\(\vec{r}\)</span> has a representation <span class="math inline">\(\underline r\)</span> in one coorindate system is has a representation <span class="math display">\[
-\underline{\bar{r}} = \underline{\underline R} \, {\underline r},
+\]</span> So if <span class="math inline">\(\vec{r}\)</span> has a representation <span class="math inline">\(\boldsymbol{r}\)</span> in one coorindate system is has a representation <span class="math display">\[
+\bar{\boldsymbol{r}} = \mathbf{R} \, {\boldsymbol{r}},
 \]</span> in another that is rotated with respect to it. Yet changing the coordinate system should not alter the length we compute of the geometrical vector <span class="math inline">\(\vec{r}\)</span> so <span class="math display">\[
-||\vec{r}||^2 = \underline{\bar r}^{\rm T}\underline{\bar r} = {\underline r}^{\rm T}\underline{\underline R}^T\underline{\underline R}\,{\underline r} = {\underline r}^{\rm T}{\underline r}.
-\]</span> The last equality can only be true for all <span class="math inline">\(\vec{r}\)</span> if <span class="math inline">\(\underline{\underline R}^T\underline{\underline R} = \mathbb{1}\)</span>, where <span class="math inline">\(\mathbb{1}\)</span> is the <span class="math inline">\(3\times 3\)</span> identity matrix, which in this context is the <em>Euclidean metric</em>. This constraint tell us that rotation matrices <span class="math inline">\(\underline{\underline{R}}\)</span> are orthogonal.</p>
-<p>Lorentz transformations are <span class="math inline">\(4\times 4\)</span> matrices <span class="math inline">\(\underline{\underline \Lambda}\)</span> in 1+3D space-time defined similarly as transformations which preserve the length of 4-vectors. We know that the value of the space-time interval <span class="math inline">\(\Delta S^2(O,X)\)</span> is invariant and agreed upon by all inertial observers. However, we also know in frame <span class="math inline">\(\bar S\)</span> that <span class="math inline">\(\Delta S^2(O,X)\)</span> is given by the exactly same mathematical form <span class="math inline">\((c\,{\rm time})^2 - {\rm space}^2\)</span> as in <a href="#eq-space-time-interval" class="quarto-xref">Equation&nbsp;<span>4.1</span></a> so: <span class="math display">\[
-||\vec{X}||^2 = \Delta S^2(O,X) = \underline{\bar{X}}^{\rm T}\,\underline{\underline \eta}\,\underline{\bar{X}} = (c\bar{t})^2 - {\bar x}^2 - {\bar y}^2 - {\bar z}^2,
-\]</span> Consequently, the <strong>same</strong> metric <span class="math inline">\(\underline{\underline \eta}\)</span> given in <a href="#eq-metric" class="quarto-xref">Equation&nbsp;<span>4.3</span></a> applies to every inertial frame. The invariance of the length gives us an important constraint on Lorentz transformations <span class="math inline">\(\underline{\underline \Lambda}\)</span> as: <span class="math display">\[
-||\vec{X}||^2 = \underline{\bar{X}}^{\rm T}\,\underline{\underline \eta}\,\underline{\bar{X}} = {\underline X}^{\rm T}\,\underline{\underline \Lambda}^T\,\underline{\underline \eta}\,\underline{\underline \Lambda}\,{\underline X} = {\underline X}^{\rm T}\,\underline{\underline \eta}\,{\underline X}.
-\]</span> The last equality can only be true for all <span class="math inline">\(\vec{X}\)</span> if Lorentz transformations obey <span class="math inline">\(\underline{\underline \Lambda}^T\,\underline{\underline \eta}\,\underline{\underline \Lambda} = \underline{\underline \eta}\)</span>. Our previous constraint on the orthogonality of rotations in 3D has the same form of a conjugation of the metric <span class="math inline">\(\underline{\underline R}^T\,\mathbb{1}\,\underline{\underline R} = \mathbb{1}\)</span>.</p>
+||\vec{r}||^2 = \bar{\boldsymbol{r}}^{\rm T}\bar{\boldsymbol{r}} = {\boldsymbol{r}}^{\rm T}\mathbf{R}^T\mathbf{R}\,{\boldsymbol{r}} = {\boldsymbol{r}}^{\rm T}{\boldsymbol{r}}.
+\]</span> The last equality can only be true for all <span class="math inline">\(\vec{r}\)</span> if <span class="math inline">\(\mathbf{R}^T\mathbf{R} = \mathbb{1}\)</span>, where <span class="math inline">\(\mathbb{1}\)</span> is the <span class="math inline">\(3\times 3\)</span> identity matrix, which in this context is the <em>Euclidean metric</em>. This constraint tell us that rotation matrices <span class="math inline">\(\mathbf{R}\)</span> are orthogonal.</p>
+<p>Lorentz transformations are <span class="math inline">\(4\times 4\)</span> matrices <span class="math inline">\(\mathbf{\Lambda}\)</span> in 1+3D space-time defined similarly as transformations which preserve the length of 4-vectors. We know that the value of the space-time interval <span class="math inline">\(\Delta S^2(O,X)\)</span> is invariant and agreed upon by all inertial observers. However, we also know in frame <span class="math inline">\(\bar S\)</span> that <span class="math inline">\(\Delta S^2(O,X)\)</span> is given by the exactly same mathematical form <span class="math inline">\((c\,{\rm time})^2 - {\rm space}^2\)</span> as in <a href="#eq-space-time-interval" class="quarto-xref">Equation&nbsp;<span>4.1</span></a> so: <span class="math display">\[
+||\vec{X}||^2 = \Delta S^2(O,X) = \bar{\boldsymbol{X}}^{\rm T}\,\boldsymbol{\eta}\,\bar{\boldsymbol{X}} = (c\bar{t})^2 - {\bar x}^2 - {\bar y}^2 - {\bar z}^2,
+\]</span> Consequently, the <strong>same</strong> metric <span class="math inline">\(\boldsymbol{\eta}\)</span> given in <a href="#eq-metric" class="quarto-xref">Equation&nbsp;<span>4.3</span></a> applies to every inertial frame. The invariance of the length gives us an important constraint on Lorentz transformations <span class="math inline">\(\mathbf{\Lambda}\)</span> as: <span class="math display">\[
+||\vec{X}||^2 = \bar{\boldsymbol{X}}^{\rm T}\,\boldsymbol{\eta}\,\bar{\boldsymbol{X}} = {\boldsymbol{X}}^{\rm T}\,\mathbf{\Lambda}^T\,\boldsymbol{\eta}\,\mathbf{\Lambda}\,{\boldsymbol{X}} = {\boldsymbol{X}}^{\rm T}\,\boldsymbol{\eta}\,{\boldsymbol{X}}.
+\]</span> The last equality can only be true for all <span class="math inline">\(\vec{X}\)</span> if Lorentz transformations obey <span class="math inline">\(\mathbf{\Lambda}^T\,\boldsymbol{\eta}\,\mathbf{\Lambda} = \boldsymbol{\eta}\)</span>. Our previous constraint on the orthogonality of rotations in 3D has the same form of a conjugation of the metric <span class="math inline">\(\mathbf{R}^T\,\mathbb{1}\,\mathbf{R} = \mathbb{1}\)</span>.</p>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -488,11 +488,11 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <p><strong>1. Determinant of Lorentz transformations</strong></p>
 <p>We saw already in <a href="#eq-metric" class="quarto-xref">Equation&nbsp;<span>4.3</span></a> that the Minkowski metric in 1+3D is represented by the diagonal matrix <span class="math display">\[
-\underline{\underline \eta} = \left(\begin{array}{cc}
+\boldsymbol{\eta} = \left(\begin{array}{cc}
   1 &amp; {\underline 0} \\
   {\underline 0} &amp; -\mathbb{1}
 \end{array}\right),
-\]</span> show that the invariance of the Minkowski metric under Lorentz transformation <span class="math inline">\(\underline{\underline \Lambda}^T\,\underline{\underline \eta}\,\underline{\underline \Lambda} = \underline{\underline \eta}\)</span> implies that the determinant of a general Lorentz transformation matrix <span class="math inline">\(\underline{\underline \Lambda}\)</span> must be <span class="math inline">\(\pm 1\)</span>.</p>
+\]</span> show that the invariance of the Minkowski metric under Lorentz transformation <span class="math inline">\(\mathbf{\Lambda}^T\,\boldsymbol{\eta}\,\mathbf{\Lambda} = \boldsymbol{\eta}\)</span> implies that the determinant of a general Lorentz transformation matrix <span class="math inline">\(\mathbf{\Lambda}\)</span> must be <span class="math inline">\(\pm 1\)</span>.</p>
 </div>
 </div>
 </div>
@@ -517,36 +517,36 @@ window.Quarto = {
 <section id="lorentz-transformations-in-13d" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="lorentz-transformations-in-13d"><span class="header-section-number">4.3</span> Lorentz transformations in 1+3D</h2>
 <p>Let’s consider some special cases of Lorentz transformations. The simplest is a spatial rotation <span class="math display">\[
-\underline{\underline{\Lambda_R}} = \left(\begin{array}{cccc}
+\boldsymbol{\Lambda}_R = \left(\begin{array}{cccc}
   1 &amp; 0 &amp; 0 &amp; 0 \\
   0 &amp; - &amp; - &amp; - \\
-  0 &amp; - &amp; \underline{\underline R} &amp; - \\
+  0 &amp; - &amp; \mathbf{R} &amp; - \\
   0 &amp; - &amp; - &amp; -
 \end{array}\right),
 \]</span> which does nothing to time but rotates in space. In this case preservation of Euclidean distances in space alone ensures the space-time interval is also preserved since: <span class="math display">\[
 \begin{align}
-    ||\vec{X}||^2 &amp;= \underline{\bar{X}}^{\rm T}\,\underline{\underline \eta}\,\underline{\bar{X}}, \\
-    &amp; = (ct)^2 - {\underline r}^{\rm T}\underline{\underline R}^T\underline{\underline R}\,{\underline r}, \\
-    &amp; = (ct)^2 - {\underline r}^{\rm T}{\underline r}, \\
-    &amp; = {\underline X}^{\rm T}\,\underline{\underline \eta}\,{\underline X},
+    ||\vec{X}||^2 &amp;= \underline{\bar{X}}^{\rm T}\,\boldsymbol{\eta}\,\underline{\bar{X}}, \\
+    &amp; = (ct)^2 - {\boldsymbol{r}}^{\rm T}\mathbf{R}^T\mathbf{R}\,{\boldsymbol{r}}, \\
+    &amp; = (ct)^2 - {\boldsymbol{r}}^{\rm T}{\boldsymbol{r}}, \\
+    &amp; = {\boldsymbol{X}}^{\rm T}\,\boldsymbol{\eta}\,{\boldsymbol{X}},
 \end{align}
 \]</span> In the first two lectures we derived a Lorentz boost in 1+1D space-time. The boost by <span class="math inline">\(\beta\)</span> along the <span class="math inline">\(x\)</span>-axis in 1+3D is then: <span class="math display">\[
-\underline{\underline \Lambda}(\beta\vec{e}_x) = \left(\begin{array}{cccc}
+\mathbf{\Lambda}(\beta\vec{e}_x) = \left(\begin{array}{cccc}
   \gamma(\beta) &amp; -\beta\gamma(\beta) &amp; 0 &amp; 0 \\
   -\beta\gamma(\beta) &amp; \gamma(\beta) &amp; 0 &amp; 0 \\
   0 &amp; 0 &amp; 1 &amp; 0 \\
   0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right),
 \]</span> given by inserting the <span class="math inline">\(2 \times 2\)</span> matrix from earlier into the <span class="math inline">\(ct,x\)</span> rows and columns in the top corner. As we saw in the previous lecture on <a href="./space_time.html#sec-time-length">Minkowski space-time</a> isosurfaces of the space-time interval <span class="math inline">\(\Delta S^2\)</span> have a hyperbolic structure. As a result we can write this boost as a hyperbolic rotation: <span class="math display">\[
-\underline{\underline \Lambda}(\beta\vec{e}_x) = \left(\begin{array}{cccc}
+\mathbf{\Lambda}(\beta\vec{e}_x) = \left(\begin{array}{cccc}
   \cosh(\zeta) &amp; -\sinh(\zeta) &amp; 0 &amp; 0 \\
   -\sinh(\zeta) &amp; \cosh(\zeta) &amp; 0 &amp; 0 \\
   0 &amp; 0 &amp; 1 &amp; 0 \\
   0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right),
 \]</span> where <span class="math inline">\(\zeta = \tanh^{-1}(\beta)\)</span> is the <em>rapidity</em>. We can write <strong>any</strong> Lorentz transformation in 1+3D as a sequence of spatial rotations and boosts along coordinates axes. In particular a boost by <span class="math inline">\(\beta\)</span> along a spatial direction defined by any unit 3-vector <span class="math inline">\(\vec{n}\)</span> can be decomposed as: <span class="math display">\[
-\underline{\underline \Lambda}(\beta\vec{n}) = \underline{\underline{\Lambda_R}}\,\underline{\underline \Lambda}(\beta\vec{e}_x) \underline{\underline{\Lambda_R}}^{-1},
-\]</span> where <span class="math inline">\(\underline{\underline R}^{-1}\)</span> rotates <span class="math inline">\(\vec{n}\)</span> into <span class="math inline">\(\vec{e}_x\)</span>, a boost is applied along the <span class="math inline">\(x\)</span>-axis, and then <span class="math inline">\(\underline{\underline R}\)</span> rotates <span class="math inline">\(\vec{e}_x\)</span> back to <span class="math inline">\(\vec{n}\)</span>.</p>
+\mathbf{\Lambda}(\beta\vec{n}) = \mathbf{\Lambda}_R\,\mathbf{\Lambda}(\beta\vec{e}_x) \mathbf{\Lambda_R}^{-1},
+\]</span> where <span class="math inline">\(\mathbf{R}^{-1}\)</span> rotates <span class="math inline">\(\vec{n}\)</span> into <span class="math inline">\(\vec{e}_x\)</span>, a boost is applied along the <span class="math inline">\(x\)</span>-axis, and then <span class="math inline">\(\mathbf{R}\)</span> rotates <span class="math inline">\(\vec{e}_x\)</span> back to <span class="math inline">\(\vec{n}\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/hyperbolic.png" class="img-fluid figure-img" width="250"></p>
@@ -591,8 +591,8 @@ window.Quarto = {
 </section>
 <section id="index-notation" class="level2 page-columns page-full" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="index-notation"><span class="header-section-number">4.4</span> Index notation</h2>
-<p>Up to now we have used standard matrix-vector formalism to try to compactly handle coordinate transformations. This approach will continue to pop up from time to time in this course, but mostly we will exploit an alternative formalism based on indices. To begin we introduce indices denoted by latin symbols such as <span class="math inline">\(\mu,\nu,\alpha,\tau,\dots\)</span> which take the four values <span class="math inline">\(0 \equiv ct, 1 \equiv x, 2 \equiv y, 3 \equiv z\)</span> over the space-time dimensions. The components of a 4-vector <span class="math inline">\(\vec{X}\)</span> in frame <span class="math inline">\(S\)</span> are contained in the column vector <span class="math inline">\(\underline X\)</span> and we will denote the <span class="math inline">\(\mu\)</span> element of <span class="math inline">\([{\underline X}]_\mu\)</span> as <span class="math inline">\(x^\mu\)</span>. Note, the <span class="math inline">\(\mu\)</span> is an upper index and should <strong>not</strong> be confused with an exponent! More explicitly we have: <span class="math display">\[
-{\underline X} = \left(
+<p>Up to now we have used standard matrix-vector formalism to try to compactly handle coordinate transformations. This approach will continue to pop up from time to time in this course, but mostly we will exploit an alternative formalism based on indices. To begin we introduce indices denoted by latin symbols such as <span class="math inline">\(\mu,\nu,\alpha,\tau,\dots\)</span> which take the four values <span class="math inline">\(0 \equiv ct, 1 \equiv x, 2 \equiv y, 3 \equiv z\)</span> over the space-time dimensions. The components of a 4-vector <span class="math inline">\(\vec{X}\)</span> in frame <span class="math inline">\(S\)</span> are contained in the column vector <span class="math inline">\(\boldsymbol{X}\)</span> and we will denote the <span class="math inline">\(\mu\)</span> element of <span class="math inline">\([{\boldsymbol{X}}]_\mu\)</span> as <span class="math inline">\(x^\mu\)</span>. Note, the <span class="math inline">\(\mu\)</span> is an upper index and should <strong>not</strong> be confused with an exponent! More explicitly we have: <span class="math display">\[
+{\boldsymbol{X}} = \left(
 \begin{array}{c}
   ct \\
   x \\
@@ -615,12 +615,12 @@ window.Quarto = {
 \vec{X} = x^\alpha\,\vec{e}_{\alpha},
 \]</span> also holds. This convention will prove to be very useful for keeping potentially cumbersome expressions compact.</p>
 <p>Perhaps an even more compelling reason to adopt the index formalism is that it signifies more clearly a change in frame. In matrix-vector formalism we have <span class="math display">\[
-\underline{\bar{X}} = \underline{\underline \Lambda}\,{\underline X},
+\bar{\boldsymbol{X}} = \mathbf{\Lambda}\,{\boldsymbol{X}},
 \]</span> which in terms of elements is: <span class="math display">\[
-[\underline{\bar{X}}]_\mu = \sum_{\nu=0}^3[\underline{\underline \Lambda}]_{\mu\nu}[{\underline X}]_\nu.
+[\bar{\boldsymbol{X}}]_\mu = \sum_{\nu=0}^3[\mathbf{\Lambda}]_{\mu\nu}[{\boldsymbol{X}}]_\nu.
 \]</span> In index notation this expression becomes: <span id="eq-index-expand"><span class="math display">\[
 x^{\bar{\mu}} = \Lambda^{\bar{\mu}}_\nu x^\nu,
-\tag{4.6}\]</span></span> where <span class="math inline">\(x^{\bar{\mu}} = [\underline{\bar{X}}]_\bar{\mu}\)</span>, <span class="math inline">\(x^\nu = [{\underline X}]_\nu\)</span> and <span class="math inline">\(\Lambda^{\bar{\mu}}_\nu = [\underline{\underline \Lambda}]_{\bar{\mu}\nu}\)</span>. Quite a few comments are in order about <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a>. For elements of matrices and vectors we conventionally write only lower indices to avoid confusion with exponents and because in linear algebra there is no need to have distinct upper and lower type indices. We have chosen to give the components of 4-vectors <span class="math inline">\(x^\mu\)</span> an upper index, so in <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> consistency with the Einstein convention then requires us to use both upper and lower indices on <span class="math inline">\(\Lambda\)</span>. A useful new bit of notation in <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> is that we have placed a bar above the index <span class="math inline">\(\bar{\mu}\)</span> to denote that the components being indexed over are for frame <span class="math inline">\(\bar S\)</span>. We can take <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> as fundamental and arrive at the following:</p>
+\tag{4.6}\]</span></span> where <span class="math inline">\(x^{\bar{\mu}} = [\bar{\boldsymbol{X}}]_\bar{\mu}\)</span>, <span class="math inline">\(x^\nu = [{\boldsymbol{X}}]_\nu\)</span> and <span class="math inline">\(\Lambda^{\bar{\mu}}_\nu = [\mathbf{\Lambda}]_{\bar{\mu}\nu}\)</span>. Quite a few comments are in order about <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a>. For elements of matrices and vectors we conventionally write only lower indices to avoid confusion with exponents and because in linear algebra there is no need to have distinct upper and lower type indices. We have chosen to give the components of 4-vectors <span class="math inline">\(x^\mu\)</span> an upper index, so in <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> consistency with the Einstein convention then requires us to use both upper and lower indices on <span class="math inline">\(\Lambda\)</span>. A useful new bit of notation in <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> is that we have placed a bar above the index <span class="math inline">\(\bar{\mu}\)</span> to denote that the components being indexed over are for frame <span class="math inline">\(\bar S\)</span>. We can take <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> as fundamental and arrive at the following:</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -637,29 +637,29 @@ a^{\bar{\mu}} = \Lambda^{\bar{\mu}}_\nu a^\nu.
 </div>
 </div>
 <p>Given <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> expresses how components in <span class="math inline">\(\bar S\)</span> are constructed from those in <span class="math inline">\(S\)</span> it is natural to ask how to invert this expansion. In matrix-vector notation we want: <span class="math display">\[
-{\underline X} = \underline{\underline \Lambda}^{-1}\,\underline{\bar{X}},
+{\boldsymbol{X}} = \mathbf{\Lambda}^{-1}\,\bar{\boldsymbol{X}},
 \]</span> The equivalent index expansion for this equation is <span class="math display">\[
 x^{\alpha} = \Lambda^{\alpha}_{\bar \beta} x^{\bar \beta}.
-\]</span> where we have used <span class="math inline">\(\Lambda^{\alpha}_{\bar \beta} = [\underline{\underline \Lambda}^{-1}]_{\alpha\bar{\beta}}\)</span>. We don’t need to distinguish the inverse transformation with a <span class="math inline">\(\circ^{-1}\)</span>. Instead we treat <span class="math inline">\(S\)</span> and <span class="math inline">\(\bar S\)</span> on an equal footing since we can now unambiguously identify what the Lorentz transformation does by examining its indices. Specifically, the upper index is the <em>destination frame</em> and lower index is the <em>originating frame</em> for transformations of 4-vectors. Hence:</p>
+\]</span> where we have used <span class="math inline">\(\Lambda^{\alpha}_{\bar \beta} = [\mathbf{\Lambda}^{-1}]_{\alpha\bar{\beta}}\)</span>. We don’t need to distinguish the inverse transformation with a <span class="math inline">\(\circ^{-1}\)</span>. Instead we treat <span class="math inline">\(S\)</span> and <span class="math inline">\(\bar S\)</span> on an equal footing since we can now unambiguously identify what the Lorentz transformation does by examining its indices. Specifically, the upper index is the <em>destination frame</em> and lower index is the <em>originating frame</em> for transformations of 4-vectors. Hence:</p>
 <ul>
 <li><p>Transform from <span class="math inline">\(S \rightarrow \bar S\)</span> is <span class="math inline">\(\Lambda^{\bar{\mu}}_\nu\)</span>.</p></li>
 <li><p>Transform from <span class="math inline">\({\bar S} \rightarrow S\)</span> is <span class="math inline">\(\Lambda^{\nu}_{\bar \mu}\)</span>.</p></li>
 </ul>
 <div class="page-columns page-full"><p>In matrix-vector notation the transformation from <span class="math inline">\({\bar S} \rightarrow S \rightarrow {\bar S}\)</span> is given by: <span class="math display">\[
 \begin{align}
-    \underline{\underline \Lambda}\,\underline{\underline \Lambda}^{-1} &amp;= \mathbb{1}, \\
-    [\underline{\underline \Lambda}\,\underline{\underline \Lambda}^{-1}]_{\bar{\alpha}\bar{\beta}} &amp;= [\mathbb{1}]_{\bar{\alpha}\bar{\beta}} = \delta_{\bar{\alpha}\bar{\beta}},
+    \mathbf{\Lambda}\,\mathbf{\Lambda}^{-1} &amp;= \mathbb{1}, \\
+    [\mathbf{\Lambda}\,\mathbf{\Lambda}^{-1}]_{\bar{\alpha}\bar{\beta}} &amp;= [\mathbb{1}]_{\bar{\alpha}\bar{\beta}} = \delta_{\bar{\alpha}\bar{\beta}},
 \end{align}
 \]</span> where <span class="math inline">\(\mathbb{1}\)</span> is the <span class="math inline">\(4\times 4\)</span> identity matrix here and <span class="math inline">\(\delta_{\bar{\alpha}\bar{\beta}}\)</span> is the Kronecker delta symbol which is 1 if <span class="math inline">\(\bar{\alpha}=\bar{\beta}\)</span> and zero otherwise. Since we start and end at <span class="math inline">\(\bar S\)</span> indices are all barred and the net effect is the identity, i.e.&nbsp;no change. This converts to an index expression as: <span id="eq-inverse-a"><span class="math display">\[
 \begin{align}
-    \sum_{\mu=0}^3[\underline{\underline \Lambda}]_{{\bar \alpha}\mu}[\underline{\underline \Lambda}^{-1}]_{\mu\bar{\beta}} &amp;= \delta_{\bar{\alpha}\bar{\beta}}, \\
+    \sum_{\mu=0}^3[\mathbf{\Lambda}]_{{\bar \alpha}\mu}[\mathbf{\Lambda}^{-1}]_{\mu\bar{\beta}} &amp;= \delta_{\bar{\alpha}\bar{\beta}}, \\
     &amp;~{\boldsymbol \downarrow}\\
     \Lambda^{\bar \alpha}_\mu \Lambda^\mu_{\bar \beta} &amp;= \delta^\bar{\alpha}_\bar{\beta},
 \end{align}
 \tag{4.7}\]</span></span> The opposite transformation from <span class="math inline">\(S \rightarrow {\bar S} \rightarrow S\)</span> is given by: <span class="math display">\[
 \begin{align}
-    \underline{\underline \Lambda}^{-1}\underline{\underline \Lambda} &amp;= \mathbb{1}, \\
-    [\underline{\underline \Lambda}^{-1}\underline{\underline \Lambda}]_{\alpha\beta} &amp; = \delta_{\alpha\beta}.
+    \mathbf{\Lambda}^{-1}\mathbf{\Lambda} &amp;= \mathbb{1}, \\
+    [\mathbf{\Lambda}^{-1}\mathbf{\Lambda}]_{\alpha\beta} &amp; = \delta_{\alpha\beta}.
 \end{align}
 \]</span> which converts to the index expression: <span id="eq-inverse-b"><span class="math display">\[
 \Lambda^\mu_{\bar \beta}\Lambda^{\bar \beta}_\nu = \delta^\mu_\nu.

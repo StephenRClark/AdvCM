@@ -1,0 +1,1273 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Tensors – Advanced Classical Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./example_class2.html" rel="next">
+<link href="./oneforms.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./oneforms.html">II: Fields and tensors</a></li><li class="breadcrumb-item"><a href="./tensors.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./figures/acm.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Advanced Classical Mechanics</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Advanced-Classical-Mechanics.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended Books</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">I: Special Relativity</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./principle_relativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Principle of relativity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lorentz_transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lorentz transformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./space_time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minkowski space-time</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducing 4-vectors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">II: Fields and tensors</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tensors.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">III: Lagrangian field theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./single_particle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Single-particle Lagrangian</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./symmetries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic 4-potential</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_lagrangian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Lagrangian approach to EM</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 5</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem_sheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem sheets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Epilogue</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#rank-2-tensors" id="toc-rank-2-tensors" class="nav-link active" data-scroll-target="#rank-2-tensors"><span class="header-section-number">6.1</span> Rank-2 tensors</a></li>
+  <li><a href="#the-metric-tensor" id="toc-the-metric-tensor" class="nav-link" data-scroll-target="#the-metric-tensor"><span class="header-section-number">6.2</span> The metric tensor</a></li>
+  <li><a href="#raising-and-lowering-indices" id="toc-raising-and-lowering-indices" class="nav-link" data-scroll-target="#raising-and-lowering-indices"><span class="header-section-number">6.3</span> Raising and lowering indices</a></li>
+  <li><a href="#higher-rank-tensors" id="toc-higher-rank-tensors" class="nav-link" data-scroll-target="#higher-rank-tensors"><span class="header-section-number">6.4</span> Higher rank tensors</a></li>
+  <li><a href="#physics-is-tensorial" id="toc-physics-is-tensorial" class="nav-link" data-scroll-target="#physics-is-tensorial"><span class="header-section-number">6.5</span> Physics is tensorial</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./oneforms.html">II: Fields and tensors</a></li><li class="breadcrumb-item"><a href="./tensors.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this lecture we will meet the most general type of covariant object in the special relativity, the tensor.</p>
+<section id="rank-2-tensors" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="rank-2-tensors"><span class="header-section-number">6.1</span> Rank-2 tensors</h2>
+<p>In the last lecture we expanded our repertoire of geometrical objects by constructing one-forms as linear functionals of 4-vectors. Given one-form <span class="math inline">\(\tilde{Q}\)</span> and 4-vector <span class="math inline">\(\vec{A}\)</span> we obtain a Lorentz scalar <span class="math inline">\(\tilde{Q}(\vec{A})\)</span>. The duality of this construction means that we could eqaually view 4-vectors as linear functionals of one-forms, so we get the same Lorentz scalar as <span class="math inline">\(\vec{A}(\tilde{Q})\)</span>. We can write this more symmetrically as <span class="math inline">\(\langle \tilde{Q}, \vec{A} \rangle\)</span>. Pictorially we can view these two objects as:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/oneform_4-vector.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>A 4-vector <span class="math inline">\(\vec{A}\)</span> takes a oneform <span class="math inline">\(\tilde{Q}\)</span> from its vector space <span class="math inline">\(\mathcal{M}^*\)</span> and maps it to a scalar. Likewise <span class="math inline">\(\tilde{Q}\)</span> can be viewed as mapping <span class="math inline">\(\vec{A}\)</span> to the same scalar.</figcaption>
+</figure>
+</div>
+<p>Using the basis <span class="math inline">\(\vec{e}_\mu\)</span> spanning the vector space <span class="math inline">\(\mathcal{M}\)</span> of 4-vectors we have the expansion <span class="math display">\[
+    \vec{A} = A^\mu\vec{e}_\mu.
+\]</span> The 4-vector basis then generates a biorthonormal basis of one-forms <span class="math inline">\(\tilde{e}^\mu\)</span> obeying <span class="math inline">\(\langle \tilde{e}^\mu, \vec{e}_\nu \rangle = \delta^\mu_\nu\)</span>, from which one-forms are expanded as <span class="math display">\[
+    \tilde{Q} = Q_\mu\tilde{e}^\mu.
+\]</span> The contraction is then <span class="math inline">\(\langle \tilde{Q}, \vec{A} \rangle = Q_\mu A^\mu\)</span>.</p>
+<p>In this lecture we will generalise this construction to more general objects called tensors. Indeed 4-vectors and one-forms are tensors. Specifically, <span class="math display">\[
+\begin{align}
+    \textrm{4-vector} &amp;\equiv \left(\begin{array}{c} 1\\ 0\end{array}\right)~{\rm tensor},\\
+     \textrm{one-form} &amp;\equiv \left(\begin{array}{c} 0\\ 1\end{array}\right)~{\rm tensor},\\
+\end{align}
+\]</span> where the notation <span class="math inline">\(({M \atop N})\)</span> denotes a tensor with <span class="math inline">\(M\)</span> <em>upper</em> 4-vector-like indices, or alternatively an object that ‘eats’ <span class="math inline">\(M\)</span> one-forms, and <span class="math inline">\(N\)</span> <em>lower</em> one-form-like indices, or eats <span class="math inline">\(N\)</span> 4-vectors. We will denote a general tensor as <span class="math inline">\(\pmb{\symbb{T}}\)</span>. The next simplest tensor is rank-2 with 2 indices, for example a type <span class="math inline">\(({0 \atop 2})\)</span> tensor which is a linear functional on two 4-vectors <span class="math display">\[
+\pmb{\symbb{T}}:\vec{A}\in\mathcal{M},\vec{B}\in\mathcal{M} \mapsto a \in \mathbb{R},
+\]</span> and is depicted like this</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/rank02_tensor.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>A rank-2 tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> of type <span class="math inline">\(({0 \atop 2})\)</span> takes an input of two 4-vectors <span class="math inline">\(\vec{A}\)</span> and <span class="math inline">\(\vec{B}\)</span> and maps them to a scalar <span class="math inline">\(\pmb{\symbb{T}}(\vec{A},\vec{B})\)</span>.</figcaption>
+</figure>
+</div>
+<p>Just as with 4-vectors and one-forms we can full determine the action of this linear object by acting it on basis 4-vectors for each of the vector spaces <span class="math inline">\(\mathcal{M}\)</span> it acts on as <span class="math display">\[
+    T_{\alpha\beta} = \pmb{\symbb{T}}(\vec{e}_\alpha,\vec{e}_\beta).
+\]</span> As expected for a type <span class="math inline">\(({0 \atop 2})\)</span> tensor its components have two lower indices. To complete the circle, how can these components reconstruct the geometrical object <span class="math inline">\(\pmb{\symbb{T}}\)</span>? They correspond to how much tensor product basis of one-forms <span class="math inline">\(\tilde{e}^\alpha\otimes\tilde{e}^\beta\)</span> contribute to <span class="math inline">\(\pmb{\symbb{T}}\)</span>. Notice how <span class="math inline">\(\tilde{e}^\alpha\)</span> is a type <span class="math inline">\(({0 \atop 1})\)</span> tensor, as is <span class="math inline">\(\tilde{e}^\beta\)</span>, hence <span class="math inline">\(\tilde{e}^\alpha\otimes\tilde{e}^\beta\)</span> is an elementary type <span class="math inline">\(({0 \atop 2})\)</span> tensor. The components <span class="math inline">\(T_{\alpha\beta}\)</span> then reconstruct the tensor as <span class="math display">\[
+    \pmb{\symbb{T}} = T_{\alpha\beta}\,\tilde{e}^\alpha\otimes\tilde{e}^\beta.
+\]</span> If we now act <span class="math inline">\(\pmb{\symbb{T}}\)</span> on two 4-vectors <span class="math inline">\(\vec{A}\)</span> and <span class="math inline">\(\vec{B}\)</span> we can explicitly compute this as <span class="math display">\[
+\begin{align}
+    \pmb{\symbb{T}}(\vec{A},\vec{B}) &amp;= \pmb{\symbb{T}}(A^\mu\vec{e}_\mu,B^\nu\vec{e}_\nu), \qquad\qquad\quad \textrm{expand 4-vectors}\\
+    &amp;= T_{\alpha\beta}\tilde{e}^\alpha(A^\mu\vec{e}_\mu)\tilde{e}^\beta(B^\nu\vec{e}_\nu), \qquad \textrm{expand tensor}\\
+    &amp;= T_{\alpha\beta}A^\mu B^\nu\tilde{e}^\alpha(\vec{e}_\mu)\tilde{e}^\beta(\vec{e}_\nu), \qquad \textrm{linearity of one-forms}\\
+    &amp;= T_{\alpha\beta}A^\mu B^\nu\delta^\alpha_\mu\delta^\beta_\nu, \qquad\qquad\quad~~ \textrm{biorthonormality}\\
+    &amp;= T_{\alpha\beta}A^\alpha B^\beta.
+\end{align}
+\]</span> The final answer is a proper contraction of lower and upper indices which tells us that <span class="math inline">\(T_{\alpha\beta}A^\alpha B^\beta\)</span> is a Lorentz scalar according to our index rules. This is reassuring since <span class="math inline">\(\pmb{\symbb{T}}(\vec{A},\vec{B})\)</span> is a geometrical quantity based on abstract objects with no reference to any particular reference frame.</p>
+<p>So how do the components of <span class="math inline">\(\pmb{\symbb{T}}\)</span> transform between inertial frames? Since it has two lower indices we can guess immediately that it must be <span id="eq-rank2-transform"><span class="math display">\[
+    T_{\bar{\mu}\bar{\nu}} = \Lambda^\alpha_\bar{\mu}\Lambda^\beta_\bar{\nu}T_{\alpha\beta}.
+\tag{6.1}\]</span></span> You are now invited to show that if this is true it guarantees that <span class="math inline">\(\pmb{\symbb{T}}(\vec{A},\vec{B})\)</span> is a Lorentz scalar.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Transforming a rank-2 tensor</strong></p>
+<p>Use the transformation of a <span class="math inline">\(({0 \atop 2})\)</span> type rank 2 tensor components from <span class="math inline">\(S\)</span> to <span class="math inline">\(\bar S\)</span> in <a href="#eq-rank2-transform" class="quarto-xref">Equation&nbsp;<span>6.1</span></a> to prove that the contraction <span class="math inline">\(T_{\alpha\beta}A^\alpha B^\beta\)</span> is a Lorentz scalar.</p>
+<p><strong>2. Matrix form of rank 2 tensor Lorentz transform</strong></p>
+<p>Write <a href="#eq-rank2-transform" class="quarto-xref">Equation&nbsp;<span>6.1</span></a> in terms of matrices using the convention explained in the last two lectures.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Transforming a rank-2 tensor</strong></p>
+<p>Insert the inverse transform of a 4-vector, e.g.&nbsp;<span class="math inline">\(A^\mu = \Lambda^\mu_\bar{\nu} A^\bar{\nu}\)</span> into the contraction and rearrange to get <span class="math display">\[
+\begin{align}
+    T_{\alpha\beta}A^\alpha B^\beta &amp;= T_{\alpha\beta}\Lambda^\alpha_\bar{\mu}A^\bar{\mu}\Lambda^\beta_\bar{\nu}B^\bar{\nu}, \\
+    &amp;=\left(\Lambda^\alpha_\bar{\mu}\Lambda^\beta_\bar{\nu}T_{\alpha\beta}\right)A^\bar{\mu}B^\bar{\nu}, \\
+    &amp;= T_{\bar{\mu}\bar{\nu}}A^\bar{\mu}B^\bar{\nu},
+\end{align}
+\]</span> where we have identifed from <a href="#eq-rank2-transform" class="quarto-xref">Equation&nbsp;<span>6.1</span></a> the transformed tensor components. The final expression is the same contraction expressed in indices of frame <span class="math inline">\(\bar{S}\)</span> thus establishing its covariance.</p>
+<p><strong>2. Matrix form of rank 2 tensor Lorentz transform</strong></p>
+<p>Solution …</p>
+</div>
+</div>
+</div>
+<p>The analogous reasoning applies to a type <span class="math inline">\(({2 \atop 0})\)</span> tensor which is a linear functional on two one-forms <span class="math display">\[
+\pmb{\symbb{T}}:\tilde{Q}\in\mathcal{M}^*,\tilde{P}\in\mathcal{M}^* \mapsto a \in \mathbb{R},
+\]</span> and is depicted like this</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/rank20_tensor.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>A rank-2 tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> of type <span class="math inline">\(({2 \atop 0})\)</span> takes an input of two one-forms <span class="math inline">\(\tilde{Q}\)</span> and <span class="math inline">\(\tilde{P}\)</span> and maps them to a scalar <span class="math inline">\(\pmb{\symbb{T}}(\tilde{Q},\tilde{P})\)</span>.</figcaption>
+</figure>
+</div>
+<p>Its components are found by acting it on basis one-forms for each of the vector spaces <span class="math inline">\(\mathcal{M}^*\)</span> it acts on as <span class="math display">\[
+    T^{\alpha\beta} = \pmb{\symbb{T}}(\tilde{e}^\alpha,\tilde{e}^\beta),
+\]</span> which then reconstruct it as <span class="math display">\[
+    \pmb{\symbb{T}} = T^{\alpha\beta}\,\vec{e}_\alpha\otimes\vec{e}_\beta.
+\]</span> Acting <span class="math inline">\(\pmb{\symbb{T}}\)</span> on two one-forms <span class="math inline">\(\tilde{Q}\)</span> and <span class="math inline">\(\tilde{P}\)</span> then gives <span class="math display">\[
+    \pmb{\symbb{T}}(\tilde{Q},\tilde{P}) = T^{\alpha\beta}Q_\alpha P_\beta,
+\]</span> and this is a Lorentz scalar since the tensor components transform as <span class="math display">\[
+    T^{\bar{\mu}\bar{\nu}} = \Lambda^{\bar{\mu}}_\alpha\Lambda^{\bar{\nu}}_\beta T^{\alpha\beta}.
+\]</span> This leaves the final possible rank 2 tensor of type <span class="math inline">\(({1 \atop 1})\)</span> tensor which is a linear functional of one one-form and one 4-vector <span class="math display">\[
+\pmb{\symbb{T}}:\tilde{Q}\in\mathcal{M}^*,\tilde{P}\in\mathcal{M}^* \mapsto a \in \mathbb{R},
+\]</span> and is depicted like this</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/rank11_tensor.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>A rank-2 tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> of type <span class="math inline">\(({1 \atop 1})\)</span> takes an input of one one-form <span class="math inline">\(\tilde{Q}\)</span> and one 4-vector <span class="math inline">\(\vec{A}\)</span> and maps them to a scalar <span class="math inline">\(\pmb{\symbb{T}}(\tilde{Q},\vec{A})\)</span>.</figcaption>
+</figure>
+</div>
+<p>It is a matter of convention opting to list the one-form first and the 4-vector second. The components of a type <span class="math inline">\(({1 \atop 1})\)</span> tensor are found by acting it on a basis one-form in <span class="math inline">\(\mathcal{M}^*\)</span> and basis 4-vector in <span class="math inline">\(\mathcal{M}\)</span> as <span class="math display">\[
+    {T^{\alpha}}_{\beta} = \pmb{\symbb{T}}(\tilde{e}^\alpha,\vec{e}_\beta).
+\]</span> An immediate question is why we don’t write the components as <span class="math inline">\(T^\alpha_{\beta}\)</span> or <span class="math inline">\(T^{~~\alpha}_{\beta}\)</span>. In this current context there is no ambiguity about what the indices refer to so any of these forms can be used. However, issues can arise when we start manipulating indices as we will discuss shortly.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Addition, outer and inner multiplication preserve tensorality</strong></p>
+<p>Consider the rank 2 tensors <span class="math inline">\(T_{\mu\nu}\)</span> and <span class="math inline">\(S_{\mu\nu}\)</span> and the 4-vectors <span class="math inline">\(u^\mu\)</span>, <span class="math inline">\(v^\mu\)</span>, i.e.&nbsp;they all transform correctly under appropriate Lorentz transformations.</p>
+<ol type="a">
+<li><p>Show that <span class="math inline">\(R_{\mu\nu} ≡ T_{\mu\nu} + S_{\mu\nu}\)</span> is a type <span class="math inline">\(({0 \atop 2})\)</span> tensor.</p></li>
+<li><p>Show that <span class="math inline">\(W^{\mu\nu} ≡ u^\mu v^\nu\)</span> is a type <span class="math inline">\(({2 \atop 0})\)</span> tensor.</p></li>
+<li><p>Show that the ‘double inner product’ <span class="math inline">\(R_{\mu\nu}W^{\mu\nu}\)</span> is a Lorentz scalar.</p></li>
+</ol>
+<p><strong>4. Symmetry and antisymmetry of rank 2 tensors is an invariant property</strong></p>
+<p>Consider general rank 2 tensors <span class="math inline">\(T_{\mu\nu}\)</span> and <span class="math inline">\(S_{\mu\nu}\)</span></p>
+<ol type="a">
+<li><p>Assume that, in one frame of reference, the tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> is symmetric: <span class="math inline">\(T_{\mu\nu} = T_{\nu\mu}\)</span>. Show that the tensor is symmetric in all inertial frames of reference.</p></li>
+<li><p>Assume that, in one frame of reference, the tensor <span class="math inline">\(\pmb{\symbb{S}}\)</span> is antisymmetric: <span class="math inline">\(S_{\mu\nu} = −S_{\nu\mu}\)</span>. Show that the tensor is antisymmetric in all inertial frames of reference.</p></li>
+</ol>
+<p>This implies that the decomposition of a tensor into its symmetric and antisymmetric parts is <em>physical</em>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Addition, outer and inner multiplication preserve tensorality</strong></p>
+<p>Solution …</p>
+<p><strong>4. Symmetry and antisymmetry of rank 2 tensors is an invariant property</strong></p>
+<p>Solution …</p>
+</div>
+</div>
+</div>
+<p>We can reconstruct the tensor as <span class="math display">\[
+    \pmb{\symbb{T}} = {T^{\alpha}}_{\beta}\,\vec{e}_\alpha\otimes\tilde{e}^\beta,
+\]</span> and acting <span class="math inline">\(\pmb{\symbb{T}}\)</span> on a one-form <span class="math inline">\(\tilde{Q}\)</span> and a 4-vector <span class="math inline">\(\vec{A}\)</span> then gives <span class="math display">\[
+    \pmb{\symbb{T}}(\tilde{Q},\vec{A}) = {T^{\alpha}}_{\beta}Q_\alpha A^\beta.
+\]</span> This is a Lorentz scalar since the tensor components transform as <span class="math display">\[
+    {T^{\bar{\mu}}}_{\bar{\nu}} = \Lambda^{\bar{\mu}}_\alpha\Lambda^\beta_{\bar{\nu}} {T^\alpha}_\beta.
+\]</span> Having fully specified rank 2 tensors we should now consider an example of one crucial to special relativity.</p>
+</section>
+<section id="the-metric-tensor" class="level2 page-columns page-full" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="the-metric-tensor"><span class="header-section-number">6.2</span> The metric tensor</h2>
+<div class="page-columns page-full"><p>We have already encountered a type <span class="math inline">\(({0 \atop 2})\)</span>-tensor in <a href="./oneforms.html">Scalar-product and one-forms</a> in the form of the scalar-product which endows our vector space <span class="math inline">\(\mathcal{M}\)</span> with concepts of length and orhtogonality. As a nod the general relativity course next year, we will denote the abstract geometrical tensor as <span class="math inline">\(\pmb{\symbb{g}}\)</span>. Formally this tensor is defined as one taking two input 4-vectors <span class="math inline">\(\vec{A}\)</span> and <span class="math inline">\(\vec{B}\)</span> and returns their scalar-product as <span class="math display">\[
+    \pmb{\symbb{g}}(\vec{A},\vec{B}) = g_{\mu\nu}A^\mu B^\nu = \vec{A}\cdot\vec{B}.
+\]</span> From this expression we can immediately identify its components as <span class="math display">\[
+    \pmb{\symbb{g}}(\vec{e}_\mu,\vec{e}_\nu) = g_{\mu\nu} = \eta_{\mu\nu} = \left(\begin{array}{cccc}
+  1 &amp; 0 &amp; 0 &amp; 0 \\
+  0 &amp; -1 &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; -1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; -1
+\end{array}\right),
+\]</span> as being equal to the Minkowski metric described in <a href="./4vectors.html#sec-metric">Introducing 4-vectors</a>.  Consequently, the components of <span class="math inline">\(\pmb{\symbb{g}}\)</span> transform as <span class="math display">\[
+    g_{\bar\mu\bar\nu} = \Lambda^{\alpha}_{\bar\mu}\Lambda^\beta_{\bar\nu} g_{\alpha\beta} = \Lambda^{\alpha}_{\bar\mu}\Lambda^\beta_{\bar\nu} \eta_{\alpha\beta} = \eta_{\bar\mu\bar\nu},
+\]</span> and hence in flat space-time the metric has identical elements equal to the <span class="math inline">\(\eta\)</span> symbol in all inertial frames, as we saw in <a href="./oneforms.html#sec-metric_trans">Scalar-product and one-forms</a>. Since the scalar-product is symmetric so is the metric tensor as <span class="math display">\[
+    \pmb{\symbb{g}}(\vec{A},\vec{B}) = \pmb{\symbb{g}}(\vec{B},\vec{A}) \implies g_{\mu\nu} = g_{\nu\mu}.
+\]</span> The <em>inverse metric tensor</em>, denoted <span class="math inline">\(\pmb{\symbb{g}}^{-1}\)</span>, is a <span class="math inline">\(({2 \atop 0})\)</span>-type tensor defined to take two input one-forms <span class="math inline">\(\tilde{Q}\)</span> and <span class="math inline">\(\tilde{P}\)</span> and return their scalar-product <span class="math display">\[
+    \pmb{\symbb{g}}^{-1}(\tilde{Q},\tilde{P}) = g^{\mu\nu}Q_\mu P_\nu = \tilde{Q}\cdot\tilde{P}.
+\]</span> Hence it is also symmetric with elements <span class="math display">\[
+    \pmb{\symbb{g}}^{-1}(\tilde{e}_\mu,\tilde{e}_\nu) = g^{\mu\nu} = \eta^{\mu\nu} = \left(\begin{array}{cccc}
+  1 &amp; 0 &amp; 0 &amp; 0 \\
+  0 &amp; -1 &amp; 0 &amp; 0 \\
+  0 &amp; 0 &amp; -1 &amp; 0 \\
+  0 &amp; 0 &amp; 0 &amp; -1
+\end{array}\right).
+\]</span> The metric and its inverse have identical components in every inertial frame. The reason we denote <span class="math inline">\(\pmb{\symbb{g}}^{-1}\)</span> as the inverse of <span class="math inline">\(\pmb{\symbb{g}}\)</span> is that their components obey <span class="math display">\[
+    g^{\mu\alpha}g_{\alpha\nu} = g_{\nu\alpha}g^{\alpha\mu} = \delta^\mu_\nu,
+\]</span> which converted into a matrix expressions give <span class="math display">\[
+    \sum_{\alpha=0}^3[\underline{\underline g}^{-1}]_{\mu\alpha}[\underline{\underline g}]_{\alpha\nu} = [\underline{\underline g}^{-1}\, \underline{\underline g}]_{\mu\nu} = \sum_{\alpha=0}^3[\underline{\underline g}]_{\nu\alpha}[\underline{\underline g}^{-1}]_{\alpha\mu} = [\underline{\underline g}\, \underline{\underline g}^{-1}]_{\nu\mu}.
+\]</span> However, we know that both <span class="math inline">\(\underline{\underline g}^{-1} = \underline{\underline \eta}\)</span> and <span class="math inline">\(\underline{\underline g} = \underline{\underline \eta}\)</span>, while <span class="math inline">\(\underline{\underline \eta} = \underline{\underline \eta}^{\rm T} = \underline{\underline \eta}^{-1}\)</span>, and so <span class="math inline">\(\underline{\underline \eta}\, \underline{\underline \eta} = \mathbb{1}\)</span> hence <span class="math display">\[
+    [\underline{\underline g}^{-1}\, \underline{\underline g}]_{\mu\nu} = [\underline{\underline g}\, \underline{\underline g}^{-1}]_{\nu\mu} = [\mathbb{1}]_{\mu\nu},
+\]</span> as required for an inverse. This property is crucial for a key use of the metric we now introduce.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">In this course we will always assume space-time is flat so <span class="math inline">\(\pmb{\symbb{g}}\)</span> always has components <span class="math inline">\(\eta_{\mu\nu}\)</span>. However, in general relativity the components of <span class="math inline">\(\pmb{\symbb{g}}\)</span> are functions of space-time which deviate from <span class="math inline">\(\eta_{\mu\nu}\)</span> and whose behaviour encodes the curvature of the space-time.</span></div></div>
+</section>
+<section id="raising-and-lowering-indices" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="raising-and-lowering-indices"><span class="header-section-number">6.3</span> Raising and lowering indices</h2>
+<p>Armed with the metric tensor <span class="math inline">\(\pmb{\symbb{g}}\)</span> and its inverse <span class="math inline">\(\pmb{\symbb{g}}^{-1}\)</span> we can convert 4-vectors into one-forms and vice versa. Suppose we took a 4-vector <span class="math inline">\(\vec{V}\)</span> and inserted it into the first slot of the metric as <span class="math inline">\(\pmb{\symbb{g}}(\vec{V},\cdot)\)</span>, but left the second slot free. Since <span class="math inline">\(\pmb{\symbb{g}}\)</span> is symmetric it doesn’t matter which slot we filled or left empty. What remains is a linear object which eats a 4-vector and returns a scalar, or in otherwords a one-form <span class="math display">\[
+    \tilde{V} = \pmb{\symbb{g}}(\vec{V},\cdot).
+\]</span> We have used the metric to make one-form version of <span class="math inline">\(\vec{V}\)</span>. The components of this object follows as <span class="math display">\[
+    \tilde{V}(\vec{e}_\mu) = \pmb{\symbb{g}}(\vec{V},\vec{e}_\mu) = V^\nu\pmb{\symbb{g}}(\vec{e}_\nu,\vec{e}_\mu) = V^\nu\eta_{\nu\mu} = V_\mu.
+\]</span> Notationally we say we have <em>lowered the index</em> of <span class="math inline">\(V^\nu\)</span> to <span class="math inline">\(V_\mu\)</span> by using the metric. What this really means is that we contract <span class="math inline">\(V^\nu\)</span> with <span class="math inline">\(\eta_{\nu\mu}\)</span>, so if we represent the components as a column vector then <span class="math display">\[
+V^\nu = \left(
+\begin{array}{c}
+  a \\
+  b \\
+  c \\
+  d
+\end{array}\right) \quad \mapsto \quad V_\mu = \left(
+\begin{array}{c}
+  a \\
+  -b \\
+  -c \\
+  -d
+\end{array}\right).
+\]</span> By construction the action on <span class="math inline">\(\tilde{V}\)</span> on any other 4-vector <span class="math inline">\(\vec{A}\)</span> is to return the scalar-product of it with <span class="math inline">\(\vec{V}\)</span> since <span class="math display">\[
+    \tilde{V}(\vec{A}) = V_\mu A^\mu = \eta_{\mu\nu}V^\nu A^\mu = \vec{V}\cdot\vec{A}.
+\]</span></p>
+<p>In the same way we can use <span class="math inline">\(\pmb{\symbb{g}}^{-1}\)</span> to convert a one-form <span class="math inline">\(\tilde{Q}\)</span> into a 4-vector as <span class="math display">\[
+    \vec{Q} = \pmb{\symbb{g}}^{-1}(\tilde{Q},\cdot).
+\]</span> which has components <span class="math display">\[
+    \vec{Q}(\tilde{e}^\mu) = \pmb{\symbb{g}}^{-1}(\tilde{Q},\tilde{e}^\mu) = Q_\nu\pmb{\symbb{g}}^{-1}(\tilde{e}^\nu,\tilde{e}^\mu) = Q_\nu\eta^{\nu\mu},
+\]</span> suggesting we have now <em>raised the index</em> of <span class="math inline">\(Q_\nu\)</span> to <span class="math inline">\(Q^\mu\)</span> with <span class="math inline">\(\eta^{\nu\mu}\)</span> meaning <span class="math display">\[
+Q_\nu = \left(
+\begin{array}{c}
+  a \\
+  b \\
+  c \\
+  d
+\end{array}\right) \quad \mapsto \quad Q^\mu = \left(
+\begin{array}{c}
+  a \\
+  -b \\
+  -c \\
+  -d
+\end{array}\right).
+\]</span> We now see why we <span class="math inline">\(\pmb{\symbb{g}}^{-1}\)</span> is called the inverse metric since it reverses the index lowering performed by <span class="math inline">\(\pmb{\symbb{g}}\)</span> as <span class="math display">\[
+    \vec{V} = \pmb{\symbb{g}}^{-1}(\tilde{V},\cdot).
+\]</span> This is demonstrated by considering the components <span class="math display">\[
+    \pmb{\symbb{g}}^{-1}(\tilde{V},\tilde{e}^\mu) = V_\nu\,\pmb{\symbb{g}}^{-1}(\tilde{e}^\nu,\tilde{e}^\mu) = V^\alpha\eta_{\alpha\nu}\eta^{\nu\mu} = V^\alpha \delta^\mu_\alpha = V^\mu,
+\]</span> after using the identity <span class="math inline">\(\eta_{\alpha\nu}\eta^{\nu\mu} = \delta^\mu_\alpha\)</span>. Similarly, <span class="math inline">\(\pmb{\symbb{g}}(\vec{Q},\cdot) = \tilde{Q}\)</span>.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>5. Raising and lowering indices transforms correctly</strong></p>
+<p>Check the following statements:</p>
+<ol type="a">
+<li><p>If <span class="math inline">\(v^\mu\)</span> is a 4-vector, and <span class="math inline">\(v_{\bar\mu} = \eta_{\bar \mu \bar \nu}v^{\bar \nu}\)</span>, show <span class="math inline">\(v_\mu \equiv \eta_{\mu\nu}v^\nu\)</span> transforms like a one-form.</p></li>
+<li><p>If <span class="math inline">\(u_\mu\)</span> is a one-form, and <span class="math inline">\(u^{\bar \mu} = \eta^{\bar \mu \bar \nu}u_{\bar \nu}\)</span>, show <span class="math inline">\(u_\mu ≡ \eta^{\mu \nu}u_\nu\)</span> transforms like a 4-vector.</p></li>
+</ol>
+<p><strong>6. Manipulating the metric tensor</strong></p>
+<p>Calculate the components of the Minkowski tensor in mixed form, i.e.&nbsp;find <span class="math inline">\({\eta^\mu}_\nu\)</span>. Justify how your answer makes sense in terms of the properties of the Minkowski metric.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>5. Raising and lowering indices transforms correctly</strong></p>
+<p>Solution …</p>
+<p><strong>6. Manipulating the metric tensor</strong></p>
+<p>Solution …</p>
+</div>
+</div>
+</div>
+<p>Using the metric and its inverse to raise and lower indices is more than just an algebraic trick. Indeed one could envisage using any symmetric invertible type <span class="math inline">\(({0 \atop 2})\)</span> tensor <span class="math inline">\(h_{\mu\nu}\)</span> and its inverse <span class="math inline">\(h^{\mu\nu}\)</span> type <span class="math inline">\(({2 \atop 0})\)</span> tensor to define index raising and lowering. Formally all the above definitions could be applied with <span class="math inline">\(\pmb{\symbb{h}}\)</span> instead. However, the Lorentz scalars resulting from contractions with <span class="math inline">\(\pmb{\symbb{h}}\)</span> have no obvious physical meaning or significance. In contrast <span class="math inline">\(\pmb{\symbb{g}}\)</span> is central to the geometrical structure of space-time defining the scalar-product, so distances, time and angles, as well as its causal properties such as the light-cone and geodesics. As we shall see in the next lecture physical quantities of intrinsic interest arise from the scalar-product. So <span class="math inline">\(\pmb{\symbb{g}}\)</span> is not just a invertible rank-2 tensor, it is a unique and privileged one with both geometrical and physical meaning. In the context of a flat space-time in special relativity we also have the added bonus that <span class="math inline">\(\pmb{\symbb{g}}\)</span> and <span class="math inline">\(\pmb{\symbb{g}}^{-1}\)</span> have the same fixed components in all inertial frames making index lowering and raising extremely straightforward.</p>
+<!--
+ADD SOMETHING ABOUT THE DERIVATIVE ONE-FORM
+-->
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Converting a basis 4-vector to a one-form
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Recall that the basis 4-vectors and one-forms are related to each other through the biorthonormality relation <span class="math display">\[
+    \tilde{e}^\mu(\vec{e}_\nu) = \delta^\mu_\nu.
+\]</span> So one might ask what one-form is generated by converting a basis 4-vector using the metric? We get <span class="math display">\[
+    \pmb{\symbb{g}}(\vec{e}_\alpha,\cdot) = \eta_{\mu\nu}\tilde{e}^\mu(\vec{e}_\alpha)\otimes\tilde{e}^\nu = \eta_{\mu\nu}\delta^\mu_\alpha\tilde{e}_\nu = \eta_{\alpha\nu}\tilde{e}^\nu.
+\]</span> The one-form <span class="math inline">\(\pmb{\symbb{g}}(\vec{e}_\alpha,\cdot)\)</span> is <strong>not</strong> simply <span class="math inline">\(\tilde{e}^\alpha\)</span>. Even with the simple flat space-time metric considered in this course there can be a sign difference, e.g.&nbsp;<span class="math inline">\(\pmb{\symbb{g}}(\vec{e}_1,\cdot) = -\tilde{e}^1\)</span>. In general relativity, where the metric can be non-diagonal, these two one-forms are completely different.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="higher-rank-tensors" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="higher-rank-tensors"><span class="header-section-number">6.4</span> Higher rank tensors</h2>
+<p>All our earlier work on rank-2 tensors can be readily generalised to higher ranks ones, specifically rank-<span class="math inline">\(M+N\)</span> tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> of type <span class="math inline">\(({M \atop N})\)</span>. This object takes <span class="math inline">\(M\)</span> input one-forms <span class="math inline">\(\tilde{Q},\tilde{P},\dots,\tilde{R}\)</span> and <span class="math inline">\(N\)</span> input 4-vectors <span class="math inline">\(\vec{A},\vec{B},\dots,\vec{C}\)</span> and maps them all to a scalar <span class="math display">\[
+    \pmb{\symbb{T}}(\tilde{Q},\tilde{P},\dots,\tilde{R},\vec{A},\vec{B},\dots,\vec{C}) \mapsto \mathbb{R}
+\]</span> as depicted in this figure:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/gen_tensor.png" class="img-fluid figure-img" width="600"></p>
+<figcaption>A rank-<span class="math inline">\(M+N\)</span> tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> of type <span class="math inline">\(({M \atop N})\)</span> takes <span class="math inline">\(M\)</span> input of one one-forms <span class="math inline">\(\tilde{Q},\tilde{P},\dots,\tilde{R}\)</span> and <span class="math inline">\(N\)</span> 4-vector <span class="math inline">\(\vec{A},\vec{B},\dots,\vec{C}\)</span> and maps them all to a scalar <span class="math inline">\(\pmb{\symbb{T}}(\tilde{Q},\tilde{P},\dots,\tilde{R},\vec{A},\vec{B},\dots,\vec{C})\)</span>.</figcaption>
+</figure>
+</div>
+<p>As before we extract its components by acting it on an appropriate number of basis one-forms and 4-vectors as <span id="eq-tensor_components"><span class="math display">\[
+    {T^{\alpha\beta\cdots\gamma}}_{\mu\nu\cdots\sigma} = \pmb{\symbb{T}}(\tilde{e}^\alpha,\tilde{e}^\beta,\dots,\tilde{e}^\gamma,\vec{e}_\mu,\vec{e}_\nu,\dots,\vec{e}_\sigma).
+\tag{6.2}\]</span></span> These components transform between frames <span class="math inline">\(S\)</span> and <span class="math inline">\(\bar S\)</span> as <span class="math display">\[
+    {T^{\bar{\omega}\bar{\chi}\cdots\bar{\theta}}}_{\bar{\rho}\bar{\lambda}\cdots\bar{\kappa}} = \Lambda^{\bar \omega}_\alpha\Lambda^{\bar \chi}_\beta\cdots\Lambda^{\bar \theta}_\gamma\Lambda^{\mu}_{\bar \rho}\Lambda^{\nu}_{\bar \lambda}\cdots\Lambda^{\sigma}_{\bar \kappa}\,{T^{\alpha\beta\cdots\gamma}}_{\mu\nu\cdots\sigma}.
+\]</span> Indeed, any object whose components transform between frames like this is a type <span class="math inline">\(({M \atop N})\)</span> tensor.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+How to write tensor indices
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It is worth remarking on the notation used in <a href="#eq-tensor_components" class="quarto-xref">Equation&nbsp;<span>6.2</span></a>. Specifically, why can’t we just write the indices more compactly as <span class="math display">\[
+   {T^{\alpha\beta\cdots\gamma}}_{\mu\nu\cdots\sigma} \stackrel{?}{\equiv} T^{\alpha\beta\cdots\gamma}_{\mu\nu\cdots\sigma}.  
+\]</span> The short answer is that you can, but you should be careful. As shown in figure above, the tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> is taken to be acting on a tensor product of the <span class="math inline">\(\mathcal{M}^*\)</span> and <span class="math inline">\(\mathcal{M}\)</span>. The ordering matters since it indicates which of these spaces is being acted on. The compact form ensures that we can still identify the ordering of all upper and lower indices between themselves, but does not track the ordering between upper and lower indices. For the tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> this is fine since upper and lower indices correspond to distinct types of vectors spaces making it unambigious what is meant.</p>
+<p>The situation where care must be taken is when indices are lowered and raised thus inchanging upper and lower indices. Take the example of a type <span class="math inline">\(({2 \atop 1})\)</span> tensor with components <span class="math inline">\(T^{\alpha\beta}_\gamma\)</span> written compactly. The index <span class="math inline">\(\alpha\)</span> can be lowered as <span class="math display">\[
+    T^{\beta}_{\gamma\mu} = \eta_{\mu\alpha}T^{\alpha\beta}_\gamma,
+\]</span> whereupon we need to make a choice about where to put the new lower index. Above we have used a convention of placing any new upper or lower index at the back. Now suppose we raise the <span class="math inline">\(\mu\)</span> index back up as <span class="math display">\[
+    T^{\beta\alpha}_{\gamma} = \eta^{\alpha\mu}T^{\beta}_{\gamma\mu}.
+\]</span> Now the ordering of the upper indices is reversed. This is not a fatal problem but it could be potentially confusing.</p>
+<p>A way around this is to retain the full ordering of the tensor product by stacking upper and lower indices separately. Now no convention is required when lowering or raising and the ordering of indices is always unambiguous, e.g. <span class="math display">\[
+    {{T_{\mu}}^{\beta}}_{\gamma} = \eta_{\mu\alpha}{T^{\alpha\beta}}_\gamma,
+\]</span> meaning the raising of the <span class="math inline">\(\mu\)</span> index recovers the original tensor <span class="math display">\[
+    {T^{\alpha\beta}}_{\gamma} = \eta^{\alpha\mu}{{T_{\mu}}^{\beta}}_{\gamma}.
+\]</span> For clarity we will always use this full ordering of indices, but you may well see the more compact version in textbooks.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="physics-is-tensorial" class="level2 page-columns page-full" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="physics-is-tensorial"><span class="header-section-number">6.5</span> Physics is tensorial</h2>
+<p>We should remind ourselves why we have developed the formalism of tensors. Back in first lecture <a href="./principle_relativity.html">Principle of relativity</a> we stated is that the laws of physics should not depend on what coordinate system or reference frame we choose to describe them in. Tensors are precisely the mathematical objects whose components transform in such a way that the relations between them remain invariant under any smooth change of coordinates. We can therefore make our principle of relativity from earlier more precise:</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Principle of relativity (refined version)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>The laws of physics should have a tensorial form because physical phenomena are geometric and coordinate-independent.</p>
+</div>
+</div>
+<div class="page-columns page-full"><p>This means that we should construct or identify physical quantities in our theories as Lorentz scalars, 4-vectors, one-forms and tensors. Typically we may construct a tensor from other objects like <span class="math display">\[
+    {\pmb{\symbb{T}}} = n\,\vec{U}\otimes\vec{U} + p\,\pmb{\symbb{g}}^{-1},
+\]</span> where <span class="math inline">\(n,p\)</span> are Lorentz scalars, <span class="math inline">\(\vec{U}\)</span> is a 4-vector and <span class="math inline">\(\pmb{\symbb{g}}^{-1}\)</span> is the inverse metric.  Often Lorentz scalars formed from the contraction these quantities, say like <span class="math display">\[
+    \tilde{K}(\vec{X}) \quad {\rm or} \quad \vec{P}\cdot\vec{X} \quad {\rm or} \quad {\pmb{\symbb{W}}}(\tilde{K},\vec{P},\vec{X}),
+\]</span> will play a central role, as we will see in the next lecture.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">In fact the tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> here is the stress-energy tensor for <em>dust</em> which we will discuss briefly in a later lecture</span></div></div>
+<p>While it is essential that all these quantities are geometrical in practise when doing calculations we will work with an explicit representation in terms of components of some inertial frame, so we have <span class="math display">\[
+    K_\mu X^\mu \quad {\rm or} \quad \eta_{\mu\nu}P^\mu X^\nu \quad {\rm or} \quad {W^\mu}_{\alpha\beta} K_\mu P^\alpha X^\beta.
+\]</span> We can use the index formulation for all quantities, along with the appropriate rules for contraction and transformations, safe in the knowledge that we are faithfully describing the underlying abstract geometrical objects of the theory. For this reason we will have little use for the basis 4-vectors <span class="math inline">\(\vec{e}_\mu\)</span> and one-forms <span class="math inline">\(\tilde{e}^\nu\)</span> or explicit tensor product <span class="math inline">\(\otimes\)</span> from this point on, but will appreciate they are hiding behind the scenes of our working.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 6</strong>.</span></div></div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>7. The Quotient Rule for testing tensorality</strong></p>
+<p>We will now look at a useful trick for proving an object is a tensor.</p>
+<ol type="a">
+<li><p>Assume we have a set of quantities <span class="math inline">\(a_\mu\)</span>, such that the inner product with every 4-vector <span class="math inline">\(v^\mu\)</span> gives a Lorentz scalar. Prove that <span class="math inline">\(a_\mu\)</span> must transform like the components of a one-form.</p></li>
+<li><p>Assume that the inner product of a set of quantities <span class="math inline">\(b^\mu\)</span> with every one-form <span class="math inline">\(u_\mu\)</span> gives a Lorentz scalar. Prove that bμ must transform like the components of a 4-vector.</p></li>
+</ol>
+<p>This trick can be extended to test tensorality. Suppose we have some putative multi-index object <span class="math inline">\({Y^{\mu\nu}}_{\alpha\beta}\)</span>. This is a tensor if a Lorentz scalar is obtained when it is contracted it with a suitable number of arbitrary 4-vectors and one-forms. Can you think why it is called the quotient rule?</p>
+<p><strong>8. Raising and lowering indices of a tensor</strong></p>
+<p>Consider a rank 2 tensor <span class="math inline">\(T^{\mu\nu}\)</span>. Write down <span class="math inline">\({T^\mu}\)</span> and <span class="math inline">\(T_{\mu\nu}\)</span> in terms of the components of <span class="math inline">\(T^{\mu\nu}\)</span>. With <span class="math inline">\(x^\mu\)</span> the space-time position 4-vector, calculate <span class="math inline">\(T^{\mu\nu} x_\nu\)</span> and <span class="math inline">\({T^\mu}_\nu x^\nu\)</span> explicitly. Do you get the answer you expect?</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>7. The Quotient Rule for testing tensorality</strong></p>
+<p>Solution …</p>
+<p><strong>8. Raising and lowering indices of a tensor</strong></p>
+<p>Solution …</p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./oneforms.html" class="pagination-link" aria-label="One-forms">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./example_class2.html" class="pagination-link" aria-label="Example Class 2">
+        <span class="nav-page-text">Example Class 2</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

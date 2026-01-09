@@ -1,0 +1,1259 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>5&nbsp; One-forms – Advanced Classical Mechanics</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./tensors.html" rel="next">
+<link href="./4vectors.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./oneforms.html">II: Fields and tensors</a></li><li class="breadcrumb-item"><a href="./oneforms.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./figures/acm.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Advanced Classical Mechanics</a> 
+        <div class="sidebar-tools-main">
+    <a href="./Advanced-Classical-Mechanics.pdf" title="Download PDF" class="quarto-navigation-tool px-1" aria-label="Download PDF"><i class="bi bi-file-pdf"></i></a>
+</div>
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended Books</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">I: Special Relativity</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./principle_relativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Principle of relativity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lorentz_transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lorentz transformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./space_time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minkowski space-time</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducing 4-vectors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+ <span class="menu-text">II: Fields and tensors</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oneforms.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">III: Lagrangian field theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./single_particle.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Single-particle Lagrangian</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./symmetries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4potential.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic 4-potential</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_lagrangian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Lagrangian approach to EM</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 5</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./problem_sheets.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Problem sheets</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./summary.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Summary</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./references.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">References</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Epilogue</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#sec-metric_trans" id="toc-sec-metric_trans" class="nav-link active" data-scroll-target="#sec-metric_trans"><span class="header-section-number">5.1</span> Scalar-product of 4-vectors</a></li>
+  <li><a href="#constructing-one-forms" id="toc-constructing-one-forms" class="nav-link" data-scroll-target="#constructing-one-forms"><span class="header-section-number">5.2</span> Constructing one-forms</a></li>
+  <li><a href="#sec-fields" id="toc-sec-fields" class="nav-link" data-scroll-target="#sec-fields"><span class="header-section-number">5.3</span> Fields and their space-time derivatives</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./oneforms.html">II: Fields and tensors</a></li><li class="breadcrumb-item"><a href="./oneforms.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this lecture we will show how the geometrical structure of special relativity leads to new mathematical objects.</p>
+<section id="sec-metric_trans" class="level2 page-columns page-full" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="sec-metric_trans"><span class="header-section-number">5.1</span> Scalar-product of 4-vectors</h2>
+<p>In the last lecture we stated that the length of a 4-vector <span class="math inline">\(||\vec{X}||\)</span> is given by the space-time interval between <span class="math inline">\(O\)</span> and <span class="math inline">\(X\)</span> as: <span class="math display">\[
+||\vec{X}||^2 = \Delta S^2(0,X).
+\]</span> The representation of this 4-vector in frame <span class="math inline">\(S\)</span> was packaged up into a column vector <span class="math display">\[
+{\underline X} = \left(
+\begin{array}{c}
+  x^0 \\
+  x^1 \\
+  x^2 \\
+  x^3
+\end{array}\right),
+\]</span> and from <span class="math inline">\(S^2(0,X) = (x^0)^2 - (x^1)^2 - (x^2)^2 - (x^3)^2\)</span> we got: <span id="eq-length"><span class="math display">\[
+||\vec{X}||^2 = {\underline X}^T\,\underline{\underline \eta}\,{\underline X},
+\tag{5.1}\]</span></span> using the metric <span class="math inline">\(\underline{\underline \eta} = {\rm diag}(1,-1,-1,-1)\)</span>. Converting <a href="#eq-length" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-length</span></a> into index notation gives: <span id="eq-length-index"><span class="math display">\[
+||\vec{X}||^2 = \eta_{\mu\nu}x^\mu x^\nu,
+\tag{5.2}\]</span></span> where <span class="math inline">\(\eta_{\mu\nu} = [\underline{\underline \eta}]_{\mu\nu}\)</span> is the metric. In another frame <span class="math inline">\(\bar S\)</span> we have <span id="eq-length-index-sbar"><span class="math display">\[
+||\vec{X}||^2 = \eta_{\bar{\mu}\bar{\nu}}x^{\bar \mu} x^{\bar \nu},
+\tag{5.3}\]</span></span> where <span class="math inline">\(\eta_{\bar{\mu}\bar{\nu}} = [\underline{\underline \eta}]_{\bar{\mu}\bar{\nu}}\)</span> takes its elements from the same matrix <span class="math inline">\(\underline{\underline \eta}\)</span>. This means that <span class="math display">\[
+\eta_{\bar{\alpha}\bar{\beta}} = \eta_{\mu\nu}\Lambda^{\mu}_{\bar \alpha}\Lambda^\nu_{\bar \beta}.
+\]</span> as you are now invited to show.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Objects which have exactly the same form in every inertial frame are considered to be <em>symbols</em>. We will encounter two in this course, <span class="math inline">\(\eta\)</span> and the totally antisymmetric (or Levi-Civita) symbol <span class="math inline">\(\epsilon\)</span> which will appear later.</span></div></div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Transforming the metric</strong></p>
+<p>Use the transformation of 4-vector components from <span class="math inline">\(S\)</span> to <span class="math inline">\(\bar S\)</span>: <span class="math display">\[
+x^{\bar{\mu}} = \Lambda^{\bar{\mu}}_\nu x^\nu,
+\]</span> in <a href="#eq-length-index" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-length-index</span></a> twice, and the invariance of the space-time interval to show that the equivalent expression in <span class="math inline">\(\bar S\)</span> is: <span class="math display">\[
+||\vec{X}||^2 = \eta_{\bar{\mu}\bar{\nu}}x^\bar{\mu} x^\bar{\nu},
+\]</span> with <span class="math inline">\(\eta_{\bar{\mu}\bar{\nu}} = [\underline{\underline \eta}]_{\bar{\mu}\bar{\nu}}\)</span> such that <span id="eq-metric-transform-sbar"><span class="math display">\[
+\eta_{\bar{\alpha}\bar{\mu}} = \eta_{\mu\nu}\Lambda^{\mu}_{\bar \alpha}\Lambda^\nu_{\bar \beta},
+\tag{5.4}\]</span></span> thereby demonstrating that the metric <span class="math inline">\(\eta\)</span> has the same elements in every inertial frame.</p>
+<p><strong>2. Equivalence to matrix expression</strong></p>
+<p>Invert <a href="#eq-metric-transform-sbar" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-metric-transform-sbar</span></a> and convert it into a matrix-vector expression to show it is identical with the constraint <span class="math inline">\(\underline{\underline \eta} = \underline{\underline \Lambda}^{\rm T}\,\underline{\underline \eta}\,\underline{\underline \Lambda}\)</span> found in the last lecture.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Transforming the metric</strong></p>
+<p>Inserting the transformation twice, being careful with indices, gives: <span class="math display">\[
+\begin{align}
+    ||\vec{X}||^2 &amp;= \eta_{\mu\nu}x^\mu x^\nu, \\
+    &amp;= \left(\eta_{\mu\nu}\Lambda^{\mu}_{\bar \alpha}\Lambda^\nu_{\bar \beta}\right)x^{\bar \alpha}x^{\bar \beta}, \\
+    &amp;= \Theta_{\bar{\alpha}\bar{\beta}}x^{\bar \alpha}x^{\bar \beta}.
+\end{align}
+\]</span> We can identify the elements of <span class="math inline">\(\Theta_{\bar{\alpha}\bar{\beta}}\)</span> because we know that in frame <span class="math inline">\(\bar S\)</span> the space-time interval is <span class="math inline">\(S^2(0,X) = (x^\bar{0})^2 - (x^\bar{1})^2 - (x^\bar{2})^2 - (x^\bar{3})^2\)</span>, hence <span class="math display">\[
+||\vec{X}||^2 = \eta_{\bar{\mu}\bar{\nu}}x^\bar{\mu} x^\bar{\nu},
+\]</span> with <span class="math inline">\(\eta_{\bar{\mu}\bar{\nu}} = [\underline{\underline \eta}]_{\bar{\mu}\bar{\nu}}\)</span>. For this to be consistent we must therefore have that <span class="math inline">\(\Theta_{\bar{\mu}\bar{\nu}} = \eta_{\bar{\mu}\bar{\nu}}\)</span>, meaning that: <span class="math display">\[
+\eta_{\bar{\alpha}\bar{\beta}} = \eta_{\mu\nu}\Lambda^{\mu}_{\bar \alpha}\Lambda^\nu_{\bar \beta}.
+\]</span></p>
+<p><strong>2. Equivalence to matrix expression</strong></p>
+<p>We can invert this expression using <span class="math inline">\(\Lambda^\mu_{\bar \beta}\Lambda^{\bar \beta}_\nu = \delta^\mu_\nu\)</span> twice after multiplying the lefthand side by two appropriate Lorentz transforms: <span class="math display">\[
+\begin{align}
+    \Lambda^{\bar \alpha}_\rho \Lambda^{\bar \beta}_\tau\eta_{\bar{\alpha}\bar{\beta}} &amp;= \eta_{\mu\nu}\left(\Lambda^{\bar \alpha}_\rho\Lambda^{\mu}_{\bar \alpha}\right)\left(\Lambda^{\bar \beta}_\tau\Lambda^\nu_{\bar \beta}\right), \\
+    &amp;= \eta_{\mu\nu}\delta^\mu_\rho \delta^\nu_\tau, \\
+    &amp;= \eta_{\rho\tau},
+\end{align}
+\]</span> or after relabelling the indices: <span id="eq-metric-transform"><span class="math display">\[
+\eta_{\mu\nu} = \Lambda^{\bar \alpha}_\mu \Lambda^{\bar \beta}_\nu\eta_{\bar{\alpha}\bar{\beta}}.
+\tag{5.5}\]</span></span> Converting this expression into matrix-vector notation and reorganising to be consistent with matrix multiplication we arrive at: <span class="math display">\[
+\begin{align}
+    [\underline{\underline \eta}]_{\mu\nu} &amp;= \sum_{\bar{\alpha},\bar{\beta}=0}^3 [\underline{\underline \Lambda}]_{\bar{\alpha}\mu} [\underline{\underline \Lambda}]_{\bar{\beta\nu}} [\underline{\underline \eta}]_{\bar{\alpha}\bar{\beta}}, \\
+    &amp;= \sum_{\bar{\alpha},\bar{\beta}=0}^3 [\underline{\underline \Lambda}^{\rm T}]_{\mu\bar{\alpha}} [\underline{\underline \eta}]_{\bar{\alpha}\bar{\beta}} [\underline{\underline \Lambda}]_{\bar{\beta\nu}}, \\
+    &amp;= [\underline{\underline \Lambda}^{\rm T}\,\underline{\underline \eta}\,\underline{\underline \Lambda}]_{\mu\nu}.
+\end{align}
+\]</span> Hence, we have shown that <a href="#eq-metric-transform" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-metric-transform</span></a> is equivalent to the matrix expression <span class="math inline">\(\underline{\underline \eta} = \underline{\underline \Lambda}^{\rm T}\,\underline{\underline \eta}\,\underline{\underline \Lambda}\)</span> found in the last lecture.</p>
+</div>
+</div>
+</div>
+<p>In Euclidean 3D space we have a scalar (or dot) product which takes two 3-vectors <span class="math inline">\(\vec{a}\)</span> and <span class="math inline">\(\vec{b}\)</span> and returns a scalar: <span class="math display">\[
+\vec{a}\cdot\vec{b} = {\underline a}^{\rm T}{\underline b} = a_xb_x + a_yb_y + a_zb_z.
+\]</span> which is symmetric in its arguments <span class="math inline">\(\vec{a}\cdot\vec{b} = \vec{b}\cdot\vec{a}\)</span>. The length of a vector is then a special case as <span class="math inline">\(||\vec{r}||^2 = \vec{r}\cdot\vec{r}\)</span>. So more generally we see that the orthogonality of rotations <span class="math inline">\(\underline{\underline R}^{\rm T}\underline{\underline R} = \mathbb{1}\)</span> ensures the invariance of the scalar product: <span class="math display">\[
+\vec{a}\cdot\vec{b} = \bar{\underline a}^{\rm T}\bar{\underline b} = {\underline a}^{\rm T}\underline{\underline R}^{\rm T}\underline{\underline R}\,{\underline b} = {\underline a}^{\rm T}{\underline b}.
+\]</span> Since <span class="math inline">\(\vec{a}\cdot\vec{b} = ||\vec{a}||\,||\vec{b}|| \cos(\phi)\)</span> we see that rotations preserve not only the length but also the angle <span class="math inline">\(\phi\)</span> between 3-vectors.</p>
+<p>For 4-vectors <span class="math inline">\(\vec{A}\)</span> and <span class="math inline">\(\vec{B}\)</span> in Minkowski space-time we can similarly construct a scalar product as: <span class="math display">\[
+\vec{A}\cdot\vec{B} = \underline{A}^{\rm T}\,\underline{\underline \eta}\,{\underline B} = A^0B^0 - A^1B^1 - A^2B^2 - A^3B^3,
+\]</span> which in index notation is <span id="eq-scalar-prod"><span class="math display">\[
+\vec{A}\cdot\vec{B} = \eta_{\mu\nu}A^\mu B^\nu.
+\tag{5.6}\]</span></span> Again we see that <span class="math inline">\(\vec{A}\cdot\vec{B} = \vec{B}\cdot\vec{A}\)</span> owing to the metric being diagonal and hence symmetric. We can easily confirm that the scalar product is Lorentz invariant based on knowing already that the length or space-time interval is. Take: <span class="math display">\[
+(\vec{A}+\vec{B})\cdot(\vec{A}+\vec{B}) = \vec{A}\cdot\vec{A} + \vec{B}\cdot\vec{B} + 2\vec{A}\cdot\vec{B},
+\]</span> where the lefthand side and all but the last term on the righthand side are lengths of 4-vectors, and hence invariant. This implies <span class="math inline">\(\vec{A}\cdot\vec{B}\)</span> must be invariant also. This generalisation in <a href="#eq-scalar-prod" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-scalar-prod</span></a> is our first hint that if we have expressions involving the full contraction of all indices the resulting scalar is a Lorentz invariant. We will firm this conjecture up in the coming lectures. Finally, we see that the scalar product of our basis 4-vectors obeys: <span class="math display">\[
+\vec{e}_\mu \cdot \vec{e}_\nu = \eta_{\mu\nu},
+\]</span> reflecting their orthogonality and unit 4-vector nature.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Orthogonality of basis 4-vectors</strong></p>
+<p>Any vector in 1+1D space-time can be decomposed into a combination of the time <span class="math inline">\(\vec{e}_0\)</span> and space <span class="math inline">\(\vec{e}_1\)</span> basis “4-vectors” in frame <span class="math inline">\(S\)</span>. Any other inertial frame <span class="math inline">\(\bar S\)</span> similarly possesses basis 4-vectors <span class="math inline">\(\vec{e}_{\bar 0}\)</span> and space <span class="math inline">\(\vec{e}_{\bar 1}\)</span>. Draw all these basis vectors in a space-time diagram as seen in frame <span class="math inline">\(S\)</span> like that seen in the last lecture <a href="./4vectors.html#sec-basis">Introducing 4-vectors</a>. Use the transformation for basis vectors <span class="math inline">\(\vec{e}_{\bar \mu} = \Lambda^{\nu}_{\bar \mu}\vec{e}_{\nu}\)</span> to express the basis vectors in <span class="math inline">\(\bar S\)</span> in terms of those in <span class="math inline">\(S\)</span>. Compute the 4-vector scalar product <span class="math inline">\(\vec{e}_{\bar 0}\cdot\vec{e}_{\bar 1}\)</span> in frame <span class="math inline">\(S\)</span> and confirm they are orthogonal.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Orthogonality of basis 4-vectors</strong></p>
+<p>Solution …</p>
+</div>
+</div>
+</div>
+</section>
+<section id="constructing-one-forms" class="level2 page-columns page-full" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="constructing-one-forms"><span class="header-section-number">5.2</span> Constructing one-forms</h2>
+<p>It is time for us to consider more closely what objects possess components that are lower indices. To start we observe that the set of all 4-vectors <span class="math inline">\(\vec{X}\)</span> in Minkowski space-time form a vector space <span class="math inline">\(\mathcal{M}\)</span>. What this means formally is that 4-vectors obey the axioms of a vector space. Recall a vector space <span class="math inline">\(\mathcal{M}\)</span> over reals <span class="math inline">\(\mathbb{R}\)</span> is a set equipped with two operations, <em>vector addition</em> and <em>scalar multiplication</em>, that satisfy the following axioms:</p>
+<ol type="1">
+<li><strong>Closure under addition</strong>: For all <span class="math inline">\(\vec{u}, \vec{v} \in \mathcal{M}\)</span>, the sum <span class="math inline">\(\vec{u} + \vec{v} \in \mathcal{M}\)</span>.</li>
+<li><strong>Associativity of addition</strong>: For all <span class="math inline">\(\vec{u}, \vec{v}, \vec{w} \in \mathcal{M}\)</span>, <span class="math inline">\((\vec{u} + \vec{v}) + \vec{w} = \vec{u} + (\vec{v} + \vec{w})\)</span>.</li>
+<li><strong>Commutativity of addition</strong>: For all <span class="math inline">\(\vec{u}, \vec{v} \in \mathcal{M}\)</span>, <span class="math inline">\(\vec{u} + \vec{v} = \vec{v} + \vec{u}\)</span>.</li>
+<li><strong>Existence of additive identity</strong>: There exists an element <span class="math inline">\(\vec{0} \in \mathcal{M}\)</span> such that for all <span class="math inline">\(\vec{v} \in \mathcal{M}\)</span>, <span class="math inline">\(\vec{v} + \vec{0} = \vec{v}\)</span>.</li>
+<li><strong>Existence of additive inverse</strong>: For each <span class="math inline">\(\vec{v} \in \mathcal{M}\)</span>, there exists an element <span class="math inline">\(-\vec{v} \in \mathcal{M}\)</span> such that <span class="math inline">\(\vec{v} + (-\vec{v}) = \vec{0}\)</span>.</li>
+<li><strong>Closure under scalar multiplication</strong>: For all <span class="math inline">\(a \in \mathbb{R}\)</span> and <span class="math inline">\(\vec{v} \in \mathcal{M}\)</span>, the product <span class="math inline">\(a\vec{v} \in \mathcal{M}\)</span>.</li>
+<li><strong>Associativity of scalar multiplication</strong>: For all <span class="math inline">\(a, b \in \mathbb{R}\)</span> and <span class="math inline">\(\vec{v} \in \mathcal{M}\)</span>, <span class="math inline">\(a(b\vec{v}) = (ab)\vec{v}\)</span>.</li>
+<li><strong>Distributivity of scalar multiplication with respect to vector addition</strong>: For all <span class="math inline">\(a \in \mathbb{R}\)</span> and <span class="math inline">\(\vec{u}, \vec{v} \in \mathcal{M}\)</span>, <span class="math inline">\(a(\vec{u} + \vec{v}) = a\vec{u} + a\vec{v}\)</span>.</li>
+<li><strong>Distributivity of scalar multiplication with respect to field addition</strong>: For all <span class="math inline">\(a, b \in \mathbb{R}\)</span> and <span class="math inline">\(\vec{v} \in \mathcal{M}\)</span>, <span class="math inline">\((a + b)\vec{v} = a\vec{v} + b\vec{v}\)</span>.</li>
+<li><strong>Existence of multiplicative identity</strong>: For all <span class="math inline">\(\vec{v} \in \mathcal{M}\)</span>, <span class="math inline">\(1\vec{v} = \vec{v}\)</span>, where <span class="math inline">\(1\)</span> is the multiplicative identity in <span class="math inline">\(\mathbb{R}\)</span>.</li>
+</ol>
+<p>The crucial axioms are the ones giving closure 1. and 6., while the rest just establish sensible behaviour of the two operations.</p>
+<p>Next consider an ordinary function <span class="math inline">\(f(x)\)</span> which takes a scalar <span class="math inline">\(x\)</span> and maps it to another scalar <span class="math inline">\(y\)</span>, so <span class="math display">\[
+f:x\in\mathbb{R} \mapsto y \in \mathbb{R},
+\]</span> as depicted in this figure:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/function.png" class="img-fluid figure-img" width="150"></p>
+<figcaption>A function <span class="math inline">\(f\)</span> maps a point <span class="math inline">\(x\)</span> from the real line <span class="math inline">\(\mathbb{R}\)</span> to <span class="math inline">\(y\)</span> in <span class="math inline">\(\mathbb{R}\)</span> as <span class="math inline">\(f(x) = y\)</span>.</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p>Now suppose we want an object that <span class="math inline">\(\tilde{Q}(\vec{A})\)</span> that maps a 4-vector <span class="math inline">\(\vec{A}\)</span> to scalar <span class="math inline">\(a \in \mathbb{R}\)</span> as: <span class="math display">\[
+\tilde{Q}:\vec{A}\in\mathcal{M} \mapsto a \in \mathbb{R}.
+\]</span> As this object acts on a non-scalar input it is called a <em>functional</em> and we will distinguish it from an ordinary function with a <span class="math inline">\(\tilde{\cdot}\)</span> above its symbol. Similar to a function we can depict a one-form like this:</p><div class="no-row-height column-margin column-container"><span class="margin-aside">An example of a functional you may have encountered already is a definite integral <span class="math display">\[
+\tilde{F}(f(x)) = \int_{-1}^1 {\rm d}x f(x),
+\]</span> which maps a function <span class="math inline">\(f(x)\)</span> to a scalar.</span></div></div>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/oneform.png" class="img-fluid figure-img" width="200"></p>
+<figcaption>A linear functional <span class="math inline">\(\tilde{Q}\)</span> maps a 4-vector <span class="math inline">\(\vec{A}\)</span> from <span class="math inline">\(\mathcal{M}\)</span> to a scalar <span class="math inline">\(y\)</span> in <span class="math inline">\(\mathbb{R}\)</span> as <span class="math inline">\(\tilde{Q}(\vec{A}) = y\)</span>.</figcaption>
+</figure>
+</div>
+<p>We can define the scalar multiplication by <span class="math inline">\(\alpha \in \mathbb{R}\)</span> of a functional <span class="math inline">\(\tilde{Q}\)</span> and a new functional <span class="math inline">\(\tilde{R} = \alpha\tilde{Q}\)</span> whose output <span class="math inline">\(\tilde{R}(\vec{A}) = \alpha\tilde{Q}(\vec{A})\)</span> is the multiplication of the output of <span class="math inline">\(\tilde{Q}\)</span> by <span class="math inline">\(\alpha\)</span>. We can also define the addition of <span class="math inline">\(\tilde{Q}\)</span> with another functional <span class="math inline">\(\tilde{P}\)</span> as a new functional <span class="math inline">\(\tilde{R} = \tilde{Q} + \tilde{P}\)</span> whose output <span class="math inline">\(\tilde{R}(\vec{A}) = \tilde{Q}(\vec{A}) + \tilde{P}(\vec{A})\)</span> is the sum of the outputs of <span class="math inline">\(\tilde{Q}\)</span> and <span class="math inline">\(\tilde{P}\)</span>. We thus have the basic ingredients needed for constructing another vector space from functionals.</p>
+<p>Before proceeding we restrict our considerations to <em>linear functionals</em>. This means, like ordinary functions, they obey following: <span class="math display">\[
+\begin{align}
+    \tilde{Q}(\alpha\vec{A}) &amp;= \alpha\tilde{Q}(\vec{A}), \\
+    \tilde{Q}(\vec{A}+\vec{B}) &amp;= \tilde{Q}(\vec{A}) + \tilde{Q}(\vec{B}).
+\end{align}
+\]</span> The set of all linear functionals on <span class="math inline">\(\mathcal{M}\)</span> thus form a new vector space <span class="math inline">\(\mathcal{M}^*\)</span> called the <em>dual vector space</em> of <span class="math inline">\(\mathcal{M}\)</span>.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Vector spaces and their duals will not be entirely new concepts to you. In linear algebra the set of row vectors forms a dual space to the set of column vectors. Row vectors are linear functionals acting on column vectors via left multiplication. Similarly, in quantum mechanics bras <span class="math inline">\(\langle \psi| \in \mathcal{H}^*\)</span> are the duals of kets <span class="math inline">\(|\psi\rangle \in \mathcal{H}\)</span>, where <span class="math inline">\(\mathcal{H}\)</span> is the complex linear vector space or Hilbert space of the system.</p>
+</div>
+</div>
+<p>We will call the vectors in the dual space <span class="math inline">\(\mathcal{M}^*\)</span> <em>one-forms</em>. This name comes from deeper differential geometry which will only touch upon in this course. What is crucial here is that one-forms, like 4-vectors, are abstract geometrical objects. We will denote one-forms using the <span class="math inline">\(\tilde{\cdot}\)</span> functional notation.</p>
+<p>Since one-forms are linear functionals we can entirely characterise their behaviour by acting them on basis 4-vectors. Specifically, the components of <span class="math inline">\(\tilde{Q}\)</span> are extracted as: <span class="math display">\[
+Q_\mu = \tilde{Q}(\vec{e}_\mu),
+\]</span> where we note that they possess a lower index inherited from the basis 4-vector. Given these components we can then construct the action of <span class="math inline">\(\tilde{Q}\)</span> on any input 4-vector <span class="math inline">\(\vec{A}\)</span> as: <span class="math display">\[
+\tilde{Q}(\vec{A}) = \tilde{Q}(A^\mu\vec{e}_\mu) = A^\mu\tilde{Q}(\vec{e}_\mu) = A^\mu Q_\mu.
+\]</span> The lefthand side of the above equation is a scalar formed from geometrical objects. It has to be Lorentz invariant, while the far righthand side is the calculation of this scalar from components in a particular frame <span class="math inline">\(S\)</span>. Indeed geometrically a one-form can be viewed as a sequence of surfaces in space-time, while a 4-vector is an arrow. The scalar value of <span class="math inline">\(\tilde{Q}(\vec{A})\)</span> then has a geometrical interpretation as the number of <span class="math inline">\(\tilde{Q}\)</span> surfaces pierced by <span class="math inline">\(\vec{A}\)</span>, as depicted here:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/oneform_surfaces.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>We can view <span class="math inline">\(\tilde{Q}\)</span> as a stack of surfaces, as shown here for integer separations along some direction. The value of <span class="math inline">\(\tilde{Q}\)</span> is then the number of surfaces pierced by a 4-vector. For <span class="math inline">\(\vec{A}\)</span> and <span class="math inline">\(\vec{C}\)</span> some whole number are threaded through, but for <span class="math inline">\(\vec{B}\)</span> none are since it lies along the surface.</figcaption>
+</figure>
+</div>
+<p>Naturally, the next question is how do the components of one-forms transform between frames. This is answered easily by inserting the transformation for basis 4-vectors as: <span class="math display">\[
+\tilde{Q}(\vec{e}_\mu) = Q_\mu = \tilde{Q}(\Lambda^{\bar \nu}_\mu\vec{e}_{\bar \nu}) = \Lambda^{\bar \nu}_\mu\tilde{Q}(\vec{e}_{\bar \nu}) = \Lambda^{\bar \nu}_\mu Q_{\bar \nu}.
+\]</span> Inverting this expression gives: <span class="math display">\[
+Q_{\bar \nu} = \Lambda^{\mu}_{\bar \nu} Q_{\mu},
+\]</span> where we see that the components of one-forms transform oppositely to those of 4-vectors. In fact they transform the same way as the basis 4-vectors themselves which is why you may see them referred to as <em>covariant</em> vectors, while 4-vectors are correspondingly referred to as <em>contravariant</em> vectors. We won’t use this old-fashioned language in this course.</p>
+<p>By transforming oppositely to 4-vectors it ensures that <span class="math inline">\(\tilde{Q}(\vec{A})\)</span> is a Lorentz invariant. This is confirmed by computing: <span class="math display">\[
+\begin{align}
+    \tilde{Q}(\vec{A}) &amp;= Q_{\bar \nu} A^{\bar \nu}, \\
+    &amp;= \left(\Lambda^{\mu}_{\bar \nu} Q_{\mu}\right)\left(\Lambda^{\bar \nu}_{\alpha} A^\alpha\right), \\
+    &amp;= \left(\Lambda^{\mu}_{\bar \nu}\Lambda^{\bar \nu}_{\alpha}\right)Q_\mu A^\alpha, \\
+    &amp;= \delta^\mu_\alpha Q_\mu A^\alpha, \\
+    &amp;= Q_\mu A^\mu,
+\end{align}
+\]</span> where the expression of <span class="math inline">\(\tilde{Q}(\vec{A})\)</span> in frame <span class="math inline">\(\bar S\)</span> is transformed into its equivalent expression in frame <span class="math inline">\(S\)</span>. What is computed here is called the contraction of a one-form with a 4-vector.</p>
+<p>Given we have components <span class="math inline">\(Q_\mu\)</span> of a one-form <span class="math inline">\(\tilde{Q}\)</span> we should specify what they are the expansion coefficients of. We expect there should be some basis one-forms in <span class="math inline">\(\mathcal{M}^*\)</span> which reconstruct the one-form as: <span class="math display">\[
+\tilde{Q} = Q_\mu \tilde{e}^\mu.
+\]</span> Reconsidering <span class="math inline">\(\tilde{Q}(\vec{A})\)</span> we find that <span class="math display">\[
+\tilde{Q}(\vec{A}) = Q_\mu\tilde{e}^\mu(A^\nu\vec{e}_\nu) = Q_\mu A^\nu\tilde{e}^\mu(\vec{e}_\nu) \overset{?}{=} A^\mu Q_\mu.
+\]</span> The final equality only applies if <span class="math inline">\(\tilde{e}^\mu(\vec{e}_\nu) = \delta^\mu_\nu\)</span>. This relation is called <em>biorthonormality</em> of the one-form basis generated by the 4-vector basis. We can then guess that basis one-forms transform between frames as: <span class="math display">\[
+\tilde{e}^{\bar \mu} = \Lambda^{\bar \mu}_\nu \tilde{e}^{\nu},
+\]</span> so they transform identically to the components of 4-vectors, as expected due to the upper index they possess.</p>
+<p>The duality between <span class="math inline">\(\mathcal{M}\)</span> and <span class="math inline">\(\mathcal{M}^*\)</span> means we can equally view 4-vectors as linear functionals of one-forms as <span class="math inline">\(\vec{A}(\tilde{Q})\)</span>. This suggests we should introduce a more symmetrical notation for their contraction as: <span class="math display">\[
+\langle \tilde{Q}, \vec{A} \rangle = \tilde{Q}(\vec{A}) = \vec{A}(\tilde{Q}),
+\]</span> and components follow as <span class="math inline">\(A^\mu = \vec{A}(\tilde{e}^\mu) = \langle \tilde{e}^\mu, \vec{A} \rangle\)</span> and <span class="math inline">\(Q_\mu = \tilde{Q}(\vec{e}_\mu) = \langle \tilde{Q}, \vec{e}_\mu \rangle\)</span>.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Definition of a one-form
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A one-form <span class="math inline">\(\vec{Q}\)</span> is a geometrical object with components <span class="math inline">\(Q_\mu\)</span> in frame <span class="math inline">\(S\)</span> which transforms into another frame <span class="math inline">\(\bar S\)</span> as: <span class="math display">\[
+Q_{\bar{\mu}} = \Lambda^{\nu}_{\bar{\mu}} Q_\nu.
+\]</span> Hence, any set of 4 components which transform this way is a bonifide one-form.</p>
+</div>
+</div>
+<p>Given one-forms are memebers of a dual vector space <span class="math inline">\(\mathcal{M}^*\)</span> we expect they should also have their own scalar-product defining the length of a one-form and orthogonality between them. Moreover, this scalar-product should be a Lorentz invariant quantity. Analogous with 4-vectors we can define the scalar-product between two one-forms <span class="math inline">\(\tilde{Q}\)</span> and <span class="math inline">\(\tilde{P}\)</span> as <span id="eq-oneform_scalarprod"><span class="math display">\[
+    \tilde{Q}\cdot\tilde{P} = Q_0P_0 - Q_1P_1 - Q_2P_2 - Q_3P_3 = \eta^{\mu\nu}Q_\mu P_\nu,
+\tag{5.7}\]</span></span> where <span class="math inline">\(\eta^{\mu\nu} = [\underline{\underline \eta}]_{\mu\nu}\)</span> has elements derived from the same <span class="math inline">\(\underline{\underline \eta}\)</span> matrix used above in the section <a href="./oneforms.html#sec-metric_trans">Scalar-product of 4-vectors</a> earlier. The proof that <a href="#eq-oneform_scalarprod" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-oneform_scalarprod</span></a> is Lorentz invariant is identical to that earlier for 4-vectors just with <span class="math inline">\(\underline{\underline \Lambda}\)</span> replaced with <span class="math inline">\(\underline{\underline \Lambda}^{-1}\)</span>.</p>
+<!--- This might be a good place to stop the lecture here --->
+</section>
+<section id="sec-fields" class="level2 page-columns page-full" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="sec-fields"><span class="header-section-number">5.3</span> Fields and their space-time derivatives</h2>
+<p>This course is about fields. Mathematically we can view the simplest possible field as a general Lorentz scalar functional <span class="math inline">\(\tilde{\varphi}(\vec{X})\)</span> of the space-time points specified by a 4-vector <span class="math inline">\(\vec{X}\)</span>. By formally being a functional of the geometrical object <span class="math inline">\(\vec{X}\)</span> we are making it clear the field is not tied to any particular reference frame. In any given frame <span class="math inline">\(S\)</span> in which <span class="math inline">\(\vec{X}\)</span> has components <span class="math inline">\(x^\mu\)</span> the field can be considered a function of these components: <span class="math display">\[
+\tilde{\varphi}(\vec{X}) \overset{S}{\rightarrow} \varphi(x^0,x^1,x^2,x^3) = \varphi(x^\mu) = \varphi(x)
+\]</span> There are a couple of notations introduced above which need explaining. First, ocassionally it is useful to write <span class="math inline">\(\varphi(x^\mu) = \varphi(x^0,x^1,x^2,x^3)\)</span>. This is a slight abuse of our index notation since <span class="math inline">\(\mu\)</span> here is a shorthand for <span class="math inline">\(\varphi\)</span> being a function of all components in frame <span class="math inline">\(S\)</span>. It is not a free index which participates in any index manipulations outside of the argument parentheses of <span class="math inline">\(\varphi\)</span>. Second, for brevity we will also just write <span class="math inline">\(\varphi(x) = \varphi(x^0,x^1,x^2,x^3)\)</span>, and it should be clear from the context when we mean this or just the coordinate along the <span class="math inline">\(x\)</span>-axis (see the example below). This notation is useful when we want to find the function that represents <span class="math inline">\(\varphi\)</span> in another frame <span class="math inline">\(\bar S\)</span>. We use that the value of <span class="math inline">\(\varphi\)</span> at any point <span class="math inline">\(\vec{X}\)</span> is unchanged as: <span class="math display">\[
+\tilde{\varphi}(\vec{X}) \overset{S}{\rightarrow} \varphi(x^\mu) = \varphi(\Lambda^{\mu}_{\bar \nu} x^{\bar \nu}) = \bar{\varphi}(x^{\bar \nu}).
+\]</span> What we have done in these steps is to take the function <span class="math inline">\(\varphi(x^\mu)\)</span> in <span class="math inline">\(S\)</span> and then perform an inverse Lorentz transformation on its arguments (nicely handled by the index <span class="math inline">\(\mu\)</span>) to convert them into components in frame <span class="math inline">\(\bar S\)</span>. We then identify this with the function <span class="math inline">\(\bar{\varphi}(x^{\bar \nu})\)</span> describing the field in <span class="math inline">\(\bar S\)</span>. A <span class="math inline">\(\bar{\circ}\)</span> is put on the function as well to make it clear it is in general a <em>different</em> function of the components in <span class="math inline">\(\bar S\)</span> than <span class="math inline">\(\varphi\)</span> and not just the same function with its <span class="math inline">\(x^\mu\)</span> arguments replaced with <span class="math inline">\(x^{\bar \nu}\)</span>. The transformations of functions between reference frames was discussed earlier in <a href="./principle_relativity.html#sec-relativity">Principle of relativity</a>. In short we see that <span class="math inline">\(\varphi(x) = \bar{\varphi}(\bar{x})\)</span>.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Transforming fields between frames
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Let’s consider a concrete example to illustrate the transformation of fields in 1+1D. Suppose we have a field specified by the following function : <span id="eq-field-S"><span class="math display">\[
+\varphi(ct,x) = {\rm Re}\{\tan^{-1}(x + i ct)\}.
+\tag{5.8}\]</span></span> This is plotted in frame <span class="math inline">\(S\)</span> in the left panel of <a href="#fig-field-transform" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-field-transform</span></a>. If we then insert the inverse Lorentz transformation from <span class="math inline">\(S\)</span> to <span class="math inline">\(\bar S\)</span> we then get: <span id="eq-field-Sbar"><span class="math display">\[
+\begin{align}
+\bar{\varphi}(c\bar{t},\bar{x}) &amp;= {\rm Re}\left\{\tan^{-1}\left(\gamma(\beta)\bar{x} + \beta\gamma(\beta)c\bar{t} + i\gamma(\beta)c\bar{t} + i\beta\gamma(\beta)\bar{x}\right)\right\}. \\
+&amp;= {\rm Re}\left\{\tan^{-1}\left(\gamma(\beta)(1+ i\beta)\bar{x} + i\gamma(\beta)(1-i\beta)c\bar{t}\right)\right\}.
+\end{align}
+\tag{5.9}\]</span></span> What is clear here is that <span class="math inline">\(\bar{\varphi}(c\bar{t},\bar{x})\)</span> is a different function of its arguments compared to <span class="math inline">\(\varphi(ct,x)\)</span> owing to the complex factors <span class="math inline">\(\gamma(\beta)(1 \pm i\beta)\)</span>. As can be seen in the right panel of <a href="#fig-field-transform" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-field-transform</span></a> the new function <span class="math inline">\(\bar{\varphi}(c\bar{t},\bar{x})\)</span> appears distorted since the <span class="math inline">\(ct\)</span> and <span class="math inline">\(x\)</span> axes of <span class="math inline">\(S\)</span> are rotated by <span class="math inline">\(\tan(\beta)\)</span> in <span class="math inline">\(\bar S\)</span>. Nonetheless the value of the field at any given point in space-time is completely unchanged and agreed upon by both frames. Take the point <span class="math inline">\(\vec{X}\)</span> labelled in <a href="#fig-field-transform" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-field-transform</span></a> which has coordinates in <span class="math inline">\(S\)</span>: <span class="math display">\[{\bf X} = \left(
+\begin{array}{c}
+  2\\
+  \pi/2  
+\end{array}\right).
+\]</span> Evaluating the field using <a href="#eq-field-S" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-field-S</span></a> gives <span class="math inline">\(\varphi(\vec{X}) = \varphi({\bf X}) = 1.31\)</span>. Lorentz transforming to <span class="math inline">\(\bar S\)</span> then gives coordinates for <span class="math inline">\(\vec{X}\)</span> as: <span class="math display">\[\bar{{\bf X}} = \left(
+\begin{array}{c}
+  1.50\\
+  0.84  
+\end{array}\right).
+\]</span> Evaluating the field using <a href="#eq-field-Sbar" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-field-Sbar</span></a> gives <span class="math inline">\(\varphi(\vec{X}) = \bar{\varphi}(\bar{\bf X}) = 1.31\)</span>, as it must.</p>
+<div id="fig-field-transform" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-field-transform-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/field_transform.png" class="img-fluid figure-img" width="500">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-field-transform-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.1: In the left panel a contour plot in 1+1D of the field <span class="math inline">\(\varphi(ct,x) = {\rm Re}\{\tan^{-1}(x + i ct)\}\)</span> in frame <span class="math inline">\(S\)</span>. In the right panel the same field is shown in the coordinates of frame <span class="math inline">\(\bar{S}\)</span>. The same space-time point <span class="math inline">\(\vec{X}\)</span> is highlighted in both frames to illustrate that the value of the field is unchanged.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<div class="no-row-height column-margin column-container"><span class="margin-aside callout-7-contents callout-collapse collapse callout-margin-content">Note, this function was chosen for no other reason than it produces a nice plot in <a href="#fig-field-transform" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-field-transform</span></a>. It has no deeper physical significance here.</span></div><p>One of the most important and basic properties of a field that we will repeatedly need to compute is its derivative in space-time. Formally, we compute this by considering the field at two nearby points <span class="math inline">\(\vec{X}\)</span> and <span class="math inline">\(\vec{X}+\delta\vec{X}\)</span> where <span class="math inline">\(\delta\vec{X}\)</span> is a small 4-vector connecting the points, as shown in <a href="#fig-field-points" class="quarto-xref">Figure&nbsp;<span class="quarto-unresolved-ref">fig-field-points</span></a>. We then proceed to compute the Taylor expansion of the field <span class="math inline">\(\varphi\)</span> about the point <span class="math inline">\(\vec{X}+\delta\vec{X}\)</span> as: <span id="eq-taylor_series"><span class="math display">\[
+\varphi(x^\mu+\delta x^\mu) = \varphi(x^\mu) + \sum_{\nu=0}^3\delta x^\nu \left.\frac{\partial \varphi}{\partial x^\nu}\right|_{\vec{X}} + \mathcal{O}(\delta x^2).
+\tag{5.10}\]</span></span> Now the first term <span class="math inline">\(\varphi(x^\mu)\)</span> is a Lorentz scalar since it is the field itself. However, we are uncertain at this point what the status of the second term is, which is the reason we have written the sum out explicitly. We know the entire Taylor series should be Lorentz scalar but we don’t know off hand that every term is a Lorentz scalar.</p>
+<div id="fig-field-points" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-field-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/field_points.png" class="img-fluid figure-img" width="350">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-field-points-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;5.2: The derivative of a field, illustrated here for some example field in 1+1D, is based on comparing two nearby points <span class="math inline">\(\vec{X}\)</span> and <span class="math inline">\(\vec{X}+\delta\vec{X}\)</span> in space-time. A 4-vector <span class="math inline">\(\delta\vec{X}\)</span> connects them and the value of the field at each point is a Lorentz scalar, which makes allows us to define a derivative as a one-form.
+</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p>Now, we do know that <span class="math inline">\(\delta x^\nu\)</span> is a valid 4-vector but what type of object is the derivative of the field? We would like to identify it as a bonifide one-form <span class="math display">\[
+K_\nu = \frac{\partial \varphi}{\partial x^\nu},
+\]</span>  since then the second term is a contraction <span class="math inline">\(\delta x^\nu K_\nu\)</span>, using Einstein summation convention, is a manifestly a Lorentz scalar also.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">The rule you see for identifying <span class="math inline">\(K_\nu\)</span> here is that an upper index on the demoninator of a derivative behaves like a lower index overall.</span></div></div>
+<p>To determine whether <span class="math inline">\(K_\nu\)</span> is a one-form we have to establish how it transforms between frames. For this we use the chain-rule to establish the relation between partial derivatives in different frames as <span id="eq-derivative_transform"><span class="math display">\[
+\frac{\partial}{\partial x^\mu} = \Lambda^\bar{\nu}_\mu \frac{\partial}{\partial x^\bar{\nu}}.
+\tag{5.11}\]</span></span></p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Chain-rule reminder
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Suppose we have function <span class="math inline">\(f(x,y)\)</span> in term of two variables <span class="math inline">\(x\)</span> and <span class="math inline">\(y\)</span>. We also have two other variables <span class="math inline">\(r\)</span> and <span class="math inline">\(s\)</span> in which we can express the original variables in terms of as <span class="math inline">\(x(r,s)\)</span> and <span class="math inline">\(y(r,s)\)</span>. Subsitution into <span class="math inline">\(f\)</span> gives this function in terms of the new variables <span class="math inline">\(f(r,s) = f(x(r,s),y(r,s))\)</span>. The chain-rule allows us to connect derivatives in <span class="math inline">\(r,s\)</span> with those in <span class="math inline">\(x,y\)</span> and the transformation connecting them as <span class="math display">\[
+\frac{\partial f(r,s)}{\partial r} = \frac{\partial f(x,y)}{\partial x} \frac{\partial x(r,s)}{\partial r} + \frac{\partial f(x,y)}{\partial y} \frac{\partial y(r,s)}{\partial r},
+\]</span> and <span class="math display">\[
+\frac{\partial f(r,s)}{\partial s} = \frac{\partial f(x,y)}{\partial x} \frac{\partial x(r,s)}{\partial s} + \frac{\partial f(x,y)}{\partial y} \frac{\partial y(r,s)}{\partial s}.
+\]</span> This can expressed as <span class="math display">\[
+\left(\begin{array}{c} \frac{\partial}{\partial r} \\
+\frac{\partial}{\partial s} \end{array}\right)f = \left(\begin{array}{cc} \frac{\partial x}{\partial r} &amp; \frac{\partial y}{\partial r} \\
+\frac{\partial x}{\partial s} &amp; \frac{\partial y}{\partial s} \end{array}\right) \left(\begin{array}{c} \frac{\partial}{\partial x} \\
+\frac{\partial}{\partial y} \end{array}\right)f,
+\]</span> where the <span class="math inline">\(2\times 2\)</span> matrix is the Jacobian <span class="math inline">\(\bf J\)</span> for this coordinate transformations. This expression can be generalised readily to coordinates <span class="math inline">\(x^\mu\)</span> in frame <span class="math inline">\(S\)</span> and <span class="math inline">\(x^\bar{\nu}\)</span> in frame <span class="math inline">\(\bar{S}\)</span> in <span class="math inline">\(1+3\)</span> space-time as <span class="math display">\[
+\frac{\partial}{\partial x^\mu} = \sum_{\nu=0}^3 \frac{\partial x^\bar{\nu}}{\partial x^\mu} \frac{\partial}{\partial x^\bar{\nu}}.
+\]</span> The crucial observation here is that the Lorentz transformation is linear (as we argued earlier in <a href="./principle_relativity.html">Principle of relativity</a> on general grounds) as <span class="math display">\[
+x^\bar{\nu} = \Lambda^\bar{\nu}_\mu x^\mu,
+\]</span> hence we immediately see that <span class="math display">\[
+\frac{\partial x^\bar{\nu}}{\partial x^\mu} = \Lambda^\bar{\nu}_\mu,
+\]</span> so we have <span class="math display">\[
+\frac{\partial}{\partial x^\mu} = \Lambda^\bar{\nu}_\mu \frac{\partial}{\partial x^\bar{\nu}},
+\]</span> as claimed.</p>
+</div>
+</div>
+</div>
+<p>Using <a href="#eq-derivative_transform" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-derivative_transform</span></a> we see that <span class="math display">\[
+\frac{\partial \varphi}{\partial x^\nu} = \Lambda^\bar{\nu}_\mu \frac{\partial \varphi}{\partial x^\bar{\nu}},
+\]</span> <span class="math display">\[
+K_\mu = \Lambda^\bar{\nu}_\mu K_\bar{\nu},
+\]</span> hence confirming that <span class="math inline">\(K_\mu\)</span> does indeed transform exactly like a one-form.</p>
+<p>More generally, we can identify <a href="#eq-derivative_transform" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-derivative_transform</span></a> as defining a one-form differential operator which we write more compactly as <span class="math display">\[
+\partial_\mu = \frac{\partial}{\partial x^\mu}, \quad {\rm and} \quad \partial_\bar{\nu} = \frac{\partial}{\partial x^\bar{\nu}},
+\]</span> so <a href="#eq-derivative_transform" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-derivative_transform</span></a> becomes the form we will use from now on <span id="eq-derivative_transform_compact"><span class="math display">\[
+\partial_\mu= \Lambda^\bar{\nu}_\mu \partial_\bar{\nu}.
+\tag{5.12}\]</span></span> Returning to <a href="#eq-taylor_series" class="quarto-xref">Equation&nbsp;<span class="quarto-unresolved-ref">eq-taylor_series</span></a> we have <span class="math display">\[
+\varphi(x^\mu+\delta x^\mu) = \varphi(x^\mu) + \delta x^\nu \left.\partial_\nu \varphi\right|_{\vec{X}} + \mathcal{O}(\delta x^2).
+\]</span> which we can identify a familiar first principles expression for the derivative of the field at point <span class="math inline">\(\vec{X}\)</span> as <span class="math display">\[
+\left.\partial_\nu \varphi\right|_{\vec{X}} = \lim_{\delta x \rightarrow 0}\frac{\varphi(x^\mu+\delta x^\mu) - \varphi(x^\mu)}{\delta x^\mu}.
+\]</span> In frame <span class="math inline">\(S\)</span> the one-form <span class="math inline">\(\partial_\mu\)</span> can be written as <span class="math display">\[
+\partial_\mu = \left(\begin{array}{c} \frac{1}{c}\frac{\partial}{\partial t} \\
+\nabla \end{array}\right),
+\]</span> from which it is clear that the 4-vector version of it is <span class="math display">\[
+\partial^\mu = \eta^{\mu\nu}\partial_\nu = \left(\begin{array}{c} \frac{1}{c}\frac{\partial}{\partial t} \\
+-\nabla \end{array}\right).
+\]</span> The negative sign on the 4-vector components points to the derivative being a natural one-form.</p>
+<p>Finally, we can contract the one-form and 4-vector derivative to get a Lorentz scalar differential operator <span class="math display">\[
+\partial_\mu\partial^\mu = \frac{1}{c^2}\frac{\partial}{\partial t^2} -\nabla^2,
+\]</span> which is of such crucial importance for our work to come that it is named the <em>d’Alembert</em> operator. Indeed the wave equation can now be expressed very succinctly as <span class="math display">\[
+\partial_\mu\partial^\mu \varphi = 0,
+\]</span> where its relativistic covariance is now completely apparent.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 5</strong>.</span></div></div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>4. Covariance of the wave-equation</strong></p>
+<p>Confirm that the wave-equation <span class="math inline">\(\partial_\mu\partial^\mu\varphi(x) = 0\)</span> is relativistically covariant.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>4. Covariance of the wave-equation</strong></p>
+<p>In frame <span class="math inline">\(S\)</span> the wave-equation is <span class="math display">\[
+  \partial_\mu\partial^\mu\varphi(x) = \left(\frac{1}{c^2}\frac{\partial}{\partial t^2} -\nabla^2\right)\varphi(x) = 0.
+\]</span> To show it is relativistically covariant we transform all parts of this equation into another frame <span class="math inline">\(\bar{S}\)</span>. For the field itself this is easy since <span class="math inline">\(\bar{\varphi}(\bar{x}) = \varphi(x)\)</span>. For the derivatives we Lorentz transform as <span class="math display">\[
+  \partial_\mu\partial^\mu\varphi(x) = \Lambda^\bar{\nu}_\mu\partial_\bar{\nu}\Lambda^\mu_\bar{\sigma}\partial^\bar{\sigma}\bar{\varphi}(\bar{x}),
+\]</span> which rearranges and simplifies as <span class="math display">\[
+  \Lambda^\bar{\nu}_\mu\Lambda^\mu_\bar{\sigma}\,\partial_\bar{\nu}\partial^\bar{\sigma}\bar{\varphi}(\bar{x}) = \delta^\bar{\nu}_\bar{\sigma}\,\partial_\bar{\nu}\partial^\bar{\sigma}\bar{\varphi}(\bar{x}) = \partial_\bar{\nu}\partial^\bar{\nu}\bar{\varphi}(\bar{x}) = \left(\frac{1}{c^2}\frac{\partial}{\partial \bar{t}^2} -\bar{\nabla}^2\right)\bar{\varphi}(\bar{x}) = 0.
+\]</span> showing it has exactly the same mathematical form in frame <span class="math inline">\(\bar{S}\)</span>.</p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./4vectors.html" class="pagination-link" aria-label="Introducing 4-vectors">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducing 4-vectors</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./tensors.html" class="pagination-link" aria-label="Tensors">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

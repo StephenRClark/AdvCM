@@ -6,11 +6,10 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
-<meta name="author" content="Prof.&nbsp;Joel Goldstein">
 <meta name="author" content="Prof.&nbsp;Stephen R. Clark">
 <meta name="dcterms.date" content="2026-02-01">
 
-<title>Advanced Classical Mechanics</title>
+<title>Advanced Classical Mechanics (Relativistic Fields)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +32,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./books.html" rel="next">
+<link href="./intro.html" rel="next">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -71,35 +70,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 <link rel="stylesheet" href="styles.css">
 </head>
@@ -131,7 +101,7 @@ window.Quarto = {
       <img src="./figures/acm.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
       </a>
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Advanced Classical Mechanics</a> 
+      <a href="./">Advanced Classical Mechanics (Relativistic Fields)</a> 
     </div>
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
@@ -149,14 +119,14 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./books.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Recommended Books</span></a>
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Introduction</span></a>
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended Books</span></a>
   </div>
 </li>
         <li class="sidebar-item sidebar-item-section">
@@ -200,153 +170,6 @@ window.Quarto = {
 </li>
       </ul>
   </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
- <span class="menu-text">II: Fields and tensors</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./tensors.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Example Class 2</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
- <span class="menu-text">III: Lagrangian field theory</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./single_particle.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Single-particle Lagrangian</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Example Class 3</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./symmetries.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item sidebar-item-section">
-      <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
- <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
-            <i class="bi bi-chevron-right ms-2"></i>
-          </a> 
-      </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Example Class 4</span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./4potential.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic 4-potential</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./em_lagrangian.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">15</span>&nbsp; <span class="chapter-title">Lagrangian approach to EM</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./example_class5.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Example Class 5</span></a>
-  </div>
-</li>
-      </ul>
-  </li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./problem_sheets.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Problem sheets</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./summary.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Summary</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./references.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">References</span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./epilogue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Epilogue</span></a>
-  </div>
-</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
@@ -363,10 +186,7 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a>
-  <ul class="collapse">
-  <li><a href="#notation-conventions" id="toc-notation-conventions" class="nav-link" data-scroll-target="#notation-conventions">Notation conventions</a></li>
-  </ul></li>
+  <li><a href="#preface" id="toc-preface" class="nav-link active" data-scroll-target="#preface">Preface</a></li>
   </ul>
 </nav>
     </div>
@@ -375,7 +195,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Advanced Classical Mechanics</h1>
+<h1 class="title">Advanced Classical Mechanics (Relativistic Fields)</h1>
 </div>
 
 
@@ -383,9 +203,8 @@ window.Quarto = {
 <div class="quarto-title-meta">
 
     <div>
-    <div class="quarto-title-meta-heading">Authors</div>
+    <div class="quarto-title-meta-heading">Author</div>
     <div class="quarto-title-meta-contents">
-             <p>Prof.&nbsp;Joel Goldstein <a href="mailto:Joel.Goldstein@bristol.ac.uk" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
              <p>Prof.&nbsp;Stephen R. Clark <a href="mailto:stephen.clark@bristol.ac.uk" class="quarto-title-author-email"><i class="bi bi-envelope"></i></a> </p>
           </div>
   </div>
@@ -407,72 +226,12 @@ window.Quarto = {
 
 <section id="preface" class="level1 unnumbered">
 <h1 class="unnumbered">Preface</h1>
-<p>Special relativity, to the best of our knowledge, is a fundamental principle of the universe: at least locally, all inertial frames are equivalent for formulating physical laws. These laws very often involve formulated in terms of a field, which is typically a scalar, vector, tensor or operator-valued function <span class="math inline">\(f(t,x,y,z)\)</span> of space-time that satisfies some differential field equation, such as a wave equation. This course is all about how to combine these two concepts and understand the general structure of relativistic field theories. In doing so we will learn a great deal about what form physical theories can take and apply this formalism to electromagnetism and quantum mechanics.</p>
-<section id="notation-conventions" class="level2">
-<h2 class="anchored" data-anchor-id="notation-conventions">Notation conventions</h2>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 85%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>symbol</th>
-<th>meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(\vec{a}\)</span></td>
-<td>abstract 3-vector, typically lower case roman letter</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\vec{A}\)</span></td>
-<td>abstract 4-vector, typically upper case roman letter</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\pmb{\symbb{T}}\)</span></td>
-<td>tensor, typically uppercase letters (exception below)</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\pmb{\symbb{g}}\)</span></td>
-<td>metric tensor</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\boldsymbol{a}\)</span></td>
-<td>column vector <span class="math inline">\(\left(
-\begin{array}{c}
-a_0 \\
-\vdots
-\end{array}
-\right)\)</span>, dimension depends on whether it represents the components of a 3- or 4-vector in a particular frame</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\mathbf{A}\)</span></td>
-<td>matrix <span class="math inline">\(\left(
-\begin{array}{cc}
-A_{00} &amp; \cdots \\
-\vdots &amp; \ddots
-\end{array}
-\right)\)</span>, typically uppercase roman letter, dimensions of matrix depend on context</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\eta^{\mu\nu}\)</span></td>
-<td>metric tensor elements <span class="math inline">\(\left(
-\begin{array}{cccc}
-1 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; -1 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; -1 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; -1 \\
-\end{array}
-\right)\)</span></td>
-</tr>
-</tbody>
-</table>
+<p>This Quarto book was prepared for the third year Advanced Classical Mechanics course at the University of Bristol in 2025/26.</p>
+<p>Change Log:</p>
+<p>20/02/26 First draft of Parts I of the course uploaded</p>
 <!-- Use Font Awesome -->
 
 
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -900,8 +659,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   <div class="nav-page nav-page-previous">
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./books.html" class="pagination-link" aria-label="Recommended Books">
-        <span class="nav-page-text">Recommended Books</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
+        <span class="nav-page-text">Introduction</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

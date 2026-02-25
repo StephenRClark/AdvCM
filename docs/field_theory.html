@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Recommended Books – Advanced Classical Mechanics (Relativistic Fields)</title>
+<title>9&nbsp; Building a field theory – Advanced Classical Mechanics (Relativistic Fields)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./principle_relativity.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./example_class3.html" rel="next">
+<link href="./planewaves.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -102,7 +102,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -111,7 +111,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./books.html">Recommended Books</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./field_theory.html">III: Lagrangian field theory</a></li><li class="breadcrumb-item"><a href="./field_theory.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,7 +153,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./books.html" class="sidebar-item-text sidebar-link active">
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Recommended Books</span></a>
   </div>
 </li>
@@ -241,16 +241,16 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">III: Lagrangian field theory</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
   </div>
 </li>
@@ -273,15 +273,25 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#lagrangians-for-many-coordinates" id="toc-lagrangians-for-many-coordinates" class="nav-link active" data-scroll-target="#lagrangians-for-many-coordinates"><span class="header-section-number">9.1</span> Lagrangians for many coordinates</a></li>
+  <li><a href="#chain-of-coupled-oscillators" id="toc-chain-of-coupled-oscillators" class="nav-link" data-scroll-target="#chain-of-coupled-oscillators"><span class="header-section-number">9.2</span> Chain of coupled oscillators</a></li>
+  <li><a href="#taking-the-continuum-limit" id="toc-taking-the-continuum-limit" class="nav-link" data-scroll-target="#taking-the-continuum-limit"><span class="header-section-number">9.3</span> Taking the continuum limit</a></li>
+  <li><a href="#euler-lagrange-equations-for-fields" id="toc-euler-lagrange-equations-for-fields" class="nav-link" data-scroll-target="#euler-lagrange-equations-for-fields"><span class="header-section-number">9.4</span> Euler-Lagrange equations for fields</a></li>
+  <li><a href="#divergence-theorem-in-13d-space-time" id="toc-divergence-theorem-in-13d-space-time" class="nav-link" data-scroll-target="#divergence-theorem-in-13d-space-time"><span class="header-section-number">9.5</span> Divergence theorem in 1+3D space-time</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./field_theory.html">III: Lagrangian field theory</a></li><li class="breadcrumb-item"><a href="./field_theory.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="recommended-books" class="quarto-section-identifier">Recommended Books</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></h1>
 </div>
 
 
@@ -298,34 +308,33 @@ window.Quarto = {
 </header>
 
 
-<p>Unfortunately, there is no single book that covers the material we will be discussing, in an appropriate level of detail. However, you can expect to find a lot of the material in books on ‘quantum field theory’, in an earlier chapters called something like ‘classical fields’. All of the material in this half of the course can be found somewhere in one of the books below and of course in many online resources. You will also find extra topics and further development of the material in the recommended books, which I hope will demonstrate the universality of the material we are discussing.</p>
-<ul>
-<li><p><strong>Classical Mechanics: The Theoretical Minimum</strong> <em>Leonard Susskind &amp; George Hrabovsky</em><br>
-A very readable Penguin paperback book. It gives a basic introduction to the Lagrangian aspects of the course, starting from a completely elementary level and finishing at electrodynamics. For our purposes it is better for background than specific detail. Susskind is widely renowned for his contributions to string theory and the holographic principle.</p></li>
-<li><p><strong>Special Relativity and Classical Field Theory: The Theoretical Minimum</strong> <em>Leonard Susskind &amp; Art Friedman</em><br>
-Building on the <em>Classical Mechanics</em> volume this book introduces special relativity in a clear and conceptual way. It then reformulates electromagnetism exactly as we do in this course. While it skims over the mathematical details it provides a nice overview. Check out the other books in this <em>Theoretical Minimum</em> series.</p></li>
-<li><p><strong>Electrodynamics of Classical Fields and Particles</strong> <em>A O Barut</em><br>
-Strongly recommended treatment which covers the material of this course at a similar level, although in a different order to us. Particularly good is the treatment of special relativity in Chapters 1 and 2, relevant to Part I and II of the course.</p></li>
-<li><p><strong>Introduction to Elementary Particles</strong> <em>David Griffiths</em><br>
-A very good particle physics book that covers relevant relativistic field theory very well, albeit in a different order to us. There is also an online version of the book available from the library website. Chapters 3 and 7 are particularly relevant.</p></li>
-<li><p><strong>Classical Electrodynamics</strong> <em>John David Jackson</em><br>
-The ‘classic’ book on the theory of electromagnetism and electrodynamics. Useful for background on Maxwell’s equations and solutions of them. Material for Part IV of this course is in Chapters 6, 11 and 12. The most recent third edition uses SI units throughout, as we do; previous editions use other systems of units.</p></li>
-<li><p><strong>Quantum Field Theory: A Modern Introduction</strong> <em>Michio Kaku</em><br>
-One of several books on ‘Quantum Field Theory’ (which is beyond the scope of our course), that gives a quick review of Relativistic Field Theory. The book mainly is aiming towards an understanding of particle physics. Sections 1.7-1.9 and 4.1 of the book are particularly recommended for Part IV of the course.</p></li>
-<li><p><strong>The Classical Theory of Fields</strong> <em>L D Landau &amp; E M Lifshitz</em><br>
-Volume 2 of the classic ‘Course of Theoretical Physics’, required reading for Soviet Theoretical Physics students. Chapters 1 and 2 are relevant to Part I and II of the course, and Chapters 3 and 4 to Part IV. Relativistic fields are studied in detail, but with less emphasis than we take on the Lagrangian approach. Landau and Lifshitz Volume 1 on Classical Mechanics may also be useful.</p></li>
-<li><p><strong>The Principle of Relativity: A collection of original memoirs on the special and general theory of relativity</strong> <em>H A Lorentz, A Einstein, etc</em> in Queen’s Library.<br>
-A collection of (translations of) the original papers by Lorentz on Lorentz transformations, Einstein’s papers on Special and General Relativity, and Minkowski’s on Minkowski space. Everybody should at least have a look at these groundbreaking and accessible papers, which are particularly relevant for Part I and II of the course.</p></li>
-<li><p><strong>It’s about time: Understanding Einstein’s Relativity</strong> <em>N David Mermin</em><br>
-A gentle introduction and discussion of the basics of special relativity. Although we will go much further in this course, the book is very well written and strongly recommended for more of an insight and background into special relativity.</p></li>
-<li><p><strong>The Road to Reality</strong> <em>Roger Penrose</em> in Arts and Social Sciences Library.<br>
-A very good book to find out what one of the great minds of contemporary science thinks about physics and mathematics. Unfortunately, he leaves actually deriving most of the equations as exercises. Particularly useful in seeing how advanced mathematical topics (such as differential geometry) are related to physical concepts. You will find sections relevant to all parts of the course in this book, and I recommend persevering with it if you are thinking about further study in theoretical physics.</p></li>
-<li><p><strong>Classical Field Theory</strong> <em>Davison E Soper</em><br>
-Good treatment of the non-quantum aspects (although with the opposite sign for the Minkowski metric), which follows the ordering of our lectures. Chapter 1 is good for Part I and II, Chapters 2-3, and Section 9.1 for Part III.</p></li>
-</ul>
-<p>Be warned that many of these books follow different conventions from us, so it is always worth checking (usually in the Preface or first chapter) what the chosen sign of the Minkowski metric is, whether the time index is 0 or 4, the notion for various types of partial derivative for fields, the types of units (and whether <span class="math inline">\(c, \hbar, ...\)</span> are set to 1), etc.</p>
+<p>We have spent quite some time now developing the formalism of relativistic fields, but we have yet to actually build a field theory. To do this we will use the powerful tools of Lagrangian mechanics from the first half of this course and generalise in this lecture to continuous systems.</p>
+<section id="lagrangians-for-many-coordinates" class="level2 page-columns page-full" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="lagrangians-for-many-coordinates"><span class="header-section-number">9.1</span> Lagrangians for many coordinates</h2>
+<div class="page-columns page-full"><p>To start suppose we have a system described by <span class="math inline">\(N\)</span> generalised coordinates <span class="math inline">\(q_j(t)\)</span> and their derivatives <span class="math inline">\(\dot{q}_j(t) = \frac{\rm d}{{\rm d}t}q_j(t)\)</span>. The dynamics of this system are then controlled by its Lagrangian. Formally the Lagranian is only a function only of time <span class="math inline">\(L(t)\)</span> which is the independent variable. However, we separate out any explicit dependence on time <span class="math inline">\(t\)</span> it has and its implicit dependence through the set of coordinates <span class="math inline">\(\{q_j(t)\}\)</span> and derivatives <span class="math inline">\(\{\dot{q}_j(t)\}\)</span>,  by writing it as <span class="math display">\[
+    L(t,\{q_j(t)\},\{\dot{q}_j(t)\}).
+\]</span> The Lagrangian has units <span class="math inline">\(\tt [energy]\)</span>. From it we compute the value of the action by integrating over the time as <span class="math display">\[
+    \mathcal{S}[\{q_j(t)\}] = \int_{t_0}^{t_1} {\rm d}t\, L(t,\{q_j(t)\},\{\dot{q}_j(t)\}).
+\]</span> The action is a <em>functional</em> so we use the <span class="math inline">\([\cdots]\)</span> notation. This means it takes as an input all <span class="math inline">\(N\)</span> coordinates <span class="math inline">\(q_j(t)\)</span> which are functions of time and returns a scalar value. The action has units <span class="math inline">\(\tt [energy \times time]\)</span>. For brevity we will drop the set notation and time dependence for the coordinates <span class="math inline">\(\{q_j(t)\}\)</span> and just write <span class="math inline">\(L(t,q_j,\dot{q}_j)\)</span> and <span class="math inline">\(\mathcal{S}[q_j]\)</span>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Lagrangians are taken to only depend on the coordinate and its first derivative. You might rightly question why this is. It turns out that including the acceleration or higher derivatives often causes the resulting equations of motion to be unstable. This is called {}.</span></div></div>
+<p>The principle of <em>stationary action</em> states that the time-dependence of the coordinates <span class="math inline">\(q_j(t)\)</span> that the system will exhibit in its dynamics will be the one which makes the action <span class="math inline">\(\mathcal{S}[q_j]\)</span> stationary. As you have seen from the first half of the course to achieve stationarity means that each coordinate <span class="math inline">\(q_j(t)\)</span> must obey an Euler-Lagrange equation <span class="math display">\[
+    \frac{\partial L}{\partial q_j} - \frac{{\rm d}}{{\rm d}t}\frac{\partial L}{\partial \dot{q}_j} = 0.
+\]</span> We can view these equations as a force <span class="math inline">\(\frac{\partial L}{\partial q_j}\)</span> equaling a rate of change of a “momentum” <span class="math inline">\(\frac{\partial L}{\partial \dot{q}_j}\)</span></p>
+</section>
+<section id="chain-of-coupled-oscillators" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="chain-of-coupled-oscillators"><span class="header-section-number">9.2</span> Chain of coupled oscillators</h2>
+</section>
+<section id="taking-the-continuum-limit" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="taking-the-continuum-limit"><span class="header-section-number">9.3</span> Taking the continuum limit</h2>
+</section>
+<section id="euler-lagrange-equations-for-fields" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="euler-lagrange-equations-for-fields"><span class="header-section-number">9.4</span> Euler-Lagrange equations for fields</h2>
+</section>
+<section id="divergence-theorem-in-13d-space-time" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="divergence-theorem-in-13d-space-time"><span class="header-section-number">9.5</span> Divergence theorem in 1+3D space-time</h2>
+<!--- TODO: Continuum limit of oscillators, heuristic EL equations and space-time 4-divergence theorem --->
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -750,13 +759,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="./planewaves.html" class="pagination-link" aria-label="Plane-waves and particle flow">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./principle_relativity.html" class="pagination-link" aria-label="Principle of relativity">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Principle of relativity</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./example_class3.html" class="pagination-link" aria-label="Example Class 3">
+        <span class="nav-page-text">Example Class 3</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

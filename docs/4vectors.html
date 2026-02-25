@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./acknowledgements.html" rel="next">
+<link href="./oneforms.html" rel="next">
 <link href="./example_class1.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -200,6 +200,70 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">II: Fields and tensors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">III: Lagrangian field theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
@@ -321,12 +385,12 @@ window.Quarto = {
 \bar{\boldsymbol{r}} = \mathbf{R} \, {\boldsymbol{r}},
 \]</span> in another that is rotated with respect to it. Yet changing the coordinate system should not alter the length we compute of the geometrical vector <span class="math inline">\(\vec{r}\)</span> so <span class="math display">\[
 ||\vec{r}||^2 = \bar{\boldsymbol{r}}^{\rm T}\bar{\boldsymbol{r}} = {\boldsymbol{r}}^{\rm T}\mathbf{R}^T\mathbf{R}\,{\boldsymbol{r}} = {\boldsymbol{r}}^{\rm T}{\boldsymbol{r}}.
-\]</span> The last equality can only be true for all <span class="math inline">\(\vec{r}\)</span> if <span class="math inline">\(\mathbf{R}^T\mathbf{R} = \mathbb{1}\)</span>, where <span class="math inline">\(\mathbb{1}\)</span> is the <span class="math inline">\(3\times 3\)</span> identity matrix, which in this context is the <em>Euclidean metric</em>. This constraint tell us that rotation matrices <span class="math inline">\(\mathbf{R}\)</span> are orthogonal.</p>
+\]</span> The last equality can only be true for all <span class="math inline">\(\vec{r}\)</span> if <span class="math inline">\(\mathbf{R}^T\mathbf{R} = \mathbb{1}_3\)</span>, where <span class="math inline">\(\mathbb{1}_3\)</span> is the <span class="math inline">\(3\times 3\)</span> identity matrix, which in this context is the <em>Euclidean metric</em>. This constraint tell us that rotation matrices <span class="math inline">\(\mathbf{R}\)</span> are orthogonal.</p>
 <p>Lorentz transformations are <span class="math inline">\(4\times 4\)</span> matrices <span class="math inline">\(\mathbf{\Lambda}\)</span> in 1+3D space-time defined similarly as transformations which preserve the length of 4-vectors. We know that the value of the space-time interval <span class="math inline">\(\Delta S^2(O,X)\)</span> is invariant and agreed upon by all inertial observers. However, we also know in frame <span class="math inline">\(\bar S\)</span> that <span class="math inline">\(\Delta S^2(O,X)\)</span> is given by the exactly same mathematical form <span class="math inline">\((c\,{\rm time})^2 - {\rm space}^2\)</span> as in <a href="#eq-space-time-interval" class="quarto-xref">Equation&nbsp;<span>4.1</span></a> so: <span class="math display">\[
 ||\vec{X}||^2 = \Delta S^2(O,X) = \bar{\boldsymbol{X}}^{\rm T}\,\boldsymbol{\eta}\,\bar{\boldsymbol{X}} = (c\bar{t})^2 - {\bar x}^2 - {\bar y}^2 - {\bar z}^2,
 \]</span> Consequently, the <strong>same</strong> metric <span class="math inline">\(\boldsymbol{\eta}\)</span> given in <a href="#eq-metric" class="quarto-xref">Equation&nbsp;<span>4.3</span></a> applies to every inertial frame. The invariance of the length gives us an important constraint on Lorentz transformations <span class="math inline">\(\mathbf{\Lambda}\)</span> as: <span class="math display">\[
 ||\vec{X}||^2 = \bar{\boldsymbol{X}}^{\rm T}\,\boldsymbol{\eta}\,\bar{\boldsymbol{X}} = {\boldsymbol{X}}^{\rm T}\,\mathbf{\Lambda}^T\,\boldsymbol{\eta}\,\mathbf{\Lambda}\,{\boldsymbol{X}} = {\boldsymbol{X}}^{\rm T}\,\boldsymbol{\eta}\,{\boldsymbol{X}}.
-\]</span> The last equality can only be true for all <span class="math inline">\(\vec{X}\)</span> if Lorentz transformations obey <span class="math inline">\(\mathbf{\Lambda}^T\,\boldsymbol{\eta}\,\mathbf{\Lambda} = \boldsymbol{\eta}\)</span>. Our previous constraint on the orthogonality of rotations in 3D has the same form of a conjugation of the metric <span class="math inline">\(\mathbf{R}^T\,\mathbb{1}\,\mathbf{R} = \mathbb{1}\)</span>.</p>
+\]</span> The last equality can only be true for all <span class="math inline">\(\vec{X}\)</span> if Lorentz transformations obey <span class="math inline">\(\mathbf{\Lambda}^T\,\boldsymbol{\eta}\,\mathbf{\Lambda} = \boldsymbol{\eta}\)</span>. Our previous constraint on the orthogonality of rotations in 3D has the same form of a conjugation of the metric <span class="math inline">\(\mathbf{R}^T\,\mathbb{1}_3\,\mathbf{R} = \mathbb{1}_3\)</span>.</p>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -343,9 +407,9 @@ window.Quarto = {
 <p>We saw already in <a href="#eq-metric" class="quarto-xref">Equation&nbsp;<span>4.3</span></a> that the Minkowski metric in 1+3D is represented by the diagonal matrix <span class="math display">\[
 \boldsymbol{\eta} = \left(\begin{array}{cc}
     1 &amp; \mathbf{0} \\
-   \mathbf{0} &amp; -\mathbb{1}
+   \mathbf{0} &amp; -\mathbb{1}_3
 \end{array}\right),
-\]</span> show that the invariance of the Minkowski metric under Lorentz transformation <span class="math inline">\(\mathbf{\Lambda}^T\,\boldsymbol{\eta}\,\mathbf{\Lambda} = \boldsymbol{\eta}\)</span> implies that the determinant of a general Lorentz transformation matrix <span class="math inline">\(\mathbf{\Lambda}\)</span> must be <span class="math inline">\(\pm 1\)</span>.</p>
+\]</span> show that the invariance of the Minkowski metric under Lorentz transformation <span class="math inline">\(\mathbf{\Lambda}^{\rm T}\,\boldsymbol{\eta}\,\mathbf{\Lambda} = \boldsymbol{\eta}\)</span> implies that the determinant of a general Lorentz transformation matrix <span class="math inline">\(\mathbf{\Lambda}\)</span> must be <span class="math inline">\(\pm 1\)</span>.</p>
 </div>
 </div>
 </div>
@@ -368,15 +432,15 @@ window.Quarto = {
             \mathbf{0} &amp; -\mathbb{1}_3
           \end{pmatrix},
 \]</span> in every frame. We wish to express the Lorentz transformation <span class="math display">\[
-  \eta^{\bar\mu \bar\nu} = \Lambda^{\bar\mu}{}_{\rho} \Lambda^{\bar\nu}{}_{\sigma} \eta^{\rho\sigma},
-\]</span> in matrix form. Let <span class="math inline">\(\boldsymbol{\Lambda}\)</span> be the <span class="math inline">\(4\times4\)</span> matrix representing <span class="math inline">\(\Lambda^{\bar\mu}{}_{\rho}\)</span>, where the row index corresponds to <span class="math inline">\(\bar\mu\)</span> and the column index corresponds to <span class="math inline">\(\rho\)</span>. Then, as a matrix multiplication, <span class="math display">\[
-  \Lambda^{\bar\mu}{}_{\rho}\,\eta^{\rho\sigma},
+  \eta^{\bar\mu \bar\nu} = \Lambda^{\bar\mu}_{\rho} \Lambda^{\bar\nu}_{\sigma} \eta^{\rho\sigma},
+\]</span> in matrix form. Let <span class="math inline">\(\boldsymbol{\Lambda}\)</span> be the <span class="math inline">\(4\times4\)</span> matrix representing <span class="math inline">\(\Lambda^{\bar\mu}_{\rho}\)</span>, where the row index corresponds to <span class="math inline">\(\bar\mu\)</span> and the column index corresponds to <span class="math inline">\(\rho\)</span>. Then, as a matrix multiplication, <span class="math display">\[
+  \Lambda^{\bar\mu}_{\rho}\,\eta^{\rho\sigma},
 \]</span> is represented by the product <span class="math display">\[
   [\boldsymbol{\Lambda} \, \boldsymbol{\eta}]_{\bar\mu\sigma},
 \]</span> with rows labelled by <span class="math inline">\(\bar\mu\)</span> and columns by <span class="math inline">\(\sigma\)</span>. However, <span class="math display">\[
-  \Lambda^{\bar\nu}{}_{\sigma},
+  \Lambda^{\bar\nu}_{\sigma},
 \]</span> corresponds to the same matrix <span class="math inline">\(\boldsymbol\Lambda\)</span>, but with <span class="math inline">\(\bar\nu\)</span> labelling rows and <span class="math inline">\(\sigma\)</span> labelling columns. To convert the contraction of the <span class="math inline">\(\sigma\)</span> index into a matrix multiplication correctly we must therefore use the transpose.Hence, the correct matrix multiplication corresponding to <span class="math display">\[
-  \eta^{\bar\mu \bar\nu} = \Lambda^{\bar\mu}{}_{\rho}\,\eta^{\rho\sigma} \Lambda^{\bar\nu}{}_{\sigma},
+  \eta^{\bar\mu \bar\nu} = \Lambda^{\bar\mu}_{\rho}\,\eta^{\rho\sigma} \Lambda^{\bar\nu}_{\sigma},
 \]</span> is given by <span class="math display">\[
   \boldsymbol{\eta} = \boldsymbol{\Lambda} \, \boldsymbol{\eta} \, \boldsymbol{\Lambda}^{\rm T}.
 \]</span> Now take determinants <span class="math display">\[\begin{align}
@@ -399,7 +463,7 @@ window.Quarto = {
 <section id="lorentz-transformations-in-13d" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="lorentz-transformations-in-13d"><span class="header-section-number">4.3</span> Lorentz transformations in 1+3D</h2>
 <p>Let’s consider some special cases of Lorentz transformations. The simplest is a spatial rotation <span class="math display">\[
-\boldsymbol{\Lambda}_R = \left(\begin{array}{cccc}
+\boldsymbol{\Lambda}_\mathbf{R} = \left(\begin{array}{cccc}
   1 &amp; 0 &amp; 0 &amp; 0 \\
   0 &amp; - &amp; - &amp; - \\
   0 &amp; - &amp; \mathbf{R} &amp; - \\
@@ -427,7 +491,7 @@ window.Quarto = {
   0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right),
 \]</span> where <span class="math inline">\(\zeta = \tanh^{-1}(\beta)\)</span> is the <em>rapidity</em>. We can write <strong>any</strong> Lorentz transformation in 1+3D as a sequence of spatial rotations and boosts along coordinates axes. In particular a boost by <span class="math inline">\(\beta\)</span> along a spatial direction defined by any unit 3-vector <span class="math inline">\(\vec{n}\)</span> can be decomposed as: <span class="math display">\[
-\mathbf{\Lambda}(\beta\vec{n}) = \mathbf{\Lambda}_R\,\mathbf{\Lambda}(\beta\vec{e}_x) \mathbf{\Lambda_R}^{-1},
+\mathbf{\Lambda}(\beta\vec{n}) = \mathbf{\Lambda}_\mathbf{R}\,\mathbf{\Lambda}(\beta\vec{e}_x) \mathbf{\Lambda}_\mathbf{R}^{-1},
 \]</span> where <span class="math inline">\(\mathbf{R}^{-1}\)</span> rotates <span class="math inline">\(\vec{n}\)</span> into <span class="math inline">\(\vec{e}_x\)</span>, a boost is applied along the <span class="math inline">\(x\)</span>-axis, and then <span class="math inline">\(\mathbf{R}\)</span> rotates <span class="math inline">\(\vec{e}_x\)</span> back to <span class="math inline">\(\vec{n}\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -548,10 +612,10 @@ x^{\alpha} = \Lambda^{\alpha}_{\bar \beta} x^{\bar \beta}.
 </ul>
 <div class="page-columns page-full"><p>In matrix-vector notation the transformation from <span class="math inline">\({\bar S} \rightarrow S \rightarrow {\bar S}\)</span> is given by: <span class="math display">\[
 \begin{align}
-    \mathbf{\Lambda}\,\mathbf{\Lambda}^{-1} &amp;= \mathbb{1}, \\
-    [\mathbf{\Lambda}\,\mathbf{\Lambda}^{-1}]_{\bar{\alpha}\bar{\beta}} &amp;= [\mathbb{1}]_{\bar{\alpha}\bar{\beta}} = \delta_{\bar{\alpha}\bar{\beta}},
+    \mathbf{\Lambda}\,\mathbf{\Lambda}^{-1} &amp;= \mathbb{1}_4, \\
+    [\mathbf{\Lambda}\,\mathbf{\Lambda}^{-1}]_{\bar{\alpha}\bar{\beta}} &amp;= [\mathbb{1}_4]_{\bar{\alpha}\bar{\beta}} = \delta_{\bar{\alpha}\bar{\beta}},
 \end{align}
-\]</span> where <span class="math inline">\(\mathbb{1}\)</span> is the <span class="math inline">\(4\times 4\)</span> identity matrix here and <span class="math inline">\(\delta_{\bar{\alpha}\bar{\beta}}\)</span> is the Kronecker delta symbol which is 1 if <span class="math inline">\(\bar{\alpha}=\bar{\beta}\)</span> and zero otherwise. Since we start and end at <span class="math inline">\(\bar S\)</span> indices are all barred and the net effect is the identity, i.e.&nbsp;no change. This converts to an index expression as: <span id="eq-inverse-a"><span class="math display">\[
+\]</span> where <span class="math inline">\(\mathbb{1}_4\)</span> is the <span class="math inline">\(4\times 4\)</span> identity matrix here and <span class="math inline">\(\delta_{\bar{\alpha}\bar{\beta}}\)</span> is the Kronecker delta symbol which is 1 if <span class="math inline">\(\bar{\alpha}=\bar{\beta}\)</span> and zero otherwise. Since we start and end at <span class="math inline">\(\bar S\)</span> indices are all barred and the net effect is the identity, i.e.&nbsp;no change. This converts to an index expression as: <span id="eq-inverse-a"><span class="math display">\[
 \begin{align}
     \sum_{\mu=0}^3[\mathbf{\Lambda}]_{{\bar \alpha}\mu}[\mathbf{\Lambda}^{-1}]_{\mu\bar{\beta}} &amp;= \delta_{\bar{\alpha}\bar{\beta}}, \\
     &amp;~{\boldsymbol \downarrow}\\
@@ -612,7 +676,7 @@ x^{\bar \mu} = \Lambda^{\bar \mu}_\nu x^\nu,
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>3. Transforming a 4-vector expansion</strong></p>
-<p>Let’s take the expansion of a 4-vector <span class="math inline">\(\vec{X}\)</span> in the basis of <span class="math inline">\(\bar S\)</span> and insert both <a href="#eq-basis-transform" class="quarto-xref">Equation&nbsp;<span>4.10</span></a> and <a href="#eq-component-transform" class="quarto-xref">Equation&nbsp;<span>4.11</span></a> to show that we recover its expansion in <span class="math inline">\(S\)</span></p>
+<p>Let’s take the expansion of a 4-vector <span class="math inline">\(\vec{X}\)</span> in the basis of <span class="math inline">\(\bar S\)</span> and insert both <a href="#eq-basis-transform" class="quarto-xref">Equation&nbsp;<span>4.10</span></a> and <a href="#eq-component-transform" class="quarto-xref">Equation&nbsp;<span>4.11</span></a> to show that we recover its expansion in <span class="math inline">\(S\)</span>.</p>
 </div>
 </div>
 </div>
@@ -1073,8 +1137,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./acknowledgements.html" class="pagination-link" aria-label="Acknowledgements">
-        <span class="nav-page-text">Acknowledgements</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./oneforms.html" class="pagination-link" aria-label="One-forms">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

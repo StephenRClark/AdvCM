@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Recommended Books – Advanced Classical Mechanics (Relativistic Fields)</title>
+<title>Example Class 3 – Advanced Classical Mechanics (Relativistic Fields)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./principle_relativity.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./acknowledgements.html" rel="next">
+<link href="./field_theory.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -41,6 +41,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -111,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./books.html">Recommended Books</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./field_theory.html">III: Lagrangian field theory</a></li><li class="breadcrumb-item"><a href="./example_class3.html">Example Class 3</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,7 +155,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./books.html" class="sidebar-item-text sidebar-link active">
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Recommended Books</span></a>
   </div>
 </li>
@@ -241,13 +243,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
  <span class="menu-text">III: Lagrangian field theory</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
@@ -256,7 +258,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Example Class 3</span></a>
   </div>
 </li>
@@ -279,9 +281,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./field_theory.html">III: Lagrangian field theory</a></li><li class="breadcrumb-item"><a href="./example_class3.html">Example Class 3</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="recommended-books" class="quarto-section-identifier">Recommended Books</span></h1>
+<h1 class="title">Example Class 3</h1>
 </div>
 
 
@@ -298,32 +300,54 @@ window.Quarto = {
 </header>
 
 
-<p>Unfortunately, there is no single book that covers the material we will be discussing, in an appropriate level of detail. However, you can expect to find a lot of the material in books on ‘quantum field theory’, in an earlier chapters called something like ‘classical fields’. All of the material in this half of the course can be found somewhere in one of the books below and of course in many online resources. You will also find extra topics and further development of the material in the recommended books, which I hope will demonstrate the universality of the material we are discussing.</p>
-<ul>
-<li><p><strong>Classical Mechanics: The Theoretical Minimum</strong> <em>Leonard Susskind &amp; George Hrabovsky</em><br>
-A very readable Penguin paperback book. It gives a basic introduction to the Lagrangian aspects of the course, starting from a completely elementary level and finishing at electrodynamics. For our purposes it is better for background than specific detail. Susskind is widely renowned for his contributions to string theory and the holographic principle.</p></li>
-<li><p><strong>Special Relativity and Classical Field Theory: The Theoretical Minimum</strong> <em>Leonard Susskind &amp; Art Friedman</em><br>
-Building on the <em>Classical Mechanics</em> volume this book introduces special relativity in a clear and conceptual way. It then reformulates electromagnetism exactly as we do in this course. While it skims over the mathematical details it provides a nice overview. Check out the other books in this <em>Theoretical Minimum</em> series.</p></li>
-<li><p><strong>Electrodynamics of Classical Fields and Particles</strong> <em>A O Barut</em><br>
-Strongly recommended treatment which covers the material of this course at a similar level, although in a different order to us. Particularly good is the treatment of special relativity in Chapters 1 and 2, relevant to Part I and II of the course.</p></li>
-<li><p><strong>Introduction to Elementary Particles</strong> <em>David Griffiths</em><br>
-A very good particle physics book that covers relevant relativistic field theory very well, albeit in a different order to us. There is also an online version of the book available from the library website. Chapters 3 and 7 are particularly relevant.</p></li>
-<li><p><strong>Classical Electrodynamics</strong> <em>John David Jackson</em><br>
-The ‘classic’ book on the theory of electromagnetism and electrodynamics. Useful for background on Maxwell’s equations and solutions of them. Material for Part IV of this course is in Chapters 6, 11 and 12. The most recent third edition uses SI units throughout, as we do; previous editions use other systems of units.</p></li>
-<li><p><strong>Quantum Field Theory: A Modern Introduction</strong> <em>Michio Kaku</em><br>
-One of several books on ‘Quantum Field Theory’ (which is beyond the scope of our course), that gives a quick review of Relativistic Field Theory. The book mainly is aiming towards an understanding of particle physics. Sections 1.7-1.9 and 4.1 of the book are particularly recommended for Part IV of the course.</p></li>
-<li><p><strong>The Classical Theory of Fields</strong> <em>L D Landau &amp; E M Lifshitz</em><br>
-Volume 2 of the classic ‘Course of Theoretical Physics’, required reading for Soviet Theoretical Physics students. Chapters 1 and 2 are relevant to Part I and II of the course, and Chapters 3 and 4 to Part IV. Relativistic fields are studied in detail, but with less emphasis than we take on the Lagrangian approach. Landau and Lifshitz Volume 1 on Classical Mechanics may also be useful.</p></li>
-<li><p><strong>The Principle of Relativity: A collection of original memoirs on the special and general theory of relativity</strong> <em>H A Lorentz, A Einstein, etc</em> in Queen’s Library.<br>
-A collection of (translations of) the original papers by Lorentz on Lorentz transformations, Einstein’s papers on Special and General Relativity, and Minkowski’s on Minkowski space. Everybody should at least have a look at these groundbreaking and accessible papers, which are particularly relevant for Part I and II of the course.</p></li>
-<li><p><strong>It’s about time: Understanding Einstein’s Relativity</strong> <em>N David Mermin</em><br>
-A gentle introduction and discussion of the basics of special relativity. Although we will go much further in this course, the book is very well written and strongly recommended for more of an insight and background into special relativity.</p></li>
-<li><p><strong>The Road to Reality</strong> <em>Roger Penrose</em> in Arts and Social Sciences Library.<br>
-A very good book to find out what one of the great minds of contemporary science thinks about physics and mathematics. Unfortunately, he leaves actually deriving most of the equations as exercises. Particularly useful in seeing how advanced mathematical topics (such as differential geometry) are related to physical concepts. You will find sections relevant to all parts of the course in this book, and I recommend persevering with it if you are thinking about further study in theoretical physics.</p></li>
-<li><p><strong>Classical Field Theory</strong> <em>Davison E Soper</em><br>
-Good treatment of the non-quantum aspects (although with the opposite sign for the Minkowski metric), which follows the ordering of our lectures. Chapter 1 is good for Part I and II, Chapters 2-3, and Section 9.1 for Part III.</p></li>
-</ul>
-<p>Be warned that many of these books follow different conventions from us, so it is always worth checking (usually in the Preface or first chapter) what the chosen sign of the Minkowski metric is, whether the time index is 0 or 4, the notion for various types of partial derivative for fields, the types of units (and whether <span class="math inline">\(c, \hbar, ...\)</span> are set to 1), etc.</p>
+<p>In this example class we will explore some novel features of relativistic kinematics.</p>
+<p>We begin with a <a href="./quiz/quiz_ec3.html">Multiple choice quiz</a>.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>1. The relativistic particle mechanics</strong></p>
+<p>Given a particle with 4-velocity <span class="math inline">\(U^\mu\)</span> the 4-momentum is defined $P^{} m c U^{} = (/c,), where <span class="math inline">\(\mathcal{E}\)</span> is the relativistic energy and <span class="math inline">\(\underline{p}\)</span> is the relativistic 3-momentum. Using this the 4-force is defined <span class="math display">\[
+    f^{\mu} \equiv c \frac{{\rm d} P^{\mu}}{{\rm d} s}.
+\]</span> Show that <em>Minkowski’s equation of motion</em> applies, <span class="math display">\[
+    f^{\mu} U_{\mu} = 0.
+\]</span> Suppose we write <span class="math inline">\(f^{\mu} = \gamma(g, \underline{f})\)</span> where <span class="math inline">\(g\)</span> is a scalar and <span class="math inline">\(\underline{f}\)</span> is a 3-vector.</p>
+<ol type="a">
+<li><p>Write down an expression for <span class="math inline">\(\underline{f}\)</span> in terms of <span class="math inline">\(\underline{p},\)</span> and find an expression for <span class="math inline">\(g\)</span> in terms of <span class="math inline">\(\underline{f}\)</span> using the Minkowski equation.</p></li>
+<li><p>Does <span class="math inline">\(g\)</span> agree with what you expect from the original definition of <span class="math inline">\(f^{\mu}\)</span>?</p></li>
+<li><p>Can you explain why the Minkowski equation looks like the equation of circular motion in regular 3-vector mechanics?</p></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>2. The relativistic particle mechanics</strong></p>
+<p>We are interested in generalizing the Lagrangian approach to relativistic particle mechanics. Specifically, we seek a Lagrangian <span class="math inline">\(L = L(x^{\mu},\dot{x}^{\mu})\)</span> such that the Euler-Lagrange equations <span class="math display">\[\frac{\partial L}{\partial x^j} - \frac{\rm d}{{\rm d} t}\frac{\partial L}{\partial \dot{x}^j} = 0, \qquad j = 1,2,3,\]</span> where <span class="math inline">\(\dot{\bullet} = \partial_t\bullet,\)</span> gives us the relativistic equation of motion <span class="math inline">\(f^j = m a^j\)</span>. Note that we do not necessarily expect the relativistic Lagrangian to have the form `KE <span class="math inline">\(-\)</span> PE’ any more, since in relativity, energies occur as components of 4-momentum, but the Lagrangian is not a component of a 4-vector. We will assume that the action <span class="math display">\[
+    \mathcal{S} \equiv \int_{t_0}^{t_1} L {\rm d} t,
+\]</span> is Lorentz invariant. Show that with this assumption, <span class="math inline">\(\gamma L\)</span> is a Lorentz invariant on the particle’s worldline.</p>
+<p>Next, we want to determine the Lagrangian for a free particle, which experiences inertial motion with <span class="math inline">\(a^{\mu} = 0,\)</span> and we assume, by symmetry, that <span class="math inline">\(\partial L/\partial x^{\mu} = 0\)</span>, meaning there are no spatially dependent fields acting on the particle.</p>
+<ol type="a">
+<li><p>Show that choosing <span class="math inline">\(L\)</span> to be <span class="math inline">\(m \gamma c^2,\)</span> the relativistic kinetic energy, does not give the required dependence.</p></li>
+<li><p>Show that instead <span class="math inline">\(L_{\mathrm{free}} \equiv -m c^2/\gamma\)</span> is an appropriate choice for the free-particle Lagrangian.</p></li>
+<li><p>Show that <span class="math inline">\(\partial L/\partial \dot{x}^{j} = P^{j},\)</span> thereby generalizing the classical expression for the canonical momentum.</p></li>
+<li><p>Does <span class="math inline">\(L_{\mathrm{free}}\)</span> transform correctly under Lorentz transformations?</p></li>
+</ol>
+</div>
+</div>
 
 
 
@@ -750,13 +774,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="./field_theory.html" class="pagination-link" aria-label="Building a field theory">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./principle_relativity.html" class="pagination-link" aria-label="Principle of relativity">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Principle of relativity</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./acknowledgements.html" class="pagination-link" aria-label="Acknowledgements">
+        <span class="nav-page-text">Acknowledgements</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

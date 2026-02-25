@@ -198,6 +198,70 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">II: Fields and tensors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">III: Lagrangian field theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
@@ -217,7 +281,12 @@ window.Quarto = {
   <li><a href="#motivation" id="toc-motivation" class="nav-link active" data-scroll-target="#motivation">Motivation</a></li>
   <li><a href="#structure-of-this-half-of-the-course" id="toc-structure-of-this-half-of-the-course" class="nav-link" data-scroll-target="#structure-of-this-half-of-the-course">Structure of this half of the course</a></li>
   <li><a href="#structure-of-final-exam" id="toc-structure-of-final-exam" class="nav-link" data-scroll-target="#structure-of-final-exam">Structure of final exam</a></li>
-  <li><a href="#notation-conventions" id="toc-notation-conventions" class="nav-link" data-scroll-target="#notation-conventions">Notation conventions</a></li>
+  <li><a href="#notation-conventions" id="toc-notation-conventions" class="nav-link" data-scroll-target="#notation-conventions">Notation conventions</a>
+  <ul class="collapse">
+  <li><a href="#euclidean-3-vectors" id="toc-euclidean-3-vectors" class="nav-link" data-scroll-target="#euclidean-3-vectors">Euclidean 3-vectors</a></li>
+  <li><a href="#minkowski-4-vector" id="toc-minkowski-4-vector" class="nav-link" data-scroll-target="#minkowski-4-vector">Minkowski 4-vector</a></li>
+  <li><a href="#tensors-and-matrices" id="toc-tensors-and-matrices" class="nav-link" data-scroll-target="#tensors-and-matrices">Tensors and matrices</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -274,68 +343,74 @@ window.Quarto = {
 </section>
 <section id="notation-conventions" class="level2">
 <h2 class="anchored" data-anchor-id="notation-conventions">Notation conventions</h2>
-<p>For this half the course the following conventions are used:</p>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 85%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>symbol</th>
-<th>meaning</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><span class="math inline">\(\vec{a}\)</span></td>
-<td>abstract 3-vector, typically lower case roman letter</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\vec{A}\)</span></td>
-<td>abstract 4-vector, typically upper case roman letter</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\pmb{\symbb{T}}\)</span></td>
-<td>tensor, typically uppercase letters (exception below)</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\pmb{\symbb{g}}\)</span></td>
-<td>metric tensor</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\boldsymbol{a}\)</span></td>
-<td>column vector <span class="math inline">\(\left(
-\begin{array}{c}
-a_0 \\
-\vdots
-\end{array}
-\right)\)</span>, dimension depends on whether it represents the components of a 3- or 4-vector in a particular frame</td>
-</tr>
-<tr class="even">
-<td><span class="math inline">\(\mathbf{A}\)</span></td>
-<td>matrix <span class="math inline">\(\left(
-\begin{array}{cc}
-A_{00} &amp; \cdots \\
-\vdots &amp; \ddots
-\end{array}
-\right)\)</span>, typically uppercase roman letter, dimensions of matrix depend on context</td>
-</tr>
-<tr class="odd">
-<td><span class="math inline">\(\eta^{\mu\nu}\)</span></td>
-<td>metric tensor elements <span class="math inline">\(\left(
-\begin{array}{cccc}
-1 &amp; 0 &amp; 0 &amp; 0 \\
-0 &amp; -1 &amp; 0 &amp; 0 \\
-0 &amp; 0 &amp; -1 &amp; 0 \\
-0 &amp; 0 &amp; 0 &amp; -1 \\
-\end{array}
-\right)\)</span></td>
-</tr>
-</tbody>
-</table>
+<p>In this half of the course we will be dealing with abstract geometrical quantities as well as concrete coordinate representations of them in a given frame of reference. To avoid confusion here is a glossary of notational conventions we will follow.</p>
+<section id="euclidean-3-vectors" class="level3">
+<h3 class="anchored" data-anchor-id="euclidean-3-vectors">Euclidean 3-vectors</h3>
+<p>A conventional vector in 3D Euclidean space, called a 3-vector, will be labelled as a lowercase roman letter as <span class="math display">\[
+    \text{3-vector} \rightarrow \vec{a}.
+\]</span> This notation implies that we consider this object as being <strong>geometrical</strong>, that is it exists as an asbtract object independent of whatever coordinate system we may choose to describe 3D space with. Should we fix our coordinate system by, for example, picking a set of orthogonal basis 3-vectors <span class="math inline">\(\vec{e}_x\)</span>, <span class="math inline">\(\vec{e}_y\)</span> and <span class="math inline">\(\vec{e}_z\)</span> then we may expand the abstract 3-vector as <span class="math display">\[
+    \vec{a} = a_x\vec{e}_x + a_y\vec{q}_y + a_z\vec{e}_z,
+\]</span> where <span class="math inline">\(a_x,a_y\)</span> and <span class="math inline">\(a_z\)</span> are its components. In calculations we will often describe the 3-vector exclusively in terms of its components arranged as a 3D column vector where we use the notation <span class="math display">\[
+    \boldsymbol{a} = \begin{pmatrix}
+                        a_x\\
+                        a_y\\
+                        a_z
+                    \end{pmatrix}.
+\]</span> We have these different notations to remind us that <span class="math inline">\(\boldsymbol{a}\)</span> is a concrete representation of an abstract object <span class="math inline">\(\vec{a}\)</span> in a given coordinate system. A common example is a position in 3D space <span class="math display">\[
+    \vec{r} \rightarrow \boldsymbol{r} = \begin{pmatrix}
+                        x\\
+                        y\\
+                        z
+                    \end{pmatrix}.
+\]</span></p>
+</section>
+<section id="minkowski-4-vector" class="level3">
+<h3 class="anchored" data-anchor-id="minkowski-4-vector">Minkowski 4-vector</h3>
+<p>A vector in 1+3D Minkowski space-time, called a 4-vector, will be denoted as an uppercase roman letter <span class="math display">\[
+    \text{4-vector} \rightarrow \vec{A}.
+\]</span> Since we use the same arrow notation as with 3-vectors to denote that this is a geometrical object we use uppercase roman letters for 4-vectors. A mild exception to this case is when we specify a reference frame via its basis 4-vectors, which we will denote as <span class="math inline">\(\vec{e}_0 = \vec{e}_{ct},\vec{e}_1=\vec{e}_x,\vec{e}_2=\vec{e}_y\)</span> and <span class="math inline">\(\vec{e}_3=\vec{e}_z\)</span>, to highlight the extension from 3D space. Again any 4-vector can be expanded in this basis as <span class="math display">\[
+    \vec{A} = a^0\vec{e}_0 + a^1\vec{e}_1 + a^2\vec{q}_2 + a^3\vec{e}_3.
+\]</span> Why the components have upper index label will be explained in the lectures. We can arrange these components as a 4D column vector <span class="math display">\[
+    \boldsymbol{A} = \begin{pmatrix}
+                        a^0\\
+                        a^1\\
+                        a^2\\
+                        a^3
+                    \end{pmatrix}.
+\]</span> We will often choose to use the corresponding lower case roman letter to label the components of a 4-vector. The reason for this is that it often makes the notation look more natural when there is a clear connection between a 4-vector and a 3-vector. We will only use this column vector notation <span class="math inline">\(\boldsymbol{A}\)</span> for the components of a 4-vector in one lecture as a stepping stone to instead adopting index notation. Specifically, we will denote the components of <span class="math inline">\(\vec{A}\)</span> as <span class="math inline">\(a^\mu\)</span> instead. For example, a point in space-time can be specified as <span class="math display">\[
+    \vec{X} \rightarrow\boldsymbol{X} = \begin{pmatrix}
+                        ct\\
+                        x\\
+                        y\\
+                        x
+                    \end{pmatrix} = \begin{pmatrix}
+                        ct\\
+                        \boldsymbol{r}
+                    \end{pmatrix} \rightarrow x^\mu.
+\]</span></p>
+</section>
+<section id="tensors-and-matrices" class="level3">
+<h3 class="anchored" data-anchor-id="tensors-and-matrices">Tensors and matrices</h3>
+<p>Like 4-vectors, tensors are also abstract geometrical objects. We denote them in there most general form as doublelined font as <span class="math display">\[
+    \text{tensor} \rightarrow \pmb{\symbb{T}}.
+\]</span> We will almost always use an uppercase roman letter for tensors. The only exception will be the metric tensor which we will denote as <span class="math inline">\(\pmb{\symbb{g}}\)</span>. A concrete representation of a tensor (depending on its type) may for example have components <span class="math inline">\(T^{\mu\nu}\)</span>, where we have retained the uppercase letter label. These components can be packaged up in a <span class="math inline">\(4 \times 4\)</span> matrix <span class="math display">\[
+    T^{\mu\nu} \rightarrow [\boldsymbol{T}]_{\mu\nu} \quad {\rm with} \quad \boldsymbol{T} = \begin{pmatrix}
+                T^{00} &amp; T^{01} &amp; T^{02} &amp; T^{03} \\
+                T^{10} &amp; T^{11} &amp; T^{12} &amp; T^{13} \\
+                T^{20} &amp; T^{21} &amp; T^{22} &amp; T^{23} \\
+                T^{30} &amp; T^{31} &amp; T^{32} &amp; T^{33}
+                \end{pmatrix},
+\]</span> The notation <span class="math inline">\([\cdot]_{\mu\nu}\)</span> is the row <span class="math inline">\(\mu\)</span> and column <span class="math inline">\(\nu\)</span> element of the corresponding matrix. For example the metric tensor has elements <span class="math inline">\(g^{\mu\nu}\)</span>, however, in this course it will always have fixed and special set of components denoted as <span class="math inline">\(\eta^{\mu\nu}\)</span> where <span class="math display">\[
+    \eta^{\mu\nu} \rightarrow \boldsymbol{\eta} = \begin{pmatrix}
+                    1 &amp; 0 &amp; 0 &amp; 0 \\
+                    0 &amp; -1 &amp; 0 &amp; 0 \\
+                    0 &amp; 0 &amp; -1 &amp; 0 \\
+                    0 &amp; 0 &amp; 0 &amp; -1
+                    \end{pmatrix}.
+\]</span></p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->

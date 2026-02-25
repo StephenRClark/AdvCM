@@ -200,6 +200,70 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">II: Fields and tensors</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">III: Lagrangian field theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
@@ -314,6 +378,37 @@ Figure&nbsp;2: On the right another moving observer <span class="math inline">\(
 <ol start="3" type="a">
 <li>Deduce the coordinates in <span class="math inline">\(S\)</span> of <span class="math inline">\(B\)</span>’s’ emission and reception interception times <span class="math inline">\(\tau^B_\pm\)</span> in terms of the coordinates <span class="math inline">\((ct_P,x_P)\)</span> of <span class="math inline">\(P\)</span> in <span class="math inline">\(S\)</span>. Use these to determine the <span class="math inline">\(B\)</span>’s radar coordinates <span class="math inline">\(\kappa^B(P)\)</span> and <span class="math inline">\(\chi^B(P)\)</span> they assign <span class="math inline">\(P\)</span>. Compare the expressions with the Lorentz transformations between <span class="math inline">\(A\)</span>’s rest frame <span class="math inline">\(S\)</span> and <span class="math inline">\(B\)</span>’s rest frame <span class="math inline">\(\bar S\)</span>.</li>
 </ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>4. The Lorentz group</strong></p>
+<p>A group of transformations is a set of transformations <span class="math inline">\(T_1, T_2, T_3, \dots\)</span>, which do not necessarily commute, but whose combinations have the following properties:</p>
+<ol type="1">
+<li><strong>Closure</strong> - The composition <span class="math inline">\(T_1T_2\)</span> of any pair of transformations is also a transformation in the set. Note that if the transformations are matrices acting on column vectors then this ordering implies multiplying by <span class="math inline">\(T_2\)</span> first.</li>
+<li><strong>Associativity</strong> - The composites <span class="math inline">\((T_1T_2)T_3\)</span> and <span class="math inline">\(T_1(T_2T_3)\)</span> are the same, i.e.&nbsp;we can ignore brackets. This always holds for sets of matrices.</li>
+<li><strong>Identity</strong> - There is a special transformation <span class="math inline">\(\mathbb{1}\)</span> in the set, called the identity, such that for any other transformation <span class="math inline">\(T\)</span>, <span class="math inline">\(\mathbb{1}T = T\mathbb{1} = T\)</span>. For sets of matrices, this is the identity matrix.</li>
+<li><strong>Inverses</strong> - For any transformation <span class="math inline">\(T\)</span> , there is a transformation <span class="math inline">\(T^{−1}\)</span> such that <span class="math inline">\(T T^{−1} = T^{−1}T = \mathbb{1}\)</span>, i.e.&nbsp;combining <span class="math inline">\(T\)</span> and its inverse gives the identity.</li>
+</ol>
+<ol type="a">
+<li><p>Working in 1+1D Minkowski space, use the hyperbolic representation of the Lorentz transformation matrices to show that the Lorentz transformation matrices form a group.</p></li>
+<li><p>Working in 2D Euclidean space, show that the rotation matrices <span class="math display">\[
+\mathbf{R}(\theta) = \begin{pmatrix}
+                \cos(\theta) &amp; -\sin(\theta) \\
+                \sin(\theta) &amp; \cos(\theta)
+             \end{pmatrix}
+\]</span> form a group.</p></li>
+<li><p>Show that the set of Lorentz transformation matrices $ preserving the matrix form of the 1+3D Minkowski metric form a group.</p></li>
+</ol>
+<p>The group defined as the set of transformations preserving the Minkowski metric <span class="math inline">\(\boldsymbol{\eta}\)</span> is called the <em>full Lorentz group</em>.</p>
 </div>
 </div>
 

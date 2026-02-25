@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Recommended Books – Advanced Classical Mechanics (Relativistic Fields)</title>
+<title>Example Class 2 – Advanced Classical Mechanics (Relativistic Fields)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./principle_relativity.html" rel="next">
-<link href="./intro.html" rel="prev">
+<link href="./kinematics.html" rel="next">
+<link href="./tensors.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -41,6 +41,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -111,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./books.html">Recommended Books</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./oneforms.html">II: Fields and tensors</a></li><li class="breadcrumb-item"><a href="./example_class2.html">Example Class 2</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -153,7 +155,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./books.html" class="sidebar-item-text sidebar-link active">
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Recommended Books</span></a>
   </div>
 </li>
@@ -200,13 +202,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
  <span class="menu-text">II: Fields and tensors</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
@@ -221,7 +223,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Example Class 2</span></a>
   </div>
 </li>
@@ -279,9 +281,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./oneforms.html">II: Fields and tensors</a></li><li class="breadcrumb-item"><a href="./example_class2.html">Example Class 2</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span id="recommended-books" class="quarto-section-identifier">Recommended Books</span></h1>
+<h1 class="title">Example Class 2</h1>
 </div>
 
 
@@ -298,32 +300,77 @@ window.Quarto = {
 </header>
 
 
-<p>Unfortunately, there is no single book that covers the material we will be discussing, in an appropriate level of detail. However, you can expect to find a lot of the material in books on ‘quantum field theory’, in an earlier chapters called something like ‘classical fields’. All of the material in this half of the course can be found somewhere in one of the books below and of course in many online resources. You will also find extra topics and further development of the material in the recommended books, which I hope will demonstrate the universality of the material we are discussing.</p>
-<ul>
-<li><p><strong>Classical Mechanics: The Theoretical Minimum</strong> <em>Leonard Susskind &amp; George Hrabovsky</em><br>
-A very readable Penguin paperback book. It gives a basic introduction to the Lagrangian aspects of the course, starting from a completely elementary level and finishing at electrodynamics. For our purposes it is better for background than specific detail. Susskind is widely renowned for his contributions to string theory and the holographic principle.</p></li>
-<li><p><strong>Special Relativity and Classical Field Theory: The Theoretical Minimum</strong> <em>Leonard Susskind &amp; Art Friedman</em><br>
-Building on the <em>Classical Mechanics</em> volume this book introduces special relativity in a clear and conceptual way. It then reformulates electromagnetism exactly as we do in this course. While it skims over the mathematical details it provides a nice overview. Check out the other books in this <em>Theoretical Minimum</em> series.</p></li>
-<li><p><strong>Electrodynamics of Classical Fields and Particles</strong> <em>A O Barut</em><br>
-Strongly recommended treatment which covers the material of this course at a similar level, although in a different order to us. Particularly good is the treatment of special relativity in Chapters 1 and 2, relevant to Part I and II of the course.</p></li>
-<li><p><strong>Introduction to Elementary Particles</strong> <em>David Griffiths</em><br>
-A very good particle physics book that covers relevant relativistic field theory very well, albeit in a different order to us. There is also an online version of the book available from the library website. Chapters 3 and 7 are particularly relevant.</p></li>
-<li><p><strong>Classical Electrodynamics</strong> <em>John David Jackson</em><br>
-The ‘classic’ book on the theory of electromagnetism and electrodynamics. Useful for background on Maxwell’s equations and solutions of them. Material for Part IV of this course is in Chapters 6, 11 and 12. The most recent third edition uses SI units throughout, as we do; previous editions use other systems of units.</p></li>
-<li><p><strong>Quantum Field Theory: A Modern Introduction</strong> <em>Michio Kaku</em><br>
-One of several books on ‘Quantum Field Theory’ (which is beyond the scope of our course), that gives a quick review of Relativistic Field Theory. The book mainly is aiming towards an understanding of particle physics. Sections 1.7-1.9 and 4.1 of the book are particularly recommended for Part IV of the course.</p></li>
-<li><p><strong>The Classical Theory of Fields</strong> <em>L D Landau &amp; E M Lifshitz</em><br>
-Volume 2 of the classic ‘Course of Theoretical Physics’, required reading for Soviet Theoretical Physics students. Chapters 1 and 2 are relevant to Part I and II of the course, and Chapters 3 and 4 to Part IV. Relativistic fields are studied in detail, but with less emphasis than we take on the Lagrangian approach. Landau and Lifshitz Volume 1 on Classical Mechanics may also be useful.</p></li>
-<li><p><strong>The Principle of Relativity: A collection of original memoirs on the special and general theory of relativity</strong> <em>H A Lorentz, A Einstein, etc</em> in Queen’s Library.<br>
-A collection of (translations of) the original papers by Lorentz on Lorentz transformations, Einstein’s papers on Special and General Relativity, and Minkowski’s on Minkowski space. Everybody should at least have a look at these groundbreaking and accessible papers, which are particularly relevant for Part I and II of the course.</p></li>
-<li><p><strong>It’s about time: Understanding Einstein’s Relativity</strong> <em>N David Mermin</em><br>
-A gentle introduction and discussion of the basics of special relativity. Although we will go much further in this course, the book is very well written and strongly recommended for more of an insight and background into special relativity.</p></li>
-<li><p><strong>The Road to Reality</strong> <em>Roger Penrose</em> in Arts and Social Sciences Library.<br>
-A very good book to find out what one of the great minds of contemporary science thinks about physics and mathematics. Unfortunately, he leaves actually deriving most of the equations as exercises. Particularly useful in seeing how advanced mathematical topics (such as differential geometry) are related to physical concepts. You will find sections relevant to all parts of the course in this book, and I recommend persevering with it if you are thinking about further study in theoretical physics.</p></li>
-<li><p><strong>Classical Field Theory</strong> <em>Davison E Soper</em><br>
-Good treatment of the non-quantum aspects (although with the opposite sign for the Minkowski metric), which follows the ordering of our lectures. Chapter 1 is good for Part I and II, Chapters 2-3, and Section 9.1 for Part III.</p></li>
-</ul>
-<p>Be warned that many of these books follow different conventions from us, so it is always worth checking (usually in the Preface or first chapter) what the chosen sign of the Minkowski metric is, whether the time index is 0 or 4, the notion for various types of partial derivative for fields, the types of units (and whether <span class="math inline">\(c, \hbar, ...\)</span> are set to 1), etc.</p>
+<p>In this example class we will explore some of the mathematical structures underlying the special theory of relativity.</p>
+<p>As usual let’s start with a <a href="./quiz/quiz_ec2.html">Multiple choice quiz</a>.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>1. Cartesian grad is a one-form operator</strong></p>
+<p>The definition of 4-vector (<em>contravariant</em>) and one-form (<em>covariant</em>) indices also applies to Cartesian 3-vectors. Specifically, <span class="math inline">\(v^i\)</span> is a 3-vector if it transforms under a rotation as <span class="math inline">\(v^{\bar i} = R^{\bar i}_jv^j\)</span>, while <span class="math inline">\(u_j\)</span> is a one-form if it transforms as <span class="math inline">\(u_{\bar i} = R^j_{\bar i}u_j\)</span> involving the inverse transformation. Consider the 3-dimensional gradient operator <span class="math display">\[
+\nabla = \left(\begin{array}{c}
+                \frac{\partial}{\partial x}\\
+                \frac{\partial}{\partial y}\\
+                \frac{\partial}{\partial z}\end{array} \right).
+\]</span> Prove this object transforms like an Euclidean one-form.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>2. Convert a 4-vector into a one-form</strong></p>
+<p>Assume <span class="math inline">\(u^\mu = (u^0, u^1, u^2, u^3)^{\rm T}\)</span> are components of a 4-vector. Write down the one-form components <span class="math inline">\(u_\mu\)</span> in terms of the 4-vector components of <span class="math inline">\(u^\mu\)</span>. If <span class="math inline">\(v^\nu = (v^0, v^1, v^2, v^3)^{\rm T}\)</span> is another 4-vector, write down the components of the outer product <span class="math inline">\(u^\mu v^\nu\)</span> as a matrix. What is the tensor type of this outer product?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>3. Tensor contractions</strong></p>
+<ol type="a">
+<li><p>Consider the contraction of two tensors <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span>. What is this expression in matrix form? What are the matrix expressions relating the matrices in frame <span class="math inline">\(S\)</span> to those in fraem <span class="math inline">\(\bar S\)</span>. Using this to prove with matrix methods that <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span> is a Lorentz scalar.</p></li>
+<li><p>Now assume <span class="math inline">\(A^{\mu\nu}\)</span> is an antisymmetric tensor, so <span class="math inline">\(A^{\mu \nu} = -A^{\mu \nu},\)</span>, and <span class="math inline">\(S^{\mu \nu}\)</span> is a symmetric tensor, so <span class="math inline">\(S^{\mu\nu} = S^{\nu\mu}.\)</span> Write each down in matrix form. Prove, using index methods, that the contraction <span class="math inline">\(A^{\mu\nu} S_{\mu\nu} = 0.\)</span></p></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>4. The Quotient Rule for testing tensorality</strong></p>
+<p>We will now look at a useful trick for proving an object is a tensor.</p>
+<ol type="a">
+<li><p>Assume we have a set of quantities <span class="math inline">\(a_\mu\)</span>, such that the inner product with every 4-vector <span class="math inline">\(v^\mu\)</span> gives a Lorentz scalar. Prove that <span class="math inline">\(a_\mu\)</span> must transform like the components of a one-form.</p></li>
+<li><p>Assume that the inner product of a set of quantities <span class="math inline">\(b^\mu\)</span> with every one-form <span class="math inline">\(u_\mu\)</span> gives a Lorentz scalar. Prove that <span class="math inline">\(b^\mu\)</span> must transform like the components of a 4-vector.</p></li>
+</ol>
+<p>This trick can be extended to test tensorality. Suppose we have some putative multi-index object <span class="math inline">\(Y^{\mu\nu}{}_{\alpha\beta}\)</span>. This is a tensor if a Lorentz scalar is obtained when it is contracted it with a suitable number of arbitrary 4-vectors and one-forms. Can you think why it is called the quotient rule?</p>
+</div>
+</div>
 
 
 
@@ -750,13 +797,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./intro.html" class="pagination-link" aria-label="Introduction">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Introduction</span>
+      <a href="./tensors.html" class="pagination-link" aria-label="Tensors">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./principle_relativity.html" class="pagination-link" aria-label="Principle of relativity">
-        <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Principle of relativity</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./kinematics.html" class="pagination-link" aria-label="Relativistic kinematics">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

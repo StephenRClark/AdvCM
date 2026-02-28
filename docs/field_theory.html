@@ -1,0 +1,1394 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>9&nbsp; Building a field theory – Advanced Classical Mechanics (Relativistic Fields)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./acknowledgements.html" rel="next">
+<link href="./planewaves.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./field_theory.html">III: Lagrangian field theory</a></li><li class="breadcrumb-item"><a href="./field_theory.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./figures/acm.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Advanced Classical Mechanics (Relativistic Fields)</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended Books</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">I: Special Relativity</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./principle_relativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Principle of relativity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lorentz_transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lorentz transformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./space_time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minkowski space-time</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducing 4-vectors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">II: Tensors and Fields</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">III: Lagrangian field theory</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#lagrangians-for-many-coordinates" id="toc-lagrangians-for-many-coordinates" class="nav-link active" data-scroll-target="#lagrangians-for-many-coordinates"><span class="header-section-number">9.1</span> Lagrangians for many coordinates</a></li>
+  <li><a href="#chain-of-coupled-oscillators" id="toc-chain-of-coupled-oscillators" class="nav-link" data-scroll-target="#chain-of-coupled-oscillators"><span class="header-section-number">9.2</span> Chain of coupled oscillators</a></li>
+  <li><a href="#taking-the-continuum-limit" id="toc-taking-the-continuum-limit" class="nav-link" data-scroll-target="#taking-the-continuum-limit"><span class="header-section-number">9.3</span> Taking the continuum limit</a></li>
+  <li><a href="#euler-lagrange-equations-for-fields" id="toc-euler-lagrange-equations-for-fields" class="nav-link" data-scroll-target="#euler-lagrange-equations-for-fields"><span class="header-section-number">9.4</span> Euler-Lagrange equations for fields</a>
+  <ul class="collapse">
+  <li><a href="#single-particle-classical-mechanics" id="toc-single-particle-classical-mechanics" class="nav-link" data-scroll-target="#single-particle-classical-mechanics"><span class="header-section-number">9.4.1</span> Single-particle classical mechanics</a></li>
+  <li><a href="#one-dimensional-string" id="toc-one-dimensional-string" class="nav-link" data-scroll-target="#one-dimensional-string"><span class="header-section-number">9.4.2</span> One-dimensional string</a></li>
+  </ul></li>
+  <li><a href="#action-for-a-relativistic-field" id="toc-action-for-a-relativistic-field" class="nav-link" data-scroll-target="#action-for-a-relativistic-field"><span class="header-section-number">9.5</span> Action for a relativistic field</a></li>
+  <li><a href="#divergence-theorem-in-13d-space-time" id="toc-divergence-theorem-in-13d-space-time" class="nav-link" data-scroll-target="#divergence-theorem-in-13d-space-time"><span class="header-section-number">9.6</span> Divergence theorem in 1+3D space-time</a></li>
+  <li><a href="#variations-of-the-action" id="toc-variations-of-the-action" class="nav-link" data-scroll-target="#variations-of-the-action"><span class="header-section-number">9.7</span> Variations of the action</a></li>
+  <li><a href="#relativistic-euler-lagrange-equation" id="toc-relativistic-euler-lagrange-equation" class="nav-link" data-scroll-target="#relativistic-euler-lagrange-equation"><span class="header-section-number">9.8</span> Relativistic Euler-Lagrange equation</a>
+  <ul class="collapse">
+  <li><a href="#key-example" id="toc-key-example" class="nav-link" data-scroll-target="#key-example"><span class="header-section-number">9.8.1</span> Key example</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./field_theory.html">III: Lagrangian field theory</a></li><li class="breadcrumb-item"><a href="./field_theory.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>We have spent quite some time now developing the formalism of relativistic fields, but we have yet to actually build a field theory. To do this we will use the powerful tools of Lagrangian mechanics from the first module of this course and generalise in this lecture to continuous relativistic systems.</p>
+<section id="lagrangians-for-many-coordinates" class="level2 page-columns page-full" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="lagrangians-for-many-coordinates"><span class="header-section-number">9.1</span> Lagrangians for many coordinates</h2>
+<div class="page-columns page-full"><p>To start suppose we have a system described by <span class="math inline">\(N\)</span> generalised coordinates <span class="math inline">\(q_j(t)\)</span> and their derivatives <span class="math inline">\(\dot{q}_j(t) = \frac{\rm d}{{\rm d}t}q_j(t)\)</span>. The dynamics of this system are then controlled by its Lagrangian. Formally the Lagranian <span class="math inline">\(L(t)\)</span> is only a function only of time <span class="math inline">\(t\)</span> which is the independent variable. However, we separate out any explicit dependence on time <span class="math inline">\(t\)</span> it has and its implicit dependence through the set of coordinates <span class="math inline">\(\{q_j(t)\}\)</span> and derivatives <span class="math inline">\(\{\dot{q}_j(t)\}\)</span>,  by writing it as <span class="math display">\[
+    L(t,\{q_j(t)\},\{\dot{q}_j(t)\}).
+\]</span> The Lagrangian has units <span class="math inline">\(\tt [energy]\)</span>. From it we compute the value of the action by integrating over the time as <span class="math display">\[
+    \mathcal{S}[\{q_j(t)\}] = \int_{t_0}^{t_1} {\rm d}t\, L(t,\{q_j(t)\},\{\dot{q}_j(t)\}).
+\]</span> The action is a <em>functional</em> so we use the <span class="math inline">\([\cdots]\)</span> notation. This means it takes as an input all <span class="math inline">\(N\)</span> coordinates <span class="math inline">\(q_j(t)\)</span> which are functions of time and returns a scalar value. The action has units <span class="math inline">\(\tt [energy \times time]\)</span>. For brevity we will drop the set notation and often the time dependence for the coordinates <span class="math inline">\(\{q_j(t)\}\)</span> and just write <span class="math inline">\(L(t,q_j,\dot{q}_j)\)</span> and <span class="math inline">\(\mathcal{S}[q_j]\)</span>.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Lagrangians are taken to only depend on the coordinate and its first derivative. You might rightly question why this is. It turns out that including the acceleration or higher derivatives often causes the resulting equations of motion to be unstable. This is called <em>Ostrogradsky instability</em>.</span></div></div>
+<p>The principle of <em>stationary action</em> states that the time-dependence of the coordinates <span class="math inline">\(q_j(t)\)</span> that the system will exhibit in its dynamics will be the one which makes the action <span class="math inline">\(\mathcal{S}[q_j]\)</span> stationary. As you have seen from the first half of the course to achieve stationarity means that each coordinate <span class="math inline">\(q_j(t)\)</span> must obey an Euler-Lagrange equation <span id="eq-euler_lagrange"><span class="math display">\[
+    \frac{\partial L}{\partial q_j} - \frac{{\rm d}}{{\rm d}t}\frac{\partial L}{\partial \dot{q}_j} = 0.
+\tag{9.1}\]</span></span> We can view these equations as a force <span class="math inline">\(\frac{\partial L}{\partial q_j}\)</span> equaling a rate of change of a “momentum” <span class="math inline">\(\frac{\partial L}{\partial \dot{q}_j}\)</span>.</p>
+</section>
+<section id="chain-of-coupled-oscillators" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="chain-of-coupled-oscillators"><span class="header-section-number">9.2</span> Chain of coupled oscillators</h2>
+<p>To motivate the construction of a field theory we will start by considering carefully a 1D chain of <span class="math inline">\(N\)</span> masses <span class="math inline">\(m\)</span> coupled to their nearest-neighbours by springs with a stiffness constant <span class="math inline">\(k\)</span>, as depicted in <a href="#fig-coupled_chain" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>. Each mass <span class="math inline">\(j\)</span> has a coordinate <span class="math inline">\(q_j(t)\)</span> describing its displacement from its equilbrium position, where <span class="math inline">\(j=1,2,\dots,N\)</span>. We assuming fixed ends points clamped at the ends of the chain where <span class="math inline">\(q_0(t) = q_{N-1}(t) = 0\)</span> and <span class="math inline">\(\dot{q}_0(t) = \dot{q}_{N-1}(t) = 0\)</span>.</p>
+<div id="fig-coupled_chain" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-coupled_chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/coupled_chain.png" class="img-fluid figure-img" width="450">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-coupled_chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.1: A chain of <span class="math inline">\(N\)</span> masses <span class="math inline">\(m\)</span> coupled by springs with stiffness constant <span class="math inline">\(k\)</span>.
+</figcaption>
+</figure>
+</div>
+<p>We can easily construct the Lagrangian <span class="math inline">\(L\)</span> using the total kinetic energy of each mass <span class="math display">\[
+    \text{KE}(t) = \sum_{j=1}^N \frac{1}{2}m\dot{q}_j(t)^2,
+\]</span> and the total potential energy of each spring <span class="math display">\[
+    \text{PE}(t) = \sum_{j=0}^N \frac{1}{2}k\big(q_{j+1}(t) - q_j(t)\big)^2,
+\]</span> which gives <span id="eq-chain_L"><span class="math display">\[
+    L(t) = \text{KE}(t) - \text{PE}(t) = \sum_{j=0}^N\left[\frac{1}{2}m\dot{q}_j(t)^2 -  \frac{1}{2}k\big(q_{j+1}(t) - q_j(t)\big)^2\right].
+\tag{9.2}\]</span></span> Applying the Euler-Lagrange equations <a href="#eq-euler_lagrange" class="quarto-xref">Equation&nbsp;<span>9.1</span></a> to this Lagrangian gives <span id="eq-eom"><span class="math display">\[
+    m\ddot{q}_j(t) = k\left[\big(q_{j+1}(t) - q_j(t)\big) - \big(q_j(t) - q_{j-1}(t)\big)\right],
+\tag{9.3}\]</span></span> for each mass <span class="math inline">\(j=1,2,\dots,N\)</span>. Of course these equations should be instantly recognizable as Newton’s 2nd law for each mass coupled to two springs.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Euler-Lagrange equations for a coupled chain</strong></p>
+<p>Use the Euler-Lagrange equations <a href="#eq-euler_lagrange" class="quarto-xref">Equation&nbsp;<span>9.1</span></a> to directly confirm the equation of motion arise from <a href="#eq-chain_L" class="quarto-xref">Equation&nbsp;<span>9.2</span></a> for the coupled chain.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Euler-Lagrange equations for a coupled chain</strong></p>
+<p>We take the Lagrangian from <a href="#eq-chain_L" class="quarto-xref">Equation&nbsp;<span>9.2</span></a> <span class="math display">\[
+    L(t)=\sum_{j=0}^{N}\left[\frac{1}{2}m\dot{q}_j(t)^2 - \frac{1}{2}k\big(q_{j+1}(t)-q_j(t)\big)^2\right].
+\]</span> with fixed ends <span class="math display">\[
+q_0(t)=0, \qquad q_{N+1}(t)=0.
+\]</span> For each dynamical coordinate <span class="math inline">\(q_j(t)\)</span>, the Euler–Lagrange equation <a href="#eq-euler_lagrange" class="quarto-xref">Equation&nbsp;<span>9.1</span></a> is <span class="math display">\[
+    \frac{d}{dt}\frac{\partial L}{\partial \dot q_j} - \frac{\partial L}{\partial q_j} = 0.
+\]</span> Only the term <span class="math inline">\(\frac12 m \dot q_j^2\)</span> depends on <span class="math inline">\(\dot q_j\)</span>, so <span class="math display">\[
+    \frac{\partial L}{\partial \dot q_j} = m \dot q_j,
+\]</span> and therefore <span class="math display">\[
+    \frac{d}{dt}\frac{\partial L}{\partial \dot q_j} = m \ddot q_j.
+\]</span> For the masses <span class="math inline">\(1 \le j \le N\)</span>, the coordinate <span class="math inline">\(q_j\)</span> appears in two spring terms: <span class="math display">\[
+    -\frac12 k (q_{j+1}-q_j)^2, \qquad -\frac12 k (q_j-q_{j-1})^2.
+\]</span> Differentiating, <span class="math display">\[
+    \frac{\partial}{\partial q_j} \left[-\frac12 k (q_{j+1}-q_j)^2\right] = k (q_{j+1}-q_j),
+\]</span> and also <span class="math display">\[
+    \frac{\partial}{\partial q_j}\left[-\frac12 k (q_j-q_{j-1})^2\right] = - k (q_j-q_{j-1}) = k (q_{j-1}-q_j).
+\]</span> Hence, <span class="math display">\[
+    \frac{\partial L}{\partial q_j} = k (q_{j+1}+q_{j-1}-2q_j).
+\]</span> Substituting into the Euler–Lagrange equation gives <span class="math display">\[
+    m \ddot q_j - k (q_{j+1}+q_{j-1}-2q_j) = 0.
+\]</span> Thus the equations of motion are <span class="math display">\[
+    m \ddot q_j = k (q_{j+1}-2q_j+q_{j-1}), \qquad j=1,\dots,N.
+\]</span> Using the fixed-end boundary conditions <span class="math display">\[
+    q_0=0, \qquad q_{N+1}=0,
+\]</span> the boundary equations become <span class="math display">\[
+    m \ddot q_1 = k (q_2 - 2 q_1),
+\]</span> and <span class="math display">\[
+    m \ddot q_N = k (-2 q_N + q_{N-1}).
+\]</span> The system therefore satisfies the discrete wave equation <span class="math display">\[
+    m \ddot q_j = k (q_{j+1}-2q_j+q_{j-1}),
+\]</span> which is <a href="#eq-eom" class="quarto-xref">Equation&nbsp;<span>9.3</span></a>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="taking-the-continuum-limit" class="level2 page-columns page-full" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="taking-the-continuum-limit"><span class="header-section-number">9.3</span> Taking the continuum limit</h2>
+<div class="page-columns page-full"><p>We will now construct a field theory by carefully taking the continuum limit of the chain of masses. This limit is reached by taking <span class="math inline">\(N \rightarrow \infty\)</span> along with <span class="math display">\[
+    \ell_0 \rightarrow 0, \quad m \rightarrow 0 \quad \text{and} \quad k\rightarrow \infty,
+\]</span> such that the total mass of the chain <span class="math inline">\(M_c = Nm\)</span>, the total length of the chain <span class="math inline">\(X_c = (N+1)\ell_0\)</span> and <span class="math inline">\(Y = k\ell_0\)</span> remain fixed and finite. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Fixing the total mass and the length of the chain implies that in the limit <span class="math display">\[\begin{align}
+    \frac{M_c}{X_c} &amp;= \lim_{N\rightarrow\infty}\frac{Nm}{\ell_0(N+1)}, \\
+    &amp;= \lim_{N\rightarrow\infty}\frac{m}{\ell_0(1+N^{-1})}, \\
+    &amp;= \frac{m}{\ell_0},
+\end{align}\]</span> hence the ratio of <span class="math inline">\(m\)</span> and <span class="math inline">\(\ell_0\)</span> is fixed and finite despite both quantities vanishing.</span></div></div>
+<p>So we are squeezing more and more masses into the chain between the fixed end points which correspondingly get closer together, each have less mass, but are coupled by stronger springs as shown in <a href="#fig-continuum_chain" class="quarto-xref">Figure&nbsp;<span>9.2</span></a> below:</p>
+<div id="fig-continuum_chain" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-continuum_chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/continuum_chain.png" class="img-fluid figure-img" width="450">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-continuum_chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.2: A depiction of the continuum limit for a chain of masses. We cram an increasing number of smaller masses closer and closer together, but coupld by stronger springs, until we arrive at a continuous string.
+</figcaption>
+</figure>
+</div>
+<p>To take this limit we start by dividing up the Lagrangian into pieces as <span class="math display">\[
+    L(t) = \sum_{j=0}^N \ell_0 \mathcal{L}_j(t)
+\]</span> where <span class="math inline">\(\mathcal{L}_j\)</span> is the Lagrangian per unit length (<em>Lagrangian density</em>) given by <span class="math display">\[
+    \mathcal{L}_j(t) = \frac{m}{2\ell_0}\dot{q}_j(t)^2 -  \frac{k\ell_0}{2}\left(\frac{q_{j+1}(t) - q_j(t)}{\ell_0}\right)^2.
+\]</span> Next, we define intensive continuous quantities:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 50%">
+<col style="width: 50%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>quantity</th>
+<th>description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\frac{m}{\ell_0} \rightarrow \rho\)</span></td>
+<td>mass per unit length</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(k\ell_0 \rightarrow Y\)</span></td>
+<td>Young’s modulus</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(j\ell_0 \rightarrow x\)</span></td>
+<td>spatial position along chain axis</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(q_j(t) \rightarrow \varphi(t,x)\)</span></td>
+<td>field of local displacements</td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\dot{q}_j(t) \rightarrow \frac{\partial}{\partial t}\varphi(t,x) = \dot{\varphi}(t,x)\)</span></td>
+<td>Time derivative of the field</td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\frac{q_{j+1}(t) - q_j(t)}{\ell_0} \rightarrow \frac{\partial}{\partial x}\varphi(t,x) = {\varphi}'(t,x)\)</span></td>
+<td>Space derivative of the field</td>
+</tr>
+</tbody>
+</table>
+<p>These subsitutions imply that the Lagrangian density is given by: <span id="eq-string_lagrangian"><span class="math display">\[
+    \mathcal{L}_j(t) \rightarrow \mathcal{L}(t,x) = \frac{\rho}{2}\dot{\varphi}(t,x)^2 - \frac{Y}{2}\varphi'(x,t)^2,
+\tag{9.4}\]</span></span> with the Lagrangian itself as: <span class="math display">\[
+    L(t) = \sum_{j=0}^N \ell_0 \mathcal{L}_j(t) \rightarrow \int_0^{X_c} {\rm d}x\, \mathcal{L}(t,x),
+\]</span> and the action becoming <span class="math display">\[
+    \mathcal{S}[\varphi] = \int_{t_0}^{t_1} {\rm d}t\, \int_0^{X_c} {\rm d}x\, \mathcal{L}(t,x).
+\]</span> The continuum limit has therefore changed our action from being a functional of a set of continuous functions of time <span class="math inline">\(q_j(t)\)</span> to being a functional of one continuous function of both space and time <span class="math inline">\(\varphi(t,x)\)</span>. The question we must now answer is what are the Euler-Lagrange equations for a field?</p>
+</section>
+<section id="euler-lagrange-equations-for-fields" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="euler-lagrange-equations-for-fields"><span class="header-section-number">9.4</span> Euler-Lagrange equations for fields</h2>
+<p>We can directly generalise the Euler-Lagrange equations for a discrete system to that required for fields quite straightforwardly. Let’s look closer at an example we know well:</p>
+<div id="fig-variations" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-variations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/variations_0D_1D.png" class="img-fluid figure-img" width="450">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-variations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.3: On the left a 1+0D field <span class="math inline">\(\varphi(t)\)</span> varying between two time fixed points <span class="math inline">\(t_0\)</span> and <span class="math inline">\(t_1\)</span>. On the right a 1+1D field <span class="math inline">\(\varphi(t,x)\)</span> varying within a space-time region and fixed on the boundaries. For the case of a clamped string shown we have <span class="math inline">\(\varphi(t,0) = \varphi(t,X_c) = 0\)</span>, while <span class="math inline">\(\varphi(t_0,x)\)</span> and <span class="math inline">\(\varphi(t_1,x)\)</span> are freely chosen boundary conditions.
+</figcaption>
+</figure>
+</div>
+<section id="single-particle-classical-mechanics" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="single-particle-classical-mechanics"><span class="header-section-number">9.4.1</span> Single-particle classical mechanics</h3>
+<p>The motion of a single particle with coordinate <span class="math inline">\(q(t)\)</span>, as you have treated many times earlier in the course, can be considered a 1+0D field theory described by <span class="math inline">\(\varphi(t)\)</span> with a single independent variable <span class="math inline">\(t\)</span>. We have a Lagrangian <span class="math inline">\(L(t,\varphi,\dot{\varphi})\)</span> and an action <span id="eq-action_particle"><span class="math display">\[
+    \mathcal{S}[\varphi] = \int_{t_0}^{t_1} {\rm d}t\,L(t,\varphi,\dot{\varphi}).
+\tag{9.5}\]</span></span> As shown on the left in <a href="#fig-variations" class="quarto-xref">Figure&nbsp;<span>9.3</span></a> we envisage variations of the field <span class="math inline">\(\varphi\)</span> between fixed points whereupon applying the stationary action principle yielding <span id="eq-stationary_action"><span class="math display">\[
+    \frac{\delta\mathcal{S}}{\delta\varphi} = 0 \quad \rightarrow \quad \frac{\partial L}{\partial \varphi} - \frac{{\rm d}}{{\rm d}t}\frac{\partial L}{\partial \dot{\varphi}} = 0.
+\tag{9.6}\]</span></span> This is the Euler-Lagrange equation involving the field, a single independent variable <span class="math inline">\(t\)</span> and the derivative of the field with respect to it.</p>
+</section>
+<section id="one-dimensional-string" class="level3" data-number="9.4.2">
+<h3 data-number="9.4.2" class="anchored" data-anchor-id="one-dimensional-string"><span class="header-section-number">9.4.2</span> One-dimensional string</h3>
+<p>The end result of taking the continuum limit of the chain of oscillators was a Lagrangian for a one-dimensional string. This is equivalent to a 1+1D field theory described by <span class="math inline">\(\varphi(t,x)\)</span> in terms of two independent variables <span class="math inline">\(t\)</span> and <span class="math inline">\(x\)</span>. Generalising <a href="#eq-action_particle" class="quarto-xref">Equation&nbsp;<span>9.5</span></a> we write the action of the string as <span class="math display">\[
+    \mathcal{S}[\varphi] = \int_{t_0}^{t_1} {\rm d}t\, \int_0^{X_c} {\rm d}x\, \mathcal{L}(t,x,\varphi,\dot{\varphi},\varphi'),
+\]</span> where the Lagrangian density is explicitly written as a function of the two independent variables, the field <span class="math inline">\(\varphi(t,x)\)</span> and its derivatives <span class="math inline">\(\dot{\varphi}(t,x)\)</span> and <span class="math inline">\(\varphi'(t,x)\)</span> with respects to both independent variables. As shown on the right of <a href="#fig-variations" class="quarto-xref">Figure&nbsp;<span>9.3</span></a> the field <span class="math inline">\(\varphi(t,x)\)</span> is defined inside a space-time region and fixed on the boundaries. Following this we generalise <a href="#eq-stationary_action" class="quarto-xref">Equation&nbsp;<span>9.6</span></a> as: <span id="eq-string_euler"><span class="math display">\[
+    \frac{\delta\mathcal{S}}{\delta\varphi} = 0 \quad \rightarrow \quad \frac{\partial \mathcal{L}}{\partial \varphi} - \frac{\partial}{\partial t}\frac{\partial \mathcal{L}}{\partial \dot{\varphi}} - \frac{\partial}{\partial x}\frac{\partial \mathcal{L}}{\partial \varphi'}= 0.
+\tag{9.7}\]</span></span> Three major changes are apparent compared to <a href="#eq-stationary_action" class="quarto-xref">Equation&nbsp;<span>9.6</span></a>. First, the Lagrangian density rather than the Lagrangian is now the central object and this is a function of both independent variables. Second, given that we have two independent variables the derivatives become partial derivatives - but some care has to be taken interpreting what this means as explained in the box below. Third, we added another term involving the new independent variable <span class="math inline">\(x\)</span> with the same form as the usual one involving <span class="math inline">\(t\)</span>. This result seems a very natural extension that we might have expected. Nonetheless we can formally derive <a href="#eq-string_euler" class="quarto-xref">Equation&nbsp;<span>9.7</span></a> using the calculus of variations for two independent variables approach as you are invited to show.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>2. Calculus of variations with two independent variables</strong></p>
+<p>Assume we have a functional <span class="math inline">\(\mathcal{F}[u(x,y)],\)</span> which depends on a function <span class="math inline">\(u(x,y)\)</span> depending on two independent variables <span class="math inline">\(x\)</span> and <span class="math inline">\(y,\)</span> <span class="math display">\[
+    \mathcal{F}[u(x,y)] = \iint_{\mathcal{A}} {\rm d} x{\rm d} y\, F(x,y,u(x,y),\partial_x u(x,y), \partial_y u(x,y)),
+\]</span> where <span class="math inline">\(\mathcal{A}\)</span> is a simply-connected region of the <span class="math inline">\(x,y\)</span> plane, and on whose boundary <span class="math inline">\(\partial\mathcal{A}\)</span> the value of the function <span class="math inline">\(u\)</span> is fixed.</p>
+<ol type="a">
+<li><p>Consider the variation <span class="math inline">\(\mathcal{F}[u(x,y) + \varepsilon \zeta(x,y)],\)</span> for <span class="math inline">\(\varepsilon\)</span> small and positive, and <span class="math inline">\(\zeta(x,y)\)</span> an arbitrary differentiable function of <span class="math inline">\(x\)</span> and <span class="math inline">\(y,\)</span> which must vanish on the boundary <span class="math inline">\(\partial\mathcal{A}.\)</span> Write down the integral <span class="math inline">\(\mathcal{I}\)</span> proportional to <span class="math inline">\(\varepsilon\)</span> on Taylor expanding <span class="math inline">\(\mathcal{F}[u(x,y) + \varepsilon \zeta(x,y)]\)</span> with respect to <span class="math inline">\(\varepsilon.\)</span></p></li>
+<li><p>We seek the condition on <span class="math inline">\(u\)</span> which makes <span class="math inline">\(\mathcal{I}\)</span> vanish. Perform a `two-dimensional integration by parts’ using the two-dimensional version of the divergence theorem. Show, from the assumption about <span class="math inline">\(\zeta(x,y)\)</span> on the boundary, that the first variation is equal to an integral only involving <span class="math inline">\(\zeta,\)</span> not <span class="math inline">\(\partial_x \zeta\)</span> or <span class="math inline">\(\partial_y \zeta.\)</span> Interpret any derivatives that you introduce.</p></li>
+<li><p>Using the fact that <span class="math inline">\(\zeta(x,y)\)</span> is arbitrary, show that if the term proportional to <span class="math inline">\(\varepsilon\)</span> in the expansion of <span class="math inline">\(\mathcal{F}[u(x,y) + \varepsilon \zeta(x,y)]\)</span> is zero, then <span class="math inline">\(u(x,y)\)</span> satisfies the generalized Euler-Lagrange equation <span class="math display">\[
+\frac{\partial F}{\partial u} - \frac{\partial}{\partial x} \frac{\partial F}{\partial(\partial_x u)} - \frac{\partial}{\partial y} \frac{\partial F}{\partial(\partial_y u)} = 0.
+\]</span></p></li>
+</ol>
+<p>This argument should convince you that you can generalize the calculus of variations to <em>any number of independent variables</em>, by suitably generalising this Euler-Lagrange equation, and being careful about boundary conditions.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>2. Calculus of variations with two independent variables</strong></p>
+<ol type="a">
+<li><p>Consider the functional <span class="math display">\[
+\mathcal{F}[u(x,y)] = \int_{\mathcal{A}} {\rm d}x \, {\rm d}y \, F(x,y,u,\partial_x u,\partial_y u),
+\]</span> where <span class="math inline">\(\mathcal{A}\)</span> is a simply connected region of the <span class="math inline">\((x,y)\)</span>-plane, and <span class="math inline">\(u\)</span> is fixed on the boundary <span class="math inline">\(\partial \mathcal{A}\)</span>. Now vary <span class="math display">\[
+u \to u + \varepsilon \xi(x,y),
+\]</span> with <span class="math inline">\(\varepsilon\)</span> small and <span class="math display">\[
+\xi = 0 \quad \text{on} \quad \partial \mathcal{A}.
+\]</span> Then <span class="math display">\[
+\mathcal{F}[u+\varepsilon \xi] = \int_{\mathcal{A}} {\rm d}x \, {\rm d}y \, F(x,y, u+\varepsilon \xi, \partial_x u + \varepsilon \partial_x \xi, \partial_y u + \varepsilon \partial_y \xi).
+\]</span> Taylor expanding, <span class="math display">\[
+\mathcal{F}[u+\varepsilon \xi] = \mathcal{F}[u] + \varepsilon \int_{\mathcal{A}} {\rm d}x\,{\rm d}y \left[ \xi \frac{\partial F}{\partial u} + \partial_x \xi \frac{\partial F}{\partial \partial_x u} + \partial_y \xi \frac{\partial F}{\partial \partial_y u} \right] + \mathcal{O}(\varepsilon^2).
+\]</span> Thus the first variation is <span class="math display">\[
+\chi = \int_{\mathcal{A}} {\rm d}x\,{\rm d}y \left[\xi \frac{\partial F}{\partial u} + \partial_x \xi \frac{\partial F}{\partial \partial_x u} + \partial_y \xi \frac{\partial F}{\partial \partial_y u} \right].
+\]</span></p></li>
+<li><p>Now define a 2D vector field <span class="math display">\[
+\boldsymbol{G} = \left(\frac{\partial F}{\partial \partial_x u},\frac{\partial F}{\partial \partial_y u}\right).
+\]</span> Then <span class="math display">\[
+\chi = \int_{\mathcal{A}} {\rm d}x\,{\rm d}y \left[\xi \frac{\partial F}{\partial u} + \nabla \xi \cdot \boldsymbol{G} \right].
+\]</span> Using the Leibniz rule, <span class="math display">\[
+\nabla \cdot (\xi \boldsymbol{G}) = \nabla \xi \cdot \boldsymbol{G} + \xi \nabla \cdot \boldsymbol{G}.
+\]</span> Hence <span class="math display">\[
+\nabla \xi \cdot \boldsymbol{G} = \nabla \cdot (\xi \boldsymbol{G}) - \xi \nabla \cdot \boldsymbol{G}.
+\]</span> Therefore, <span class="math display">\[
+\chi = \int_{\mathcal{A}} {\rm d}x\,{\rm d}y \left[\xi \frac{\partial F}{\partial u} + \nabla \cdot (\xi \boldsymbol{G}) - \xi \nabla \cdot \boldsymbol{G}\right].
+\]</span> Using the 2D divergence theorem, <span class="math display">\[
+\int_{\mathcal{A}} {\rm d}x\,{\rm d}y \, \nabla \cdot (\xi \boldsymbol{G}) = \int_{\partial \mathcal{A}} ds \,\hat{\boldsymbol{n}} \cdot \boldsymbol{G} \, \xi.
+\]</span></p></li>
+<li><p>But since <span class="math inline">\(\xi=0\)</span> on <span class="math inline">\(\partial \mathcal{A}\)</span>, this boundary term vanishes. Thus <span class="math display">\[
+\chi = \int_{\mathcal{A}} {\rm d}x\,{\rm d}y \,\xi\left[\frac{\partial F}{\partial u} - \partial_x \frac{\partial F}{\partial \partial_x u} - \partial_y\frac{\partial F}{\partial \partial_y u}\right].
+\]</span> Since <span class="math inline">\(\varepsilon \chi\)</span> is the <span class="math inline">\(\mathcal{O}(\varepsilon)\)</span> variation of <span class="math inline">\(\mathcal{F}\)</span>, the functional is stationary to order <span class="math inline">\(\varepsilon\)</span> if <span class="math inline">\(\chi=0\)</span> for arbitrary <span class="math inline">\(\xi\)</span>. The only way this holds for all <span class="math inline">\(\xi\)</span> is if <span class="math display">\[
+\frac{\partial F}{\partial u} - \partial_x \frac{\partial F}{\partial\partial_x u} - \partial_y\frac{\partial F}{\partial \partial_y u} = 0.
+\]</span> This is the Euler–Lagrange equation for two independent variables.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<p>Let’s go ahead an apply <a href="#eq-string_euler" class="quarto-xref">Equation&nbsp;<span>9.7</span></a> to the Lagrangian density for a string <span class="math inline">\(\mathcal{L} = \frac{\rho}{2}\dot{\varphi}^2 - \frac{Y}{2}\varphi'^2\)</span>. We first compute <span class="math display">\[
+    \frac{\partial\mathcal{L}}{\partial\varphi} = 0, \quad \frac{\partial \mathcal{L}}{\partial \dot{\varphi}} = \rho \dot{\varphi}, \quad \frac{\partial \mathcal{L}}{\partial \varphi'} = -Y\varphi'.
+\]</span> and then obtain <span class="math display">\[
+    - \frac{\partial}{\partial t}\frac{\partial \mathcal{L}}{\partial \dot{\varphi}} - \frac{\partial}{\partial x}\frac{\partial \mathcal{L}}{\partial \varphi'} = -\rho \frac{\partial}{\partial t}\dot{\varphi} + Y\frac{\partial}{\partial x}\varphi' = -\rho\ddot{\varphi} + Y\varphi'' = 0,  
+\]</span> hence <span class="math display">\[
+    \frac{\rho}{Y}\ddot{\varphi} = \varphi''.
+\]</span> This is the 1D wave equation with a wave speed <span class="math inline">\(c_s = \sqrt{Y/\rho}\)</span> for compression modes of the string. This is exactly the physics we expect to emerge from a dense chain of coupled oscillators.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Partial derivatives in the Euler-Lagrange equation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>For the 0+1D Euler-Lagrange equations the derivative <span class="math inline">\({\rm d}/{\rm d}t\)</span> is a standard time derivative of a Lagrangian <span class="math inline">\(L(t)\)</span> that is formally only a function of <span class="math inline">\(t\)</span>. If we choose to write divide up the time-dependence as <span class="math inline">\(L(t,\varphi(t),\dot{\varphi}(t))\)</span> then it would mean a total time derivative <span class="math display">\[
+    \frac{\rm d}{{\rm d}t}L = \frac{\partial L}{\partial t} + \frac{\partial L}{\partial \varphi}\frac{{\rm d}\varphi}{{\rm d}t} + \frac{\partial L}{\partial \dot{\varphi}} \frac{{\rm d}\dot{\varphi},}{{\rm d}t},
+\]</span> where the partial derivative captures the variation in any explicit time-dependence (so field and its derivtaive are held constant), and the additional chain rule terms account for the time-dependence of <span class="math inline">\(\varphi(t)\)</span> and its derivative.</p>
+<p>For 1+1D we instead have a Lagrangian density <span class="math inline">\(\mathcal{L}(t,x)\)</span> which is formally a function of both <span class="math inline">\(t\)</span> and <span class="math inline">\(x\)</span>. The derivative <span class="math inline">\(\partial/\partial t\)</span> in <a href="#eq-string_euler" class="quarto-xref">Equation&nbsp;<span>9.7</span></a> is a standard partial derivative of <span class="math inline">\(\mathcal{L}(t,x)\)</span>, meaning it acts on all time dependence in the function with <span class="math inline">\(x\)</span> held constant. The potential for confusion arises when we again divide up the <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span> dependence between that which explicitly appears and that which is contained inside the field and its derivatives as <span class="math inline">\(\mathcal{L}(t,x,\varphi(t,x),\dot{\varphi}(t,x))\)</span>. In this context <span class="math inline">\(\partial/\partial t\)</span> now acts like a “total” partial derivative to give <span class="math display">\[
+    \frac{\partial}{\partial t}\mathcal{L} = \frac{\partial \mathcal{L}}{\partial t} + \frac{\partial \mathcal{L}}{\partial \varphi} \frac{\partial \varphi}{\partial t} + \frac{\partial \mathcal{L}}{\partial \dot{\varphi}}\frac{\partial\dot{\varphi}}{\partial t} + \frac{\partial \mathcal{L}}{\partial \varphi'}\frac{\partial \varphi'}{\partial t}.
+\]</span> The partial derivative on the righthand side is now of the explicit time-dependence in <span class="math inline">\(\mathcal{L}\)</span> assuming the field and its derivatives are held constant. We don’t have a new symbol to distinguish this from the actual partial derivative of all <span class="math inline">\(t\)</span> dependence on the lefthand side besides typesetting them differently as has been done here. In practise confusion is unlikely to occur because it will be clear from context which we mean, and generally for problems we wil encounter <span class="math inline">\(\mathcal{L}\)</span> will have no explicit time-dependence in any case.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="action-for-a-relativistic-field" class="level2 page-columns page-full" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="action-for-a-relativistic-field"><span class="header-section-number">9.5</span> Action for a relativistic field</h2>
+<div class="page-columns page-full"><p>We have already encountered fields in a relativistic setting. They are functions of space-time coordinates <span class="math inline">\(\varphi(ct,x,y,z)\)</span> in some frame <span class="math inline">\(S\)</span> which we may denote as <span class="math inline">\(\varphi(x^0,x^1,x^2,x^2) = \varphi(x^\mu) = \varphi(x)\)</span>.  They are also Lorentz scalar meaning the value at any point in space-time is the same independent on the frame used, so <span class="math display">\[
+    \varphi(x) = \varphi(x^\mu) = \varphi(\Lambda^{\bar \nu}_\mu x^\mu) = \bar{\varphi}(x^{\bar \nu}) = \bar{\varphi}(\bar{x}).
+\]</span> Generalising from 1+1D to 1+3D means the Lagrangian density is also formally a function of the space-time coordinates <span class="math inline">\(\mathcal{L}(x)\)</span>. We demand it is also a Lorentz scalar function. Again we separate out the dependence of <span class="math inline">\(\mathcal{L}(x)\)</span> into any explicit dependence on the 4 independent variables <span class="math inline">\(x^\mu\)</span>, the field and its derivatives with respect to the coordinates so it has a form: <span id="eq-rel_lagrangian"><span class="math display">\[
+    \mathcal{L}(\overbrace{x^0,x^1,x^2,x^3}^x,\varphi,\overbrace{\partial_0\varphi,\partial_1\varphi,\partial_2\varphi,\partial_3\varphi}^{\partial\varphi}) = \mathcal{L}(x,\varphi,\partial\varphi).
+\tag{9.8}\]</span></span> On the righthand side of <a href="#eq-rel_lagrangian" class="quarto-xref">Equation&nbsp;<span>9.8</span></a> we have introduced a conpact shorthand notation for all these arguments. The action follows as an integral over space-time as <span class="math display">\[
+    \mathcal{S}[\varphi] = \int_{\Omega} {\rm d}^4x\, \mathcal{L}(x,\varphi,\partial\varphi),
+\]</span> where <span class="math inline">\({\rm d}^4x = {\rm d}x^0{\rm d}x^1{\rm d}x^2{\rm d}x^3\)</span>, and <span class="math inline">\(\Omega\)</span> is some specified 4-volume of space-time in which the field is defined.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Remember, in the relativistic context <span class="math inline">\(x\)</span> in <span class="math inline">\(\varphi(x)\)</span> is a shorthand for the space-time coordinates <span class="math inline">\(x^\mu\)</span> in frame <span class="math inline">\(S\)</span>, and should not be confused with the single spatial coordinate <span class="math inline">\(x\)</span> along one axis used earlier.</span></div></div>
+<p>Demanding that <span class="math inline">\(\mathcal{L}(x)\)</span> be Lorentz scalar guarantees that the action <span class="math inline">\(\mathcal{S}\)</span> is also Lorentz scalar. This is essential if we ever hope to extract a covariant equation of motion of our field from the action. The proof is straightforward: <span class="math display">\[\begin{align}
+    \mathcal{S}[\varphi] &amp;= \int_{\Omega} {\rm d}^4x\, \mathcal{L}(x,\varphi,\partial\varphi), \\
+    &amp;= \int_{\Omega} {\rm d}^4x\, \bar{\mathcal{L}}(\bar{x},\bar{\varphi},\bar{\partial}\bar{\varphi}), \\
+    &amp;= \int_{\Omega}\left|\det \frac{\partial x^\mu}{\partial x^{\bar \nu}}\right| {\rm d}^4\bar{x}\, \bar{\mathcal{L}}(\bar{x},\bar{\varphi},\bar{\partial}\bar{\varphi}), \\
+    &amp;= \int_{\Omega}\left|\det \Lambda^\mu_{\bar\nu}\right| {\rm d}^4\bar{x}\, \bar{\mathcal{L}}(\bar{x},\bar{\varphi},\bar{\partial}\bar{\varphi}), \\
+    &amp;= \int_{\Omega} {\rm d}^4\bar{x}\, \bar{\mathcal{L}}(\bar{x},\bar{\varphi},\bar{\partial}\bar{\varphi}) = \mathcal{S}[\bar{\varphi}].
+\end{align}\]</span> On line two we use the Lorentz scalar property of the Lagrangian density to change the frame it is expressed in <span class="math display">\[
+    \mathcal{L}(x,\varphi,\partial\varphi) = \bar{\mathcal{L}}(\bar{x},\bar{\varphi},\bar{\partial}\bar{\varphi}).
+\]</span> Next, we change the infinitesmal space-time volume element <span class="math inline">\({\rm d}^4x\)</span> by introducing the determinant of the Jacobian matrix. The integration 4-volume <span class="math inline">\(\Omega\)</span> remains unchanged, it is simply specified in new coordinates. The Jacobian here is the Lorentz transformation which, as we have shown before, has a <span class="math inline">\(\pm 1\)</span> determinant. This is just telling us that space-time volume element has the same 4-volume in any frame. In work-along exercise 2 in the last lecture you would have showed this already. Thus the result follows.</p>
+</section>
+<section id="divergence-theorem-in-13d-space-time" class="level2" data-number="9.6">
+<h2 data-number="9.6" class="anchored" data-anchor-id="divergence-theorem-in-13d-space-time"><span class="header-section-number">9.6</span> Divergence theorem in 1+3D space-time</h2>
+<p>A key tool we will need to understand relativistic actions is the divergence theorem in 1+3D space-time. You have met the divergence theorem (or Gauss’s law) in earlier course on vector calculus and electromagnetism.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Divergence theorem in 3D
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a continuously differentiable 3-vector field <span class="math inline">\(\boldsymbol{F}(\boldsymbol{r})\)</span> in some frame <span class="math inline">\(S\)</span> then <span class="math display">\[
+    \int\int\int_{\mathcal{V}} {\rm d}^3\boldsymbol{r}\, \nabla \cdot \boldsymbol{F}(\boldsymbol{r}) = {\subset\!\supset} \mathllap{\iint}_{\partial\mathcal{V}} {\rm d}^2 S \, \hat{\boldsymbol n}\cdot\boldsymbol{F}(\boldsymbol{r}),
+\]</span> where <span class="math inline">\(\mathcal{V}\)</span> is a 3-volume and <span class="math inline">\(\partial\mathcal{V}\)</span> is the boundary enclosing <span class="math inline">\(\mathcal{V}\)</span> with a normal unit 3-vector <span class="math inline">\(\hat{\boldsymbol n}\)</span>, as shown in <a href="#fig-divergence" class="quarto-xref">Figure&nbsp;<span>9.4</span></a>.</p>
+</div>
+</div>
+<div id="fig-divergence" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-divergence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/divergence.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-divergence-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.4: A 3-volume <span class="math inline">\(\mathcal{V}\)</span> is depicted along with its boundary surface <span class="math inline">\(\partial\mathcal{V}\)</span> and a unit normal vector <span class="math inline">\(\hat{\boldsymbol{n}}\)</span>.
+</figcaption>
+</figure>
+</div>
+<p>Hence in words the volume integral of the 3-divergence of a 3-vector field is equal to the surface integral of the field over the boundary. The divergence theorem is pivotal in electromagnetism. For example the Maxwell equation <span class="math inline">\(\nabla \cdot \boldsymbol{E}(\boldsymbol{r}) = \rho(\boldsymbol{r})/\epsilon_0\)</span> connecting the divergence of the electric field <span class="math inline">\(\boldsymbol{E}(\boldsymbol{r})\)</span> to charge density <span class="math inline">\(\rho(\boldsymbol{r})\)</span> can be reformulated as <span class="math display">\[
+    \int\int\int_{\mathcal{V}} {\rm d}^3\boldsymbol{r}\, \rho(\boldsymbol{r}) = {\subset\!\supset} \mathllap{\iint}_{\partial\mathcal{V}} {\rm d}^2 S \, \hat{\boldsymbol n}\cdot\boldsymbol{E}(\boldsymbol{r}),
+\]</span> or the total charge enclosed inside <span class="math inline">\(\mathcal{V}\)</span> is equal to the flux of the electric field through its surface. Another Maxwell equation <span class="math inline">\(\nabla \cdot \boldsymbol{B}(\boldsymbol{r}) = 0\)</span> is therefore often said to mean there are no magnetic monopoles since no volume can enclose an isolated magnetic charge. We will discuss electromagnetism in much more detail in Part IV of the course.</p>
+<p>Mathematically there is nothing special about 3D space with regard to the divergence theorem. It generalises naturally to 4D or 1+3D space-time as:</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Divergence theorem in 1+3D
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a continuously differentiable 4-vector field <span class="math inline">\(f^\mu(x)\)</span> in some frame <span class="math inline">\(S\)</span> then <span class="math display">\[
+    \int_{\Omega} {\rm d}^4x\, \partial_\mu f^\mu(x) = \oint_{\partial\Omega} {\rm d}^3 S \, n_\mu f^\mu(x)
+\]</span> where <span class="math inline">\(\Omega\)</span> is a 4-volume and <span class="math inline">\(\partial\Omega\)</span> is the 3D boundary enclosing <span class="math inline">\(\Omega\)</span> with a normal unit 4-vector <span class="math inline">\(n^\mu\)</span>. For brevity we just write <span class="math inline">\(\int\)</span> and <span class="math inline">\(\oint\)</span> for volume and surface integrals.</p>
+</div>
+</div>
+<p>Crucially the divergence theorem allows us to convert 4-volume integrals into 3-volume surface integral boundary terms, rather like integration by parts does in 1D. This will prove to be an essential observation for the rest of this part of the course.</p>
+</section>
+<section id="variations-of-the-action" class="level2" data-number="9.7">
+<h2 data-number="9.7" class="anchored" data-anchor-id="variations-of-the-action"><span class="header-section-number">9.7</span> Variations of the action</h2>
+<p>Our first use of the divergence theorem is to arrive at a very useful formulation of the variation of the action. Take a Lorentz scalar field <span class="math inline">\(\varphi(x)\)</span> defined inside a 4-volune <span class="math inline">\(\Omega\)</span> and then consider a variation of it <span id="eq-field_unconstrained"><span class="math display">\[
+    \varphi(x) \rightarrow \varphi(x) + \delta\varphi(x),
+\tag{9.9}\]</span></span> where <span class="math inline">\(\delta\varphi(x)\)</span> is taken to be small, so <span class="math inline">\(|\delta\varphi(x)| \ll |\varphi(x)|\)</span> for all <span class="math inline">\(x\)</span>, but is otherwise an arbitrary and unconstrained variation over <span class="math inline">\(\Omega\)</span>, as depicted in <a href="#fig-unconstrained" class="quarto-xref">Figure&nbsp;<span>9.5</span></a>. The derivative of the field similarly has a variation <span class="math display">\[
+    \partial_\mu\varphi(x) \rightarrow \partial_\mu\varphi(x) + \delta\partial_\mu\varphi(x),
+\]</span> which if we compare with taking the derivative of <a href="#eq-field_unconstrained" class="quarto-xref">Equation&nbsp;<span>9.9</span></a> directly we identify that <span id="eq-field_derivative_unconstrained"><span class="math display">\[
+    \delta\partial_\mu\varphi(x) = \partial_\mu\delta\varphi(x).
+\tag{9.10}\]</span></span> This means that the variation of the field’s derivative is identical to the derivative of the variation of the field.</p>
+<div id="fig-unconstrained" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-unconstrained-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/unconstrained.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-unconstrained-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.5: An unconstrained variation <span class="math inline">\(\delta\varphi\)</span> of the field <span class="math inline">\(\varphi\)</span> over the region <span class="math inline">\(\Omega\)</span> of 1+1D space-time.
+</figcaption>
+</figure>
+</div>
+<p>We then compute the variation in the action <span class="math display">\[
+    \delta\mathcal{S}[\varphi,\delta\varphi] = \mathcal{S}[\varphi+\delta\varphi] - \mathcal{S}[\varphi],
+\]</span> which we express in terms of the Lagrangian density as <span class="math display">\[
+    \delta\mathcal{S}[\varphi,\delta\varphi] = \int_{\Omega} {\rm d}^4x\, \left\{\mathcal{L}(x,\varphi+\delta\varphi,\partial(\varphi + \delta\varphi)) - \mathcal{L}(x,\varphi,\partial\varphi)\right\}.
+\]</span> To make further progress we Taylor expand the varied Lagrangian density to first order in <span class="math inline">\(\delta\varphi\)</span> the about its unperturbed point as <span class="math display">\[\begin{align}
+    \mathcal{L}(x,\varphi+\delta\varphi,\partial(\varphi + \delta\varphi)) &amp;= \mathcal{L}(x,\varphi,\partial\varphi) + \frac{\partial \mathcal{L}}{\partial\varphi}\delta\varphi + \frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\partial_\mu\delta\varphi + \mathcal{O}(\delta\varphi^2),
+\end{align}\]</span> having used <a href="#eq-field_derivative_unconstrained" class="quarto-xref">Equation&nbsp;<span>9.10</span></a> on the last term. Inserting this then gives <span class="math display">\[
+    \delta\mathcal{S}[\varphi,\delta\varphi] = \int_{\Omega} {\rm d}^4x\, \left\{\frac{\partial \mathcal{L}}{\partial\varphi}\delta\varphi + \frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\partial_\mu\delta\varphi + \mathcal{O}(\delta\varphi^2)\right\}.
+\]</span> Next, we use the following rearrangement which follows from applying the derivative product rule <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\partial_\mu\delta\varphi = \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\delta\varphi\right) - \left(\partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\right)\delta\varphi.
+\]</span> Inserting this gives a variation of action and working to first order gives <span class="math display">\[
+    \delta\mathcal{S}[\varphi,\delta\varphi] = \int_{\Omega} {\rm d}^4x\, \left\{\frac{\partial \mathcal{L}}{\partial\varphi}\delta\varphi - \left(\partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\right)\delta\varphi + \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\delta\varphi\right)\right\}
+\]</span> The final step is to apply to the divergence theorem to the last term, which is a 4-divergence to arrive at the following result:</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Variation of the action
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-action_variation"><span class="math display">\[
+    \delta\mathcal{S}[\varphi,\delta\varphi] = \int_{\Omega} {\rm d}^4x\, \left(\frac{\partial \mathcal{L}}{\partial\varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\right)\delta\varphi + \oint_{\partial\Omega}{\rm d}^3 S \, n_\mu \frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\delta\varphi.
+\tag{9.11}\]</span></span></p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Is <span class="math inline">\(\partial/\partial\partial_{\mu}\varphi\)</span> a differential 4-vector operator?</strong></p>
+<p>Assume that <span class="math inline">\(\varphi\)</span> is a Lorentz scalar field, and assume that <span class="math inline">\(\mathcal{F}\)</span> is a Lorentz scalar field depending on its spacetime derivatives <span class="math inline">\(\mathcal{F}(\partial_{\mu}\varphi).\)</span> By generalizing our previous arguments involving the Jacobian transformation, argue that <span class="math inline">\(\partial\mathcal{F}/\partial\partial_{\mu}\varphi\)</span> transforms as a 4-vector, and hence <span class="math inline">\(\partial/\partial\partial_{\mu}\varphi\)</span> is a 4-vector operator. This validates our interpretation of a lower index on the denominator of a derivative as an upper index overall.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Is <span class="math inline">\(\partial/\partial\partial_{\mu}\varphi\)</span> a differential 4-vector operator?</strong></p>
+<p>Let <span class="math inline">\(\mathcal{F}\)</span> be a Lorentz scalar depending on <span class="math inline">\(\partial_\mu \varphi\)</span>. Consider a Lorentz transformation to a barred frame: <span class="math display">\[
+    x^{\bar{\nu}} = \Lambda^{\bar{\nu}}_{\mu} x^\mu.
+\]</span> We compute the derivative with respect to the barred quantity: <span class="math display">\[
+    \frac{\partial \mathcal{F}}{\partial (\partial_{\bar{\nu}} \varphi)}.
+\]</span> Using the chain rule, <span class="math display">\[
+    \frac{\partial \mathcal{F}}{\partial \partial_{\bar{\nu}} \varphi} = \frac{\partial \partial_\mu \varphi}
+     {\partial \partial_{\bar{\nu}} \varphi} \, \frac{\partial \mathcal{F}}{\partial \partial_\mu \varphi}.
+\]</span> Now, since the 4-gradient is a one-form, <span class="math display">\[
+    \partial_{\bar{\nu}} \varphi = \Lambda^{\mu}_{\bar{\nu}} \, \partial_\mu \varphi.
+\]</span> Hence, <span class="math display">\[
+    \frac{\partial (\partial_\mu \varphi)}
+     {\partial (\partial_{\bar{\nu}} \varphi)} =
+    \Lambda^{\bar{\nu}}_{\mu}.
+\]</span> Therefore, <span class="math display">\[
+    \frac{\partial \mathcal{F}}{\partial (\partial_{\bar{\nu}} \varphi)} = \Lambda^{\bar{\nu}}_{\mu} \, \frac{\partial \mathcal{F}}{\partial (\partial_\mu \varphi)}.
+\]</span> Since <span class="math inline">\(\mathcal{F}\)</span> is an arbitrary Lorentz scalar, this is precisely the transformation rule for a 4-vector. Thus, <span class="math display">\[
+    \frac{\partial \mathcal{F}}{\partial (\partial_\mu \varphi)}
+\]</span> transforms as a 4-vector.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="relativistic-euler-lagrange-equation" class="level2 page-columns page-full" data-number="9.8">
+<h2 data-number="9.8" class="anchored" data-anchor-id="relativistic-euler-lagrange-equation"><span class="header-section-number">9.8</span> Relativistic Euler-Lagrange equation</h2>
+<p>Our final task in this lecture is to derive the relativistic Euler-Lagrange equation. Given <a href="#eq-string_euler" class="quarto-xref">Equation&nbsp;<span>9.7</span></a> we can guess what form it will take, specifically: <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial \varphi} - \frac{\partial}{\partial x^0}\frac{\partial \mathcal{L}}{\partial \partial_0\varphi} - \frac{\partial}{\partial x^1}\frac{\partial \mathcal{L}}{\partial \partial_1\varphi} - \frac{\partial}{\partial x^2}\frac{\partial \mathcal{L}}{\partial \partial_2\varphi} - \frac{\partial}{\partial x^3}\frac{\partial \mathcal{L}}{\partial \partial_3\varphi}= 0,
+\]</span> where derivative terms appear for each independent variable. Index notation gives this a compact and manifestly relativistically covariant form <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial \varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial \partial_\mu\varphi} = 0.
+\]</span> The derivation is quite straightforward. As you saw in the first module of this course on Analytic Mechanics, to derive the Euler-Lagrange equations variations of the coordinates should vanish on the boundary times. In field theory we are free to specify the 4-volume <span class="math inline">\(\Omega\)</span> on which the field lives and the boundary conditions it must satisfy on the boundary <span class="math inline">\(\partial\Omega\)</span>. For this reason we introduce a constrained form of variation of the field, as shown in <a href="#fig-boundary_vanishing" class="quarto-xref">Figure&nbsp;<span>9.6</span></a>. Specifically,</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Boundary vanishing variation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-boundary_variation"><span class="math display">\[
+    \delta_b\varphi(x) = 0, \quad \forall x \in \partial\Omega.
+\tag{9.12}\]</span></span></p>
+</div>
+</div>
+<div id="fig-boundary_vanishing" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-boundary_vanishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/boundary_vanishing.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boundary_vanishing-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;9.6: An boundary vanishing variation <span class="math inline">\(\delta_b\varphi\)</span> of the field <span class="math inline">\(\varphi\)</span> over the region <span class="math inline">\(\Omega\)</span> of 1+1D space-time.
+</figcaption>
+</figure>
+</div>
+<p>This means that given a field <span class="math inline">\(\varphi(x)\)</span> which satisfies the boundary conditions, then the variation of this field <span id="eq-field_boundary"><span class="math display">\[
+    \varphi(x) \rightarrow \varphi(x) + \delta_b\varphi(x),
+\tag{9.13}\]</span></span> also obeys them. If we apply this class of variation of the field then we can immediately conclude that the boundary term in <a href="#eq-action_variation" class="quarto-xref">Equation&nbsp;<span>9.11</span></a> vanishes: <span class="math display">\[
+    \oint{\rm d}^3 S \, n_\mu \frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\delta_b\varphi = 0,
+\]</span> because all the point <span class="math inline">\(x\)</span> involved in this integral are on the boundary <span class="math inline">\(\partial\Omega\)</span> where <span class="math inline">\(\delta_b\varphi(x) = 0\)</span>. This reduces the variation in the action to the volume term <span class="math display">\[
+    \delta\mathcal{S}[\varphi,\delta_b\varphi] = \int_{\Omega} {\rm d}^4x\, \left(\frac{\partial \mathcal{L}}{\partial\varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\right)\delta_b\varphi.
+\]</span> Hamilton’s principle states that the equations of motion governing the field <span class="math inline">\(\varphi(x)\)</span> inside <span class="math inline">\(\Omega\)</span> follow from making the action stationary, meaning <span class="math inline">\(\delta\mathcal{S}[\varphi,\delta_b\varphi] = 0\)</span>. However, the 4-volume integral <span class="math display">\[
+    \int_{\Omega} {\rm d}^4x\, \left(\frac{\partial \mathcal{L}}{\partial\varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\right)\delta_b\varphi = 0,
+\]</span> can only vanish if everywhere inside <span class="math inline">\(\Omega\)</span> <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial\varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi} = 0,
+\]</span> since <span class="math inline">\(\delta_b\varphi(x)\)</span> is arbitrary inside <span class="math inline">\(\Omega\)</span>. This is the relativistic Euler-Lagrange equation:</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Relativistic Euler-Lagrange equation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-relativistic_EL"><span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial\varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi} = 0.
+\tag{9.14}\]</span></span></p>
+</div>
+</div>
+<section id="key-example" class="level3 page-columns page-full" data-number="9.8.1">
+<h3 data-number="9.8.1" class="anchored" data-anchor-id="key-example"><span class="header-section-number">9.8.1</span> Key example</h3>
+<div class="page-columns page-full"><p>The classic example to apply the relativistic Euler-Lagrange equation to first is the free scalar field Lagrangian  <span class="math display">\[
+    \mathcal{L} = \partial_\alpha \varphi \, \partial^\alpha \varphi = \eta^{\alpha\beta} \partial_\alpha \varphi \partial_\beta \varphi.
+\]</span> This Lagrangian involves the square of the time derivative minus the square of the derivative in each direction of space. This is a direct generalisation of <a href="#eq-string_lagrangian" class="quarto-xref">Equation&nbsp;<span>9.4</span></a> for a 1D string to 1+3D Minkowski space-time. We immediately have <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial \varphi} = 0,
+\]</span> and proceed to compute <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial \partial_\mu \varphi} = \frac{\partial}{\partial \partial_\mu \varphi} \left( \eta^{\alpha\beta} \partial_\alpha \varphi \partial_\beta \varphi\right).
+\]</span> Since this is the first time we have encountered a derivative like this we will do it very explicitly taking care with the indices. Since the derivative is <span class="math display">\[
+    \frac{\partial \partial_\nu \varphi}{\partial \partial_\mu \varphi} = \delta^\mu_\nu
+\]</span> we have <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial \partial_\mu \varphi} = \eta^{\alpha\beta} \left( \delta^\mu_{\alpha} \partial_\beta \varphi + \partial_\alpha \varphi \, \delta^\mu_{\beta}\right),
+\]</span> giving <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial \partial_\mu \varphi} = \eta^{\mu\beta} \partial_\beta \varphi + \eta^{\alpha\mu} \partial_\alpha \varphi,
+\]</span> and after using the symmetry <span class="math inline">\(\eta^{\mu\nu} = \eta^{\nu\mu}\)</span> and relabelling both <span class="math inline">\(\alpha \rightarrow \nu\)</span> and <span class="math inline">\(\beta \rightarrow \nu\)</span>, we arrive at <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial \partial_\mu \varphi} = 2 \eta^{\mu\nu} \partial_\nu \varphi.
+\]</span> This result is akin to an index version of differentiating <span class="math inline">\(x^2\)</span> to find <span class="math inline">\(2x\)</span>! The Euler–Lagrange equation then gives <span class="math display">\[
+    0 - \partial_\mu\left(2 \eta^{\mu\nu} \partial_\nu \varphi\right) = 0 \quad \rightarrow \quad \eta^{\mu\nu} \partial_\mu \partial_\nu \varphi = 0,
+\]</span> so we arrive at <span class="math display">\[
+    \partial_\mu \partial^\mu \varphi = 0,
+\]</span> which is the relativistic wave equation. As expected it generalises our earlier considerations of wave on a string. You are invited to try some more examples.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">From now on in a slight abuse of terminology we will simply say Lagrangian for <span class="math inline">\(\mathcal{L}\)</span> instead of the mouthful Lagrangian density. This is unlikely to cause confusion since <span class="math inline">\(\mathcal{L}\)</span> will be our central object and not <span class="math inline">\(L\)</span>.</span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 9</strong>.</span></div></div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>4. <span class="math inline">\(\varphi^4\)</span> field theory</strong></p>
+<p>Find the equation of motion for a <span class="math inline">\(\varphi^4\)</span> field theory governed by the Lagrangian <span class="math display">\[
+    \mathcal{L} = \eta^{\mu\nu}\partial_\mu \varphi \partial_\nu \varphi - \lambda \varphi^4.
+\]</span></p>
+<p><strong>5. A coupled theory</strong></p>
+<p>Take a free Lorentz scalar field <span class="math inline">\(\varphi(x)\)</span> and couple it to an external source via the Lagrangian <span class="math display">\[
+    \mathcal{L} = \eta^{\mu\nu} \partial_\mu \varphi \partial_\nu \varphi + g \varphi \rho,
+\]</span> where <span class="math inline">\(\rho(x)\)</span> is an external Lorentz scalar field Compute its equation of motion.</p>
+<p><strong>6. A 4-vector field theory</strong></p>
+<p>Suppose we have a 4-vector field <span class="math inline">\(a^\mu(x)\)</span> governed by a Lagrangian <span class="math display">\[
+    \mathcal{L} = \eta^{\mu\nu} \eta_{\rho\sigma} \partial_\mu a^\rho \partial_\nu a^\sigma.
+\]</span> The relativistic Euler-Lagrange equation generalises to each component of the 4-vector as <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial a^\tau} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu a^\tau} = 0.
+\]</span> What equations of motion does this theory have?</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>4. <span class="math inline">\(\varphi^4\)</span> field theory</strong></p>
+<p>We compute <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial \varphi} = -4 \lambda \varphi^3.
+\]</span> Using the derivative from the free scalar theory, <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial \partial_\mu \phi} = 2 \eta^{\mu\nu} \partial_\nu \varphi,
+\]</span> the Euler–Lagrange equation gives <span class="math display">\[
+    -4 \lambda \varphi^3 - \partial_\mu \left(2 \eta^{\mu\nu} \partial_\nu \varphi \right) = 0.
+\]</span> Thus <span class="math display">\[
+    \partial_\mu \partial^\mu \varphi + 2 \lambda \varphi^3 = 0.
+\]</span></p>
+<p><strong>5. A coupled theory</strong></p>
+<p>Start by computing <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial \varphi} = g \rho,
+\]</span> and again using the derivative from the free scalar theory to give the Euler–Lagrange equation <span class="math display">\[
+    g \rho - 2 \partial_\mu \partial^\mu \varphi = 0.
+\]</span> Hence <span class="math display">\[
+    \partial_\mu \partial^\mu \varphi = \frac{g}{2} \rho.
+\]</span> This is the inhomogeneous d’Alembert or wave equation.</p>
+<p><strong>6. A 4-vector field theory</strong></p>
+<p>In this case we have a 4-vector field <span class="math display">\[
+a^\mu(x)
+=
+\begin{pmatrix}
+a^0(x) \\
+a^1(x) \\
+a^2(x) \\
+a^3(x)
+\end{pmatrix}.
+\]</span> Each component is a field, but none of them are Lorentz scalar. Instead, under Lorentz transformations <span class="math display">\[
+    a^{\bar \mu} = \Lambda^{\bar \mu}_{\nu} a^\nu.
+\]</span> We proceed by computing <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial a^\tau} = 0,
+\]</span> and then <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial\partial_\mu a^\tau} = 2 \eta^{\mu\nu} \eta_{\tau\sigma} \partial_\nu a^\sigma,
+\]</span> which follows identical working to the scalar field term. Thus, for each <span class="math inline">\(\tau = 0,1,2,3\)</span> we have <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial a^\tau} -  \partial_\mu \left(\frac{\partial \mathcal{L}}{\partial \partial_\mu a^\tau}\right) = 0,
+\]</span> which gives <span class="math display">\[
+    \partial_\mu \partial^\mu a_\tau = 0.
+\]</span> Hence each component of the 4-vector field individually satisfies the relativistic wave equation.</p>
+</div>
+</div>
+</div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./planewaves.html" class="pagination-link" aria-label="Plane-waves and particle flow">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./acknowledgements.html" class="pagination-link" aria-label="Acknowledgements">
+        <span class="nav-page-text">Acknowledgements</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

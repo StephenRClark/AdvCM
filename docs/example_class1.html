@@ -310,6 +310,73 @@ window.Quarto = {
 <p>In frame <span class="math inline">\(S\)</span> we have a barn at rest, whose length is <span class="math inline">\(L\)</span> in the <span class="math inline">\(x\)</span>-direction, and with open doors at each end. A pole vaulter runs along the <span class="math inline">\(x\)</span>-direction at a relativistic speed <span class="math inline">\(v\)</span>. In her rest frame <span class="math inline">\(\bar{S}\)</span>, she carries a pole of length <span class="math inline">\(L\)</span> in the <span class="math inline">\(\bar{x}\)</span>-direction. By careful consideration of the order of space-time events as perceived in each frame, describe whether the pole is ever entirely inside the barn or not. Sketch the 1 + 1D Minkowski space of events in the <span class="math inline">\(S\)</span> frame and the <span class="math inline">\(\bar{S}\)</span> frame.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. The relativistic pole vaulter</strong></p>
+<p>Consider the two inertial frames of this problem:</p>
+<ul>
+<li><span class="math inline">\(S\)</span>: barn frame (barn of length <span class="math inline">\(L\)</span> stationary),</li>
+<li><span class="math inline">\(\bar S\)</span>: pole frame (pole of length <span class="math inline">\(L\)</span> stationary).</li>
+</ul>
+<p>The coordinates <span class="math inline">\((t,x)\)</span> in <span class="math inline">\(S\)</span> and <span class="math inline">\((\bar t,\bar x)\)</span> in <span class="math inline">\(\bar S\)</span> are related by the Lorentz boost (along <span class="math inline">\(x\)</span>): <span class="math display">\[
+    \begin{pmatrix}
+    \bar t \\
+    \bar x
+    \end{pmatrix}   =
+    \begin{pmatrix}
+    \gamma &amp; -\gamma v/c^2 \\
+    -\gamma v &amp; \gamma
+    \end{pmatrix}
+    \begin{pmatrix}
+    t \\
+    x
+    \end{pmatrix},
+    \qquad {\rm with} \qquad
+    \gamma = \frac{1}{\sqrt{1-v^2/c^2}}.
+\]</span> Let the spacetime origin <span class="math inline">\(O\)</span> in both frames correspond to the event where the front of the pole <strong>enters</strong> the barn: <span class="math display">\[
+    O:\quad \overbrace{(t,x)}^S = (0,0),  \qquad \overbrace{(\bar t,\bar x)}^{\bar S} = (0,0).
+\]</span> Let <span class="math inline">\(P\)</span> be the event where the front of the pole <strong>leaves</strong> the barn. In frame <span class="math inline">\(S\)</span>, the front of the pole has travelled distance <span class="math inline">\(L\)</span> (i.e.&nbsp;<span class="math inline">\(x=L\)</span>) at speed <span class="math inline">\(v\)</span>, so the time taken is <span class="math inline">\(L/v\)</span>, hence <span class="math display">\[
+    P: \quad \overbrace{\left(\frac{L}{v},\, L \right)}^S, \qquad \overbrace{(\bar t_P,\bar x_P)}^{\bar S}.
+\]</span> Using the Lorentz transformation we find <span class="math display">\[\begin{align}
+    \bar t_P &amp;= \gamma\left(\frac{L}{v} - \frac{v}{c^2}L\right)
+    = \gamma \frac{L}{v}\left(1-\frac{v^2}{c^2}\right)
+    = \frac{L}{\gamma v}, \\
+    \bar x_P &amp;= \gamma\left(L - v\frac{L}{v}\right) = 0.
+\end{align}\]</span> Thus the coordinates of <span class="math inline">\(P\)</span> are <span class="math display">\[
+    P: \quad \overbrace{\left(\frac{L}{v},\, L \right)}^S, \qquad \overbrace{\left(\frac{L}{\gamma v},\, 0\right)}^{\bar S}.
+\]</span> Let event <span class="math inline">\(Q\)</span> be the back of pole <strong>entering</strong> the barn. In frame <span class="math inline">\(\bar S\)</span>, the barn door appears to move with speed <span class="math inline">\(-v\)</span> and travels the length <span class="math inline">\(L\)</span> of the pole, so the time taken is <span class="math inline">\(L/v\)</span>, so <span class="math display">\[
+    Q: \quad \overbrace{(t_Q,x_Q)}^{S}, \qquad \overbrace{\left(\frac{L}{v},\, -L \right)}^{\bar S}.
+\]</span> Using the inverse Lorentz transformation <span class="math display">\[\begin{align}
+    t_Q &amp;= \gamma\left(\frac{L}{v} - \frac{v}{c^2}(-L)\right)
+    = \gamma \frac{L}{v}\left(1-\frac{v^2}{c^2}\right)
+    = \frac{L}{\gamma v}, \\
+    x_Q &amp;= \gamma\left(-L + v\frac{L}{v}\right)
+        = 0.
+\end{align}\]</span> Thus <span class="math display">\[
+    Q: \quad \overbrace{\left(\frac{L}{\gamma v},0\right)}^{S}, \qquad \overbrace{\left(\frac{L}{v},\, -L \right)}^{\bar S}.
+\]</span> Since <span class="math inline">\(\gamma &gt; 1\)</span> we have <span class="math inline">\(\frac{L}{\gamma v} &lt; \frac{L}{v}\)</span>. In frame <span class="math inline">\(S\)</span>, <span class="math inline">\(Q\)</span> occurs before <span class="math inline">\(P\)</span>, so the contracted pole fits entirely inside the barn for <span class="math display">\[
+    \frac{L}{\gamma v} \le t \le \frac{L}{v}.
+\]</span> In frame <span class="math inline">\(\bar S\)</span>, <span class="math inline">\(Q\)</span> occurs after <span class="math inline">\(P\)</span>, so the pole is never entirely inside the contracted barn. The following diagram summarises these findings:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/pole.png" class="img-fluid figure-img" width="400"></p>
+<figcaption>Space-time diagrams for the pole and the barn for frame <span class="math inline">\(S\)</span> and <span class="math inline">\(\bar S\)</span>.</figcaption>
+</figure>
+</div>
+<p>Note that <span class="math inline">\(O\)</span> and <span class="math inline">\(P\)</span> lie on the worldline of the front of the pole, while <span class="math inline">\(O\)</span> and <span class="math inline">\(Q\)</span> lie on the worldline of the barn door. Events <span class="math inline">\(P\)</span> and <span class="math inline">\(Q\)</span>, however, are spacelike separated, hence there is no issue with different inertial observers disagreeing on their time ordering. We explore this idea more in the next question.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -322,6 +389,39 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <p><strong>2. Whose time is dilated?</strong></p>
 <p>According to frame <span class="math inline">\(S\)</span> a unit of time in <span class="math inline">\(\bar{S}\)</span> is dilated. This means the space-time point for <span class="math inline">\(ct = 1\)</span> occurs before the space-time point for <span class="math inline">\(c\bar{t}=1\)</span>. However, in frame <span class="math inline">\(\bar{S}\)</span> the opposite occurs. They see the <span class="math inline">\(ct = 1\)</span> point being dilated and occuring after the point <span class="math inline">\(c\bar{t}=1\)</span>. Is this a contradiction?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>2. Whose time is dilated?</strong></p>
+<p>In short <strong>no</strong> it is not a problem. The frames <span class="math inline">\(S\)</span> and <span class="math inline">\(\bar{S}\)</span> both see the other frame as being dilated and so disagree on the causal ordering of the event <span class="math inline">\(A\)</span> at <span class="math inline">\(ct = 1\)</span> and <span class="math inline">\(B\)</span> at <span class="math inline">\(c\bar{t} = 1\)</span>. This is not an issue because the space-time interval between these points is: <span class="math display">\[
+\begin{align}
+    \Delta S^2(ct=1,c\bar{t}=1) &amp;= (1 - \gamma(\beta))^2 - (0 - \beta\gamma(\beta))^2, \\
+    &amp;= 1 - 2\gamma(\beta) + \gamma(\beta)^2(1-\beta^2), \\
+    &amp;= 2(1-\gamma(\beta)),
+\end{align}
+\]</span> and since <span class="math inline">\(\gamma(\beta)\geq 1\)</span> we can immediately conclude that the space-time interval <span class="math inline">\(\Delta S^2(ct=1,c\bar{t}=1) \leq 0\)</span>, and hence these points are space-like separated, as is apparent in <a href="#fig-time_dilation" class="quarto-xref">Figure&nbsp;<span>1</span></a>. Lorentz boosts only preserve the causal ordering of time-like separated events so there is no inconsistency here. Indeed, we can find another frame <span class="math inline">\(S'\)</span> where the time of the two ticks are identical (so occur simultaneously), namely one travelling <span class="math inline">\(v/2\)</span> relative to <span class="math inline">\(S\)</span>, which is also <span class="math inline">\(-v/2\)</span> relative to <span class="math inline">\(\bar{S}\)</span> which observes both ticks as being identically time dilated relative to its own tick.</p>
+<div id="fig-time_dilation" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-time_dilation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/time_dilation_points.png" class="img-fluid figure-img" width="200">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-time_dilation-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;1: The points <span class="math inline">\(A\)</span> at <span class="math inline">\(ct = 1\)</span> and <span class="math inline">\(B\)</span> at <span class="math inline">\(c\bar t = 1\)</span> shown in frame <span class="math inline">\(S\)</span>. It is clear that <span class="math inline">\(B\)</span> lies outside the lightcone of <span class="math inline">\(A\)</span>, and so is space-like separated.
+</figcaption>
+</figure>
+</div>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -342,7 +442,7 @@ window.Quarto = {
 <img src="figures/radar_observer_A.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-radar-observer-A-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;1: On the right an observer <span class="math inline">\(A\)</span> bouncing a light signal off an event <span class="math inline">\(P\)</span> in space-time and using this to define radar coordinates for the event. On the left an aligned rest frame <span class="math inline">\(S\)</span> overlaid with observer <span class="math inline">\(A\)</span>.
+Figure&nbsp;2: On the right an observer <span class="math inline">\(A\)</span> bouncing a light signal off an event <span class="math inline">\(P\)</span> in space-time and using this to define radar coordinates for the event. On the left an aligned rest frame <span class="math inline">\(S\)</span> overlaid with observer <span class="math inline">\(A\)</span>.
 </figcaption>
 </figure>
 </div>
@@ -353,9 +453,9 @@ Figure&nbsp;1: On the right an observer <span class="math inline">\(A\)</span> b
 <ol type="a">
 <li>Explain the operational meaning of radar time and radar distance. When are these quantities well-defined?</li>
 </ol>
-<p>Now suppose we introduce a frame <span class="math inline">\(S\)</span> aligned and at rest with <span class="math inline">\(A\)</span> where the event <span class="math inline">\(P\)</span> has coordinates <span class="math inline">\((ct_P,x_P)\)</span>, as shown in <a href="#fig-radar-observer-A" class="quarto-xref">Figure&nbsp;<span>1</span></a>.</p>
+<p>Now suppose we introduce a frame <span class="math inline">\(S\)</span> aligned and at rest with <span class="math inline">\(A\)</span> where the event <span class="math inline">\(P\)</span> has coordinates <span class="math inline">\((ct_P,x_P)\)</span>, as shown in <a href="#fig-radar-observer-A" class="quarto-xref">Figure&nbsp;<span>2</span></a>.</p>
 <ol start="2" type="a">
-<li>From <a href="#fig-radar-observer-A" class="quarto-xref">Figure&nbsp;<span>1</span></a> it looks clear that the radar coordinates are identical to the observers rest frame coordinates. Confirm this using null worldlines by showing that <span class="math inline">\(\kappa^A(P)=t_P\)</span> and <span class="math inline">\(\chi^A(P)=|x_P|\)</span>.</li>
+<li>From <a href="#fig-radar-observer-A" class="quarto-xref">Figure&nbsp;<span>2</span></a> it looks clear that the radar coordinates are identical to the observers rest frame coordinates. Confirm this using null worldlines by showing that <span class="math inline">\(\kappa^A(P)=t_P\)</span> and <span class="math inline">\(\chi^A(P)=|x_P|\)</span>.</li>
 </ol>
 <p>Now consider another inertial observer <span class="math inline">\(B\)</span> travelling with a constant velocity <span class="math inline">\(v\)</span> relative to <span class="math inline">\(A\)</span> and whose worldline crosses through <span class="math inline">\(A\)</span>’s’ origin and is described in frame <span class="math inline">\(S\)</span> as <span class="math inline">\(x=vt\)</span>, as shown here:</p>
 <div id="fig-radar-observer-B" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -364,14 +464,68 @@ Figure&nbsp;1: On the right an observer <span class="math inline">\(A\)</span> b
 <img src="figures/radar_observer_B.png" class="img-fluid figure-img" width="400">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-radar-observer-B-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figure&nbsp;2: On the right another moving observer <span class="math inline">\(B\)</span> is shown who measures their proper time when the light from <span class="math inline">\(A\)</span> intercepts their worldline. Using this they define their own radar coordinates for <span class="math inline">\(P\)</span>. On the left the rest frame <span class="math inline">\(S\)</span> is overlaid along with coordinates axes for observer <span class="math inline">\(B\)</span>’s rest frame <span class="math inline">\(\bar S\)</span>.
+Figure&nbsp;3: On the right another moving observer <span class="math inline">\(B\)</span> is shown who measures their proper time when the light from <span class="math inline">\(A\)</span> intercepts their worldline. Using this they define their own radar coordinates for <span class="math inline">\(P\)</span>. On the left the rest frame <span class="math inline">\(S\)</span> is overlaid along with coordinates axes for observer <span class="math inline">\(B\)</span>’s rest frame <span class="math inline">\(\bar S\)</span>.
 </figcaption>
 </figure>
 </div>
-<p>Observer B records their proper time <span class="math inline">\(\tau^B_-\)</span> when the light signal from <span class="math inline">\(A\)</span> reaches them on its journey to <span class="math inline">\(P\)</span>, and the time <span class="math inline">\(\tau^B_+\)</span> when the return signal passes them on its way back to <span class="math inline">\(A\)</span>, as shown in <a href="#fig-radar-observer-B" class="quarto-xref">Figure&nbsp;<span>2</span></a>.</p>
+<p>Observer <span class="math inline">\(B\)</span> records their proper time <span class="math inline">\(\tau^B_-\)</span> when the light signal from <span class="math inline">\(A\)</span> reaches them on its journey to <span class="math inline">\(P\)</span>, and the time <span class="math inline">\(\tau^B_+\)</span> when the return signal passes them on its way back to <span class="math inline">\(A\)</span>, as shown in <a href="#fig-radar-observer-B" class="quarto-xref">Figure&nbsp;<span>3</span></a>.</p>
 <ol start="3" type="a">
-<li>Deduce the coordinates in <span class="math inline">\(S\)</span> of <span class="math inline">\(B\)</span>’s’ emission and reception interception times <span class="math inline">\(\tau^B_\pm\)</span> in terms of the coordinates <span class="math inline">\((ct_P,x_P)\)</span> of <span class="math inline">\(P\)</span> in <span class="math inline">\(S\)</span>. Use these to determine the <span class="math inline">\(B\)</span>’s radar coordinates <span class="math inline">\(\kappa^B(P)\)</span> and <span class="math inline">\(\chi^B(P)\)</span> they assign <span class="math inline">\(P\)</span>. Compare the expressions with the Lorentz transformations between <span class="math inline">\(A\)</span>’s rest frame <span class="math inline">\(S\)</span> and <span class="math inline">\(B\)</span>’s rest frame <span class="math inline">\(\bar S\)</span>.</li>
+<li>Deduce the coordinates in <span class="math inline">\(S\)</span> of <span class="math inline">\(B\)</span>’s’ emission and reception interception times <span class="math inline">\(\tau^B_\pm\)</span> in terms of the coordinates <span class="math inline">\((ct_P,x_P)\)</span> of <span class="math inline">\(P\)</span> in <span class="math inline">\(S\)</span>. Use these to determine <span class="math inline">\(B\)</span>’s radar coordinates <span class="math inline">\(\kappa^B(P)\)</span> and <span class="math inline">\(\chi^B(P)\)</span> they assign <span class="math inline">\(P\)</span>. Compare the expressions with the Lorentz transformations between <span class="math inline">\(A\)</span>’s rest frame <span class="math inline">\(S\)</span> and <span class="math inline">\(B\)</span>’s rest frame <span class="math inline">\(\bar S\)</span>.</li>
 </ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Radar Time and Operational Coordinates</strong></p>
+<ol type="a">
+<li><p>Radar time assigns a time coordinate to a distant event using only the observer’s own clock and light signals. The radar distance is half the round-trip light travel time multiplied by <span class="math inline">\(c\)</span>. The definition is operationally meaningful because it relies only on proper time measurements and the invariant speed of light. It is well-defined for events that lie in the causal cone of the observer’s worldline, so that both emission and reception signals can be reached.</p></li>
+<li><p>Light travels on null worldlines so a light ray between <span class="math inline">\((c\tau^A,0)\)</span> and <span class="math inline">\((ct_P,x_P)\)</span> we have <span class="math display">\[
+(x_P - 0)^2 = c(t_P-\tau^A)^2 \quad {\rm or} \quad |x_P| = c|t_P-\tau^A|.
+\]</span> For the outgoing signal, <span class="math inline">\(t_P&gt;\tau^A_-\)</span> so <span class="math inline">\(t_P - \tau^A_- &gt; 0\)</span> and <span class="math inline">\(|x_P| = c(t_P - \tau^A_-)\)</span> giving <span class="math inline">\(c\tau^A_-=ct_P-|x_P|\)</span>. For the incoming signal, <span class="math inline">\(\tau^A_+ &gt;t_P\)</span> so <span class="math inline">\(t_P - \tau^A_+ &lt; 0\)</span> and <span class="math inline">\(|x_P| = c(\tau^A_+ - t_P)\)</span> giving <span class="math inline">\(c\tau^A_+=ct_P+|x_P|\)</span>. Substituting, <span class="math display">\[
+\kappa^A(P)=\frac{1}{2}(\tau^A_+ + \tau^A_-)=t_P, \qquad
+\chi^A(P)=\frac{c}{2}(\tau^A_+-\tau^A_-)=|x_P|.
+\]</span> Note, the radar <em>distance</em> is not a signed coordinate value for the event since it was derived from a time difference and has no dependence on the direction light travelled. Of course, the observer does know which direction (<span class="math inline">\(\pm\)</span> along the <span class="math inline">\(x\)</span>-axis) the light was emitted and received so this information is not lost, it is just not explicitly embedded into the radar coordinates. Nonetheless we have established that the radar coordinates are equivalent to the space-time coordinates the observers inertial frame assigns to events.</p></li>
+<li><p>Given points along the worldline of observer <span class="math inline">\(B\)</span> have <span class="math inline">\(x = vt\)</span> in <span class="math inline">\(S\)</span> we only need to determine the time coordinate in <span class="math inline">\(S\)</span> of the emission and reception intercepts of <span class="math inline">\(B\)</span> which we denote as <span class="math inline">\(t_\pm\)</span>. A null ray between <span class="math inline">\((ct_\pm,vt_\pm)\)</span> and <span class="math inline">\((ct_P,x_P)\)</span> satisfies <span class="math display">\[
+c^2(t_P-t_\pm)^2 = (x_P-vt_\pm)^2,
+\]</span> which yields <span class="math inline">\(c(t_P-t_\pm)=\pm(x_P-vt_\pm)\)</span>. Solving, <span class="math display">\[
+   ct_\pm = \frac{ct_P\mp x_P}{1 \mp \beta},
+\]</span> where we have introduced <span class="math inline">\(\beta = v/c\)</span>. We can now work out <span class="math inline">\(B\)</span>’s’ proper times <span class="math inline">\(\tau^B_\pm\)</span> by computing the space-time intervals between the shared origin and these points as <span class="math display">\[\begin{align}
+(c\tau^B_-)^2 &amp;= (ct_-)^2 - (vt_-)^2, \\
+    &amp;= \frac{(ct_P + x_P)^2}{(1 + \beta)^2} - \frac{(vt_P + \beta x_P)^2}{(1 + \beta)^2},\\
+    &amp;= \frac{(1 - \beta)(ct_P + x_P)^2}{(1 + \beta)}, \\
+c\bar{\tau}_- &amp;= \sqrt{\frac{(1 - \beta)}{(1 + \beta)}}(ct_P + x_P).
+\end{align}\]</span> and similarly <span class="math display">\[\begin{align}
+(c\tau^B_+)^2 &amp;= (ct_+)^2 - (vt_+)^2, \\
+   c\bar{\tau}_+ &amp;= \sqrt{\frac{(1 + \beta)}{(1 - \beta)}}(ct_P - x_P).
+\end{align}\]</span> Using this we get <span class="math display">\[\begin{align}
+c\,\kappa^B(P) &amp;= \frac{c(\tau^B_+ + \tau^B_-)}{2},\\
+&amp;= \sqrt{\frac{(1 + \beta)}{(1 - \beta)}}\frac{(ct_P - x_P)}{2} +  \sqrt{\frac{(1 - \beta)}{(1 + \beta)}}\frac{(ct_P + x_P)}{2}, \\
+&amp;= \frac{\gamma}{2}\left[\left(1 + \beta\right)(ct_P - x_P) + \left(1 - \beta\right)(ct_P + x_P)\right], \\
+&amp;= \gamma\left(ct_P - \beta x_P\right),
+\end{align}\]</span> and likewise <span class="math display">\[\begin{align}
+\chi^B(P) &amp;=  \frac{c(\tau^B_+ - \tau^B_-)}{2},\\
+&amp;= \sqrt{\frac{(1 + \beta)}{(1 - \beta)}}\frac{(ct_P - x_P)}{2} - \sqrt{\frac{(1 - \beta)}{(1 + \beta)}}\frac{(ct_P + x_P)}{2}, \\
+&amp;= \frac{\gamma}{2}\left[\left(1 + \beta\right)(ct_P - x_P) - \left(1 - \beta\right)(ct_P + x_P)\right], \\
+&amp;= \gamma\left(\beta ct_P - x_P\right).
+\end{align}\]</span> If we Lorentz transformed the coordinates of <span class="math inline">\(P\)</span> from <span class="math inline">\(S\)</span> into <span class="math inline">\(\bar S\)</span> then we obtain <span class="math display">\[
+c{\bar t}_P = \gamma(ct_P-\beta x_P),
+\]</span> and hence <span class="math inline">\(c \kappa^B(P) = c\bar t_P\)</span>. We have confirmed that <span class="math inline">\(B\)</span>’s radar time <span class="math inline">\(\kappa^B(P)\)</span> for <span class="math inline">\(P\)</span> is the same as the coordinate time <span class="math inline">\(\bar t_P\)</span> for <span class="math inline">\(P\)</span> in its rest frame <span class="math inline">\(\bar S\)</span>’s. This is therefore a general statement for any inertial observer. For the space coordinate we have <span class="math display">\[
+\bar{x}_P = \gamma(x_P - \beta ct_P),
+\]</span> where we see a sign difference compared to <span class="math inline">\(\bar\chi(P)\)</span>. This is not a discrepancy in physics — it is a consequence of the branch choice used in solving the null equations, and the fact that distance is unsigned while coordinate position is signed. Hence we see that we can identify <span class="math inline">\(\bar\chi(P) = |\bar x_P|\)</span> for <span class="math inline">\(B\)</span>’s radar distance and their rest frame <span class="math inline">\(\bar S\)</span> space coordinate, exactly as we did for obersver <span class="math inline">\(A\)</span> and frame <span class="math inline">\(S\)</span>.</p></li>
+</ol>
+<p>So what have we shown here? Radar coordinates are geometrically defined from the observer’s worldline using only light signals and proper time without reference to a particular frame’s coordinates. They are directly associated to the rest frame of an inertial observer giving operational meaning to those coordinates. We found that the radar coordinates between different inertial observers are consistent with the Lorentz transformation, despite only using the space-time interval structure of Minkowski space.</p>
+<p>If you want to see a nice use of radar coordinates check out <a href="https://arxiv.org/pdf/gr-qc/0104077">this research paper</a> which uses them to very clearly analyse the twin paradox.</p>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -403,6 +557,120 @@ Figure&nbsp;2: On the right another moving observer <span class="math inline">\(
 <li><p>Show that the set of Lorentz transformation matrices $ preserving the matrix form of the 1+3D Minkowski metric form a group.</p></li>
 </ol>
 <p>The group defined as the set of transformations preserving the Minkowski metric <span class="math inline">\(\boldsymbol{\eta}\)</span> is called the <em>full Lorentz group</em>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>4. The Lorentz group</strong></p>
+<ol type="a">
+<li><p>In 1+1D the Lorentz boost matrix has the form <span class="math display">\[
+\boldsymbol{\Lambda}(v) = \gamma(v)\begin{pmatrix}
+        1 &amp; -v/c \\
+        - v/c &amp; 1
+        \end{pmatrix},
+        \qquad
+        \gamma(v) = \frac{1}{\sqrt{1 - v^2/c^2}}.
+\]</span> Equivalently, in hyperbolic form, <span class="math display">\[
+\boldsymbol{\Lambda}(u) = \begin{pmatrix}
+        \cosh u &amp; -\sinh u \\
+        -\sinh u &amp; \cosh u
+        \end{pmatrix},
+        \qquad\tanh u = \frac{v}{c}.
+\]</span> To show these matrices form a group, we verify the group axioms.</p>
+<p><strong>Closure</strong> - Using the hyperbolic form, <span class="math display">\[
+\boldsymbol{\Lambda}(u_1)\boldsymbol{\Lambda}(u_2) = \begin{pmatrix}
+            \cosh u_1 &amp; -\sinh u_1 \\
+            -\sinh u_1 &amp; \cosh u_1
+        \end{pmatrix}
+        \begin{pmatrix}
+            \cosh u_2 &amp; -\sinh u_2 \\
+            -\sinh u_2 &amp; \cosh u_2
+        \end{pmatrix},
+\]</span> which upon multiplying out gives <span class="math display">\[
+=
+    \begin{pmatrix}
+        \cosh u_1 \cosh u_2 + \sinh u_1 \sinh u_2 &amp;
+        -(\cosh u_1 \sinh u_2 + \sinh u_1 \cosh u_2) \\
+        -(\cosh u_1 \sinh u_2 + \sinh u_1 \cosh u_2) &amp;
+        \cosh u_1 \cosh u_2 + \sinh u_1 \sinh u_2
+\end{pmatrix}.
+\]</span> Using hyperbolic addition formulae, <span class="math display">\[
+    \boldsymbol{\Lambda}(u_1)\boldsymbol{\Lambda}(u_2) =
+        \begin{pmatrix}
+        \cosh(u_1+u_2) &amp; -\sinh(u_1+u_2) \\
+        -\sinh(u_1+u_2) &amp; \cosh(u_1+u_2)
+        \end{pmatrix}
+        = \boldsymbol{\Lambda}(u_1+u_2),
+\]</span> hence closure holds.</p>
+<p><strong>Associativity</strong> - Automatically satisfied for matrix multiplication.</p>
+<p><strong>Identity</strong> - For <span class="math inline">\(u=0\)</span>, we have <span class="math display">\[
+    \boldsymbol{\Lambda}(0) = \begin{pmatrix}
+                1 &amp; 0 \\
+                0 &amp; 1
+            \end{pmatrix}
+            = \mathbb{1}_2,
+\]</span> showing the identity operation exists.</p>
+<p><strong>Inverse</strong> - Consider <span class="math display">\[
+    \boldsymbol{\Lambda}(-u) = \begin{pmatrix}
+                \cosh u &amp; \sinh u \\
+                \sinh u &amp; \cosh u
+                \end{pmatrix} = \boldsymbol{\Lambda}(u)^{-1}.
+\]</span> Equivalently, in velocity form <span class="math inline">\(\boldsymbol{\Lambda}(-v)=\boldsymbol{\Lambda}(v)^{-1}\)</span>. Thus the 1+1D Lorentz boost matrices form a group.</p></li>
+<li><p>Rotations in 2D by <span class="math inline">\(\theta\)</span> have the form <span class="math display">\[
+R(\theta) = \begin{pmatrix}
+            \cos\theta &amp; -\sin\theta \\
+            \sin\theta &amp; \cos\theta
+            \end{pmatrix}.
+\]</span></p>
+<p><strong>Closure</strong> - Multiply two rotations together gives <span class="math display">\[
+    \mathbf{R}(\theta_1)\mathbf{R}(\theta_2) =
+    \begin{pmatrix}
+    \cos(\theta_1+\theta_2) &amp; -\sin(\theta_1+\theta_2) \\
+    \sin(\theta_1+\theta_2) &amp; \cos(\theta_1+\theta_2)
+    \end{pmatrix}
+    = \mathbf{R}(\theta_1+\theta_2).
+\]</span></p>
+<p><strong>Associativity</strong> - Follows from matrix multiplication.</p>
+<p><strong>Identity</strong> - Simple <span class="math display">\[
+    \mathbf{R}(0) = \mathbb{1}_2.
+\]</span></p>
+<p><strong>Inverse</strong> - Since <span class="math inline">\(\mathbf{R}(\theta)\)</span> is orthogonal, <span class="math display">\[
+    \mathbf{R}(\theta)^{-1} = \mathbf{R}(\theta)^T = \mathbf{R}(-\theta).
+\]</span> Thus the <span class="math inline">\(2\times2\)</span> rotation matrices form the group <span class="math inline">\(SO(2)\)</span>.</p></li>
+<li><p>General Lorentz group Consider the set of matrices <span class="math inline">\(\boldsymbol{\Lambda}\)</span> satisfying <span class="math display">\[
+\boldsymbol{\eta} = \boldsymbol{\Lambda} \boldsymbol{\eta} \boldsymbol{\Lambda}^{\rm T}.
+\]</span></p>
+<p><strong>Closure</strong> - If <span class="math inline">\(\boldsymbol{\Lambda}_1\)</span> and <span class="math inline">\(\boldsymbol{\Lambda}_2\)</span> separately preserve <span class="math inline">\(\boldsymbol{\eta}\)</span>, then <span class="math display">\[
+    (\boldsymbol{\Lambda}_1\boldsymbol{\Lambda}_2)\boldsymbol{\eta}(\boldsymbol{\Lambda}_1\boldsymbol{\Lambda}_2)^{\rm T}
+=
+    \boldsymbol{\Lambda}_1(\boldsymbol{\Lambda}_2\boldsymbol{\eta}\boldsymbol{\Lambda}_2^{\rm T})\boldsymbol{\Lambda}_1^{\rm T}
+=
+\boldsymbol{\Lambda}_1 \boldsymbol{\eta}\boldsymbol{\Lambda}_1^{\rm T}
+=
+\boldsymbol{\eta}.
+\]</span></p>
+<p><strong>Associativity</strong> - Matrix multiplication is associative.</p>
+<p><strong>Identity</strong> - Evidently the identity is a member of the set since <span class="math display">\[
+\mathbb{1}_4 \boldsymbol{\eta} \mathbb{1}_4^{\rm T} = \boldsymbol{\eta}.
+\]</span></p>
+<p><strong>Inverse</strong> - If <span class="math inline">\(\boldsymbol{\Lambda} \boldsymbol{\eta} \boldsymbol{\Lambda}^{\rm T}=\boldsymbol{\eta}\)</span>, then we also have <span class="math display">\[
+    \boldsymbol{\eta} = \boldsymbol{\Lambda}^{-1}\boldsymbol{\eta}(\boldsymbol{\Lambda}^{\rm T})^{-1},
+\]</span> since <span class="math inline">\((\boldsymbol{\Lambda}^{\rm T})^{-1} = (\boldsymbol{\Lambda}^{-1})^{\rm T}\)</span>. So the <span class="math inline">\(\boldsymbol{\Lambda}^{-1}\)</span> is also a member of the set that preserves <span class="math inline">\(\boldsymbol{\eta}\)</span>.</p>
+<p>Therefore the set of matrices <span class="math inline">\(\boldsymbol{\Lambda}\)</span> satisfying <span class="math display">\[
+    \boldsymbol{\eta} = \boldsymbol{\Lambda} \boldsymbol{\eta} \boldsymbol{\Lambda}^{\rm T},
+\]</span> forms a group: the <em>Lorentz group</em>. Indeed, the members of this group in 1+3D comprise of Lorentz boosts and 3D rotations, as discussed in the lectures.</p></li>
+</ol>
+</div>
 </div>
 </div>
 

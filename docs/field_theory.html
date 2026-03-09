@@ -685,10 +685,41 @@ Divergence theorem in 1+3D
 </div>
 </div>
 <p>Crucially the divergence theorem allows us to convert 4-volume integrals into 3-volume surface integral boundary terms, rather like integration by parts does in 1D. This will prove to be an essential observation for the rest of this part of the course.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Boundary conditions for fields
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Typical boundary conditions depend on what problem you are solving, but in the variational formulation there are a few standard choices:</p>
+<ul>
+<li><p><strong>Dirichlet</strong> - This is the usual assumption for variational problems and will be the one we will use below. It corresponds to the value of the field at the boundary <span class="math inline">\(\partial\Omega\)</span> of the 4-volume <span class="math inline">\(\Omega\)</span>. For example <span class="math display">\[
+  \varphi(x) = f(x), \quad \forall x \in \partial\Omega,
+\]</span> where <span class="math inline">\(f(x)\)</span> is some fixed function. Dirichlet boundary conditions are a natural generalisation of the fixed endpoints used in Lagrangian mechanics.</p></li>
+<li><p><strong>Neumann</strong> - Instead of fixing the field itself one may fix the normal derivative of the field along the boundary: <span class="math display">\[
+  n^\mu\partial_\mu\varphi(x) = g(x), \quad \forall x \in \partial\Omega,
+\]</span> where <span class="math inline">\(n^\mu\)</span> is the outward 4-vector orthogonal to the boundary hypersurface <span class="math inline">\(\partial\Omega\)</span>.</p></li>
+<li><p><strong>Robin</strong> - This fixes a linear combination of the field and its derivative <span class="math display">\[
+  a\varphi(x) + b n^\mu\partial_\mu\varphi(x) = h(x), \quad \forall x \in \partial\Omega,
+\]</span> where <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> are fixed coefficients.</p></li>
+<li><p><strong>Cauchy</strong> - This is the most well used boundary condition for practical problems. Here for a second order equation, like the wave-equation, we specify on some space-like hypersurface, such as one at a fixed time <span class="math inline">\(t=t_0\)</span> in a given frame, <span class="math inline">\(\varphi(ct_0,\boldsymbol{r})\)</span> and <span class="math inline">\(\partial_{ct}\varphi(ct_0,\boldsymbol{r})\)</span>. This then determine the solution everywhere in the future domain of the problem. So rather than defining the entire boundary we fix the field and a derivative on an initial hypersurface.</p></li>
+<li><p><strong>Spatial infinity</strong> Field theories can often have a domain covering the entire of Minkowski space. The typical boundary condition assumed is that the field falls off sufficiently fast <span class="math display">\[
+  \varphi(ct,\boldsymbol{r})\rightarrow 0, \quad {\rm as} \quad |\boldsymbol{r}|\rightarrow\infty.
+\]</span> Often one also assumes that <span class="math inline">\(\partial_\mu\varphi(x)\)</span> also vanishes at spatial infinity.</p></li>
+</ul>
+</div>
+</div>
+</div>
 </section>
 <section id="variations-of-the-action" class="level2" data-number="9.7">
 <h2 data-number="9.7" class="anchored" data-anchor-id="variations-of-the-action"><span class="header-section-number">9.7</span> Variations of the action</h2>
-<p>Our first use of the divergence theorem is to arrive at a very useful formulation of the variation of the action. Take a Lorentz scalar field <span class="math inline">\(\varphi(x)\)</span> defined inside a 4-volune <span class="math inline">\(\Omega\)</span> and then consider a variation of it <span id="eq-field_unconstrained"><span class="math display">\[
+<p>Our first use of the divergence theorem is to arrive at a very useful formulation of the variation of the action. Take a Lorentz scalar field <span class="math inline">\(\varphi(x)\)</span> defined inside a 4-volume <span class="math inline">\(\Omega\)</span> and then consider a variation of it <span id="eq-field_unconstrained"><span class="math display">\[
     \varphi(x) \rightarrow \varphi(x) + \delta\varphi(x),
 \tag{9.9}\]</span></span> where <span class="math inline">\(\delta\varphi(x)\)</span> is taken to be small, so <span class="math inline">\(|\delta\varphi(x)| \ll |\varphi(x)|\)</span> for all <span class="math inline">\(x\)</span>, but is otherwise an arbitrary and unconstrained variation over <span class="math inline">\(\Omega\)</span>, as depicted in <a href="#fig-unconstrained" class="quarto-xref">Figure&nbsp;<span>9.5</span></a>. The derivative of the field similarly has a variation <span class="math display">\[
     \partial_\mu\varphi(x) \rightarrow \partial_\mu\varphi(x) + \delta\partial_\mu\varphi(x),
@@ -705,36 +736,50 @@ Figure&nbsp;9.5: An unconstrained variation <span class="math inline">\(\delta\v
 </figcaption>
 </figure>
 </div>
-<p>We then compute the variation in the action <span class="math display">\[
-    \delta\mathcal{S}[\varphi,\delta\varphi] = \mathcal{S}[\varphi+\delta\varphi] - \mathcal{S}[\varphi],
-\]</span> which we express in terms of the Lagrangian density as <span class="math display">\[
-    \delta\mathcal{S}[\varphi,\delta\varphi] = \int_{\Omega} {\rm d}^4x\, \left\{\mathcal{L}(x,\varphi+\delta\varphi,\partial(\varphi + \delta\varphi)) - \mathcal{L}(x,\varphi,\partial\varphi)\right\}.
-\]</span> To make further progress we Taylor expand the varied Lagrangian density to first order in <span class="math inline">\(\delta\varphi\)</span> the about its unperturbed point as <span class="math display">\[\begin{align}
+<p>To compute the variation in the action we start by working out the variation of the Lagrangian density as <span class="math display">\[
+    \delta\mathcal{L}(x,\varphi,\partial\varphi,\delta\varphi) = \mathcal{L}(x,\varphi+\delta\varphi,\partial(\varphi + \delta\varphi)) - \mathcal{L}(x,\varphi,\partial\varphi).
+\]</span> To make progress we Taylor expand the varied Lagrangian density to first order in <span class="math inline">\(\delta\varphi\)</span> the about its unperturbed point as <span class="math display">\[\begin{align}
     \mathcal{L}(x,\varphi+\delta\varphi,\partial(\varphi + \delta\varphi)) &amp;= \mathcal{L}(x,\varphi,\partial\varphi) + \frac{\partial \mathcal{L}}{\partial\varphi}\delta\varphi + \frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\partial_\mu\delta\varphi + \mathcal{O}(\delta\varphi^2),
-\end{align}\]</span> having used <a href="#eq-field_derivative_unconstrained" class="quarto-xref">Equation&nbsp;<span>9.10</span></a> on the last term. Inserting this then gives <span class="math display">\[
-    \delta\mathcal{S}[\varphi,\delta\varphi] = \int_{\Omega} {\rm d}^4x\, \left\{\frac{\partial \mathcal{L}}{\partial\varphi}\delta\varphi + \frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\partial_\mu\delta\varphi + \mathcal{O}(\delta\varphi^2)\right\}.
-\]</span> Next, we use the following rearrangement which follows from applying the derivative product rule <span class="math display">\[
+\end{align}\]</span> having used <a href="#eq-field_derivative_unconstrained" class="quarto-xref">Equation&nbsp;<span>9.10</span></a> on the last term. Next, we use the following rearrangement which follows from applying the derivative product rule <span class="math display">\[
     \frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\partial_\mu\delta\varphi = \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\delta\varphi\right) - \left(\partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\right)\delta\varphi.
-\]</span> Inserting this gives a variation of action and working to first order gives <span class="math display">\[
-    \delta\mathcal{S}[\varphi,\delta\varphi] = \int_{\Omega} {\rm d}^4x\, \left\{\frac{\partial \mathcal{L}}{\partial\varphi}\delta\varphi - \left(\partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\right)\delta\varphi + \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\delta\varphi\right)\right\}
-\]</span> The final step is to apply to the divergence theorem to the last term, which is a 4-divergence to arrive at the following result:</p>
+\]</span> This gives the general variation of a Lagrangian density:</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Variation of the action
+First-order variation of the Lagrangian density
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><span id="eq-Lden_variation"><span class="math display">\[
+    \delta\mathcal{L}(x,\varphi,\partial\varphi,\delta\varphi) = \left(\frac{\partial \mathcal{L}}{\partial\varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\right)\delta\varphi + \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\delta\varphi\right).
+\tag{9.11}\]</span></span></p>
+</div>
+</div>
+<p>Using this result we compute the variation in the action <span class="math display">\[
+    \delta\mathcal{S}[\varphi,\delta\varphi] = \mathcal{S}[\varphi+\delta\varphi] - \mathcal{S}[\varphi],
+\]</span> which we express in terms of the Lagrangian density as <span class="math display">\[
+    \delta\mathcal{S}[\varphi,\delta\varphi] = \int_{\Omega} {\rm d}^4x\, \delta\mathcal{L}(x,\varphi,\partial\varphi,\delta\varphi).
+\]</span> Inserting <a href="#eq-Lden_variation" class="quarto-xref">Equation&nbsp;<span>9.11</span></a> and applying the divergence theorem to the last term we arrive at the following result:</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+First-order variation of the action
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p><span id="eq-action_variation"><span class="math display">\[
     \delta\mathcal{S}[\varphi,\delta\varphi] = \int_{\Omega} {\rm d}^4x\, \left(\frac{\partial \mathcal{L}}{\partial\varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\right)\delta\varphi + \oint_{\partial\Omega}{\rm d}^3 S \, n_\mu \frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\delta\varphi.
-\tag{9.11}\]</span></span></p>
+\tag{9.12}\]</span></span></p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -743,7 +788,7 @@ Variation of the action
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>3. Is <span class="math inline">\(\partial/\partial\partial_{\mu}\varphi\)</span> a differential 4-vector operator?</strong></p>
 <p>Assume that <span class="math inline">\(\varphi\)</span> is a Lorentz scalar field, and assume that <span class="math inline">\(\mathcal{F}\)</span> is a Lorentz scalar field depending on its spacetime derivatives <span class="math inline">\(\mathcal{F}(\partial_{\mu}\varphi).\)</span> By generalizing our previous arguments involving the Jacobian transformation, argue that <span class="math inline">\(\partial\mathcal{F}/\partial\partial_{\mu}\varphi\)</span> transforms as a 4-vector, and hence <span class="math inline">\(\partial/\partial\partial_{\mu}\varphi\)</span> is a 4-vector operator. This validates our interpretation of a lower index on the denominator of a derivative as an upper index overall.</p>
@@ -751,7 +796,7 @@ Variation of the action
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -760,7 +805,7 @@ Variation of the action
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>3. Is <span class="math inline">\(\partial/\partial\partial_{\mu}\varphi\)</span> a differential 4-vector operator?</strong></p>
 <p>Let <span class="math inline">\(\mathcal{F}\)</span> be a Lorentz scalar depending on <span class="math inline">\(\partial_\mu \varphi\)</span>. Consider a Lorentz transformation to a barred frame: <span class="math display">\[
@@ -791,7 +836,7 @@ Variation of the action
     \frac{\partial \mathcal{L}}{\partial \varphi} - \frac{\partial}{\partial x^0}\frac{\partial \mathcal{L}}{\partial \partial_0\varphi} - \frac{\partial}{\partial x^1}\frac{\partial \mathcal{L}}{\partial \partial_1\varphi} - \frac{\partial}{\partial x^2}\frac{\partial \mathcal{L}}{\partial \partial_2\varphi} - \frac{\partial}{\partial x^3}\frac{\partial \mathcal{L}}{\partial \partial_3\varphi}= 0,
 \]</span> where derivative terms appear for each independent variable. Index notation gives this a compact and manifestly relativistically covariant form <span class="math display">\[
     \frac{\partial \mathcal{L}}{\partial \varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial \partial_\mu\varphi} = 0.
-\]</span> The derivation is quite straightforward. As you saw in the first module of this course on Analytic Mechanics, to derive the Euler-Lagrange equations variations of the coordinates should vanish on the boundary times. In field theory we are free to specify the 4-volume <span class="math inline">\(\Omega\)</span> on which the field lives and the boundary conditions it must satisfy on the boundary <span class="math inline">\(\partial\Omega\)</span>. For this reason we introduce a constrained form of variation of the field, as shown in <a href="#fig-boundary_vanishing" class="quarto-xref">Figure&nbsp;<span>9.6</span></a>. Specifically,</p>
+\]</span> The derivation is quite straightforward. As you saw in the first module of this course on Analytic Mechanics, to derive the Euler-Lagrange equations variations of the coordinates should vanish on the boundary times. In field theory we are free to specify the 4-volume <span class="math inline">\(\Omega\)</span> on which the field lives and the boundary conditions it must satisfy on the boundary <span class="math inline">\(\partial\Omega\)</span>. For this reason we introduce a constrained form of variation of the field, as shown in <a href="#fig-boundary_vanishing" class="quarto-xref">Figure&nbsp;<span>9.6</span></a>. Specifically:</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -802,9 +847,9 @@ Boundary vanishing variation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><span id="eq-boundary_variation"><span class="math display">\[
+<p>This is a constrained class of field variation obeying <span id="eq-boundary_variation"><span class="math display">\[
     \delta_b\varphi(x) = 0, \quad \forall x \in \partial\Omega.
-\tag{9.12}\]</span></span></p>
+\tag{9.13}\]</span></span> which ensures that the value of the variation vanishes on the boundary of our system.</p>
 </div>
 </div>
 <div id="fig-boundary_vanishing" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -817,9 +862,9 @@ Figure&nbsp;9.6: An boundary vanishing variation <span class="math inline">\(\de
 </figcaption>
 </figure>
 </div>
-<p>This means that given a field <span class="math inline">\(\varphi(x)\)</span> which satisfies the boundary conditions, then the variation of this field <span id="eq-field_boundary"><span class="math display">\[
+<p>This means that given a field <span class="math inline">\(\varphi(x)\)</span> which satisfies the boundary conditions on <span class="math inline">\(\partial\Omega\)</span>, then the variation of this field <span id="eq-field_boundary"><span class="math display">\[
     \varphi(x) \rightarrow \varphi(x) + \delta_b\varphi(x),
-\tag{9.13}\]</span></span> also obeys them. If we apply this class of variation of the field then we can immediately conclude that the boundary term in <a href="#eq-action_variation" class="quarto-xref">Equation&nbsp;<span>9.11</span></a> vanishes: <span class="math display">\[
+\tag{9.14}\]</span></span> also obeys them. If we apply this class of variation of the field then we can immediately conclude that the boundary term in <a href="#eq-action_variation" class="quarto-xref">Equation&nbsp;<span>9.12</span></a> vanishes: <span class="math display">\[
     \oint{\rm d}^3 S \, n_\mu \frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\delta_b\varphi = 0,
 \]</span> because all the point <span class="math inline">\(x\)</span> involved in this integral are on the boundary <span class="math inline">\(\partial\Omega\)</span> where <span class="math inline">\(\delta_b\varphi(x) = 0\)</span>. This reduces the variation in the action to the volume term <span class="math display">\[
     \delta\mathcal{S}[\varphi,\delta_b\varphi] = \int_{\Omega} {\rm d}^4x\, \left(\frac{\partial \mathcal{L}}{\partial\varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi}\right)\delta_b\varphi.
@@ -840,7 +885,7 @@ Relativistic Euler-Lagrange equation
 <div class="callout-body-container callout-body">
 <p><span id="eq-relativistic_EL"><span class="math display">\[
     \frac{\partial \mathcal{L}}{\partial\varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi} = 0.
-\tag{9.14}\]</span></span></p>
+\tag{9.15}\]</span></span></p>
 </div>
 </div>
 <section id="key-example" class="level3 page-columns page-full" data-number="9.8.1">
@@ -851,7 +896,7 @@ Relativistic Euler-Lagrange equation
     \frac{\partial \mathcal{L}}{\partial \varphi} = 0,
 \]</span> and proceed to compute <span class="math display">\[
     \frac{\partial \mathcal{L}}{\partial \partial_\mu \varphi} = \frac{\partial}{\partial \partial_\mu \varphi} \left( \eta^{\alpha\beta} \partial_\alpha \varphi \partial_\beta \varphi\right).
-\]</span> Since this is the first time we have encountered a derivative like this we will do it very explicitly taking care with the indices. Since the derivative is <span class="math display">\[
+\]</span> Since this is the first time we have encountered a derivative like this we will do it very explicitly taking care with the indices. The derivative is <span class="math display">\[
     \frac{\partial \partial_\nu \varphi}{\partial \partial_\mu \varphi} = \delta^\mu_\nu
 \]</span> we have <span class="math display">\[
     \frac{\partial \mathcal{L}}{\partial \partial_\mu \varphi} = \eta^{\alpha\beta} \left( \delta^\mu_{\alpha} \partial_\beta \varphi + \partial_\alpha \varphi \, \delta^\mu_{\beta}\right),
@@ -866,7 +911,7 @@ Relativistic Euler-Lagrange equation
 \]</span> which is the relativistic wave equation. As expected it generalises our earlier considerations of wave on a string. You are invited to try some more examples.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">From now on in a slight abuse of terminology we will simply say Lagrangian for <span class="math inline">\(\mathcal{L}\)</span> instead of the mouthful Lagrangian density. This is unlikely to cause confusion since <span class="math inline">\(\mathcal{L}\)</span> will be our central object and not <span class="math inline">\(L\)</span>.</span></div></div>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 9</strong>.</span></div></div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -875,7 +920,7 @@ Relativistic Euler-Lagrange equation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>4. <span class="math inline">\(\varphi^4\)</span> field theory</strong></p>
 <p>Find the equation of motion for a <span class="math inline">\(\varphi^4\)</span> field theory governed by the Lagrangian <span class="math display">\[
@@ -895,7 +940,7 @@ Relativistic Euler-Lagrange equation
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -904,7 +949,7 @@ Relativistic Euler-Lagrange equation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>4. <span class="math inline">\(\varphi^4\)</span> field theory</strong></p>
 <p>We compute <span class="math display">\[

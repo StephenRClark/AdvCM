@@ -423,7 +423,10 @@ Principle of relativity
 <p><span class="math display">\[f(p+a,q+b) = f(p,q) + f(a,b).\]</span></p>
 <p>and homogeneity:</p>
 <p><span class="math display">\[f(\alpha p,\alpha q) = \alpha f(p,q),\]</span></p>
-<div class="page-columns page-full"><p>where <span class="math inline">\(\alpha\)</span> is a scalar. Requiring linearity follows from the assumption that space-time is <em>homogeneous</em>. This means that space-time is the same at every point, so the spatial distance between two space-time points in one frame should not depend on their location in space-time.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">A nonlinear transformation between frames, where distances between points varies as a function of its location would inevitably make uniform motion in one frame appear to be non-uniform in another. Hence homogeneity is essential for all inertial observers to agree on uniform motion.</span></div></div>
+<p>where <span class="math inline">\(\alpha\)</span> is a scalar. These properties imply that <span class="math display">\[
+  f(p,q) = Ap + Bq,
+\]</span> whewre <span class="math inline">\(A\)</span> and <span class="math inline">\(B\)</span> are constant coefficients.</p>
+<div class="page-columns page-full"><p>Requiring linearity follows from the assumption that space-time is <em>homogeneous</em>. This means that space-time is the same at every point, so the spatial distance between two space-time points in one frame should not depend on their location in space-time.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">A nonlinear transformation between frames, where distances between points varies as a function of its location would inevitably make uniform motion in one frame appear to be non-uniform in another. Hence homogeneity is essential for all inertial observers to agree on uniform motion.</span></div></div>
 <p>Take two points <span class="math inline">\(M\)</span> and <span class="math inline">\(N\)</span> along the <span class="math inline">\(x\)</span>-axis in <span class="math inline">\(S\)</span> separated by a length <span class="math inline">\(L\)</span>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
@@ -570,7 +573,7 @@ t \\
 \end{array}
 \right) = \left(
 \begin{array}{c}
-  t_Q \\
+  At_Q \\
   -vDt_Q
 \end{array}\right).\]</span> we constrain <span class="math inline">\(A = 1\)</span>, meaning <span class="math inline">\(B=0\)</span>, in order to obtain <span class="math inline">\(\bar{t}_Q = t_Q\)</span> and from this <span class="math inline">\(D=1\)</span>. We then arrive at the Galilean transformation <span class="math display">\[{\boldsymbol{\Gamma}}(v) = \left(\begin{array}{cc}
   1 &amp; 0 \\
@@ -622,7 +625,7 @@ t \\
 <p>Transforming the coordinates <span class="math inline">\(t,x_1(t)\)</span> and <span class="math inline">\(x_2(t)\)</span> into frame <span class="math inline">\(\bar{S}\)</span> as:</p>
 <p><span class="math display">\[\bar{t} = t,\]</span> <span class="math display">\[\bar{x}_1(\bar{t}) = x_1(t) - vt,\]</span> <span class="math display">\[\bar{x}_2(\bar{t}) = x_2(t) - vt,\]</span></p>
 <p>hence <span class="math inline">\(\bar{x}_2(\bar{t}) - \bar{x}_1(\bar{t}) = x_2(t) - x_1(t)\)</span> and <span class="math inline">\(\textrm{d}/\textrm{d}\bar{t} = \textrm{d}/\textrm{d}t\)</span> so:</p>
-<p><span class="math display">\[m\frac{\textrm{d}^2}{\textrm{d}\bar{t}^2}\bar{x}_1(t) = k(\bar{x}_2(t) - \bar{x}_1(t) - \ell_0),\]</span> <span class="math display">\[m\frac{\textrm{d}^2}{\textrm{d}\bar{t}^2}\bar{x}_2(t) = k(\bar{x}_1(t) - \bar{x}_2(t) + \ell_0).\]</span></p>
+<p><span class="math display">\[m\frac{\textrm{d}^2}{\textrm{d}\bar{t}^2}\bar{x}_1(\bar{t}) = k(\bar{x}_2(\bar{t}) - \bar{x}_1(\bar{t}) - \ell_0),\]</span> <span class="math display">\[m\frac{\textrm{d}^2}{\textrm{d}\bar{t}^2}\bar{x}_2(\bar{t}) = k(\bar{x}_1(\bar{t}) - \bar{x}_2(\bar{t}) + \ell_0).\]</span></p>
 <p>The physics is covariant since the new coordinates in <span class="math inline">\(\bar{S}\)</span>, which will have different values from those in <span class="math inline">\(S\)</span>, nonetheless are related to one another in exactly the same way as they were in <span class="math inline">\(S\)</span>. Here <span class="math inline">\(m\)</span>, <span class="math inline">\(k\)</span>, and <span class="math inline">\(\ell_0\)</span> are all Galilean invariants, constants whose value is agreed upon by all inertial observers.</p>
 </section>
 <section id="failure-of-covariance" class="level2 page-columns page-full" data-number="1.5">

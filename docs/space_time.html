@@ -351,11 +351,11 @@ Important
   ct\\
   x  
 \end{array}\right).
-\]</span> Notice now that the Lorentz boost <span class="math inline">\({\bf \Lambda}(\beta)\)</span> is dimensionless. We will now draw space-time diagrams correspondingly using a <span class="math inline">\(ct\)</span> and <span class="math inline">\(x\)</span> axes:</p>
+\]</span> Notice now that the Lorentz boost <span class="math inline">\({\bf \Lambda}(\beta)\)</span> is dimensionless and takes on a pleasant symmetrical form. We will now draw space-time diagrams correspondingly using a <span class="math inline">\(ct\)</span> and <span class="math inline">\(x\)</span> axes:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/space_time.png" class="img-fluid figure-img" width="200"></p>
-<figcaption>A space-time diagram of the form we will use from now on. The diagonal line at 45<span class="math inline">\(^\circ\)</span> is the world-line of a light beam. The dahsed horizontal line is the line of simultaneity in frame <span class="math inline">\(S\)</span>. The <span class="math inline">\(ct\)</span> axis is the world-line of a observer at the spatial origin of <span class="math inline">\(S\)</span>.</figcaption>
+<figcaption>A space-time diagram of the form we will use from now on. The diagonal line at 45<span class="math inline">\(^\circ\)</span> is the world-line of a light beam. The dashed horizontal line is the line of simultaneity in frame <span class="math inline">\(S\)</span>. The <span class="math inline">\(ct\)</span> axis is the world-line of a observer at the spatial origin of <span class="math inline">\(S\)</span>.</figcaption>
 </figure>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -404,20 +404,20 @@ Important
 \end{equation}\]</span> Now, <span class="math display">\[\begin{align}
   \det \Lambda  &amp;= \gamma^2 - \beta^2 \gamma^2 = \gamma^2 (1 - \beta^2) = 1,
 \end{align}\]</span> thus we have <span class="math display">\[\begin{equation}
-  \Lambda^{0}{}_{0}\Lambda^{1}{}_{1}  - \Lambda^{0}{}_{1}\Lambda^{1}{}_{0} = 1,
+  \Lambda^{0}_{0}\Lambda^{1}_{1}  - \Lambda^{0}_{1}\Lambda^{1}_{0} = 1,
 \end{equation}\]</span> and in the limit <span class="math inline">\(v \to 0\)</span>, we also have <span class="math display">\[
-  \Lambda^{0}{}_{0} \to 1,  \qquad  \Lambda^{0}{}_{1} \to 0.
+  \Lambda^{0}_{0} \to 1,  \qquad  \Lambda^{0}_{1} \to 0.
 \]</span> Since <span class="math display">\[\begin{equation}
-  \cosh^2 u - \sinh^2 u = 1,
+  \cosh^2(\xi) - \sinh^2(\xi) = 1,
 \end{equation}\]</span> we can substitute <span class="math display">\[\begin{align}
-  \gamma &amp;\to \cosh u \quad \text{in} \quad \Lambda^{0}{}_{0} \quad \textrm{and} \quad \Lambda^{1}{}_{1}, \\
-  \beta \gamma &amp;\to \sinh u \quad \text{in} \quad \Lambda^{0}{}_{1} \quad \textrm{and} \quad \Lambda^{1}{}_{0},
+  \gamma &amp;\to \cosh(\xi) \quad \text{in} \quad \Lambda^{0}_{0} \quad \textrm{and} \quad \Lambda^{1}_{1}, \\
+  \beta \gamma &amp;\to \sinh(\xi) \quad \text{in} \quad \Lambda^{0}_{1} \quad \textrm{and} \quad \Lambda^{1}_{0},
 \end{align}\]</span> with the ratio <span class="math display">\[\begin{equation}
-  \beta = \tanh u, \qquad \text{i.e. } u = \operatorname{arctanh} \beta,
-\end{equation}\]</span> and <span class="math inline">\(u \to 0\)</span> as <span class="math inline">\(\beta \to 0\)</span>. Together this gives the required form for the Lorentz transformation matrix <span class="math display">\[\begin{equation}
+  \beta = \tanh(\xi), \qquad \text{i.e. } \xi = \operatorname{arctanh}(\beta),
+\end{equation}\]</span> and <span class="math inline">\(\xi \to 0\)</span> as <span class="math inline">\(\beta \to 0\)</span>. Together this gives the required form for the Lorentz transformation matrix <span class="math display">\[\begin{equation}
   \boldsymbol{\Lambda}(u) = \begin{pmatrix}
-                \cosh u &amp; -\sinh u \\
-                -\sinh u &amp; \cosh u
+                \cosh(\xi) &amp; -\sinh(\xi) \\
+                -\sinh(\xi) &amp; \cosh(\xi)
               \end{pmatrix}.
 \end{equation}\]</span></p>
 </div>
@@ -438,7 +438,7 @@ Important
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/xbar_axis.png" class="img-fluid figure-img" width="500"></p>
-<figcaption>.</figcaption>
+<figcaption>We can locate the <span class="math inline">\(\bar x\)</span>-axis in frame <span class="math inline">\(S\)</span> by envisaging that <span class="math inline">\(\bar S\)</span> sends light rays from the origin <span class="math inline">\(\bar O\)</span> and a point <span class="math inline">\(J\)</span> along their <span class="math inline">\(\bar x\)</span> axis. These meet at the point R. The point <span class="math inline">\(K\)</span> along the <span class="math inline">\(\bar x\)</span>-axis is equidistant from <span class="math inline">\(\bar O\)</span> and <span class="math inline">\(J\)</span>. Now viewing this in frame <span class="math inline">\(S\)</span> we can locate <span class="math inline">\(K\)</span> and <span class="math inline">\(J\)</span> by drawing two equally separated world-lines parallel with the c{t} axis and joining them with light rays.</figcaption>
 </figure>
 </div>
 <p>Now we transform this set of points into frame <span class="math inline">\(S\)</span>. The world-line of <span class="math inline">\(P\)</span> is the <span class="math inline">\(c\bar{t}\)</span>-axis we determined above. The world-lines of <span class="math inline">\(K\)</span> and <span class="math inline">\(J\)</span> are parallel to the <span class="math inline">\(c\bar{t}\)</span>-axis and will still be equally spaced (although their separation will be different - see shortly). Next, we locate <span class="math inline">\(R\)</span> as the intersection of the world-line of <span class="math inline">\(K\)</span> with a light ray from <span class="math inline">\(P\)</span>. Then we project a light ray from <span class="math inline">\(R\)</span> backwards and where it intersects the world-line of <span class="math inline">\(J\)</span> is the event <span class="math inline">\(J\)</span> itself. Finally, we draw a line through <span class="math inline">\(P\)</span> and <span class="math inline">\(J\)</span>, its intersection with the world-line of <span class="math inline">\(K\)</span> is the point <span class="math inline">\(K\)</span> itself. This line is the <span class="math inline">\(\bar{x}\)</span> axis and is an angle <span class="math inline">\(\theta\)</span>, as expected, from the <span class="math inline">\(x\)</span>-axis in frame <span class="math inline">\(S\)</span>.</p>
@@ -578,7 +578,7 @@ c\bar{t}_P = \gamma(\beta)(ct_P - \beta c x_P) = \gamma(\beta)ct_P\left(1 -  \le
 ct_+ = \sqrt{1+x^2},
 \]</span> and <span class="math display">\[
 ct_- = \sqrt{x^2-1},
-\]</span> respectively. These curves are <em>hyperbola</em>, that is they are conic section, formed by the intersection of a plane and a double cone (i.e.&nbsp;the light cone). Armed with these curves we can now determine where the unit ticks marks are along the <span class="math inline">\(c\bar{t}\)</span> and <span class="math inline">\(\bar{x}\)</span> axes of frame <span class="math inline">\(\bar{S}\)</span> as viewed in frame <span class="math inline">\(S\)</span>. The picture is shown here:</p>
+\]</span> respectively. These curves are <em>hyperbola</em>, that is they are conic sections, formed by the intersection of a plane and a double cone (i.e.&nbsp;the light cone). Armed with these curves we can now determine where the unit ticks marks are along the <span class="math inline">\(c\bar{t}\)</span> and <span class="math inline">\(\bar{x}\)</span> axes of frame <span class="math inline">\(\bar{S}\)</span> as viewed in frame <span class="math inline">\(S\)</span>. The picture is shown here:</p>
 <div id="fig-time_length" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-time_length-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">

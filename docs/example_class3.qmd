@@ -39,6 +39,41 @@ Solution ...
 ::: {.callout-caution icon="false"}
 ## {{< fa regular circle-question >}} Example exercise
 
+**2. Interacting Lagrangian for relativistic particle** 
+
+Any `potential energy' $V$ in the Lagrangian should properly be considered as the 0-component of a `4-potential' $\phi^{\mu} = (V,\boldsymbol{\phi}).$ 
+The 3-vector $\boldsymbol{\phi}$ is a `potential momentum' not usually present in classical physics.
+Thus we might expect the 3-scalar potential $V$, in the relativistic Lagrangian, to be replaced by a term such as $\phi^{\mu} U_{\mu}/\gamma.$
+Our relativistic Lagrangian is therefore $L = -mc^2/\gamma - \phi^{\mu}U_{\mu}/\gamma.$
+Show that, when $v \ll c,$ this is equivalent to the familiar non-relativistic Lagrangian.
+Find the 1,2,3-components of the canonical relativistic momentum $P^j$; what do you notice?
+The relativistic energy (0-component of the canonical momentum $P^0$) is provided by the relativistic Hamiltonian $H = \sum_{j=1}^3 P^j \dot{x}^j - L.$
+Compute $H.$
+\end{enumerate}
+
+The relativistic Lagrangian we have found here, $L = -mc^2/\gamma - \phi^{\mu}U_{\mu}/\gamma,$ has two terms; the first term was chosen to give the correct equation of motion for a free-particle (see also problem class 1).
+The second term, representing an interaction with some external potential (whose gradient gives the force), couples the potential with the 4-velocity, the particle's key dynamical variable.
+The Lagrangian densities for fields we will investigate later will also have this general character.
+The treatment will also be symmetric in space and time, unlike the Euler-Lagrange equations here.
+
+We have thus shown that the form of the Lorentz force Lagrangian, complete with the vector potential and the 3-velocity, arises very naturally from relativistic considerations; the Lorentz force has $\phi^{\mu} = q c A^{\mu}.$
+You can continue this investigation in question 1 on problem sheet 2, to derive the relativistic Lorentz equation of motion from the relativistic Lorentz force Lagrangian with this form. 
+:::
+
+::: {.content-hidden unless-meta="solutions.exampleclass3.display"}
+::: {.callout-tip collapse="true" icon="false"}
+## {{< fa regular circle-check >}} Solution
+
+**2. Interacting Lagrangian for relativistic particle** 
+
+Solution ...
+:::
+:::
+
+
+::: {.callout-caution icon="false"}
+## {{< fa regular circle-question >}} Example exercise
+
 **2. The relativistic particle mechanics** 
 
 We are interested in generalizing the Lagrangian approach to relativistic particle mechanics. Specifically, we seek a Lagrangian $L = L(x^{\mu},\dot{x}^{\mu})$ such that the Euler-Lagrange equations

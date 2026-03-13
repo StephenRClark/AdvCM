@@ -401,20 +401,21 @@ window.Quarto = {
 <li>and the middle indices (<span class="math inline">\(k,\ell\)</span>) are summed over.</li>
 </ul>
 <p>We reorder the terms in the tensor transformation so that it resembles the matrix calculation (while still using the summation convention). For a rank-2 contravariant tensor: <span class="math display">\[
-    T^{\bar\alpha\bar\beta} = \Lambda^{\bar\alpha}_{\rho} \, T^{\rho\sigma} \, \Lambda^{\bar\beta}_{\sigma}.
+    T_{\bar\alpha\bar\beta} = \Lambda_{\bar\alpha}^{\rho} \, T_{\rho\sigma} \, \Lambda_{\bar\beta}^{\sigma}.
 \]</span> The assignment of indices to rows and columns follows directly from analogy with matrix multiplication and has nothing to do with upper or lower placement of indices. The fact that upper indices contract with lower indices is related to covariance, not to row/column assignment. We are free to use whatever convention we like, e.g.&nbsp;row = upper, col = lower, so long as we are consistent. If we write <span class="math display">\[
-    T_{\rho\sigma} \quad \text{as the matrix } \mathbf{T}, \qquad \Lambda^{\bar\alpha}_{\rho} \quad \text{as the matrix } \boldsymbol{\Lambda},
+    T_{\rho\sigma} \quad \text{as the matrix } \mathbf{T}, \qquad \Lambda_{\bar\alpha}^{\rho} \quad \text{as the matrix } \boldsymbol{\Lambda}^{-1},
 \]</span> the in components we have two equivalent expressions: <span class="math display">\[\begin{align}
-T^{\bar\alpha\bar\beta}
-    &amp;=\Lambda^{\bar\alpha}_{\rho}\, T^{\rho\sigma}\, \Lambda^{\bar\beta}_{\sigma} =\sum_{\rho,\sigma}[\boldsymbol{\Lambda}]_{\bar\alpha\rho}\,[\mathbf{T}]_{\rho\sigma}\,[\boldsymbol{\Lambda}]_{\bar\beta\sigma}.
+T_{\bar\alpha\bar\beta}
+    &amp;=\Lambda_{\bar\alpha}^{\rho}\, T_{\rho\sigma}\, \Lambda_{\bar\beta}^{\sigma} =\sum_{\rho,\sigma}[\boldsymbol{\Lambda}^{-1}]_{\bar\alpha\rho}\,[\mathbf{T}]_{\rho\sigma}\,[\boldsymbol{\Lambda}^{-1}]_{\bar\beta\sigma}.
 \end{align}\]</span> Now rearranging sums we get: <span class="math display">\[\begin{align}
-T^{\bar\alpha\bar\beta}
-    &amp;=\sum_{\sigma}\left(\sum_{\rho}[\boldsymbol{\Lambda}]_{\bar\alpha\rho}
-[\mathbf{T}]_{\rho\sigma}\right)[\boldsymbol{\Lambda}]_{\bar\beta\sigma},\\
-    &amp;=  \sum_{\sigma}[\boldsymbol{\Lambda}\mathbf{T}]_{\bar\alpha\sigma}
-[\mathbf{\Lambda}^{\rm T}]_{\sigma\bar\beta},\\
-    &amp;=  [\boldsymbol{\Lambda} \mathbf{T} \boldsymbol{\Lambda}^{\rm T}]_{\bar\alpha\bar\beta}.
-\end{align}\]</span> Notice that the second Lorentz boost, although representing the same Lorentz boost as the first, has to be transposed to have the appropriate row and col indices for matrix multiplication. Thus, as a matrix equation, <span class="math display">\[
+T_{\bar\alpha\bar\beta}
+    &amp;=\sum_{\sigma}\sum_{\rho}[\boldsymbol{\Lambda}^{-1}]_{\rho\bar\alpha}
+\left([\mathbf{T}]_{\rho\sigma}[\boldsymbol{\Lambda}^{-1}]_{\sigma\bar\beta}\right),\\
+    &amp;=  \sum_{\rho}[(\boldsymbol{\Lambda}^{-1})^{\rm T}]_{\bar\alpha\rho}[\mathbf{T}\mathbf{\Lambda}^{-1}]_{\rho\bar\beta},\\
+    &amp;=  [(\boldsymbol{\Lambda}^{-1})^{\rm T} \mathbf{T} \boldsymbol{\Lambda}^{-1}]_{\bar\alpha\bar\beta}.
+\end{align}\]</span> Notice that the first Lorentz boost, although representing the same Lorentz boost as the second, has to be transposed to have the appropriate row and col indices for matrix multiplication with our assumed convention. Thus, as a matrix equation, <span class="math display">\[
+    T_{\bar\alpha\bar\beta} \quad \longleftrightarrow \quad \mathbf{\bar T} = (\boldsymbol{\Lambda}^{-1})^{\rm T} \, \mathbf{T} \, \boldsymbol{\Lambda}^{-1}.
+\]</span> Had we considered a type <span class="math inline">\(({2 \atop 0})\)</span> tensor <span class="math inline">\(T^{\mu\nu}\)</span> and used the same matrix convention we would instead obtain the transformation <span class="math display">\[
     T^{\bar\alpha\bar\beta} \quad \longleftrightarrow \quad \mathbf{\bar T} = \boldsymbol{\Lambda} \, \mathbf{T} \, \boldsymbol{\Lambda}^{\rm T}.
 \]</span></p>
 </div>
@@ -448,7 +449,7 @@ T^{\bar\alpha\bar\beta}
 </div>
 <p>It is a matter of convention opting to list the one-form first and the 4-vector second. The components of a type <span class="math inline">\(({1 \atop 1})\)</span> tensor are found by acting it on a basis one-form in <span class="math inline">\(\mathcal{M}^*\)</span> and basis 4-vector in <span class="math inline">\(\mathcal{M}\)</span> as <span class="math display">\[
     {T^{\alpha}}_{\beta} = \pmb{\symbb{T}}(\tilde{e}^\alpha,\vec{e}_\beta).
-\]</span> An immediate question is why we don’t write the components as <span class="math inline">\(T^\alpha_{\beta}\)</span> or <span class="math inline">\(T^{~~\alpha}_{\beta}\)</span>. In this current context there is no ambiguity about what the indices refer to so any of these forms can be used. However, issues can arise when we start manipulating indices as we will discuss shortly.</p>
+\]</span> An immediate question is why we don’t write the components as <span class="math inline">\(T^\alpha_{\beta}\)</span> or <span class="math inline">\(T^{~~\alpha}_{\beta}\)</span>. In this current context there is no ambiguity about what the indices refer to so any of these forms can be used. However, issues can arise when we start manipulating indices as we will discuss shortly. For this reason <span class="math inline">\({T^{\alpha}}_{\beta}\)</span> is the best choice.</p>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -584,7 +585,7 @@ S^{\bar\mu\bar\nu} &amp;= \Lambda^{\bar\mu}_{\rho}
 \]</span> The <em>inverse metric tensor</em>, denoted <span class="math inline">\(\pmb{\symbb{g}}^{-1}\)</span>, is a <span class="math inline">\(({2 \atop 0})\)</span>-type tensor defined to take two input one-forms <span class="math inline">\(\tilde{Q}\)</span> and <span class="math inline">\(\tilde{P}\)</span> and return their scalar-product <span class="math display">\[
     \pmb{\symbb{g}}^{-1}(\tilde{Q},\tilde{P}) = g^{\mu\nu}Q_\mu P_\nu = \tilde{Q}\cdot\tilde{P}.
 \]</span> Hence it is also symmetric with elements <span class="math display">\[
-    \pmb{\symbb{g}}^{-1}(\tilde{e}_\mu,\tilde{e}_\nu) = g^{\mu\nu} = \eta^{\mu\nu} = \left(\begin{array}{cccc}
+    \pmb{\symbb{g}}^{-1}(\tilde{e}^\mu,\tilde{e}^\nu) = g^{\mu\nu} = \eta^{\mu\nu} = \left(\begin{array}{cccc}
   1 &amp; 0 &amp; 0 &amp; 0 \\
   0 &amp; -1 &amp; 0 &amp; 0 \\
   0 &amp; 0 &amp; -1 &amp; 0 \\
@@ -727,12 +728,33 @@ u^{\bar\mu} = \Lambda^{\bar\mu}_\rho u^\rho.
 </div>
 </div>
 </div>
-<p>Using the metric and its inverse to raise and lower indices is more than just an algebraic trick. Indeed one could envisage using any symmetric invertible type <span class="math inline">\(({0 \atop 2})\)</span> tensor <span class="math inline">\(h_{\mu\nu}\)</span> and its inverse <span class="math inline">\(h^{\mu\nu}\)</span> type <span class="math inline">\(({2 \atop 0})\)</span> tensor to define index raising and lowering. Formally all the above definitions could be applied with <span class="math inline">\(\pmb{\symbb{h}}\)</span> instead. However, the Lorentz scalars resulting from contractions with <span class="math inline">\(\pmb{\symbb{h}}\)</span> have no obvious physical meaning or significance. In contrast <span class="math inline">\(\pmb{\symbb{g}}\)</span> is central to the geometrical structure of space-time defining the scalar-product, so distances, time and angles, as well as its causal properties such as the light-cone and geodesics. As we shall see in the next lecture physical quantities of intrinsic interest arise from the scalar-product. So <span class="math inline">\(\pmb{\symbb{g}}\)</span> is not just a invertible rank-2 tensor, it is a unique and privileged one with both geometrical and physical meaning. In the context of a flat space-time in special relativity we also have the added bonus that <span class="math inline">\(\pmb{\symbb{g}}\)</span> and <span class="math inline">\(\pmb{\symbb{g}}^{-1}\)</span> have the same fixed components in all inertial frames making index lowering and raising extremely straightforward.</p>
-<!--
-ADD SOMETHING ABOUT THE DERIVATIVE ONE-FORM
--->
+<p>Using the metric and its inverse to raise and lower indices is more than just an algebraic trick. Indeed one could envisage using any symmetric invertible type <span class="math inline">\(({0 \atop 2})\)</span> tensor <span class="math inline">\(h_{\mu\nu}\)</span> and its inverse <span class="math inline">\(h^{\mu\nu}\)</span> type <span class="math inline">\(({2 \atop 0})\)</span> tensor to define index raising and lowering. Formally all the above definitions could be applied with <span class="math inline">\(\pmb{\symbb{h}}\)</span> instead. However, the Lorentz scalars resulting from contractions with <span class="math inline">\(\pmb{\symbb{h}}\)</span> have no obvious physical meaning or significance. In contrast <span class="math inline">\(\pmb{\symbb{g}}\)</span> is central to the geometrical structure of space-time defining the scalar-product, so distances, time and angles, as well as its causal properties such as the light-cone and geodesics. As we shall see in the next lecture physical quantities of intrinsic interest arise from the scalar-product. So <span class="math inline">\(\pmb{\symbb{g}}\)</span> is not just an invertible rank-2 tensor, it is a unique and privileged one with both geometrical and physical meaning. In the context of a flat space-time in special relativity we also have the added bonus that <span class="math inline">\(\pmb{\symbb{g}}\)</span> and <span class="math inline">\(\pmb{\symbb{g}}^{-1}\)</span> have the same fixed components in all inertial frames making index lowering and raising extremely straightforward.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Derivative one-form
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>In frame <span class="math inline">\(S\)</span> the one-form <span class="math inline">\(\partial_\mu\)</span> can be written as <span class="math display">\[
+\partial_\mu = \left(\begin{array}{c} \frac{1}{c}\frac{\partial}{\partial t} \\
+\nabla \end{array}\right).
+\]</span> We can then raise the index to create a 4-vector version as <span class="math display">\[
+\partial^\mu = \eta^{\mu\nu}\partial_\nu = \left(\begin{array}{c} \frac{1}{c}\frac{\partial}{\partial t} \\
+-\nabla \end{array}\right).
+\]</span> The negative sign on the 4-vector components points to the derivative being a natural one-form. With these two objects the wave-equation is simply <span class="math display">\[
+  \partial_\mu\partial^\mu \varphi = \left(\frac{1}{c^2}\frac{\partial}{\partial t^2} -\nabla^2\right)\varphi.
+\]</span></p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -741,7 +763,7 @@ Converting a basis 4-vector to a one-form
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>Recall that the basis 4-vectors and one-forms are related to each other through the biorthonormality relation <span class="math display">\[
     \tilde{e}^\mu(\vec{e}_\nu) = \delta^\mu_\nu.
@@ -769,7 +791,7 @@ Converting a basis 4-vector to a one-form
     {T^{\bar{\omega}\bar{\chi}\cdots\bar{\theta}}}_{\bar{\rho}\bar{\lambda}\cdots\bar{\kappa}} = \Lambda^{\bar \omega}_\alpha\Lambda^{\bar \chi}_\beta\cdots\Lambda^{\bar \theta}_\gamma\Lambda^{\mu}_{\bar \rho}\Lambda^{\nu}_{\bar \lambda}\cdots\Lambda^{\sigma}_{\bar \kappa}\,{T^{\alpha\beta\cdots\gamma}}_{\mu\nu\cdots\sigma}.
 \]</span> Indeed, any object whose components transform between frames like this is a type <span class="math inline">\(({M \atop N})\)</span> tensor.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
@@ -778,21 +800,21 @@ How to write tensor indices
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p>It is worth remarking on the notation used in <a href="#eq-tensor_components" class="quarto-xref">Equation&nbsp;<span>6.2</span></a>. Specifically, why can’t we just write the indices more compactly as <span class="math display">\[
    {T^{\alpha\beta\cdots\gamma}}_{\mu\nu\cdots\sigma} \stackrel{?}{\equiv} T^{\alpha\beta\cdots\gamma}_{\mu\nu\cdots\sigma}.  
-\]</span> The short answer is that you can, but you should be careful. As shown in figure above, the tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> is taken to be acting on a tensor product of the <span class="math inline">\(\mathcal{M}^*\)</span> and <span class="math inline">\(\mathcal{M}\)</span>. The ordering matters since it indicates which of these spaces is being acted on. The compact form ensures that we can still identify the ordering of all upper and lower indices between themselves, but does not track the ordering between upper and lower indices. For the tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> this is fine since upper and lower indices correspond to distinct types of vectors spaces making it unambigious what is meant.</p>
-<p>The situation where care must be taken is when indices are lowered and raised thus inchanging upper and lower indices. Take the example of a type <span class="math inline">\(({2 \atop 1})\)</span> tensor with components <span class="math inline">\(T^{\alpha\beta}_\gamma\)</span> written compactly. The index <span class="math inline">\(\alpha\)</span> can be lowered as <span class="math display">\[
+\]</span> The short answer is that you could do this, but you have be careful. As shown in figure above, the tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> is taken to be acting on a tensor product of the <span class="math inline">\(\mathcal{M}^*\)</span> and <span class="math inline">\(\mathcal{M}\)</span>. The ordering matters since it indicates which of these spaces is being acted on. The compact form ensures that we can still identify the ordering of all upper and lower indices between themselves, but does not track the ordering between upper and lower indices. For the tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> this is fine since upper and lower indices correspond to distinct types of vectors spaces making it unambigious what is meant.</p>
+<p>The situation where care must be taken is when indices are lowered and raised thus interchanging upper and lower indices. Take the example of a type <span class="math inline">\(({2 \atop 1})\)</span> tensor with components <span class="math inline">\(T^{\alpha\beta}_\gamma\)</span> written compactly. The index <span class="math inline">\(\alpha\)</span> can be lowered as <span class="math display">\[
     T^{\beta}_{\gamma\mu} = \eta_{\mu\alpha}T^{\alpha\beta}_\gamma,
 \]</span> whereupon we need to make a choice about where to put the new lower index. Above we have used a convention of placing any new upper or lower index at the back. Now suppose we raise the <span class="math inline">\(\mu\)</span> index back up as <span class="math display">\[
     T^{\beta\alpha}_{\gamma} = \eta^{\alpha\mu}T^{\beta}_{\gamma\mu}.
-\]</span> Now the ordering of the upper indices is reversed. This is not a fatal problem but it could be potentially confusing.</p>
+\]</span> Now the ordering of the upper indices is reversed. This is not a fatal problem but it is potentially confusing and ambiguous.</p>
 <p>A way around this is to retain the full ordering of the tensor product by stacking upper and lower indices separately. Now no convention is required when lowering or raising and the ordering of indices is always unambiguous, e.g. <span class="math display">\[
     {{T_{\mu}}^{\beta}}_{\gamma} = \eta_{\mu\alpha}{T^{\alpha\beta}}_\gamma,
 \]</span> meaning the raising of the <span class="math inline">\(\mu\)</span> index recovers the original tensor <span class="math display">\[
     {T^{\alpha\beta}}_{\gamma} = \eta^{\alpha\mu}{{T_{\mu}}^{\beta}}_{\gamma}.
-\]</span> For clarity we will always use this full ordering of indices, but be careful since you may well see the more compact version in textbooks. Apparent exceptions to this rule are the Lorentz transformation <span class="math inline">\(\Lambda^{\bar\mu}_\nu\)</span> and the Kronecker delta <span class="math inline">\(\delta^\alpha_\beta\)</span>. In both cases there is only ever one upper and one lower index and so no ambiguity arises from writing them compactly. Strictly speaking <span class="math inline">\(\Lambda^{\bar\mu}_\nu\)</span> is <strong>not</strong> a tensor (indeed it is part of what defines a tensor) so lies outside our convention anyhow.</p>
+\]</span> For clarity we will always use this full ordering of indices, but be careful since you may well see the more compact version in textbooks. Apparent exceptions to this rule are the Lorentz transformation <span class="math inline">\(\Lambda^{\bar\mu}_\nu\)</span> and the Kronecker delta <span class="math inline">\(\delta^\alpha_\beta\)</span>. In both cases there is only ever one upper and one lower index and so no ambiguity arises from writing them compactly. Also, strictly speaking <span class="math inline">\(\Lambda^{\bar\mu}_\nu\)</span> is <strong>not</strong> a tensor (indeed it is part of what defines a tensor), it is a set of coefficients, so lies outside our convention anyhow.</p>
 </div>
 </div>
 </div>
@@ -823,7 +845,7 @@ Principle of relativity (refined version)
 \]</span> We can use the index formulation for all quantities, along with the appropriate rules for contraction and transformations, safe in the knowledge that we are faithfully describing the underlying abstract geometrical objects of the theory. For this reason we will have little use for the basis 4-vectors <span class="math inline">\(\vec{e}_\mu\)</span> and one-forms <span class="math inline">\(\tilde{e}^\nu\)</span> or explicit tensor product <span class="math inline">\(\otimes\)</span> from this point on, but will appreciate they are hiding behind the scenes of our working.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 6</strong>.</span></div></div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -832,7 +854,7 @@ Principle of relativity (refined version)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>7. The Quotient Rule for testing tensorality</strong></p>
 <p>We will now look at a useful trick for proving an object is a tensor.</p>
@@ -847,7 +869,7 @@ Principle of relativity (refined version)
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -856,7 +878,7 @@ Principle of relativity (refined version)
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>7. The Quotient Rule for testing tensorality</strong></p>
 <ol type="a">

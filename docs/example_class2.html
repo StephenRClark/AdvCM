@@ -338,7 +338,15 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>2. Convert a 4-vector into a one-form</strong></p>
-<p>Assume <span class="math inline">\(u^\mu = (u^0, u^1, u^2, u^3)^{\rm T}\)</span> are components of a 4-vector. Write down the one-form components <span class="math inline">\(u_\mu\)</span> in terms of the 4-vector components of <span class="math inline">\(u^\mu\)</span>. If <span class="math inline">\(v^\nu = (v^0, v^1, v^2, v^3)^{\rm T}\)</span> is another 4-vector, write down the components of the outer product <span class="math inline">\(u^\mu v^\nu\)</span> as a matrix. What is the tensor type of this outer product?</p>
+<p>Assume <span class="math display">\[
+    u^\mu = \begin{pmatrix}
+                u^0 \\ u^1 \\ u^2 \\ u^3
+            \end{pmatrix},
+\]</span> are components of a 4-vector. Write down the one-form components <span class="math inline">\(u_\mu\)</span> in terms of the 4-vector components of <span class="math inline">\(u^\mu\)</span>. If <span class="math display">\[
+    v^\nu = \begin{pmatrix}
+                v^0 \\ v^1 \\ v^2 \\ v^3
+            \end{pmatrix},      
+\]</span> is another 4-vector, write down the components of the outer product <span class="math inline">\(u^\mu v^\nu\)</span> as a matrix. What is the tensor type of this outer product?</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -353,8 +361,8 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <p><strong>3. Tensor contractions</strong></p>
 <ol type="a">
-<li><p>Consider the contraction of two tensors <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span>. What is this expression in matrix form? What are the matrix expressions relating the matrices in frame <span class="math inline">\(S\)</span> to those in fraem <span class="math inline">\(\bar S\)</span>. Using this to prove with matrix methods that <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span> is a Lorentz scalar.</p></li>
-<li><p>Now assume <span class="math inline">\(A^{\mu\nu}\)</span> is an antisymmetric tensor, so <span class="math inline">\(A^{\mu \nu} = -A^{\mu \nu},\)</span>, and <span class="math inline">\(S^{\mu \nu}\)</span> is a symmetric tensor, so <span class="math inline">\(S^{\mu\nu} = S^{\nu\mu}.\)</span> Write each down in matrix form. Prove, using index methods, that the contraction <span class="math inline">\(A^{\mu\nu} S_{\mu\nu} = 0.\)</span></p></li>
+<li><p>Consider the contraction of two tensors <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span>. What is this expression in matrix form? What are the matrix expressions relating the matrices in frame <span class="math inline">\(S\)</span> to those in fraem <span class="math inline">\(\bar S\)</span>. Prove using matrix methods that <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span> is a Lorentz scalar.</p></li>
+<li><p>Now assume <span class="math inline">\(A^{\mu\nu}\)</span> is an antisymmetric tensor, so <span class="math inline">\(A^{\mu \nu} = -A^{\mu \nu}\)</span>, and <span class="math inline">\(S^{\mu \nu}\)</span> is a symmetric tensor, so <span class="math inline">\(S^{\mu\nu} = S^{\nu\mu}.\)</span> Write each down in matrix form. Prove, using index methods, that the contraction <span class="math inline">\(A^{\mu\nu} S_{\mu\nu} = 0.\)</span></p></li>
 </ol>
 </div>
 </div>

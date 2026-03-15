@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./acknowledgements.html" rel="next">
+<link href="./example_class3.html" rel="next">
 <link href="./planewaves.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -256,6 +256,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./symmetries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -314,7 +326,7 @@ window.Quarto = {
 </header>
 
 
-<p>We have spent quite some time now developing the formalism of relativistic fields, but we have yet to actually build a field theory. To do this we will use the powerful tools of Lagrangian mechanics from the first module of this course and generalise in this lecture to continuous relativistic systems.</p>
+<p>We have spent quite some time now developing the formalism of relativistic fields, but we have yet to actually build a field theory. To do this we will use the powerful tools of Lagrangian mechanics from the first module of this course and generalise it in this lecture to continuous relativistic systems.</p>
 <section id="lagrangians-for-many-coordinates" class="level2 page-columns page-full" data-number="9.1">
 <h2 data-number="9.1" class="anchored" data-anchor-id="lagrangians-for-many-coordinates"><span class="header-section-number">9.1</span> Lagrangians for many coordinates</h2>
 <div class="page-columns page-full"><p>To start suppose we have a system described by <span class="math inline">\(N\)</span> generalised coordinates <span class="math inline">\(q_j(t)\)</span> and their derivatives <span class="math inline">\(\dot{q}_j(t) = \frac{\rm d}{{\rm d}t}q_j(t)\)</span>. The dynamics of this system are then controlled by its Lagrangian. Formally the Lagranian <span class="math inline">\(L(t)\)</span> is only a function only of time <span class="math inline">\(t\)</span> which is the independent variable. However, we separate out any explicit dependence on time <span class="math inline">\(t\)</span> it has and its implicit dependence through the set of coordinates <span class="math inline">\(\{q_j(t)\}\)</span> and derivatives <span class="math inline">\(\{\dot{q}_j(t)\}\)</span>,  by writing it as <span class="math display">\[
@@ -490,7 +502,7 @@ Figure&nbsp;9.2: A depiction of the continuum limit for a chain of masses. We cr
 <div id="fig-variations" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-variations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="figures/variations_0D_1D.png" class="img-fluid figure-img" width="450">
+<img src="figures/variations_0D_1D.png" class="img-fluid figure-img" width="550">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-variations-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 Figure&nbsp;9.3: On the left a 1+0D field <span class="math inline">\(\varphi(t)\)</span> varying between two time fixed points <span class="math inline">\(t_0\)</span> and <span class="math inline">\(t_1\)</span>. On the right a 1+1D field <span class="math inline">\(\varphi(t,x)\)</span> varying within a space-time region and fixed on the boundaries. For the case of a clamped string shown we have <span class="math inline">\(\varphi(t,0) = \varphi(t,X_c) = 0\)</span>, while <span class="math inline">\(\varphi(t_0,x)\)</span> and <span class="math inline">\(\varphi(t_1,x)\)</span> are freely chosen boundary conditions.
@@ -879,13 +891,13 @@ Figure&nbsp;9.6: An boundary vanishing variation <span class="math inline">\(\de
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Relativistic Euler-Lagrange equation
+Relativistic Euler-Lagrange equations (scalar field)
 </div>
 </div>
 <div class="callout-body-container callout-body">
 <p><span id="eq-relativistic_EL"><span class="math display">\[
-    \frac{\partial \mathcal{L}}{\partial\varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi} = 0.
-\tag{9.15}\]</span></span></p>
+    \frac{\partial \mathcal{L}}{\partial\varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi} = 0,
+\tag{9.15}\]</span></span> for a Lorentz scalar field <span class="math inline">\(\varphi(x)\)</span></p>
 </div>
 </div>
 <section id="key-example" class="level3 page-columns page-full" data-number="9.8.1">
@@ -908,10 +920,30 @@ Relativistic Euler-Lagrange equation
     0 - \partial_\mu\left(2 \eta^{\mu\nu} \partial_\nu \varphi\right) = 0 \quad \rightarrow \quad \eta^{\mu\nu} \partial_\mu \partial_\nu \varphi = 0,
 \]</span> so we arrive at <span class="math display">\[
     \partial_\mu \partial^\mu \varphi = 0,
-\]</span> which is the relativistic wave equation. As expected it generalises our earlier considerations of wave on a string. You are invited to try some more examples.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">From now on in a slight abuse of terminology we will simply say Lagrangian for <span class="math inline">\(\mathcal{L}\)</span> instead of the mouthful Lagrangian density. This is unlikely to cause confusion since <span class="math inline">\(\mathcal{L}\)</span> will be our central object and not <span class="math inline">\(L\)</span>.</span></div></div>
+\]</span> which is the relativistic wave equation. As expected it generalises our earlier considerations of wave on a string.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">From now on in a slight abuse of terminology we will simply say Lagrangian for <span class="math inline">\(\mathcal{L}\)</span> instead of the mouthful Lagrangian density. This is unlikely to cause confusion since <span class="math inline">\(\mathcal{L}\)</span> will be our central object and not <span class="math inline">\(L\)</span>.</span></div></div>
+<p>Naturally you can ask about problems which involve more complicated objects like 4-vector and tensor fields. In fact the proof we used above for scalar fields follows through almost identically except for carrying indices for the components of the fields. The resulting relativistic Euler-Lagrange equations for these cases is listed here:</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Relativistic Euler-Lagrange equations (general)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For a 4-vector field <span class="math inline">\(a^\tau(x)\)</span> we have for each <span class="math inline">\(\tau = 0,1,2,3\)</span> the following equation of motion: <span id="eq-relativistic_EL_4vector"><span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial a^\tau} -  \partial_\mu \left(\frac{\partial \mathcal{L}}{\partial \partial_\mu a^\tau}\right) = 0.
+\tag{9.16}\]</span></span></p>
+<p>For a rank-2 tensor field <span class="math inline">\(T^{\sigma\tau}(x)\)</span> we have for each <span class="math inline">\(\sigma,\tau = 0,1,2,3\)</span> the following equation of motion: <span id="eq-relativistic_EL_tensor"><span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial T^{\sigma\tau}} -  \partial_\mu \left(\frac{\partial \mathcal{L}}{\partial \partial_\mu T^{\sigma\tau}}\right) = 0.
+\tag{9.17}\]</span></span></p>
+</div>
+</div>
+<p>You are invited to try some more examples below.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 9</strong>.</span></div></div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -920,9 +952,9 @@ Relativistic Euler-Lagrange equation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>4. <span class="math inline">\(\varphi^4\)</span> field theory</strong></p>
+<p><strong>4. The <span class="math inline">\(\varphi^4\)</span> field theory</strong></p>
 <p>Find the equation of motion for a <span class="math inline">\(\varphi^4\)</span> field theory governed by the Lagrangian <span class="math display">\[
     \mathcal{L} = \eta^{\mu\nu}\partial_\mu \varphi \partial_\nu \varphi - \lambda \varphi^4.
 \]</span></p>
@@ -933,14 +965,16 @@ Relativistic Euler-Lagrange equation
 <p><strong>6. A 4-vector field theory</strong></p>
 <p>Suppose we have a 4-vector field <span class="math inline">\(a^\mu(x)\)</span> governed by a Lagrangian <span class="math display">\[
     \mathcal{L} = \eta^{\mu\nu} \eta_{\rho\sigma} \partial_\mu a^\rho \partial_\nu a^\sigma.
-\]</span> The relativistic Euler-Lagrange equation generalises to each component of the 4-vector as <span class="math display">\[
-    \frac{\partial \mathcal{L}}{\partial a^\tau} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu a^\tau} = 0.
-\]</span> What equations of motion does this theory have?</p>
+\]</span> Use <a href="#eq-relativistic_EL_4vector" class="quarto-xref">Equation&nbsp;<span>9.16</span></a> to find the equations of motion of this theory.</p>
+<p><strong>7. A rank-2 tensor field theory</strong></p>
+<p>Finally, suppose we have a rank-2 tensor field <span class="math inline">\(T^{\mu\nu}(x)\)</span> governed by a Lagrangian <span class="math display">\[
+    \mathcal{L} = \eta^{\mu\nu} \eta_{\rho\tau}\eta_{\kappa\sigma} \partial_\mu T^{\rho\kappa} \partial_\nu T^{\tau\sigma}.
+\]</span> Now use <a href="#eq-relativistic_EL_tensor" class="quarto-xref">Equation&nbsp;<span>9.17</span></a> to find the equations of motion of this theory.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -949,9 +983,9 @@ Relativistic Euler-Lagrange equation
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div id="callout-17" class="callout-17-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>4. <span class="math inline">\(\varphi^4\)</span> field theory</strong></p>
+<p><strong>4. The <span class="math inline">\(\varphi^4\)</span> field theory</strong></p>
 <p>We compute <span class="math display">\[
     \frac{\partial \mathcal{L}}{\partial \varphi} = -4 \lambda \varphi^3.
 \]</span> Using the derivative from the free scalar theory, <span class="math display">\[
@@ -960,7 +994,7 @@ Relativistic Euler-Lagrange equation
     -4 \lambda \varphi^3 - \partial_\mu \left(2 \eta^{\mu\nu} \partial_\nu \varphi \right) = 0.
 \]</span> Thus <span class="math display">\[
     \partial_\mu \partial^\mu \varphi + 2 \lambda \varphi^3 = 0.
-\]</span></p>
+\]</span> This is a non-linear equation of motion which we don’t expect to be as simple to solve as the wave equation.</p>
 <p><strong>5. A coupled theory</strong></p>
 <p>Start by computing <span class="math display">\[
     \frac{\partial \mathcal{L}}{\partial \varphi} = g \rho,
@@ -970,7 +1004,7 @@ Relativistic Euler-Lagrange equation
     \partial_\mu \partial^\mu \varphi = \frac{g}{2} \rho.
 \]</span> This is the inhomogeneous d’Alembert or wave equation.</p>
 <p><strong>6. A 4-vector field theory</strong></p>
-<p>In this case we have a 4-vector field <span class="math display">\[
+<p>This theory is the 4-vector analogue of the scalar wave theory. In this case we have a 4-vector field <span class="math display">\[
 a^\mu(x)
 =
 \begin{pmatrix}
@@ -981,15 +1015,36 @@ a^3(x)
 \end{pmatrix}.
 \]</span> Each component is a field, but none of them are Lorentz scalar. Instead, under Lorentz transformations <span class="math display">\[
     a^{\bar \mu} = \Lambda^{\bar \mu}_{\nu} a^\nu.
-\]</span> We proceed by computing <span class="math display">\[
+\]</span> As expected, the Lagrangian given for this theory is a Lorentz scalar since all indices are fully contracted. This is even more obvious if we raise and lower indices to remove the metric tensors as <span class="math display">\[
+    \mathcal{L} = \partial_\mu a^\rho \partial^\mu a_\rho.
+\]</span> However, the verbose form given in the question makes computing the terms required in <a href="#eq-relativistic_EL_4vector" class="quarto-xref">Equation&nbsp;<span>9.16</span></a> more obvious. We proceed to compute the terms as <span class="math display">\[
     \frac{\partial \mathcal{L}}{\partial a^\tau} = 0,
 \]</span> and then <span class="math display">\[
-    \frac{\partial \mathcal{L}}{\partial\partial_\mu a^\tau} = 2 \eta^{\mu\nu} \eta_{\tau\sigma} \partial_\nu a^\sigma,
-\]</span> which follows identical working to the scalar field term. Thus, for each <span class="math inline">\(\tau = 0,1,2,3\)</span> we have <span class="math display">\[
-    \frac{\partial \mathcal{L}}{\partial a^\tau} -  \partial_\mu \left(\frac{\partial \mathcal{L}}{\partial \partial_\mu a^\tau}\right) = 0,
-\]</span> which gives <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial\partial_\mu a^\tau} = 2 \eta^{\mu\nu} \eta_{\tau\sigma} \partial_\nu a^\sigma = 2\partial^\mu a_\tau
+\]</span> The working is identical to the scalar field term. We then insert these terms into <a href="#eq-relativistic_EL_4vector" class="quarto-xref">Equation&nbsp;<span>9.16</span></a> to find the equations of motion as <span class="math display">\[
     \partial_\mu \partial^\mu a_\tau = 0.
 \]</span> Hence each component of the 4-vector field individually satisfies the relativistic wave equation.</p>
+<p><strong>7. A rank-2 tensor field theory</strong></p>
+<p>This example is rank-2 tensor field analogoue of the scalar wave theory. In this case we have a tensor field <span class="math display">\[
+T^{\mu\nu}(x)
+=
+\begin{pmatrix}
+T^{00}(x) &amp;  T^{01}(x) &amp; T^{02}(x) &amp; T^{03}(x) \\
+T^{10}(x) &amp;  T^{11}(x) &amp; T^{12}(x) &amp; T^{13}(x) \\
+T^{20}(x) &amp;  T^{21}(x) &amp; T^{22}(x) &amp; T^{23}(x) \\
+T^{30}(x) &amp;  T^{31}(x) &amp; T^{32}(x) &amp; T^{33}(x)
+\end{pmatrix}.
+\]</span> Again, each component is a field, but none of them are Lorentz scalar. Instead, under Lorentz transformations <span class="math display">\[
+    T^{\bar \mu \bar \nu} = \Lambda^{\bar \mu}_{\alpha} \Lambda^{\bar \nu}_{\beta} T^{\alpha\beta}.
+\]</span> Despite involving lots of indices the Lagrangian given for this theory is a Lorentz scalar since all indices are fully contracted as clear from the compact version <span class="math display">\[
+    \mathcal{L} = \partial_\mu T^{\tau\sigma} \partial^\mu T_{\tau\sigma}.
+\]</span> To find the equations of motion we use <a href="#eq-relativistic_EL_tensor" class="quarto-xref">Equation&nbsp;<span>9.17</span></a> and proceed to compute the terms as <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial T^{\tau\sigma}} = 0,
+\]</span> and then <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial\partial_\mu T^{\rho\kappa}} = 2\eta^{\mu\nu} \eta_{\rho\tau}\eta_{\kappa\sigma} \partial_\nu T^{\tau\sigma} = 2\partial^\mu T_{\rho\kappa},
+\]</span> again with identical working is identical to the scalar field term. We then insert these terms into <a href="#eq-relativistic_EL_tensor" class="quarto-xref">Equation&nbsp;<span>9.17</span></a> to find the equations of motion as <span class="math display">\[
+    \partial_\mu \partial^\mu T_{\rho\kappa} = 0.
+\]</span> Hence each component of the tensor field individually satisfies the relativistic wave equation.</p>
 </div>
 </div>
 </div>
@@ -1426,8 +1481,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./acknowledgements.html" class="pagination-link" aria-label="Acknowledgements">
-        <span class="nav-page-text">Acknowledgements</span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./example_class3.html" class="pagination-link" aria-label="Example Class 3">
+        <span class="nav-page-text">Example Class 3</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

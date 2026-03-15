@@ -256,6 +256,18 @@ window.Quarto = {
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./symmetries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -835,14 +847,26 @@ Principle of relativity (refined version)
 <p>The laws of physics should have a tensorial form because physical phenomena are geometric and coordinate-independent.</p>
 </div>
 </div>
-<div class="page-columns page-full"><p>This means that we should construct or identify physical quantities in our theories as Lorentz scalars, 4-vectors, one-forms and tensors. Typically we may construct a tensor from other objects like <span class="math display">\[
-    {\pmb{\symbb{T}}} = n\,\vec{U}\otimes\vec{U} + p\,\pmb{\symbb{g}}^{-1},
-\]</span> where <span class="math inline">\(n,p\)</span> are Lorentz scalars, <span class="math inline">\(\vec{U}\)</span> is a 4-vector and <span class="math inline">\(\pmb{\symbb{g}}^{-1}\)</span> is the inverse metric.  Often Lorentz scalars formed from the contraction these quantities, say like <span class="math display">\[
-    \tilde{K}(\vec{X}) \quad {\rm or} \quad \vec{P}\cdot\vec{X} \quad {\rm or} \quad {\pmb{\symbb{W}}}(\tilde{K},\vec{P},\vec{X}),
-\]</span> will play a central role, as we will see in the next lecture.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">In fact the tensor <span class="math inline">\(\pmb{\symbb{T}}\)</span> here is the stress-energy tensor for <em>dust</em> which we will discuss briefly in a later lecture</span></div></div>
-<p>While it is essential that all these quantities are geometrical in practise when doing calculations we will work with an explicit representation in terms of components of some inertial frame, so we have <span class="math display">\[
-    K_\mu X^\mu \quad {\rm or} \quad \eta_{\mu\nu}P^\mu X^\nu \quad {\rm or} \quad {W^\mu}_{\alpha\beta} K_\mu P^\alpha X^\beta.
-\]</span> We can use the index formulation for all quantities, along with the appropriate rules for contraction and transformations, safe in the knowledge that we are faithfully describing the underlying abstract geometrical objects of the theory. For this reason we will have little use for the basis 4-vectors <span class="math inline">\(\vec{e}_\mu\)</span> and one-forms <span class="math inline">\(\tilde{e}^\nu\)</span> or explicit tensor product <span class="math inline">\(\otimes\)</span> from this point on, but will appreciate they are hiding behind the scenes of our working.</p>
+<p>This means that we should construct or identify physical quantities in our theories as Lorentz scalars, 4-vectors, one-forms and tensors. We have already seen one example, the wave-equation expressed geometrically as: <span class="math display">\[
+    \tilde{\partial}\cdot\tilde{\partial}\,\tilde{\varphi}(\vec{X}) = 0,
+\]</span> where we will have scalar field solutions <span class="math display">\[
+    \tilde{\varphi}(\vec{X}) = a e^{i\vec{K}\cdot\vec{X}},
+\]</span> where <span class="math inline">\(a\)</span> is a Lorentz scalar amplitude and <span class="math inline">\(\vec{K}\)</span> is a 4-wave-vector (see next lecture). Another example is relativistic fluid dynamics. There we construct a so-called stress-energy tensor as <span class="math display">\[
+    {\pmb{\symbb{T}}}(x) = (\rho_0c^2 + p)\,\vec{U}(x)\otimes\vec{U}(x) + p\,\pmb{\symbb{g}}^{-1},
+\]</span> from the <span class="math inline">\(\vec{U}(x)\)</span> is a 4-velocity field (see next lecture) of the fluid, its co-moving density <span class="math inline">\(\rho_0\)</span> and pressure <span class="math inline">\(p\)</span> (which are effectively Lorentz scalars), and the inverse metric <span class="math inline">\(\pmb{\symbb{g}}^{-1}\)</span>. We will briefly discuss the <span class="math inline">\(p=0\)</span> limit of this tensor describing so-called “dust” in a later lecture. This tensor then undergoes dynamics encoded as <span class="math display">\[
+    \tilde{\partial}\cdot{\pmb{\symbb{T}}} = 0,
+\]</span> which is a consequence of symmetry we will discover later. In the last part of the course we will also reformulate electromagnetic to obtain the relativistic Maxwell equation <span class="math display">\[
+   \tilde{\partial}\cdot {\pmb{\symbb{F}}} = \mu_0\vec{J},
+\]</span> where <span class="math inline">\({\pmb{\symbb{F}}}\)</span> is the Faraday tensor and <span class="math inline">\(\vec{J}\)</span> is the electric 4-current. There are a multitude of other examples, including Einstein’s field equations in GR, but the key point is that they are all expressed in terms of the fundamental building blocks we have developed in these past few lectures.</p>
+<p>The way the equations are expressed above is geometrical and therefore coordinate/index-free, so the Lorentz covariance of the equations is manifest. Yet in practise when doing calculations we will often work with an explicit representation of them in terms of components of some inertial frame. So then we have: <span class="math display">\[
+    \partial_\mu \partial^\mu \varphi(x) = 0,
+\]</span> and <span class="math inline">\(\varphi(x) = ae^{ik_\mu x^\mu}\)</span> for the wave-equation. For fluids <span class="math display">\[
+    T^{\mu\nu}(x) = (\rho_0c^2 + p)U^\mu(x) U^\nu(x) + p \eta^{\mu\nu},
+\]</span> obeying <span class="math display">\[
+\partial_\mu T^{\mu\nu}(x) = 0.
+\]</span> Correspondingly, the Maxwell equation becomes <span class="math display">\[
+    \partial_\mu F^{\mu\nu} = \mu_0 J^\mu.
+\]</span> We can use the index formulation for all quantities, along with the appropriate rules for contraction and transformations, safe in the knowledge that we are faithfully describing the underlying abstract geometrical objects of the theory. For this reason we won’t use abstract geometrical objects, the basis 4-vectors <span class="math inline">\(\vec{e}_\mu\)</span> and one-forms <span class="math inline">\(\tilde{e}^\nu\)</span> or explicit tensor product <span class="math inline">\(\otimes\)</span> from this point onwards. But we will appreciate they are always hiding behind the scenes of our working.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 6</strong>.</span></div></div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">

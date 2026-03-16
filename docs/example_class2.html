@@ -327,6 +327,32 @@ window.Quarto = {
 \]</span> Prove this object transforms like an Euclidean one-form.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Cartesian grad is a one-form operator</strong></p>
+<p>Under a rotation represented by <span class="math inline">\(R^{i}_{j}\)</span>, the Cartesian coordinate <span class="math inline">\(x^i\)</span> transforms as a 3-vector <span class="math display">\[
+    \bar x^i = R^{i}_{j}\, x^j, \qquad i=1,2,3.
+\]</span> Consequently, the Jacobian is <span class="math display">\[
+    \frac{\partial \bar x^i}{\partial x^j} = R^{i}_{j}.
+\]</span> Using the chain rule, the gradient transforms as <span class="math display">\[
+    \partial_j = \frac{\partial}{\partial x^j} = \frac{\partial \bar x^i}{\partial x^j} \frac{\partial}{\partial \bar x^i}
+    = R^{i}_{j}\, \bar\partial_i.
+\]</span> Equivalently, <span class="math display">\[
+    \bar\partial_i = R^{j}_{i}\, \partial_j.
+\]</span> Thus the gradient transforms as a one-form.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -349,6 +375,53 @@ window.Quarto = {
 \]</span> is another 4-vector, write down the components of the outer product <span class="math inline">\(u^\mu v^\nu\)</span> as a matrix. What is the tensor type of this outer product?</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>2. Convert a 4-vector into a one-form</strong></p>
+<p>We have a 4-vector <span class="math display">\[
+    u^\mu = \begin{pmatrix}
+            u^0 \\ u^1 \\ u^2 \\ u^3
+            \end{pmatrix}.
+\]</span> We lower the index using the Minkowski metric <span class="math display">\[
+    u_\mu = \eta_{\mu\nu} u^\nu,
+    \qquad  \eta_{\mu\nu} =
+        \begin{pmatrix}
+        1 &amp; 0 &amp; 0 &amp; 0 \\
+        0 &amp; -1 &amp; 0 &amp; 0 \\
+        0 &amp; 0 &amp; -1 &amp; 0 \\
+        0 &amp; 0 &amp; 0 &amp; -1
+        \end{pmatrix}.
+\]</span> Thus the spatial components change sign <span class="math display">\[
+    u_\mu = \begin{pmatrix}
+            u^0 \\ -u^1 \\ -u^2 \\ -u^3
+        \end{pmatrix}.
+\]</span> Given another vector <span class="math display">\[
+    v^\mu = \begin{pmatrix}
+            v^0 \\ v^1 \\ v^2 \\ v^3
+            \end{pmatrix},
+\]</span> the outer product <span class="math inline">\(u^\mu v^\nu\)</span> has components <span class="math display">\[
+    u^\mu v^\nu = \begin{pmatrix}
+            u^0 v^0 &amp; u^0 v^1 &amp; u^0 v^2 &amp; u^0 v^3 \\
+            u^1 v^0 &amp; u^1 v^1 &amp; u^1 v^2 &amp; u^1 v^3 \\
+            u^2 v^0 &amp; u^2 v^1 &amp; u^2 v^2 &amp; u^2 v^3 \\
+            u^3 v^0 &amp; u^3 v^1 &amp; u^3 v^2 &amp; u^3 v^3
+            \end{pmatrix}.
+\]</span> This gives the components of a type <span class="math inline">\((2,0)\)</span> tensor: <span class="math display">\[
+    {\pmb{\symbb{T}}}(\cdot,\cdot) = u^\mu v^\nu \, \vec{e}_\mu \otimes \vec{e}_\nu.
+\]</span></p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -364,6 +437,68 @@ window.Quarto = {
 <li><p>Consider the contraction of two tensors <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span>. What is this expression in matrix form? What are the matrix expressions relating the matrices in frame <span class="math inline">\(S\)</span> to those in frame <span class="math inline">\(\bar S\)</span>. Prove using matrix methods that <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span> is a Lorentz scalar.</p></li>
 <li><p>Now assume <span class="math inline">\(A^{\mu\nu}\)</span> is an antisymmetric tensor, so <span class="math inline">\(A^{\mu \nu} = -A^{\mu \nu}\)</span>, and <span class="math inline">\(S^{\mu \nu}\)</span> is a symmetric tensor, so <span class="math inline">\(S^{\mu\nu} = S^{\nu\mu}.\)</span> Write each down in matrix form. Prove, using index methods, that the contraction <span class="math inline">\(A^{\mu\nu} S_{\mu\nu} = 0.\)</span></p></li>
 </ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>4. Tensor contractions</strong></p>
+<ol type="a">
+<li><p>If we consider <span class="math inline">\(A_{\alpha\beta}\)</span> to be written in matrix form as <span class="math inline">\(\boldsymbol{A}\)</span>, and <span class="math inline">\(B^{\alpha\beta}\)</span> to be written in matrix form as <span class="math inline">\(\boldsymbol{B}\)</span>, then <span class="math display">\[
+A_{\alpha\beta} B^{\alpha\beta}
+\]</span> involves a contraction of the column label of <span class="math inline">\(A\)</span> with the row label of <span class="math inline">\(\boldsymbol B\)</span>. Therefore the expression must involve the transpose <span class="math inline">\(\boldsymbol{B}^{\rm T}\)</span>. Our calculation therefore involves <span class="math inline">\(\boldsymbol{A}\boldsymbol{B}^{\rm T}\)</span>. We are also supposed to contract the remaining row and column labels, i.e.&nbsp;sum the diagonal elements, i.e.&nbsp;compute the trace.Thus <span id="eq-contract_trace"><span class="math display">\[
+A_{\alpha\beta} B^{\alpha\beta} = \mathrm{tr}\!\left(\boldsymbol{A} \boldsymbol{B}^{\rm T}\right).
+\tag{1}\]</span></span> Denoting the Lorentz transformation <span class="math inline">\(\Lambda^{\bar \nu}_\mu\)</span> of a 4-vector from <span class="math inline">\(S \rightarrow \bar S\)</span> as the matrix <span class="math inline">\(\boldsymbol{\Lambda}\)</span>, and the inverse transformation <span class="math inline">\(\Lambda^\mu_{\bar \nu}\)</span> of a 4-vector from <span class="math inline">\(\bar S \rightarrow S\)</span> as a matrix <span class="math inline">\(\boldsymbol{\Lambda}^{-1}\)</span>, then we can convert the transformations of the two rank-2 tensors into matrix expressions as <span class="math display">\[
+   A_{\alpha\beta} = \Lambda^{\bar{\sigma}}_\alpha\Lambda^{\bar{\rho}}_\beta A_{\bar{\sigma}\bar{\rho}} \rightarrow \boldsymbol{A} = (\boldsymbol{\Lambda})^{\rm T} \bar{\boldsymbol{A}} \boldsymbol{\Lambda},
+\]</span> and <span class="math display">\[
+    B^{\alpha\beta} = \Lambda^\alpha_{\bar{\mu}}\Lambda^\beta_{\bar{\nu}} B^{\bar{\mu}\bar{\nu}} \rightarrow \boldsymbol{B} = \boldsymbol{\Lambda}^{-1} \bar{\boldsymbol{B}} (\boldsymbol{\Lambda}^{-1})^{\rm T}.
+\]</span> Now we substitute these into the <a href="#eq-contract_trace" class="quarto-xref">Equation&nbsp;<span>1</span></a> and rearrange to get <span class="math display">\[\begin{align}
+\mathrm{tr}\!\left(\boldsymbol{A} \boldsymbol{B}^{\rm T}\right) &amp;= \mathrm{tr}\!\left((\boldsymbol{\Lambda})^{\rm T} \bar{\boldsymbol{A}} \boldsymbol{\Lambda} (\boldsymbol{\Lambda}^{-1} \bar{\boldsymbol{B}} (\boldsymbol{\Lambda}^{-1})^{\rm T})^{\rm T}\right),\\
+&amp;= \mathrm{tr}\!\left((\boldsymbol{\Lambda})^{\rm T} \bar{\boldsymbol{A}}~ \overbrace{\boldsymbol{\Lambda} \boldsymbol{\Lambda}^{-1}}^{\mathbb{1}_4} ~\bar{\boldsymbol{B}}^{\rm T} (\boldsymbol{\Lambda}^{-1})^{\rm T}\right), \\
+&amp;= \mathrm{tr}\!\left((\boldsymbol{\Lambda})^{\rm T} \bar{\boldsymbol{A}}\bar{\boldsymbol{B}}^{\rm T} (\boldsymbol{\Lambda}^{-1})^{\rm T}\right), \\
+&amp;= \mathrm{tr}\!\left(\overbrace{(\boldsymbol{\Lambda}^{-1})^{\rm T}(\boldsymbol{\Lambda})^{\rm T}}^{\mathbb{1}_4}~ \bar{\boldsymbol{A}}\bar{\boldsymbol{B}}^{\rm T}\right),\\
+&amp;= \mathrm{tr}\!\left(\bar{\boldsymbol{A}}\bar{\boldsymbol{B}}^{\rm T}\right),
+\end{align}\]</span> where we have used the cyclicity of the trace. We have established that the contraction has an identical form in frame <span class="math inline">\(\bar S\)</span> and equal value, hence it is a Lorentz invariant scalar. Of course we could have proven this with index methods, which is arugably neater, as we did in the lectures and will do so from now on.</p></li>
+<li><p>Let <span class="math inline">\(A^{\mu\nu}\)</span> be antisymmetric, so <span class="math display">\[
+A^{\mu\nu} = - A^{\nu\mu}.
+\]</span> In particular, <span class="math inline">\(A^{\mu\mu} = -A^{\mu\mu}\)</span>, so the diagonal elements vanish. An antisymmetric matrix has the form <span class="math display">\[
+A^{\mu\nu} = \begin{pmatrix}
+    0      &amp; A^{01}  &amp; A^{02}  &amp; A^{03} \\
+    - A^{01} &amp; 0      &amp; A^{12}  &amp; A^{13} \\
+    - A^{02} &amp; - A^{12} &amp; 0      &amp; A^{23} \\
+    - A^{03} &amp; - A^{13} &amp; - A^{23} &amp; 0
+    \end{pmatrix}.
+\]</span> Other representations (distribution of -ve signs among elements) are of course possible. Similarly, let <span class="math inline">\(S^{\mu\nu}\)</span> be symmetric, <span class="math display">\[
+S^{\mu\nu} = S^{\nu\mu}.
+\]</span> Then a general symmetric matrix has the form <span class="math display">\[
+S^{\mu\nu}
+=
+\begin{pmatrix}
+S^{00} &amp; S^{01} &amp; S^{02} &amp; S^{03} \\
+S^{01} &amp; S^{11} &amp; S^{12} &amp; S^{13} \\
+S^{02} &amp; S^{12} &amp; S^{22} &amp; S^{23} \\
+S^{03} &amp; S^{13} &amp; S^{23} &amp; S^{33}
+\end{pmatrix},
+\]</span> Now we want to show <span class="math display">\[
+A^{\mu\nu} S_{\mu\nu} = 0.
+\]</span> We could use the matrix representations and the equation <span class="math inline">\(A_{\alpha\beta} S^{\alpha\beta} = \mathrm{tr}\!\left(\boldsymbol{A} \boldsymbol{S}^{\rm T}\right)\)</span>, by showing that <span class="math inline">\(\boldsymbol{A} \boldsymbol{S}^{\rm T}\)</span> has zero diagonal elements and hence is traceless. Instead we proceed with index notation as <span class="math display">\[\begin{align}
+A^{\mu\nu} S_{\mu\nu} &amp;= - A^{\nu\mu} S_{\mu\nu}, \qquad \text{(antisymmetry of $A$)}, \\
+&amp;= - A^{\nu\mu} S_{\nu\mu}, \qquad \text{(symmetry of $S$)}, \\
+&amp;= - A^{\mu\nu} S_{\mu\nu}, \qquad \text{(relabel $\mu \leftrightarrow \nu$)}, \\
+2 A^{\mu\nu} S_{\mu\nu} &amp;= 0, \\
+A^{\mu\nu} S_{\mu\nu} &amp;= 0,
+\end{align}\]</span> as required.</p></li>
+</ol>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -383,6 +518,59 @@ window.Quarto = {
 <li><p>Assume that the inner product of a set of quantities <span class="math inline">\(b^\mu\)</span> with every one-form <span class="math inline">\(u_\mu\)</span> gives a Lorentz scalar. Prove that <span class="math inline">\(b^\mu\)</span> must transform like the components of a 4-vector.</p></li>
 </ol>
 <p>This trick can be extended to test tensorality. Suppose we have some putative multi-index object <span class="math inline">\(Y^{\mu\nu}{}_{\alpha\beta}\)</span>. This is a tensor if a Lorentz scalar is obtained when it is contracted it with a suitable number of arbitrary 4-vectors and one-forms. Can you think why it is called the quotient rule?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>4. The Quotient Rule for testing tensorality</strong></p>
+<ol type="a">
+<li><p>Assume that for all 4-vectors <span class="math inline">\(v^\mu\)</span>, <span class="math inline">\(a_\mu v^\mu\)</span> is a Lorentz scalar. Therefore, under a Lorentz transformation, <span class="math display">\[
+a_\mu v^\mu = a_{\bar{\nu}} v^{\bar{\nu}} = a_{\bar{\nu}} \Lambda^{\bar{\nu}}_{\mu} v^\mu.
+\]</span> Since this is true for any <span class="math inline">\(v^\mu\)</span>, we can choose <span class="math inline">\(v^\mu\)</span> to be the four unit 4-vectors <span class="math display">\[
+\begin{pmatrix}
+1\\
+0\\
+0\\
+0
+\end{pmatrix}, \quad \begin{pmatrix}
+0\\
+1\\
+0\\
+0
+\end{pmatrix}, \quad \begin{pmatrix}
+0\\
+0\\
+1\\
+0
+\end{pmatrix}, \quad \begin{pmatrix}
+0\\
+0\\
+0\\
+1
+\end{pmatrix}.
+\]</span> For each of these vectors, we find <span class="math display">\[
+a_\mu = a_{\bar{\nu}} \Lambda^{\bar{\nu}}_{\mu} \qquad \text{for } \mu = 0,1,2,3.
+\]</span> Thus we recover the transformation rule for a one-form.</p></li>
+<li><p>Now assume that for all one-forms <span class="math inline">\(u_\mu\)</span>, <span class="math display">\[
+b^\mu u_\mu
+\]</span> is a Lorentz scalar. Thus, under a Lorentz transformation, <span class="math display">\[
+b^\mu u_\mu = b^{\bar{\nu}} u_{\bar{\nu}} = b^{\bar{\nu}} \Lambda_{\bar{\nu}}^{\mu} u_\mu.
+\]</span> As before, we may choose <span class="math inline">\(u_\mu\)</span> to be the set of unit one-forms (so have the same elements as the basis 4-vectors above). For each of these cases, we obtain <span class="math display">\[
+b^\mu = \Lambda^{\mu}_{\bar{\nu}} b^{\bar{\nu}} \qquad \text{for } \mu = 0,1,2,3,
+\]</span> thus satisfying the transformation rules for a contravariant 4-vector.</p></li>
+</ol>
+<p>This approach is called the <em>quotient rule</em> since it looks like we are ‘dividing’ <span class="math inline">\(b^\mu u_\mu\)</span> by <span class="math inline">\(u_\mu\)</span> to obtain a 4-vector. Of course, we cannot actually divide by a rank-1 object. In the proof above, we are effectively choosing the natural basis for our frame and then isolating components by selecting basis vectors. This argument only works if <span class="math inline">\(b^\mu u_\mu\)</span> is a scalar for <em>all</em> <span class="math inline">\(u_\mu\)</span>.</p>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -410,6 +598,66 @@ f^\mu = T^{\mu\nu}A_\nu
 A_\mu f^\mu = A_\mu(T^{\mu\nu}A_\nu) = 0.
 \]</span> Give a geometric interpretation of this result.</p></li>
 </ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>5. Constructing an anti-symmetric tensor</strong></p>
+<ol type="a">
+<li><p>Interchanging the indices gives <span class="math display">\[
+T^{\nu\mu} = A^\nu B^\mu - A^\mu B^\nu .
+\]</span> and then rearranging we have <span class="math display">\[
+T^{\nu\mu} = -(A^\mu B^\nu - A^\nu B^\mu) = -T^{\mu\nu}.
+\]</span> Thus <span class="math display">\[
+T^{\mu\nu} = -T^{\nu\mu}.
+\]</span> In 1+3D space-time an general tensor has <span class="math inline">\(4\cdot 4 = 16\)</span> elements, but antisymmetric tensor has zero diagonals, and the off-diagonal are related to each other by negation, so half of what elements are left are independent: <span class="math display">\[
+\frac{4\cdot4-4}{2} = 6
+\]</span> independent components.</p></li>
+<li><p>First lower the indices: <span class="math display">\[
+T_{\mu\nu} = A_\mu B_\nu - A_\nu B_\mu,
+\]</span> then <span class="math display">\[
+T^{\mu\nu}T_{\mu\nu} = (A^\mu B^\nu - A^\nu B^\mu)(A_\mu B_\nu - A_\nu B_\mu).
+\]</span> Expanding, <span class="math display">\[
+T^{\mu\nu}T_{\mu\nu} = A^\mu B^\nu A_\mu B_\nu
+    - A^\mu B^\nu A_\nu B_\mu
+    - A^\nu B^\mu A_\mu B_\nu
+    + A^\nu B^\mu A_\nu B_\mu.
+\]</span> Now simplify each term, starting with <span class="math display">\[
+A^\mu B^\nu A_\mu B_\nu = (\vec{A}\cdot \vec{A})(\vec{B}\cdot \vec{B})
+\]</span> followed by <span class="math display">\[
+A^\mu B^\nu A_\nu B_\mu = (\vec{A}\cdot \vec{B})^2
+\]</span> then <span class="math display">\[
+A^\nu B^\mu A_\mu B_\nu = (\vec{A}\cdot \vec{B})^2
+\]</span> and finally <span class="math display">\[
+A^\nu B^\mu A_\nu B_\mu = (\vec{A}\cdot \vec{A})(\vec{B}\cdot \vec{B})
+\]</span> Thus together we find <span class="math display">\[
+T^{\mu\nu}T_{\mu\nu} = 2(\vec{A}\cdot \vec{A})(\vec{B}\cdot \vec{B}) - 2(\vec{A}\cdot \vec{B})^2,
+\]</span> which is a Lorentz scalar.</p></li>
+<li><p>Begin by computing <span class="math display">\[
+f^\mu = T^{\mu\nu}A_\nu = (A^\mu B^\nu - A^\nu B^\mu)A_\nu,
+\]</span> which evaluates as <span class="math display">\[
+f^\mu = A^\mu(B^\nu A_\nu) - B^\mu(A^\nu A_\nu).
+\]</span> We therefore have that <span class="math display">\[
+f^\mu = (\vec{A}\cdot \vec{B})A^\mu - (\vec{A}\cdot \vec{A})B^\mu.
+\]</span> Now contract with <span class="math inline">\(A_\mu\)</span>: <span class="math display">\[
+A_\mu f^\mu = (\vec{A}\cdot \vec{B})(A_\mu A^\mu) - (\vec{A}\cdot \vec{A})(A_\mu B^\mu).
+\]</span> Hence <span class="math display">\[
+A_\mu f^\mu = (\vec{A}\cdot \vec{B})(\vec{A}\cdot \vec{A}) - (\vec{A}\cdot \vec{A})(\vec{A}\cdot \vec{B}) = 0,
+\]</span> and so <span class="math display">\[
+A_\mu f^\mu=0.
+\]</span> The antisymmetric tensor constructed from <span class="math inline">\(A^\mu\)</span> and <span class="math inline">\(B^\mu\)</span> generates a vector orthogonal to <span class="math inline">\(A^\mu\)</span>. This reflects the fact that antisymmetric tensors naturally encode oriented planes in spacetime. We will encounter a physical example of this in the next Examples Class.</p></li>
+</ol>
+</div>
 </div>
 </div>
 

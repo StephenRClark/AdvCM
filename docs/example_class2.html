@@ -341,14 +341,14 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <p><strong>1. Cartesian grad is a one-form operator</strong></p>
 <p>Under a rotation represented by <span class="math inline">\(R^{i}_{j}\)</span>, the Cartesian coordinate <span class="math inline">\(x^i\)</span> transforms as a 3-vector <span class="math display">\[
-    \bar x^i = R^{i}_{j}\, x^j, \qquad i=1,2,3.
+    x^{\bar i} = R^{\bar i}_{j}\, x^j, \qquad i=1,2,3.
 \]</span> Consequently, the Jacobian is <span class="math display">\[
-    \frac{\partial \bar x^i}{\partial x^j} = R^{i}_{j}.
+    \frac{\partial x^{\bar i}}{\partial x^j} = R^{\bar i}_{j}.
 \]</span> Using the chain rule, the gradient transforms as <span class="math display">\[
-    \partial_j = \frac{\partial}{\partial x^j} = \frac{\partial \bar x^i}{\partial x^j} \frac{\partial}{\partial \bar x^i}
-    = R^{i}_{j}\, \bar\partial_i.
+    \partial_j = \frac{\partial}{\partial x^j} = \frac{\partial x^{\bar i}}{\partial x^j} \frac{\partial}{\partial x^{\bar i}}
+    = R^{\bar i}_{j}\, \partial_{\bar i}.
 \]</span> Equivalently, <span class="math display">\[
-    \bar\partial_i = R^{j}_{i}\, \partial_j.
+    \partial_{\bar i} = R^{j}_{\bar i}\, \partial_j.
 \]</span> Thus the gradient transforms as a one-form.</p>
 </div>
 </div>
@@ -435,7 +435,7 @@ window.Quarto = {
 <p><strong>3. Tensor contractions</strong></p>
 <ol type="a">
 <li><p>Consider the contraction of two tensors <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span>. What is this expression in matrix form? What are the matrix expressions relating the matrices in frame <span class="math inline">\(S\)</span> to those in frame <span class="math inline">\(\bar S\)</span>. Prove using matrix methods that <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span> is a Lorentz scalar.</p></li>
-<li><p>Now assume <span class="math inline">\(A^{\mu\nu}\)</span> is an antisymmetric tensor, so <span class="math inline">\(A^{\mu \nu} = -A^{\mu \nu}\)</span>, and <span class="math inline">\(S^{\mu \nu}\)</span> is a symmetric tensor, so <span class="math inline">\(S^{\mu\nu} = S^{\nu\mu}.\)</span> Write each down in matrix form. Prove, using index methods, that the contraction <span class="math inline">\(A^{\mu\nu} S_{\mu\nu} = 0.\)</span></p></li>
+<li><p>Now assume <span class="math inline">\(A^{\mu\nu}\)</span> is an antisymmetric tensor, so <span class="math inline">\(A^{\mu \nu} = -A^{\nu \mu}\)</span>, and <span class="math inline">\(S^{\mu \nu}\)</span> is a symmetric tensor, so <span class="math inline">\(S^{\mu\nu} = S^{\nu\mu}.\)</span> Write each down in matrix form. Prove, using index methods, that the contraction <span class="math inline">\(A^{\mu\nu} S_{\mu\nu} = 0.\)</span></p></li>
 </ol>
 </div>
 </div>

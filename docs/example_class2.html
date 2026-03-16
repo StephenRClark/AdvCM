@@ -361,7 +361,7 @@ window.Quarto = {
 <div class="callout-body-container callout-body">
 <p><strong>3. Tensor contractions</strong></p>
 <ol type="a">
-<li><p>Consider the contraction of two tensors <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span>. What is this expression in matrix form? What are the matrix expressions relating the matrices in frame <span class="math inline">\(S\)</span> to those in fraem <span class="math inline">\(\bar S\)</span>. Prove using matrix methods that <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span> is a Lorentz scalar.</p></li>
+<li><p>Consider the contraction of two tensors <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span>. What is this expression in matrix form? What are the matrix expressions relating the matrices in frame <span class="math inline">\(S\)</span> to those in frame <span class="math inline">\(\bar S\)</span>. Prove using matrix methods that <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span> is a Lorentz scalar.</p></li>
 <li><p>Now assume <span class="math inline">\(A^{\mu\nu}\)</span> is an antisymmetric tensor, so <span class="math inline">\(A^{\mu \nu} = -A^{\mu \nu}\)</span>, and <span class="math inline">\(S^{\mu \nu}\)</span> is a symmetric tensor, so <span class="math inline">\(S^{\mu\nu} = S^{\nu\mu}.\)</span> Write each down in matrix form. Prove, using index methods, that the contraction <span class="math inline">\(A^{\mu\nu} S_{\mu\nu} = 0.\)</span></p></li>
 </ol>
 </div>
@@ -383,6 +383,33 @@ window.Quarto = {
 <li><p>Assume that the inner product of a set of quantities <span class="math inline">\(b^\mu\)</span> with every one-form <span class="math inline">\(u_\mu\)</span> gives a Lorentz scalar. Prove that <span class="math inline">\(b^\mu\)</span> must transform like the components of a 4-vector.</p></li>
 </ol>
 <p>This trick can be extended to test tensorality. Suppose we have some putative multi-index object <span class="math inline">\(Y^{\mu\nu}{}_{\alpha\beta}\)</span>. This is a tensor if a Lorentz scalar is obtained when it is contracted it with a suitable number of arbitrary 4-vectors and one-forms. Can you think why it is called the quotient rule?</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>5. Constructing an antisymmetric tensor</strong></p>
+<p>Let <span class="math inline">\(A^\mu\)</span> and <span class="math inline">\(B^\mu\)</span> be two arbitrary four-vectors, and define the rank-2 tensor as: <span class="math display">\[
+    T^{\mu\nu} = A^\mu B^\nu - A^\nu B^\mu.
+\]</span></p>
+<ol type="a">
+<li><p>Show that <span class="math inline">\(T^{\mu\nu}\)</span> is antisymmetric. How many independent components does <span class="math inline">\(T^{\mu\nu}\)</span> therefore have?</p></li>
+<li><p>Compute the contraction <span class="math display">\[
+T^{\mu\nu}T_{\mu\nu}.
+\]</span> Show that the result can be written purely in terms of Lorentz scalar products of <span class="math inline">\(A^\mu\)</span> and <span class="math inline">\(B^\mu\)</span>.</p></li>
+<li><p>Show that the 4-vector resulting from the following contraction <span class="math display">\[
+f^\mu = T^{\mu\nu}A_\nu
+\]</span> is orthogonal to the 4-vector <span class="math inline">\(A^\mu\)</span>, so <span class="math display">\[
+A_\mu f^\mu = A_\mu(T^{\mu\nu}A_\nu) = 0.
+\]</span> Give a geometric interpretation of this result.</p></li>
+</ol>
 </div>
 </div>
 

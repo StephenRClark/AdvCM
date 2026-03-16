@@ -322,7 +322,7 @@ window.Quarto = {
 <p>In the last lecture we expanded our repertoire of geometrical objects by constructing one-forms as linear functionals of 4-vectors. Given one-form <span class="math inline">\(\tilde{Q}\)</span> and 4-vector <span class="math inline">\(\vec{A}\)</span> we obtain a Lorentz scalar <span class="math inline">\(\tilde{Q}(\vec{A})\)</span>. The duality of this construction means that we could eqaually view 4-vectors as linear functionals of one-forms, so we get the same Lorentz scalar as <span class="math inline">\(\vec{A}(\tilde{Q})\)</span>. We can write this more symmetrically as <span class="math inline">\(\langle \tilde{Q}, \vec{A} \rangle\)</span>. Pictorially we can view these two objects as:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="figures/oneform_4-vector.png" class="img-fluid figure-img" width="400"></p>
+<p><img src="figures/oneform_4-vector.png" class="img-fluid figure-img" width="500"></p>
 <figcaption>A 4-vector <span class="math inline">\(\vec{A}\)</span> takes a oneform <span class="math inline">\(\tilde{Q}\)</span> from its vector space <span class="math inline">\(\mathcal{M}^*\)</span> and maps it to a scalar. Likewise <span class="math inline">\(\tilde{Q}\)</span> can be viewed as mapping <span class="math inline">\(\vec{A}\)</span> to the same scalar.</figcaption>
 </figure>
 </div>
@@ -880,14 +880,7 @@ Principle of relativity (refined version)
 </div>
 <div id="callout-11" class="callout-11-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>7. The Quotient Rule for testing tensorality</strong></p>
-<p>We will now look at a useful trick for proving an object is a tensor.</p>
-<ol type="a">
-<li><p>Assume we have a set of quantities <span class="math inline">\(a_\mu\)</span>, such that the inner product with every 4-vector <span class="math inline">\(v^\mu\)</span> gives a Lorentz scalar. Prove that <span class="math inline">\(a_\mu\)</span> must transform like the components of a one-form.</p></li>
-<li><p>Assume that the inner product of a set of quantities <span class="math inline">\(b^\mu\)</span> with every one-form <span class="math inline">\(u_\mu\)</span> gives a Lorentz scalar. Prove that bμ must transform like the components of a 4-vector.</p></li>
-</ol>
-<p>This trick can be extended to test tensorality. Suppose we have some putative multi-index object <span class="math inline">\({Y^{\mu\nu}}_{\alpha\beta}\)</span>. This is a tensor if a Lorentz scalar is obtained when it is contracted it with a suitable number of arbitrary 4-vectors and one-forms. Can you think why it is called the quotient rule?</p>
-<p><strong>8. Raising and lowering indices of a tensor</strong></p>
+<p><strong>7. Raising and lowering indices of a tensor</strong></p>
 <p>Consider a rank 2 tensor <span class="math inline">\(T^{\mu\nu}\)</span>. Write down <span class="math inline">\({T_{\mu}{}^\nu}\)</span>, <span class="math inline">\({T^{\mu}{}_\nu}\)</span> and <span class="math inline">\(T_{\mu\nu}\)</span> in terms of the components of <span class="math inline">\(T^{\mu\nu}\)</span>. With <span class="math inline">\(x^\mu\)</span> the space-time position 4-vector, calculate <span class="math inline">\(T^{\mu\nu} x_\nu\)</span> and <span class="math inline">\({T^\mu}_\nu x^\nu\)</span> explicitly. Do you get the answer you expect?</p>
 </div>
 </div>
@@ -904,21 +897,7 @@ Principle of relativity (refined version)
 </div>
 <div id="callout-12" class="callout-12-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p><strong>7. The Quotient Rule for testing tensorality</strong></p>
-<ol type="a">
-<li><p>Assume that for all contravariant <span class="math inline">\(v^\mu\)</span>, so <span class="math inline">\(a_\mu v^\mu\)</span> is a Lorentz scalar. Under a Lorentz transformation, <span class="math display">\[
-a_\mu v^\mu = a_{\bar\nu} v^{\bar\nu} = a_{\bar\nu} \Lambda^{\bar\nu}_\mu v^\mu.
-\]</span> Since this holds for arbitrary <span class="math inline">\(v^\mu\)</span>, we must have <span class="math display">\[
-a_\mu = a_{\bar\nu} \Lambda^{\bar\nu}_\mu.
-\]</span> This is the transformation rule for a covariant 4-vector.</p></li>
-<li><p>Now assume for all covariant <span class="math inline">\(u_\mu\)</span> that <span class="math inline">\(b^\mu u_\mu\)</span> is a Lorentz scalar. Under transformation, <span class="math display">\[
-b^\mu u_\mu = b^{\bar\nu} u_{\bar\nu} = b^{\bar\nu} \Lambda_{\bar\nu}^\mu u_\mu.
-\]</span> Since this holds for arbitrary <span class="math inline">\(u_\mu\)</span>, <span class="math display">\[
-b^\mu = \Lambda^\mu_{\bar\nu} b^{\bar\nu}.
-\]</span> This is the transformation rule for a contravariant 4-vector.</p></li>
-</ol>
-<p>The argument used above is called the <em>quotient rule</em>, because it resembles “dividing” a scalar by a vector to obtain a tensor. Strictly speaking we do not divide tensors, but we exploit the fact that the scalar condition holds for all vectors.</p>
-<p><strong>8. Raising and lowering indices of a tensor</strong></p>
+<p><strong>7. Raising and lowering indices of a tensor</strong></p>
 <p>Treat the first index as the row index and the second as the column index. If <span class="math display">\[
     T^{\mu\nu} = \begin{pmatrix}
                 T^{00} &amp; T^{01} &amp; T^{02} &amp; T^{03} \\

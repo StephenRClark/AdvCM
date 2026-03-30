@@ -1,0 +1,1578 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>12&nbsp; Faraday tensor and relativistic Maxwell equations – Advanced Classical Mechanics (Relativistic Fields)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./example_class4.html" rel="next">
+<link href="./em_revision.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./em_revision.html">IV: Relativistic Electrodynamics</a></li><li class="breadcrumb-item"><a href="./faraday.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./figures/acm.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Advanced Classical Mechanics (Relativistic Fields)</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended Books</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">I: Special Relativity</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./principle_relativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Principle of relativity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lorentz_transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lorentz transformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./space_time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minkowski space-time</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducing 4-vectors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">II: Tensors and Fields</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">III: Lagrangian field theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./symmetries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#justifying-the-faraday-tensor" id="toc-justifying-the-faraday-tensor" class="nav-link active" data-scroll-target="#justifying-the-faraday-tensor"><span class="header-section-number">12.1</span> Justifying the Faraday tensor</a></li>
+  <li><a href="#relativistic-version-of-the-lorentz-force" id="toc-relativistic-version-of-the-lorentz-force" class="nav-link" data-scroll-target="#relativistic-version-of-the-lorentz-force"><span class="header-section-number">12.2</span> Relativistic version of the Lorentz force</a></li>
+  <li><a href="#maxwells-equations-in-relativistic-form" id="toc-maxwells-equations-in-relativistic-form" class="nav-link" data-scroll-target="#maxwells-equations-in-relativistic-form"><span class="header-section-number">12.3</span> Maxwell’s equations in relativistic form</a>
+  <ul class="collapse">
+  <li><a href="#the-homogeneous-equations" id="toc-the-homogeneous-equations" class="nav-link" data-scroll-target="#the-homogeneous-equations"><span class="header-section-number">12.3.1</span> The homogeneous equations</a></li>
+  <li><a href="#the-inhomogeneous-equations" id="toc-the-inhomogeneous-equations" class="nav-link" data-scroll-target="#the-inhomogeneous-equations"><span class="header-section-number">12.3.2</span> The inhomogeneous equations</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./em_revision.html">IV: Relativistic Electrodynamics</a></li><li class="breadcrumb-item"><a href="./faraday.html"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this lecture we will construct the Faraday tensor, the central object for describing electromagnetism, and we will reformulate Maxwell’s equation, reviewed in the last lecture, into an elegant relativistically covariant form.</p>
+<section id="justifying-the-faraday-tensor" class="level2 page-columns page-full" data-number="12.1">
+<h2 data-number="12.1" class="anchored" data-anchor-id="justifying-the-faraday-tensor"><span class="header-section-number">12.1</span> Justifying the Faraday tensor</h2>
+<p>In Maxwell’s theory of electromagnetism is described in terms of the electric and magnetic 3-vector fields in space-time: <span id="eq-em_fields"><span class="math display">\[
+    \boldsymbol{E}(t,\boldsymbol{r}) = \begin{pmatrix} E_x(t,\boldsymbol{r}) \\
+     E_y(t,\boldsymbol{r}) \\
+     E_z(t,\boldsymbol{r}) \end{pmatrix}, \quad {\rm and} \quad
+     \boldsymbol{B}(t,\boldsymbol{r}) = \begin{pmatrix} B_x(t,\boldsymbol{r}) \\
+     B_y(t,\boldsymbol{r}) \\
+     B_z(t,\boldsymbol{r}) \end{pmatrix}.
+\tag{12.1}\]</span></span></p>
+<div class="page-columns page-full"><p>We now want to package this same information into a relativistic formalism. It is reasonable to expect we should be able to do this with Maxwell’s theory unmodified since electromagnetism is the <em>original</em> relativtistic field theory.  Recall what covariant objects we have at our disposal in which we need to package the six EM field components from <a href="#eq-em_fields" class="quarto-xref">Equation&nbsp;<span>12.1</span></a>:</p><div class="no-row-height column-margin column-container"><span class="margin-aside">After all, in the first lecture we used the lack of Galilean covariance of the wave equation for light to motivate the light-speed postulate that constructed special relativity in the first place.</span></div></div>
+<ul>
+<li><strong>Lorentz scalars</strong> - we would need six of them, but we know that the field components are not the same in all frames of reference. <span class="math inline">\(\boldsymbol{\times}\)</span></li>
+<li><strong>4-vectors</strong> - these have four components, so one is not enough, but two is too many, and using one plus two Lorentz scalars makes no sense as it would not treat all the components on the same footing. <span class="math inline">\(\boldsymbol{\times}\)</span></li>
+<li><strong>Tensors</strong> - We now have much more components to play with. The simplest possible is a rank-2 tensor which we will denote as <span class="math inline">\(F^{\mu\nu}\)</span>. We have several options:
+<ul>
+<li><strong>general tensor</strong> - In this case all sixteen components of <span class="math inline">\(F^{\mu\nu}\)</span> are independent so it is too large. <span class="math inline">\(\boldsymbol{\times}\)</span></li>
+<li><strong>symmetric tensor</strong> - This means <span class="math inline">\(F^{\mu\nu} = F^{\nu \mu}\)</span>, but still has ten independent components so is also too large. <span class="math inline">\(\boldsymbol{\times}\)</span></li>
+<li><strong>antisymmetric tensor</strong> - We now have <span class="math inline">\(F^{\mu\nu} = -F^{\nu\mu}\)</span> giving six independent elements. This looks very promising as a container for two 3-vectors! <span class="math inline">\(\boldsymbol{\checkmark}\)</span></li>
+</ul></li>
+</ul>
+<p>An antisymmetric tensor will have a matrix representation <span class="math inline">\(F^{\mu\nu} = [\boldsymbol{F}]_{\mu\nu}\)</span> of the form <span class="math display">\[
+    \boldsymbol{F} = \begin{pmatrix}
+        0  &amp; \circ &amp; \circ &amp; \circ \\
+        - &amp; 0 &amp; \circ &amp; \circ \\
+        - &amp; - &amp; 0 &amp; \circ \\
+        - &amp; - &amp; - &amp; 0
+    \end{pmatrix},
+\]</span> where the elements in the lower triangle are the negation <span class="math inline">\(-\)</span> of the elements <span class="math inline">\(\circ\)</span> in the upper triangle. We will focus on partitioning this matrix distinguishing time from space as: <span id="eq-matrix_blocks"><span class="math display">\[
+  \boldsymbol{F} = \left(\begin{array}{clcr}
+  \square &amp; \sqsubset &amp;  &amp; \sqsupset \\
+  \sqcap &amp; \ulcorner &amp;  &amp; \urcorner \\
+   &amp;  &amp;  &amp;  \\
+  \sqcup &amp; \llcorner &amp;  &amp; \lrcorner
+\end{array}\right),
+\tag{12.2}\]</span></span> so we have a 3-vector in the spatial elements of the first column, and a spatial <span class="math inline">\(3\times 3\)</span> sub-matrix which is itself antisymmetric. We can therefore insert one 3-vector <span class="math inline">\(\boldsymbol{a}\)</span> into this tensor directly as <span class="math display">\[
+    \boldsymbol{F} = \begin{pmatrix}
+        0  &amp; -a_x &amp; -a_y &amp; -a_z \\
+        a_x &amp; 0 &amp; \circ &amp; \circ \\
+        a_y &amp; - &amp; 0 &amp; \circ \\
+        a_z &amp; - &amp; - &amp; 0 \end{pmatrix}.
+\]</span> or in more compact block matrix notation according to our partitioning <span id="eq-f_blocks"><span class="math display">\[
+    \boldsymbol{F} = \begin{pmatrix} 0 &amp; -\boldsymbol{a}^{\rm T} \\
+                                    \boldsymbol{a} &amp; \boldsymbol{A} \end{pmatrix}.
+\tag{12.3}\]</span></span> where <span class="math inline">\(\boldsymbol{A}\)</span> is <span class="math inline">\(3\times 3\)</span> antisymmetric matrix. But why do we use this paritioning and not another form? The reason for this is based on how a rank-2 tensor transforms under rotations. Maxwell’s theory tells us that spatial rotations do not mix <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> fields - we can’t turn a magnetic field in to an electric field just by orientating a magnet along another axis. We must identify 3-vectors in a rank-2 tensor which do not mix under spatial rotation.</p>
+<p>Recall that the transformation properties of a type <span class="math inline">\(({2 \atop 0})\)</span>-tensor are <span class="math display">\[
+    F^{{\bar \mu}{\bar \nu}} = \Lambda^{\bar \mu}_\sigma \Lambda^{\bar \nu}_\tau F^{\sigma\tau}.
+\]</span> Representing the Lorentz transform as a matrix <span class="math inline">\([{\boldsymbol\Lambda}]_{\bar{\mu}\sigma} = \Lambda_\sigma^{\bar\mu}\)</span> then, as we have seen several times now, the matrix version of this transformation becomes <span class="math display">\[
+    \bar{\boldsymbol{F}} = \boldsymbol{\Lambda}\boldsymbol{F}\boldsymbol{\Lambda}^{\rm T}.
+\]</span> As we saw in <a href="./4vectors.html">Introducing 4-vectors</a> rotations are a special case of Lorentz transformation with the form: <span id="eq-rotation"><span class="math display">\[
+\boldsymbol{\Lambda}_\mathbf{R} = \left(\begin{array}{cccc}
+  1 &amp; 0 &amp; 0 &amp; 0 \\
+  0 &amp; \ulcorner &amp;  &amp; \urcorner \\
+  0 &amp;  &amp; \mathbf{R} &amp;  \\
+  0 &amp; \llcorner &amp;  &amp; \lrcorner
+\end{array}\right).
+\tag{12.4}\]</span></span> Crucially we see that <span class="math inline">\(\boldsymbol{\Lambda}_\mathbf{R}\)</span> has exactly the same block structure as <a href="#eq-matrix_blocks" class="quarto-xref">Equation&nbsp;<span>12.2</span></a>. It is easy to confirm that this partitioning is preserved under spatial rotations, meaning the components the 3-vector <span class="math inline">\(\boldsymbol{a}\)</span> and the antisymmetric matrix <span class="math inline">\(\boldsymbol{A}\)</span> are never mixed, as you are invited to show.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Partitioning under rotation</strong></p>
+<p>Use the block matrix form in <a href="#eq-matrix_blocks" class="quarto-xref">Equation&nbsp;<span>12.2</span></a> to show that when a rotation <span class="math inline">\(\boldsymbol{\Lambda}_\mathbf{R}\)</span> in <a href="#eq-rotation" class="quarto-xref">Equation&nbsp;<span>12.4</span></a> is applied to <span class="math inline">\(\boldsymbol{F}\)</span> in <a href="#eq-f_blocks" class="quarto-xref">Equation&nbsp;<span>12.3</span></a> none of the blocks are mixed in the resulting matrix <span class="math inline">\(\bar{\boldsymbol{F}}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Partitioning under rotation</strong></p>
+<p>To show this we simply carry out the block matrix multiplication <span class="math display">\[
+        \bar{\boldsymbol{F}} = \boldsymbol{\Lambda}_\mathbf{R}\boldsymbol{F}\boldsymbol{\Lambda}_\mathbf{R}^{\rm T} =
+        \begin{pmatrix} 1 &amp; \boldsymbol{0}^{\rm T} \\
+        \boldsymbol{0} &amp; \mathbf{R} \end{pmatrix}\begin{pmatrix} 0 &amp; -\boldsymbol{a}^{\rm T} \\
+        \boldsymbol{a} &amp; \boldsymbol{A}(\boldsymbol{b}) \end{pmatrix} \begin{pmatrix} 1 &amp; \boldsymbol{0}^{\rm T} \\
+         \boldsymbol{0} &amp; \mathbf{R}^{\rm T} \end{pmatrix}.
+\]</span> This proceed with exactly the same “row-on-column” operation as normal matrix multiplication, but now we get scalar, row-vectors, column-vectors and matrices as outputs from the operations. To see this let’s do the first multiplication <span class="math display">\[
+       \begin{pmatrix} 1 &amp; \boldsymbol{0}^{\rm T} \\
+         \boldsymbol{0} &amp; \mathbf{R} \end{pmatrix}\begin{pmatrix} 0 &amp; -\boldsymbol{a}^{\rm T} \\
+         \boldsymbol{a} &amp; \boldsymbol{A} \end{pmatrix} = \begin{pmatrix} 1\cdot0 + \boldsymbol{0}^{\rm T}\boldsymbol{a} &amp; -1\cdot\boldsymbol{a}^{\rm T} + \boldsymbol{0}^{\rm T}\mathbf{R} \\
+         0\cdot\boldsymbol{0} + \mathbf{R}\boldsymbol{a} &amp;  -\boldsymbol{0}\boldsymbol{a}^{\rm T} + \mathbf{R}\boldsymbol{A} \end{pmatrix} = \begin{pmatrix} 0  &amp; -\boldsymbol{a}^{\rm T} \\
+         \mathbf{R}\boldsymbol{a} &amp; \mathbf{R}\boldsymbol{A} \end{pmatrix}.
+\]</span> The second multiplication follows similarly as <span class="math display">\[
+       \begin{pmatrix} 0  &amp; -\boldsymbol{a}^{\rm T} \\
+        \mathbf{R}\boldsymbol{a} &amp; \mathbf{R}\boldsymbol{A}\end{pmatrix}\begin{pmatrix} 1 &amp; \boldsymbol{0}^{\rm T} \\
+         \boldsymbol{0} &amp; \mathbf{R}^{\rm T} \end{pmatrix} = \begin{pmatrix} 0  &amp; -\boldsymbol{a}^{\rm T}\mathbf{R}^{\rm T} \\
+        \mathbf{R}\boldsymbol{a} &amp; \mathbf{R}\boldsymbol{A}\mathbf{R}^{\rm T} \end{pmatrix} = \bar{\boldsymbol{F}} = \begin{pmatrix} 0 &amp; -\bar{\boldsymbol{a}}^{\rm T} \\
+        \bar{\boldsymbol{a}} &amp; \bar{\boldsymbol{A}} \end{pmatrix}.
+\]</span> From this we can immediately identify <span class="math inline">\(\bar{\boldsymbol{a}} = \mathbf{R}\boldsymbol{a}\)</span>, and that <span class="math inline">\(\bar{\boldsymbol{A}} = \mathbf{R}\boldsymbol{A}\mathbf{R}^{\rm T}\)</span>, and that the blocks in <span class="math inline">\(\boldsymbol{F}\)</span> remain distinct and unmixed in <span class="math inline">\(\bar{\boldsymbol{F}}\)</span>.</p>
+</div>
+</div>
+</div>
+<p>A key result from applying a spatial rotation to <a href="#eq-f_blocks" class="quarto-xref">Equation&nbsp;<span>12.3</span></a> is that <span class="math display">\[
+    \bar{\boldsymbol{F}} = \begin{pmatrix} 0 &amp; -\bar{\boldsymbol{a}}^{\rm T} \\
+        \bar{\boldsymbol{a}} &amp; \bar{\boldsymbol{A}} \end{pmatrix},
+\]</span> where we see that the new 3-vector <span class="math display">\[
+\bar{\boldsymbol{a}} = \mathbf{R}\boldsymbol{a}
+\]</span> is just the rotated version of the original. The antisymmetric matrix transforms as <span class="math display">\[
+\bar{\boldsymbol{A}} = \mathbf{R}\boldsymbol{A}\mathbf{R}^{\rm T},
+\]</span> so is the original version conjugated by rotation transformations. The next question is how to insert a second 3-vector <span class="math inline">\(\boldsymbol{b}\)</span> into the spatial antisymmetric matrix as <span class="math inline">\(\boldsymbol{A}(\boldsymbol{b})\)</span>. We can no longer straightforwardly insert a column vector and it is also not obvious how we should distribute the signs between the upper and lower triangles. However, this problem is answered uniquely by requiring that <span id="eq-matrix_rot"><span class="math display">\[
+\mathbf{R}\boldsymbol{A}(\boldsymbol{b})\mathbf{R}^{\rm T} = \boldsymbol{A}(\mathbf{R}\boldsymbol{b}),
+\tag{12.5}\]</span></span> meaning the new antisymmetric matrix is one constructed by the same embedding using the rotated 3-vector <span class="math display">\[
+\bar{\boldsymbol{b}} = \mathbf{R}\boldsymbol{b}.
+\]</span> So how should be embed <span class="math inline">\(\boldsymbol{b}\)</span> into <span class="math inline">\(\boldsymbol{A}\)</span> to ensure <a href="#eq-matrix_rot" class="quarto-xref">Equation&nbsp;<span>12.5</span></a> holds?</p>
+<p>We use the following antisymmetric matrix basis: <span id="eq-generators"><span class="math display">\[
+    \boldsymbol{J}_x = \begin{pmatrix} 0 &amp; 0 &amp; 0 \\
+                          0 &amp; 0 &amp; -1\\
+                          0 &amp; 1 &amp; 0
+            \end{pmatrix}, \quad     
+    \boldsymbol{J}_y = \begin{pmatrix} 0 &amp; 0 &amp; 1 \\
+                          0 &amp; 0 &amp; 0\\
+                          -1 &amp; 0 &amp; 0
+            \end{pmatrix},\quad
+    \boldsymbol{J}_z = \begin{pmatrix} 0 &amp; -1 &amp; 0 \\
+                          1 &amp; 0 &amp; 0\\
+                          0 &amp; 0 &amp; 0
+            \end{pmatrix},
+\tag{12.6}\]</span></span> so that we can construct an antisymmetric matrix from a 3-vector <span class="math inline">\(\boldsymbol{b}\)</span> as <span id="eq-matrix_embed"><span class="math display">\[
+    \boldsymbol{A}(\boldsymbol{b}) = b_x\boldsymbol{J}_x + b_y\boldsymbol{J}_y + b_z\boldsymbol{J}_z = \boldsymbol{b}\cdot\boldsymbol{J} = \begin{pmatrix}
+                                0 &amp; -b_z &amp; b_y \\
+                                b_z &amp; 0 &amp; -b_x \\
+                                -b_y &amp; b_x &amp; 0
+    \end{pmatrix},
+\tag{12.7}\]</span></span> where <span class="math inline">\(\boldsymbol{J} = (\boldsymbol{J}_x,\boldsymbol{J}_y,\boldsymbol{J}_z)^{\rm T}\)</span> is the vector of basis matrices. What is special about the basis matrices <span class="math inline">\(\boldsymbol{J}_x,\boldsymbol{J}_y,\boldsymbol{J}_z\)</span> is that they are infinitesmal <em>generators</em> of the Lie group SO(3) for 3D rotations mentioned earlier in <a href="./4vectors.html">Introducing 4-vectors</a>. One consequence of the construction in <a href="#eq-matrix_embed" class="quarto-xref">Equation&nbsp;<span>12.7</span></a> is that if we apply the antisymmetric matrix <span class="math inline">\(\boldsymbol{b}\cdot\boldsymbol{J}\)</span> to another 3-vector <span class="math inline">\(\boldsymbol{c}\)</span> then we get <span class="math display">\[
+    (\boldsymbol{b}\cdot\boldsymbol{J})\boldsymbol{c} = \begin{pmatrix}
+        0 &amp; -b_z &amp; b_y \\
+        b_z &amp; 0 &amp; -b_x \\
+        -b_y &amp; b_x &amp; 0
+    \end{pmatrix} \begin{pmatrix} c_x\\ c_y\\ c_z\end{pmatrix} = \begin{pmatrix} b_yc_z - b_zc_y \\ b_zc_x - b_xc_z \\ b_xc_y - b_yc_x \end{pmatrix}
+\]</span> hence we have that <span id="eq-matrix_cross"><span class="math display">\[
+    (\boldsymbol{b}\cdot\boldsymbol{J})\boldsymbol{c} = \boldsymbol{b} \times \boldsymbol{c},
+\tag{12.8}\]</span></span> so the sign structure of <span class="math inline">\(\boldsymbol{b}\cdot\boldsymbol{J}\)</span> encodes the 3-vector cross product. We have seen this already in <a href="./example_class3.html">Example Class 3</a> and we will exploit it again shortly. The key point in using the generators of rotation in <a href="#eq-generators" class="quarto-xref">Equation&nbsp;<span>12.6</span></a> to define an embedding <span class="math inline">\(\boldsymbol{A}(\boldsymbol{b})\)</span> is that they obey <span class="math display">\[
+    \mathbf{R}(\boldsymbol{b}\cdot\boldsymbol{J})\mathbf{R}^{\rm T} = (\mathbf{R}\boldsymbol{b})\cdot\boldsymbol{J},
+\]</span> and hence guarantee that <a href="#eq-matrix_rot" class="quarto-xref">Equation&nbsp;<span>12.5</span></a> holds. You are invited to prove this a variety of different ways.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>2. Rotation of generators</strong></p>
+<ol type="a">
+<li><p>Prove <a href="#eq-matrix_rot" class="quarto-xref">Equation&nbsp;<span>12.5</span></a> using the geometrical result that if <span class="math inline">\(\mathbf{R}_\boldsymbol{n}(\theta)\)</span> is a rotation by <span class="math inline">\(\theta\)</span> about an axis <span class="math inline">\(\boldsymbol{n}\)</span> then <span class="math inline">\(\mathbf{R}\mathbf{R}_\boldsymbol{n}(\theta)\mathbf{R}^{\rm T}\)</span> is a rotation by <span class="math inline">\(\theta\)</span> about an axis <span class="math inline">\(\mathbf{R}\boldsymbol{n}\)</span>.</p></li>
+<li><p>Prove <a href="#eq-matrix_rot" class="quarto-xref">Equation&nbsp;<span>12.5</span></a> using the rotational invariance of the 3-vector cross product <span class="math inline">\(\mathbf{R}(\boldsymbol{u}\times\boldsymbol{v}) = (\mathbf{R}\boldsymbol{u})\times(\mathbf{R}\boldsymbol{v})\)</span>.</p></li>
+<li><p>Prove <a href="#eq-matrix_rot" class="quarto-xref">Equation&nbsp;<span>12.5</span></a> by assuming the generators under conjugation by a rotation behave as <span id="eq-generator_rotate"><span class="math display">\[
+\mathbf{R}\boldsymbol{J}_i\mathbf{R}^{\rm T} = \sum_j R_{ji}\boldsymbol{J}_j,
+\tag{12.9}\]</span></span> so they behave exactly the same way as basis 3-vectors would (i.e.&nbsp;oppositely to components).</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>2. Rotation of generators</strong></p>
+<ol type="a">
+<li><p>We can expand a rotation by <span class="math inline">\(\theta\)</span> about an axis <span class="math inline">\(\boldsymbol{n}\)</span> as <span class="math display">\[
+\mathbf{R}_\boldsymbol{n}(\theta) = e^{-\theta\boldsymbol{n}\cdot\boldsymbol{J}},
+\]</span> where <span class="math inline">\(\boldsymbol{n}\cdot\boldsymbol{J}= n_x\boldsymbol{J}_x + n_y\boldsymbol{J}_y + n_z\boldsymbol{J}_z\)</span>. The geometrical fact described in the question can be written as <span class="math display">\[
+\mathbf{R}\mathbf{R}_\boldsymbol{n}(\theta)\mathbf{R}^{\rm T} = \mathbf{R}_{\mathbf{R}\boldsymbol{n}}(\theta).
+\]</span> Some thought can convince you this must be true, but a good test is to see how either side acts on <span class="math inline">\(\mathbf{R}\boldsymbol{n}\)</span>. The righthand side does nothing since it is parallel to the rotation axis, the lefthand side first rotated <span class="math inline">\(\mathbf{R}\boldsymbol{n} \mapsto \boldsymbol{n}\)</span>, then does nothing because it is now parallel to the rotation axis, and then rotates it back to <span class="math inline">\(\boldsymbol{n} \mapsto \mathbf{R}\boldsymbol{n}\)</span>. The upshot is that <span class="math display">\[
+\mathbf{R}e^{-\theta\boldsymbol{n}\cdot\boldsymbol{J}}\mathbf{R}^{\rm T} = e^{-\theta(\mathbf{R}\boldsymbol{n})\cdot\boldsymbol{J}},
+\]</span> so if we differentiate with respect to <span class="math inline">\(\theta\)</span> and evaluate at <span class="math inline">\(\theta = 0\)</span>, which extracts the generators of the rotations, then <span class="math display">\[
+\mathbf{R}(\boldsymbol{n}\cdot\boldsymbol{J})\mathbf{R}^{\rm T} = (\mathbf{R}\boldsymbol{n})\cdot\boldsymbol{J},
+\]</span> as required to prove <a href="#eq-matrix_rot" class="quarto-xref">Equation&nbsp;<span>12.5</span></a> applies.</p></li>
+<li><p>For any 3-vectors <span class="math inline">\(\boldsymbol{u}\)</span> and <span class="math inline">\(\boldsymbol{v}\)</span> we have that <span class="math display">\[
+\boldsymbol{u}\cdot\boldsymbol{J}\boldsymbol{v} = \boldsymbol{u} \times \boldsymbol{v},
+\]</span> then we also have <span class="math display">\[
+\mathbf{R}(\boldsymbol{u}\cdot\boldsymbol{J})\mathbf{R}^{\rm T}\boldsymbol{v} = \mathbf{R}\big(\boldsymbol{u}\cdot\boldsymbol{J}(\mathbf{R}^{\rm T}\boldsymbol{v})\big) = \mathbf{R}(\boldsymbol{u} \times (\mathbf{R}^{\rm T}\boldsymbol{v})) = (\mathbf{R}\boldsymbol{u})\times \boldsymbol{v},
+\]</span> after using the rotational invariance. Hence <span class="math display">\[
+\mathbf{R}(\boldsymbol{u}\cdot\boldsymbol{J})\mathbf{R}^{\rm T}\boldsymbol{v} = ((\mathbf{R}\boldsymbol{u})\cdot\boldsymbol{J})\boldsymbol{v},
+\]</span> and since this applies for every <span class="math inline">\(\boldsymbol{v}\)</span> then we have <span class="math display">\[
+\mathbf{R}(\boldsymbol{u}\cdot\boldsymbol{J})\mathbf{R}^{\rm T} = (\mathbf{R}\boldsymbol{u})\cdot\boldsymbol{J},
+\]</span> proving <a href="#eq-matrix_rot" class="quarto-xref">Equation&nbsp;<span>12.5</span></a> is true for this embedding.</p></li>
+<li><p>We have that <span class="math display">\[
+\begin{align}
+\mathbf{R}(\boldsymbol{b}\cdot\boldsymbol{J})\mathbf{R}^{\rm T} &amp;= \sum_i b_i \mathbf{R}\boldsymbol{J}_i\mathbf{R}^{\rm T}, \\
+&amp;= \sum_i b_i \sum_j R_{ji}\boldsymbol{J}_j, \\
+&amp;= \sum_j \left(\sum_i R_{ji} b_i\right)\boldsymbol{J}_j, \\
+&amp;= (\mathbf{R}\boldsymbol{b})\cdot\boldsymbol{J},
+\end{align}
+\]</span> again showing that <a href="#eq-matrix_rot" class="quarto-xref">Equation&nbsp;<span>12.5</span></a> is a specific consequence of how the generators behave under conjugation by rotation.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="page-columns page-full"><p>So we have arrived at the following matrix representation of an antisymmetric rank-2 tensor <span class="math inline">\(F^{\mu\nu}\)</span> in terms of components of two 3-vectors <span class="math inline">\(\boldsymbol{a}\)</span> and <span class="math inline">\(\boldsymbol{b}\)</span> as <span id="eq-fmatrix"><span class="math display">\[
+    \boldsymbol{F} = \begin{pmatrix}
+        0  &amp; -a_x &amp; -a_y &amp; -a_z \\
+        a_x &amp; 0 &amp; -b_z &amp; b_y \\
+        a_y &amp; b_z &amp; 0 &amp; -b_x \\
+        a_z &amp; -b_y &amp; b_x &amp; 0 \end{pmatrix},
+\tag{12.10}\]</span></span> which under Lorentz transformation to another frame via only a spatial rotation <span class="math inline">\(\boldsymbol{\Lambda}_\mathbf{R}\)</span> gives a new representation <span id="eq-fmatrixtrans"><span class="math display">\[
+    \bar{\boldsymbol{F}} = \begin{pmatrix}
+    0  &amp; -\bar{a}_x &amp; -\bar{a}_y &amp; -\bar{a}_z \\
+    \bar{a}_x &amp; 0 &amp; -\bar{b}_z &amp; \bar{b}_y \\
+    \bar{a}_y &amp; \bar{b}_z &amp; 0 &amp; -\bar{b}_x \\
+    \bar{a}_z &amp; -\bar{b}_y &amp; \bar{b}_x &amp; 0 \end{pmatrix},
+\tag{12.11}\]</span></span> where the new 3-vectors are the rotated versions of the original 3-vectors as <span class="math inline">\(\bar{\boldsymbol{a}} = \mathbf{R}\boldsymbol{a}\)</span> and <span class="math inline">\(\bar{\boldsymbol{b}} = \mathbf{R}\boldsymbol{b}\)</span>. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Note that <span class="math inline">\(\boldsymbol{F}\)</span> has exactly one <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span> component of either 3-vector along each row and column.</span></div></div>
+<p>Although we have now uniquely specified how two 3-vectors <span class="math inline">\(\boldsymbol{a}\)</span> and <span class="math inline">\(\boldsymbol{b}\)</span> can be embedded into rank-2 antisymmetric tensor we still need to determine which corresponds to the electric <span class="math inline">\(\boldsymbol{E}\)</span> and magnetic <span class="math inline">\(\boldsymbol{B}\)</span> fields. To figure this out we need to examine more closely the Lorentz force.</p>
+</section>
+<section id="relativistic-version-of-the-lorentz-force" class="level2 page-columns page-full" data-number="12.2">
+<h2 data-number="12.2" class="anchored" data-anchor-id="relativistic-version-of-the-lorentz-force"><span class="header-section-number">12.2</span> Relativistic version of the Lorentz force</h2>
+<div class="page-columns page-full"><p>The only part of the theory of electromagnetism reviewed in the last lecture which was <strong>not</strong> relativistic was the Lorentz force law for a particle with charge <span class="math inline">\(q\)</span> <span id="eq-lorentz_non_rel"><span class="math display">\[
+    \boldsymbol{f}_{\rm nr} = \frac{{\rm d}}{{\rm d}t}\boldsymbol{p}_{\rm nr} = q(\boldsymbol{E} + \boldsymbol{v}\times\boldsymbol{B}) ,
+\tag{12.12}\]</span></span> where <span class="math inline">\(\boldsymbol{f}_{\rm nr}\)</span> is the non-relativistic 3-force and <span class="math inline">\(\boldsymbol{p}_{\rm nr} = m\boldsymbol{v}\)</span> is the non-relativistic 3-momentum.  However, we can readily generalise this to relativistic kinematics using the results from <a href="./example_class3.html">Example Class 3</a> as <span id="eq-rel_lorentz"><span class="math display">\[
+    f^\mu = c\frac{{\rm d}}{{\rm d}s}p^\mu = qc F^{\mu\nu}u_\nu,
+\tag{12.13}\]</span></span> where <span class="math inline">\(f^\mu\)</span> is the 4-force, <span class="math inline">\(p^\mu\)</span> is the 4-momentum and <span class="math inline">\(u^\nu\)</span> is the 4-velocity of the particle. We also showed that the 4-force can be decomposed as <span class="math display">\[
+    f^\mu = \gamma\begin{pmatrix} g \\ \boldsymbol{f} \end{pmatrix}
+\]</span> where <span class="math inline">\(\boldsymbol{f}\)</span> is the relativistic 3-force <span class="math display">\[
+    \boldsymbol{f} = \frac{{\rm d}}{{\rm d}t}\boldsymbol{p},
+\]</span> and that Minkowski’s equation <span class="math inline">\(f^\mu u_\mu = 0\)</span> implies that <span class="math inline">\(cg = \boldsymbol{f}\cdot\boldsymbol{v}\)</span> is a rate of work done. Using our form of <span class="math inline">\(\boldsymbol{F}\)</span> and <span class="math inline">\(u_\nu = (1, -\boldsymbol{v}/c)^{\rm T}\)</span> then <a href="#eq-rel_lorentz" class="quarto-xref">Equation&nbsp;<span>12.13</span></a> becomes <span class="math display">\[
+    \gamma\begin{pmatrix} g \\ \boldsymbol{f} \end{pmatrix} = qc \begin{pmatrix} 0 &amp; -\boldsymbol{a}^{\rm T} \\
+                                    \boldsymbol{a} &amp; \boldsymbol{A}(\boldsymbol{b}) \end{pmatrix} \gamma\begin{pmatrix} 1 \\ -\boldsymbol{v}/c \end{pmatrix}.
+\]</span> Hence we identify that <span class="math inline">\(g = qc\boldsymbol{a}^{\rm T}\boldsymbol{v} = qc\boldsymbol{a}\cdot\boldsymbol{v}\)</span> and that <span id="eq-lorentz_rel"><span class="math display">\[
+    \boldsymbol{f} = qc\boldsymbol{a} - q\boldsymbol{A}(\boldsymbol{b})\boldsymbol{v} = qc\boldsymbol{a} + q\boldsymbol{v}\times\boldsymbol{b},
+\tag{12.14}\]</span></span> after using <a href="#eq-matrix_cross" class="quarto-xref">Equation&nbsp;<span>12.8</span></a>. If we take the non-relativistic limit then <span class="math inline">\(\gamma \rightarrow 1\)</span> and so <span class="math inline">\(\boldsymbol{p} \rightarrow \boldsymbol{p}_{\rm nr}\)</span> as well as <span class="math inline">\(\boldsymbol{f} \rightarrow \boldsymbol{f}_{\rm nr}\)</span>. For <a href="#eq-lorentz_rel" class="quarto-xref">Equation&nbsp;<span>12.14</span></a> to match <a href="#eq-lorentz_non_rel" class="quarto-xref">Equation&nbsp;<span>12.12</span></a> we therefore need <span class="math display">\[
+    \boldsymbol{a} = \boldsymbol{E}/c, \quad {\rm and} \quad \boldsymbol{b} = \boldsymbol{B}.
+\]</span> We have therefore arrived at the <span class="math inline">\(({2 \atop 0})\)</span> Faraday tensor: <span id="eq-faraday_upper"><span class="math display">\[
+    F^{\mu\nu} = [\boldsymbol{F}]_{\mu\nu} = \begin{pmatrix}
+        0  &amp; -E_x/c &amp; -E_y/c &amp; -E_z/c \\
+        E_x/c &amp; 0 &amp; -B_z &amp; B_y \\
+        E_y/c &amp; B_z &amp; 0 &amp; -B_x \\
+        E_z/c &amp; -B_y &amp; B_x &amp; 0 \end{pmatrix}.
+\tag{12.15}\]</span></span> We will also encounter two other forms of the Faraday tensor. Its mixed form obtained by lowering the second index <span class="math display">\[
+    {F^\mu}_\nu = \eta_{\nu\sigma}F^{\mu\sigma},
+\]</span> which we can rewrite in matrix form as <span class="math display">\[
+    {F^\mu}_\nu = \eta_{\nu\sigma}F^{\mu\sigma} = [\boldsymbol{F}\boldsymbol{\eta}]_{\mu\nu},
+\]</span> where <span class="math inline">\(\boldsymbol{\eta} = \boldsymbol{\eta}^{\rm T} = {\rm diag}(1,-1,-1,-1)\)</span> giving <span id="eq-faraday_mixed"><span class="math display">\[
+    {F^\mu}_\nu = \begin{pmatrix}
+        0  &amp; E_x/c &amp; E_y/c &amp; E_z/c \\
+        E_x/c &amp; 0 &amp; B_z &amp; -B_y \\
+        E_y/c &amp; -B_z &amp; 0 &amp; B_x \\
+        E_z/c &amp; B_y &amp; -B_x &amp; 0 \end{pmatrix}.
+\tag{12.16}\]</span></span> And its lower form <span class="math display">\[
+    F_{\mu\nu} = \eta_{\mu\tau}\eta_{\nu\sigma}F^{\tau\sigma} = [\boldsymbol{\eta}\boldsymbol{F}\boldsymbol{\eta}]_{\mu\nu},
+\]</span> giving <span id="eq-faraday_lower"><span class="math display">\[
+    F_{\mu\nu} = \begin{pmatrix}
+        0  &amp; E_x/c &amp; E_y/c &amp; E_z/c \\
+        -E_x/c &amp; 0 &amp; -B_z &amp; B_y \\
+        -E_y/c &amp; B_z &amp; 0 &amp; -B_x \\
+        -E_z/c &amp; -B_y &amp; B_x &amp; 0 \end{pmatrix}.
+\tag{12.17}\]</span></span></p><div class="no-row-height column-margin column-container"><span class="margin-aside">We have to use subscript “nr” here for non-relativistic since in the lecture on <a href="./kinematics.html">Relativistic kinematics</a> we reserved <span class="math inline">\(\boldsymbol{p} = \gamma m\boldsymbol{v}\)</span> for the relativistic 3-momentum, and in <a href="./example_class3.html">Example Class 3</a> we used <span class="math inline">\(\boldsymbol{f}\)</span> for the 3-vector component of the relativistic 4-force.</span></div></div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Quick cheat
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Left multiplication by <span class="math inline">\(\boldsymbol{\eta} \cdot\)</span> negates all spatial rows of a matrix.</li>
+<li>Right multiplication by <span class="math inline">\(\cdot \boldsymbol{\eta}\)</span> negates all spatial columns of a matrix.</li>
+</ul>
+</div>
+</div>
+<p>A consequence of embedding the electric and magnetic fields into a rank-2 tensor is that it tells us how the field change under general Lorentz transformation between inertial frames <span id="eq-faraday_transform"><span class="math display">\[
+    F^{{\bar \mu}{\bar \nu}} = \Lambda^{\bar \mu}_\sigma \Lambda^{\bar \nu}_\tau F^{\sigma\tau}.
+\tag{12.18}\]</span></span> While we argued earlier that <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> will never mix due to just a spatial rotation, they will in general mix under a Lorentz boost. We know that a stationary charge will only have an electric field but a moving charge generates a current which in turn creates a magnetic field. Boosting to an arbitrary frame by <span class="math inline">\(\boldsymbol{v}\)</span> gives fields <span id="eq-efield"><span class="math display">\[
+    \bar{\boldsymbol{E}} = \gamma(\boldsymbol{E} + \boldsymbol{v}\times\boldsymbol{B}) - \frac{\gamma^2}{\gamma+1}\frac{\boldsymbol{v}}{c^2}(\boldsymbol{v}\cdot\boldsymbol{E}),
+\tag{12.19}\]</span></span> and <span id="eq-bfield"><span class="math display">\[
+    \bar{\boldsymbol{B}} = \gamma\left(\boldsymbol{B} - \frac{1}{c^2} \boldsymbol{v}\times\boldsymbol{E}\right) - \frac{\gamma^2}{\gamma+1}\frac{\boldsymbol{v}}{c^2}(\boldsymbol{v}\cdot\boldsymbol{B}).
+\tag{12.20}\]</span></span> We get a slightly less cryptic looking result if we decompose the fields as <span class="math inline">\(\boldsymbol{E} = \boldsymbol{E}_\parallel + \boldsymbol{E}_\perp\)</span> where <span class="math inline">\(\boldsymbol{E}_\parallel\)</span> is the field parallel with the boost <span class="math inline">\(\boldsymbol{v}\)</span> and <span class="math inline">\(\boldsymbol{E}_\perp\)</span> being the orthogonal part. Similarly <span class="math inline">\(\boldsymbol{B} = \boldsymbol{B}_\parallel + \boldsymbol{B}_\perp\)</span> for the magnetic field. Then we get that <span class="math display">\[
+    \bar{\boldsymbol{E}}_\parallel = \boldsymbol{E}_\parallel, \quad {\rm and} \quad \bar{\boldsymbol{B}}_\parallel = \boldsymbol{B}_\parallel,
+\]</span> and <span class="math display">\[
+    \bar{\boldsymbol{E}}_\perp = \gamma(\boldsymbol{E}_\perp + \boldsymbol{v}\times\boldsymbol{B}), \quad {\rm and} \quad \bar{\boldsymbol{B}}_\perp = \gamma\left(\boldsymbol{B}_\perp - \frac{1}{c^2}\boldsymbol{v}\times\boldsymbol{E}\right).
+\]</span> You might notice here that the transformations of the fields only have one factor of <span class="math inline">\(\gamma\)</span>, which defies our intuition that elements of a rank-2 object like <span class="math inline">\(F^{\mu\nu}\)</span> should transform with <span class="math inline">\(\gamma^2\)</span> factors. It turns out that the antisymmetric structure of <span class="math inline">\(F^{\mu\nu}\)</span> causes cancellation of a <span class="math inline">\(\gamma\)</span>, hinting that <span class="math inline">\(F^{\mu\nu}\)</span> is a simpler object in disguise. We will explore this idea more in the next lecture. You can see the cancellation in action by computing the transformation of <span class="math inline">\(F^{\mu\nu}\)</span> to a new frame using <a href="#eq-faraday_transform" class="quarto-xref">Equation&nbsp;<span>12.18</span></a>. You will recover the <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> field transformations above (for a special case), as you are invited to do now.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Transforming the fields</strong></p>
+<p>Consider a boost along the <span class="math inline">\(x\)</span>-axis and use <a href="#eq-faraday_transform" class="quarto-xref">Equation&nbsp;<span>12.18</span></a> to compute the elements of <span class="math inline">\(F^{\bar{\mu}\bar{\nu}}\)</span> to confirm <a href="#eq-efield" class="quarto-xref">Equation&nbsp;<span>12.19</span></a> and <a href="#eq-bfield" class="quarto-xref">Equation&nbsp;<span>12.20</span></a> for this special case.</p>
+<p><strong>4. Magnetic fields are a relativistic effect</strong></p>
+<p>Assume there is a frame <span class="math inline">\(S\)</span> in which at <span class="math inline">\(t = 0,\)</span> the current density <span class="math inline">\(\boldsymbol{J} = 0\)</span> and the magnetic fields vanish, <span class="math inline">\(\boldsymbol{B} = 0.\)</span> Now, boost by <span class="math inline">\(-\boldsymbol{v}\)</span> to a frame <span class="math inline">\(\bar{S}\)</span> with the same spacetime origin fixed, so a particle at rest in <span class="math inline">\(S\)</span> travels at <span class="math inline">\(\boldsymbol{v}\)</span> in <span class="math inline">\(\bar{S}\)</span>. The electric and magnetic fields, <span class="math inline">\(\bar{\boldsymbol{E}}\)</span> and <span class="math inline">\(\bar{\boldsymbol{B}}\)</span> in <span class="math inline">\(\bar S\)</span> are related to those in <span class="math inline">\(S\)</span> as:</p>
+<ol type="a">
+<li><p>Write down the fields <span class="math inline">\(\bar{\boldsymbol{E}},{\bar{\boldsymbol{B}}}\)</span> in the transformed frame at time <span class="math inline">\(\bar{t} = 0.\)</span></p></li>
+<li><p>Assume that at <span class="math inline">\(t = 0,\)</span> a particle with charge <span class="math inline">\(q\)</span> is stationary in the frame <span class="math inline">\(S\)</span>. Show that the right-hand side of the relativistic Lorentz force law (divided by <span class="math inline">\(q\)</span>) in the frame <span class="math inline">\(\bar{S}\)</span> can be written in terms of <span class="math inline">\(\boldsymbol{v}\)</span> and the original electric field, i.e. <span class="math display">\[
+\gamma\left(\bar{\boldsymbol{E}} + \boldsymbol{v} \times \bar{\boldsymbol{B}}\right) = \boldsymbol{E} +\frac{\gamma \boldsymbol{v}(\boldsymbol{v}\cdot\boldsymbol{E})}{c^2(\gamma+1)}.
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Transforming the fields</strong></p>
+<p>We want to explicitly compute <span class="math display">\[
+    F^{{\bar \mu}{\bar \nu}} = \Lambda^{\bar \mu}_\sigma \Lambda^{\bar \nu}_\tau F^{\sigma\tau},
+\]</span> using the Faraday tensor elements from <a href="#eq-faraday_upper" class="quarto-xref">Equation&nbsp;<span>12.15</span></a> and Lorentz transformation elements for a boost along the <span class="math inline">\(x\)</span>-axis <span class="math display">\[
+    \Lambda^{\bar{0}}_0 = \gamma, ~\Lambda^{\bar{0}}_1 = -\beta\gamma, ~\Lambda^{\bar{1}}_0 = -\beta\gamma, ~\Lambda^{\bar{1}}_1 = \gamma, ~\Lambda^{\bar{2}}_2 = 1, ~\Lambda^{\bar{3}}_3 = 1.
+\]</span> We deal with the electric field parts first, namely <span class="math inline">\(F^{i0} = E_i/c\)</span>. Start with <span class="math display">\[
+    F^{{\bar 1}\bar{0}} = \Lambda^{\bar 1}_\sigma \Lambda^{\bar 0}_\tau F^{\sigma\tau},
+\]</span> so only <span class="math inline">\(\sigma,\tau \in \{0,1\}\)</span> and since <span class="math inline">\(F^{\sigma\tau} = 0\)</span> if <span class="math inline">\(\sigma = \tau\)</span> the contributions are <span class="math display">\[
+\begin{align}
+    F^{{\bar 1}\bar{0}} &amp;= \Lambda^{\bar 1}_0 \Lambda^{\bar 0}_1 F^{01} + \Lambda^{\bar 1}_1 \Lambda^{\bar 0}_0 F^{10},\\
+    &amp;= (-\beta\gamma)^2(-E_x/c) + \gamma^2 (E_x/c), \\
+    &amp;= \gamma^2(1-\beta^2)E_x/c,\\
+   \bar{E}_x/c &amp;= E_x/c,
+\end{align}
+\]</span> so we find that the electric field parallel to the boost is unchanged. For the other directions we have <span class="math display">\[
+\begin{align}
+    F^{{\bar 2}\bar{0}} &amp;= \Lambda^{\bar 2}_2 \Lambda^{\bar 0}_1 F^{21} + \Lambda^{\bar 2}_2 \Lambda^{\bar 0}_0 F^{20},\\
+    &amp;= -\beta\gamma B_z + \gamma E_y/c, \\
+    \bar{E}_y/c &amp;= \gamma(E_y/c -\beta B_z).
+\end{align}
+\]</span> and similarly <span class="math display">\[
+\begin{align}
+    F^{{\bar 3}\bar{0}} &amp;= \Lambda^{\bar 3}_3 \Lambda^{\bar 0}_1 F^{31} + \Lambda^{\bar 3}_3 \Lambda^{\bar 0}_0 F^{30},\\
+    &amp;= -\beta\gamma(-B_y) + \gamma E_z/c, \\
+    \bar{E}_z/c &amp;= \gamma(E_z/c +\beta B_y).
+\end{align}
+\]</span> So the electric field components orthogonal to the boost now get mixed with the magnetic field. The orthogonal (<span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span>) components of the electric field to the boost are summarised as <span class="math display">\[
+    \bar{\boldsymbol{E}}_\perp = (\gamma E_y - \gamma v_x B_z)\boldsymbol{e}_y + (\gamma E_z + v_x B_y) \boldsymbol{e}_z = \gamma(\boldsymbol{E}_\perp + \boldsymbol{v}\times\boldsymbol{B}),
+\]</span> using <span class="math inline">\(\boldsymbol{v} = v_x\boldsymbol{e}_x\)</span>. We therefore have a special case of the general expression.</p>
+<p>We now deal with the magnetic field components in the same way as <span class="math display">\[
+\begin{align}
+    F^{{\bar 3}\bar{2}} &amp;= \Lambda^{\bar 3}_3 \Lambda^{\bar 2}_2 F^{32},\\
+    \bar{B}_x &amp;= B_x,
+\end{align}
+\]</span> so the magnetic field parallel to the boost is unchanged as well. The other components are then <span class="math display">\[
+\begin{align}
+    F^{{\bar 1}\bar{3}} &amp;= \Lambda^{\bar 1}_0 \Lambda^{\bar 3}_3 F^{03} + \Lambda^{\bar 1}_1 \Lambda^{\bar 3}_3 F^{13},\\
+    &amp;= -\beta\gamma(-E_z/c) + \gamma B_y, \\
+    \bar{B}_y &amp;= \gamma(B_y + \beta E_z/c),
+\end{align}
+\]</span> and finally <span class="math display">\[
+\begin{align}
+    F^{{\bar 2}\bar{1}} &amp;= \Lambda^{\bar 2}_2 \Lambda^{\bar 1}_0 F^{20} + \Lambda^{\bar 2}_2 \Lambda^{\bar 1}_1 F^{21},\\
+    &amp;= -\beta\gamma E_y/c + \gamma B_z, \\
+    \bar{B}_z &amp;= \gamma(B_z - \beta E_y/c).
+\end{align}
+\]</span> The orthogonal (<span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span>) components of the magnetic field to the boost are summarised as <span class="math display">\[
+    \bar{\boldsymbol{B}}_\perp = (\gamma B_y + \gamma v_x E_z/c^2)\boldsymbol{e}_y + (\gamma B_z - v_x E_y/c^2) \boldsymbol{e}_z = \gamma\left(\boldsymbol{B}_\perp - \frac{1}{c^2}\boldsymbol{v}\times\boldsymbol{E}\right).
+\]</span> We therefore have a special case of the general expression.</p>
+<p><strong>4. Magnetic fields are a relativistic effect</strong></p>
+<ol type="a">
+<li><p>Suppose in frame <span class="math inline">\(S\)</span> we have <span class="math display">\[
+\boldsymbol{B} = 0, \qquad \boldsymbol{J} = 0.
+\]</span> After a Lorentz boost with velocity <span class="math inline">\(-\boldsymbol{v}\)</span> to frame <span class="math inline">\(\bar S\)</span> (in which a previously stationary charge now moves with velocity <span class="math inline">\(\boldsymbol{v}\)</span>), the electromagnetic fields transform as <span class="math display">\[
+\boldsymbol{\bar{E}} = \gamma \boldsymbol{E} - \frac{\gamma^2}{c^2(\gamma+1)}
+\boldsymbol{v}(\boldsymbol{v}\cdot\boldsymbol{E}),
+\]</span> and <span class="math display">\[
+\boldsymbol{\bar{B}} =\frac{\gamma}{c^2} \boldsymbol{v} \times \boldsymbol{E}.
+\]</span> These are the standard field transformation laws <a href="#eq-efield" class="quarto-xref">Equation&nbsp;<span>12.19</span></a> and <a href="#eq-bfield" class="quarto-xref">Equation&nbsp;<span>12.20</span></a> mentioned above.</p></li>
+<li><p>Consider the right-hand side of the relativistic Lorentz force (divided by <span class="math inline">\(q\)</span>) with the transformed fields gives <span class="math display">\[
+\gamma(\boldsymbol{\bar{E}} + \boldsymbol{v} \times \boldsymbol{\bar{B}}) = \gamma \left[ \gamma \boldsymbol{E} - \frac{\gamma^2}{c^2(\gamma+1)} \boldsymbol{v}(\boldsymbol{v}\cdot\boldsymbol{E}) + \frac{\gamma}{c^2} \boldsymbol{v} \times (\boldsymbol{v} \times \boldsymbol{E}) \right].
+\]</span> Use the vector identity <span class="math display">\[
+\boldsymbol{v} \times (\boldsymbol{v} \times \boldsymbol{E}) = \boldsymbol{v}(\boldsymbol{v}\cdot\boldsymbol{E}) - v^2 \boldsymbol{E},
+\]</span> the expression becomes <span class="math display">\[
+= \gamma \left[ \gamma \boldsymbol{E} - \frac{\gamma^2}{c^2(\gamma+1)} \boldsymbol{v}(\boldsymbol{v}\cdot\boldsymbol{E}) + \frac{\gamma}{c^2} \left( \boldsymbol{v}(\boldsymbol{v}\cdot\boldsymbol{E}) - v^2 \boldsymbol{E} \right) \right].
+\]</span> Now collect terms: <span class="math display">\[
+= \gamma \left[ \gamma \boldsymbol{E}\left(1 - \frac{v^2}{c^2}\right) + \boldsymbol{v}(\boldsymbol{v}\cdot\boldsymbol{E}) \left( \frac{\gamma}{c^2} - \frac{\gamma^2}{c^2(\gamma+1)} \right) \right].
+\]</span> Using <span class="math display">\[
+1 - \frac{v^2}{c^2} = \frac{1}{\gamma^2},
+\]</span> we obtain <span class="math display">\[
+\gamma \boldsymbol{E}\left(1 - \frac{v^2}{c^2}\right) =
+\frac{1}{\gamma} \boldsymbol{E}.
+\]</span> Hence the full expression simplifies to <span class="math display">\[
+= \boldsymbol{E} + \frac{\gamma^2}{c^2(\gamma+1)} \boldsymbol{v}(\boldsymbol{v}\cdot\boldsymbol{E}).
+\]</span> Thus the transformed Lorentz force reduces to the purely electric force in the original frame, showing that magnetic fields arise as a relativistic effect of electric fields under Lorentz transformations.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="maxwells-equations-in-relativistic-form" class="level2 page-columns page-full" data-number="12.3">
+<h2 data-number="12.3" class="anchored" data-anchor-id="maxwells-equations-in-relativistic-form"><span class="header-section-number">12.3</span> Maxwell’s equations in relativistic form</h2>
+<p>Having found a way to embed the electric and magnetic fields into a covariant object <span class="math inline">\(F^{\mu\nu}\)</span> our final task is to rewrite directly all four Maxwell equations in a manifestly relativistically covariant form. To do this we simply replace the components of <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> with the corresponding elements of <span class="math inline">\(F^{\mu\nu}\)</span> (or <span class="math inline">\(F_{\mu\nu}\)</span>) and see what we get.</p>
+<section id="the-homogeneous-equations" class="level3 page-columns page-full" data-number="12.3.1">
+<h3 data-number="12.3.1" class="anchored" data-anchor-id="the-homogeneous-equations"><span class="header-section-number">12.3.1</span> The homogeneous equations</h3>
+<p>We start with equations (M1) and (M2) from the last lecture. Taking the scalar equation (M1) <span class="math display">\[
+    \nabla \cdot \boldsymbol{B} = 0,
+\]</span> we get that <span id="eq-maxwell1"><span class="math display">\[
+    \partial_x B_x + \partial_y B_y + \partial_z B_z = \partial_1 F_{32} + \partial_2 F_{13} + \partial_3 F_{21} = 0,
+\tag{12.21}\]</span></span> where we have used the <span class="math inline">\(({0 \atop 2})\)</span>-type Faraday tensor from <a href="#eq-faraday_lower" class="quarto-xref">Equation&nbsp;<span>12.17</span></a>. Next, we convert the vector equation (M2) as: <span class="math display">\[
+    \nabla \times \boldsymbol{E} + \dot{\boldsymbol{B}} = 0,
+\]</span> whose <span class="math inline">\(x\)</span> component gives <span id="eq-maxwell2"><span class="math display">\[
+\partial_y E_z - \partial_z E_y + \partial_t B_x = c(\partial_2 F_{03} + \partial_3 F_{20} + \partial_0 F_{32}) = 0,
+\tag{12.22}\]</span></span> <span class="math inline">\(y\)</span> component gives <span id="eq-maxwell3"><span class="math display">\[
+\partial_z E_x - \partial_x E_z + \partial_t B_y = c(\partial_3 F_{01} + \partial_1 F_{30} + \partial_0 F_{13}) = 0,
+\tag{12.23}\]</span></span> and <span class="math inline">\(z\)</span> component gives <span id="eq-maxwell4"><span class="math display">\[
+\partial_x E_y - \partial_y E_x + \partial_t B_z = c(\partial_1 F_{02} + \partial_2 F_{10} + \partial_0 F_{21}) = 0.
+\tag{12.24}\]</span></span> Notice here if we have a <span class="math inline">\(-\)</span> sign on a term we have chosen the element of <span class="math inline">\(F_{\mu\nu}\)</span> which gives that sign so it no longer appears explicitly in the equation. We do this because once we drop the factor of <span class="math inline">\(c\)</span> then <a href="#eq-maxwell1" class="quarto-xref">Equation&nbsp;<span>12.21</span></a>, <a href="#eq-maxwell2" class="quarto-xref">Equation&nbsp;<span>12.22</span></a>, <a href="#eq-maxwell3" class="quarto-xref">Equation&nbsp;<span>12.23</span></a>, and <a href="#eq-maxwell4" class="quarto-xref">Equation&nbsp;<span>12.24</span></a> all have exactly the same structure. Namely, they contain three terms of the form <span id="eq-bianchi1"><span class="math display">\[
+    \partial_\mu F_{\nu\rho} + \partial_\nu F_{\rho\mu} + \partial_\rho F_{\mu\nu} = 0.
+\tag{12.25}\]</span></span> The space-time indices <span class="math inline">\(\mu,\nu,\rho\)</span> must be different since the equation vanishes identically otherwise, for example <span class="math display">\[
+    \partial_3 F_{23} + \partial_2 F_{33} + \partial_3 F_{32} = \partial_3 F_{23} - \partial_3 F_{23} = 0.
+\]</span> By construction whatever indices <span class="math inline">\((\mu,\nu,\rho)\)</span> are chosen the three terms are cyclic permutations of these values. <a href="#eq-bianchi1" class="quarto-xref">Equation&nbsp;<span>12.25</span></a> is called the <em>Bianchi identity</em> and its structure is summarised here:</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">The two different cyclic permutations generate the same equation but to an overall irelevant <span class="math inline">\(-\)</span> sign. We will generate both from one equation shortly.</span></div></div>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>indices</th>
+<th>equation</th>
+<th>cyclic permutations</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\times,1,2,3\)</span></td>
+<td><a href="#eq-maxwell1" class="quarto-xref">Equation&nbsp;<span>12.21</span></a></td>
+<td><span class="math inline">\((1,2,3) \quad (2,3,1) \quad (3,2,1)\quad\)</span> or <span class="math inline">\((1,3,2) \quad (2,1,3) \quad (3,1,2)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(0,\times,2,3\)</span></td>
+<td><a href="#eq-maxwell2" class="quarto-xref">Equation&nbsp;<span>12.22</span></a></td>
+<td><span class="math inline">\((0,2,3) \quad (2,3,0) \quad (3,0,2)\quad\)</span> or <span class="math inline">\((0,3,2) \quad (2,0,3) \quad (3,2,0)\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(0,1,\times,3\)</span></td>
+<td><a href="#eq-maxwell3" class="quarto-xref">Equation&nbsp;<span>12.23</span></a></td>
+<td><span class="math inline">\((0,1,3) \quad (1,3,0) \quad (3,0,1)\quad\)</span> or <span class="math inline">\((0,3,1) \quad (1,0,3) \quad (3,1,0)\)</span></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(0,1,2,\times\)</span></td>
+<td><a href="#eq-maxwell4" class="quarto-xref">Equation&nbsp;<span>12.24</span></a></td>
+<td><span class="math inline">\((0,1,2) \quad (1,2,0) \quad (2,0,1)\quad\)</span> or <span class="math inline">\((0,2,1) \quad (1,0,2) \quad (2,1,0)\)</span></td>
+</tr>
+</tbody>
+</table>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+The Levi-Civita symbol
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The Levi-Civita symbol <span class="math inline">\(\epsilon\)</span> represents a collection of numbers defined from the sign of a permutation of the natural numbers <span class="math inline">\(1,2,\dots,d\)</span> for some positive integer dimensions <span class="math inline">\(d\)</span>. Its key defining property is that it is total antisymmetry in its indices, meaning when any two indices are interchanged, equal or not, the symbol is negated <span class="math display">\[
+    \epsilon_{\cdots i \cdots j \cdots} = -\epsilon_{\cdots j \cdots i \cdots}.
+\]</span> An immmediate consequence of this is that the symbol is zero if any pair of indices are equal. Conventionally its value is defined as <span class="math display">\[
+    \epsilon_{12\cdots d} = +1,
+\]</span> and its value for any other collection of unequal indices is given by the parity of the permutation <span class="math inline">\(\mathcal{P}\)</span> required to return it to this canonical ordering <span id="eq-levi_civita"><span class="math display">\[
+    \epsilon_{i_1i_2\cdots i_d} = (-1)^{\mathcal{P}}\epsilon_{12\cdots d}.
+\tag{12.26}\]</span></span> This means that is it <span class="math inline">\(+1\)</span> for all even permutations of <span class="math inline">\((1,2,\dots,d)\)</span>, and is negative for odd permutations. Given a <span class="math inline">\(d \times d\)</span> matrix <span class="math inline">\(\boldsymbol{M}\)</span> with matrix elements <span class="math inline">\(M_{ij}\)</span> its determinant follows from the Levi-Civita symbol as <span class="math display">\[
+    {\rm det}(\boldsymbol{M}) = \sum_{i_1=1}^d\sum_{i_2=1}^d\cdots\sum_{i_d=1}^d\epsilon_{i_1i_2\cdots i_d}M_{1i_1}M_{1i_2}\cdots M_{1i_d},
+\]</span> and more generally <span id="eq-det"><span class="math display">\[
+    \sum_{i_1=1}^d\sum_{i_2=1}^d\cdots\sum_{i_d=1}^d\epsilon_{i_1i_2\cdots i_d}M_{i_1j_1}M_{i_2j_2}\cdots M_{i_dj_d} = {\rm det}(\boldsymbol{M})\epsilon_{j_1j_2\cdots j_d}.
+\tag{12.27}\]</span></span></p>
+<p>The symbol often appears in vector calculus for <span class="math inline">\(d=3\)</span> where even permutations are given by cyclic permutation <span class="math display">\[
+    \epsilon_{ijk} = \left\{\begin{matrix} +1 &amp; (i,j,k) = (1,2,3), (2,3,1), (3,1,2) \\ -1 &amp; (i,j,k) =  (1,3,2), (3,2,1), (2,1,3) \end{matrix} \right. .
+\]</span> The vector cross-product <span class="math inline">\(\boldsymbol{b} \times \boldsymbol{c}\)</span> can then be expressed (in cartesian coordinates) as <span class="math display">\[
+    (\boldsymbol{b} \times \boldsymbol{c})_i = \epsilon_{ijk}b^jc^k,
+\]</span> where in Euclidean space the use of upper and lower indices is only to abide by Einstein summation convention and has no further significance. Notice that if we just contract <span class="math inline">\(\boldsymbol{b}\)</span> with the <span class="math inline">\(\epsilon_{ijk}\)</span> then we get the <span class="math inline">\(3\times 3\)</span> antisymmetric matrix from earlier <span class="math display">\[
+    \epsilon_{ijk}b^j = [\boldsymbol{b}\cdot\boldsymbol{J}]_{ik},
+\]</span> showing that its sign structure is derived from the Levi-Civita symbol.</p>
+<p>In special relativity we use the four dimensional symbol <span class="math inline">\(\epsilon_{\mu\nu\sigma\tau}\)</span> with the minor modification that indices now run from <span class="math inline">\(\mu = 0,1,2,3\)</span>, and the 24 permutations split as: <span class="math display">\[
+    \epsilon_{\mu\nu\sigma\tau} = \left\{\begin{matrix} +1 &amp; (\mu,\nu,\sigma,\tau) =&amp; (0,1,2,3), (0,2,3,1), (0,3,1,2), (2,1,3,0) \\
+    &amp; &amp; (3,1,0,2), (1,3,2,0), (3,0,2,1), (1,2,0,3) \\
+    &amp; &amp; (2,0,1,3), (1,0,3,2), (2,3,0,1), (3,2,1,0) \\
+    &amp; &amp; \\
+     -1 &amp; (\mu,\nu,\sigma,\tau)  =&amp;  (1,0,2,3), (1,2,3,0), (1,3,0,2), (2,0,3,1) \\
+     &amp; &amp; (3,0,1,2), (0,3,2,1), (3,2,0,1), (0,2,1,3) \\
+     &amp; &amp; (2,1,0,3), (0,1,3,2), (2,3,1,0), (3,2,0,1) \\
+     \end{matrix} \right. .
+\]</span> Notice that cyclic permutations of <span class="math inline">\((0,1,2,3)\)</span> no longer give other even permutation since we need <span class="math inline">\(d-1=3\)</span> swaps. Now suppose we Lorentz transformed the <span class="math inline">\(\epsilon_{\mu\nu\sigma\tau}\)</span> we get <span class="math display">\[
+    \tilde{\epsilon}_{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}} = \Lambda^\alpha_\bar{\mu}\Lambda^\beta_\bar{\nu}\Lambda^\gamma_\bar{\sigma}\Lambda^\delta_\bar{\tau} \epsilon_{\alpha\beta\gamma\delta}.
+\]</span> We haven’t called the transformed tensor <span class="math inline">\(\epsilon\)</span> since we reserve this for a symbol which behaves as described in <a href="#eq-levi_civita" class="quarto-xref">Equation&nbsp;<span>12.26</span></a>. We therefore have to establish if <span class="math inline">\(\tilde{\epsilon}\)</span> is just symbol expressed in the indices of frame <span class="math inline">\(\bar S\)</span>. Using <a href="#eq-det" class="quarto-xref">Equation&nbsp;<span>12.27</span></a> we that the righthand side reduces to <span class="math display">\[
+      \tilde{\epsilon}_{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}} = {\rm det}(\boldsymbol{\Lambda})\epsilon_{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}}.
+\]</span> This means if we have a proper Lorentz transformation with <span class="math inline">\({\rm det}(\boldsymbol{\Lambda}) = 1\)</span>, e.g.&nbsp;boosts and rotations, then the tensor <span class="math inline">\(\tilde{\epsilon}_{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}} = \epsilon_{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}}\)</span>, so it has identical elements in in frame <span class="math inline">\(\bar S\)</span> as it did in frame <span class="math inline">\(S\)</span>. This is the reason we call it a <em>symbol</em>. If the Lorentz transformation involves time-reversal or a spatial reflection then we get a sign flip. For this reason <span class="math inline">\(\epsilon_{\mu\nu\sigma\tau}\)</span> is said to be a <em>pseudo-tensor</em>.</p>
+<p>We will also have need of <span class="math inline">\(\epsilon_{\mu\nu\sigma\tau}\)</span> with all its indices raised <span class="math display">\[
+    \epsilon^{\mu\nu\sigma\tau} = \eta^{\mu\alpha}\eta^{\nu\beta}\eta^{\sigma\gamma}\eta^{\tau\delta}\epsilon_{\alpha\beta\gamma\delta}.
+\]</span> Irrespective of our metric signature this will flip the sign, for example <span class="math display">\[
+    \epsilon^{0123} = \eta^{00}\eta^{11}\eta^{22}\eta^{33}\epsilon_{0123} = -\epsilon_{0123}.
+\]</span></p>
+</div>
+</div>
+</div>
+<p>Due to this structure we can express all four equations (and both distinct cyclic permuations generating it) as one equation using the 4-dimensional Levi-Civita symbol <span id="eq-bianchi2"><span class="math display">\[
+    \frac{1}{2}\epsilon^{\mu\nu\sigma\rho}\partial_\nu F_{\sigma\rho} = 0,
+\tag{12.28}\]</span></span> where we generate each equation by fixing the free index <span class="math inline">\(\mu=0,1,2,3\)</span>. This is an alternative form of the Bianchi identity.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>5. Checking the Bianchi identity</strong></p>
+<p>Pick <span class="math inline">\(\mu = 0\)</span> and expand <a href="#eq-bianchi2" class="quarto-xref">Equation&nbsp;<span>12.28</span></a> to confirm it generates <a href="#eq-maxwell1" class="quarto-xref">Equation&nbsp;<span>12.21</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>5. Checking the Bianchi identity</strong></p>
+<p>Fixing <span class="math inline">\(\mu = 0\)</span> gives <span class="math display">\[
+    \frac{1}{2}\epsilon^{0\nu\sigma\rho}\partial_\nu F_{\sigma\rho} = 0.
+\]</span> The remaining indices <span class="math inline">\(\nu,\sigma,\rho\)</span> can only be permutations of <span class="math inline">\(1,2,3\)</span>. We therefore expect six terms in total <span class="math inline">\((1,2,3)\)</span>, <span class="math inline">\((2,3,1)\)</span> and <span class="math inline">\((3,1,2)\)</span> which are even, and <span class="math inline">\((1,3,2)\)</span>, <span class="math inline">\((3,2,1)\)</span> and <span class="math inline">\((2,1,3)\)</span> which are odd. These will have different signs. Technically the upper index symbol <span class="math inline">\(\epsilon^{\mu\nu\sigma\rho} = -1\)</span> for the even permutations and <span class="math inline">\(+1\)</span> for the odd ones. We get <span class="math display">\[
+    \frac{1}{2}\left(-\partial_1 F_{23} - \partial_2 F_{31} - \partial_3 F_{12} + \partial_1 F_{32} + \partial_2 F_{13} + \partial_3 F_{21}\right) = 0
+\]</span> whereupon we use the antisymmetry of <span class="math inline">\(F_{\mu\nu} = -F_{\nu\mu}\)</span> to merge pairs of terms as <span class="math display">\[
+\partial_1 F_{32} + \partial_2 F_{13} + \partial_3 F_{21} = 0,
+\]</span> which is <a href="#eq-maxwell1" class="quarto-xref">Equation&nbsp;<span>12.21</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Dual Faraday tensor
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Given the form of <a href="#eq-bianchi2" class="quarto-xref">Equation&nbsp;<span>12.28</span></a> it makes sense to define a <em>dual</em> Faraday tensor <span class="math display">\[
+   G^{\mu\nu} = \frac{1}{2}\epsilon^{\mu\nu\sigma\rho}F_{\sigma\rho}.
+\]</span> whose elements can be evaluated for example as <span class="math display">\[
+    G^{01} = \frac{1}{2}(\epsilon^{0123}F_{23} + \epsilon^{0132}F_{32}) = \frac{1}{2}(+1)\cdot (-B_x) + \frac{1}{2}(-1)\cdot (B_x) = -B_x,
+\]</span> giving in total <span id="eq-dual_faraday_upper"><span class="math display">\[
+    G^{\mu\nu} = \begin{pmatrix}
+        0  &amp; -B_x &amp; -B_y &amp; -B_z \\
+        B_x &amp; 0 &amp; -E_z/c &amp; E_y/c \\
+        B_y &amp; E_z/c &amp; 0 &amp; -E_x/c \\
+        B_z &amp; -E_y/c &amp; E_x/c &amp; 0 \end{pmatrix}.
+\tag{12.29}\]</span></span> The dual Faraday tensor swaps the roles of the electric and magnetic fields. In this form the Bianchi identity reduces to 4-divergence <span id="eq-dual_equation"><span class="math display">\[
+    \partial_\nu G^{\mu\nu} = 0.
+\tag{12.30}\]</span></span> Formally, this looks like a conservation equation for <span class="math inline">\(\mu = 0,1,2,3\)</span> 4-currents. However, the continuity equations in this case express (M1), no magnetic monopoles, and (M2), Faraday’s law of induction. <a href="#eq-dual_equation" class="quarto-xref">Equation&nbsp;<span>12.30</span></a> is a geometrical identity and holds independent of any dynamics or sources for the fields. It is not an equation of motion, but instead is a kinematic constraint on the theory.</p>
+</div>
+</div>
+<p>The Bianchi identity has a geometrical origin and does not describe dynamics of the field, since it is independent on charges, current and the action, rather it describes what configurations of the field are physically allowed in the theory. It is a <em>kinematic constraint</em> defining the arena in which dynamics can occur. A simple analogy in classical mechanics would be <span class="math display">\[
+    v = \frac{{\rm d}x}{{\rm d}t}, \quad {\rm and} \quad m\frac{{\rm d}v}{{\rm d}t} = F,
+\]</span> the first is a kinematic constraint, defining velocity and is always true, while the second is a dynamical equation that depends on the physics, Newton’s 2nd law.</p>
+<p>The nature of the Bianchi identity is best revealed by comparing it to the curl of a 3-vector field <span class="math inline">\(\boldsymbol{w}(\boldsymbol{r})\)</span>. This can be written as <span class="math display">\[
+    (\nabla \times \boldsymbol{w}(\boldsymbol{r}))_i = \epsilon_{ijk}\partial^j w^k(\boldsymbol{r}) = \begin{pmatrix} \partial_y w_z(\boldsymbol{r}) - \partial_z w_y(\boldsymbol{r}) \\  \partial_z w_x(\boldsymbol{r}) - \partial_x w_z(\boldsymbol{r}) \\  \partial_x w_y(\boldsymbol{r}) - \partial_y w_x(\boldsymbol{r}) \end{pmatrix},
+\]</span> which is similar to <a href="#eq-bianchi2" class="quarto-xref">Equation&nbsp;<span>12.28</span></a>. Here we will justify interpretting the Bianchi identity as a “curl” of a rank-2 tensor field.</p>
+<p>First, recall that given a scalar field <span class="math inline">\(\phi(\boldsymbol{r})\)</span> in 3D Euclidean space we can generate a 3-vector field from this via the grad operator as <span class="math display">\[
+    \nabla \phi(\boldsymbol{r}) = \begin{pmatrix} \partial_x\phi(\boldsymbol{r}) \\  \partial_y\phi(\boldsymbol{r}) \\  \partial_z\phi(\boldsymbol{r}) \end{pmatrix}.
+\]</span> Now taking the curl of this 3-vector field we get <span id="eq-curl_grad"><span class="math display">\[
+    \nabla \times \nabla \phi(\boldsymbol{r}) = \begin{pmatrix} \partial_y \partial_z\phi(\boldsymbol{r}) - \partial_z \partial_y\phi(\boldsymbol{r}) \\  \partial_z \partial_x\phi(\boldsymbol{r}) - \partial_x \partial_z\phi(\boldsymbol{r}) \\  \partial_x \partial_y\phi(\boldsymbol{r}) - \partial_y \partial_x\phi(\boldsymbol{r}) \end{pmatrix} = 0,
+\tag{12.31}\]</span></span> due to the commutativity of the cartesian derivatives. The curl essentially detects that our 3-vector field is really a scalar field in disguise generated by the grad operation.</p>
+<p>Next, consider a scalar field <span class="math inline">\(\varphi(x)\)</span> in 1+3D space-time. We can generate a one-form field by acting with the derivative one-form operator as <span class="math inline">\(\partial_\mu\varphi(x)\)</span>. Analogous to 3-vectors we can define the “curl” of a one-form field <span class="math inline">\(V_\mu(x)\)</span> as <span class="math display">\[
+    {\rm curl}[\tilde{V}(x)]_{\mu\nu} = \partial_\mu V_\nu(x) - \partial_\nu V_\mu(x)
+\]</span> As with <a href="#eq-curl_grad" class="quarto-xref">Equation&nbsp;<span>12.31</span></a> we have that <span class="math display">\[
+    {\rm curl}[\tilde{\partial}\varphi(x)]_{\mu\nu} =  \partial_\mu \partial_\nu\varphi(x) - \partial_\nu \partial_\mu\varphi(x) = 0,
+\]</span> again due to the commutativity of derivatives. So the one-form curl has detected that our one-form field is really a scalar field in disguise.</p>
+<p>However, the 3-vector curl returns another 3-vector field. The relativistic version is more elegant. The derivative one-form <span class="math inline">\(\partial_\mu\)</span> elevates a scalar field to a one-form field, while the one-form curl elevates a one-form field to a rank-2 tensor field. So we can now ask what is the “curl” of a rank-2 tensor field? The answer is <span class="math display">\[
+    {\rm curl}[\pmb{\symbb{T}}(x)]_{\mu\nu\rho} = \partial_\mu T_{\nu\rho}(x) + \partial_\nu T_{\rho\mu}(x) + \partial_\rho T_{\mu\nu}(x),
+\]</span> which generates a rank-2 tensor field. What makes this a curl is that <span id="eq-curl_curl"><span class="math display">\[
+    {\rm curl}[{\rm curl}[\tilde{V}(x)]]_{\mu\nu\rho} = 0,
+\tag{12.32}\]</span></span> once again due to the commutativity of derivatives, so the curl of a curl vanishes.</p>
+<p>The rank-2 tensor curl therefore detects whether the input field is genuinely a rank-2 tensor field or if it is a one-form field in disguise. The key point we notice here is that the Bianchi identity is <span class="math display">\[
+    {\rm curl}[\pmb{\symbb{F}}(x)]_{\mu\nu\rho} = 0,
+\]</span> where <span class="math inline">\(\pmb{\symbb{F}}\)</span> is the abstract Faraday tensor. This geometrical constraint tells us that <span class="math inline">\(F^{\mu\nu}\)</span> is not really a rank-2 tensor, it must be the curl of a one-form field in disguise. We will explore this profound relevation in detail in the next lecture.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>6. Curl of a curl</strong></p>
+<p>Confirm the curl of a curl is zero as stated in <a href="#eq-curl_curl" class="quarto-xref">Equation&nbsp;<span>12.32</span></a>.</p>
+<p><strong>7. Lorentz invariants for the EM field</strong></p>
+<p>The electromagnetic field has two Lorentz scalar quantities, which can be expressed in terms of the Faraday tensor and its dual, <span class="math display">\[
+    a \equiv -\tfrac{1}{2}F^{\mu \nu} F_{\mu\nu}, \qquad b = -\tfrac{1}{2}F^{\mu\nu} G_{\mu\nu}.
+\]</span></p>
+<ol type="a">
+<li><p>Show that, in terms of the electric and magnetic fields, these invariants have the form <span class="math display">\[
+a = \frac{1}{c^2}E^2 - B^2, \qquad b = -\frac{2}{c} \boldsymbol{E}\cdot\boldsymbol{B}.
+\]</span></p></li>
+<li><p>Verify, from the form of the Lorentz boosted electric and magnetic fields given in <a href="#eq-efield" class="quarto-xref">Equation&nbsp;<span>12.19</span></a> and <a href="#eq-bfield" class="quarto-xref">Equation&nbsp;<span>12.20</span></a> that these quantities are indeed invariant.</p></li>
+<li><p>What are the values of <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> for an electromagnetic plane-wave?</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>6. Curl of a curl</strong></p>
+<p>Substituing in the curl of a one-form field into the curl of a rank-2 tensor field we obtain: <span class="math display">\[
+\begin{align}
+    {\rm curl}[{\rm curl}[\tilde{V}(x)]]_{\mu\nu\rho} &amp;= ~\, \partial_\mu \left(\partial_\nu V_\rho(x) - \partial_\rho V_\nu(x)\right)\\
+    &amp; \quad + \partial_\nu\left(\partial_\rho V_\mu(x) - \partial_\mu V_\rho(x)\right)\\
+    &amp; \quad + \partial_\rho \left(\partial_\mu V_\nu(x) - \partial_\nu V_\mu(x)\right) = 0,
+\end{align}
+\]</span> from which the comutativity of derivatives ensures the terms cancel in pairs, as stated.</p>
+<p><strong>7. Lorentz invariants for the EM field</strong></p>
+<ol type="a">
+<li><p>The electromagnetic field tensor is <span class="math display">\[
+F^{\mu\nu} = \begin{pmatrix}
+    0 &amp; -E_x/c &amp; -E_y/c &amp; -E_z/c \\
+    E_x/c &amp; 0 &amp; -B_z &amp; B_y \\
+    E_y/c &amp; B_z &amp; 0 &amp; -B_x \\
+    E_z/c &amp; -B_y &amp; B_x &amp; 0
+\end{pmatrix}.
+\]</span> The first invariant is defined as <span class="math display">\[
+a = -\frac{1}{2} F^{\mu\nu}F_{\mu\nu},
+\]</span> which is a full contraction of the Faraday tensor with itself. Expanding components gives <span class="math display">\[
+a = -\frac{1}{2}\left(
+-\frac{E_x^2}{c^2} - \frac{E_y^2}{c^2} - \frac{E_z^2}{c^2} - \frac{E_x^2}{c^2} + B_z^2 + B_y^2 + \cdots \right).
+\]</span> Collecting terms, each of which appears twice, then gives <span class="math display">\[
+a = \frac{|\boldsymbol{E}|^2}{c^2} - |\boldsymbol{B}|^2.
+\]</span> The second invariant is defined as<br>
+<span class="math display">\[
+b = -\frac{1}{2} F^{\mu\nu} G_{\mu\nu},
+\]</span> where <span class="math inline">\(G_{\mu\nu}\)</span> is the dual tensor. Expanding gives terms of the form <span class="math display">\[
+b = -\frac{1}{2}\left[\left(-\frac{E_x}{c}\right)(-B_x) + \left(-\frac{E_y}{c}\right)(-B_y) +
+\left(-\frac{E_z}{c}\right)(-B_z) + \dots \right].
+\]</span> Collecting all contributions (each appears four times), gives <span class="math display">\[
+b = -\frac{2}{c}\boldsymbol{E}\cdot\boldsymbol{B}.
+\]</span></p></li>
+<li><p>Repeating <a href="#eq-efield" class="quarto-xref">Equation&nbsp;<span>12.19</span></a> and <a href="#eq-bfield" class="quarto-xref">Equation&nbsp;<span>12.20</span></a>, under a boost with velocity <span class="math inline">\(\boldsymbol{v}\)</span> the fields transform as <span class="math display">\[
+\bar{\boldsymbol{E}} =
+\gamma(\boldsymbol{E} + \boldsymbol{v} \times \boldsymbol{B}) - \frac{\gamma^2}{c^2(\gamma+1)}\boldsymbol{v}(\boldsymbol{v}\cdot\boldsymbol{E}),
+\]</span> and <span class="math display">\[
+\bar{\boldsymbol{B}} = \gamma\left(\boldsymbol{B} - \frac{1}{c^2}\boldsymbol{v} \times \boldsymbol{E}\right) - \frac{\gamma^2}{c^2(\gamma+1)}\boldsymbol{v}(\boldsymbol{v}\cdot\boldsymbol{B}).
+\]</span> We begin by computing <span class="math display">\[
+\begin{align}
+\bar{\boldsymbol{E}}\cdot\bar{\boldsymbol{E}} &amp;= \gamma^2(\boldsymbol{E} + \boldsymbol{v}\times\boldsymbol{B})\cdot(\boldsymbol{E} + \boldsymbol{v}\times\boldsymbol{B}) \\
+&amp; \quad - \frac{2\gamma^3}{c^2(\gamma+1)} \boldsymbol{v}\cdot(\boldsymbol{E} + \boldsymbol{v}\times\boldsymbol{B})(\boldsymbol{v}\cdot\boldsymbol{E}) \\
+&amp; \quad + \frac{\gamma^4}{c^4(\gamma+1)^2} v^2 (\boldsymbol{v}\cdot\boldsymbol{E})^2.
+\end{align}
+\]</span> Now expand the first term: <span class="math display">\[
+(\boldsymbol{E} + \boldsymbol{v}\times\boldsymbol{B})^2 = |\boldsymbol{E}|^2 + 2\,\boldsymbol{E}\cdot(\boldsymbol{v}\times\boldsymbol{B}) + |\boldsymbol{v}\times\boldsymbol{B}|^2.
+\]</span> Using <span class="math display">\[
+|\boldsymbol{v}\times\boldsymbol{B}|^2 = v^2|\boldsymbol{B}|^2 - (\boldsymbol{v}\cdot\boldsymbol{B})^2,
+\]</span> to obtain <span class="math display">\[
+\begin{align}
+\bar{\boldsymbol{E}}\cdot\bar{\boldsymbol{E}} &amp;= \gamma^2\left(|\boldsymbol{E}|^2 + 2\,\boldsymbol{E}\cdot(\boldsymbol{v}\times\boldsymbol{B}) + v^2|\boldsymbol{B}|^2 - (\boldsymbol{v}\cdot\boldsymbol{B})^2\right) \\
+&amp;\quad + \underbrace{\frac{2\gamma^3}{c^2(\gamma+1)} (\boldsymbol{v}\cdot\boldsymbol{E})^2 - \frac{\gamma^4}{c^4(\gamma+1)^2}v^2 (\boldsymbol{v}\cdot\boldsymbol{E})^2}_{-\frac{\gamma^2}{c^2}(\boldsymbol{v}\cdot\boldsymbol{E})^2}.
+\end{align}
+\]</span> After rearrangement we obtain <span class="math display">\[
+\bar{\boldsymbol{E}}\cdot\bar{\boldsymbol{E}} = \gamma^2\left(|\boldsymbol{E}|^2 - 2\,\boldsymbol{E}\cdot(\boldsymbol{v}\times\boldsymbol{B}) -\frac{1}{c^2}(\boldsymbol{v}\cdot\boldsymbol{E})^2 + v^2|\boldsymbol{B}|^2 - (\boldsymbol{v}\cdot\boldsymbol{B})^2\right).
+\]</span> Next we compute <span class="math inline">\(\bar{\boldsymbol{B}}\cdot\bar{\boldsymbol{B}}\)</span> as: <span class="math display">\[
+\bar{\boldsymbol{B}}\cdot\bar{\boldsymbol{B}} = \gamma^2\left(|\boldsymbol{B}|^2 - \frac{2}{c^2}\,\boldsymbol{v}\cdot(\boldsymbol{E}\times\boldsymbol{B}) - \frac{1}{c^4}(\boldsymbol{v}\cdot\boldsymbol{E})^2 - \frac{1}{c^2}(\boldsymbol{v}\cdot\boldsymbol{B})^2 + \frac{v^2}{c^4}|\boldsymbol{E}|^2\right).
+\]</span> Form <span class="math inline">\(|\bar{\boldsymbol{E}}|^2 - c^2|\bar{\boldsymbol{B}}|^2\)</span> we find <span class="math display">\[
+\begin{align}
+|\bar{\boldsymbol{E}}|^2 - c^2|\bar{\boldsymbol{B}}|^2 &amp;= \gamma^2\left(|\boldsymbol{E}|^2 - c^2|\boldsymbol{B}|^2 + v^2|\boldsymbol{B}|^2 - \frac{v^2}{c^2}|\boldsymbol{E}|^2 \right) \\
+&amp; \quad + \gamma^2\left(2\,\boldsymbol{E}\cdot(\boldsymbol{v}\times\boldsymbol{B}) + \frac{2}{c^2}\boldsymbol{v}\cdot(\boldsymbol{E}\times\boldsymbol{B}) \right) \\
+&amp; \quad - \gamma^2\left((\boldsymbol{v}\cdot\boldsymbol{B})^2 - \frac{1}{c^2}(\boldsymbol{v}\cdot\boldsymbol{E})^2 \right).
+\end{align}
+\]</span> After cancelling all the velocity-dependent terms we obtain <span class="math display">\[
+|\bar{\boldsymbol{E}}|^2 - c^2|\bar{\boldsymbol{B}}|^2 = |\boldsymbol{E}|^2 - c^2|\boldsymbol{B}|^2,
+\]</span> as required. The next step is to show the invariance of <span class="math inline">\(\boldsymbol{E}\cdot\boldsymbol{B}\)</span>. Now compute <span class="math display">\[
+\begin{align}
+\bar{\boldsymbol{E}}\cdot\bar{\boldsymbol{B}} &amp;= \gamma^2(\boldsymbol{E} + \boldsymbol{v}\times\boldsymbol{B}) \cdot \left(\boldsymbol{B} - \frac{1}{c^2}\boldsymbol{v}\times\boldsymbol{E}\right)\\
+&amp;\quad + \frac{\gamma^4}{c^4(\gamma+1)^2} v^2 (\boldsymbol{v}\cdot\boldsymbol{E})(\boldsymbol{v}\cdot\boldsymbol{B})\\
+&amp;\quad - \frac{\gamma^3}{c^2(\gamma+1)} \left[(\boldsymbol{v}\cdot\boldsymbol{B})\,\boldsymbol{v}\cdot(\boldsymbol{E} + \boldsymbol{v}\times\boldsymbol{B})+(\boldsymbol{v}\cdot\boldsymbol{E})\,\boldsymbol{v}\cdot\left(\boldsymbol{B} - \frac{1}{c^2}\boldsymbol{v}\times\boldsymbol{E}\right)\right].
+\end{align}
+\]</span> Expand the first term: <span class="math display">\[
+\begin{align}
+(\boldsymbol{E} + \boldsymbol{v}\times\boldsymbol{B}) \cdot (\boldsymbol{B} - \frac{1}{c^2}\boldsymbol{v}\times\boldsymbol{E}) &amp;= \boldsymbol{E}\cdot\boldsymbol{B} + \boldsymbol{B}\cdot(\boldsymbol{v}\times\boldsymbol{B}) \\
+&amp; \quad -\frac{1}{c^2}\boldsymbol{E}\cdot(\boldsymbol{v}\times\boldsymbol{E}) - \frac{1}{c^2}(\boldsymbol{v}\times\boldsymbol{B})\cdot(\boldsymbol{v}\times\boldsymbol{E}).
+\end{align}
+\]</span> and using <span class="math display">\[
+(\boldsymbol{v}\times\boldsymbol{B})\cdot(\boldsymbol{v}\times\boldsymbol{E}) = v^2\boldsymbol{E}\cdot\boldsymbol{B} - (\boldsymbol{v}\cdot\boldsymbol{E})(\boldsymbol{v}\cdot\boldsymbol{B}),
+\]</span> we find the complete cancellation of velocity-dependent contributions. Thus <span class="math display">\[
+\bar{\boldsymbol{E}}\cdot\bar{\boldsymbol{B}} = \boldsymbol{E}\cdot\boldsymbol{B},
+\]</span> meaning that both scalar quantities <span class="math display">\[
+|\boldsymbol{E}|^2 - c^2|\boldsymbol{B}|^2, \qquad \boldsymbol{E}\cdot\boldsymbol{B}
+\]</span> are Lorentz invariant.</p></li>
+<li><p>For a plane wave, <span class="math display">\[
+\boldsymbol{E} = \boldsymbol{E}^{(0)} e^{i(\boldsymbol{k}\cdot\boldsymbol{x} - \omega t)}, \qquad \boldsymbol{B} = \boldsymbol{B}^{(0)} e^{i(\boldsymbol{k}\cdot\boldsymbol{x} - \omega t)}.
+\]</span> From Maxwell’s equations, <span class="math display">\[
+\boldsymbol{k}\times\boldsymbol{E}^{(0)} = \omega \boldsymbol{B}^{(0)},
+\]</span> and <span class="math display">\[
+\boldsymbol{k}\cdot\boldsymbol{E}^{(0)} = 0, \qquad \boldsymbol{k}\cdot\boldsymbol{B}^{(0)} = 0.
+\]</span> Thus <span class="math display">\[
+\boldsymbol{E}\cdot\boldsymbol{B} = 0,
+\]</span> and <span class="math display">\[
+|\boldsymbol{E}|^2 - c^2|\boldsymbol{B}|^2 = 0.
+\]</span> Hence both invariants vanish for a plane electromagnetic wave: <span class="math display">\[
+a = 0, \qquad b = 0.
+\]</span></p></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="the-inhomogeneous-equations" class="level3 page-columns page-full" data-number="12.3.2">
+<h3 data-number="12.3.2" class="anchored" data-anchor-id="the-inhomogeneous-equations"><span class="header-section-number">12.3.2</span> The inhomogeneous equations</h3>
+<p>Let’s now tackle Maxwell’s equation (M3) and (M4). These equations involve the charge density <span class="math inline">\(\rho(x)\)</span> and 3-current density <span class="math inline">\(\boldsymbol{j}(x)\)</span> in a given frame <span class="math inline">\(S\)</span>. We saw earlier in the lecture <a href="./planewaves.html">Plane-waves and particle flow</a> we saw that these objects can be readily packaged into a 4-current <span class="math display">\[
+    j^{\mu}(x) = \left(\begin{array}{c} \rho(x)c \\
+    {\boldsymbol{j}}(x)\end{array}\right) = \gamma \rho_0(x)u^\mu(x)c,
+\]</span> where <span class="math inline">\(\rho_0(x)\)</span> is the co-moving charge density and <span class="math inline">\(u^\mu(x)\)</span> is the 4-velocity field of the particles. With this the scalar equation (M3) <span class="math display">\[
+    \epsilon_0 \nabla \cdot \boldsymbol{E} = \epsilon_0(\partial_x E_x + \partial_y E_y + \partial_z E_z) = \rho,
+\]</span> converts using the <span class="math inline">\(({2 \atop 0})\)</span> Faraday tensor from <a href="#eq-faraday_upper" class="quarto-xref">Equation&nbsp;<span>12.15</span></a> as <span class="math display">\[
+    c\left(\partial_1 F^{10} + \partial_2 F^{20} + \partial_3 F^{30}\right) = \frac{\rho}{\epsilon_0} = c\mu_0 j^0,
+\]</span> after using <span class="math inline">\(c^2 = (\epsilon_0\mu_0)^{-1}\)</span>. Finally, we convert vector equation (M4) as: <span class="math display">\[
+    \mu_0^{-1}\nabla\times\boldsymbol{B} - \epsilon_0 \dot{\boldsymbol{E}} = \boldsymbol{j},
+\]</span> whose <span class="math inline">\(x\)</span> component gives <span class="math display">\[
+    \mu_0^{-1}(\partial_y B_z - \partial_z B_y) - \epsilon_0\partial_t E_x = j_x ~\rightarrow ~ \mu_0^{-1}(\partial_2 F^{21} + \partial_3 F^{31} + \partial_0 F^{01}) = j^1.
+\]</span> using <span class="math inline">\(c^2\epsilon = \mu_0^{-1}\)</span> and picking elements of <span class="math inline">\(F^{\mu\nu}\)</span> to replace the fields to make all terms have the same sign. Likewise for the <span class="math inline">\(y\)</span> we get <span class="math display">\[
+    \mu_0^{-1}(\partial_z B_x - \partial_x B_z) - \epsilon_0\partial_t E_y = j_y ~ \rightarrow ~\mu_0^{-1}(\partial_3 F^{32} + \partial_1 F^{12} + \partial_0 F^{02}) = j^2.
+\]</span> and the <span class="math inline">\(z\)</span> as: <span class="math display">\[
+    \mu_0^{-1}(\partial_x B_y - \partial_y B_x) - \epsilon_0\partial_t E_z = j_z ~ \rightarrow ~\mu_0^{-1}(\partial_1 F^{13} + \partial_2 F^{21} + \partial_0 F^{03}) = j^3.
+\]</span> All four of these equations can be compactly encoded as <span class="math display">\[
+    \partial_\mu F^{\mu\nu} = \mu_0j^\mu.
+\]</span> This is called the <em>relativistic Maxwell equation</em>. In contrast to the Bianchi identity this equation expresses how the dynamics of the EM fields will occur in the presence of charges and currents. It is this equation which we will aim to derive via an appropriate EM Lagrangian in the next lecture.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 12</strong>.</span></div></div>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./em_revision.html" class="pagination-link" aria-label="Revision of Electromagnetism">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./example_class4.html" class="pagination-link" aria-label="Example Class 4">
+        <span class="nav-page-text">Example Class 4</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

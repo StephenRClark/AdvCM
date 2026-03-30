@@ -270,6 +270,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
@@ -319,12 +348,12 @@ window.Quarto = {
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>1. Minkowski’s equation</strong></p>
-<p>Given a particle with 4-velocity <span class="math inline">\(U^\mu\)</span> the 4-momentum is defined <span class="math inline">\(P^{\mu} \equiv m c U^{\mu} = (\mathcal{E}/c,\boldsymbol{p})\)</span>, where <span class="math inline">\(\mathcal{E}\)</span> is the relativistic energy and <span class="math inline">\(\boldsymbol{p}\)</span> is the relativistic 3-momentum. Using this the 4-force is defined <span class="math display">\[
-    f^{\mu} \equiv c \frac{{\rm d} P^{\mu}}{{\rm d} s}.
+<p>Given a particle with 4-velocity <span class="math inline">\(u^\mu\)</span> the 4-momentum is defined <span class="math inline">\(p^{\mu} \equiv m c u^{\mu} = (\mathcal{E}/c,\boldsymbol{p})\)</span>, where <span class="math inline">\(\mathcal{E}\)</span> is the relativistic energy and <span class="math inline">\(\boldsymbol{p}\)</span> is the relativistic 3-momentum. Using this the 4-force is defined <span class="math display">\[
+    f^{\mu} \equiv c \frac{{\rm d} p^{\mu}}{{\rm d} s}.
 \]</span></p>
 <ol type="a">
 <li>Show that <em>Minkowski’s equation of motion</em> applies, <span class="math display">\[
-f^{\mu} U_{\mu} = 0.
+f^{\mu} u_{\mu} = 0.
 \]</span></li>
 </ol>
 <p>Suppose we write <span class="math inline">\(f^{\mu} = \gamma(g, \boldsymbol{f})\)</span> where <span class="math inline">\(g\)</span> is a scalar and <span class="math inline">\(\boldsymbol{f}\)</span> is a 3-vector.</p>
@@ -372,11 +401,11 @@ f^{\mu} U_{\mu} = 0.
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>3. Interacting Lagrangian for relativistic particle</strong></p>
-<p>Any “potential energy” <span class="math inline">\(V\)</span> in the Lagrangian should properly be considered as the 0-component of a “4-potential” <span class="math inline">\(\phi^{\mu} = (V,\boldsymbol{\phi}).\)</span> The 3-vector <span class="math inline">\(\boldsymbol{\phi}\)</span> is a `potential momentum’ not usually present in classical physics. Thus we might expect the 3-scalar potential <span class="math inline">\(V\)</span>, in the relativistic Lagrangian, to be replaced by a term such as <span class="math inline">\(\phi^{\mu} U_{\mu}/\gamma.\)</span> Our relativistic Lagrangian is therefore <span class="math inline">\(L = -mc^2/\gamma - \phi^{\mu}U_{\mu}/\gamma.\)</span></p>
+<p>Any “potential energy” <span class="math inline">\(V\)</span> in the Lagrangian should properly be considered as the 0-component of a “4-potential” <span class="math inline">\(\phi^{\mu} = (V,\boldsymbol{\phi}).\)</span> The 3-vector <span class="math inline">\(\boldsymbol{\phi}\)</span> is a `potential momentum’ not usually present in classical physics. Thus we might expect the 3-scalar potential <span class="math inline">\(V\)</span>, in the relativistic Lagrangian, to be replaced by a term such as <span class="math inline">\(\phi^{\mu} u_{\mu}/\gamma.\)</span> Our relativistic Lagrangian is therefore <span class="math inline">\(L = -mc^2/\gamma - \phi^{\mu} u_{\mu}/\gamma.\)</span></p>
 <ol type="a">
 <li><p>Show that, when <span class="math inline">\(v \ll c,\)</span> this is equivalent to the familiar non-relativistic Lagrangian.</p></li>
-<li><p>Find the 1,2,3-components of the canonical relativistic momentum <span class="math inline">\(P^j\)</span>; what do you notice?</p></li>
-<li><p>The relativistic energy (0-component of the canonical momentum <span class="math inline">\(P^0\)</span>) is provided by the relativistic Hamiltonian <span class="math inline">\(H = \sum_{j=1}^3 P^j \dot{x}^j - L.\)</span> Compute <span class="math inline">\(H.\)</span></p></li>
+<li><p>Find the 1,2,3-components of the canonical relativistic momentum <span class="math inline">\(p^j\)</span>; what do you notice?</p></li>
+<li><p>The relativistic energy (0-component of the canonical momentum <span class="math inline">\(p^0\)</span>) is provided by the relativistic Hamiltonian <span class="math inline">\(H = \sum_{j=1}^3 p^j \dot{x}^j - L.\)</span> Compute <span class="math inline">\(H.\)</span></p></li>
 </ol>
 </div>
 </div>
@@ -392,15 +421,15 @@ f^{\mu} U_{\mu} = 0.
 <div class="callout-body-container callout-body">
 <p><strong>4. A 4-velocity dependent 4-force</strong></p>
 <p>In general, a force exerted on a particle can depend on its 4-velocity as well as its position. The simplest such covariant dependence is linear, occurring for a 4-force given by <span class="math display">\[
-    f^{\mu} = T^{\mu \nu} U_{\nu},
+    f^{\mu} = T^{\mu \nu} u_{\nu},
 \]</span> for some second-rank tensor <span class="math inline">\(T^{\mu\nu}.\)</span> We can split <span class="math inline">\(T^{\mu \nu}\)</span> into its symmetric part <span class="math display">\[
     S^{\mu\nu} = \frac{1}{2}(T^{\mu \nu} + T^{\nu \mu}),
 \]</span> and antisymmetric part <span class="math display">\[
     A^{\mu\nu} = \frac{1}{2}(T^{\mu \nu} - T^{\nu \mu}).
 \]</span></p>
 <ol type="a">
-<li><p>Show that the antisymmetric part satisfies Minkowski’s equation <span class="math inline">\(A^{\mu\nu}U_{\mu}U_{\nu} = 0\)</span>.</p></li>
-<li><p>By considering different choices of <span class="math inline">\(U^{\mu}\)</span>, show that the only way the symmetric part can satisfy Minkowski’s equation <span class="math inline">\(S^{\mu\nu}U_{\mu}U_{\nu} = 0\)</span> is for all components of <span class="math inline">\(S^{\mu\nu}\)</span> to be zero.</p></li>
+<li><p>Show that the antisymmetric part satisfies Minkowski’s equation <span class="math inline">\(A^{\mu\nu}u_{\mu}u_{\nu} = 0\)</span>.</p></li>
+<li><p>By considering different choices of <span class="math inline">\(u^{\mu}\)</span>, show that the only way the symmetric part can satisfy Minkowski’s equation <span class="math inline">\(S^{\mu\nu}u_{\mu}u_{\nu} = 0\)</span> is for all components of <span class="math inline">\(S^{\mu\nu}\)</span> to be zero.</p></li>
 <li><p>If <span class="math inline">\(T^{\mu\nu}\)</span> is given by <span class="math display">\[
 T^{\mu\nu} = \left( \begin{array}{cccc} 0 &amp; -e_x &amp; -e_y &amp; -e_z \\
 e_x &amp; 0 &amp; -b_z &amp; b_y \\

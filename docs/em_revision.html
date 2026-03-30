@@ -1,0 +1,1164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>11&nbsp; Revision of Electromagnetism – Advanced Classical Mechanics (Relativistic Fields)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./faraday.html" rel="next">
+<link href="./symmetries.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./em_revision.html">IV: Relativistic Electrodynamics</a></li><li class="breadcrumb-item"><a href="./em_revision.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./figures/acm.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Advanced Classical Mechanics (Relativistic Fields)</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended Books</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">I: Special Relativity</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./principle_relativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Principle of relativity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lorentz_transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lorentz transformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./space_time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minkowski space-time</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducing 4-vectors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">II: Tensors and Fields</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">III: Lagrangian field theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./symmetries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#maxwells-equations" id="toc-maxwells-equations" class="nav-link active" data-scroll-target="#maxwells-equations"><span class="header-section-number">11.1</span> Maxwell’s equations</a></li>
+  <li><a href="#lorentz-force-and-electromagnetic-energy" id="toc-lorentz-force-and-electromagnetic-energy" class="nav-link" data-scroll-target="#lorentz-force-and-electromagnetic-energy"><span class="header-section-number">11.2</span> Lorentz force and electromagnetic energy</a></li>
+  <li><a href="#solutions-of-maxwells-equations-without-sources" id="toc-solutions-of-maxwells-equations-without-sources" class="nav-link" data-scroll-target="#solutions-of-maxwells-equations-without-sources"><span class="header-section-number">11.3</span> Solutions of Maxwell’s equations without sources</a></li>
+  <li><a href="#potentials-and-gauge-transformations" id="toc-potentials-and-gauge-transformations" class="nav-link" data-scroll-target="#potentials-and-gauge-transformations"><span class="header-section-number">11.4</span> Potentials and gauge transformations</a></li>
+  <li><a href="#sec:lorentz" id="toc-sec:lorentz" class="nav-link" data-scroll-target="#sec\:lorentz"><span class="header-section-number">11.5</span> Lagrangian for the Lorentz force</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./em_revision.html">IV: Relativistic Electrodynamics</a></li><li class="breadcrumb-item"><a href="./em_revision.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>In this lecture we will start the final part of the course. Our aim is to examine how electromagnetism is formulated in a relativistically covariant way, and interpret it in the language of Lagrangian field theory. Before we do so, however, we will quickly revise basic facts about the electromagnetic field without relativistic considerations, most of which will hopefully be familiar.</p>
+<section id="maxwells-equations" class="level2 page-columns page-full" data-number="11.1">
+<h2 data-number="11.1" class="anchored" data-anchor-id="maxwells-equations"><span class="header-section-number">11.1</span> Maxwell’s equations</h2>
+<div class="page-columns page-full"><p>The diverse electric and magnetic phenomena observed in the 18th and 19th centuries, such as Gauss’s law, Faraday’s law and Ampère’s law, were summarized clearly by Maxwell in the late 1800s, who also realized a term needed to be added to Ampère’s law involving the time dependence of <span class="math inline">\(\boldsymbol{E},\)</span> a “displacement current”.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">The vectorial ‘Maxwell equations’ were written down independently by Heaviside, Gibbs and Hertz..</span></div></div>
+<p>The four ‘Maxwell equations’ therefore describe all electromagnetic phenomena, and Maxwell realized that light itself is such a phenomenon. The view of physics at the end of the 19th century was therefore that all physics is either mechanics (as described by Newton-Lagrange-Hamilton), or electromagnetic (as described by Maxwell). However, Maxwell’s equations do not transform covariantly under Galilean transformations. Finding the set of transformations under which they <em>do</em> transform covariantly was Einstein’s main motivation for introducing special relativity, as we discussed back in the first lecture.</p>
+<p>In modern (3-vector) notation, in free space, Maxwell’s equations are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 9%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Differential form</th>
+<th style="text-align: center;"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\nabla \cdot \boldsymbol{B} = 0\)</span></td>
+<td style="text-align: center;">(M1)</td>
+<td><em>Gauss’s law for magnetic field</em></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\nabla \times \boldsymbol{E} + \dot{\boldsymbol{B}}  = 0\)</span></td>
+<td style="text-align: center;">(M2)</td>
+<td><em>Faraday’s law</em></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\varepsilon_0  \nabla \cdot \boldsymbol{E}  = \rho\)</span></td>
+<td style="text-align: center;">(M3)</td>
+<td><em>Gauss’s law for electric field</em></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mu_0^{-1} \nabla \times \boldsymbol{B} - \varepsilon_0 \dot{\boldsymbol{E}}  = \boldsymbol{j}\)</span></td>
+<td style="text-align: center;">(M4)</td>
+<td><em>Maxwell-Ampère law</em></td>
+</tr>
+</tbody>
+</table>
+<div class="page-columns page-full"><p>Notice that two of the equations (M1) and (M3) are scalar equations, while (M2) and (M4) are vector equations.  The first two equations (M1) and (M2) are homogenous and express how the electric and magnetic fields are related to each other regardless of the presence of charges and currents. In particular (M1) indicates that there are no magnetic charges (or monopoles). Together (M3) and (M4) are inhomogeneous equations with (M3) showing how the electric field depends on the scalar electric charge density <span class="math inline">\(\rho(t,\boldsymbol{r})\)</span>. Equation (M4) shows how the electric and magnetic field depend on a vector current density <span class="math inline">\(\boldsymbol{j}(t,\boldsymbol{r}).\)</span> For point charges, <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\boldsymbol{j}\)</span> are given by <span class="math inline">\(\delta\)</span>-functions.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">There are 8 scalar Maxwell equations in total. Indeed Maxwell originally wrote them out fully in terms of components.</span></div></div>
+<p>The constants <span class="math inline">\(\varepsilon_0\)</span> and <span class="math inline">\(\mu_0\)</span> are called, respectively, the <em>permittivity</em> and <em>permeability</em> of free space. Looking at the physical dimensions of the quantities in (M3) and (M4), one can see that they may be combined to give a constant with the units of <em>speed</em>, <span class="math display">\[
+    c \equiv \frac{1}{\sqrt{\varepsilon_0 \mu_0}} = 2.9979 \times 10^8 \, \mathrm{m\,s}^{-1},
+\]</span> which Maxwell noticed was within known error of the measured speed of light at the time.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Maxwell’s equations in free-space
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>In free-space where there are no charges <span class="math inline">\(\rho = 0\)</span> or current <span class="math inline">\(\boldsymbol{j}=0\)</span> Maxwell’s equations take on a very symmetrical form for the scalar <span class="math display">\[
+    \nabla \cdot \boldsymbol{B} = 0, \quad \nabla \cdot \boldsymbol{E} = 0
+\]</span> and vector equations <span class="math display">\[
+    \nabla \times \boldsymbol{B} = \frac{1}{c^2} \dot{\boldsymbol{E}}, \quad \nabla \times \boldsymbol{E} = -\dot{\boldsymbol{B}}.
+\]</span></p>
+</div>
+</div>
+</div>
+<p>Maxwell’s equations can also be written down in integral form. These forms imply the differential versions above (using formulas and theorems from vector calculus); they are equivalent if we allow <span class="math inline">\(\delta\)</span>-functions in the charge and current distributions in both the differential and integral forms. Explicitly, the integral forms of Maxwell’s equations are:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 14%">
+<col style="width: 9%">
+<col style="width: 77%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Integral form</th>
+<th style="text-align: center;"></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(\oint_{\mathcal{S}}\mathrm{d}^2\boldsymbol{S}\cdot\boldsymbol{B} = 0,\)</span></td>
+<td style="text-align: center;">(M1’)</td>
+<td><em>Net flux of magnetic field through closed surface <span class="math inline">\(\mathcal{S}\)</span> is zero</em></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\partial_t \iint_{\mathcal{S}}\mathrm{d}^2\boldsymbol{S}\cdot\boldsymbol{B}  = - \oint_{\partial \mathcal{S}}\mathrm{d}\boldsymbol{\ell}\cdot\boldsymbol{E}\)</span></td>
+<td style="text-align: center;">(M2’)</td>
+<td><em>Rate of change of the flux of <span class="math inline">\(\boldsymbol{B}\)</span> through surface <span class="math inline">\(\mathcal{S}\)</span> is minus the line integral of <span class="math inline">\(\boldsymbol{E}\)</span> around boundary curve of the surface <span class="math inline">\(\partial \mathcal{S}\)</span></em></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(\varepsilon_0 \oint_{\partial\mathcal{V}}\mathrm{d}^2\boldsymbol{S}\cdot\boldsymbol{E}  = \int_{\mathcal{V}} \mathrm{d}^3\boldsymbol{r}\, \rho\)</span></td>
+<td style="text-align: center;">(M3’)</td>
+<td><em>Net flux of <span class="math inline">\(\boldsymbol{E}\)</span> through closed surface <span class="math inline">\(\partial\mathcal{V}\)</span> equals the total charge in enclosed volume <span class="math inline">\(\mathcal{V}\)</span></em></td>
+</tr>
+<tr class="even">
+<td><span class="math inline">\(\mu_0^{-1} \oint_{\partial \mathcal{S}} \mathrm{d}\boldsymbol{\ell} \cdot\boldsymbol{B} = \varepsilon_0 \partial_t \int_{\mathcal{S}}\mathrm{d}^2\boldsymbol{S}\cdot\boldsymbol{E} + \int_{\mathcal{S}}\mathrm{d}^2\boldsymbol{S}\cdot\boldsymbol{j}\)</span></td>
+<td style="text-align: center;">(M4’)</td>
+<td><em>Total current flowing through the surface <span class="math inline">\(\mathcal{S}\)</span> plus rate of change of the flux of <span class="math inline">\(\boldsymbol{E}\)</span> through <span class="math inline">\(\mathcal{S}\)</span> equals the line integral of <span class="math inline">\(\boldsymbol{B}\)</span> around boundary curve of the surface <span class="math inline">\(\partial \mathcal{S}\)</span></em></td>
+</tr>
+</tbody>
+</table>
+<p>With these two sets of Maxwell equations, physical properties of electromagnetic fields, and their sources, can be derived. For instance, the RHS of (M3’) is the total charge enclosed in a volume <span class="math inline">\(\mathcal{V}.\)</span> How does this change in time?</p>
+<p>We can see how by taking the time derivative of (M3’), whose LHS involves the first term on the RHS of (M4’), after commuting the surface integral with the time derivative. The boundary of a 3-volume is a closed 2-surface, which clearly does not itself have a boundary. Therefore, if we use <span class="math inline">\(\partial V\)</span> as <span class="math inline">\(\mathcal{S}\)</span> in (M4’), its boundary <span class="math inline">\(\partial(\partial\mathcal{V}) = 0,\)</span> and the LHS vanishes. Therefore, our expression is minus the flux of <span class="math inline">\(\boldsymbol{j}\)</span> through the boundary <span class="math inline">\(\partial\boldsymbol{V}\)</span> of our volume. This only leaves the flux of the current through the volume’s boundary <span class="math inline">\(\partial\mathcal{V},\)</span> <span class="math display">\[\partial_t \int_{\mathcal{V}} \mathrm{d}^3\,\boldsymbol{r} \rho = - \oint_{\partial\mathcal{V}}\mathrm{d}^2\boldsymbol{S}\cdot\boldsymbol{j}.\]</span> Using the divergence theorem, this can be rearranged to give <span class="math display">\[
+    \boxed{\dot{\rho} + \nabla\cdot\boldsymbol{j} = 0. \qquad\textit{The Continuity equation}}
+\]</span> This equation encapsulates the conservation of charge, as we saw earlier in the lecture <a href="./planewaves.html">Plane-waves and particle flow</a>.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Rederiving the continuity equation</strong></p>
+<p>We just derived the continuity equation for electric charge <span class="math display">\[
+    \partial_t \rho + \nabla \cdot \boldsymbol{j} = 0,
+\]</span> starting from the integral forms of the equations.Formulate an equivalent derivation using only the differential forms.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Rederiving the continuity equation</strong></p>
+<p>We want to show <span class="math display">\[
+    \dot{\rho} + \boldsymbol{\nabla} \cdot \boldsymbol{j} = 0
+\]</span> from the differential forms of Maxwell’s equations. From Gauss’s law we have <span class="math display">\[
+    \rho = \varepsilon_0 \boldsymbol{\nabla} \cdot \boldsymbol{E}.
+\]</span> Taking the time derivative gives <span class="math display">\[
+    \dot{\rho} = \varepsilon_0 \boldsymbol{\nabla} \cdot \dot{\boldsymbol{E}}.
+\]</span> From the Ampère–Maxwell equation <span class="math display">\[
+    \boldsymbol{\nabla} \times \boldsymbol{B} = \mu_0 \boldsymbol{j} + \mu_0 \varepsilon_0 \dot{\boldsymbol{E}},
+\]</span> we solve for <span class="math inline">\(\dot{\boldsymbol{E}}\)</span>: <span class="math display">\[
+    \dot{\boldsymbol{E}} = \frac{1}{\varepsilon_0} \left(\frac{1}{\mu_0} \boldsymbol{\nabla} \times \boldsymbol{B} - \boldsymbol{j}\right).
+\]</span> Substituting this into <span class="math inline">\(\dot{\rho}\)</span> we get <span class="math display">\[
+    \dot{\rho} = \varepsilon_0 \boldsymbol{\nabla} \cdot \left[\frac{1}{\varepsilon_0} \left( \frac{1}{\mu_0} \boldsymbol{\nabla} \times \boldsymbol{B} - \boldsymbol{j} \right)\right],
+\]</span> which simplifies to <span class="math display">\[
+    \dot{\rho} = \boldsymbol{\nabla} \cdot \left( \frac{1}{\mu_0} \boldsymbol{\nabla} \times \boldsymbol{B} - \boldsymbol{j} \right).
+\]</span> Next use the vector identity <span class="math display">\[
+    \boldsymbol{\nabla} \cdot (\boldsymbol{\nabla} \times \boldsymbol{B}) = 0,
+\]</span> to obtain <span class="math display">\[
+    \dot{\rho} = - \boldsymbol{\nabla} \cdot \boldsymbol{j}.
+\]</span> and thus <span class="math display">\[
+    \dot{\rho} + \boldsymbol{\nabla} \cdot \boldsymbol{j} = 0,
+\]</span> as required.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="lorentz-force-and-electromagnetic-energy" class="level2" data-number="11.2">
+<h2 data-number="11.2" class="anchored" data-anchor-id="lorentz-force-and-electromagnetic-energy"><span class="header-section-number">11.2</span> Lorentz force and electromagnetic energy</h2>
+<p>Maxwell’s equations describe the dynamics of the electromagnetic field <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> due to the position and motion of electric charges, given by <span class="math inline">\(\rho\)</span> and <span class="math inline">\(\boldsymbol{J}.\)</span> Together with the Lorentz force law for the force experienced by a particle of charge <span class="math inline">\(q\)</span> moving at velocity <span class="math inline">\(\boldsymbol{v}\)</span> <span class="math display">\[
+    \boxed{\boldsymbol{f} = q(\boldsymbol{E} + \boldsymbol{v} \times \boldsymbol{B}), \qquad{\textit{The Lorentz Force law}}}
+\]</span> we can find equations of motion for the charges, which must be solved self-consistently with Maxwell’s equations to tell us about the entire system of interacting matter and fields. We recall that a force is defined <span class="math inline">\(\boldsymbol{f} = m \ddot{\boldsymbol{r}} = m \dot{\boldsymbol{v}} =  m \boldsymbol{a} = \dot{\boldsymbol{p}}\)</span> where <span class="math inline">\(m, \boldsymbol{r}, \boldsymbol{a}, \boldsymbol{p},\)</span> are the particle’s mass, position, acceleration and momentum respectively.</p>
+<p>The Lorentz force law shows that the electric field does work on charges (since the charge’s acceleration (<span class="math inline">\(\propto \boldsymbol{F}\)</span>) is perpendicular to its velocity and hence its instantaneous displacement in <span class="math inline">\(\mathrm{d}t\)</span>). Therefore the EM field contains energy which is imparted to charges via the Lorentz force law. The infinitesimal work done by <span class="math inline">\(\boldsymbol{E}\)</span> in moving a charge <span class="math inline">\(q\)</span> by <span class="math inline">\(\mathrm{d}\boldsymbol{r}\)</span> is therefore <span class="math inline">\(q\boldsymbol{E}\cdot\mathrm{d}\boldsymbol{r}.\)</span> The instantaneous rate this work is done, since <span class="math inline">\(\boldsymbol{v} = \mathrm{d}\boldsymbol{r}/\mathrm{d}t,\)</span> is <span class="math inline">\(q \boldsymbol{E}\cdot\boldsymbol{v}.\)</span> Since <span class="math inline">\(q \boldsymbol{v} \to \boldsymbol{j}\)</span> in the continuum limit, the rate work is done in a volume <span class="math inline">\(\mathcal{V}\)</span> is therefore <span class="math display">\[
+\begin{align}
+   \int_{\mathcal{V}}\mathrm{d}^3\boldsymbol{r} \, \boldsymbol{E}\cdot\boldsymbol{j} &amp; \overset{\mathrm{(M4)}}{=}
+   \int_{\mathcal{V}}\mathrm{d}^3\boldsymbol{r} \, \boldsymbol{E}\cdot(\mu_0^{-1}\nabla\times\boldsymbol{B} - \varepsilon_0 \dot{\boldsymbol{E}}) \\
+   &amp; = -\int_{\mathcal{V}}\mathrm{d}^3\boldsymbol{r} \, \left[ \mu_0^{-1} \nabla \cdot(\boldsymbol{E} \times \boldsymbol{B}) + \varepsilon_0 \boldsymbol{E}\cdot\dot{\boldsymbol{E}} + \mu_0^{-1} \boldsymbol{B}\cdot\dot{\boldsymbol{B}}\right],
+\end{align}
+\]</span> where the second equality follows by applying (M2) and the vector calculus relation <span class="math display">\[
+\nabla\cdot(\boldsymbol{E}\times\boldsymbol{B}) = \boldsymbol{B}\cdot(\nabla\times\boldsymbol{E}) - \boldsymbol{E}\cdot(\nabla\times\boldsymbol{B}).
+\]</span></p>
+<p>In the equation for rate of work done, using the divergence theorem, the term in square brackets can be rearranged to look like a continuity equation for the energy in an electromagnetic field, that is, with <span class="math display">\[
+    \boxed{W = \tfrac{1}{2}(\varepsilon_0 |\boldsymbol{E}|^2 + \mu_0^{-1} |\boldsymbol{B}|^2), \qquad{\textit{Electromagnetic energy density}}
+   }
+\]</span> and we define the <em>Poynting vector</em> as <span class="math display">\[
+    \boxed{\boldsymbol{S} = \mu_0^{-1} \boldsymbol{E} \times \boldsymbol{B}, \qquad{\textit{Electromagnetic flux density}}}
+\]</span> allowing the work done per unit volume by electromagnetic fields on charges to be expressed as <span class="math display">\[
+    \boxed{\nabla\cdot\boldsymbol{S} + \dot{W} = -\boldsymbol{j}\cdot\boldsymbol{E}. \qquad{\textit{Poynting's theorem}}}
+\]</span> Although the LHS looks like a continuity equation for energy, it is not zero on the RHS, since EM energy transferred to charges is not conserved in the EM field by itself.</p>
+</section>
+<section id="solutions-of-maxwells-equations-without-sources" class="level2 page-columns page-full" data-number="11.3">
+<h2 data-number="11.3" class="anchored" data-anchor-id="solutions-of-maxwells-equations-without-sources"><span class="header-section-number">11.3</span> Solutions of Maxwell’s equations without sources</h2>
+<p>For fields without sources (charges and currents), Maxwell’s equations are homogeneous and linear, and have a simple mathematical form in terms of their Fourier transforms. Assuming <span class="math inline">\(\rho = 0\)</span> and <span class="math inline">\(\boldsymbol{j} = 0,\)</span> derivatives can be taken of (M1)-(M4) which can then be combined to give <span class="math display">\[
+    \nabla^2 \boldsymbol{E} - c^{-2} \ddot{\boldsymbol{E}} = 0, \qquad \nabla^2 \boldsymbol{B} - c^{-2} \ddot{\boldsymbol{B}} = 0,
+\]</span> i.e.&nbsp;the three components of each of <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> satisfy d’Alembert’s wave equation, at speed <span class="math inline">\(c.\)</span></p>
+<p>Fourier analysis now tells us that each component of <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> can be written as a superposition of plane waves. We can write the Fourier transforms as vectors <span class="math inline">\(\boldsymbol{E}(\omega,\boldsymbol{k}),\)</span> <span class="math inline">\(\boldsymbol{B}(\omega,\boldsymbol{k}),\)</span> so the fields are written <span class="math display">\[
+\begin{align}
+   \boldsymbol{E}(t,\boldsymbol{r}) &amp; = \int_{|\omega| = c |\boldsymbol{k}|} \mathrm{d}^3\boldsymbol{r}\mathrm{d}\omega \, \boldsymbol{E}(\omega,\boldsymbol{k}) \exp(\mathrm{i}(\boldsymbol{k}\cdot\boldsymbol{r}-\omega t)), \\
+   \boldsymbol{B}(t,\boldsymbol{r}) &amp; = \int_{|\omega| = c |\boldsymbol{k}|} \mathrm{d}^3\boldsymbol{r}\mathrm{d}\omega \, \boldsymbol{B}(\omega,\boldsymbol{k}) \exp(\mathrm{i}(\boldsymbol{k}\cdot\boldsymbol{r}-\omega t)),
+\end{align}
+\]</span> where the (complex) Fourier transforms are such that the electric and magnetic fields are real. In practice, is is often more convenient to work with the positive frequency parts of the fields, imposing <span class="math inline">\(\omega &gt; 0\)</span> and the physical fields are the real parts of these complex fields. We think of the vectors <span class="math inline">\(\boldsymbol{E}(\omega,\boldsymbol{k}), \boldsymbol{B}(\omega,\boldsymbol{k})\)</span> as the <em>polarization</em> of the plane wave component labelled by <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\boldsymbol{k}.\)</span></p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/em_wave.png" class="img-fluid figure-img" width="500"></p>
+<figcaption>A monochromatic electromagnetic wave characterised by a single angular frequency <span class="math inline">\(\omega\)</span>, wave-vector <span class="math inline">\(\boldsymbol{k}\)</span> and comprising of electric <span class="math inline">\(\boldsymbol{E}(t,\boldsymbol{r})\)</span> and magnetic <span class="math inline">\(\boldsymbol{B}(t,\boldsymbol{r})\)</span> field waves which are orthogonal to each other and orthogonal to the direction of propagation <span class="math inline">\(\boldsymbol{k}\)</span>.</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p>If the electromagnetic field is a single plane wave, with polarization vectors <span class="math inline">\(\boldsymbol{E}_0\)</span> and <span class="math inline">\(\boldsymbol{B}_0,\)</span> then Maxwell’s equations imply that <span class="math inline">\(\boldsymbol{E}_0, \boldsymbol{B}_0\)</span> and <span class="math inline">\(\boldsymbol{k}\)</span> are orthogonal, with <span class="math inline">\((\boldsymbol{E}_0, \boldsymbol{B}_0,\boldsymbol{k})\)</span> forming a right-handed triad. Thus the Poynting vector <span class="math inline">\(\boldsymbol{S}\)</span> is along <span class="math inline">\(\boldsymbol{k},\)</span> which agrees with our intuition that the direction of a plane wave in free space is its direction of energy flux. These electromagnetic fields propagating in empty space are interpreted as none other than light waves, and they propagate at <span class="math inline">\(c\)</span>. Historically, this realization led to the discovery of other regimes of the electromagnetic spectrum, including radio waves, microwaves, X-rays and so on.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Wave speed <span class="math inline">\(c\)</span> with respect to what? This is where special relativity enters!</span></div></div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>2. Monochromatic planewaves</strong></p>
+<p>Take the simplest case of monochromatic planewave, so comprising a single angular frequency <span class="math inline">\(\omega\)</span> and wave-vector <span class="math inline">\(\boldsymbol{k}\)</span>: <span class="math display">\[
+    \boldsymbol{E}(t,\boldsymbol{r}) = \boldsymbol{E}_0 e^{{\rm i}(\boldsymbol{k}\cdot\boldsymbol{r}-\omega t)}, \quad {\rm and} \quad \boldsymbol{B}(t,\boldsymbol{r}) = \boldsymbol{B}_0 e^{{\rm i}(\boldsymbol{k}\cdot\boldsymbol{r}-\omega t)},
+\]</span> where <span class="math inline">\(\boldsymbol{E}_0\)</span> and <span class="math inline">\(\boldsymbol{B}_0\)</span> are the fixed polarisations of the electric and magnetic fields, respecitively. Assuming this field exists in free-space use Maxwell’s equations to confirm that <span class="math inline">\(\boldsymbol{E}_0\)</span>, <span class="math inline">\(\boldsymbol{B}_0\)</span> and <span class="math inline">\(\boldsymbol{k}\)</span> form an orthogonal triad of 3-vectors.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>2. Monochromatic planewaves</strong></p>
+<p>In free-space we have <span class="math display">\[
+    \nabla \cdot \boldsymbol{B} = {\rm i}\boldsymbol{k}\cdot\boldsymbol{B}_0 = 0, \quad \nabla \cdot \boldsymbol{E} = {\rm i}\boldsymbol{k}\cdot\boldsymbol{E}_0 = 0
+\]</span> hence <span class="math inline">\(\boldsymbol{k}\cdot\boldsymbol{B}_0 = 0\)</span> and <span class="math inline">\(\boldsymbol{k}\cdot\boldsymbol{E}_0 = 0\)</span>, so <span class="math inline">\(\boldsymbol{B}_0\)</span> and <span class="math inline">\(\boldsymbol{E}_0\)</span> are both orthogonal to <span class="math inline">\(\boldsymbol{k}\)</span>. Next we use one of the vector equations <span class="math display">\[
+    \nabla \times \boldsymbol{B} = \frac{1}{c^2} \dot{\boldsymbol{E}},
+\]</span> to get <span class="math display">\[
+    \nabla \times \left(\boldsymbol{B}_0 e^{{\rm i}(\boldsymbol{k}\cdot\boldsymbol{r}-\omega t)}\right) = \nabla\left(e^{{\rm i}(\boldsymbol{k}\cdot\boldsymbol{r}-\omega t)}\right) \times \boldsymbol{B}_0 = {\rm i}\boldsymbol{k} \times \boldsymbol{B}(t,\boldsymbol{r}) = -\frac{{\rm i}\omega}{c^2} \boldsymbol{E}(t,\boldsymbol{r}),
+\]</span> so <span class="math inline">\(\boldsymbol{k}\times\boldsymbol{B}_0 = -\frac{\omega}{c^2}\boldsymbol{E}_0\)</span>, meaning <span class="math inline">\(\boldsymbol{E}_0\)</span>, <span class="math inline">\(\boldsymbol{B}_0\)</span> and <span class="math inline">\(\boldsymbol{k}\)</span> form an orthogonal triad. Notice also that the Poynting vector for this wave <span class="math inline">\(\boldsymbol{S}= \mu_0^{-1} \boldsymbol{E}\times \boldsymbol{B}\)</span> must therefore have <span class="math inline">\(\boldsymbol{S} \propto \boldsymbol{k}\)</span>.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="potentials-and-gauge-transformations" class="level2 page-columns page-full" data-number="11.4">
+<h2 data-number="11.4" class="anchored" data-anchor-id="potentials-and-gauge-transformations"><span class="header-section-number">11.4</span> Potentials and gauge transformations</h2>
+<p>By Faraday’s law (M2), in the electrostatic case (no currents, and all time derivatives vanish), <span class="math inline">\(\nabla \times \boldsymbol{E}_{\mathrm{stat}} = 0,\)</span> so the electrostatic <span class="math inline">\(\boldsymbol{E}_{\mathrm{stat}}\)</span> is a <em>potential field</em> <span class="math inline">\(\boldsymbol{E}_{\mathrm{stat}} = -\nabla V.\)</span> The scalar field <span class="math inline">\(V = V(\boldsymbol{r})\)</span> is called the <em>electric potential</em>, analogous to Newton’s gravitational potential. The negative sign ensures that the potential increases as a positive charge is approached. In general, for a line integral between points <span class="math inline">\(A\)</span> and <span class="math inline">\(B,\)</span> <span class="math display">\[-\int_A^B \mathrm{d}\boldsymbol{\ell}\cdot\boldsymbol{E}_{\mathrm{stat}} = V_B - V_A,\]</span> so only the ‘potential difference’ between points has significance.</p>
+<p>However, the rules of vector calculus also give that if the divergence of a vector field vanishes everywhere, it is the curl of a vector field. Therefore, from (M1), we <em>always</em> have <span class="math display">\[
+    \boxed{\boldsymbol{B} = \nabla\times\boldsymbol{A},}
+\]</span> and <span class="math inline">\(\boldsymbol{A}\)</span> is called the <em>magnetic vector potential</em>. From (M2), we can see that <span class="math display">\[
+    \nabla \times \boldsymbol{E} = - \dot{\boldsymbol{B}} = - \nabla \times \dot{\boldsymbol{A}},
+\]</span> so the combined vector field <span class="math inline">\(\boldsymbol{E}+\dot{\boldsymbol{A}}\)</span> is curl-free, and we can re-introduce the scalar potential <span class="math inline">\(V\)</span> so that <span class="math display">\[
+    \boxed{\boldsymbol{E} = - \dot{\boldsymbol{A}} - \nabla V.}
+\]</span> Clearly, in the electrostatic case, <span class="math inline">\(\boldsymbol{A}\)</span> is not changing, and so <span class="math inline">\(V\)</span> becomes the usual electrostatic scalar potential.</p>
+<p>Just like the electric potential, the magnetic vector potential is not defined absolutely. However, its ambiguity is wider than just adding a constant since adding the gradient of any scalar field <span class="math inline">\(\chi\)</span> (whose curl must vanish) cannot change the physics. Since <span class="math inline">\(\boldsymbol{E}\)</span> is a physical field, it cannot be affected by including <span class="math inline">\(\chi\)</span>, which implies the general <em>gauge transformation</em> rule of transformations of potentials which do not change physical fields, <span id="eq-gauge_trans"><span class="math display">\[
+    \boxed{\boldsymbol{A} \to \boldsymbol{A} + \nabla\chi, \qquad V \to V - \dot{\chi}. \qquad{\textit{Gauge transformation}}}
+\tag{11.1}\]</span></span> We say that the electromagnetic field is invariant under <em>gauge</em> transformations.</p>
+<p>Despite the ambiguity in their definition, the potentials <span class="math inline">\(V, \boldsymbol{A}\)</span> are often seen as more fundamental than the electromagnetic fields <span class="math inline">\(\boldsymbol{E}, \boldsymbol{B}.\)</span> For instance, they occur in the Lagrangian for the Lorentz force, through which EM fields affect charges. In modern physics, this is usually interpreted as the following: No physical experiment can determine absolutely the value of <span class="math inline">\(V\)</span> and <span class="math inline">\(\boldsymbol{A}\)</span> since we can perform any gauge transformation without affecting the physics. Thus a physical phenomenon admits many different possible vector potential fields, related to each other by gauge transformations. This viewpoint should feel familiar, as it is identical to our view of inertial frames being related through Lorentz transformations.</p>
+<p>The ambiguity in the potentials can be reduced by <em>choosing</em> <span class="math inline">\(\chi\)</span> to satisfy an additional relation. This is called <em>gauge fixing</em>, and an important, albeit non-covariant, choice is <span class="math display">\[
+    \boxed{\nabla\cdot\boldsymbol{A} = 0. \qquad{\textit{Coulomb or Transverse gauge}}}
+\]</span> In the Coulomb gauge, a plane wave has <span class="math inline">\(\boldsymbol{A}\)</span> parallel to <span class="math inline">\(\boldsymbol{E},\)</span> and so perpendicular (transverse) to the wavevector <span class="math inline">\(\boldsymbol{k}.\)</span></p>
+<p>We have effectively used (M1) and (M2) to define the potential fields <span class="math inline">\(\boldsymbol{A}\)</span> and <span class="math inline">\(V.\)</span> We now consider how (M3) and (M4) give relationships between sources and electromagnetic potentials. In any gauge (M3) becomes <span class="math display">\[
+    \nabla^2V + \nabla\cdot\dot{\boldsymbol{A}} = - \frac{\rho}{\varepsilon_0},
+\]</span> and in the Coulomb gauge, <span class="math inline">\(\nabla\cdot\boldsymbol{A} = 0\)</span> always, so its time derivative is also zero. Thus in the Coulomb gauge, the scalar potential returns to its role as a potential field for the charge density <span class="math inline">\(\rho,\)</span> satisfying <span class="math display">\[
+    \boxed{\nabla^2V = - \frac{\rho}{\varepsilon_0}.  \qquad{\textit{Poisson's equation}}}
+\]</span> For a point charge <span class="math inline">\(q\)</span> at the origin, <span class="math inline">\(\rho = q\delta(\boldsymbol{r}),\)</span> and in this case <span class="math inline">\(V = q/(4\pi \varepsilon_0 |\boldsymbol{r}|).\)</span></p>
+<div class="page-columns page-full"><p>For any gauge (M4) becomes <span class="math display">\[
+    \mu_0^{-1} \nabla \times (\nabla \times \boldsymbol{A}) - \varepsilon_0(-\ddot{\boldsymbol{A}} - \nabla \dot{V}) = \boldsymbol{j},
+\]</span> which, after vector field manipulations and substituting <span class="math inline">\(\varepsilon_0 \mu_0 = c^{-2},\)</span> becomes <span class="math display">\[
+    \nabla^2\boldsymbol{A} - c^{-2}\ddot{\boldsymbol{A}} - \nabla(\nabla\cdot\boldsymbol{A} + c^{-2} \dot{V}) = -\mu_0 \boldsymbol{j}.
+\]</span> This does not take a particularly convenient form in the Coulomb gauge since it involves both <span class="math inline">\(\boldsymbol{A}\)</span> and <span class="math inline">\(V\)</span>. However, with the following way of fixing the gauge,  <span class="math display">\[
+    \boxed{\nabla\cdot\boldsymbol{A} + c^{-2} \dot{V} = 0, \qquad{\textit{Lorenz gauge}}}
+\]</span> after substitution of (M4) into (M3), <span class="math inline">\(V\)</span> and <span class="math inline">\(\boldsymbol{A}\)</span> are decoupled, giving <span class="math display">\[
+    \boxed{\begin{array}{ccc} \nabla^2 V - c^{-2} \ddot{V} &amp; = &amp; - \rho/\varepsilon_0, \\ \nabla^2 \boldsymbol{A} - c^{-2} \ddot{\boldsymbol{A}} &amp; = &amp; - \mu_0 \boldsymbol{j}. \end{array}}
+\]</span> Thus <em>in terms of the potentials, Maxwell’s equations are inhomogeneous d’Alembert equations, whose sources are the electric charge and current densities.</em> In the absence of charges, <span class="math inline">\(V\)</span> and each component of <span class="math inline">\(\boldsymbol{A}\)</span> satisfy the regular d’Alembert equation. These latter equations are different from the d’Alembert equation for the electromagnetic fields themselves. After fixing the Lorenz gauge, Maxwell’s equations <em>become</em> the inhomogeneous d’Alembert equation in terms of potentials, whereas we took extra derivatives on Maxwell’s equations to make the EM fields themselves satisfy the wave equation.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Note that this ‘Lorenz gauge’ is named after Ludvig Lorenz, not ‘Lorentz’ after Hendrik Lorentz!</span></div></div>
+</section>
+<section id="sec:lorentz" class="level2 page-columns page-full" data-number="11.5">
+<h2 data-number="11.5" class="anchored" data-anchor-id="sec:lorentz"><span class="header-section-number">11.5</span> Lagrangian for the Lorentz force</h2>
+<p>Let us finish this revision lecture by looking at how the Lorentz force can be accounted for in the Lagrangian and Hamiltonian formulation of non-relativistic mechanics. Take a particle with charge <span class="math inline">\(q,\)</span> moving in an electromagnetic field with electric field <span class="math inline">\(\boldsymbol{E}\)</span> and magnetic field <span class="math inline">\(\boldsymbol{B},\)</span> experiences the Lorentz force law <span id="eq-lorentz_force"><span class="math display">\[
+    \boxed{\boldsymbol{f} = q(\boldsymbol{E} + \boldsymbol{v} \times \boldsymbol{B}). \qquad\hbox{\textit{The Lorentz force law}}}
+\tag{11.2}\]</span></span> This is the equation of motion for the particle, with mass <span class="math inline">\(m,\)</span> position <span class="math inline">\(\boldsymbol{r},\)</span> velocity <span class="math inline">\(\dot{\boldsymbol{r}},\)</span> and acceleration <span class="math inline">\(\ddot{\boldsymbol{r}},\)</span> so <span class="math inline">\(\boldsymbol{f} = m\ddot{\boldsymbol{r}}.\)</span> As the most fundamental response of charged matter to electromagnetic fields, it is one of the most important equations in this course. In the electrostatic case (i.e.&nbsp;<span class="math inline">\(\boldsymbol{B} = 0, \boldsymbol{E} = -\nabla V\)</span>), the Lagrangian is simply <span class="math inline">\(\tfrac{1}{2}m|\boldsymbol{v}|^2 - qV,\)</span> similar to above.</p>
+<p>However, more generally when fields are changing and charges are moving, we have a magnetic field, and <span class="math inline">\(\boldsymbol{B},\boldsymbol{E}\)</span> can be expressed as follows in terms of the scalar potential <span class="math inline">\(V\)</span> and vector potential <span class="math inline">\(\boldsymbol{A}\)</span>: <span class="math display">\[
+    \boldsymbol{B} = \nabla \times \boldsymbol{A}, \qquad \boldsymbol{E} = -\nabla V - \dot{\boldsymbol{A}},
+\]</span> as discussed earlier. The electrostatic Lagrangian, giving a force proportional to <span class="math inline">\(\boldsymbol{E},\)</span> involved <span class="math inline">\(V.\)</span> The Lorentz equation involves <span class="math inline">\(\boldsymbol{B}\)</span> as well, so its Lagrangian should involve <span class="math inline">\(\boldsymbol{A},\)</span> related in some way to <span class="math inline">\(\boldsymbol{v}.\)</span></p>
+<p>As an ‘educated guess’, we try adding the scalar <span class="math inline">\(\boldsymbol{v}\cdot\boldsymbol{A}\)</span> to the Lagrangian. The Euler-Lagrange equations for <span class="math display">\[
+    \boldsymbol{r} = \begin{pmatrix} x^1\\ x^2\\ x^3 \end{pmatrix}, \quad {\rm and} \quad \boldsymbol{v} = \begin{pmatrix} \dot{x}^1\\ \dot{x}^2\\ \dot{x}^3 \end{pmatrix}
+\]</span> then involve <span class="math display">\[
+    \frac{\partial(\boldsymbol{v}\cdot\boldsymbol{A})}{\partial x^j} =  \boldsymbol{v}\cdot(\partial_j \boldsymbol{A}) = \delta_{k\ell}\, v^k \partial_j A^{\ell},
+\]</span> and <span class="math display">\[
+    \frac{\partial(\boldsymbol{v}\cdot\boldsymbol{A})}{\partial \dot{x}^j}  = \frac{\partial(\delta_{k\ell}v^k A^{\ell})}{\partial v^j} = \delta_{j\ell}\, A^{\ell},
+\]</span> for <span class="math inline">\(j = 1,2,3,\)</span> where we have employed the summation convention. In the second expression, only the derivative in the term with index <span class="math inline">\(j\)</span> remains from the sum over <span class="math inline">\(k.\)</span></p>
+<p>Now, we have to make sure that as the particle moves, it experiences the field at its new position, rather than its old position (i.e.&nbsp;the field in the comoving frame of the particle). This is ensured from the definition of the total derivative, with respect to <span class="math inline">\(t,\)</span> of a function dependent on <span class="math inline">\(t\)</span> and <span class="math inline">\(\boldsymbol{r},\)</span> again employing the summation convention, <span class="math display">\[
+    \frac{\rm d}{{\rm d} t} \bullet = \frac{\partial}{\partial t} \bullet + \frac{\partial x^j}{\partial t} \partial_j \bullet = \dot{\bullet} + \boldsymbol{v}\cdot \nabla \bullet.
+\]</span> This quantity is sometimes called the <em>convective derivative</em>. With this, we can write the part of the Euler-Lagrange equations involving <span class="math inline">\(\boldsymbol{v}\cdot\boldsymbol{A},\)</span> for <span class="math inline">\(j = 1,2,3,\)</span> as <span class="math display">\[
+    \begin{align}
+   \frac{\partial (\boldsymbol{v}\cdot\boldsymbol{A})}{\partial x^j} - \frac{\rm d}{{\rm d} t}\frac{\partial (\boldsymbol{v}\cdot\boldsymbol{A})}{\partial \dot{x}^j}
+   &amp; = \boldsymbol{v}\cdot\partial_j \boldsymbol{A} - \delta_{j\ell}\, \dot{A}^{\ell} - \delta_{j\ell} \boldsymbol{v}\cdot\nabla  A^{\ell} \\
+   &amp; = - \delta_{j\ell}\, \dot{A}^{\ell} + \delta_{k\ell}\, v^k \partial_j A^{\ell} - \delta_{j \ell}\, v^k \partial_k A^{\ell} \\
+   &amp; = - \delta_{j\ell}\, \dot{A}^{\ell} + v^k\left(\partial_j (\delta_{k\ell} \,A^{\ell}) - \partial_k (\delta_{j \ell}A^{\ell})\right) \\
+   &amp; = - \dot{A}_j + v^k\left(\partial_j A_k - \partial_k A_j \right),   
+\end{align}
+\]</span> where in the last line, we have written <span class="math inline">\(\boldsymbol{A}\)</span> in covariant components, <span class="math inline">\(A_k = \delta_{k\ell} \,A^{\ell}.\)</span> The term in the brackets can be rearranged using <span class="math inline">\(\delta\)</span> tensors, which themselves can be substituted with antisymmetric symbols, <span class="math display">\[
+    \partial_j A_k - \partial_k A_j = (\delta_{jm} \delta_{kn} - \delta_{jn} \delta_{km}) \partial^m A^n = \delta^{i\ell}\varepsilon_{ijk} \varepsilon_{\ell mn} \partial^m A^n = \varepsilon_{jk\ell} B^{\ell},
+\]</span> where <span class="math inline">\(\boldsymbol{B}\)</span> was substituted as the curl of <span class="math inline">\(\boldsymbol{A},\)</span> which is <span class="math inline">\(B_{\ell} = \varepsilon_{\ell mn} \partial^m A^n\)</span> in component form. At last, we can write <span class="math display">\[
+    \frac{\partial (\boldsymbol{v}\cdot\boldsymbol{A})}{\partial \boldsymbol{r}} - \frac{\rm d}{{\rm d} t}\frac{\partial (\boldsymbol{v}\cdot\boldsymbol{A})}{\partial \boldsymbol{v}} = - \dot{\boldsymbol{A}} + \boldsymbol{v} \times \boldsymbol{B}.
+\]</span> From this result, it is straightforward to verify that the Lorentz force law follows from the Lagrangian <span id="eq-lorentz_lag"><span class="math display">\[
+    \boxed{L = \tfrac{1}{2}m \boldsymbol{v}\cdot\boldsymbol{v} - q V + q \boldsymbol{v}\cdot\boldsymbol{A}. \qquad\hbox{\textit{Lorentz force Lagrangian}}}
+\tag{11.3}\]</span></span> Clearly, this Lagrangian cannot be interpreted directly as KE <span class="math inline">\(-\)</span> PE (as if the force is just a gradient of some potential) but it nonetheless gives the correct equation of motion.</p>
+<p>A very important consequence of the above is that, for a particle experiencing the Lorentz force, <em>the canonical momentum conjugate to <span class="math inline">\(r_j\)</span> is not <span class="math inline">\(m v_j\)</span></em>. It should be straightforward for you to check that, from the definition of canonical momentum and the Lorentz force Lagrangian, <span class="math display">\[
+    \boxed{\boldsymbol{p} =  m \boldsymbol{v} + q \boldsymbol{A} \qquad\hbox{\textit{Canonical momentum for Lorentz force}}
+   }\]</span> However, the total energy for a charged particle in an electromagnetic field is <span class="math inline">\(\tfrac{1}{2}m v^2 + q V(\boldsymbol{r}),\)</span> implying that the corresponding Hamiltonian is <span class="math display">\[
+    H = \frac{1}{2m}(\boldsymbol{p}-q \boldsymbol{A})^2 + q V.
+\]</span></p>
+<div class="page-columns page-full"><p>You might feel unconvinced by this argument. After all, how do we know that we could not just invent some other Lagrangian which would also do the job, maybe not including those strange and maybe not completely physical objects, the potentials? Maybe we could find one whose canonical momentum is the usual kinetic momentum? No one has found such an alternative which could be taken as telling us that the potentials are in fact a fundamental concept. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Give it a try if you are unsatisfied. If you were to find a different but equally simple Lagrangian that did this job, then it would be a major discovery in theoretical physics.</span></div></div>
+<p>What we learn from this Lagrangian formulation of the mechanics of the Lorentz force law is that electromagnetic potentials are crucial. This will be a guiding principle in the next few lectures where we will develop a relativistic Lagrangian formulation not just of the charged particle but also of the electromagnetic field itself.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 11</strong>.</span></div></div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Gauge transformation of Lorentz force Lagrangian</strong></p>
+<p>The gauge transformations in <a href="#eq-gauge_trans" class="quarto-xref">Equation&nbsp;<span>11.1</span></a> do not change the <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> fields and so will not change the dynamics described by the Lorentz force law in <a href="#eq-lorentz_force" class="quarto-xref">Equation&nbsp;<span>11.2</span></a>. Compute how a gauge transformation changes the Lorentz force Lagrangian <span class="math inline">\(L\)</span> in <a href="#eq-lorentz_lag" class="quarto-xref">Equation&nbsp;<span>11.3</span></a> and confirm its Euler-Lagrange equations are unchanged.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Gauge transformation of Lorentz force Lagrangian</strong></p>
+<p>Under the gauge transformation <span class="math display">\[
+    V \rightarrow V' = V - \frac{\partial \chi}{\partial t}, \qquad \boldsymbol{A} \rightarrow \boldsymbol{A}' = \boldsymbol{A} + \nabla\chi,
+\]</span> the Lagrangian becomes <span class="math display">\[
+    L' = \frac{1}{2}m\boldsymbol{v}^2 - qV' + q\,\boldsymbol{v}\cdot \boldsymbol{A}'.
+\]</span> whereupon substituting the transformed potentials gives <span class="math display">\[
+    L' = \frac{1}{2}m\boldsymbol{v}^2 - q\left(V - \frac{\partial \chi}{\partial t}\right) + q\,\boldsymbol{v}\cdot\left(\boldsymbol{A} + \nabla\chi\right).
+\]</span> Expanding, results in <span class="math display">\[
+    L' = \frac{1}{2}m\boldsymbol{v}^2 - qV + q\frac{\partial \chi}{\partial t} + q\,\boldsymbol{v}\cdot\boldsymbol{A} + q\,\boldsymbol{v}\cdot\nabla\chi.
+\]</span> and grouping terms we can identify the variation in the Lagrangian induced by the transformation <span class="math display">\[
+    L' = L + q\frac{\partial \chi}{\partial t} + q\,\boldsymbol{v}\cdot\nabla\chi.
+\]</span> Now use the chain rule for <span class="math inline">\(\chi(\boldsymbol{x}(t),t)\)</span>: <span class="math display">\[
+    \frac{d\chi}{dt} = \frac{\partial \chi}{\partial t} + \frac{d\boldsymbol{x}}{dt}\cdot \nabla\chi = \frac{\partial \chi}{\partial t} + \boldsymbol{v}\cdot \nabla\chi,
+\]</span> hence <span class="math display">\[
+    L' = L + q\frac{d\chi}{dt}.
+\]</span> So the change in the Lagrangian is a total derivative in time <span class="math display">\[
+L' - L = q\frac{d\chi}{dt},
+\]</span> and therefore the action therefore changes by <span class="math display">\[
+    S' - S = q\int_{t_1}^{t_2}\frac{d\chi}{dt}\,dt.
+\]</span> Evaluating the integral we get <span class="math display">\[
+    S' - S = q\big[\chi(\boldsymbol{r}(t),t)\big]_{t_1}^{t_2},
+\]</span> which is a boundary term and so does not affect the Euler–Lagrange equations.</p>
+</div>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./symmetries.html" class="pagination-link" aria-label="Symmetries and Noether's theorem">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./faraday.html" class="pagination-link" aria-label="Faraday tensor and relativistic Maxwell equations">
+        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

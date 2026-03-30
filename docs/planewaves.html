@@ -270,6 +270,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
@@ -331,8 +360,8 @@ window.Quarto = {
     \varphi(ct,{\boldsymbol{r}}) = a\, e^{i(\omega t - {\boldsymbol{k}}\cdot{\boldsymbol{r}})},
 \]</span> where <span class="math inline">\(a\)</span> is a Lorentz scalar amplitude, <span class="math inline">\(\omega\)</span> is the angular frequency and <span class="math inline">\(\boldsymbol{k}\)</span> is the 3-wave-vector of the wave. If this plane-wave is to be a Lorentz scalar field then we need that the phase of the wave <span class="math display">\[
     \theta(x) = \omega t - {\boldsymbol{k}}\cdot{\boldsymbol{r}},
-\]</span> is a Lorentz scalar. Specifically, all inertial observers must agree on the value of the phase at a given point in space-time. The reason for this is that the “event” that the wave reached it maximum extent, or has a node, is something every observer can agree on. They won’t agree on the coordinates ascribed to this event, or the time elapsed and distance between pairs of such events, but they will agree that one occured a given point.</p>
-<p>This tells us that <span class="math inline">\(\theta(x)\)</span> must be a scalar-product between <span class="math inline">\(\vec{X}\)</span> and another 4-vector. Or in otherwords we can the scalar <span class="math inline">\(\omega\)</span> and 3-vector <span class="math inline">\(\boldsymbol{k}\)</span> into a 4-wave-vector <span class="math inline">\(\vec{K}\)</span> with components in some frame <span class="math inline">\(S\)</span> as <span class="math display">\[
+\]</span> is a Lorentz scalar. Specifically, all inertial observers must agree on the value of the phase at a given point in space-time. The reason for this is that the “event” that the wave reached it maximum extent, or has a node, is something every observer can agree on. They won’t agree on the coordinates ascribed to this event, or the time elapsed and distance between pairs of such events, but they will agree that one occurred a given point.</p>
+<p>This tells us that <span class="math inline">\(\theta(x)\)</span> must be a scalar-product between <span class="math inline">\(\vec{X}\)</span> and another 4-vector. Or in otherwords we can take the scalar <span class="math inline">\(\omega\)</span> and 3-vector <span class="math inline">\(\boldsymbol{k}\)</span> and create a 4-wave-vector <span class="math inline">\(\vec{K}\)</span> with components in some frame <span class="math inline">\(S\)</span> as <span class="math display">\[
 k^\mu = \left(\begin{array}{c} \omega/c \\
 {\boldsymbol{k}} \end{array}\right).
 \]</span> This sensibly links <span class="math inline">\(\omega\)</span> with the time component, and <span class="math inline">\(\boldsymbol{k}\)</span> with the spatial components. Naturally both <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\boldsymbol{k}\)</span> for a given wave differ between inertial frames as described by a standard Lorentz transformation <span class="math display">\[
@@ -344,11 +373,11 @@ k_\mu = \left(\begin{array}{c} \omega/c \\
 -{\boldsymbol{k}} \end{array}\right),
 \]</span> so the scalar-product of the 4-wave-vector and the space-time 4-vector is <span class="math display">\[
     k_\mu x^\mu = (\omega/c)ct - {\boldsymbol{k}}\cdot{\boldsymbol{r}}.
-\]</span> Consequently, the phase factor of the plane-wave is a Lorentz invariant, e.g.&nbsp;a Lorentz scalar linear functional, with the plane-wave itself given by its complex exponential <span class="math display">\[
-    \tilde{\varphi}(\vec{X})  = a\, e^{i \vec{K}\cdot\vec{X}},
-\]</span> making explicit that it is also a Lorentz scalar (non-linear) functional of space-time <span class="math inline">\(\vec{X}\)</span>. We characterise the type of plane-wave by the Lorentz scalar <span class="math inline">\(\vec{K}\cdot\vec{K}\)</span> which is <span class="math display">\[
+\]</span> Consequently, the phase factor of the plane-wave is a Lorentz invariant, with the plane-wave itself given by its complex exponential <span class="math display">\[
+    \tilde{\varphi}(\vec{X})  = a\, e^{i \vec{K}\cdot\vec{X}}.
+\]</span> This form makes explicit that the field is a Lorentz scalar (non-linear) functional of space-time <span class="math inline">\(\vec{X}\)</span>. We characterise the type of plane-wave by the Lorentz scalar <span class="math inline">\(\vec{K}\cdot\vec{K}\)</span> which is <span class="math display">\[
     \vec{K}\cdot\vec{K} = k_\mu k^\mu = \left(\frac{\omega}{c}\right)^2 - {\boldsymbol{k}}\cdot{\boldsymbol{k}}.
-\]</span> If <span class="math inline">\(k_\mu k^\mu &gt; 0\)</span> it tell us <span class="math inline">\(\vec{K}\)</span> is time-like, if <span class="math inline">\(k_\mu k^\mu = 0\)</span> then it is light-like, or if <span class="math inline">\(k_\mu k^\mu &lt; 0\)</span> it is space-like.</p>
+\]</span> If <span class="math inline">\(k_\mu k^\mu &gt; 0\)</span> it tell us <span class="math inline">\(\vec{K}\)</span> is time-like, if <span class="math inline">\(k_\mu k^\mu = 0\)</span> then it is light-like, or if <span class="math inline">\(k_\mu k^\mu &lt; 0\)</span> it is space-like. These classifications mean quite different physical situations as described here:</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
@@ -386,21 +415,21 @@ Types of plane-waves
 <figcaption>A plane-wave field with a light-like 4-wave-vector <span class="math inline">\(\vec{K}\)</span> means that hypersurfaces of constant phase do not change under a Lorentz transformation from a general frame <span class="math inline">\(S\)</span> to a frame <span class="math inline">\(\bar S\)</span>.</figcaption>
 </figure>
 </div>
-<p>Transforming to a new frame does not change this picture. Light-like plane-wave reflect the causal structure of space-time itself. As we shall see next, solutions to the wave-equation are plane-waves with light-like 4-wave-vectors.</p>
+<p>Transforming to a new frame does not change this picture. Light-like plane-wave reflect the causal structure of space-time itself. As we shall see next, solutions to the wave-equation are plane-waves with light-like 4-wave-vectors which have a phase velocity <span class="math inline">\(v_p = c\)</span>.</p>
 </div>
 </div>
 </div>
 </section>
 <section id="wave-equation" class="level2 page-columns page-full" data-number="8.2">
 <h2 data-number="8.2" class="anchored" data-anchor-id="wave-equation"><span class="header-section-number">8.2</span> Wave-equation</h2>
-<p>In the <a href="./oneforms.html#sec-fields">Scalar-product and one-forms</a> lecture we also constructed one of the most important one-forms, the derivative <span id="eq-dmu"><span class="math display">\[
+<p>In the <a href="./oneforms.html#sec-fields">One-forms</a> lecture we also constructed one of the most important one-forms, the derivative <span id="eq-dmu"><span class="math display">\[
 \partial_\mu = \left(\begin{array}{c} \frac{1}{c}\frac{\partial}{\partial t} \\
 \nabla \end{array}\right).
 \tag{8.1}\]</span></span> When this is contracted with its 4-vector equivalent <span class="math inline">\(\partial^\mu\)</span> it gives the d’Alembert Lorentz scalar differential operator <span class="math display">\[
 \partial_\mu\partial^\mu = \frac{1}{c^2}\frac{\partial}{\partial t^2} -\nabla^2.
-\]</span> If we apply this to a scalar field <span class="math inline">\(\varphi(x^\mu)\)</span> we arrive at the wave-equation <span id="eq-wave_eq"><span class="math display">\[
+\]</span> If we apply this to a scalar field <span class="math inline">\(\varphi(x)\)</span> we arrive at the wave-equation <span id="eq-wave_eq"><span class="math display">\[
 \partial_\nu\partial^\nu \varphi(x) = 0.
-\tag{8.2}\]</span></span> This is our canonical example of a relativistically covariant equation of motion governing a field. In the next lecture we will see how the Lagrangian formalism you learnt in the first half of this course will allow us to build field theories and derive equations of motion like the wave-equation.</p>
+\tag{8.2}\]</span></span> This is our canonical example of a relativistically covariant equation of motion governing a field. In the next lecture we will see how the Lagrangian formalism you learnt in the first module of this course will allow us to build field theories and derive equations of motion like the wave-equation.</p>
 <p>Here we will take <a href="#eq-wave_eq" class="quarto-xref">Equation&nbsp;<span>8.2</span></a> as given and examine what its solutions look like. The solutions are plane-waves. In a given frame <span class="math inline">\(S\)</span> let’s carefully compute the derivative of the plane-wave starting with the expression <span class="math display">\[
     \partial_\mu e^{i \theta(x)} = \partial_\mu \theta(x) \, \frac{{\rm d}}{{\rm d}\theta(x)} e^{i\theta(x)} =  ie^{i\theta(x)} \partial_\mu \theta(x)
 \]</span> so using the phase <span class="math inline">\(\theta(x) = k_\nu x^\nu\)</span> we get <span class="math display">\[
@@ -508,7 +537,7 @@ Types of plane-waves
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/4velocity_field.png" class="img-fluid figure-img" width="500"></p>
-<figcaption>A strained spaghetti of worldlines varying smoothly through 1+2D space-time depicting the trajectory of a continuous fluid of particles in frame <span class="math inline">\(S\)</span>. A small ``volume” element <span class="math inline">\(\delta V = \delta x\delta y\)</span> at point <span class="math inline">\(\vec{X}\)</span> is shown. The zoomed-in plot shows the worldlines of 6 particles inside <span class="math inline">\(\delta V\)</span> which necessarily possess the same 4-velocity. Here is depicts negative motion along the <span class="math inline">\(x\)</span>-axis.</figcaption>
+<figcaption>A strained spaghetti of worldlines varying smoothly through 1+2D space-time depicting the trajectory of a continuous fluid of particles in frame <span class="math inline">\(S\)</span>. A small “volume” element <span class="math inline">\(\delta V = \delta x\delta y\)</span> at point <span class="math inline">\(\vec{X}\)</span> is shown. The zoomed-in plot shows the worldlines of 6 particles inside <span class="math inline">\(\delta V\)</span> which necessarily possess the same 4-velocity. Here is depicts negative motion along the <span class="math inline">\(x\)</span>-axis.</figcaption>
 </figure>
 </div>
 <p>The picture shows a small “volume” element for 2D <span class="math inline">\(\delta V = \delta x\delta y\)</span> at a point <span class="math inline">\(\vec{X}\)</span>. Since <span class="math inline">\(U(\vec{X})\)</span> varies smoothly all the particles (six drawn) inside the volume element at <span class="math inline">\(\vec{X}\)</span> necessarily have the same 4-velocity. In general for frame <span class="math inline">\(S\)</span> this 4-velocity will describe particles moving through space and time. Since the particles are massive the 4-velocity is time-like and so there exists another frame <span class="math inline">\(\bar S\)</span> in which it points along its <span class="math inline">\(c\bar t\)</span>-axis. This is the <em>momentarily comoving reference frame</em> for the particles at <span class="math inline">\(\vec{X}\)</span>, so the particles in the volume element are now stationary, as shown here:</p>
@@ -659,7 +688,7 @@ j^{\bar \mu}(\bar x) = \rho_0(\bar x)c\left(\begin{array}{c} 1 \\
 0\\
 0\\
 0 \end{array}\right).
-\]</span> Since frame <span class="math inline">\(S\)</span> is travelling <span class="math inline">\({\boldsymbol{v}}(x)\)</span> relative to <span class="math inline">\(\bar S\)</span> at point <span class="math inline">\(\vec{X}\)</span> then we can write the 4-current density in <span class="math inline">\(S\)</span> as <span class="math display">\[
+\]</span> Since frame <span class="math inline">\(\bar{S}\)</span> is travelling <span class="math inline">\({\boldsymbol{v}}(x)\)</span> relative to <span class="math inline">\(S\)</span> at point <span class="math inline">\(\vec{X}\)</span> then we can write the 4-current density in <span class="math inline">\(S\)</span> as <span class="math display">\[
 j^{\mu}(x) = \rho_0(x)c\left(\begin{array}{c} \gamma \\
 \gamma{\boldsymbol{v}}(x)/c\end{array}\right) = \left(\begin{array}{c} \gamma \rho_0(x)c \\
 \gamma \rho_0(x){\boldsymbol{v}}(x)\end{array}\right) = \left(\begin{array}{c} \rho(x)c \\
@@ -679,7 +708,7 @@ j^{\mu}(x) = \left(\begin{array}{c} \rho(x)c \\
     \frac{\partial}{\partial t}\rho({\boldsymbol{r}},t) + \nabla \cdot {\boldsymbol{j}}({\boldsymbol{r}},t) = 0,
 \tag{8.9}\]</span></span> familiar from electromagnetism. This equation has a very elegant relativistic form. Using <a href="#eq-dmu" class="quarto-xref">Equation&nbsp;<span>8.1</span></a> and <a href="symmetries.html#eq-4curr-gen" class="quarto-xref">Equation&nbsp;<span>10.8</span></a> then <a href="symmetries.html#eq-continuity_simple" class="quarto-xref">Equation&nbsp;<span>10.9</span></a> reduces to <span class="math display">\[
     \partial_\mu j^\mu(x) = 0.
-\]</span> Whenever the 4-current field <span class="math inline">\(J^\mu(\vec{X})\)</span> describes the flow of a conserved quantity then it will have zero 4-divergence. In the next part of the course we will repeatedly encounter the continuity equation in this form describing numerous different physical quantities.</p>
+\]</span> Whenever the 4-current field <span class="math inline">\(\vec{J}(\vec{X})\)</span> describes the flow of a conserved quantity then it will have zero 4-divergence. In the next part of the course we will repeatedly encounter the continuity equation in this form describing numerous different physical quantities.</p>
 </section>
 <section id="energy-current" class="level2 page-columns page-full" data-number="8.5">
 <h2 data-number="8.5" class="anchored" data-anchor-id="energy-current"><span class="header-section-number">8.5</span> Energy current</h2>

@@ -270,6 +270,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
@@ -315,9 +344,10 @@ window.Quarto = {
 </header>
 
 
+<p>So far we have spent a lot of time constructing a general tensorial formalism for describing the physics in a relativistically covariant way between observers. In this lecture we will now apply some of this formalism to the relativistic kinematics of particles.</p>
 <section id="describing-the-motion-of-a-particle" class="level2" data-number="7.1">
 <h2 data-number="7.1" class="anchored" data-anchor-id="describing-the-motion-of-a-particle"><span class="header-section-number">7.1</span> Describing the motion of a particle</h2>
-<p>Thus far we have spent a lot of time discussing constructing a general tensorial formalism for describing the physics in a relativistically covariant way between observers. It is time now for us to consider what the implications are of this formalism are for the motion of a single particle. In Newtonian classical mechanics the motion of a particle is described by a 3-vector <span class="math display">\[
+<p>The special theory of relativity we developed back in the first two lectures has profound implications on motion of a single particle, both in how it should be described and what occurs. In Newtonian classical mechanics the motion of a particle is described by a 3-vector <span class="math display">\[
 \boldsymbol{r}(t) = \left(
 \begin{array}{c}
   x(t) \\
@@ -495,7 +525,7 @@ v_{\mathrm{rel}} = c\sqrt{1-\frac{1}{\gamma_{\mathrm{rel}}^2}}
 p^\mu=  \left(
 \begin{array}{c}
   \gamma m c \\
-  \gamma {\boldsymbol{v}}
+  \gamma m{\boldsymbol{v}}
 \end{array}\right), = \left(
 \begin{array}{c}
   \mathcal{E}/c \\
@@ -507,7 +537,7 @@ p^\mu=  \left(
 \]</span> This is highly elegant. Yet, there is more beauty to come if we compute the length of <span class="math inline">\(\vec{P}\)</span> as <span class="math display">\[
     p^\mu p_\mu = \frac{\mathcal{E}^2}{c^2} - {\boldsymbol{p}}\cdot {\boldsymbol{p}}.
 \]</span> However, equally we have that <span class="math display">\[
-    p^\mu p_\mu = m^2c^2 u^\mu u_\mu = (mc)^2
+    p^\mu p_\mu = m^2c^2 u^\mu u_\mu = (mc)^2,
 \]</span> hence, the fixed unit length of <span class="math inline">\(\vec{U}\)</span> means that <span class="math display">\[
    \frac{\mathcal{E}^2}{c^2} - p^2 = (mc)^2,
 \]</span> or after rearranging <span class="math display">\[

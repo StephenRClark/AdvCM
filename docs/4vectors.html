@@ -270,6 +270,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
@@ -381,24 +410,79 @@ window.Quarto = {
   0 &amp; 0 &amp; 0 &amp; -1
 \end{array}\right) = {\rm diag}(1,-1,-1,-1),
 \tag{4.3}\]</span></span> in the middle of the form. The matrix <span class="math inline">\(\boldsymbol{\eta}\)</span> is a representation of the <em>Minkowski metric</em>.</p>
-<p>An important class of transformation in 3D Euclidean space which connect different coordinates systems are rotations given in general by <span class="math inline">\(3\times 3\)</span> matrix <span class="math inline">\(\mathbf{R}\)</span>. For example, a rotation about the <span class="math inline">\(x\)</span> axis by an angle <span class="math inline">\(\theta\)</span> is: <span class="math display">\[
+<p>An important class of transformation in 3D Euclidean space which connect different coordinates systems are rotations given in general by <span class="math inline">\(3\times 3\)</span> matrix <span class="math inline">\(\mathbf{R}\)</span>. For example, a rotation about the <span class="math inline">\(x\)</span> axis by an angle <span class="math inline">\(\theta\)</span> is: <span id="eq-rotation_x"><span class="math display">\[
 \mathbf{R}_x(\theta) = \left(\begin{array}{cccc}
   1 &amp; 0 &amp; 0 \\
   0 &amp; \cos(\theta) &amp; \sin(\theta) \\
   0 &amp; -\sin(\theta) &amp; \cos(\theta)
 \end{array}\right).
-\]</span> So if <span class="math inline">\(\vec{r}\)</span> has a representation <span class="math inline">\(\boldsymbol{r}\)</span> in one coorindate system is has a representation <span class="math display">\[
+\tag{4.4}\]</span></span> So if <span class="math inline">\(\vec{r}\)</span> has a representation <span class="math inline">\(\boldsymbol{r}\)</span> in one coorindate system is has a representation <span class="math display">\[
 \bar{\boldsymbol{r}} = \mathbf{R} \, {\boldsymbol{r}},
 \]</span> in another that is rotated with respect to it. Yet changing the coordinate system should not alter the length we compute of the geometrical vector <span class="math inline">\(\vec{r}\)</span> so <span class="math display">\[
 ||\vec{r}||^2 = \bar{\boldsymbol{r}}^{\rm T}\bar{\boldsymbol{r}} = {\boldsymbol{r}}^{\rm T}\mathbf{R}^T\mathbf{R}\,{\boldsymbol{r}} = {\boldsymbol{r}}^{\rm T}{\boldsymbol{r}}.
 \]</span> The last equality can only be true for all <span class="math inline">\(\vec{r}\)</span> if <span class="math inline">\(\mathbf{R}^T\mathbf{R} = \mathbb{1}_3\)</span>, where <span class="math inline">\(\mathbb{1}_3\)</span> is the <span class="math inline">\(3\times 3\)</span> identity matrix, which in this context is the <em>Euclidean metric</em>. This constraint tell us that rotation matrices <span class="math inline">\(\mathbf{R}\)</span> are orthogonal.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Lie groups
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>It is useful to take a <strong>non-examinable</strong> digression into Lie groups. Although we won’t strictly need this formalism in this course elements of it will creep in later.</p>
+<p><strong>Continuous groups</strong></p>
+<p>Instead of being indexed by an integer label some groups have elements that depend on set of continuous real parameters <span class="math inline">\(a_i\)</span>, as <span class="math inline">\(g(a_1,a_2,\dots,a_r)\)</span>, where the number of parameters <span class="math inline">\(r\)</span> is called the dimension of the group. Each parameter <span class="math inline">\(a_i\)</span> should have a well defined range of values defining the coordinate space of the group. A representation of the group will then be <span class="math inline">\(g(a_1,a_2,\dots,a_r) \mapsto \boldsymbol{g}(a_1,a_2,\dots,a_r)\)</span>. Conventionally we choose the identity element to be <span class="math inline">\(e = \boldsymbol{g}(0,0,\dots,0) \mapsto \mathbb{1}_r\)</span>. Now to satisfy the group properties we need that <span class="math display">\[
+g(a_1,a_2,\dots,a_r)g(b_1,b_2,\dots,b_r) = g(c_1,c_2,\dots,c_r),
+\]</span> gives another group element. Thus the new parameters <span class="math inline">\(c_i\)</span> must be expressible as a functions of the parameters <span class="math inline">\(a_i\)</span> and <span class="math inline">\(b_i\)</span>, as <span class="math display">\[
+c_i = f_i(a_1,a_2,\dots,a_r,b_1,b_2,\dots,b_r),
+\]</span> for <span class="math inline">\(i=1,2,\cdots,r\)</span>. Continuous parameter groups with well-behaved functions <span class="math inline">\(f_i\)</span> that are differentiable are called <em>Lie</em> groups.</p>
+<p><strong>Expansion in generators</strong></p>
+<p>Given this property it makes sense to expand the representation of Lie group elements via a power-series around the identity as <span id="eq-lie_group_expand"><span class="math display">\[
+\boldsymbol{g}(\delta a_1,\delta a_2,\dots, \delta a_r) = \mathbb{1}_r + \sum_{i=1}^r \delta a_i \boldsymbol{X}_i + \cdots.
+\tag{4.5}\]</span></span> As the notation suggests the parameters <span class="math inline">\(\delta a_i \approx 0\)</span> so <span class="math inline">\(\boldsymbol{g}(\delta a_1,\delta a_2,\dots,\delta a_r)\)</span> should be well approximated by the first two terms only and is said to be an infinitesimal transformation.</p>
+<p>In <a href="#eq-lie_group_expand" class="quarto-xref">Equation&nbsp;<span>4.5</span></a> we have bundled up the first derivatives of any group element with respect to a parameter <span class="math inline">\(a_i\)</span> evaluated near the origin as a new object <span class="math display">\[
+\boldsymbol{X}_i = \left.\frac{\partial}{\partial a_i}\boldsymbol{g}(a_1, a_2,\dots, a_r)\right|_{a_1= a_2=\cdots= a_r = 0},
+\]</span> with <span class="math inline">\(i=1,2,\cdots,r\)</span>. The matrices <span class="math inline">\(\boldsymbol{X}_j\)</span> are called the <em>generators</em> of the group in the given representation and are linearly independent.</p>
+<p>Using an infinitesimal transformation <span class="math inline">\(\boldsymbol{g}(\delta a_1,\delta a_2,\dots,\delta a_r)\)</span> we can build up a finite transformation by applying a product of infinitely many infinitesimal ones. Let our small parameters be <span class="math inline">\(\delta a_i = a_i/N\)</span> with <span class="math inline">\(N \gg 1\)</span>, then <span class="math display">\[
+\boldsymbol{g}(a_1, a_2,\dots, a_r) = \lim_{N\rightarrow\infty}\left(\mathbb{1} + \sum_{i=1}^r \frac{a_i}{N} {\bf X}_i\right)^N = \exp\left(\sum_{i=1}^r a_i {\bf X}_i\right),
+\]</span> after using the limit definition of the exponential function. In this way by exponentiating a sum of the generators weighted by the parameters we can construct representations of all elements of the Lie group.</p>
+<p><strong>Commutation of generators</strong></p>
+<p>Now taking two elements from the group the multiplication <span class="math display">\[
+\begin{align}
+\boldsymbol{g}(a_1, a_2,\dots, a_r)\boldsymbol{g}(b_1, b_2,\dots, b_r)  &amp;= \exp\left(\sum_{i=1}^r a_i \boldsymbol{X}_i\right)\exp\left(\sum_{i=1}^r b_i \boldsymbol{X}_i\right),\\
+&amp;= \boldsymbol{g}(c_1, c_2,\dots, c_r),
+\end{align}
+\]</span> yet we also know that <span class="math inline">\(\boldsymbol{g}(c_1, c_2,\dots, c_r)\)</span> will have its own expansion <span class="math display">\[
+\boldsymbol{g}(c_1, c_2,\dots, c_r) = \exp\left(\sum_{i=1}^r c_i \boldsymbol{X}_i\right).
+\]</span> In general we cannot assume commutativity between products of group elements which prevent us from simply combining the matrix exponentials like we would scalars <span class="math inline">\(a\)</span> and <span class="math inline">\(b\)</span> as <span class="math inline">\(e^a e^b = e^{a+b}\)</span>. Rather we have to use the Baker-Campbell-Hausdorff identity that allows exponentials of matrices (and operators) to be combined as <span class="math display">\[
+e^\boldsymbol{A}e^\boldsymbol{B} = e^\boldsymbol{C},
+\]</span> where <span class="math inline">\(\boldsymbol{C}\)</span> is given by the expansion of nested-commutators <span class="math display">\[
+\boldsymbol{C} = \boldsymbol{A} + \boldsymbol{B} + \frac{1}{2}[\boldsymbol{A},\boldsymbol{B}] + \frac{1}{12}\Big([\boldsymbol{A},[\boldsymbol{A},\boldsymbol{B}]] + [\boldsymbol{B},[\boldsymbol{B},\boldsymbol{A}]]\Big) + \dots.
+\]</span> Inserting the sums over generators this gives <span class="math display">\[
+\begin{align}
+\sum_{i=1}^r c_i \boldsymbol{X}_i &amp;= \sum_{i=1}^r (a_i + b_i) \boldsymbol{X}_i + \frac{1}{2}\sum_{i=1}^r \sum_{j=1}^r a_i b_j [\boldsymbol{X}_i, \boldsymbol{X}_j] + \nonumber \\
+&amp; \qquad + \, \frac{1}{12}\sum_{i=1}^r \sum_{j=1}^r\sum_{k=1}^r (a_i a_j b_k + b_i b_j a_k)[\boldsymbol{X}_i,[\boldsymbol{X}_j,\boldsymbol{X}_k]] + \dots.
+\end{align}
+\]</span> This tells us that in order for the righthand side to collapse to the sum of generators given on the lefthand side the commutators of generators for Lie groups must be linear combinations of generators themselves. Generator commutation relations therefore have the general form <span id="eq-lie_alg"><span class="math display">\[
+[\boldsymbol{X}_i,\boldsymbol{X}_j] = \sum_{k=1}^r C^k_{ij} \boldsymbol{X}_k,
+\tag{4.6}\]</span></span> where the linear combination is specified by <span class="math inline">\(C^k_{ij}\)</span> called the <em>structure constants</em> of the group. The commutation relation in <a href="#eq-lie_alg" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> entirely defines the property of the Lie group and is called its <em>Lie algebra</em>.</p>
+<p>The Lie algebra tells us what happens when we multiply together group elements. The simplest special case is that of an Abelian Lie group which corresponds to all the generators commuting, so <span class="math inline">\(C^k_{ij} = 0\)</span> meaning that <span class="math display">\[
+\boldsymbol{g}(a_1, a_2,\dots, a_r)\boldsymbol{g}(b_1, b_2,\dots, b_r)  = \exp\left(\sum_{i=1}^r (a_i + b_i) \boldsymbol{X}_i\right) = \boldsymbol{g}(c_1, c_2,\dots, c_r),
+\]</span> yielding the trivial relation <span class="math inline">\(c_i = a_i + b_i\)</span> independent on the order we multiplied <span class="math inline">\(\boldsymbol{g}(a_1, a_2,\dots, a_r)\)</span> and <span class="math inline">\(\boldsymbol{g}(b_1, b_2,\dots, b_r)\)</span>. Whenever the structure constant <span class="math inline">\(C^k_{ij} \neq 0\)</span> the Lie group is non-Abelian.</p>
+</div>
+</div>
+</div>
 <p>Lorentz transformations are <span class="math inline">\(4\times 4\)</span> matrices <span class="math inline">\(\mathbf{\Lambda}\)</span> in 1+3D space-time defined similarly as transformations which preserve the length of 4-vectors. We know that the value of the space-time interval <span class="math inline">\(\Delta S^2(O,X)\)</span> is invariant and agreed upon by all inertial observers. However, we also know in frame <span class="math inline">\(\bar S\)</span> that <span class="math inline">\(\Delta S^2(O,X)\)</span> is given by the exactly same mathematical form <span class="math inline">\((c\,{\rm time})^2 - {\rm space}^2\)</span> as in <a href="#eq-space-time-interval" class="quarto-xref">Equation&nbsp;<span>4.1</span></a> so: <span class="math display">\[
 ||\vec{X}||^2 = \Delta S^2(O,X) = \bar{\boldsymbol{X}}^{\rm T}\,\boldsymbol{\eta}\,\bar{\boldsymbol{X}} = (c\bar{t})^2 - {\bar x}^2 - {\bar y}^2 - {\bar z}^2,
 \]</span> Consequently, the <strong>same</strong> metric <span class="math inline">\(\boldsymbol{\eta}\)</span> given in <a href="#eq-metric" class="quarto-xref">Equation&nbsp;<span>4.3</span></a> applies to every inertial frame. The invariance of the length gives us an important constraint on Lorentz transformations <span class="math inline">\(\mathbf{\Lambda}\)</span> as: <span class="math display">\[
 ||\vec{X}||^2 = \bar{\boldsymbol{X}}^{\rm T}\,\boldsymbol{\eta}\,\bar{\boldsymbol{X}} = {\boldsymbol{X}}^{\rm T}\,\mathbf{\Lambda}^T\,\boldsymbol{\eta}\,\mathbf{\Lambda}\,{\boldsymbol{X}} = {\boldsymbol{X}}^{\rm T}\,\boldsymbol{\eta}\,{\boldsymbol{X}}.
 \]</span> The last equality can only be true for all <span class="math inline">\(\vec{X}\)</span> if Lorentz transformations obey <span class="math inline">\(\mathbf{\Lambda}^{\rm T}\,\boldsymbol{\eta}\,\mathbf{\Lambda} = \boldsymbol{\eta}\)</span>. Our previous constraint on the orthogonality of rotations in 3D has the same form of a conjugation of the metric <span class="math inline">\(\mathbf{R}^{\rm T}\,\mathbb{1}_3\,\mathbf{R} = \mathbb{1}_3\)</span>.</p>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -407,7 +491,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>1. Determinant of Lorentz transformations</strong></p>
 <p>We saw already in <a href="#eq-metric" class="quarto-xref">Equation&nbsp;<span>4.3</span></a> that the Minkowski metric in 1+3D is represented by the diagonal matrix <span class="math display">\[
@@ -420,7 +504,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -429,7 +513,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>1. Determinant of Lorentz transformations</strong></p>
 <p>The Minkowski metric <span class="math inline">\(\eta^{\mu\nu}\)</span> is represented by the matrix <span class="math display">\[
@@ -471,10 +555,10 @@ window.Quarto = {
 <p>Let’s consider some special cases of Lorentz transformations. The simplest is a spatial rotation <span class="math display">\[
 \boldsymbol{\Lambda}_\mathbf{R} = \left(\begin{array}{cccc}
   1 &amp; 0 &amp; 0 &amp; 0 \\
-  0 &amp; - &amp; - &amp; - \\
-  0 &amp; - &amp; \mathbf{R} &amp; - \\
-  0 &amp; - &amp; - &amp; -
-\end{array}\right),
+  0 &amp; \ulcorner &amp;  &amp; \urcorner \\
+  0 &amp;  &amp; \mathbf{R} &amp;  \\
+  0 &amp; \llcorner &amp;  &amp; \lrcorner
+\end{array}\right).
 \]</span> which does nothing to time but rotates in space. In this case preservation of Euclidean distances in space alone ensures the space-time interval is also preserved since: <span class="math display">\[
 \begin{align}
     ||\vec{X}||^2 &amp;= \underline{\bar{X}}^{\rm T}\,\boldsymbol{\eta}\,\underline{\bar{X}}, \\
@@ -489,14 +573,14 @@ window.Quarto = {
   0 &amp; 0 &amp; 1 &amp; 0 \\
   0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right),
-\]</span> given by inserting the <span class="math inline">\(2 \times 2\)</span> matrix from earlier into the <span class="math inline">\(ct,x\)</span> rows and columns in the top corner. As we saw in the previous lecture on <a href="./space_time.html#sec-time-length">Minkowski space-time</a> isosurfaces of the space-time interval <span class="math inline">\(\Delta S^2\)</span> have a hyperbolic structure. As a result we can write this boost as a hyperbolic rotation: <span class="math display">\[
+\]</span> given by inserting the <span class="math inline">\(2 \times 2\)</span> matrix from earlier into the <span class="math inline">\(ct,x\)</span> rows and columns in the top corner. As we saw in the previous lecture on <a href="./space_time.html#sec-time-length">Minkowski space-time</a> isosurfaces of the space-time interval <span class="math inline">\(\Delta S^2\)</span> have a hyperbolic structure. As a result we can write this boost as a hyperbolic rotation: <span id="eq-lorentz_x"><span class="math display">\[
 \mathbf{\Lambda}(\beta\vec{e}_x) = \left(\begin{array}{cccc}
   \cosh(\zeta) &amp; -\sinh(\zeta) &amp; 0 &amp; 0 \\
   -\sinh(\zeta) &amp; \cosh(\zeta) &amp; 0 &amp; 0 \\
   0 &amp; 0 &amp; 1 &amp; 0 \\
   0 &amp; 0 &amp; 0 &amp; 1
 \end{array}\right),
-\]</span> where <span class="math inline">\(\zeta = \tanh^{-1}(\beta)\)</span> is the <em>rapidity</em>. We can write <strong>any</strong> Lorentz transformation in 1+3D as a sequence of spatial rotations and boosts along coordinates axes. In particular a boost by <span class="math inline">\(\beta\)</span> along a spatial direction defined by any unit 3-vector <span class="math inline">\(\vec{n}\)</span> can be decomposed as: <span class="math display">\[
+\tag{4.7}\]</span></span> where <span class="math inline">\(\zeta = \tanh^{-1}(\beta)\)</span> is the <em>rapidity</em>. We can write <strong>any</strong> Lorentz transformation in 1+3D as a sequence of spatial rotations and boosts along coordinates axes. In particular a boost by <span class="math inline">\(\beta\)</span> along a spatial direction defined by any unit 3-vector <span class="math inline">\(\vec{n}\)</span> can be decomposed as: <span class="math display">\[
 \mathbf{\Lambda}(\beta\vec{n}) = \mathbf{\Lambda}_\mathbf{R}\,\mathbf{\Lambda}(\beta\vec{e}_x) \mathbf{\Lambda}_\mathbf{R}^{-1},
 \]</span> where <span class="math inline">\(\mathbf{R}^{-1}\)</span> rotates <span class="math inline">\(\vec{n}\)</span> into <span class="math inline">\(\vec{e}_x\)</span>, a boost is applied along the <span class="math inline">\(x\)</span>-axis, and then <span class="math inline">\(\mathbf{R}\)</span> rotates <span class="math inline">\(\vec{e}_x\)</span> back to <span class="math inline">\(\vec{n}\)</span>.</p>
 <div class="quarto-figure quarto-figure-center">
@@ -506,8 +590,244 @@ window.Quarto = {
 </figure>
 </div>
 <p>While rotations in 3D form a Lie group SO(3), Lorentz boosts on their own in 1+3D do not form a group. This is because if two non-colinear boosts are performed the result is not a pure boost. Instead you get a boost and a rotation, the latter being called a <a href="https://en.wikipedia.org/wiki/Wigner_rotation">Wigner rotation</a>. General Lorentz transforms, so boosts and rotations together, do form a Lie group SO<span class="math inline">\(^+\)</span>(1,3).</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Key examples of Lie groups
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Having introduced Lie groups in an abstract way in an earlier box, here we have an accompanying <strong>non-examinable</strong> notes where we apply this formalism to the Galilean boosts, 3D spatial rotations and Lorentz boosts transformations. In all three cases they will have representations that are linear operators on the vector space <span class="math inline">\(V = \mathbb{R}^4\)</span> of 4-vectors <span class="math inline">\((ct,\boldsymbol{r})^{\rm T}\)</span>. We will stick to the Cartesian basis for the 3D space components to get <span class="math inline">\(4 \times 4\)</span> matrices representing these operators.</p>
+<p><strong>Galilean boosts in 3D</strong></p>
+<p>The generators for Galilean boosts along the <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span> axes are given by: <span class="math display">\[
+\boldsymbol{C}_x = \left(
+\begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}
+\right), \quad \boldsymbol{C}_y = \left(
+\begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}
+\right), \quad \boldsymbol{C}_z = \left(
+\begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0
+\end{array}
+\right). \nonumber
+\]</span> We consider a general Galilean boost with a velocity <span class="math inline">\(\boldsymbol{v} = v (n_x {\bf e}_x + n_y {\bf e}_y + n_z {\bf e}_z)\)</span>, specified by a direction unit vector <span class="math inline">\(\boldsymbol{n}\)</span> and speed <span class="math inline">\(v = ||\boldsymbol{v}||\)</span>. To build a Galilean boost from these generators we use a dimensionless speed parameter <span class="math inline">\(v/c\)</span> (we could choose any speed for this, <span class="math inline">\(c\)</span> is just convenient but not fundamental to Galilean transforms): <span class="math display">\[
+  \boldsymbol{G}_\boldsymbol{n}(v) = \exp\left[-(v/c)\Big(n_x \boldsymbol{C}_x + n_y \boldsymbol{C}_y + n_z \boldsymbol{C}_z\Big)\right] = \exp\left(-(v/c)\, {\bf n} \cdot \boldsymbol{C}\right),
+\]</span> where <span class="math inline">\(\boldsymbol{C}\)</span> is a shorthand for the vector of generators <span class="math inline">\(\boldsymbol{C} = (\boldsymbol{C}_x,\boldsymbol{C}_y,\boldsymbol{C}_z)\)</span>. A notable feature of the Galilean generators is that <span class="math inline">\([\boldsymbol{C}_i, \boldsymbol{C}_j] = 0\)</span> for any <span class="math inline">\(i,j = \{x,y,z\}\)</span>, so they mutually commute with one another meaning Galilean boosts form an Abelian group, and they also all square to the zero matrix. A consequence of this is that boosts along the different axes can be applied separately and in any order so in general we have: <span class="math display">\[
+\begin{align}
+\boldsymbol{G}_\boldsymbol{n}(v) &amp;= \exp\Big(-(v_x/c) \boldsymbol{C}_x\Big)\exp\Big(-(v_y/c) \boldsymbol{C}_y\Big)\exp\Big(-(v_z/c) \boldsymbol{C}_z\Big), \\
+&amp;= \Big(\mathbb{1} - (v_x/c)\boldsymbol{C}_x\Big)\Big(\mathbb{1} - (v_y/c)\boldsymbol{C}_y\Big)\Big(\mathbb{1} - (v_z/c)\boldsymbol{C}_z\Big), \\
+&amp;=
+\left(
+\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+-v_x/c &amp; 1 &amp; 0 &amp; 0 \\
+-v_y/c &amp; 0 &amp; 1 &amp; 0 \\
+-v_z/c &amp; 0 &amp; 0 &amp; 1
+\end{array}
+\right),
+\end{align}
+\]</span> using <span class="math inline">\(v_x = v n_x\)</span>. This is 3D version of the Galilean transformation we arrived at back in the first lecture, once we use that <span class="math inline">\((v/c) ct = vt\)</span>. This group is called SGal(3).</p>
+<p><strong>Spatial rotations in 3D</strong></p>
+<p>The generators for rotations in 3D space about the <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span> axes are given by the antisymmetric matrices: <span class="math display">\[
+\boldsymbol{J}_x = \left(
+\begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; -1 \\
+0 &amp; 0 &amp; 1 &amp; 0
+\end{array}
+\right), \quad \boldsymbol{J}_y = \left(
+\begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 0 &amp; 0
+\end{array}
+\right), \quad \boldsymbol{J}_z = \left(
+\begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}
+\right). \nonumber
+\]</span> From these generators a finite rotation by an angle <span class="math inline">\(\theta\)</span> clockwise about some axis defined by a unit vector <span class="math inline">\(\boldsymbol{n}\)</span> is given by <span class="math display">\[
+{\bf R}_\boldsymbol{n}(\theta) = \exp\left[-\theta\left(n_x \boldsymbol{J}_x + n_y \boldsymbol{J}_y + n_z \boldsymbol{J}_z\right)\right] = \exp\left(-\theta\, {\bf n} \cdot {\bf J}\right).
+\]</span> Unlike Galilean boosts rotations are a non-Abelian group so the decomposition <span class="math display">\[
+{\bf R}_\boldsymbol{n}(\theta) \neq \exp\Big(-\theta\, n_x \boldsymbol{J}_x\Big)\exp\left(-\theta\, n_y \boldsymbol{J}_y\right)\exp\Big(-\theta\, n_z \boldsymbol{J}_z\Big),
+\]</span> is not applicable. This is expected since it is easy to see that rotations in 3D do not commute, as shown here:</p>
+<div id="fig:rotating_book" class="quarto-figure quarto-figure-center anchored">
+<figure class="figure">
+<p><img src="figures/non_comm_rot.png" class="img-fluid figure-img"></p>
+<figcaption>Take a die and rotate it by <span class="math inline">\(\pi/2\)</span> about the <span class="math inline">\(z\)</span>-axis and then <span class="math inline">\(\pi/2\)</span> about <span class="math inline">\(y\)</span>-axis. Next take the die in the same initial orientation and rotate <span class="math inline">\(\pi/2\)</span> about the <span class="math inline">\(y\)</span> axis and then <span class="math inline">\(\pi/2\)</span> about <span class="math inline">\(z\)</span> axis. As is clear from the figure the die ends up in different orientations showing that 3D rotations do not in general commute.</figcaption>
+</figure>
+</div>
+<p>This feature is reflected in the Lie algebra of the group given as <span class="math display">\[
+  [{\bf J}_i,{\bf J}_j] = \epsilon_{ijk}{\bf J}_k, \label{equ:rot_com}
+\]</span> where <span class="math inline">\(i,j,k = \{x,y,z\}\)</span> and <span class="math inline">\(\epsilon_{ijk}\)</span> is the totally antisymmetric tensor. It is no coincidence that up to some factors of <span class="math inline">\(i\)</span> and <span class="math inline">\(\hbar\)</span> this commutation relation is very similar to that of angular momentum operators in quantum mechanics. Of course, two consecutive rotations about the <strong>same</strong>, but otherwise arbitrary, axis <span class="math inline">\(\boldsymbol{n}\)</span> is the same as one rotation with the sum of the angles <span class="math display">\[
+{\bf R}_\boldsymbol{n}(\vartheta) {\bf R}_\boldsymbol{n}(\theta) = \exp\left(-\vartheta\, \boldsymbol{n} \cdot \boldsymbol{J}\right)\exp\left(-\theta\, \boldsymbol{n} \cdot \boldsymbol{J}\right) = \exp\left[-(\theta + \vartheta)\, \boldsymbol{n} \cdot \boldsymbol{J}\right] = {\bf R}_\boldsymbol{n}(\theta + \vartheta),
+\]</span> since the matrix <span class="math inline">\(\boldsymbol{n} \cdot {\bf J} = n_x \boldsymbol{J}_x + n_y \boldsymbol{J}_y + n_z \boldsymbol{J}_z\)</span> always commutes with itself.</p>
+<p>Notice also that <span class="math display">\[
+\boldsymbol{J}^2_x = \left(
+\begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; -1
+\end{array}
+\right), \quad \boldsymbol{J}^2_y = \left(
+\begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; -1
+\end{array}
+\right), \quad \boldsymbol{J}^2_z = \left(
+\begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; -1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; -1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}
+\right), \nonumber
+\]</span> along with <span class="math inline">\(\boldsymbol{J}_i^3 = -\boldsymbol{J}_i\)</span>, <span class="math inline">\(\boldsymbol{J}_i^4 = -\boldsymbol{J}^2_i\)</span> and so on. Taking <span class="math inline">\(\boldsymbol{n} = (1,0,0)\)</span> for example we obtain <span class="math display">\[
+\begin{align}
+{\bf R}_x(\theta) &amp;= \exp\left(-\theta\boldsymbol{J}_x\right), \\
+&amp;= \mathbb{1}_4 - \theta \boldsymbol{J}_x + \frac{\theta^2}{2!}\boldsymbol{J}^2_x + \frac{\theta^3}{3!}\boldsymbol{J}_x - \frac{\theta^4}{4!}\boldsymbol{J}^2_x + \dots, \\
+&amp;= \left(
+\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 -\frac{1}{2}\theta^2 + \frac{1}{4!}\theta^4 - \dots &amp; \theta - \frac{1}{3!}\theta^3 + \dots \\
+0 &amp; 0 &amp; -\theta + \frac{1}{3!}\theta^3 - \dots &amp;1 -\frac{1}{2}\theta^2 + \frac{1}{4!}\theta^4 - \dots
+\end{array}
+\right), \\
+&amp;=
+\left(
+\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \cos(\theta) &amp; \sin(\theta) \\
+0 &amp; 0 &amp;-\sin(\theta) &amp; \cos(\theta)
+\end{array}
+\right).
+\end{align}
+\]</span> You will recognise the spatial <span class="math inline">\(3 \times 3\)</span> block as a rotation matrix in <a href="#eq-rotation_x" class="quarto-xref">Equation&nbsp;<span>4.4</span></a>. Analogous results can be found for rotations about <span class="math inline">\(y\)</span>- and <span class="math inline">\(z\)</span>-axes. This group is called SO(3) for <em>special orthogonal</em> group in 3D with the special recongising that <span class="math inline">\({\rm det}({\bf R}_\boldsymbol{n}(\theta)) = 1\)</span>.</p>
+<p>As we have seen a Galilean boost <span class="math inline">\(\times\)</span> Galilean boost gives another Galilean boost and a rotation <span class="math inline">\(\times\)</span> rotation gives another rotation, as required for them to be bona fide groups. In fact they are both sub-groups of the larger group of more general Galilean transformations between reference frames that involve both boosts and rotations. We can describe such a transformation by simply combining the set of generator <span class="math inline">\(\boldsymbol{C}\)</span> and <span class="math inline">\(\boldsymbol{J}\)</span> and the associated parameters to give <span class="math display">\[
+\boldsymbol{G}_{\boldsymbol{n},\boldsymbol{n}'}(v,\theta) = \exp\left(-(v/c)\,\boldsymbol{n} \cdot \boldsymbol{C} - \theta\, \boldsymbol{n}' \cdot \boldsymbol{J}\right),
+\]</span> where the boost is along <span class="math inline">\(\boldsymbol{n}\)</span> by <span class="math inline">\(v\)</span> and the rotation about <span class="math inline">\(\boldsymbol{n}'\)</span> by <span class="math inline">\(\theta\)</span>. To characterise this larger group we again need the additional commutation relations between Galilean boost and rotations as <span class="math display">\[
+[\boldsymbol{J}_i,\boldsymbol{C}_j] = \epsilon_{ijk}\boldsymbol{C}_k.
+\]</span> This tells us that a Galilean boost along one axis does not commute with the rotation generators about the orthogonal axes.</p>
+<p><strong>Lorentz boosts in 3D</strong></p>
+<p>The generators for Lorentz boosts are symmetric matrices connecting <span class="math inline">\(ct\)</span> with each spatial axis <span class="math inline">\(x\)</span>, <span class="math inline">\(y\)</span> and <span class="math inline">\(z\)</span>: <span class="math display">\[
+\boldsymbol{K}_x = \left(
+\begin{array}{cccc}
+0 &amp; 1 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}
+\right), \quad \boldsymbol{K}_y = \left(
+\begin{array}{cccc}
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}
+\right), \quad \boldsymbol{K}_z = \left(
+\begin{array}{cccc}
+0 &amp; 0 &amp; 0 &amp; 1 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+1 &amp; 0 &amp; 0 &amp; 0
+\end{array}
+\right). \nonumber
+\]</span> Notice how these generators bare some similarity with both Galilean boosts and rotations. From these generators a finite Lorentz boost by a velocity <span class="math inline">\({\bf v} = v\, {\bf n}\)</span> is given by <span class="math display">\[
+\boldsymbol{\Lambda}_\boldsymbol{n}(\zeta) = \exp\left[-\zeta \Big(n_x \boldsymbol{K}_x + n_y \boldsymbol{K}_y + n_z \boldsymbol{K}_z\Big)\right] = \exp\left(-\zeta\, \boldsymbol{n} \cdot \boldsymbol{K}\right),
+\]</span> characterised by the dimensionless parameter <span class="math inline">\(\zeta = {\rm atanh}(v/c)\)</span> called the rapidity. Given that <span class="math display">\[
+\boldsymbol{K}^2_x = \left(
+\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 1 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}
+\right), \quad \boldsymbol{K}^2_y = \left(
+\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0
+\end{array}
+\right), \quad \boldsymbol{K}^2_z = \left(
+\begin{array}{cccc}
+1 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}
+\right), \nonumber
+\]</span> and <span class="math inline">\(\boldsymbol{K}_i^3 = \boldsymbol{K}_i\)</span>, then taking <span class="math inline">\(\boldsymbol{n} = (1,0,0)\)</span> for example we obtain <span class="math display">\[
+\begin{align}
+\boldsymbol{\Lambda}_x(\zeta) &amp;= \exp\left(-\zeta {\bf K}_x\right), \\
+&amp;= \mathbb{1}_4 - \zeta {\bf K}_x + \frac{\zeta^2}{2!}{\bf K}^2_x - \frac{\zeta^3}{3!}{\bf K}_x + \frac{\zeta^4}{4!}{\bf K}^2_x + \dots, \\
+&amp;= \left(
+\begin{array}{cccc}
+1 + \frac{1}{2}\zeta^2 + \frac{1}{4!}\zeta^4 + \dots &amp; -\zeta - \frac{1}{3!}\zeta^3 + \dots &amp; 0 &amp; 0 \\
+-\zeta - \frac{1}{3!}\zeta^3 - \dots &amp; 1 + \frac{1}{2}\zeta^2 + \frac{1}{4!}\zeta^4 + \dots  &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}
+\right), \\
+&amp;=
+\left(
+\begin{array}{cccc}
+\cosh(\zeta) &amp; -\sinh(\zeta) &amp; 0 &amp; 0 \\
+-\sinh(\zeta) &amp; \cosh(\zeta) &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; 1 &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; 1
+\end{array}
+\right).
+\end{align}
+\]</span> This is the Lorentz transformation for a boost along the <span class="math inline">\(x\)</span>-axis given in <a href="#eq-lorentz_x" class="quarto-xref">Equation&nbsp;<span>4.7</span></a>. Just like rotations we also see that the additional rule for rapidities of consecutive boosts along the <strong>same</strong> but otherwise arbitrary axis <span class="math inline">\(\boldsymbol{n}\)</span> follows trivially from the commutativity in this case as <span class="math display">\[
+\begin{align}
+\boldsymbol{\Lambda}_\boldsymbol{n}(\chi)\boldsymbol{\Lambda}_\boldsymbol{n}(\zeta) &amp;= \exp\left(-\chi\, \boldsymbol{n} \cdot \boldsymbol{K}\right) \exp\left(-\zeta\, \boldsymbol{n} \cdot \boldsymbol{K}\right), \\
+&amp;=  \exp\left[-(\zeta + \chi)\, \boldsymbol{n} \cdot \boldsymbol{K}\right], \\
+&amp;= \boldsymbol{\Lambda}_\boldsymbol{n}(\zeta + \chi), \nonumber
+\end{align}
+\]</span> where <span class="math inline">\(\chi = {\rm atanh}(u/c)\)</span> is the rapidity for the speed <span class="math inline">\(u\)</span> of the second boost, and <span class="math inline">\(w/c = \tanh(\zeta + \chi)\)</span> is the speed associated to the combined boost.</p>
+<p>Unlike the Galilean case Lorentz boosts along different axes do not commute. This is reflected in its non-trivial Lie algebra which turns out to be <span class="math display">\[
+[\boldsymbol{K}_i,\boldsymbol{K}_j] = -\epsilon_{ijk}\boldsymbol{J}_k.
+\]</span> From this commutator we notice something unusual, namely the commutator of Lorentz boost generators <span class="math inline">\(\boldsymbol{K}_i\)</span> and <span class="math inline">\(\boldsymbol{K}_j\)</span> gives rise to a rotation generator <span class="math inline">\(\boldsymbol{J}_k\)</span>. This tells us that Lorentz boosts alone <strong>do not</strong> form a group, a Lorentz boost <span class="math inline">\(\times\)</span> Lorentz boost does not give a pure Lorentz boost unless the boosts collinear. Mathematically this means that <span class="math display">\[
+\begin{align}
+\boldsymbol{\Lambda}_{\boldsymbol{n}'}(\chi)\boldsymbol{\Lambda}_\boldsymbol{n}(\zeta) &amp;= \exp\left(-\chi\, \boldsymbol{n}' \cdot \boldsymbol{K}\right) \exp\left(-\zeta\, \boldsymbol{n} \cdot \boldsymbol{K}\right), \\
+&amp;=  \exp\left(- \xi\, \boldsymbol{n}'' \cdot \boldsymbol{K} + \theta\,\boldsymbol{n}''' \cdot \boldsymbol{J} \right), \nonumber
+\end{align}
+\]</span> so two boosts along different axes gives rise to a boost and a spatial rotation about different axes. This is Wigner rotation mentioned earlier. In special relativity we are therefore forced to form include both Lorentz boost <span class="math inline">\(\boldsymbol{K}\)</span> and rotation generators <span class="math inline">\(\boldsymbol{J}\)</span> together to obtain a proper group describing Lorentz transformations, fully characterised by the final set of commutation relations <span class="math display">\[
+[\boldsymbol{J}_i,\boldsymbol{K}_j] = \epsilon_{ijk}\boldsymbol{K}_k.
+\]</span> This group is called SO<span class="math inline">\(^+\)</span>(1,3), for the special orthogonal group in 1+3D Minkowski space-time, and <span class="math inline">\(+\)</span> denoting proper orthochronous Lorentz transformations which preserve the direction of time.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -516,7 +836,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>2. Lorentz transforming orthogonal motion</strong></p>
 <p>In Galilean relativity the motion of objects orthogonal to the direction of motion between observes do not change. Given <span class="math inline">\(S\)</span> and <span class="math inline">\(\bar{S}\)</span> have relative motion along the <span class="math inline">\(x\)</span>-axis show what happens in special relativity to the motion of an object along the <span class="math inline">\(y\)</span>-axis.</p>
@@ -524,7 +844,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -533,7 +853,7 @@ window.Quarto = {
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>2. Lorentz transforming orthogonal motion</strong></p>
 <p>Consider an object moving with a speed <span class="math inline">\(V_y\)</span> along the <span class="math inline">\(y\)</span>-axis, orthogonal to the relative motion between frames <span class="math inline">\(S\)</span> and <span class="math inline">\(\bar S\)</span>. If the object follows a world-line with coordinates <span class="math inline">\((ct, x, y, z)\)</span> in frame <span class="math inline">\(S\)</span>, recall the Lorentz transformation (boost in the <span class="math inline">\(x\)</span>-direction): <span class="math display">\[\begin{align}
@@ -580,9 +900,9 @@ window.Quarto = {
 \vec{X} = x^0\,\vec{e}_{ct} + x^1\,\vec{e}_x + x^2\,\vec{e}_y + x^3\,\vec{e}_z.
 \]</span> We can also replace the labels on basis vectors with the same index <span class="math inline">\(\mu\)</span> giving: <span id="eq-4vector-sum"><span class="math display">\[
 \vec{X} = \sum_{\mu=0}^3 x^\mu\,\vec{e}_{\mu}.
-\tag{4.4}\]</span></span> Next, we can adopt Einstein convention and assume whenever there is a repeated upper and lower index we mean a summation like in <a href="#eq-4vector-sum" class="quarto-xref">Equation&nbsp;<span>4.4</span></a> is to be performed. This leaves: <span id="eq-4vector-index-expand"><span class="math display">\[
+\tag{4.8}\]</span></span> Next, we can adopt Einstein convention and assume whenever there is a repeated upper and lower index we mean a summation like in <a href="#eq-4vector-sum" class="quarto-xref">Equation&nbsp;<span>4.8</span></a> is to be performed. This leaves: <span id="eq-4vector-index-expand"><span class="math display">\[
 \vec{X} = x^\mu\,\vec{e}_{\mu}.
-\tag{4.5}\]</span></span> The repeated upper and lower <span class="math inline">\(\mu\)</span> index is called a <em>contraction</em>. Since the index <span class="math inline">\(\mu\)</span> is summed over it is a “dummy” index and we are completely free to relabel it to any other latin symbol so <span class="math display">\[
+\tag{4.9}\]</span></span> The repeated upper and lower <span class="math inline">\(\mu\)</span> index is called a <em>contraction</em>. Since the index <span class="math inline">\(\mu\)</span> is summed over it is a “dummy” index and we are completely free to relabel it to any other latin symbol so <span class="math display">\[
 \vec{X} = x^\alpha\,\vec{e}_{\alpha},
 \]</span> also holds. This convention will prove to be very useful for keeping potentially cumbersome expressions compact.</p>
 <p>Perhaps an even more compelling reason to adopt the index formalism is that it signifies more clearly a change in frame. In matrix-vector formalism we have <span class="math display">\[
@@ -591,7 +911,7 @@ window.Quarto = {
 [\bar{\boldsymbol{X}}]_\mu = \sum_{\nu=0}^3[\mathbf{\Lambda}]_{\mu\nu}[{\boldsymbol{X}}]_\nu.
 \]</span> In index notation this expression becomes: <span id="eq-index-expand"><span class="math display">\[
 x^{\bar{\mu}} = \Lambda^{\bar{\mu}}_\nu x^\nu,
-\tag{4.6}\]</span></span> where <span class="math inline">\(x^{\bar{\mu}} = [\bar{\boldsymbol{X}}]_\bar{\mu}\)</span>, <span class="math inline">\(x^\nu = [{\boldsymbol{X}}]_\nu\)</span> and <span class="math inline">\(\Lambda^{\bar{\mu}}_\nu = [\mathbf{\Lambda}]_{\bar{\mu}\nu}\)</span>. Quite a few comments are in order about <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a>. For elements of matrices and vectors we conventionally write only lower indices to avoid confusion with exponents and because in linear algebra there is no need to have distinct upper and lower type indices. We have chosen to give the components of 4-vectors <span class="math inline">\(x^\mu\)</span> an upper index, so in <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> consistency with the Einstein convention then requires us to use both upper and lower indices on <span class="math inline">\(\Lambda\)</span>. A useful new bit of notation in <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> is that we have placed a bar above the index <span class="math inline">\(\bar{\mu}\)</span> to denote that the components being indexed over are for frame <span class="math inline">\(\bar S\)</span>. We can take <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> as fundamental and arrive at the following:</p>
+\tag{4.10}\]</span></span> where <span class="math inline">\(x^{\bar{\mu}} = [\bar{\boldsymbol{X}}]_\bar{\mu}\)</span>, <span class="math inline">\(x^\nu = [{\boldsymbol{X}}]_\nu\)</span> and <span class="math inline">\(\Lambda^{\bar{\mu}}_\nu = [\mathbf{\Lambda}]_{\bar{\mu}\nu}\)</span>. Quite a few comments are in order about <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.10</span></a>. For elements of matrices and vectors we conventionally write only lower indices to avoid confusion with exponents and because in linear algebra there is no need to have distinct upper and lower type indices. We have chosen to give the components of 4-vectors <span class="math inline">\(x^\mu\)</span> an upper index, so in <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.10</span></a> consistency with the Einstein convention then requires us to use both upper and lower indices on <span class="math inline">\(\Lambda\)</span>. A useful new bit of notation in <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.10</span></a> is that we have placed a bar above the index <span class="math inline">\(\bar{\mu}\)</span> to denote that the components being indexed over are for frame <span class="math inline">\(\bar S\)</span>. We can take <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.10</span></a> as fundamental and arrive at the following:</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -607,7 +927,7 @@ a^{\bar{\mu}} = \Lambda^{\bar{\mu}}_\nu a^\nu.
 \]</span> Hence, any set of 4 components which transform this way is a bonifide 4-vector.</p>
 </div>
 </div>
-<p>Given <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> expresses how components in <span class="math inline">\(\bar S\)</span> are constructed from those in <span class="math inline">\(S\)</span> it is natural to ask how to invert this expansion. In matrix-vector notation we want: <span class="math display">\[
+<p>Given <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.10</span></a> expresses how components in <span class="math inline">\(\bar S\)</span> are constructed from those in <span class="math inline">\(S\)</span> it is natural to ask how to invert this expansion. In matrix-vector notation we want: <span class="math display">\[
 {\boldsymbol{X}} = \mathbf{\Lambda}^{-1}\,\bar{\boldsymbol{X}},
 \]</span> The equivalent index expansion for this equation is <span class="math display">\[
 x^{\alpha} = \Lambda^{\alpha}_{\bar \beta} x^{\bar \beta}.
@@ -627,20 +947,20 @@ x^{\alpha} = \Lambda^{\alpha}_{\bar \beta} x^{\bar \beta}.
     &amp;~{\boldsymbol \downarrow}\\
     \Lambda^{\bar \alpha}_\mu \Lambda^\mu_{\bar \beta} &amp;= \delta^\bar{\alpha}_\bar{\beta},
 \end{align}
-\tag{4.7}\]</span></span> The opposite transformation from <span class="math inline">\(S \rightarrow {\bar S} \rightarrow S\)</span> is given by: <span class="math display">\[
+\tag{4.11}\]</span></span> The opposite transformation from <span class="math inline">\(S \rightarrow {\bar S} \rightarrow S\)</span> is given by: <span class="math display">\[
 \begin{align}
     \mathbf{\Lambda}^{-1}\mathbf{\Lambda} &amp;= \mathbb{1}, \\
     [\mathbf{\Lambda}^{-1}\mathbf{\Lambda}]_{\alpha\beta} &amp; = \delta_{\alpha\beta}.
 \end{align}
 \]</span> which converts to the index expression: <span id="eq-inverse-b"><span class="math display">\[
 \Lambda^\mu_{\bar \beta}\Lambda^{\bar \beta}_\nu = \delta^\mu_\nu.
-\tag{4.8}\]</span></span>  It is already evident here that the matrix notation is somewhat clunky and potentially confusing which is the reason we will, for the most part, use index notation instead.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">In index notation equations you may find when they appear later they have different index symbols. This is done delibrately to illustrate the freedom of relabelling dummy indices.</span></div></div>
+\tag{4.12}\]</span></span>  It is already evident here that the matrix notation is somewhat clunky and potentially confusing which is the reason we will, for the most part, use index notation instead.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">In index notation equations you may find when they appear later they have different index symbols. This is done delibrately to illustrate the freedom of relabelling dummy indices.</span></div></div>
 </section>
 <section id="sec-basis" class="level2 page-columns page-full" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="sec-basis"><span class="header-section-number">4.5</span> Transformation of basis 4-vectors</h2>
-<p>The fundamental reason we need upper and lower indices is that they actually denote different geometrical objects. The full implications of this will become clearer over the next few lectures. For now we can see why this is necessary by considering how basis 4-vectors <span class="math inline">\(\vec{e}_\mu\)</span> transform between frames. Earlier we gave these objects lower indices which made the expansion in <a href="#eq-4vector-index-expand" class="quarto-xref">Equation&nbsp;<span>4.5</span></a> consistent with Einstein notation. However, the reason is deeper than this. Take the 4-vector <span class="math inline">\(\vec{X}\)</span>. As a geometrical object it has different expansions in every frame so: <span class="math display">\[
+<p>The fundamental reason we need upper and lower indices is that they actually denote different geometrical objects. The full implications of this will become clearer over the next few lectures. For now we can see why this is necessary by considering how basis 4-vectors <span class="math inline">\(\vec{e}_\mu\)</span> transform between frames. Earlier we gave these objects lower indices which made the expansion in <a href="#eq-4vector-index-expand" class="quarto-xref">Equation&nbsp;<span>4.9</span></a> consistent with Einstein notation. However, the reason is deeper than this. Take the 4-vector <span class="math inline">\(\vec{X}\)</span>. As a geometrical object it has different expansions in every frame so: <span class="math display">\[
 \vec{X} = x^\mu\vec{e}_\mu = x^{\bar\mu}\vec{e}_{\bar\mu}.
-\]</span> If we insert the transformation <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> then the following rearrangements and index relabelling gives: <span class="math display">\[
+\]</span> If we insert the transformation <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.10</span></a> then the following rearrangements and index relabelling gives: <span class="math display">\[
 \begin{align}
    x^\mu\vec{e}_\mu &amp;= x^{\bar\alpha}\vec{e}_{\bar\alpha}, \\
    &amp;= \Lambda^{\bar\alpha}_\nu x^\nu \vec{e}_{\bar\alpha}, \\
@@ -649,7 +969,7 @@ x^{\alpha} = \Lambda^{\alpha}_{\bar \beta} x^{\bar \beta}.
 \end{align}
 \]</span> For the last line to be true for all 4-vectors <span class="math inline">\(\vec{X}\)</span> it must be that the basis 4-vectors transform as <span id="eq-basis-transform"><span class="math display">\[
 \vec{e}_\mu = \Lambda^{\bar\nu}_\mu\vec{e}_{\bar\nu}.
-\tag{4.9}\]</span></span> If you read this equation carefully you will notice it is backwards compared to <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.6</span></a> since it constructs quantities in <span class="math inline">\(S\)</span> in terms of those in <span class="math inline">\(\bar S\)</span>. We use <a href="#eq-inverse-a" class="quarto-xref">Equation&nbsp;<span>4.7</span></a> to invert the expression as: <span class="math display">\[
+\tag{4.13}\]</span></span> If you read this equation carefully you will notice it is backwards compared to <a href="#eq-index-expand" class="quarto-xref">Equation&nbsp;<span>4.10</span></a> since it constructs quantities in <span class="math inline">\(S\)</span> in terms of those in <span class="math inline">\(\bar S\)</span>. We use <a href="#eq-inverse-a" class="quarto-xref">Equation&nbsp;<span>4.11</span></a> to invert the expression as: <span class="math display">\[
 \begin{align}
    \vec{e}_\mu &amp;= \Lambda^{\bar\alpha}_\mu\vec{e}_{\bar\alpha}, \\
     \Lambda^\mu_{\bar \nu}\vec{e}_\mu &amp;= \Lambda^\mu_{\bar \nu}\Lambda^{\bar\alpha}_\mu\vec{e}_{\bar\alpha}, \\
@@ -658,9 +978,9 @@ x^{\alpha} = \Lambda^{\alpha}_{\bar \beta} x^{\bar \beta}.
 \end{align}
 \]</span> Consequently, basis 4-vectors in <span class="math inline">\(\bar S\)</span> are given by <span id="eq-basis-transform"><span class="math display">\[
 \vec{e}_{\bar\nu} = \Lambda^\mu_{\bar \nu}\vec{e}_\mu
-\tag{4.10}\]</span></span> where the inversion compared to the expression for the components <span id="eq-component-transform"><span class="math display">\[
+\tag{4.14}\]</span></span> where the inversion compared to the expression for the components <span id="eq-component-transform"><span class="math display">\[
 x^{\bar \mu} = \Lambda^{\bar \mu}_\nu x^\nu,
-\tag{4.11}\]</span></span> is clear. What does this mean? Having an upper index, like components of a 4-vector, transforms from <span class="math inline">\(S\)</span> to <span class="math inline">\(\bar S\)</span> with a standard Lorentz transformation as we derived for space-time coordinates. However, having a lower index means those objects transform from <span class="math inline">\(S\)</span> to <span class="math inline">\(\bar S\)</span> via the inverse of the standard Lorentz transformation. The basis 4-vectors must transform oppositely from the components so the object they otgether describe is geometrical. As we shall see in the next lecture we will also encounter objects whose <em>components</em> transform oppositely like this. These are distinct geometrical objects called <em>one-forms</em>.</p>
+\tag{4.15}\]</span></span> is clear. What does this mean? Having an upper index, like components of a 4-vector, transforms from <span class="math inline">\(S\)</span> to <span class="math inline">\(\bar S\)</span> with a standard Lorentz transformation as we derived for space-time coordinates. However, having a lower index means those objects transform from <span class="math inline">\(S\)</span> to <span class="math inline">\(\bar S\)</span> via the inverse of the standard Lorentz transformation. The basis 4-vectors must transform oppositely from the components so the object they otgether describe is geometrical. As we shall see in the next lecture we will also encounter objects whose <em>components</em> transform oppositely like this. These are distinct geometrical objects called <em>one-forms</em>.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="figures/change_basis.png" class="img-fluid figure-img" width="250"></p>
@@ -670,7 +990,7 @@ x^{\bar \mu} = \Lambda^{\bar \mu}_\nu x^\nu,
 <p>To finish you are invited below to confirm a sensible property of these transformations - take the expansion of a 4-vector <span class="math inline">\(\vec{X}\)</span> in the basis of <span class="math inline">\(\bar S\)</span> and recover the expansion in <span class="math inline">\(S\)</span>.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 4</strong>.</span></div></div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -679,15 +999,15 @@ x^{\bar \mu} = \Lambda^{\bar \mu}_\nu x^\nu,
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>3. Transforming a 4-vector expansion</strong></p>
-<p>Let’s take the expansion of a 4-vector <span class="math inline">\(\vec{X}\)</span> in the basis of <span class="math inline">\(\bar S\)</span> and insert both <a href="#eq-basis-transform" class="quarto-xref">Equation&nbsp;<span>4.10</span></a> and <a href="#eq-component-transform" class="quarto-xref">Equation&nbsp;<span>4.11</span></a> to show that we recover its expansion in <span class="math inline">\(S\)</span>.</p>
+<p>Let’s take the expansion of a 4-vector <span class="math inline">\(\vec{X}\)</span> in the basis of <span class="math inline">\(\bar S\)</span> and insert both <a href="#eq-basis-transform" class="quarto-xref">Equation&nbsp;<span>4.14</span></a> and <a href="#eq-component-transform" class="quarto-xref">Equation&nbsp;<span>4.15</span></a> to show that we recover its expansion in <span class="math inline">\(S\)</span>.</p>
 </div>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -696,10 +1016,10 @@ x^{\bar \mu} = \Lambda^{\bar \mu}_\nu x^\nu,
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>3. Transforming a 4-vector expansion</strong></p>
-<p>Inserting into the expansion both <a href="#eq-basis-transform" class="quarto-xref">Equation&nbsp;<span>4.10</span></a> and <a href="#eq-component-transform" class="quarto-xref">Equation&nbsp;<span>4.11</span></a> gives <span class="math display">\[
+<p>Inserting into the expansion both <a href="#eq-basis-transform" class="quarto-xref">Equation&nbsp;<span>4.14</span></a> and <a href="#eq-component-transform" class="quarto-xref">Equation&nbsp;<span>4.15</span></a> gives <span class="math display">\[
 \begin{align}
    \vec{X} &amp;= x^\bar{\mu}\vec{e}_{\bar\mu}, \\
      &amp;= \Lambda^{\bar \mu}_{\nu} x^\nu \Lambda^\alpha_{\bar\mu}\vec{e}_{\alpha}, \\

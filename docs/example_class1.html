@@ -270,6 +270,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
@@ -540,6 +569,35 @@ c{\bar t}_P = \gamma(ct_P-\beta x_P),
 </div>
 </div>
 </div>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Groups
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>We don’t formally need group theory in this course, but you will hear it mentioned a few times. For this reason this box contains so <strong>non-examinable</strong> information about groups which you may find helpful.</p>
+<p>A group <span class="math inline">\(G\)</span> is composed of a set of objects <span class="math inline">\(\{g_1,g_2,g_3,\dots\}\)</span> that possess a <em>multiplication law</em> between its elements. We write this multiplication as the product <span class="math inline">\(g_ag_b\)</span> of two elements <span class="math inline">\(g_a\)</span> and <span class="math inline">\(g_b\)</span>. Given this <span class="math inline">\(G\)</span> is a group is the following conditions are met:</p>
+<ol type="1">
+<li><p><em>Closure</em> – The product <span class="math inline">\(g_ag_b\)</span> of any two elements is itself an element of <span class="math inline">\(G\)</span>, so formally <span class="math display">\[
+g_ag_b = g_c, \quad g_a,g_b,g_c \in G.
+\]</span></p></li>
+<li><p><em>Associativity</em> – The multiplication of three elements <span class="math inline">\(g_a, g_b, g_c\)</span> does not depend on the order in which they are carried out first. This means <span class="math display">\[(g_ag_b)g_c = g_a(g_bg_c),\]</span> and so the brackets are superfluous.</p></li>
+<li><p><em>Identity</em> – There is one element of <span class="math inline">\(G\)</span>, denoted by <span class="math inline">\(e\)</span> called the identity (or unity) that must have the property <span class="math display">\[
+eg_a = g_ae = g_a,
+\]</span> and so represents the “do nothing" element.</p></li>
+<li><p><em>Inverse</em> – Every element <span class="math inline">\(g_a\)</span> in <span class="math inline">\(G\)</span> there corresponds another element, denoted <span class="math inline">\(g_a^{-1}\)</span>, called the inverse of <span class="math inline">\(g_a\)</span> that possesses the property <span class="math display">\[g_a g_a^{-1} = g_a^{-1} g_a = e.\]</span></p></li>
+</ol>
+<p>In general <span class="math inline">\(g_ag_b\)</span> is not the same as <span class="math inline">\(g_bg_a\)</span>, that is the multiplication of group elements is non-commutative. The special case where <span class="math inline">\(g_ag_b = g_bg_a\)</span>, so it is commutative, is called an <em>Abelian</em> group, while the general case is called <em>non-Abelian</em>.</p>
+<p>A <em>representation</em> of a group is the one-to-one mapping of every abstract group element <span class="math inline">\(g_a\)</span> to a linear operator <span class="math inline">\(\hat{g}_a\)</span> that acts on some <span class="math inline">\(d\)</span>-dimensional vector space <span class="math inline">\(V\)</span>, which in turn can be expressed concretely as a <span class="math inline">\(d\times d\)</span> matrix <span class="math inline">\(\boldsymbol{g}_a\)</span> in some fixed basis of <span class="math inline">\(V\)</span>. In this way group multiplication corresponds to matrix multiplication, which is automatically associative and generally non-commutative, and the identity element is mapped to the <span class="math inline">\(d\times d\)</span> identity matrix as <span class="math inline">\(e \mapsto \mathbb{1}_d\)</span>.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -551,13 +609,7 @@ c{\bar t}_P = \gamma(ct_P-\beta x_P),
 </div>
 <div class="callout-body-container callout-body">
 <p><strong>4. The Lorentz group</strong></p>
-<p>A group of transformations is a set of transformations <span class="math inline">\(T_1, T_2, T_3, \dots\)</span>, which do not necessarily commute, but whose combinations have the following properties:</p>
-<ol type="1">
-<li><strong>Closure</strong> - The composition <span class="math inline">\(T_1T_2\)</span> of any pair of transformations is also a transformation in the set. Note that if the transformations are matrices acting on column vectors then this ordering implies multiplying by <span class="math inline">\(T_2\)</span> first.</li>
-<li><strong>Associativity</strong> - The composites <span class="math inline">\((T_1T_2)T_3\)</span> and <span class="math inline">\(T_1(T_2T_3)\)</span> are the same, i.e.&nbsp;we can ignore brackets. This always holds for sets of matrices.</li>
-<li><strong>Identity</strong> - There is a special transformation <span class="math inline">\(\mathbb{1}\)</span> in the set, called the identity, such that for any other transformation <span class="math inline">\(T\)</span>, <span class="math inline">\(\mathbb{1}T = T\mathbb{1} = T\)</span>. For sets of matrices, this is the identity matrix.</li>
-<li><strong>Inverses</strong> - For any transformation <span class="math inline">\(T\)</span> , there is a transformation <span class="math inline">\(T^{−1}\)</span> such that <span class="math inline">\(T T^{−1} = T^{−1}T = \mathbb{1}\)</span>, i.e.&nbsp;combining <span class="math inline">\(T\)</span> and its inverse gives the identity.</li>
-</ol>
+<p>Use the definition of a group given in the box above to examine some specific examples relevant to this course:</p>
 <ol type="a">
 <li><p>Working in 1+1D Minkowski space, use the hyperbolic representation of the Lorentz transformation matrices to show that the Lorentz transformation matrices form a group.</p></li>
 <li><p>Working in 2D Euclidean space, show that the rotation matrices <span class="math display">\[
@@ -566,13 +618,13 @@ c{\bar t}_P = \gamma(ct_P-\beta x_P),
                 \sin(\theta) &amp; \cos(\theta)
              \end{pmatrix}
 \]</span> form a group.</p></li>
-<li><p>Show that the set of Lorentz transformation matrices $ preserving the matrix form of the 1+3D Minkowski metric form a group.</p></li>
+<li><p>Show that the set of Lorentz transformation matrices <span class="math inline">\(\boldsymbol{\Lambda}\)</span> preserving the matrix form of the 1+3D Minkowski metric form a group.</p></li>
 </ol>
 <p>The group defined as the set of transformations preserving the Minkowski metric <span class="math inline">\(\boldsymbol{\eta}\)</span> is called the <em>full Lorentz group</em>.</p>
 </div>
 </div>
 <div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -581,7 +633,7 @@ c{\bar t}_P = \gamma(ct_P-\beta x_P),
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>4. The Lorentz group</strong></p>
 <ol type="a">
@@ -680,7 +732,7 @@ R(\theta) = \begin{pmatrix}
 \]</span> since <span class="math inline">\((\boldsymbol{\Lambda}^{\rm T})^{-1} = (\boldsymbol{\Lambda}^{-1})^{\rm T}\)</span>. So the <span class="math inline">\(\boldsymbol{\Lambda}^{-1}\)</span> is also a member of the set that preserves <span class="math inline">\(\boldsymbol{\eta}\)</span>.</p>
 <p>Therefore the set of matrices <span class="math inline">\(\boldsymbol{\Lambda}\)</span> satisfying <span class="math display">\[
     \boldsymbol{\eta} = \boldsymbol{\Lambda} \boldsymbol{\eta} \boldsymbol{\Lambda}^{\rm T},
-\]</span> forms a group: the <em>Lorentz group</em>. Indeed, the members of this group in 1+3D comprise of Lorentz boosts and 3D rotations, as discussed in the lectures.</p></li>
+\]</span> forms a group: the <em>Lorentz group</em>. Indeed, the members of this group in 1+3D comprise Lorentz boosts, 3D rotations and mixtures of them, as discussed in the lectures.</p></li>
 </ol>
 </div>
 </div>

@@ -270,6 +270,35 @@ window.Quarto = {
 </li>
       </ul>
   </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
@@ -340,7 +369,7 @@ window.Quarto = {
 </section>
 <section id="chain-of-coupled-oscillators" class="level2" data-number="9.2">
 <h2 data-number="9.2" class="anchored" data-anchor-id="chain-of-coupled-oscillators"><span class="header-section-number">9.2</span> Chain of coupled oscillators</h2>
-<p>To motivate the construction of a field theory we will start by considering carefully a 1D chain of <span class="math inline">\(N\)</span> masses <span class="math inline">\(m\)</span> coupled to their nearest-neighbours by springs with a stiffness constant <span class="math inline">\(k\)</span>, as depicted in <a href="#fig-coupled_chain" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>. Each mass <span class="math inline">\(j\)</span> has a coordinate <span class="math inline">\(q_j(t)\)</span> describing its displacement from its equilbrium position, where <span class="math inline">\(j=1,2,\dots,N\)</span>. We assuming fixed ends points clamped at the ends of the chain where <span class="math inline">\(q_0(t) = q_{N-1}(t) = 0\)</span> and <span class="math inline">\(\dot{q}_0(t) = \dot{q}_{N-1}(t) = 0\)</span>.</p>
+<p>To motivate the construction of a field theory we will start by considering carefully a 1D chain of <span class="math inline">\(N\)</span> masses <span class="math inline">\(m\)</span> coupled to their nearest-neighbours by springs with a stiffness constant <span class="math inline">\(k\)</span>, as depicted in <a href="#fig-coupled_chain" class="quarto-xref">Figure&nbsp;<span>9.1</span></a>. Each mass <span class="math inline">\(j\)</span> has a coordinate <span class="math inline">\(q_j(t)\)</span> describing its displacement from its equilbrium position, where <span class="math inline">\(j=1,2,\dots,N\)</span>. We assuming fixed ends points clamped at the ends of the chain where <span class="math inline">\(q_0(t) = q_{N-1}(t) = 0\)</span> and <span class="math inline">\(\dot{q}_0(t) = \dot{q}_{N+1}(t) = 0\)</span>.</p>
 <div id="fig-coupled_chain" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-coupled_chain-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -622,7 +651,7 @@ Partial derivatives in the Euler-Lagrange equation
 <p>For the 0+1D Euler-Lagrange equations the derivative <span class="math inline">\({\rm d}/{\rm d}t\)</span> is a standard time derivative of a Lagrangian <span class="math inline">\(L(t)\)</span> that is formally only a function of <span class="math inline">\(t\)</span>. If we choose to write divide up the time-dependence as <span class="math inline">\(L(t,\varphi(t),\dot{\varphi}(t))\)</span> then it would mean a total time derivative <span class="math display">\[
     \frac{\rm d}{{\rm d}t}L = \frac{\partial L}{\partial t} + \frac{\partial L}{\partial \varphi}\frac{{\rm d}\varphi}{{\rm d}t} + \frac{\partial L}{\partial \dot{\varphi}} \frac{{\rm d}\dot{\varphi},}{{\rm d}t},
 \]</span> where the partial derivative captures the variation in any explicit time-dependence (so field and its derivtaive are held constant), and the additional chain rule terms account for the time-dependence of <span class="math inline">\(\varphi(t)\)</span> and its derivative.</p>
-<p>For 1+1D we instead have a Lagrangian density <span class="math inline">\(\mathcal{L}(t,x)\)</span> which is formally a function of both <span class="math inline">\(t\)</span> and <span class="math inline">\(x\)</span>. The derivative <span class="math inline">\(\partial/\partial t\)</span> in <a href="#eq-string_euler" class="quarto-xref">Equation&nbsp;<span>9.7</span></a> is a standard partial derivative of <span class="math inline">\(\mathcal{L}(t,x)\)</span>, meaning it acts on all time dependence in the function with <span class="math inline">\(x\)</span> held constant. The potential for confusion arises when we again divide up the <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span> dependence between that which explicitly appears and that which is contained inside the field and its derivatives as <span class="math inline">\(\mathcal{L}(t,x,\varphi(t,x),\dot{\varphi}(t,x))\)</span>. In this context <span class="math inline">\(\partial/\partial t\)</span> now acts like a “total” partial derivative to give <span class="math display">\[
+<p>For 1+1D we instead have a Lagrangian density <span class="math inline">\(\mathcal{L}(t,x)\)</span> which is formally a function of both <span class="math inline">\(t\)</span> and <span class="math inline">\(x\)</span>. The derivative <span class="math inline">\(\partial/\partial t\)</span> in <a href="#eq-string_euler" class="quarto-xref">Equation&nbsp;<span>9.7</span></a> is a standard partial derivative of <span class="math inline">\(\mathcal{L}(t,x)\)</span>, meaning it acts on all time dependence in the function with <span class="math inline">\(x\)</span> held constant. The potential for confusion arises when we again divide up the <span class="math inline">\(x\)</span> and <span class="math inline">\(t\)</span> dependence between that which explicitly appears and that which is contained inside the field and its derivatives as <span class="math inline">\(\mathcal{L}(t,x,\varphi(t,x),\dot{\varphi}(t,x),\varphi'(t,x))\)</span>. In this context <span class="math inline">\(\partial/\partial t\)</span> now acts like a “total” partial derivative to give <span class="math display">\[
     \frac{\partial}{\partial t}\mathcal{L} = \frac{\partial \mathcal{L}}{\partial t} + \frac{\partial \mathcal{L}}{\partial \varphi} \frac{\partial \varphi}{\partial t} + \frac{\partial \mathcal{L}}{\partial \dot{\varphi}}\frac{\partial\dot{\varphi}}{\partial t} + \frac{\partial \mathcal{L}}{\partial \varphi'}\frac{\partial \varphi'}{\partial t}.
 \]</span> The partial derivative on the righthand side is now of the explicit time-dependence in <span class="math inline">\(\mathcal{L}\)</span> assuming the field and its derivatives are held constant. We don’t have a new symbol to distinguish this from the actual partial derivative of all <span class="math inline">\(t\)</span> dependence on the lefthand side besides typesetting them differently as has been done here. In practise confusion is unlikely to occur because it will be clear from context which we mean, and generally for problems we wil encounter <span class="math inline">\(\mathcal{L}\)</span> will have no explicit time-dependence in any case.</p>
 </div>
@@ -636,7 +665,7 @@ Partial derivatives in the Euler-Lagrange equation
     \varphi(x) = \varphi(x^\mu) = \varphi(\Lambda^{\bar \nu}_\mu x^\mu) = \bar{\varphi}(x^{\bar \nu}) = \bar{\varphi}(\bar{x}).
 \]</span> Generalising from 1+1D to 1+3D means the Lagrangian density is also formally a function of the space-time coordinates <span class="math inline">\(\mathcal{L}(x)\)</span>. We demand it is also a Lorentz scalar function. Again we separate out the dependence of <span class="math inline">\(\mathcal{L}(x)\)</span> into any explicit dependence on the 4 independent variables <span class="math inline">\(x^\mu\)</span>, the field and its derivatives with respect to the coordinates so it has a form: <span id="eq-rel_lagrangian"><span class="math display">\[
     \mathcal{L}(\overbrace{x^0,x^1,x^2,x^3}^x,\varphi,\overbrace{\partial_0\varphi,\partial_1\varphi,\partial_2\varphi,\partial_3\varphi}^{\partial\varphi}) = \mathcal{L}(x,\varphi,\partial\varphi).
-\tag{9.8}\]</span></span> On the righthand side of <a href="#eq-rel_lagrangian" class="quarto-xref">Equation&nbsp;<span>9.8</span></a> we have introduced a conpact shorthand notation for all these arguments. The action follows as an integral over space-time as <span class="math display">\[
+\tag{9.8}\]</span></span> On the righthand side of <a href="#eq-rel_lagrangian" class="quarto-xref">Equation&nbsp;<span>9.8</span></a> we have introduced a compact shorthand notation for all these arguments. The action follows as an integral over space-time as <span class="math display">\[
     \mathcal{S}[\varphi] = \int_{\Omega} {\rm d}^4x\, \mathcal{L}(x,\varphi,\partial\varphi),
 \]</span> where <span class="math inline">\({\rm d}^4x = {\rm d}x^0{\rm d}x^1{\rm d}x^2{\rm d}x^3\)</span>, and <span class="math inline">\(\Omega\)</span> is some specified 4-volume of space-time in which the field is defined.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Remember, in the relativistic context <span class="math inline">\(x\)</span> in <span class="math inline">\(\varphi(x)\)</span> is a shorthand for the space-time coordinates <span class="math inline">\(x^\mu\)</span> in frame <span class="math inline">\(S\)</span>, and should not be confused with the single spatial coordinate <span class="math inline">\(x\)</span> along one axis used earlier.</span></div></div>
 <p>Demanding that <span class="math inline">\(\mathcal{L}(x)\)</span> be Lorentz scalar guarantees that the action <span class="math inline">\(\mathcal{S}\)</span> is also Lorentz scalar. This is essential if we ever hope to extract a covariant equation of motion of our field from the action. The proof is straightforward: <span class="math display">\[\begin{align}
@@ -693,7 +722,7 @@ Divergence theorem in 1+3D
 <div class="callout-body-container callout-body">
 <p>For a continuously differentiable 4-vector field <span class="math inline">\(f^\mu(x)\)</span> in some frame <span class="math inline">\(S\)</span> then <span class="math display">\[
     \int_{\Omega} {\rm d}^4x\, \partial_\mu f^\mu(x) = \oint_{\partial\Omega} {\rm d}^3 S \, n_\mu f^\mu(x)
-\]</span> where <span class="math inline">\(\Omega\)</span> is a 4-volume and <span class="math inline">\(\partial\Omega\)</span> is the 3D boundary enclosing <span class="math inline">\(\Omega\)</span> with a normal unit 4-vector <span class="math inline">\(n^\mu\)</span>. For brevity we just write <span class="math inline">\(\int\)</span> and <span class="math inline">\(\oint\)</span> for volume and surface integrals.</p>
+\]</span> where <span class="math inline">\(\Omega\)</span> is a 4-volume and <span class="math inline">\(\partial\Omega\)</span> is the 3D boundary enclosing <span class="math inline">\(\Omega\)</span> with a normal unit 4-vector <span class="math inline">\(n^\mu\)</span>. From now on for brevity we will just write <span class="math inline">\(\int\)</span> and <span class="math inline">\(\oint\)</span> for volume and closed surface integrals. It will be clear what the integral is from its measure.</p>
 </div>
 </div>
 <p>Crucially the divergence theorem allows us to convert 4-volume integrals into 3-volume surface integral boundary terms, rather like integration by parts does in 1D. This will prove to be an essential observation for the rest of this part of the course.</p>
@@ -848,7 +877,7 @@ First-order variation of the action
     \frac{\partial \mathcal{L}}{\partial \varphi} - \frac{\partial}{\partial x^0}\frac{\partial \mathcal{L}}{\partial \partial_0\varphi} - \frac{\partial}{\partial x^1}\frac{\partial \mathcal{L}}{\partial \partial_1\varphi} - \frac{\partial}{\partial x^2}\frac{\partial \mathcal{L}}{\partial \partial_2\varphi} - \frac{\partial}{\partial x^3}\frac{\partial \mathcal{L}}{\partial \partial_3\varphi}= 0,
 \]</span> where derivative terms appear for each independent variable. Index notation gives this a compact and manifestly relativistically covariant form <span class="math display">\[
     \frac{\partial \mathcal{L}}{\partial \varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial \partial_\mu\varphi} = 0.
-\]</span> The derivation is quite straightforward. As you saw in the first module of this course on Analytic Mechanics, to derive the Euler-Lagrange equations variations of the coordinates should vanish on the boundary times. In field theory we are free to specify the 4-volume <span class="math inline">\(\Omega\)</span> on which the field lives and the boundary conditions it must satisfy on the boundary <span class="math inline">\(\partial\Omega\)</span>. For this reason we introduce a constrained form of variation of the field, as shown in <a href="#fig-boundary_vanishing" class="quarto-xref">Figure&nbsp;<span>9.6</span></a>. Specifically:</p>
+\]</span> The derivation is quite straightforward. As you saw in the first module of this course on Analytic Mechanics, to derive the Euler-Lagrange equations variations of the coordinates should vanish on the boundary times. In field theory we are free to specify the 4-volume <span class="math inline">\(\Omega\)</span> on which the field lives and the boundary conditions it must satisfy on the boundary <span class="math inline">\(\partial\Omega\)</span>. For this reason we introduce a constrained form of variation of the field, shown in <a href="#fig-boundary_vanishing" class="quarto-xref">Figure&nbsp;<span>9.6</span></a>, defined as:</p>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">

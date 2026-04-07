@@ -1,0 +1,34 @@
+# Relativistic Quantum Mechanics
+
+
+<!-- 
+
+Content:
+
+Quantum wavefunctions as a "classical" complex field
+Einstein-Plank relation
+de Broglie relation
+4-vector formulation of these
+Plane-wave to motivate Energy and Momentum operators
+
+Construct Schrodinger equation and its essential properties. Mention spin has to be bolted on by hand. Not relativistic.
+
+Include drop-down box for the Schrodinger Lagrangian and Noether current - state don't derive.
+
+Motivate coupling to EM via the classical non-relativistic Lagrangian, leading to the covariant derivative for minimal coupling. Discuss gauge transformations and how a local phase transformation is required to make the covariant derivative "covariant".
+
+Introduce the Klein-Gordon equation 
+Discuss properties and plane-wave solutions (has been discussed earlier so can be a recap)
+Focus on the complex Lagrangian (mention real one) and compute its Noether current. 
+Discuss problems with the KG equation, negative probability density, negative energies.
+
+Show KG equation is covariant.
+
+Mention KG is not really minimally coupled (like Schrodinger)
+
+Motivate the Dirac equation in its Schrodinger-like form - by introducing 4-spinors (a new object). Show how it can be written in a covariant form once we account for 4-spinors transforming under Lorentz transformations. Derive the Noether current.
+Move to interacting Dirac equation and show it is minimally coupled. 
+
+Arrive at the "classical" QED Lagrangian.
+
+ -->

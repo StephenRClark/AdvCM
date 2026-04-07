@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Example Class 3 – Advanced Classical Mechanics (Relativistic Fields)</title>
+<title>Example Class 5 – Advanced Classical Mechanics (Relativistic Fields)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./symmetries.html" rel="next">
-<link href="./field_theory.html" rel="prev">
+<link href="./epilogue.html" rel="next">
+<link href="./em_lagrangian.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -113,7 +113,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./field_theory.html">III: Lagrangian field theory</a></li><li class="breadcrumb-item"><a href="./example_class3.html">Example Class 3</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./em_revision.html">IV: Relativistic Electrodynamics</a></li><li class="breadcrumb-item"><a href="./example_class5.html">Example Class 5</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -243,13 +243,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
  <span class="menu-text">III: Lagrangian field theory</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
@@ -258,7 +258,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./example_class3.html" class="sidebar-item-text sidebar-link active">
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Example Class 3</span></a>
   </div>
 </li>
@@ -272,13 +272,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
-          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
@@ -305,7 +305,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./example_class5.html" class="sidebar-item-text sidebar-link">
+  <a href="./example_class5.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Example Class 5</span></a>
   </div>
 </li>
@@ -334,9 +334,9 @@ window.Quarto = {
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./field_theory.html">III: Lagrangian field theory</a></li><li class="breadcrumb-item"><a href="./example_class3.html">Example Class 3</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./em_revision.html">IV: Relativistic Electrodynamics</a></li><li class="breadcrumb-item"><a href="./example_class5.html">Example Class 5</a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title">Example Class 3</h1>
+<h1 class="title">Example Class 5</h1>
 </div>
 
 
@@ -353,8 +353,8 @@ window.Quarto = {
 </header>
 
 
-<p>In this example class we will explore some novel features of relativistic kinematics.</p>
-<p>We begin with a <a href="./quiz/quiz_ec3.html">Multiple choice quiz</a>.</p>
+<p>In this example class we will explore what happens if we add a “mass” term to Maxwell’s theory.</p>
+<p>Let’s do our final <a href="./quiz/quiz_ec5.html">Multiple choice quiz</a>.</p>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -365,20 +365,19 @@ window.Quarto = {
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>1. Minkowski’s equation</strong></p>
-<p>Given a particle with 4-velocity <span class="math inline">\(u^\mu\)</span> the 4-momentum is defined <span class="math inline">\(p^{\mu} \equiv m c u^{\mu} = (\mathcal{E}/c,\boldsymbol{p})\)</span>, where <span class="math inline">\(\mathcal{E}\)</span> is the relativistic energy and <span class="math inline">\(\boldsymbol{p}\)</span> is the relativistic 3-momentum. Using this the 4-force is defined <span class="math display">\[
-    f^{\mu} \equiv c \frac{{\rm d} p^{\mu}}{{\rm d} s}.
+<p><strong>1. Adding a mass term to a scalar field</strong></p>
+<p>In the lectures we have considered a Lorentz real scalar field <span class="math inline">\(\varphi(x)\)</span> governed by the d’Alembert Lagrangian <span class="math display">\[
+    \mathcal{L}_{\mathrm{d'A}} = -\partial_{\mu}\varphi \partial^{\mu}\varphi.
 \]</span></p>
 <ol type="a">
-<li>Show that <em>Minkowski’s equation of motion</em> applies, <span class="math display">\[
-f^{\mu} u_{\mu} = 0.
-\]</span></li>
+<li>Confirm Euler-Lagrange equation resulting from <span class="math inline">\(\mathcal{L}_{\mathrm{d'A}}\)</span> is the wave-equation <span class="math inline">\(\partial_\mu\partial^\mu\varphi(x) = 0\)</span> and show that plane-waves <span class="math inline">\(\varphi(x) = ae^{ik_\mu x^\mu}\)</span> are solutions so long as their 4-wave-vector <span class="math inline">\(\vec{K}\)</span> is null, i.e.&nbsp;<span class="math inline">\(k_\mu k^\mu = 0\)</span>. What is the wave’s dispersion relation and what does it imply about it?</li>
 </ol>
-<p>Suppose we write <span class="math inline">\(f^{\mu} = \gamma(g, \boldsymbol{f})\)</span> where <span class="math inline">\(g\)</span> is a scalar and <span class="math inline">\(\boldsymbol{f}\)</span> is a 3-vector.</p>
+<p>Now consider the Klein-Gordon Lagrangian <span class="math display">\[
+    \mathcal{L}_{\mathrm{KG}} = \mathcal{L}_{\mathrm{d'A}} + \frac{m^2 c^2}{\hbar^2} \varphi^2,
+\]</span> where a “mass” term has been added, motivated by the Einstein-Planck relation <span class="math inline">\(\mathcal{E} = \hbar\omega\)</span> and the de-Broglie relation <span class="math inline">\(\boldsymbol{p} = \hbar\boldsymbol{k}\)</span>.</p>
 <ol start="2" type="a">
-<li><p>Write down an expression for <span class="math inline">\(\boldsymbol{f}\)</span> in terms of <span class="math inline">\(\boldsymbol{p},\)</span> and find an expression for <span class="math inline">\(g\)</span> in terms of <span class="math inline">\(\boldsymbol{f}\)</span> using the Minkowski equation.</p></li>
-<li><p>Does <span class="math inline">\(g\)</span> agree with what you expect from the original definition of <span class="math inline">\(f^{\mu}\)</span>?</p></li>
-<li><p>Can you explain why the Minkowski equation looks like the equation of circular motion in regular 3-vector mechanics?</p></li>
+<li><p>Assuming the action <span class="math inline">\(\mathcal{S}\)</span> has the same units as <span class="math inline">\(\hbar\)</span> what units does a scalar field <span class="math inline">\(\varphi(x)\)</span> need to have? Given the “mass” terms is proportional to <span class="math inline">\(\varphi^2\)</span> use dimensional analysis involving the Lorentz scalars <span class="math inline">\(m\)</span>, <span class="math inline">\(c\)</span> and <span class="math inline">\(\hbar\)</span> to show its coefficients must be those used in <span class="math inline">\(\mathcal{L}_{\mathrm{KG}}\)</span>.</p></li>
+<li><p>What is Euler-Lagrange equation resulting from <span class="math inline">\(\mathcal{L}_{\mathrm{KG}}\)</span> and what is the dispersion relation plane-waves? Why is this said to describe a “massive” scalar field?</p></li>
 </ol>
 </div>
 </div>
@@ -392,70 +391,58 @@ f^{\mu} u_{\mu} = 0.
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>2. Relativistic particle Lagrangian</strong></p>
-<p>Here we explore generalizing the Lagrangian approach to relativistic particle mechanics. Specifically, we seek a Lagrangian <span class="math inline">\(L = L(x^{\mu},\dot{x}^{\mu})\)</span> such that the Euler-Lagrange equations <span class="math display">\[\frac{\partial L}{\partial x^j} - \frac{\rm d}{{\rm d} t}\frac{\partial L}{\partial \dot{x}^j} = 0, \qquad j = 1,2,3,\]</span> where <span class="math inline">\(\dot{\bullet} = \partial_t\bullet,\)</span> gives us the relativistic equation of motion <span class="math inline">\(f^j = m a^j\)</span>. Note, that we do not necessarily expect the relativistic Lagrangian to have the form `KE <span class="math inline">\(-\)</span> PE’ any more, since in relativity, energies occur as components of 4-momentum, but the Lagrangian is not a component of a 4-vector. We will assume that the action <span class="math display">\[
-    \mathcal{S} \equiv \int_{t_0}^{t_1}{\rm d}t\, L,
-\]</span> is Lorentz invariant.</p>
-<ol type="a">
-<li>Show that with this assumption, <span class="math inline">\(\gamma L\)</span> is a Lorentz invariant on the particle’s worldline.</li>
-</ol>
-<p>We want to determine the Lagrangian for a free particle, which experiences inertial motion with <span class="math inline">\(a^{\mu} = 0,\)</span> and we assume, by symmetry, that <span class="math inline">\(\partial L/\partial x^{\mu} = 0\)</span>, meaning there are no spatially dependent fields acting on the particle.</p>
-<ol start="2" type="a">
-<li><p>Show that choosing <span class="math inline">\(L = m \gamma c^2\)</span>, the relativistic kinetic energy, does not give the required dependence.</p></li>
-<li><p>Show that instead <span class="math inline">\(L_{\mathrm{free}} \equiv -m c^2/\gamma\)</span> is an appropriate choice for the free-particle Lagrangian by confirming its canonical momentum gives the relativistic 3-momentum <span class="math inline">\(\partial L/\partial \dot{x}^{j} = p^{j}\)</span>.</p></li>
-<li><p>Use the Hamiltonian generated by <span class="math inline">\(L_{\mathrm{free}}\)</span> to show it is consistent with the relativistic energy <span class="math inline">\(\mathcal{E} = \gamma mc^2\)</span>.</p></li>
-<li><p>Confirm <span class="math inline">\(L_{\mathrm{free}}\)</span> does indeed give a Lorentz scalar action.</p></li>
-</ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>3. Interacting Lagrangian for relativistic particle</strong></p>
-<p>Any “potential energy” <span class="math inline">\(\Phi\)</span> in the Lagrangian should properly be considered as the 0-component of a “4-potential” <span class="math inline">\(\phi^{\mu} = (\Phi,\boldsymbol{\phi}).\)</span> The 3-vector <span class="math inline">\(\boldsymbol{\phi}\)</span> is a `potential momentum’ not usually present in classical physics. Thus we might expect the 3-scalar potential <span class="math inline">\(\Phi\)</span>, in the relativistic Lagrangian, to be replaced by a term such as <span class="math inline">\(\phi^{\mu} u_{\mu}/\gamma.\)</span> Our relativistic Lagrangian is therefore <span class="math inline">\(L = -mc^2/\gamma - \phi^{\mu} u_{\mu}/\gamma.\)</span></p>
-<ol type="a">
-<li><p>Show that, when <span class="math inline">\(v \ll c,\)</span> this is equivalent to the familiar non-relativistic Lagrangian.</p></li>
-<li><p>Find the 1,2,3-components of the canonical relativistic momentum <span class="math inline">\(p^j\)</span>; what do you notice?</p></li>
-<li><p>The relativistic energy (0-component of the canonical momentum <span class="math inline">\(p^0\)</span>) is provided by the relativistic Hamiltonian <span class="math inline">\(H = \sum_{j=1}^3 p^j \dot{x}^j - L.\)</span> Compute <span class="math inline">\(H.\)</span></p></li>
-</ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>4. A 4-velocity dependent 4-force</strong></p>
-<p>In general, a force exerted on a particle can depend on its 4-velocity as well as its position. The simplest such covariant dependence is linear, occurring for a 4-force given by <span class="math display">\[
-    f^{\mu} = T^{\mu \nu} u_{\nu},
-\]</span> for some second-rank tensor <span class="math inline">\(T^{\mu\nu}.\)</span> We can split <span class="math inline">\(T^{\mu \nu}\)</span> into its symmetric part <span class="math display">\[
-    S^{\mu\nu} = \frac{1}{2}(T^{\mu \nu} + T^{\nu \mu}),
-\]</span> and antisymmetric part <span class="math display">\[
-    A^{\mu\nu} = \frac{1}{2}(T^{\mu \nu} - T^{\nu \mu}).
+<p><strong>2. Adding a mass term to EM</strong></p>
+<p>Let us now investigate what happens if we add a similar term to the electromagnetic Lagrangian, giving us the <span class="math display">\[
+    \mathcal{L}_{\mathrm{Proca}} = \mathcal{L}_{\mathrm{EM}} + \frac{\mu^2}{2\mu_0} A_{\rho} A^{\rho} = -\frac{1}{4\mu_0} (\partial_{\mu} A_{\nu} - \partial_{\nu} A_{\mu})(\partial^{\mu} A^{\nu} - \partial^{\nu} A^{\mu}) + \frac{\mu^2}{2\mu_0} A_{\rho} A^{\rho}.
+\]</span> where <span class="math inline">\(A^{\mu}\)</span> is a real-valued 4-vector “Proca potential”. In the limit <span class="math inline">\(\mu \to 0\)</span> the Proca theory reduces to conventional electromagnetism. By analogy with regular electromagnetism, the generalized curl of the Proca potential gives the Proca field tensor <span class="math display">\[
+    F_{\mu\nu} = \partial_{\mu} A_{\nu} - \partial_{\nu} A_{\mu},
+\]</span> and the Proca Lagrangian describing interaction with a 4-current density <span class="math inline">\(j^{\mu}\)</span> is <span class="math display">\[
+    \mathcal{L}_{\mathrm{Proca-int}} = \mathcal{L}_{\mathrm{Proca}} + \mathcal{L}_{\mathrm{int}} = -\frac{1}{4\mu_0} F_{\mu\nu}F^{\mu\nu}+ \frac{\mu^2}{2\mu_0} A_{\rho} A^{\rho} - A_{\sigma}J^{\sigma}.
 \]</span></p>
 <ol type="a">
-<li><p>Show that the antisymmetric part satisfies Minkowski’s equation <span class="math inline">\(A^{\mu\nu}u_{\mu}u_{\nu} = 0\)</span>.</p></li>
-<li><p>By considering different choices of <span class="math inline">\(u^{\mu}\)</span>, show that the only way the symmetric part can satisfy Minkowski’s equation <span class="math inline">\(S^{\mu\nu}u_{\mu}u_{\nu} = 0\)</span> is for all components of <span class="math inline">\(S^{\mu\nu}\)</span> to be zero.</p></li>
-<li><p>If <span class="math inline">\(T^{\mu\nu}\)</span> is given by <span class="math display">\[
-T^{\mu\nu} = \left( \begin{array}{cccc} 0 &amp; -e_x &amp; -e_y &amp; -e_z \\
-e_x &amp; 0 &amp; -b_z &amp; b_y \\
-e_y &amp; b_z &amp; 0 &amp; -b_x \\
-e_z &amp; -b_y &amp; b_x &amp; 0
-\end{array}\right),
-\]</span> find an expression for <span class="math inline">\(\boldsymbol{f}\)</span> in terms of 3-vectors <span class="math inline">\(\boldsymbol{e}\)</span> and <span class="math inline">\(\boldsymbol{b}.\)</span> Does this expression look familiar?</p></li>
+<li><p>Find the physical dimension of <span class="math inline">\(\mathcal{L}_{\mathrm{EM}}\)</span> and <span class="math inline">\(\mathcal{L}_{\mathrm{int}},\)</span> and check they agree. What dimension should <span class="math inline">\(\mu\)</span> in the Proca Lagrangian have? By analogy with the Klein-Gordon equation, what physical quantity does this suggest a Proca field has, which an electromagnetic field doesn’t?</p></li>
+<li><p>Identify a family of symmetries of <span class="math inline">\(\mathcal{L}_{\mathrm{EM}}\)</span> not shared by $_{}. What do you conclude about the “Proca potential” <span class="math inline">\(A_{\nu}\)</span>?</p></li>
+<li><p>Use the relativistic Euler-Lagrange equation for <span class="math inline">\(\mathcal{L}_{\mathrm{Proca}}\)</span> with respect to <span class="math inline">\(A_{\mu}\)</span> to show the “homogeneous Proca equation” is <span id="eq-proca"><span class="math display">\[
+\partial_\mu F^{\mu\nu} + \mu^2A^\nu = 0.
+\tag{1}\]</span></span> What has happened to the Proca counterpart of the other relativistic Maxwell equation, i.e.&nbsp;Bianchi identity?</p></li>
 </ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>3. Properties of the Proca equation</strong></p>
+<p>We now explore some implications of the structure of the Proca equation derived in <strong>2.</strong>.</p>
+<ol type="a">
+<li><p>Show that if a 4-vector field <span class="math inline">\(A_{\mu}\)</span> satisfies the homogeneous Proca equation in <a href="#eq-proca" class="quarto-xref">Equation&nbsp;<span>1</span></a>, then it satisfies the Lorenz gauge condition. Use this to show that each component of the Proca <span class="math inline">\(A_{\mu}\)</span> field satisfies the Klein-Gordon equation.</p></li>
+<li><p>Write down a complex plane wave solution of the Proca equation. Does its 4-wavevector have the properties you expect? What about the polarization of the analogue of <span class="math inline">\(\boldsymbol{E}\)</span> in the field tensor?</p></li>
+<li><p>Now consider the “inhomogeneous Proca equation” by following the same procedure as the previous question, but with <span class="math inline">\(\mathcal{L}_{\mathrm{Proca-int}}.\)</span> Prove that the electromagnetic 4-current is divergenceless from the relativistic inhomogeneous Maxwell equation. Is the 4-current source <span class="math inline">\(j^{\mu}\)</span> in the Proca equation divergenceless?</p></li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>4. Proca electrostatics</strong></p>
+<p>Fix a frame of reference, and write down the Proca analogues of the four Maxwell equations. In our frame of reference, assume that we are in the “Proca electrostatic” case, with a stationary point charge <span class="math inline">\(q\)</span> at the origin. Prove that a solution for the Proca scalar potential in this case is given by <span class="math display">\[
+    V(r) = q\frac{\mathrm{e}^{-\mu r}}{4\pi \varepsilon_{0} r}, \qquad r = \sqrt{x^2+y^2+z^2} &gt; 0.
+\]</span> Assume spherical symmetry where you may find the formula for the radial Laplacian <span class="math display">\[
+    \nabla^2 = \partial_r^2 + \frac{2}{r}\partial_r,
+\]</span> useful. How does this compare to the corresponding EM situation? If photons were to have mass, what elementary physical law of electromagnetism would have to be modified? Comment on the consequences of this.</p>
 </div>
 </div>
 
@@ -884,13 +871,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./field_theory.html" class="pagination-link" aria-label="Building a field theory">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span>
+      <a href="./em_lagrangian.html" class="pagination-link" aria-label="Lagrangian approach to EM">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lagrangian approach to EM</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./symmetries.html" class="pagination-link" aria-label="Symmetries and Noether's theorem">
-        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./epilogue.html" class="pagination-link" aria-label="Epilogue">
+        <span class="nav-page-text">Epilogue</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

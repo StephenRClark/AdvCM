@@ -297,8 +297,26 @@ window.Quarto = {
  <span class="menu-text">Example Class 4</span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_lagrangian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lagrangian approach to EM</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 5</span></a>
+  </div>
+</li>
       </ul>
   </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Epilogue</span></a>
+  </div>
+</li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
@@ -593,35 +611,48 @@ window.Quarto = {
     \boldsymbol{f} = \frac{{\rm d}}{{\rm d}t}\boldsymbol{p},
 \]</span> and that Minkowski’s equation <span class="math inline">\(f^\mu u_\mu = 0\)</span> implies that <span class="math inline">\(cg = \boldsymbol{f}\cdot\boldsymbol{v}\)</span> is a rate of work done. Using our form of <span class="math inline">\(\boldsymbol{F}\)</span> and <span class="math inline">\(u_\nu = (1, -\boldsymbol{v}/c)^{\rm T}\)</span> then <a href="#eq-rel_lorentz" class="quarto-xref">Equation&nbsp;<span>12.13</span></a> becomes <span class="math display">\[
     \gamma\begin{pmatrix} g \\ \boldsymbol{f} \end{pmatrix} = qc \begin{pmatrix} 0 &amp; -\boldsymbol{a}^{\rm T} \\
-                                    \boldsymbol{a} &amp; \boldsymbol{A}(\boldsymbol{b}) \end{pmatrix} \gamma\begin{pmatrix} 1 \\ -\boldsymbol{v}/c \end{pmatrix}.
+                                    \boldsymbol{a} &amp; \boldsymbol{b}\cdot\boldsymbol{J} \end{pmatrix} \gamma\begin{pmatrix} 1 \\ -\boldsymbol{v}/c \end{pmatrix}.
 \]</span> Hence we identify that <span class="math inline">\(g = qc\boldsymbol{a}^{\rm T}\boldsymbol{v} = qc\boldsymbol{a}\cdot\boldsymbol{v}\)</span> and that <span id="eq-lorentz_rel"><span class="math display">\[
-    \boldsymbol{f} = qc\boldsymbol{a} - q\boldsymbol{A}(\boldsymbol{b})\boldsymbol{v} = qc\boldsymbol{a} + q\boldsymbol{v}\times\boldsymbol{b},
+    \boldsymbol{f} = qc\boldsymbol{a} - q(\boldsymbol{b}\cdot\boldsymbol{J})\boldsymbol{v} = qc\boldsymbol{a} + q\boldsymbol{v}\times\boldsymbol{b},
 \tag{12.14}\]</span></span> after using <a href="#eq-matrix_cross" class="quarto-xref">Equation&nbsp;<span>12.8</span></a>. If we take the non-relativistic limit then <span class="math inline">\(\gamma \rightarrow 1\)</span> and so <span class="math inline">\(\boldsymbol{p} \rightarrow \boldsymbol{p}_{\rm nr}\)</span> as well as <span class="math inline">\(\boldsymbol{f} \rightarrow \boldsymbol{f}_{\rm nr}\)</span>. For <a href="#eq-lorentz_rel" class="quarto-xref">Equation&nbsp;<span>12.14</span></a> to match <a href="#eq-lorentz_non_rel" class="quarto-xref">Equation&nbsp;<span>12.12</span></a> we therefore need <span class="math display">\[
     \boldsymbol{a} = \boldsymbol{E}/c, \quad {\rm and} \quad \boldsymbol{b} = \boldsymbol{B}.
 \]</span> We have therefore arrived at the <span class="math inline">\(({2 \atop 0})\)</span> Faraday tensor: <span id="eq-faraday_upper"><span class="math display">\[
-    F^{\mu\nu} = [\boldsymbol{F}]_{\mu\nu} = \begin{pmatrix}
-        0  &amp; -E_x/c &amp; -E_y/c &amp; -E_z/c \\
-        E_x/c &amp; 0 &amp; -B_z &amp; B_y \\
-        E_y/c &amp; B_z &amp; 0 &amp; -B_x \\
-        E_z/c &amp; -B_y &amp; B_x &amp; 0 \end{pmatrix}.
+\begin{align}
+    F^{\mu\nu} &amp;= [\boldsymbol{F}]_{\mu\nu},\\
+    &amp;=  \begin{pmatrix} 0 &amp; -\boldsymbol{E}^{\rm T}/c \\
+                        \boldsymbol{E}/c &amp; \boldsymbol{B}\cdot\boldsymbol{J} \end{pmatrix}, \\
+    &amp;= \begin{pmatrix}
+    0  &amp; -E_x/c &amp; -E_y/c &amp; -E_z/c \\
+    E_x/c &amp; 0 &amp; -B_z &amp; B_y \\
+    E_y/c &amp; B_z &amp; 0 &amp; -B_x \\
+    E_z/c &amp; -B_y &amp; B_x &amp; 0 \end{pmatrix}.
+\end{align}
 \tag{12.15}\]</span></span> We will also encounter two other forms of the Faraday tensor. Its mixed form obtained by lowering the second index <span class="math display">\[
-    {F^\mu}_\nu = \eta_{\nu\sigma}F^{\mu\sigma},
+    {F^\mu}_\nu =\eta_{\nu\sigma}F^{\mu\sigma},
 \]</span> which we can rewrite in matrix form as <span class="math display">\[
     {F^\mu}_\nu = \eta_{\nu\sigma}F^{\mu\sigma} = [\boldsymbol{F}\boldsymbol{\eta}]_{\mu\nu},
 \]</span> where <span class="math inline">\(\boldsymbol{\eta} = \boldsymbol{\eta}^{\rm T} = {\rm diag}(1,-1,-1,-1)\)</span> giving <span id="eq-faraday_mixed"><span class="math display">\[
-    {F^\mu}_\nu = \begin{pmatrix}
+\begin{align}
+    {F^\mu}_\nu &amp;= \begin{pmatrix} 0 &amp; \boldsymbol{E}^{\rm T}/c \\
+                    \boldsymbol{E}/c &amp; -\boldsymbol{B}\cdot\boldsymbol{J} \end{pmatrix}, \\
+    &amp;= \begin{pmatrix}
         0  &amp; E_x/c &amp; E_y/c &amp; E_z/c \\
         E_x/c &amp; 0 &amp; B_z &amp; -B_y \\
         E_y/c &amp; -B_z &amp; 0 &amp; B_x \\
         E_z/c &amp; B_y &amp; -B_x &amp; 0 \end{pmatrix}.
+\end{align}
 \tag{12.16}\]</span></span> And its lower form <span class="math display">\[
     F_{\mu\nu} = \eta_{\mu\tau}\eta_{\nu\sigma}F^{\tau\sigma} = [\boldsymbol{\eta}\boldsymbol{F}\boldsymbol{\eta}]_{\mu\nu},
 \]</span> giving <span id="eq-faraday_lower"><span class="math display">\[
-    F_{\mu\nu} = \begin{pmatrix}
+\begin{align}
+    F_{\mu\nu} &amp;= \begin{pmatrix} 0 &amp; \boldsymbol{E}^{\rm T}/c \\
+                    -\boldsymbol{E}/c &amp; \boldsymbol{B}\cdot\boldsymbol{J} \end{pmatrix}, \\
+    &amp;= \begin{pmatrix}
         0  &amp; E_x/c &amp; E_y/c &amp; E_z/c \\
         -E_x/c &amp; 0 &amp; -B_z &amp; B_y \\
         -E_y/c &amp; B_z &amp; 0 &amp; -B_x \\
         -E_z/c &amp; -B_y &amp; B_x &amp; 0 \end{pmatrix}.
+\end{align}
 \tag{12.17}\]</span></span></p><div class="no-row-height column-margin column-container"><span class="margin-aside">We have to use subscript “nr” here for non-relativistic since in the lecture on <a href="./kinematics.html">Relativistic kinematics</a> we reserved <span class="math inline">\(\boldsymbol{p} = \gamma m\boldsymbol{v}\)</span> for the relativistic 3-momentum, and in <a href="./example_class3.html">Example Class 3</a> we used <span class="math inline">\(\boldsymbol{f}\)</span> for the 3-vector component of the relativistic 4-force.</span></div></div>
 <div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -853,7 +884,7 @@ The Levi-Civita symbol
     \epsilon_{ijk} = \left\{\begin{matrix} +1 &amp; (i,j,k) = (1,2,3), (2,3,1), (3,1,2) \\ -1 &amp; (i,j,k) =  (1,3,2), (3,2,1), (2,1,3) \end{matrix} \right. .
 \]</span> The vector cross-product <span class="math inline">\(\boldsymbol{b} \times \boldsymbol{c}\)</span> can then be expressed (in cartesian coordinates) as <span class="math display">\[
     (\boldsymbol{b} \times \boldsymbol{c})_i = \epsilon_{ijk}b^jc^k,
-\]</span> where in Euclidean space the use of upper and lower indices is only to abide by Einstein summation convention and has no further significance. Notice that if we just contract <span class="math inline">\(\boldsymbol{b}\)</span> with the <span class="math inline">\(\epsilon_{ijk}\)</span> then we get the <span class="math inline">\(3\times 3\)</span> antisymmetric matrix from earlier <span class="math display">\[
+\]</span> where in Euclidean space the use of upper and lower indices is only to abide by Einstein summation convention and has no further significance since the metric is simply <span class="math inline">\(\delta^{ij}\)</span>. For this reason <span class="math inline">\(\epsilon^{ijk}\)</span> has the same elements as <span class="math inline">\(\epsilon_{ijk}\)</span>. Notice that if we just contract <span class="math inline">\(\boldsymbol{b}\)</span> with the <span class="math inline">\(\epsilon_{ijk}\)</span> then we get the <span class="math inline">\(3\times 3\)</span> antisymmetric matrix from earlier <span class="math display">\[
     \epsilon_{ijk}b^j = [\boldsymbol{b}\cdot\boldsymbol{J}]_{ik},
 \]</span> showing that its sign structure is derived from the Levi-Civita symbol.</p>
 <p>In special relativity we use the four dimensional symbol <span class="math inline">\(\epsilon_{\mu\nu\sigma\tau}\)</span> with the minor modification that indices now run from <span class="math inline">\(\mu = 0,1,2,3\)</span>, and the 24 permutations split as: <span class="math display">\[
@@ -950,7 +981,7 @@ Dual Faraday tensor
     v = \frac{{\rm d}x}{{\rm d}t}, \quad {\rm and} \quad m\frac{{\rm d}v}{{\rm d}t} = F,
 \]</span> the first is a kinematic constraint, defining velocity and is always true, while the second is a dynamical equation that depends on the physics, Newton’s 2nd law.</p>
 <p>The nature of the Bianchi identity is best revealed by comparing it to the curl of a 3-vector field <span class="math inline">\(\boldsymbol{w}(\boldsymbol{r})\)</span>. This can be written as <span class="math display">\[
-    (\nabla \times \boldsymbol{w}(\boldsymbol{r}))_i = \epsilon_{ijk}\partial^j w^k(\boldsymbol{r}) = \begin{pmatrix} \partial_y w_z(\boldsymbol{r}) - \partial_z w_y(\boldsymbol{r}) \\  \partial_z w_x(\boldsymbol{r}) - \partial_x w_z(\boldsymbol{r}) \\  \partial_x w_y(\boldsymbol{r}) - \partial_y w_x(\boldsymbol{r}) \end{pmatrix},
+    \nabla \times \boldsymbol{w}(\boldsymbol{r})^i = \epsilon^{ijk}\partial_j w_k(\boldsymbol{r}) = \begin{pmatrix} \partial_y w_z(\boldsymbol{r}) - \partial_z w_y(\boldsymbol{r}) \\  \partial_z w_x(\boldsymbol{r}) - \partial_x w_z(\boldsymbol{r}) \\  \partial_x w_y(\boldsymbol{r}) - \partial_y w_x(\boldsymbol{r}) \end{pmatrix},
 \]</span> which is similar to <a href="#eq-bianchi2" class="quarto-xref">Equation&nbsp;<span>12.28</span></a>. Here we will justify interpretting the Bianchi identity as a “curl” of a rank-2 tensor field.</p>
 <p>First, recall that given a scalar field <span class="math inline">\(\phi(\boldsymbol{r})\)</span> in 3D Euclidean space we can generate a 3-vector field from this via the grad operator as <span class="math display">\[
     \nabla \phi(\boldsymbol{r}) = \begin{pmatrix} \partial_x\phi(\boldsymbol{r}) \\  \partial_y\phi(\boldsymbol{r}) \\  \partial_z\phi(\boldsymbol{r}) \end{pmatrix}.
@@ -1115,7 +1146,7 @@ a = 0, \qquad b = 0.
 <h3 data-number="12.3.2" class="anchored" data-anchor-id="the-inhomogeneous-equations"><span class="header-section-number">12.3.2</span> The inhomogeneous equations</h3>
 <p>Let’s now tackle Maxwell’s equation (M3) and (M4). These equations involve the charge density <span class="math inline">\(\rho(x)\)</span> and 3-current density <span class="math inline">\(\boldsymbol{j}(x)\)</span> in a given frame <span class="math inline">\(S\)</span>. We saw earlier in the lecture <a href="./planewaves.html">Plane-waves and particle flow</a> we saw that these objects can be readily packaged into a 4-current <span class="math display">\[
     j^{\mu}(x) = \left(\begin{array}{c} \rho(x)c \\
-    {\boldsymbol{j}}(x)\end{array}\right) = \gamma \rho_0(x)u^\mu(x)c,
+    {\boldsymbol{j}}(x)\end{array}\right) = \rho_0(x)u^\mu(x)c,
 \]</span> where <span class="math inline">\(\rho_0(x)\)</span> is the co-moving charge density and <span class="math inline">\(u^\mu(x)\)</span> is the 4-velocity field of the particles. With this the scalar equation (M3) <span class="math display">\[
     \epsilon_0 \nabla \cdot \boldsymbol{E} = \epsilon_0(\partial_x E_x + \partial_y E_y + \partial_z E_z) = \rho,
 \]</span> converts using the <span class="math inline">\(({2 \atop 0})\)</span> Faraday tensor from <a href="#eq-faraday_upper" class="quarto-xref">Equation&nbsp;<span>12.15</span></a> as <span class="math display">\[
@@ -1129,7 +1160,7 @@ a = 0, \qquad b = 0.
 \]</span> and the <span class="math inline">\(z\)</span> as: <span class="math display">\[
     \mu_0^{-1}(\partial_x B_y - \partial_y B_x) - \epsilon_0\partial_t E_z = j_z ~ \rightarrow ~\mu_0^{-1}(\partial_1 F^{13} + \partial_2 F^{21} + \partial_0 F^{03}) = j^3.
 \]</span> All four of these equations can be compactly encoded as <span class="math display">\[
-    \partial_\mu F^{\mu\nu} = \mu_0j^\mu.
+    \partial_\mu F^{\mu\nu} = \mu_0j^\nu.
 \]</span> This is called the <em>relativistic Maxwell equation</em>. In contrast to the Bianchi identity this equation expresses how the dynamics of the EM fields will occur in the presence of charges and currents. It is this equation which we will aim to derive via an appropriate EM Lagrangian in the next lecture.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 12</strong>.</span></div></div>
 

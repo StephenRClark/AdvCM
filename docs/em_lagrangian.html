@@ -1,0 +1,1558 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>13&nbsp; Lagrangian approach to EM – Advanced Classical Mechanics (Relativistic Fields)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./example_class5.html" rel="next">
+<link href="./example_class4.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
+<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./em_revision.html">IV: Relativistic Electrodynamics</a></li><li class="breadcrumb-item"><a href="./em_lagrangian.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lagrangian approach to EM</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./figures/acm.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Advanced Classical Mechanics (Relativistic Fields)</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended Books</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">I: Special Relativity</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./principle_relativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Principle of relativity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lorentz_transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lorentz transformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./space_time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minkowski space-time</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducing 4-vectors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">II: Tensors and Fields</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">III: Lagrangian field theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./symmetries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_lagrangian.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lagrangian approach to EM</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 5</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Epilogue</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#the-4-vector-potential" id="toc-the-4-vector-potential" class="nav-link active" data-scroll-target="#the-4-vector-potential"><span class="header-section-number">13.1</span> The 4-vector potential</a></li>
+  <li><a href="#gauge-transformation-of-4-vector-potential" id="toc-gauge-transformation-of-4-vector-potential" class="nav-link" data-scroll-target="#gauge-transformation-of-4-vector-potential"><span class="header-section-number">13.2</span> Gauge transformation of 4-vector potential</a></li>
+  <li><a href="#em-lagrangian" id="toc-em-lagrangian" class="nav-link" data-scroll-target="#em-lagrangian"><span class="header-section-number">13.3</span> EM Lagrangian</a></li>
+  <li><a href="#the-em-stress-energy-tensor" id="toc-the-em-stress-energy-tensor" class="nav-link" data-scroll-target="#the-em-stress-energy-tensor"><span class="header-section-number">13.4</span> The EM stress-energy tensor</a></li>
+  <li><a href="#first-principles-construction-of-field-theories" id="toc-first-principles-construction-of-field-theories" class="nav-link" data-scroll-target="#first-principles-construction-of-field-theories"><span class="header-section-number">13.5</span> First principles construction of field theories</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./em_revision.html">IV: Relativistic Electrodynamics</a></li><li class="breadcrumb-item"><a href="./em_lagrangian.html"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lagrangian approach to EM</span></a></li></ol></nav>
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lagrangian approach to EM</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>We have shown how the <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> fields can be embedded into the Faraday tensor <span class="math inline">\(F^{\mu\nu}\)</span> giving a fully relativistic formulation of EM. In this lecture we will re-express this again in terms of a relativistic 4-vector potential which naturally leads to a Lagrangian formulation the the EM field.</p>
+<section id="the-4-vector-potential" class="level2" data-number="13.1">
+<h2 data-number="13.1" class="anchored" data-anchor-id="the-4-vector-potential"><span class="header-section-number">13.1</span> The 4-vector potential</h2>
+<p>In the last lecture we saw several features of <span class="math inline">\(F^{\mu\nu}\)</span> which mean that a rank-2 tensor is not the covariant object fundamentally describing electromagnetism. First, the Faraday tensor is antisymmetric which results in the <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> fields transforming between frames with a factor of <span class="math inline">\(\gamma\)</span> rather than <span class="math inline">\(\gamma^2\)</span> expected for elements of a general rank-2 tensor. Second, <span class="math inline">\(F^{\mu\nu}\)</span> obeys the Bianchi identity which is a kinematic constraint akin to fixing the “curl” of <span class="math inline">\(F^{\mu\nu}\)</span> to be zero.</p>
+<p>We already know an alternative description of electromagnetism. Specifically the scalar potential <span class="math inline">\(V\)</span> and 3-vector potential <span class="math inline">\(\boldsymbol{A}\)</span>, which gives rise to the fields <span id="eq-ebpot"><span class="math display">\[
+    \boldsymbol{E} = - \dot{\boldsymbol{A}} - \nabla V, \quad \boldsymbol{B} = \nabla\times\boldsymbol{A},
+\tag{13.1}\]</span></span> as reviewed in <a href="./em_revision.html">Revision of Electromagnetism</a>. Once again in this course we see a situation where we have a scalar quantity and a 3-vector quantity which are intimately related. It would therefore seem very sensible to explore the idea that they in fact should be combined together into a 4-vector potential <span id="eq-4vecpot"><span class="math display">\[
+    A^\mu = \begin{pmatrix} V/c \\ \boldsymbol{A} \end{pmatrix}, \quad \text{and so} \quad A_\mu = \begin{pmatrix} V/c \\ -\boldsymbol{A} \end{pmatrix}.
+\tag{13.2}\]</span></span> One way to justify that <span class="math inline">\(A^\mu\)</span> is a genuine 4-vector is to consider the interaction of an electromagnetic field with charged matter.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Justifying <span class="math inline">\(A^\mu\)</span> is a 4-vector
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>Our work in <a href="./example_class3.html">Example Class 3</a> in question <strong>3.</strong> can motivate this form. There we considered the relativistic Lagrangian for a single particle interacting with a putative “4-potential” <span class="math display">\[
+    \phi^\mu = \begin{pmatrix} \Phi \\ \boldsymbol{\phi} \end{pmatrix}
+\]</span> through its 4-velocity <span class="math inline">\(u^\mu\)</span> as <span id="eq-Lcharged"><span class="math display">\[
+    L = -\frac{mc^2}{\gamma} - \frac{\phi^\mu u_\mu}{\gamma} = -\frac{mc^2}{\gamma} - \Phi + \frac{\boldsymbol{v}\cdot\boldsymbol{\phi}}{c}.
+\tag{13.3}\]</span></span> While this Lagrangian is not Lorentz scalar, the action arising from it should be <span class="math display">\[
+    \mathcal{S} \equiv \int_{t_0}^{t_1}{\rm d}t\, L = \int_{s_0}^{s_1}{\rm d}s\,\frac{\gamma}{c}L,
+\]</span> and hence <span class="math display">\[
+    \mathcal{S} = \int_{s_0}^{s_1}{\rm d}s\,\left(-mc -  \frac{1}{c}\phi^\mu u_\mu\right).
+\]</span> From this we see that <span class="math inline">\(\phi^\mu\)</span> must be a genuine 4-vector if the contraction <span class="math inline">\(\phi^\mu u_\mu\)</span>, and therefore <span class="math inline">\(\mathcal{S}\)</span> itself, is to be Lorentz scalar.</p>
+<p>We found that the non-relativistic limit of the Lagrangian in <a href="#eq-Lcharged" class="quarto-xref">Equation&nbsp;<span>13.3</span></a> was <span class="math display">\[
+    L \approx -mc^2 + \frac{1}{2}mv^2 - \Phi + \frac{\boldsymbol{v}\cdot\boldsymbol{\phi}}{c}.
+\]</span> Ignoring the rest mass constant and comparing this to the non-relativistic Lorentz force Lagrangian from <a href="./em_revision.html">Revision of Electromagnetism</a> <span class="math display">\[
+    L = \tfrac{1}{2}m \boldsymbol{v}\cdot\boldsymbol{v} - q V + q \boldsymbol{v}\cdot\boldsymbol{A},
+\]</span> we identify that <span class="math inline">\(\phi^\mu = qc A^\mu\)</span> or <span id="eq-identify4pot"><span class="math display">\[
+    \begin{pmatrix} \Phi \\ \boldsymbol{\phi} \end{pmatrix} = \begin{pmatrix} qV \\ qc\boldsymbol{A} \end{pmatrix}.
+\tag{13.4}\]</span></span> Since <span class="math inline">\(c\)</span> and <span class="math inline">\(q\)</span> are Lorentz scalars this identification means that <span class="math inline">\(A^\mu\)</span> must be a 4-vector.</p>
+<p>Notice that the quantity <span class="math display">\[
+    qc u^\mu = \begin{pmatrix} qc \\ q\boldsymbol{v} \end{pmatrix}
+\]</span> looks like a 4-current generated by point-like charged particle (a <span class="math inline">\(\delta\)</span>-function field in space-time) which we would expect for a general matter field <span class="math display">\[
+    j^\mu = \begin{pmatrix} \rho(x)c \\ \boldsymbol{j}(x) \end{pmatrix}.
+\]</span> Based on this we anticipate an interaction of a matter field with an EM field of the form <span id="eq-emint"><span class="math display">\[
+    \mathcal{L}_{\rm int} = -A^\mu j_\mu
+\tag{13.5}\]</span></span> in the Lagrangian density. We will put this to use shortly.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Note on spatial indices and 3-vectors
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>For 3-vectors like <span class="math inline">\(\boldsymbol{B}\)</span> we denote its components as <span class="math inline">\(B_i\)</span> for <span class="math inline">\(i=1,2,3\)</span>. We can raise its index to <span class="math inline">\(B^j = \delta^{ij}B_i\)</span> using the Euclidean metric, which means there is no difference between upper and lower indices. However, we use <span class="math inline">\(A^i\)</span> to denote the spatial components of the 4-vector potential <span class="math inline">\(A^\mu\)</span> in <a href="#eq-4vecpot" class="quarto-xref">Equation&nbsp;<span>13.2</span></a>. We don’t ever refer directly to the components of the 3-vector potential <span class="math inline">\(\boldsymbol{A}\)</span>, which means that lower index version <span class="math inline">\(A_j = -\boldsymbol{A}\cdot{e}_j\)</span> since it refers to the spatial components of a one-form <span class="math inline">\(A_\mu\)</span>. Likewise <span class="math inline">\(\partial_j\)</span> are the spatial components of the derivative one-form <span class="math inline">\(\partial_\mu\)</span>. So whenever we replace <span class="math inline">\(\nabla\)</span> in any 3-vector expressions we use that <span class="math inline">\(\partial_j = \boldsymbol{e}_j\cdot\nabla\)</span>, but <span class="math inline">\(\partial^j = -\boldsymbol{e}_j\cdot\nabla\)</span> since they are the spatial component of the 4-vector derivative.</p>
+</div>
+</div>
+<p>It is instructive to convert <a href="#eq-ebpot" class="quarto-xref">Equation&nbsp;<span>13.1</span></a> into an expression involving <span class="math inline">\(F^{\mu\nu}\)</span>. Starting with the <span class="math inline">\(\boldsymbol{E}\)</span> field where <span class="math inline">\(E_j/c = F_{0j}\)</span> we have <span id="eq-fepart"><span class="math display">\[
+    \boldsymbol{E} = - \dot{\boldsymbol{A}} - \nabla V \quad \to \quad cF_{0j} = c\partial_0 A_j -c\partial_j A_0.
+\tag{13.6}\]</span></span> For the <span class="math inline">\(\boldsymbol{B}\)</span> field we have that <span class="math display">\[
+    B^i = (\nabla \times \boldsymbol{A})^i = -\epsilon^{ijk}\partial_j A_k,
+\]</span> but also <span class="math inline">\(F_{ij} = \epsilon_{ikj}B^k\)</span>. Hence <span class="math display">\[
+\begin{align}
+    F_{mn} &amp;= -\epsilon_{min}\epsilon^{ijk}\partial_j A_k,\\
+     &amp;=\epsilon_{imn}\epsilon^{ijk}\partial_j A_k, \\
+\end{align}
+\]</span> which are using the identity <span id="eq-delta_epsilon"><span class="math display">\[
+    \epsilon_{imn}\epsilon^{ijk} = \delta^j_m\delta^k_n - \delta^k_m\delta^j_n,
+\tag{13.7}\]</span></span> gives <span id="eq-fbpart"><span class="math display">\[
+\begin{align}
+    F_{mn} &amp;= \left(\delta^j_m\delta^k_n - \delta^k_m\delta^j_n\right)\partial_j A_k, \\
+    &amp;= \partial_m A_n - \partial_n A_m.
+\end{align}
+\tag{13.8}\]</span></span> Putting <a href="#eq-fepart" class="quarto-xref">Equation&nbsp;<span>13.6</span></a> and <a href="#eq-fbpart" class="quarto-xref">Equation&nbsp;<span>13.8</span></a> together we have that <span id="eq-f4pot"><span class="math display">\[
+    F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu.
+\tag{13.9}\]</span></span> We have therefore shown that the Faraday tensor is the curl of the 4-vector potential. This construction is a key result since:</p>
+<ul>
+<li>it is manifestly <strong>antisymmetric</strong>, and</li>
+<li>it <strong>automatically</strong> satisfies the Bianchi identity, e.g.&nbsp;the curl of a curl = 0.</li>
+</ul>
+<p>The latter point means that we get half of Maxwell’s equations, e.g.&nbsp;the homogeneous ones which correspond to kinematic constraints of the theory, without any further work just by using <a href="#eq-f4pot" class="quarto-xref">Equation&nbsp;<span>13.9</span></a>.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. <span class="math inline">\(\epsilon\)</span> identity</strong></p>
+<p>Prove the <span class="math inline">\(\epsilon\)</span> symbol identity given in <a href="#eq-delta_epsilon" class="quarto-xref">Equation&nbsp;<span>13.7</span></a></p>
+<p><strong>2. Vector triple product</strong></p>
+<p>Show that <a href="#eq-delta_epsilon" class="quarto-xref">Equation&nbsp;<span>13.7</span></a> is nothing other than the vector triple product identity <span class="math display">\[
+    \boldsymbol{u} \times (\boldsymbol{v} \times \boldsymbol{w}) = \boldsymbol{v}(\boldsymbol{u}\cdot\boldsymbol{w}) - \boldsymbol{w}(\boldsymbol{u}\cdot\boldsymbol{v}),
+\]</span> for three 3-vector <span class="math inline">\(\boldsymbol{u},\boldsymbol{v},\boldsymbol{w}\)</span>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. <span class="math inline">\(\epsilon\)</span> identity</strong></p>
+<p>In <a href="#eq-delta_epsilon" class="quarto-xref">Equation&nbsp;<span>13.7</span></a> the repeated index implies the summation <span class="math display">\[
+    \epsilon_{imn}\epsilon^{ijk} = \epsilon_{1mn}\epsilon^{1jk} + \epsilon_{2mn}\epsilon^{2jk} + \epsilon_{3mn}\epsilon^{3jk}.
+\]</span> Recalling that <span class="math display">\[
+   \epsilon_{ijk} = \epsilon^{ijk} = \left\{ \begin{array}{rl} +1 &amp; \hbox{if $(i,j,k) = (1,2,3), (2,3,1), (3,1,2)$} \\ -1 &amp; \hbox{if $(i,j,k) = (1,3,2), (2,1,3), (3,2,1)$} \\ 0 &amp; \hbox{otherwise} \end{array} \right.
+\]</span> we now examine what the value is for various choices of <span class="math inline">\((j,k)\)</span> and <span class="math inline">\((m,n)\)</span>. Only a few possible indices give non-zero value owing to the <span class="math inline">\(\epsilon\)</span> symbols with each term contributing:</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 15%">
+<col style="width: 20%">
+<col style="width: 20%">
+</colgroup>
+<thead>
+<tr class="header">
+<th><span class="math inline">\(i\)</span></th>
+<th><span class="math inline">\((j,k)(m,n)\)</span></th>
+<th>value</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><span class="math inline">\(1\)</span></td>
+<td><span class="math inline">\((2,3)(2,3)\)</span>, <span class="math inline">\(\quad(3,2)(3,2)\)</span></td>
+<td><span class="math inline">\(+1\)</span></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\((2,3)(3,2)\)</span>, <span class="math inline">\(\quad(3,2)(2,3)\)</span></td>
+<td><span class="math inline">\(-1\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(2\)</span></td>
+<td><span class="math inline">\((3,1)(3,1)\)</span>, <span class="math inline">\(\quad(1,3)(1,3)\)</span></td>
+<td><span class="math inline">\(+1\)</span></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\((3,1)(1,3)\)</span>, <span class="math inline">\(\quad(1,3)(3,1)\)</span></td>
+<td><span class="math inline">\(-1\)</span></td>
+</tr>
+<tr class="odd">
+<td><span class="math inline">\(3\)</span></td>
+<td><span class="math inline">\((2,1)(2,1)\)</span>, <span class="math inline">\(\quad(1,2)(1,2)\)</span></td>
+<td><span class="math inline">\(+1\)</span></td>
+</tr>
+<tr class="even">
+<td></td>
+<td><span class="math inline">\((2,1)(1,2)\)</span>, <span class="math inline">\(\quad(1,2)(2,1)\)</span></td>
+<td><span class="math inline">\(-1\)</span></td>
+</tr>
+</tbody>
+</table>
+<p>We can then compare this to <a href="#eq-delta_epsilon" class="quarto-xref">Equation&nbsp;<span>13.7</span></a> where we see that the expression <span class="math inline">\(\delta^j_m\delta^k_n - \delta^k_m\delta^j_n\)</span> gives a <span class="math inline">\(+1\)</span> if <span class="math inline">\(m=j\)</span> and <span class="math inline">\(n=k\)</span>, and <span class="math inline">\(-1\)</span> for <span class="math inline">\(m=k\)</span> and <span class="math inline">\(n=j\)</span>, exactly as is the case in the table above.</p>
+<p><strong>2. Vector triple product</strong></p>
+<p>We use that <span class="math display">\[
+    (\boldsymbol{v} \times \boldsymbol{w})^i = \epsilon^{ijk}v_jw_k,
+\]</span> so <span class="math display">\[
+    \boldsymbol{u} \times (\boldsymbol{v} \times \boldsymbol{w}) = \epsilon_{mni}u^n(\boldsymbol{v} \times \boldsymbol{w})^i = \epsilon_{imn}\epsilon^{ijk}u^nv_jw_k,
+\]</span> and so involves precisely the contraction of <span class="math inline">\(\epsilon\)</span> symbols in <a href="#eq-delta_epsilon" class="quarto-xref">Equation&nbsp;<span>13.7</span></a>. Applying that identity we get <span class="math display">\[
+\begin{align}
+    (\delta^j_m\delta^k_n - \delta^k_m\delta^j_n)u^nv_jw_k &amp;= \delta^j_m v_j u^kv_k - \delta^k_m w_k u^j v_j, \\
+    &amp;= v_m (u^kv_k) - w_m (u^j v_j), \\
+    &amp;= (\boldsymbol{v}(\boldsymbol{u}\cdot\boldsymbol{w}) - \boldsymbol{w}(\boldsymbol{u}\cdot\boldsymbol{v}))_m,
+\end{align}
+\]</span> so we recover the vector triple product.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="gauge-transformation-of-4-vector-potential" class="level2" data-number="13.2">
+<h2 data-number="13.2" class="anchored" data-anchor-id="gauge-transformation-of-4-vector-potential"><span class="header-section-number">13.2</span> Gauge transformation of 4-vector potential</h2>
+<p>We know that the scalar and vector potential are not unique. Indeed, as discussed in <a href="./em_revision.html">Revision of Electromagnetism</a>, the physical <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> fields are invariant to gauge transformations: <span id="eq-gaugetrans"><span class="math display">\[
+    \boldsymbol{A} \to \boldsymbol{A} + \nabla\chi, \qquad V \to V - \dot{\chi},
+\tag{13.10}\]</span></span> where <span class="math inline">\(\chi\)</span> is an arbitrary but smooth differentiable function of space-time. We can readily encapsulate the gauge transformation in <a href="#eq-gaugetrans" class="quarto-xref">Equation&nbsp;<span>13.10</span></a> into the relativistic formalism as the 4-vector potential mapping as <span id="eq-gauge4pot"><span class="math display">\[
+    A_\mu \to A_\mu - \partial_\mu \chi,
+\tag{13.11}\]</span></span> after recognising that <span class="math display">\[
+    A_\mu = \begin{pmatrix} V/c \\ -\boldsymbol{A} \end{pmatrix}, \quad {\rm and} \quad \partial_\mu\chi = \begin{pmatrix} \dot{\chi}/c \\ \nabla \chi \end{pmatrix}.
+\]</span> Given its elements are the physical fields the Faraday tensor itself is gauge invariant.</p>
+<p>For practical calculations in EM we often fix a gauge for convenience. The expression of the Lorenz gauge <span class="math display">\[
+    \nabla\cdot\boldsymbol{A} + \frac{1}{c^2}\dot{V} = 0,
+\]</span> for the 4-vector potential is particularly appealing <span class="math display">\[
+    \partial_\mu A^\mu = 0,
+\]</span> since it fixes the 4-divergence of the 4-vector potential to be zero. The relativistic Maxwell equation simplifies in this gauge to <span id="eq-lorenz_eq"><span class="math display">\[
+    \partial_\mu\partial^\mu A^\nu = \mu_0 j^\nu.
+\tag{13.12}\]</span></span> So in the Lorenz gauge the 4-vector potential obeys the inhomogeneous wave-equation for each of its components. While the Lorenz gauge does constrain the 4-vector potential it does not remove all gauge freedom from it. Given <span class="math inline">\(\partial_\mu A^\mu = 0\)</span> performing a gauge transformation gives <span class="math display">\[
+    \partial_\mu A^\mu \to \partial_\mu (A^\mu - \partial^\mu \chi)
+\]</span> which will still satisfy the Lorenz gauge so long as <span class="math inline">\(\partial_\mu\partial^\mu\chi = 0\)</span>. In otherwords we can add the derivative of solution of the scalar wave-equation to the 4-vector potential and remain in the Lorenz gauge.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Gauge invariance of <span class="math inline">\(F^{\mu\nu}\)</span></strong></p>
+<p>Prove that <span class="math inline">\(F^{\mu\nu}\)</span> is gauge invariant as claimed.</p>
+<p><strong>4. Lorenz gauge equation of motion</strong></p>
+<p>Confirm <a href="#eq-lorenz_eq" class="quarto-xref">Equation&nbsp;<span>13.12</span></a> arises from the relativistic Maxwell equation in the Lorenz gauge.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Gauge invariance of <span class="math inline">\(F^{\mu\nu}\)</span></strong></p>
+<p>This is readily confirmed by substituting <a href="#eq-gauge4pot" class="quarto-xref">Equation&nbsp;<span>13.11</span></a> into <a href="#eq-f4pot" class="quarto-xref">Equation&nbsp;<span>13.9</span></a> to get <span class="math display">\[  
+\begin{align}
+    F_{\mu\nu} &amp;\to \partial_\mu (A_\nu - \partial_\nu \chi) - \partial_\nu (A_\mu - \partial_\mu \chi), \\
+    &amp; \to \partial_\mu A_\nu - \partial_\nu A_\mu - \partial_\mu\partial_\nu\chi + \partial_\nu\partial_\mu\chi, \\
+    &amp; \to F_{\mu\nu},
+\end{align}
+\]</span> after using the commutativity of the derivatives.</p>
+<p><strong>4. Lorenz gauge equation of motion</strong></p>
+<p>Expand out the Faraday tensor in the relativistic Maxwell equation and then apply the Lorenz gauge condition to get: <span class="math display">\[
+\begin{align}
+     \partial_\mu F^{\mu\nu} &amp;= \mu_0 j^\nu, \\
+    \partial_\mu(\partial^\mu A^\nu - \partial^\nu A^\mu) &amp;= \mu_0 j^\nu,\\
+    \partial_\mu\partial^\mu A^\nu - \partial^\nu(\partial_\mu A^\mu) &amp;= \mu_0 j^\nu,\\
+    \partial_\mu\partial^\mu A^\nu &amp;= \mu_0 j^\nu.
+\end{align}
+\]</span></p>
+</div>
+</div>
+</div>
+</section>
+<section id="em-lagrangian" class="level2 page-columns page-full" data-number="13.3">
+<h2 data-number="13.3" class="anchored" data-anchor-id="em-lagrangian"><span class="header-section-number">13.3</span> EM Lagrangian</h2>
+<p>We have successfully rewritten Maxwell’s equation in a relativistically covariant form. In doing so we have also generalised the only part of conventional electromagnetism that wasn’t already relativistic, namely the Lorentz force law, into a relativistic form also. What now remains for us to do is to construct a Lagrangian <span class="math inline">\(\mathcal{L}_{\rm EM}\)</span> whose Euler-Lagrange equations produce the dynamical equation <span id="eq-maxwell"><span class="math display">\[
+        \partial_\mu F^{\mu\nu} = \mu_0j^\nu,
+\tag{13.13}\]</span></span> whilst always satisfying the kinematic constraint <span id="eq-bianchi"><span class="math display">\[
+        \partial_\mu F_{\nu\rho} + \partial_\nu F_{\rho\mu} + \partial_\rho F_{\mu\nu} = 0.
+\tag{13.14}\]</span></span></p>
+<p>To apply the variational principle we choose some variables that specify the configuration of the field and then vary them freely. The Euler-Lagrange equations come from requiring stationarity for all admissible variations. To proceed we need to we need to figure out what are the truely independent variables for electromagnetism. Do we vary the:</p>
+<ul>
+<li>physical <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> fields, so elements of <span class="math inline">\(F^{\mu\nu}\)</span> themselves, or</li>
+<li>4-vector potential <span class="math inline">\(A^\mu\)</span>?</li>
+</ul>
+<div class="page-columns page-full"><p>At first sight one might think that the Faraday tensor and the physical fields should be the natural object to base our variations on. For example it would be perfectly reasonable to consider <span class="math display">\[
+    F^{\mu\nu} \mapsto F^{\mu\nu} + \delta F^{\mu\nu},
+\]</span> where <span class="math inline">\(\delta F^{\mu\nu}\)</span> is an arbitrary antisymmetric variation. The problem is that the six components of <span class="math inline">\(F^{\mu\nu}\)</span> are not independent. They must obey <a href="#eq-bianchi" class="quarto-xref">Equation&nbsp;<span>13.14</span></a> which represents a kinematic constraint that must be obeyed if the <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> inside <span class="math inline">\(F^{\mu\nu}\)</span> are physically allowed fields. Consequently they are not independent variables. A variation such as <span class="math inline">\(\delta F^{\mu\nu}\)</span> would not preserve a solution to the Bianchi equation and would therefore take us outside physically admissible configuration space of the theory. This resonates with what we discussed in the last lecture that the Bianchi identity tells us that <span class="math inline">\(F^{\mu\nu}\)</span> is not really a rank-2 antisymmetric tensor, but is really the curl of a 4-vector field.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">A simple analogy would be to describe variations of a particle’s location constrained to be on the surface of a sphere. If we used arbitrary variations in its cartesian coordinates <span class="math inline">\(\delta x, \delta y, \delta z\)</span> then we would certainly move off the surface requiring a Lagrange multiplier to fix. Or we could use arbitrary variations <span class="math inline">\(\delta\theta,\delta\phi\)</span> of angular coordinates which automatically stay on the surface.</span></div></div>
+<div class="page-columns page-full"><p>Consequently, the varying the 4-vector potential is the most sensible approach. We use the variation <span class="math display">\[
+    A^\mu \mapsto A^\mu + \delta A^\mu,
+\]</span> and from this generate <span class="math inline">\(F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu\)</span> as a 4-vector curl. For any such variations <span class="math inline">\(F_{\mu\nu}\)</span> will be antisymmetric and automatically satisfies <a href="#eq-bianchi" class="quarto-xref">Equation&nbsp;<span>13.14</span></a>. This all points to <span class="math inline">\(A^\mu\)</span> instead being the fundamental description of electromagnetism, consistent also with it being the simplest way to locally couple to charged matter, e.g.&nbsp;the <span class="math inline">\(-A^\mu j_\mu\)</span> term in <a href="#eq-emint" class="quarto-xref">Equation&nbsp;<span>13.5</span></a>. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Also quantum effects like the Aharonov-Bohm effect make it clear that <span class="math inline">\(A^\mu\)</span> is not just bookkeeping device, but rather it is a physical meaningful quantity, depsite its gauge redundancy.</span></div></div>
+<p>Recall from <a href="./field_theory.html">Building a field theory</a> that a 4-vector field theory is derived from a relativistic Euler-Lagrange equation of the form <span class="math display">\[
+    \frac{\partial \mathcal{L}_{\rm EM}}{\partial A_\nu} -  \partial_\mu \left(\frac{\partial \mathcal{L}_{\rm EM}}{\partial \partial_\mu A_\nu}\right) = 0.
+\]</span> The next question is what is <span class="math inline">\(\mathcal{L}_{\rm EM}\)</span>? The answer to this should be a:</p>
+<ul>
+<li><strong>Lorentz scalar</strong>, as with all relativistic field theories, and</li>
+<li><strong>gauge invariant</strong>, so it depends on the physical <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> fields.</li>
+</ul>
+<p>These suggest strongly that we should build <span class="math inline">\(\mathcal{L}_{\rm EM}\)</span> from <span class="math inline">\(F^{\mu\nu}\)</span>. The two most obvious Lorentz scalars we can construct from the Faraday tensor are its trace <span class="math inline">\({F^\mu}_\mu = 0\)</span>, which is not useful, and its full contraction with itself <span class="math inline">\(F^{\mu\nu}F_{\mu\nu}\)</span>. We therefore conjecture that in the absence of any sources (so a free field) it is governed by the Lagrangian <span class="math display">\[
+    \mathcal{L}_{\rm EM} = -\frac{1}{4\mu_0}F^{\mu\nu}F_{\mu\nu}.
+\]</span> We can motivate why this looks sensible. We expect wave solutions to arise the EM Lagrangian, indeed we saw already that in the Lorenz gauge the relativistic Maxwell’s equation reduces to a wave equation for <span class="math inline">\(A^\mu\)</span> in <a href="#eq-lorenz_eq" class="quarto-xref">Equation&nbsp;<span>13.12</span></a>. For a scalar field the Lagrangian giving a wave-equation is <span class="math display">\[
+    \mathcal{L}_{d'A} = \partial_\mu\varphi\partial^\mu\varphi,
+\]</span> which gives an Euler-Lagrange equation <span class="math inline">\(\partial_\mu\partial^\mu \varphi = 0\)</span>, while for a 4-vector field it is <span id="eq-4dvL"><span class="math display">\[
+    \mathcal{L}_{4d'A} = \partial_\mu a_\nu\partial^\mu a^\nu,
+\tag{13.15}\]</span></span> giving <span class="math inline">\(\partial_\mu\partial^\mu a_\nu = 0\)</span>. Expanding <span class="math inline">\(\mathcal{L}_{\rm EM}\)</span> in the 4-vector potential <span class="math display">\[
+    \mathcal{L}_{\rm EM} = -\frac{1}{4\mu_0}\left(\partial_\mu A_\nu - \partial_\nu A_\mu\right)\left(\partial^\mu A^\nu - \partial^\nu A^\mu\right),
+\]</span> we recognise that it contains terms like <span class="math inline">\(\partial_\mu A_\nu\partial^\mu A^\nu\)</span> with exactly the same form as in <a href="#eq-4dvL" class="quarto-xref">Equation&nbsp;<span>13.15</span></a>. You will also recognise, from work-along exercise <strong>7.</strong> in the last lecture, that <span class="math inline">\(\mathcal{L}_{\rm EM}\)</span> is one of the Lorentz invariants of the EM field where <span id="eq-lem_fields"><span class="math display">\[
+    \mathcal{L}_{\rm EM} = \frac{\epsilon_0}{2}|\boldsymbol{E}|^2 - \frac{1}{2\mu_0}|\boldsymbol{B}|^2,
+\tag{13.16}\]</span></span> further motivating it as a sensible choice.</p>
+<p>Our next step is to compute the Euler-Lagrange equations for <span class="math inline">\(\mathcal{L}_{\rm EM}\)</span>. We immediately see that <span class="math display">\[
+    \frac{\partial \mathcal{L}_{\rm EM}}{\partial A_\nu} = 0,
+\]</span> so our main work is to compute the other derivative <span class="math display">\[
+    \frac{\partial \mathcal{L}_{\rm EM}}{\partial \partial_\mu A_\nu} = -\frac{1}{\mu_0}\frac{\partial}{\partial \partial_\mu A_\nu}\left(F_{\sigma\tau} F^{\sigma\tau}\right),
+\]</span> which is found to be <span id="eq-dLdA"><span class="math display">\[
+    \frac{\partial \mathcal{L}_{\rm EM}}{\partial \partial_\mu A_\nu} = -\frac{1}{\mu_0}F^{\mu\nu}.
+\tag{13.17}\]</span></span></p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>5. Derivative of EM Lagrangian</strong></p>
+<p>Complete the calculation of <span class="math inline">\(\frac{\partial \mathcal{L}_{\rm EM}}{\partial \partial_\mu A_\nu}\)</span> to confirm the result given in <a href="#eq-dLdA" class="quarto-xref">Equation&nbsp;<span>13.17</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>5. Derivative of EM Lagrangian</strong></p>
+<p>We need to compute <span class="math display">\[
+    \frac{\partial \mathcal{L}_{\rm EM}}{\partial \partial_\mu A_\nu} = -\frac{1}{\mu_0}\frac{\partial}{\partial \partial_\mu A_\nu}\left(F_{\sigma\tau} F^{\sigma\tau}\right).
+\]</span> This calcularion is greatly simplified by using the product rule <span class="math display">\[
+    \frac{\partial}{\partial \partial_{\mu} A_\nu} (F_{\sigma\tau} F^{\sigma\tau}) = \left(\frac{\partial}{\partial \partial_{\mu} A_\nu} F_{\sigma\tau}\right) F^{\sigma\tau} + F_{\sigma\tau}\left(\frac{\partial}{\partial \partial_{\mu} A_\nu} F^{\sigma\tau}\right) = 2\frac{\partial F_{\sigma\tau}}{\partial \partial_{\mu} A_\nu}  F^{\sigma\tau},
+\]</span><br>
+and combining terms after “see-sawing” the indices. We are then left to compute <span class="math display">\[
+    \frac{\partial F_{\sigma\tau}}{\partial \partial_{\mu} A_\nu} = \frac{\partial}{\partial \partial_{\mu} A_\nu}(\partial_\sigma A_\tau - \partial_\tau A_\sigma) = \delta^\mu_\sigma\delta^\nu_\tau - \delta^\mu_\tau\delta^\nu_\sigma.
+\]</span> Note it is essential to use appropriate independent indices in this calculation to ensure contractions are not muddled up. Putting this all together we get <span class="math display">\[
+\begin{align}
+    \frac{\partial \mathcal{L}_{\rm EM}}{\partial \partial_\mu A_\nu} &amp;= -\frac{1}{2\mu_0}(\delta^\mu_\sigma\delta^\nu_\tau - \delta^\mu_\tau\delta^\nu_\sigma)F^{\sigma\tau}, \\
+    &amp;= -\frac{1}{2\mu_0}(F^{\mu\nu} - F^{\nu\mu}), \\
+    &amp;= -\frac{1}{\mu_0}F^{\mu\nu}.
+\end{align}
+\]</span> as claimed in <a href="#eq-dLdA" class="quarto-xref">Equation&nbsp;<span>13.17</span></a>.</p>
+</div>
+</div>
+</div>
+<p>The Euler-Lagrange equation is then <span class="math display">\[
+    -\partial_\mu \frac{\partial \mathcal{L}_{\rm EM}}{\partial \partial_\mu A_\nu} = \frac{1}{\mu_0}\partial_\mu F^{\mu\nu} = 0,
+\]</span> which is the relativistic Maxwell equation with no sources.</p>
+<p>To deal with the inhomogeneous case we add the interaction term with a matter field electric 4-current <span id="eq-lemint"><span class="math display">\[
+    \mathcal{L}_{\rm EM-int} = \mathcal{L}_{\rm EM} + \mathcal{L}_{\rm int} = -\frac{1}{4\mu_0}F^{\mu\nu}F_{\mu\nu} - A_\mu j^\mu.
+\tag{13.18}\]</span></span> The same calculation now has <span class="math display">\[
+    \frac{\partial \mathcal{L}_{\rm EM-int}}{\partial A_\nu} = -j^\nu,
+\]</span> while the other term remains as <span class="math display">\[
+    \frac{\partial \mathcal{L}_{\rm EM-int}}{\partial \partial_\mu A_\nu} = -\frac{1}{\mu_0}F^{\mu\nu},
+\]</span> so the Euler-Lagrange equation becomes <span class="math display">\[
+    -j^\nu + \frac{1}{\mu_0}\partial_\mu F^{\mu\nu} = 0
+\]</span> hence we recover the relativistic Maxwell equation <span class="math display">\[
+    \partial_\mu F^{\mu\nu} = \mu_0 j^\nu.
+\]</span> The construction of <span class="math inline">\(\mathcal{L}_{\rm EM-int}\)</span> in <a href="#eq-lemint" class="quarto-xref">Equation&nbsp;<span>13.18</span></a> illustrates a very general principle in field theory. Namely, that we build Lagrangians by first determining a “free” field contribution, <span class="math inline">\(\mathcal{L}_{\rm EM}\)</span> in this case, and then add contribution to account for its interaction with another field <span class="math inline">\(\mathcal{L}_{\rm int}\)</span>. To complete this story we should also add a “free” field contribution for this second field as well to give a full Lagrangian for two interacting fields. In our case this would be a Lagrangian for “electrodynamics” of the form <span id="eq-lfull"><span class="math display">\[
+    \mathcal{L}_{\rm ED} = \mathcal{L}_{\rm EM} + \mathcal{L}_{\rm int} + \mathcal{L}_{\rm matter},
+\tag{13.19}\]</span></span> where <span class="math inline">\(\mathcal{L}_{\rm matter}\)</span> describes the dynamics of the matter which generates the 4-current <span class="math inline">\(j^\mu\)</span>. We can already see that <span class="math inline">\(\mathcal{L}_{\rm matter}\)</span> is essential since the interaction term, which depends explicitly on the 4-vector potential <span class="math inline">\(A_\mu\)</span>, is not gauge invariant, as we originally demanded <span class="math inline">\(\mathcal{L}_{\rm EM}\)</span> be. This tells us that the matter field must also change whenever a gauge transformation is made, and do so in such a way that <span class="math inline">\(\mathcal{L}_{\rm int}\)</span> becomes gauge invariant. Fleshing this out and building <span class="math inline">\(\mathcal{L}_{\rm matter}\)</span> is not formally a part of this course, but we will get a taste for what it looks like in the final <strong>non-examinable</strong> lecture of this course on <em>relativistic quantum mechanics</em>.</p>
+</section>
+<section id="the-em-stress-energy-tensor" class="level2" data-number="13.4">
+<h2 data-number="13.4" class="anchored" data-anchor-id="the-em-stress-energy-tensor"><span class="header-section-number">13.4</span> The EM stress-energy tensor</h2>
+<p>Now we have arrived at an electromagnetic Lagrangian <span class="math inline">\(\mathcal{L}_{\rm EM}\)</span> for a free field we should apply Noether’s theorem and compute its corresponding stress-energy tensor. Back in <a href="./symmetries.html">Symmetries and Noether’s theorem</a> we derived the stress-energy tensor for a scalar field <span class="math inline">\(\varphi(x)\)</span> as <span id="eq-scalar_can_stress_en"><span class="math display">\[
+    T^{\mu\nu} = \frac{\partial \mathcal{L}}{\partial(\partial_\mu\varphi)} \partial^\nu \varphi - \mathcal{L}\eta^{\mu\nu},
+\tag{13.20}\]</span></span> based on translating the field in space-time by <span class="math inline">\(a^\mu\)</span> as <span class="math display">\[
+    \varphi(x) \mapsto \varphi(x+a) = \varphi(x) + \overbrace{a^\mu\partial_\mu\varphi(x)}^{\delta_S\varphi(x)} + \dots
+\]</span> For a one-form field <span class="math inline">\(A_\mu(x)\)</span> of the 4-vector potential in EM we have an analogous symmetry induced variation <span class="math display">\[
+    A_\mu(x) \mapsto A_\mu(x+a) = A_\mu(x) + \overbrace{a^\nu\partial_\nu A_\mu(x)}^{\delta_S A_\mu(x)} + \dots
+\]</span> so the only difference is the <span class="math inline">\(\mu\)</span> of the field. The same derivation therefore arrives at the obvious generalisation of <a href="#eq-scalar_can_stress_en" class="quarto-xref">Equation&nbsp;<span>13.20</span></a> to a one-form field to get its “canonical” stress-energy tensor as <span id="eq-4vec_can_stress_en"><span class="math display">\[
+    T^{\mu\nu}_{\rm can} = \frac{\partial \mathcal{L}_{\rm EM}}{\partial(\partial_\mu A_\sigma)} \partial^\nu A_\sigma - \mathcal{L}_{\rm EM}\eta^{\mu\nu}.
+\tag{13.21}\]</span></span> We can evaluate this result immediately using <a href="#eq-dLdA" class="quarto-xref">Equation&nbsp;<span>13.17</span></a> to find <span id="eq-Temcan"><span class="math display">\[
+    T^{\mu\nu}_{\rm can} = -\frac{1}{\mu_0}F^{\mu\sigma}\partial^\nu A_\sigma + \frac{1}{4\mu_0}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta}.
+\tag{13.22}\]</span></span> However, there are two major problems with this result:</p>
+<ol type="a">
+<li><p>It is not <strong>symmetric</strong> so <span class="math inline">\(T^{\mu\nu}_{\rm can} \neq T^{\nu\mu}_{\rm can}\)</span>. This causes deep issues for general relativity since the stress-energy tensor is the source of gravity and the Einstein field tensor <span class="math inline">\(G^{\mu\nu}\)</span> it generates must be symmetric, which is not manifest if <span class="math inline">\(T^{\mu\nu}\)</span> isn’t. Also a lack of symmetry in the stress-energy tensor points to orbital angular momentum not being locally conserved.</p></li>
+<li><p>It is not <strong>gauge invariant</strong>! The stress-energy tensor contains physical observables like the energy density and momentum fluxes of the field which must be gauge invariant. We also know from classical electromagnetism that these can be expressed in terms of the <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> fields which are gauge invariant.</p></li>
+</ol>
+<p>Both these issues can be solved in a process called <em>Belifante-Rosenfeld</em> symmetrisation. We will only sketch the details here. The idea is to modify the stress-energy tensor as <span class="math display">\[
+    T^{\mu\nu}_{\rm EM} = T^{\mu\nu}_{\rm can} + \partial_\rho \Gamma^{\rho\mu\nu},
+\]</span> where <span class="math inline">\(\Gamma^{\rho\mu\nu}\)</span> is called the Belifante tensor which is antisymmetric in its first two indices <span class="math display">\[
+    \Gamma^{\rho\mu\nu} = -\Gamma^{\mu\rho\nu}.
+\]</span> We are free to add such a term to the stress-energy tensor since it does not effect its 4-divergence <span class="math display">\[
+    \partial_\mu T^{\mu\nu} = \partial_\mu T^{\mu\nu}_{\rm can} + \partial_\mu\partial_\rho \Gamma^{\rho\mu\nu} = \partial_\mu T^{\mu\nu}_{\rm can} = 0,
+\]</span> where we used the symmetry of the derivatives <span class="math inline">\(\partial_\mu\partial_\rho\)</span> and antisymmetry of <span class="math inline">\(\Gamma^{\rho\mu\nu}\)</span>. For this trick to be useful we need to be able to readily construct a Belifante tensor using the basic ingredients of our theory. A good choice is <span id="eq-belifante"><span class="math display">\[
+    \Gamma^{\rho\mu\nu} = -\frac{1}{\mu_0}F^{\rho\mu}A^\nu,
+\tag{13.23}\]</span></span> which has the required property and whose form is motivated by its similarity to the first term <a href="#eq-Temcan" class="quarto-xref">Equation&nbsp;<span>13.22</span></a>. Adding the 4-divergence of this term fixes the EM stress-energy as <span id="eq-Tem"><span class="math display">\[
+    T^{\mu\nu}_{\rm EM} = -\frac{1}{\mu_0}\eta^{\nu\alpha}F_{\alpha\beta}F^{\mu\beta} + \frac{1}{4\mu_0}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta}.
+\tag{13.24}\]</span></span> Since this new version depends only on the Faraday tensor it is gauge invariant. It is easy to confirm that it is also symmetric.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-9-contents" aria-controls="callout-9" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-9" class="callout-9-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>6. Belifante-Rosenfeld symmetrisation</strong></p>
+<p>Use the Belifante tensor in <a href="#eq-belifante" class="quarto-xref">Equation&nbsp;<span>13.23</span></a> to derive the symmetrised electromagnetic stress-energy tensor <span class="math inline">\(T^{\mu\nu}_{\rm EM}\)</span> stated in <a href="#eq-Tem" class="quarto-xref">Equation&nbsp;<span>13.24</span></a>.</p>
+<p><strong>7. Symmetric stress-energy tensor</strong></p>
+<p>Check that <span class="math inline">\(T^{\mu\nu}_{\rm EM}\)</span> in <a href="#eq-Tem" class="quarto-xref">Equation&nbsp;<span>13.24</span></a> is symmetric as claimed.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-10" class="callout-10-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>6. Belifante-Rosenfeld symmetrisation</strong></p>
+<p>Given <span class="math display">\[
+    T^{\mu\nu}_{\rm can} = -\frac{1}{\mu_0}F^{\mu\sigma}\partial^\nu A_\sigma + \frac{1}{4\mu_0}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta},
+\]</span> we can focus our attention on the first term, since the second is already symmetric and gauge invariant. First using <a href="#eq-belifante" class="quarto-xref">Equation&nbsp;<span>13.23</span></a> we compute <span class="math display">\[
+    \partial_\rho \Gamma^{\rho\mu\nu} = -\frac{1}{\mu_0}\partial_\rho (F^{\rho\mu}A^\nu) =  -\frac{1}{\mu_0}\left(A^\nu \partial_\rho F^{\rho\mu} + F^{\rho\mu}\partial_\rho A^\nu\right) =  -\frac{1}{\mu_0}F^{\rho\mu}\partial_\rho A^\nu,
+\]</span> where we have used that <span class="math inline">\(\partial_\rho F^{\rho\mu} = 0\)</span> for a free EM field. Hence <span class="math display">\[
+\begin{align}
+    T^{\mu\nu}_{\rm EM} &amp;= T^{\mu\nu}_{\rm can} + \partial_\rho \Gamma^{\rho\mu\nu}, \\
+    &amp;= -\frac{1}{\mu_0}F^{\mu\sigma}\partial^\nu A_\sigma + \frac{1}{4\mu_0}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta} -\frac{1}{\mu_0}F^{\rho\mu}\partial_\rho A^\nu, \\
+    &amp;= -\frac{1}{\mu_0}\left(F^{\mu\sigma}\partial^\nu A_\sigma + F^{\sigma\mu}\partial_\sigma A^\nu\right) + \frac{1}{4\mu_0}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta}, \\
+    &amp;= -\frac{1}{\mu_0}F^{\mu\sigma}\left(\partial^\nu A_\sigma - \partial_\sigma A^\nu\right) + \frac{1}{4\mu_0}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta}, \\
+    &amp;= -\frac{1}{\mu_0}F^{\mu\sigma}{F^\nu}_\sigma + \frac{1}{4\mu_0}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta}, \\
+    &amp;= -\frac{1}{\mu_0}\eta^{\nu\alpha}F_{\alpha\beta}F^{\mu\beta} + \frac{1}{4\mu_0}\eta^{\mu\nu}F_{\alpha\beta}F^{\alpha\beta},
+\end{align}
+\]</span> where the antisymmetry of <span class="math inline">\(F^{\mu\nu}\)</span> has been used along with several dummy index relabellings along the way. We therefore recover <a href="#eq-Tem" class="quarto-xref">Equation&nbsp;<span>13.24</span></a> as required.</p>
+<p><strong>7. Symmetric stress-energy tensor</strong></p>
+<p>Using <a href="#eq-Tem" class="quarto-xref">Equation&nbsp;<span>13.24</span></a> we have the swapped version <span class="math display">\[
+    T^{\nu\mu}_{\rm EM} = -\frac{1}{\mu_0}\eta^{\mu\alpha}F_{\alpha\beta}F^{\nu\beta} + \frac{1}{4\mu_0}\eta^{\nu\mu}F_{\alpha\beta}F^{\alpha\beta}.
+\]</span> The second term is symmetric since the metric is <span class="math inline">\(\eta^{\nu\mu}=\eta^{\mu\nu}\)</span>. For the first term the following index manipulations with the metric give <span class="math display">\[
+    \eta^{\mu\alpha}F_{\alpha\sigma}F^{\nu\sigma} = \eta_{\sigma\beta}F^{\mu\beta}F^{\nu\sigma} = \eta^{\nu\alpha}F_{\alpha\beta}F^{\mu\beta},
+\]</span> showing it is also symmetric, hence <span class="math inline">\(T^{\mu\nu}_{\rm EM} = T^{\nu\mu}_{\rm EM}\)</span>.</p>
+</div>
+</div>
+</div>
+<p>Armed with <span class="math inline">\(T^{\mu\nu}_{\rm EM}\)</span> it makes sense to evaluate the 00 element directly as <span class="math display">\[
+\begin{align}
+    T^{00}_{\rm EM} &amp;= -\frac{1}{\mu_0}\eta^{00}F_{0i}F^{0i} - \eta^{00}\mathcal{L}_{\rm EM}, \\
+    &amp;= \frac{1}{\mu_0}\frac{|\boldsymbol{E}|^2}{c^2} - \frac{\epsilon_0}{2}|\boldsymbol{E}|^2 + \frac{\mu_0}{2}|\boldsymbol{B}|^2, \\
+    &amp;= \frac{\epsilon_0}{2}|\boldsymbol{E}|^2 + \frac{1}{2\mu_0}|\boldsymbol{B}|^2 = W,
+\end{align}
+\]</span> where we have used <a href="#eq-lem_fields" class="quarto-xref">Equation&nbsp;<span>13.16</span></a> to express <span class="math inline">\(\mathcal{L}_{\rm EM}\)</span> in terms of the physical fields. What we recover is that <span class="math inline">\(T^{00}_{\rm EM}\)</span> is the energy density of the EM field <span class="math inline">\(W\)</span>, as reviewed in <a href="./em_revision.html">Revision of Electromagnetism</a>. Examining all the elements of <span class="math inline">\(T^{\mu\nu}_{\rm EM}\)</span> reveals it has the structure <span id="eq-tem_block"><span class="math display">\[
+    T^{\mu\nu}_{\rm EM} = \begin{pmatrix} W &amp; \boldsymbol{S}^{\rm T}/c \\
+    \boldsymbol{S}/c &amp; -\boldsymbol{\sigma} \end{pmatrix},
+\tag{13.25}\]</span></span> where <span class="math inline">\(\boldsymbol{S} =\mu_0^{-1} \boldsymbol{E} \times \boldsymbol{B}\)</span> is the Poynting vector and <span class="math display">\[
+    [\boldsymbol{\sigma}]_{ij} = \epsilon_0 E_iE_j + \mu_0^{-1}B_iB_j - W\delta_{ij},
+\]</span> is the Maxwell stress tensor. As required <span class="math inline">\(T^{\mu\nu}_{\rm EM}\)</span> encompasses the dynamics of energy and momentum in the EM field.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-11-contents" aria-controls="callout-11" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-11" class="callout-11-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>8. Electromagnetic stress-energy tensor</strong></p>
+<ol type="a">
+<li><p>Verify the claim made that <span class="math inline">\(T^{\mu\nu}\)</span> can be written in <span class="math inline">\(1+3\)</span> block form in <a href="#eq-tem_block" class="quarto-xref">Equation&nbsp;<span>13.25</span></a>.</p></li>
+<li><p>The 4-vector <span class="math inline">\(f^{\mu} \equiv F^{\mu\tau}j_{\tau}\)</span> is called the <em>Lorentz force density</em>. It is the natural generalization of the relativistic Lorentz force to a continuous charged field with 4-current <span class="math inline">\(j^\nu\)</span>. Show that the following expression relating it to the electromagnetic stress-energy tensor, <span class="math display">\[
+\partial_{\nu} T^{\mu\nu} = -f^{\mu},
+\]</span> can be rewritten as <span class="math display">\[
+\begin{eqnarray}
+   \dot{W} + \nabla \cdot \boldsymbol{S} &amp; = &amp; -\boldsymbol{j}\cdot\boldsymbol{E} \\
+   c^{-2} \dot{\boldsymbol{S}} - \nabla\cdot\boldsymbol{\sigma} &amp; = &amp; - \rho \boldsymbol{E} - \boldsymbol{j} \times \boldsymbol{B},
+\end{eqnarray}
+\]</span> where <span class="math inline">\((\nabla\cdot\boldsymbol{\sigma})^k = \partial_j \sigma^{jk}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-12" class="callout-12-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>8. Electromagnetic stress-energy tensor</strong></p>
+<ol type="a">
+<li><p>Take the stress-energy tensor <span class="math display">\[
+\begin{align}
+T^{\mu\nu}_{\rm EM} &amp;= \mu_0^{-1} \left(-F^{\mu\rho} F^\nu_{\ \rho} + \frac{1}{4} \eta^{\mu\nu} F^{\rho\sigma}F_{\rho\sigma}\right), \\
+&amp;= \mu_0^{-1} \left( - F^{\mu\rho} F^\nu_{\ \rho} - \frac{1}{2} \eta^{\mu\nu} a \right),
+\end{align}
+\]</span> where <span class="math inline">\(a = \frac{E^2}{c^2} - B^2\)</span> is the EM scalar invariant found before. Now <span class="math display">\[
+- F^{\mu\rho} F^\nu_{\ \rho} = F^\nu_{\ \rho} F^{\rho\mu}
+\]</span> can be expressed as a conventional matrix product involving the matrices <span class="math display">\[
+F^\nu_{\ \rho} = \begin{pmatrix}
+0 &amp; E_x &amp; E_y &amp; E_z \\
+E_x &amp; 0 &amp; B_z &amp; -B_y \\
+E_y &amp; -B_z &amp; 0 &amp; B_x \\
+E_z &amp; B_y &amp; -B_x &amp; 0
+\end{pmatrix},
+\]</span> <span class="math display">\[
+F^{\rho\mu} = \begin{pmatrix}
+0 &amp; -E_x &amp; -E_y &amp; -E_z \\
+E_x &amp; 0 &amp; -B_z &amp; B_y \\
+E_y &amp; B_z &amp; 0 &amp; -B_x \\
+E_z &amp; -B_y &amp; B_x &amp; 0
+\end{pmatrix}.
+\]</span> For simplicity we have set <span class="math inline">\(c = 1\)</span>, and will restore <span class="math inline">\(c^{-1}\)</span> on the electric field component at the end. Thus <span class="math display">\[
+F^\nu_{\ \rho} F^{\rho\mu} =
+\begin{pmatrix}
+E^2 &amp; B_z E_y - B_y E_z &amp; B_x E_z - B_z E_x &amp; B_y E_x - B_x E_y \\
+B_z E_y - B_y E_z &amp; -E_x^2 + B_z^2 + B_y^2 &amp; -E_x E_y - B_x B_y &amp; -E_x E_z - B_x B_z \\
+B_x E_z - B_z E_x &amp; -E_x E_y - B_x B_y &amp; -E_y^2 + B_z^2 + B_x^2 &amp; -E_y E_z - B_y B_z \\
+B_y E_x - B_x E_y &amp; -E_x E_z - B_x B_z &amp; -E_y E_z - B_y B_z &amp;   -E_z^2 + B_y^2 + B_x^2
+\end{pmatrix},
+\]</span> and <span class="math display">\[
+\frac{1}{2} \eta^{\mu\nu} a = \begin{pmatrix}
+\frac{B^2 - E^2}{2} &amp; 0 &amp; 0 &amp; 0 \\
+0 &amp; \frac{E^2 - B^2}{2} &amp; 0 &amp; 0 \\
+0 &amp; 0 &amp; \frac{E^2 - B^2}{2} &amp; 0 \\
+0 &amp; 0 &amp; 0 &amp; \frac{E^2 - B^2}{2}
+\end{pmatrix}
+\]</span> Hence <span class="math display">\[
+T^{\mu\nu} =
+\begin{pmatrix}
+\frac{E^2 + B^2}{2} &amp; E_y B_z - E_z B_y &amp; E_z B_x - E_x B_z &amp; E_x B_y - E_y B_x \\
+E_y B_z - E_z B_y &amp; -E_x^2 - B_x^2 + \frac{1}{2}(E^2 + B^2) &amp; -E_x E_y - B_x B_y &amp; -E_x E_z - B_x B_z \\
+E_z B_x - E_x B_z &amp; -E_x E_y - B_x B_y &amp; -E_y^2 - B_y^2 + \frac{1}{2}(E^2 + B^2) &amp; -E_y E_z - B_y B_z \\
+E_x B_y - E_y B_x &amp; -E_x E_z - B_x B_z &amp; -E_y E_z - B_y B_z &amp; -E_z^2 - B_z^2 + \frac{1}{2}(E^2 + B^2)
+\end{pmatrix},
+\]</span> which, on multiplying through by <span class="math inline">\(\mu_0^{-1}\)</span> and dividing each <span class="math inline">\(\boldsymbol{E}\)</span> field component by <span class="math inline">\(c\)</span>, gives <span class="math display">\[
+T^{\mu\nu} = \begin{pmatrix}
+W &amp; \boldsymbol{S}^{\rm T}/c \\
+\boldsymbol{S}/c &amp; -\boldsymbol{\sigma}
+\end{pmatrix},
+\]</span> as claimed.</p></li>
+<li><p>Taking the expression <span class="math display">\[
+\partial_\nu T^{\mu\nu} = - f^\mu.
+\]</span> The charged matter 4-current is given as <span class="math display">\[
+j_\tau = \begin{pmatrix} \rho c\\
+                          -\boldsymbol{j} \end{pmatrix}
+\]</span> then <span class="math display">\[
+\begin{align}
+f^\mu &amp;= F^{\mu\tau} j_\tau
+       &amp;= \begin{pmatrix}
+(-\boldsymbol{E}/c)\cdot(-\boldsymbol{j}) \\
+E_x \rho + B_z j_y - B_y j_z \\
+E_y \rho + B_x j_z - B_z j_x \\
+E_z \rho + B_y j_x - B_x j_y
+\end{pmatrix},
+&amp;= \begin{pmatrix} \frac{\boldsymbol{E}\cdot \boldsymbol{j}}{c} \\
+\rho \boldsymbol{E} + \boldsymbol{j} \times \boldsymbol{B} \end{pmatrix}.
+\end{align}
+\]</span> So if <span class="math display">\[
+\partial_\nu T^{0\nu} = -f^0,
+\]</span> then <span class="math display">\[
+c^{-1} \dot{E} + c^{-1} \boldsymbol{\nabla}\cdot \boldsymbol{S}= - c^{-1} \boldsymbol{j}\cdot \boldsymbol{E},
+\]</span> i.e. <span class="math display">\[
+\dot{E} + \boldsymbol{\nabla}\cdot \boldsymbol{S} = - \boldsymbol{j}\cdot \boldsymbol{E},
+\]</span> as expected. Similarly, for the momentum for each <span class="math inline">\(i=1,2,3\)</span> we have <span class="math display">\[
+\partial_\nu T^{i\nu} = - f^i,
+\]</span> then <span class="math display">\[
+c^{-2} \dot{S}_i - \partial_k \sigma^{ik} = - \left(\rho E_i + (\boldsymbol{j}\times \boldsymbol{B})_i\right),
+\]</span> i.e. <span class="math display">\[
+c^{-2} \dot{\boldsymbol{S}} - \boldsymbol{\nabla}\cdot \boldsymbol{\sigma} = - \rho \boldsymbol{E} - \boldsymbol{j}\times \boldsymbol{B},
+\]</span> as required. You should recognise the first equation as the conservation of electromagnetic energy. The second equation, which expresses the back-reaction of the Lorentz force on the electromagnetic field, can be interpreted as conservation of electromagnetic momentum.</p></li>
+</ol>
+</div>
+</div>
+</div>
+</section>
+<section id="first-principles-construction-of-field-theories" class="level2 page-columns page-full" data-number="13.5">
+<h2 data-number="13.5" class="anchored" data-anchor-id="first-principles-construction-of-field-theories"><span class="header-section-number">13.5</span> First principles construction of field theories</h2>
+<p>In this course we have constructed field theories from Lorentz scalar and now 4-vector fields. The Lagrangians we have encountered had very similar forms suggesting that there maybe deeper principle constraining their structure. In fact we can postulate three fundamental properties we expect from a theory built from a field <span class="math inline">\(X\)</span> which could a scalar, 4-vector or tensor:</p>
+<ol type="1">
+<li><p>The Lagrangian <span class="math inline">\(\mathcal{L}\)</span> governing <span class="math inline">\(X\)</span> must be a real-valued Lorentz scalar field. This means <span class="math inline">\(\mathcal{L}\)</span> can only contain terms that are Lorentz scalars formed from contractions of <span class="math inline">\(X\)</span> and its derivatives <span class="math inline">\(\partial_\mu X\)</span> using only the metric tensor <span class="math inline">\(\eta^{\mu\nu}\)</span> and the totally antisymmetric symbol <span class="math inline">\(\epsilon^{\mu\nu\sigma\tau}\)</span>.</p></li>
+<li><p>We require that field equations derived from <span class="math inline">\(\mathcal{L}\)</span> be linear equations in <span class="math inline">\(X\)</span>. This means <span class="math inline">\(\mathcal{L}\)</span> can contain at most terms that are quadratic in <span class="math inline">\(X\)</span> and <span class="math inline">\(\partial_\mu X\)</span>.</p></li>
+<li><p>For a given field <span class="math inline">\(X\)</span> we require <span class="math inline">\(\mathcal{L}\)</span> to be a theory described exclusively by the type of object the field <span class="math inline">\(X\)</span> is so there is no hidden dependence on a simpler field object. Enforcing this is equivalent to a form of <em>gauge invariance</em> for <span class="math inline">\(X\)</span>.</p></li>
+</ol>
+<div class="page-columns page-full"><p>As an example we can apply this approach for <span class="math inline">\(X = \varphi\)</span> is a real Lorentz scalar field. In this case properties 1. and 2. give a general Lagrangian <span class="math display">\[
+    \mathcal{L}_{\rm s} = a_1 \varphi + a_2 \varphi^2 + a_3 \partial_\mu\varphi\partial^\mu \varphi,
+\]</span> where <span class="math inline">\(a_1,a_2,a_3\)</span> are Lorentz scalar coefficients. Property <strong>3.</strong> demands that <span class="math inline">\(\mathcal{L}_{\rm s}\)</span> is invariant to the field transformation <span class="math inline">\(\varphi \mapsto \varphi + g\)</span>, where <span class="math inline">\(g\)</span> is an arbitrary Lorentz scalar constant. It is easy to show this invariance requires <span class="math inline">\(a_1 = a_2 = 0\)</span> giving the d’Alembert Lagrangian as the unique scalar field theory up to an overall constant. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">The <strong>mock exam paper</strong> has a section C problem on the content of this section. Some of the statements below are question in this problem.</span></div></div>
+<p>A much less trivial example, relevant to this lecture, is when <span class="math inline">\(X = A^\mu\)</span>, a real-valued 4-vector field, much like electromagnetism. In this case the application of properties 1. and 2. give a general Lagrangian with numerous terms <span id="eq-L4vec"><span class="math display">\[
+\begin{align}
+\mathcal{L}_{\rm v} &amp;= b_1 A_\mu A^\mu + b_2 \partial_\mu A^\mu + b_3 (\partial_\mu A^\mu) (\partial_\nu A^\nu)\\
+&amp;\quad + \, b_4 (\partial_\mu A_\nu) (\partial^\mu A^\nu) + b_5 (\partial_\mu A_\nu) (\partial^\nu A^\mu) \\
+&amp;\quad + \, b_6 \epsilon^{\mu\nu\sigma\tau}(\partial_\mu A_\nu) (\partial_\sigma A_\tau) + b_7 \epsilon^{\mu\nu\sigma\tau}(\partial_\mu\partial_\nu A_\sigma) A_\tau,
+\end{align}
+\tag{13.26}\]</span></span> where <span class="math inline">\(b_1,b_2,\cdots,b_7\)</span> are Lorentz scalar coefficients. Notice that the fourth and fifth terms look like those in <span class="math inline">\(\mathcal{L}_{\rm EM}\)</span> we considered above. However, the sixth term here is the form of term we would have got instead from the second Lorentz invariant for EM. One might ask why we couldn’t have just used this quantity for the EM Lagrangian.</p>
+<div class="page-columns page-full"><p>To proceed we simplify this <span class="math inline">\(\mathcal{L}_v\)</span> by dropping the 2nd term <span class="math inline">\(\partial_\mu A^\mu\)</span> since this is a 4-divergence term. The seventh term in <a href="#eq-L4vec" class="quarto-xref">Equation&nbsp;<span>13.26</span></a> can be shown to be identically zero, meaning <span class="math inline">\(b_7\)</span> can take any value we wish. Using this, the seventh term can be combined with the sixth term to make a 4-divergence, and hence dropped also. This explains why the second EM Lorentz invariant can’t be used as a Lagrangian. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">See <strong>mock exam paper</strong>.</span></div></div>
+<p>To make further progress we consider the 4-vector field <span id="eq-divterm"><span class="math display">\[
+    B^\mu = (\partial_\nu A^\mu)A^\nu - A^\mu(\partial_\nu A^\nu).
+\tag{13.27}\]</span></span> We can add multiple of <span class="math inline">\(\partial_\mu B^\mu\)</span> to <span class="math inline">\(\mathcal{L}_v\)</span> with no effect on the equations of motion. You are invited to show that this can simplify the Lagrangian further.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-13" class="callout-13-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>9. Removing the third term</strong></p>
+<p>Show that by adding some multiple of <span class="math inline">\(\partial_\mu B^\mu\)</span> to <span class="math inline">\(\mathcal{L}_{\rm v}\)</span> the third term can be cancelled out leaving the simplified Lagrangian <a href="#eq-Lsimplified" class="quarto-xref">Equation&nbsp;<span>13.28</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-14" class="callout-14-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>9. Removing the third term</strong></p>
+<p>Take given 4-vector field <span class="math display">\[
+    B^\mu = (\partial_\nu A^\mu) A^\nu - A^\mu (\partial_\nu A^\nu)
+\]</span> We can add any multiple of <span class="math inline">\(\partial_\mu B^\mu\)</span> without changing the field equations. So: <span class="math display">\[
+\begin{align}
+    \partial_\mu B^\mu &amp;= (\partial_\mu \partial_\nu A^\mu) A^\nu + (\partial_\nu A^\mu)(\partial_\mu A^\nu) \\
+    &amp;- (\partial_\mu A^\mu)(\partial_\nu A^\nu) - A^\mu (\partial_\mu \partial_\nu A^\nu).
+\end{align}
+\]</span> We next spot that the 1st and 4th terms can be made to equal each other by commuting derivatives and relabelling <span class="math display">\[
+    A^\mu (\partial_\mu \partial_\nu A^\nu) = A^\mu (\partial_\nu \partial_\mu A^\nu) = (\partial_\mu \partial_\nu A^\mu) A^\nu,
+\]</span> meaning they cancel out. So we are left with <span class="math display">\[
+    \partial_\mu B^\mu = (\partial_\nu A^\mu)(\partial_\mu A^\nu) - (\partial_\mu A^\mu)(\partial_\nu A^\nu),
+\]</span> which equals the fifth minus the third term in <span class="math inline">\(\mathcal{L}_v\)</span>. Consequently, if we add <span class="math inline">\(b_3 \partial_\mu B^\mu\)</span> then the 3rd term in <span class="math inline">\(\mathcal{L}_v\)</span> is cancelled out leaving <span class="math display">\[
+    \mathcal{L}_v = b_1 A_\mu A^\mu + b_4 (\partial_\mu A_\nu)(\partial^\mu A^\nu) +
+    (b_5 + b_3)(\partial_\mu A_\nu)(\partial^\nu A^\mu),
+\]</span> which equals <a href="#eq-Lsimplified" class="quarto-xref">Equation&nbsp;<span>13.28</span></a> once <span class="math inline">\((b_5 + b_3) \mapsto b'_5\)</span>.</p>
+</div>
+</div>
+</div>
+<p>By cancelling out the third term we are left with only three terms <span id="eq-Lsimplified"><span class="math display">\[
+\begin{align*}
+\mathcal{L}_{\rm v} &amp;= b_1 A_\mu A^\mu + b_4 (\partial_\mu A_\nu) (\partial^\mu A^\nu) + b'_5 (\partial_\mu A_\nu) (\partial^\nu A^\mu),
+\end{align*}
+\tag{13.28}\]</span></span> once we redefine the coefficient <span class="math inline">\((b_5 + b_3) \mapsto b'_5\)</span>.</p>
+<p>We now come to the application of property 3. to <span class="math inline">\(\mathcal{L}_{\rm v}\)</span>. In this context we require our theory to describe a genuine 4-vector field and have no hidden dependence on a simpler scalar field <span class="math inline">\(\chi\)</span> that could generate a 4-vector field as <span class="math inline">\(\partial^\mu\chi\)</span>. It thus demands that <span class="math inline">\(\mathcal{L}_{\rm v}\)</span> is invariant to the field transformation <span class="math display">\[
+    A^\mu \mapsto A^\mu + \partial^\mu \chi,
+\]</span> meaning that if <span class="math inline">\(A^\mu\)</span> was a scalar field it could just be gauged away. From this perspective the familiar gauge transformation from electromagnetism is viewed as ensuring that a 4-vector field really is the fundamental description of its physics! Applying this invariance to <span class="math inline">\(\mathcal{L}_{\rm v}\)</span> results in <span class="math inline">\(b_1 = 0\)</span> and <span class="math inline">\(b_4 = - b'_5\)</span> leaving <span id="eq-Lv_oneterm"><span class="math display">\[
+\mathcal{L}_{\rm v} = b_4 (\partial_\mu A_\nu) F^{\mu\nu},
+\tag{13.29}\]</span></span> where <span class="math inline">\(F^{\mu\nu}\)</span> is the Faraday tensor, as you are invited to now show.</p>
+<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Work-along exercises
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-15" class="callout-15-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>10. Final simplification</strong></p>
+<p>Show the gauge invariance of property <strong>3.</strong> requires that <span class="math inline">\(b_1 = 0\)</span> and <span class="math inline">\(b_4 = - b'_5\)</span> resulting in the unique 4-vector theory given in <a href="#eq-Lv_oneterm" class="quarto-xref">Equation&nbsp;<span>13.29</span></a>.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-16" class="callout-16-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>10. Final simplification</strong></p>
+<p>Insert gauge transformation <span class="math display">\[
+    A^\mu \rightarrow A^\mu + \partial^\mu \chi,
+\]</span> into <span class="math inline">\(\mathcal{L}_v\)</span> to get <span class="math display">\[
+\begin{align}
+    \mathcal{L}_v \rightarrow \tilde{\mathcal{L}}_v &amp;= b_1 (A_\mu + \partial_\mu \chi)(A^\mu + \partial^\mu \chi) + b_4 (\partial_\mu (A_\nu + \partial_\nu \chi))(\partial^\mu (A^\nu + \partial^\nu \chi)) \\
+    &amp; \quad + \, b_5' (\partial_\mu (A_\nu + \partial_\nu \chi))(\partial^\nu (A^\mu + \partial^\mu \chi)).
+\end{align}
+\]</span> Now expand and simplify terms <span class="math display">\[
+\begin{align}
+    \tilde{\mathcal{L}}_v &amp;= b_1 A_\mu A^\mu + 2b_1 A_\mu \partial^\mu \chi + b_1 (\partial_\mu \chi)(\partial^\mu \chi) \\
+    &amp;\quad + \, b_4 (\partial_\mu A_\nu)(\partial^\mu A^\nu) + b_4 (\partial_\mu A_\nu)(\partial^\mu \partial^\nu \chi) \\
+    &amp;\quad + \, b_4 (\partial_\mu \partial_\nu \chi)(\partial^\mu A^\nu) + b_4 (\partial_\mu \partial_\nu \chi)(\partial^\mu \partial^\nu \chi) \\
+    &amp;\quad + \, b_5' (\partial_\mu A_\nu)(\partial^\nu A^\mu) + b_5' (\partial_\mu A_\nu)(\partial^\nu \partial^\mu \chi)\\
+    &amp;\quad + \, b_5' (\partial_\mu \partial_\nu \chi)(\partial^\nu A^\mu) + b_5' (\partial_\mu \partial_\nu \chi)(\partial^\nu \partial^\mu \chi).
+\end{align}
+\]</span> Commute derivatives and relabel some terms: <span class="math display">\[
+\begin{align}
+    \tilde{\mathcal{L}}_v &amp;= \mathcal{L}_v + 2b_1 A_\mu \partial^\mu \chi + b_1 (\partial_\mu \chi)(\partial^\mu \chi) \\
+    &amp;\quad + \, 2b_4 (\partial_\mu A_\nu)(\partial^\mu \partial^\nu \chi) + b_4 (\partial_\mu \partial_\nu \chi)(\partial^\mu \partial^\nu \chi) \\
+    &amp;\quad + \, 2b_5' (\partial_\mu A_\nu)(\partial^\nu \partial^\mu \chi) + b_5' (\partial_\mu \partial_\nu \chi)(\partial^\nu \partial^\mu \chi).
+\end{align}
+\]</span> We then see that picking <span class="math inline">\(b_5' = - b_4\)</span> cancels out the last 4 terms. However, the first two <span class="math inline">\(\chi\)</span> dependent terms cannot be cancelled so we are forced to conclude <span class="math inline">\(b_1 = 0\)</span>. This leaves <span class="math display">\[
+\begin{align}
+    \mathcal{L}_v &amp;= b_4 \left[(\partial_\mu A_\nu)(\partial^\mu A^\nu) - (\partial_\mu A_\nu)(\partial^\nu A^\mu)\right], \\
+    &amp;= b_4 (\partial_\mu A_\nu)(\partial^\mu A^\nu - \partial^\nu A^\mu), \\
+    &amp;= b_4 (\partial_\mu A_\nu) F^{\mu\nu},
+\end{align}
+\]</span> which is <a href="#eq-Lv_oneterm" class="quarto-xref">Equation&nbsp;<span>13.29</span></a> as required.</p>
+</div>
+</div>
+</div>
+<p>The Lagrangian we have ended up with doesn’t look gauge invariant. However, we can easily manipulate it an explicitly gauge invariant form by spliting the term: <span class="math display">\[
+    \mathcal{L}_v = \frac{1}{2} b_4 \left[ (\partial_\mu A_\nu) F^{\mu\nu} + (\partial_\nu A_\mu) F^{\nu\mu}\right].
+\]</span> We then use antisymmetry of <span class="math inline">\(F^{\mu\nu}\)</span> <span class="math display">\[
+\begin{align}
+    \mathcal{L}_v &amp;= \frac{1}{2} b_4 \left[(\partial_\mu A_\nu) F^{\mu\nu} - (\partial_\nu A_\mu) F^{\mu\nu} \right], \\
+    &amp;= \frac{1}{2} b_4 (\partial_\mu A_\nu - \partial_\nu A_\mu) F^{\mu\nu},
+\end{align}
+\]</span> and finally before some relabelling to get <span class="math display">\[
+\mathcal{L}_v = \frac{1}{2} b_4 F_{\mu\nu} F^{\mu\nu}.
+\]</span> Thus, we have discovered the Lagrangian for a free electromagnetic field as a <strong>unique</strong> consequence of the three properties.</p>
+<p>Curiously, applying the same three properties to a symmetric rank-2 tensor field <span class="math inline">\(h_{\mu\nu}\)</span> the same reasoning (but with substantially more work) turns out to give a unique Lagrangian that is equivalent to the linearised version of General Relativity!</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 13</strong>.</span></div></div>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+End of the course
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Well done! You’ve reached the last part of examinable material in the course. However, there is more to explore if you are up for it. There is a <strong>non-examinable</strong> bonus lecture on <a href="quantum.qmd">Relativistic Quantum Mechanics</a> to give you a taste of how we can describe the matter field Lagrangian <span class="math inline">\(\mathcal{L}_{\rm matter}\)</span> mentioned above. There is also an in-depth <a href="./epilogue.html">epilogue</a> for the course which summarises what we have achieved and maps out where you can go next with the tools you have learnt. Hopefully you will see there is lots of exciting physics to explore.</p>
+</div>
+</div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./example_class4.html" class="pagination-link" aria-label="Example Class 4">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Example Class 4</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./example_class5.html" class="pagination-link" aria-label="Example Class 5">
+        <span class="nav-page-text">Example Class 5</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

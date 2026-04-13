@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Example Class 2 – Advanced Classical Mechanics (Relativistic Fields)</title>
+<title>14&nbsp; Relativistic Quantum Mechanics – Advanced Classical Mechanics (Relativistic Fields)</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./kinematics.html" rel="next">
-<link href="./tensors.html" rel="prev">
+<link href="./epilogue.html" rel="next">
+<link href="./example_class5.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -41,8 +41,6 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
 <link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/all.min.css" rel="stylesheet">
-<link href="site_libs/quarto-contrib/fontawesome6-1.2.0/latex-fontsize.css" rel="stylesheet">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -104,7 +102,7 @@ window.Quarto = {
 <link rel="stylesheet" href="styles.css">
 </head>
 
-<body class="nav-sidebar docked">
+<body class="nav-sidebar docked slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -113,7 +111,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./oneforms.html">II: Tensors and Fields</a></li><li class="breadcrumb-item"><a href="./example_class2.html">Example Class 2</a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quantum.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic Quantum Mechanics</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -202,13 +200,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
  <span class="menu-text">II: Tensors and Fields</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
@@ -223,7 +221,7 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./example_class2.html" class="sidebar-item-text sidebar-link active">
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Example Class 2</span></a>
   </div>
 </li>
@@ -313,7 +311,7 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./quantum.html" class="sidebar-item-text sidebar-link">
+  <a href="./quantum.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic Quantum Mechanics</span></span></a>
   </div>
 </li>
@@ -334,15 +332,22 @@ window.Quarto = {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
-        
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#quantum-mechanics-as-a-classical-field-theory" id="toc-quantum-mechanics-as-a-classical-field-theory" class="nav-link active" data-scroll-target="#quantum-mechanics-as-a-classical-field-theory"><span class="header-section-number">14.1</span> Quantum mechanics as a classical field theory</a></li>
+  <li><a href="#lagrangian-formulation-and-noether-currents" id="toc-lagrangian-formulation-and-noether-currents" class="nav-link" data-scroll-target="#lagrangian-formulation-and-noether-currents"><span class="header-section-number">14.2</span> Lagrangian formulation and Noether currents</a></li>
+  </ul>
+</nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./oneforms.html">II: Tensors and Fields</a></li><li class="breadcrumb-item"><a href="./example_class2.html">Example Class 2</a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title">Example Class 2</h1>
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic Quantum Mechanics</span></h1>
 </div>
 
 
@@ -359,362 +364,173 @@ window.Quarto = {
 </header>
 
 
-<p>In this example class we will explore some of the mathematical structures underlying the special theory of relativity.</p>
-<p>As usual let’s start with a <a href="./quiz/quiz_ec2.html">Multiple choice quiz</a>.</p>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<!-- 
+
+Content:
+
+Quantum wavefunctions as a "classical" complex field
+Einstein-Plank relation
+de Broglie relation
+4-vector formulation of these
+Plane-wave to motivate Energy and Momentum operators
+
+Construct Schrodinger equation and its essential properties. Mention spin has to be bolted on by hand. Not relativistic.
+
+Include drop-down box for the Schrodinger Lagrangian and Noether current - state don't derive.
+
+Motivate coupling to EM via the classical non-relativistic Lagrangian, leading to the covariant derivative for minimal coupling. Discuss gauge transformations and how a local phase transformation is required to make the covariant derivative "covariant".
+
+Introduce the Klein-Gordon equation 
+Discuss properties and plane-wave solutions (has been discussed earlier so can be a recap)
+Focus on the complex Lagrangian (mention real one) and compute its Noether current. 
+Discuss problems with the KG equation, negative probability density, negative energies.
+
+Show KG equation is covariant.
+
+Mention KG is not really minimally coupled (like Schrodinger)
+
+Motivate the Dirac equation in its Schrodinger-like form - by introducing 4-spinors (a new object). Show how it can be written in a covariant form once we account for 4-spinors transforming under Lorentz transformations. Derive the Noether current.
+Move to interacting Dirac equation and show it is minimally coupled. 
+
+Arrive at the "classical" QED Lagrangian.
+
+ -->
+<div class="page-columns page-full"><p>This final <strong>non-examinable</strong> lecture is a very brief introduction to <em>Relativistic Quantum Mechanics</em>. The aim is to give a flavour of the subject and to show how the tools we have developed in this course can be used to understand some of the key features of relativistic quantum theories, such as the Klein-Gordon and Dirac equations, and how they couple to electromagnetism. The purpose is to provide a nice stepping stone from this course to the 4th year Quantum Field Theory course. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">While the content in this lecture makes for great exam questions, it has to be non-examinable, since after all this is a course on Advanced Classical Mechanics, not Quantum Mechanics!</span></div></div>
+<section id="quantum-mechanics-as-a-classical-field-theory" class="level2 page-columns page-full" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="quantum-mechanics-as-a-classical-field-theory"><span class="header-section-number">14.1</span> Quantum mechanics as a classical field theory</h2>
+<p>So far we have considered fields as real and complex scalar fields, as well as 4-vector/one-form and tensor fields. Our use of complex scalar fields has been purely as a mathematical tool to make the algebra simpler, and we did not assign any physical significance to the complex field beyond this. Consequently the mathematical tools we have developed for classical field theories, Lagrangians, relativistic Euler-Lagrange equations, Noether currents etc., can be readily applied to quantum mechanics by interpreting the wavefunction <span class="math inline">\(\psi\)</span> itself as a classical complex scalar field. Of course this there will be some subtleties in doing this, since in quantum mechanics the complex character of the field is fundamental to its interpretation.</p>
+<p>The basic observational facts of quantum mechanics are encapsulated in the Einstein-Plank relation <span class="math display">\[
+    \mathcal{E} = \hbar \omega,
+\]</span> and the de Broglie relation <span class="math display">\[
+    \boldsymbol{p} = \hbar \boldsymbol{k},
+\]</span> which relate the relativistic energy <span class="math inline">\(\mathcal{E}\)</span> and relativistic 3-momentum <span class="math inline">\(\boldsymbol{p}\)</span> of a particle to the angular frequency <span class="math inline">\(\omega\)</span> and wavevector <span class="math inline">\(\boldsymbol{k}\)</span> of its associated wave. What is not often made clear in early quantum mechanics courses is that these relations are actually relativistic, and that they can be expressed in a 4-vector form as <span class="math display">\[
+    p^\mu = \hbar k^\mu, \quad {\rm or} \quad \begin{pmatrix} \mathcal{E}/c \\ \boldsymbol{p} \end{pmatrix} = \hbar \begin{pmatrix} \omega/c \\ \boldsymbol{k} \end{pmatrix}.
+\]</span> This relation applies to <strong>all</strong> quantum theories, relativistic or otherwise.</p>
+<p>A quantum wave with well-defined <span class="math inline">\(\boldsymbol{k}\)</span> and <span class="math inline">\(\omega\)</span> is called a plane-wave, and has the form <span id="eq-plane-wave"><span class="math display">\[
+    \psi(t, \boldsymbol{r}) = A e^{-i\omega t + i \boldsymbol{k} \cdot \boldsymbol{r}} = A e^{-i k_\mu x^\mu}.
+\tag{14.1}\]</span></span> From this “solution” we can motivate the form of the energy and momentum operators in quantum mechanics, which are given by <span class="math display">\[
+    \hat{\mathcal{E}} = i \hbar \frac{\partial}{\partial t}, \quad {\rm and} \quad \hat{\boldsymbol{p}} = -i \hbar \nabla.
+\]</span> The reason for this is seen once we apply these operators to the plane-wave solution we get <span class="math display">\[
+    \hat{\mathcal{E}} \psi(t, \boldsymbol{r})= i \hbar \frac{\partial}{\partial t} \left( A e^{-i\omega t + i \boldsymbol{k} \cdot \boldsymbol{r}} \right) = \hbar \omega \psi(t, \boldsymbol{r}) = \mathcal{E} \psi(t, \boldsymbol{r}),
+\]</span> and <span class="math display">\[    
+    \hat{\boldsymbol{p}} \psi(t, \boldsymbol{r}) = -i \hbar \nabla \left( A e^{-i\omega t + i \boldsymbol{k} \cdot \boldsymbol{r}} \right) = \hbar \boldsymbol{k} \psi(t, \boldsymbol{r}) = \boldsymbol{p} \psi(t, \boldsymbol{r}).
+\]</span> As expected the plane-wave in <a href="#eq-plane-wave" class="quarto-xref">Equation&nbsp;<span>14.1</span></a> is an eigenstate of the energy and momentum operators, with eigenvalues given by the Einstein-Plank and de Broglie relations. Again the operators <span class="math inline">\(\hat{\mathcal{E}}\)</span> and <span class="math inline">\(\hat{\boldsymbol{p}}\)</span> are a very general results and apply to all quantum theories, relativistic or otherwise.</p>
+<p>To build a quantum wave theory we want it to be:</p>
+<ol type="1">
+<li><p>built from <span class="math inline">\(\hat{\mathcal{E}}\)</span> and <span class="math inline">\(\hat{\boldsymbol{p}}\)</span> via a dispersion relation relating these two quantities and</p></li>
+<li><p>to be linear in the wavefunction <span class="math inline">\(\psi(t, \boldsymbol{r}).\)</span> so that it supports the superposition of solutions expected of a wave theory.</p></li>
+</ol>
+<p>The simplest example of this is Schrodinger’s equation <span class="math display">\[
+    i \hbar \frac{\partial}{\partial t} \psi(t, \boldsymbol{r}) = \left( -\frac{\hbar^2}{2m} \nabla^2 + V(\boldsymbol{r}) \right) \psi(t, \boldsymbol{r}).
+\]</span> well known to you from earlier quantum mechanics courses.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
+Constructing Schrodinger’s equation
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>1. Cartesian grad is a one-form operator</strong></p>
-<p>The definition of 4-vector (<em>contravariant</em>) and one-form (<em>covariant</em>) indices also applies to Cartesian 3-vectors. Specifically, <span class="math inline">\(v^i\)</span> is a 3-vector if it transforms under a rotation as <span class="math inline">\(v^{\bar i} = R^{\bar i}_jv^j\)</span>, while <span class="math inline">\(u_j\)</span> is a one-form if it transforms as <span class="math inline">\(u_{\bar i} = R^j_{\bar i}u_j\)</span> involving the inverse transformation. Consider the 3-dimensional gradient operator <span class="math display">\[
-\nabla = \left(\begin{array}{c}
-                \frac{\partial}{\partial x}\\
-                \frac{\partial}{\partial y}\\
-                \frac{\partial}{\partial z}\end{array} \right).
-\]</span> Prove this object transforms like an Euclidean one-form.</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-2" class="callout-2-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>1. Cartesian grad is a one-form operator</strong></p>
-<p>Under a rotation represented by <span class="math inline">\(R^{i}_{j}\)</span>, the Cartesian coordinate <span class="math inline">\(x^i\)</span> transforms as a 3-vector <span class="math display">\[
-    x^{\bar i} = R^{\bar i}_{j}\, x^j, \qquad i=1,2,3.
-\]</span> Consequently, the Jacobian is <span class="math display">\[
-    \frac{\partial x^{\bar i}}{\partial x^j} = R^{\bar i}_{j}.
-\]</span> Using the chain rule, the gradient transforms as <span class="math display">\[
-    \partial_j = \frac{\partial}{\partial x^j} = \frac{\partial x^{\bar i}}{\partial x^j} \frac{\partial}{\partial x^{\bar i}}
-    = R^{\bar i}_{j}\, \partial_{\bar i}.
-\]</span> Equivalently, <span class="math display">\[
-    \partial_{\bar i} = R^{j}_{\bar i}\, \partial_j.
-\]</span> Thus the gradient transforms as a one-form.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>2. Convert a 4-vector into a one-form</strong></p>
-<p>Assume <span class="math display">\[
-    u^\mu = \begin{pmatrix}
-                u^0 \\ u^1 \\ u^2 \\ u^3
-            \end{pmatrix},
-\]</span> are components of a 4-vector. Write down the one-form components <span class="math inline">\(u_\mu\)</span> in terms of the 4-vector components of <span class="math inline">\(u^\mu\)</span>. If <span class="math display">\[
-    v^\nu = \begin{pmatrix}
-                v^0 \\ v^1 \\ v^2 \\ v^3
-            \end{pmatrix},      
-\]</span> is another 4-vector, write down the components of the outer product <span class="math inline">\(u^\mu v^\nu\)</span> as a matrix. What is the tensor type of this outer product?</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-4" class="callout-4-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>2. Convert a 4-vector into a one-form</strong></p>
-<p>We have a 4-vector <span class="math display">\[
-    u^\mu = \begin{pmatrix}
-            u^0 \\ u^1 \\ u^2 \\ u^3
-            \end{pmatrix}.
-\]</span> We lower the index using the Minkowski metric <span class="math display">\[
-    u_\mu = \eta_{\mu\nu} u^\nu,
-    \qquad  \eta_{\mu\nu} =
-        \begin{pmatrix}
-        1 &amp; 0 &amp; 0 &amp; 0 \\
-        0 &amp; -1 &amp; 0 &amp; 0 \\
-        0 &amp; 0 &amp; -1 &amp; 0 \\
-        0 &amp; 0 &amp; 0 &amp; -1
-        \end{pmatrix}.
-\]</span> Thus the spatial components change sign <span class="math display">\[
-    u_\mu = \begin{pmatrix}
-            u^0 \\ -u^1 \\ -u^2 \\ -u^3
-        \end{pmatrix}.
-\]</span> Given another vector <span class="math display">\[
-    v^\mu = \begin{pmatrix}
-            v^0 \\ v^1 \\ v^2 \\ v^3
-            \end{pmatrix},
-\]</span> the outer product <span class="math inline">\(u^\mu v^\nu\)</span> has components <span class="math display">\[
-    u^\mu v^\nu = \begin{pmatrix}
-            u^0 v^0 &amp; u^0 v^1 &amp; u^0 v^2 &amp; u^0 v^3 \\
-            u^1 v^0 &amp; u^1 v^1 &amp; u^1 v^2 &amp; u^1 v^3 \\
-            u^2 v^0 &amp; u^2 v^1 &amp; u^2 v^2 &amp; u^2 v^3 \\
-            u^3 v^0 &amp; u^3 v^1 &amp; u^3 v^2 &amp; u^3 v^3
-            \end{pmatrix}.
-\]</span> This gives the components of a type <span class="math inline">\((2,0)\)</span> tensor: <span class="math display">\[
-    {\pmb{\symbb{T}}}(\cdot,\cdot) = u^\mu v^\nu \, \vec{e}_\mu \otimes \vec{e}_\nu.
+<p>Schrodinger constructed his famous equation by appealing to classical non-relativistic mechanics. The non-relativistic energy is given by the Hamiltonian <span id="eq-nr-dispersion"><span class="math display">\[
+    \mathcal{E} = H(\boldsymbol{r},\boldsymbol{p}).
+\tag{14.2}\]</span></span> Next, we introduce the position operator defined by the action on any wavefunction as <span class="math display">\[
+    \hat{\boldsymbol{r}}\psi(t, \boldsymbol{r}) = \boldsymbol{r}\psi(t, \boldsymbol{r}).
+\]</span> Then we “first” quantize the classical system by making the replacement <span class="math inline">\(\boldsymbol{r} \to \hat{\boldsymbol{r}}\)</span> <span class="math inline">\(\boldsymbol{p} \to \hat{\boldsymbol{p}}\)</span> and <span class="math inline">\(\mathcal{E} \to \hat{\mathcal{E}}\)</span> in <a href="#eq-nr-dispersion" class="quarto-xref">Equation&nbsp;<span>14.2</span></a>. For a single-particle in a potential <span class="math inline">\(V(\boldsymbol{r})\)</span> the non-relativistic Hamiltonian will be <span class="math display">\[
+    H(\boldsymbol{r},\boldsymbol{p}) = \frac{\boldsymbol{p}^2}{2m} + V(\boldsymbol{r}),
+\]</span> which quantizes as <span class="math display">\[
+    H(\boldsymbol{r},\boldsymbol{p}) \to H(\hat{\boldsymbol{r}},\hat{\boldsymbol{p}}) = -\frac{\hbar^2}{2m} \nabla^2 + V(\hat{\boldsymbol{r}}).
+\]</span> The resulting time-dependent Schrodinger equation is then <span class="math display">\[
+    i \hbar \frac{\partial}{\partial t} \psi(t, \boldsymbol{r}) = \left( -\frac{\hbar^2}{2m} \nabla^2 + V(\boldsymbol{r}) \right) \psi(t, \boldsymbol{r}).
 \]</span></p>
 </div>
 </div>
-</div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
+<p>There are a few crucial points to notice about Schrodinger’s equation.</p>
+<ul>
+<li><p>It is first-order in time, but second-order in space. This means that the time evolution of the wavefunction is determined by its value at a single time, but its spatial profile is determined by its value and first spatial derivative at a single time. This is a consequence of the non-relativistic dispersion relation <span class="math inline">\(\mathcal{E} = \boldsymbol{p}^2/2m + V(\boldsymbol{r})\)</span> being first-order in energy but second-order in momentum.</p></li>
+<li><p>It is not Lorentz covariant, since it treats time and space differently. This is again a consequence of it being constructed using the non-relativistic dispersion relation.</p></li>
+<li><p>It looks like the diffusion equation, but with an imaginary unit <span class="math inline">\(i\)</span>. This is again a consequence of the non-relativistic dispersion relation being parabolic in momentum.</p></li>
+<li><p>It is intrinsically complex, this is essential for the Schrodinger equation to support wave-like solutions and the superposition principle.</p></li>
+</ul>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
+Schrodinger equation is intrinsically complex
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p><strong>3. Tensor contractions</strong></p>
-<ol type="a">
-<li><p>Consider the contraction of two tensors <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span>. What is this expression in matrix form? What are the matrix expressions relating the matrices in frame <span class="math inline">\(S\)</span> to those in frame <span class="math inline">\(\bar S\)</span>. Prove using matrix methods that <span class="math inline">\(A_{\alpha \beta} B^{\alpha \beta}\)</span> is a Lorentz scalar.</p></li>
-<li><p>Now assume <span class="math inline">\(A^{\mu\nu}\)</span> is an antisymmetric tensor, so <span class="math inline">\(A^{\mu \nu} = -A^{\nu \mu}\)</span>, and <span class="math inline">\(S^{\mu \nu}\)</span> is a symmetric tensor, so <span class="math inline">\(S^{\mu\nu} = S^{\nu\mu}.\)</span> Write each down in matrix form. Prove, using index methods, that the contraction <span class="math inline">\(A^{\mu\nu} S_{\mu\nu} = 0.\)</span></p></li>
-</ol>
+<p>We can expand upon this point more. Suppose that we have a free particle with <span class="math inline">\(V(\boldsymbol{r}) = 0\)</span>, then plane-wave solutions have <span class="math display">\[
+    \mathcal{E} = \frac{\boldsymbol{p}^2}{2m} = \frac{\hbar^2 \boldsymbol{k}^2}{2m} \geq 0,
+\]</span> so the energy is always positive. This is sensible since it tells us that the energy of particle is bounded from below meaning there exists a well-defined ground state for a free-particle. It also means the angular frequency <span class="math inline">\(\omega = \mathcal{E}/\hbar \geq 0\)</span>.</p>
+<p>Now consider the Fourier transform of a real function <span class="math inline">\(f(t,\boldsymbol{r}) \to F(\omega, \boldsymbol{k})\)</span>. Since <span class="math inline">\(f(t,\boldsymbol{r})\)</span> is real, its Fourier transform must satisfy the conjugate symmetry condition <span class="math display">\[
+    F(-\omega, -\boldsymbol{k}) = F^*(\omega, \boldsymbol{k}).
+\]</span> This means that if <span class="math inline">\(F(\omega, \boldsymbol{k})\)</span> is non-zero for some <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\boldsymbol{k}\)</span>, then it must also be non-zero for <span class="math inline">\(-\omega\)</span> and <span class="math inline">\(-\boldsymbol{k}\)</span>. This is a problem for the Schrodinger equation since the dispersion relation only allows for <span class="math inline">\(\omega \geq 0\)</span>, so if we have a solution with <span class="math inline">\(\omega &gt; 0\)</span> then we must also have a solution with <span class="math inline">\(\omega &lt; 0\)</span> which is not allowed by the dispersion relation. This means that the Schrodinger equation cannot support real solutions. They must be intrinsically complex to be consistent with its dispersion relation.</p>
+<p>Another way to see this is that all solutions to the time-dependent Schrodinger equation are complex. Take an eigenstate of the Hamiltonian <span class="math display">\[
+    H(\hat{\boldsymbol{r}},\hat{\boldsymbol{p}})\phi( \boldsymbol{r}) = \mathcal{E}\phi( \boldsymbol{r}),
+\]</span> with energy <span class="math inline">\(\mathcal{E}\)</span>, then its time-evolving solutions are given by <span class="math display">\[
+    \psi(t, \boldsymbol{r}) = e^{-i\mathcal{E}t/\hbar} \phi( \boldsymbol{r}),
+\]</span> meaning they pick up a complex phase factor as they evolve in time. All other solutions are constructed as superpositions of these energy eigenstates, so they will also be complex.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-6" class="callout-6-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>4. Tensor contractions</strong></p>
-<ol type="a">
-<li><p>If we consider <span class="math inline">\(A_{\alpha\beta}\)</span> to be written in matrix form as <span class="math inline">\(\boldsymbol{A}\)</span>, and <span class="math inline">\(B^{\alpha\beta}\)</span> to be written in matrix form as <span class="math inline">\(\boldsymbol{B}\)</span>, then <span class="math display">\[
-A_{\alpha\beta} B^{\alpha\beta}
-\]</span> involves a contraction of the column label of <span class="math inline">\(A\)</span> with the row label of <span class="math inline">\(\boldsymbol B\)</span>. Therefore the expression must involve the transpose <span class="math inline">\(\boldsymbol{B}^{\rm T}\)</span>. Our calculation therefore involves <span class="math inline">\(\boldsymbol{A}\boldsymbol{B}^{\rm T}\)</span>. We are also supposed to contract the remaining row and column labels, i.e.&nbsp;sum the diagonal elements, i.e.&nbsp;compute the trace.Thus <span id="eq-contract_trace"><span class="math display">\[
-A_{\alpha\beta} B^{\alpha\beta} = \mathrm{tr}\!\left(\boldsymbol{A} \boldsymbol{B}^{\rm T}\right).
-\tag{1}\]</span></span> Denoting the Lorentz transformation <span class="math inline">\(\Lambda^{\bar \nu}_\mu\)</span> of a 4-vector from <span class="math inline">\(S \rightarrow \bar S\)</span> as the matrix <span class="math inline">\(\boldsymbol{\Lambda}\)</span>, and the inverse transformation <span class="math inline">\(\Lambda^\mu_{\bar \nu}\)</span> of a 4-vector from <span class="math inline">\(\bar S \rightarrow S\)</span> as a matrix <span class="math inline">\(\boldsymbol{\Lambda}^{-1}\)</span>, then we can convert the transformations of the two rank-2 tensors into matrix expressions as <span class="math display">\[
-   A_{\alpha\beta} = \Lambda^{\bar{\sigma}}_\alpha\Lambda^{\bar{\rho}}_\beta A_{\bar{\sigma}\bar{\rho}} \rightarrow \boldsymbol{A} = (\boldsymbol{\Lambda})^{\rm T} \bar{\boldsymbol{A}} \boldsymbol{\Lambda},
-\]</span> and <span class="math display">\[
-    B^{\alpha\beta} = \Lambda^\alpha_{\bar{\mu}}\Lambda^\beta_{\bar{\nu}} B^{\bar{\mu}\bar{\nu}} \rightarrow \boldsymbol{B} = \boldsymbol{\Lambda}^{-1} \bar{\boldsymbol{B}} (\boldsymbol{\Lambda}^{-1})^{\rm T}.
-\]</span> Now we substitute these into the <a href="#eq-contract_trace" class="quarto-xref">Equation&nbsp;<span>1</span></a> and rearrange to get <span class="math display">\[\begin{align}
-\mathrm{tr}\!\left(\boldsymbol{A} \boldsymbol{B}^{\rm T}\right) &amp;= \mathrm{tr}\!\left((\boldsymbol{\Lambda})^{\rm T} \bar{\boldsymbol{A}} \boldsymbol{\Lambda} (\boldsymbol{\Lambda}^{-1} \bar{\boldsymbol{B}} (\boldsymbol{\Lambda}^{-1})^{\rm T})^{\rm T}\right),\\
-&amp;= \mathrm{tr}\!\left((\boldsymbol{\Lambda})^{\rm T} \bar{\boldsymbol{A}}~ \overbrace{\boldsymbol{\Lambda} \boldsymbol{\Lambda}^{-1}}^{\mathbb{1}_4} ~\bar{\boldsymbol{B}}^{\rm T} (\boldsymbol{\Lambda}^{-1})^{\rm T}\right), \\
-&amp;= \mathrm{tr}\!\left((\boldsymbol{\Lambda})^{\rm T} \bar{\boldsymbol{A}}\bar{\boldsymbol{B}}^{\rm T} (\boldsymbol{\Lambda}^{-1})^{\rm T}\right), \\
-&amp;= \mathrm{tr}\!\left(\overbrace{(\boldsymbol{\Lambda}^{-1})^{\rm T}(\boldsymbol{\Lambda})^{\rm T}}^{\mathbb{1}_4}~ \bar{\boldsymbol{A}}\bar{\boldsymbol{B}}^{\rm T}\right),\\
-&amp;= \mathrm{tr}\!\left(\bar{\boldsymbol{A}}\bar{\boldsymbol{B}}^{\rm T}\right),
-\end{align}\]</span> where we have used the cyclicity of the trace. We have established that the contraction has an identical form in frame <span class="math inline">\(\bar S\)</span> and equal value, hence it is a Lorentz invariant scalar. Of course we could have proven this with index methods, which is arugably neater, as we did in the lectures and will do so from now on.</p></li>
-<li><p>Let <span class="math inline">\(A^{\mu\nu}\)</span> be antisymmetric, so <span class="math display">\[
-A^{\mu\nu} = - A^{\nu\mu}.
-\]</span> In particular, <span class="math inline">\(A^{\mu\mu} = -A^{\mu\mu}\)</span>, so the diagonal elements vanish. An antisymmetric matrix has the form <span class="math display">\[
-A^{\mu\nu} = \begin{pmatrix}
-    0      &amp; A^{01}  &amp; A^{02}  &amp; A^{03} \\
-    - A^{01} &amp; 0      &amp; A^{12}  &amp; A^{13} \\
-    - A^{02} &amp; - A^{12} &amp; 0      &amp; A^{23} \\
-    - A^{03} &amp; - A^{13} &amp; - A^{23} &amp; 0
-    \end{pmatrix}.
-\]</span> Other representations (distribution of -ve signs among elements) are of course possible. Similarly, let <span class="math inline">\(S^{\mu\nu}\)</span> be symmetric, <span class="math display">\[
-S^{\mu\nu} = S^{\nu\mu}.
-\]</span> Then a general symmetric matrix has the form <span class="math display">\[
-S^{\mu\nu}
-=
-\begin{pmatrix}
-S^{00} &amp; S^{01} &amp; S^{02} &amp; S^{03} \\
-S^{01} &amp; S^{11} &amp; S^{12} &amp; S^{13} \\
-S^{02} &amp; S^{12} &amp; S^{22} &amp; S^{23} \\
-S^{03} &amp; S^{13} &amp; S^{23} &amp; S^{33}
-\end{pmatrix},
-\]</span> Now we want to show <span class="math display">\[
-A^{\mu\nu} S_{\mu\nu} = 0.
-\]</span> We could use the matrix representations and the equation <span class="math inline">\(A_{\alpha\beta} S^{\alpha\beta} = \mathrm{tr}\!\left(\boldsymbol{A} \boldsymbol{S}^{\rm T}\right)\)</span>, by showing that <span class="math inline">\(\boldsymbol{A} \boldsymbol{S}^{\rm T}\)</span> has zero diagonal elements and hence is traceless. Instead we proceed with index notation as <span class="math display">\[\begin{align}
-A^{\mu\nu} S_{\mu\nu} &amp;= - A^{\nu\mu} S_{\mu\nu}, \qquad \text{(antisymmetry of $A$)}, \\
-&amp;= - A^{\nu\mu} S_{\nu\mu}, \qquad \text{(symmetry of $S$)}, \\
-&amp;= - A^{\mu\nu} S_{\mu\nu}, \qquad \text{(relabel $\mu \leftrightarrow \nu$)}, \\
-2 A^{\mu\nu} S_{\mu\nu} &amp;= 0, \\
-A^{\mu\nu} S_{\mu\nu} &amp;= 0,
-\end{align}\]</span> as required.</p></li>
-</ol>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>4. The Quotient Rule for testing tensorality</strong></p>
-<p>We will now look at a useful trick for proving an object is a tensor.</p>
-<ol type="a">
-<li><p>Assume we have a set of quantities <span class="math inline">\(a_\mu\)</span>, such that the inner product with every 4-vector <span class="math inline">\(v^\mu\)</span> gives a Lorentz scalar. Prove that <span class="math inline">\(a_\mu\)</span> must transform like the components of a one-form.</p></li>
-<li><p>Assume that the inner product of a set of quantities <span class="math inline">\(b^\mu\)</span> with every one-form <span class="math inline">\(u_\mu\)</span> gives a Lorentz scalar. Prove that <span class="math inline">\(b^\mu\)</span> must transform like the components of a 4-vector.</p></li>
-</ol>
-<p>This trick can be extended to test tensorality. Suppose we have some putative multi-index object <span class="math inline">\(Y^{\mu\nu}{}_{\alpha\beta}\)</span>. This is a tensor if a Lorentz scalar is obtained when it is contracted it with a suitable number of arbitrary 4-vectors and one-forms. Can you think why it is called the quotient rule?</p>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-8" class="callout-8-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>4. The Quotient Rule for testing tensorality</strong></p>
-<ol type="a">
-<li><p>Assume that for all 4-vectors <span class="math inline">\(v^\mu\)</span>, <span class="math inline">\(a_\mu v^\mu\)</span> is a Lorentz scalar. Therefore, under a Lorentz transformation, <span class="math display">\[
-a_\mu v^\mu = a_{\bar{\nu}} v^{\bar{\nu}} = a_{\bar{\nu}} \Lambda^{\bar{\nu}}_{\mu} v^\mu.
-\]</span> Since this is true for any <span class="math inline">\(v^\mu\)</span>, we can choose <span class="math inline">\(v^\mu\)</span> to be the four unit 4-vectors <span class="math display">\[
-\begin{pmatrix}
-1\\
-0\\
-0\\
-0
-\end{pmatrix}, \quad \begin{pmatrix}
-0\\
-1\\
-0\\
-0
-\end{pmatrix}, \quad \begin{pmatrix}
-0\\
-0\\
-1\\
-0
-\end{pmatrix}, \quad \begin{pmatrix}
-0\\
-0\\
-0\\
-1
-\end{pmatrix}.
-\]</span> For each of these vectors, we find <span class="math display">\[
-a_\mu = a_{\bar{\nu}} \Lambda^{\bar{\nu}}_{\mu} \qquad \text{for } \mu = 0,1,2,3.
-\]</span> Thus we recover the transformation rule for a one-form.</p></li>
-<li><p>Now assume that for all one-forms <span class="math inline">\(u_\mu\)</span>, <span class="math display">\[
-b^\mu u_\mu
-\]</span> is a Lorentz scalar. Thus, under a Lorentz transformation, <span class="math display">\[
-b^\mu u_\mu = b^{\bar{\nu}} u_{\bar{\nu}} = b^{\bar{\nu}} \Lambda_{\bar{\nu}}^{\mu} u_\mu.
-\]</span> As before, we may choose <span class="math inline">\(u_\mu\)</span> to be the set of unit one-forms (so have the same elements as the basis 4-vectors above). For each of these cases, we obtain <span class="math display">\[
-b^\mu = \Lambda^{\mu}_{\bar{\nu}} b^{\bar{\nu}} \qquad \text{for } \mu = 0,1,2,3,
-\]</span> thus satisfying the transformation rules for a contravariant 4-vector.</p></li>
-</ol>
-<p>This approach is called the <em>quotient rule</em> since it looks like we are ‘dividing’ <span class="math inline">\(b^\mu u_\mu\)</span> by <span class="math inline">\(u_\mu\)</span> to obtain a 4-vector. Of course, we cannot actually divide by a rank-1 object. In the proof above, we are effectively choosing the natural basis for our frame and then isolating components by selecting basis vectors. This argument only works if <span class="math inline">\(b^\mu u_\mu\)</span> is a scalar for <em>all</em> <span class="math inline">\(u_\mu\)</span>.</p>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-caution no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<i class="fa-regular fa-circle-question" aria-label="circle-question"></i> Example exercise
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p><strong>5. Constructing an antisymmetric tensor</strong></p>
-<p>Let <span class="math inline">\(A^\mu\)</span> and <span class="math inline">\(B^\mu\)</span> be two arbitrary four-vectors, and define the rank-2 tensor as: <span class="math display">\[
-    T^{\mu\nu} = A^\mu B^\nu - A^\nu B^\mu.
-\]</span></p>
-<ol type="a">
-<li><p>Show that <span class="math inline">\(T^{\mu\nu}\)</span> is antisymmetric. How many independent components does <span class="math inline">\(T^{\mu\nu}\)</span> therefore have?</p></li>
-<li><p>Compute the contraction <span class="math display">\[
-T^{\mu\nu}T_{\mu\nu}.
-\]</span> Show that the result can be written purely in terms of Lorentz scalar products of <span class="math inline">\(A^\mu\)</span> and <span class="math inline">\(B^\mu\)</span>.</p></li>
-<li><p>Show that the 4-vector resulting from the following contraction <span class="math display">\[
-f^\mu = T^{\mu\nu}A_\nu
-\]</span> is orthogonal to the 4-vector <span class="math inline">\(A^\mu\)</span>, so <span class="math display">\[
-A_\mu f^\mu = A_\mu(T^{\mu\nu}A_\nu) = 0.
-\]</span> Give a geometric interpretation of this result.</p></li>
-</ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-10-contents" aria-controls="callout-10" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-10" class="callout-10-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p><strong>5. Constructing an anti-symmetric tensor</strong></p>
-<ol type="a">
-<li><p>Interchanging the indices gives <span class="math display">\[
-T^{\nu\mu} = A^\nu B^\mu - A^\mu B^\nu .
-\]</span> and then rearranging we have <span class="math display">\[
-T^{\nu\mu} = -(A^\mu B^\nu - A^\nu B^\mu) = -T^{\mu\nu}.
-\]</span> Thus <span class="math display">\[
-T^{\mu\nu} = -T^{\nu\mu}.
-\]</span> In 1+3D space-time an general tensor has <span class="math inline">\(4\cdot 4 = 16\)</span> elements, but antisymmetric tensor has zero diagonals, and the off-diagonal are related to each other by negation, so half of what elements are left are independent: <span class="math display">\[
-\frac{4\cdot4-4}{2} = 6
-\]</span> independent components.</p></li>
-<li><p>First lower the indices: <span class="math display">\[
-T_{\mu\nu} = A_\mu B_\nu - A_\nu B_\mu,
-\]</span> then <span class="math display">\[
-T^{\mu\nu}T_{\mu\nu} = (A^\mu B^\nu - A^\nu B^\mu)(A_\mu B_\nu - A_\nu B_\mu).
-\]</span> Expanding, <span class="math display">\[
-T^{\mu\nu}T_{\mu\nu} = A^\mu B^\nu A_\mu B_\nu
-    - A^\mu B^\nu A_\nu B_\mu
-    - A^\nu B^\mu A_\mu B_\nu
-    + A^\nu B^\mu A_\nu B_\mu.
-\]</span> Now simplify each term, starting with <span class="math display">\[
-A^\mu B^\nu A_\mu B_\nu = (\vec{A}\cdot \vec{A})(\vec{B}\cdot \vec{B})
-\]</span> followed by <span class="math display">\[
-A^\mu B^\nu A_\nu B_\mu = (\vec{A}\cdot \vec{B})^2
-\]</span> then <span class="math display">\[
-A^\nu B^\mu A_\mu B_\nu = (\vec{A}\cdot \vec{B})^2
-\]</span> and finally <span class="math display">\[
-A^\nu B^\mu A_\nu B_\mu = (\vec{A}\cdot \vec{A})(\vec{B}\cdot \vec{B})
-\]</span> Thus together we find <span class="math display">\[
-T^{\mu\nu}T_{\mu\nu} = 2(\vec{A}\cdot \vec{A})(\vec{B}\cdot \vec{B}) - 2(\vec{A}\cdot \vec{B})^2,
-\]</span> which is a Lorentz scalar.</p></li>
-<li><p>Begin by computing <span class="math display">\[
-f^\mu = T^{\mu\nu}A_\nu = (A^\mu B^\nu - A^\nu B^\mu)A_\nu,
-\]</span> which evaluates as <span class="math display">\[
-f^\mu = A^\mu(B^\nu A_\nu) - B^\mu(A^\nu A_\nu).
-\]</span> We therefore have that <span class="math display">\[
-f^\mu = (\vec{A}\cdot \vec{B})A^\mu - (\vec{A}\cdot \vec{A})B^\mu.
-\]</span> Now contract with <span class="math inline">\(A_\mu\)</span>: <span class="math display">\[
-A_\mu f^\mu = (\vec{A}\cdot \vec{B})(A_\mu A^\mu) - (\vec{A}\cdot \vec{A})(A_\mu B^\mu).
-\]</span> Hence <span class="math display">\[
-A_\mu f^\mu = (\vec{A}\cdot \vec{B})(\vec{A}\cdot \vec{A}) - (\vec{A}\cdot \vec{A})(\vec{A}\cdot \vec{B}) = 0,
-\]</span> and so <span class="math display">\[
-A_\mu f^\mu=0.
-\]</span> The antisymmetric tensor constructed from <span class="math inline">\(A^\mu\)</span> and <span class="math inline">\(B^\mu\)</span> generates a vector orthogonal to <span class="math inline">\(A^\mu\)</span>. This reflects the fact that antisymmetric tensors naturally encode oriented planes in spacetime. We will encounter a physical example of this in the next Examples Class.</p></li>
-</ol>
-</div>
-</div>
-</div>
+<p>To move to a relativistic quantum theory we need to change the dispersion relation from <span class="math inline">\(\mathcal{E} = \frac{\boldsymbol{p}^2}{2m}\)</span> to a relativistic one such as <span class="math display">\[
+    \mathcal{E}^2 = \boldsymbol{p}^2 c^2 + m^2 c^4.
+\]</span> If we want to keep our theory first-order in time, as the Schrodinger equation is, then we need to take the square-root of this dispersion relation <span class="math display">\[
+    \mathcal{E} = \sqrt{\boldsymbol{p}^2 c^2 + m^2 c^4}.
+\]</span> The question is do we take the <span class="math inline">\(+\)</span> or <span class="math inline">\(-\)</span> square-root? The negative root appears troublesome since it would allow for unbounded negative energies suggesting the theory does not have a stable well-defined ground state. Suppose we just take the <span class="math inline">\(+\)</span> root, then we arrive at the equation <span class="math display">\[
+    i \hbar \frac{\partial}{\partial t} \varphi(t, \boldsymbol{r}) = \sqrt{-\hbar^2 c^2 \nabla^2 + m^2 c^4} ~\varphi(t, \boldsymbol{r}),
+\]</span> for a complex scalar field <span class="math inline">\(\varphi(t, \boldsymbol{r})\)</span>. This equation has many problems, it is non-local in space since the square-root of the Laplacian is a non-local operator, and it is not Lorentz covariant since it still treats time and space differently.</p>
+<div class="page-columns page-full"><p>What about if we don’t take the square-root and instead directly quantize the relativistic dispersion relation as <span class="math display">\[
+    (i\hbar\partial_t)^2 \varphi(t, \boldsymbol{r}) = (-\hbar^2 c^2 \nabla^2 + m^2 c^4) \varphi(t, \boldsymbol{r}).
+\]</span> This rearranges to <span class="math display">\[
+    \left(\frac{1}{c^2}\partial^2_t - \nabla^2 + \frac{m^2 c^2}{\hbar^2}\right)\varphi(t, \boldsymbol{r}) = 0,
+\]</span> or in a more compact 4-vector form <span id="eq-kg_eq"><span class="math display">\[
+    \left(\partial_\mu \partial^\mu + \frac{m^2 c^2}{\hbar^2}\right)\varphi(t, \boldsymbol{r}) = 0,
+\tag{14.3}\]</span></span> and we arrive at the Klein-Gordon (KG) equation where the Lorentz constant <span class="math inline">\(\hbar/mc\)</span> is the reduced Compton wavelength. The KG equation is second-order in time and space, and is relativistically covariant since it is essentially the wave equation with a mass term which we have considered earlier in <a href="./planewaves.html">Plane-waves and particle flows</a>.  There we solved the <a href="#eq-kg_eq" class="quarto-xref">Equation&nbsp;<span>14.3</span></a> for a plane-wave and found <span class="math display">\[
+     k_\mu k^\mu = \frac{m^2 c^2}{\hbar^2},
+\]</span> giving a dispersion relation <span id="eq-kg_wave_dispersion"><span class="math display">\[
+  (\hbar\omega)^2 = |\hbar\boldsymbol{k}|^2c^2 + m^2c^4,
+\tag{14.4}\]</span></span> consistent with the relativistic energy-momentum relation <span class="math inline">\(\mathcal{E}^2 = p^2c^2 + m^2c^4\)</span> for a particle with mass <span class="math inline">\(M\)</span>. An immediately consequence of this is that <span class="math display">\[
+    \hbar\omega = \pm \sqrt{|\hbar\boldsymbol{k}|^2c^2 + m^2c^4},
+\]</span> and so the KG equations supports both positive and negative energy solutions, which is a major problem for the interpretating it as a single-particle quantum theory since there won’t be a stable ground state. One could think that the negative energy solutions can just be rejected as a mathematical artefact. The issue is that even if we start with an initial state comprising a superposition of only positive energy solutions, the time evolution of the wavefunction according to <a href="#eq-kg_eq" class="quarto-xref">Equation&nbsp;<span>14.3</span></a> will inevitably introduce negative energy solutions into the superposition. Thus they are intrinisic to the KG equation and cannot be ignored.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">In fact Schrodinger wrote down the KG equation before he wrote down his famous equation, but he rejected because it failed to reproduce the correct energy level structure for hydrogen.</span></div></div>
+<p>Another issue is that <a href="#eq-kg_eq" class="quarto-xref">Equation&nbsp;<span>14.3</span></a> is second-order in time meaning that the evolution of the wavefunction from <span class="math inline">\(t=0\)</span> is determined not just by <span class="math inline">\(\varphi(0,\boldsymbol{r})\)</span> but also its first time-derivative <span class="math inline">\(\partial_t\varphi(t,\boldsymbol{r})|_{t=0}\)</span>. This is a radical conceptual departure from the Schrodinger equation where the wavefunction <span class="math inline">\(\psi(t,\boldsymbol{r})\)</span> at any point in time <span class="math inline">\(t\)</span> is considered as containing all the information about the system and its evolution. There are futher issues with the KG equation which are best revealed by applying the tools of classical field theory to it.</p>
+<!-- 
+Add reduction of KG equation to Schrodinger equation in non-relativistic limit
+-->
+</section>
+<section id="lagrangian-formulation-and-noether-currents" class="level2 page-columns page-full" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="lagrangian-formulation-and-noether-currents"><span class="header-section-number">14.2</span> Lagrangian formulation and Noether currents</h2>
+<p>Having arrived at the KG equation we can now proceed to write down an Lagrangian for it, identify its symmetries and compute the associated Noether currents using the field theory tools we developed. To set the scene it is worth applying these tools first to the Schrodinger equation, even though this is not a relativistic theory, to remind ourselves of probability currents.</p>
+<!-- 
+Add Schrodinger Lagrangian and Noether current in non-relativistic limit as drop-down box.
+-->
+<p>The KG equation supports both real and complex solutions <span class="math inline">\(\varphi(t, \boldsymbol{r})\)</span> so can be derived from the Lagrangian densities <span class="math display">\[
+\begin{align}
+    \mathcal{L}^{(\mathbb{R})}_{\rm KG} &amp;= \partial_\mu\varphi\partial^\mu\varphi - \left(\frac{mc}{\hbar}\right)^2\varphi^2 \quad\quad \rm{real}~\varphi, \\
+    \mathcal{L}^{(\mathbb{C})}_{\rm KG} &amp;= \partial_\mu\varphi\partial^\mu\varphi^* - \left(\frac{mc}{\hbar}\right)^2\varphi^*\varphi \quad \rm{complex}~\varphi.
+\end{align}
+\]</span> As usual we demand that the Lagrangian density <span class="math inline">\(\mathcal{L}\)</span> is a real Lorentz scalar for either field. The complex version is most relevant for relativistic quantum mechanics. In this case we treat <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\varphi^*\)</span> as independent fields, and applying the relativistic Euler-Lagrange equations to <span class="math inline">\(\mathcal{L}^{(\mathbb{C})}_{\rm KG}\)</span> to the conjugate <span class="math inline">\(\varphi^*\)</span> field yields the KG equation for <span class="math inline">\(\varphi\)</span>.</p>
+<div class="page-columns page-full"><p>A key feature of <span class="math inline">\(\mathcal{L}^{(\mathbb{C})}_{\rm KG}\)</span> is that it possesses a global <span class="math inline">\(U(1)\)</span> symmetry under the transformation <span class="math display">\[
+    \varphi \to e^{i\alpha}\varphi
+\]</span> for constant <span class="math inline">\(\alpha\)</span>. Since <span class="math inline">\(\mathcal{L}^{(\mathbb{C})}_{\rm KG}\)</span> is invariant to this transformation applying Noether’s theorem is straightforward and yields the conserved current <span class="math display">\[
+    j^\mu = i \left( \varphi^* \partial^\mu \varphi - \varphi \partial^\mu \varphi^* \right),   
+\]</span> with an associated conserved charge is given by <span class="math display">\[
+    Q = \int d^3\boldsymbol{r} ~j^0,                   
+\]</span> and satisfying the continuity equation <span class="math display">\[
+    \partial_\mu j^\mu = 0.
+\]</span> The spatial components of this current <span class="math inline">\(j^i\)</span> can be interpreted as a particle flow, while the charge <span class="math inline">\(Q\)</span> can be interpreted as a particle number, analogous to does in the Schrodinger equation. However, the problem with the KG equation is that <span class="math inline">\(j^0\)</span> is not positive definite. We can see this by writing <span class="math display">\[
+    j^0 = \frac{2}{c}{\rm Im} \left\{ \varphi^* \partial_t \varphi \right\},
+\]</span> so if we take a plane-wave solution of the form <span class="math display">\[    
+    \varphi(t, \boldsymbol{r}) = A e^{-i\omega t + i \boldsymbol{k} \cdot \boldsymbol{r}},
+\]</span> then the conserved charge density is given by <span class="math display">\[    
+    j^0 = 2\frac{\omega}{c} |A|^2.
+\]</span> For the positive energy solution with <span class="math inline">\(\omega &gt; 0\)</span> we have <span class="math inline">\(j^0 &gt; 0\)</span>, but for the negative energy solution with <span class="math inline">\(\omega &lt; 0\)</span> we have <span class="math inline">\(j^0 &lt; 0\)</span>. Consequently, we can’t interpret <span class="math inline">\(j^0\)</span> as a probability density.  This is one of the key issues with interpreting the KG equation as a bonifide single-particle quantum theory.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Actually <span class="math inline">\(j^\mu\)</span> behaves more like an electrical charge density which can be positive or negative, but to make this interpretation more rigorous requires tools from quantum field theory</span></div></div>
 
 
+</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -1139,13 +955,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./tensors.html" class="pagination-link" aria-label="Tensors">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span>
+      <a href="./example_class5.html" class="pagination-link" aria-label="Example Class 5">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Example Class 5</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./kinematics.html" class="pagination-link" aria-label="Relativistic kinematics">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./epilogue.html" class="pagination-link" aria-label="Epilogue">
+        <span class="nav-page-text">Epilogue</span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

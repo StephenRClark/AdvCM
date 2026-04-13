@@ -313,6 +313,12 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./quantum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic Quantum Mechanics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./epilogue.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Epilogue</span></a>
   </div>
@@ -382,6 +388,66 @@ f^{\mu} u_{\mu} = 0.
 </ol>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Minkowski’s equation</strong></p>
+<ol type="a">
+<li><p>Taking the definition given <span class="math display">\[
+f^\mu = c\,\frac{{\rm d}p^\mu}{{\rm d}s} = mc^2\frac{{\rm d}u^\mu}{{\rm d}s},
+\]</span> the left-hand side of the Minkowski equation gives <span class="math display">\[
+f^\mu u_\mu = mc^2\frac{{\rm d}u^\mu}{{\rm d}s}u_\mu.
+\]</span> Symmetrising we get <span class="math display">\[
+f^\mu u_\mu = \frac{1}{2}mc^2\left(\frac{{\rm d}u^\mu}{{\rm d}s}u_\mu + u^\mu\frac{{\rm d}u_\mu}{{\rm d}s}\right),
+\]</span> hence identifying the product rule derivative we have <span class="math display">\[
+f^\mu u_\mu = \frac{1}{2}mc^2\frac{\rm d}{{\rm d}s}(u_\mu u^\mu).
+\]</span> However, since <span class="math display">\[
+u_\mu u^\mu = 1,
+\]</span> is constant then the derivative is <span class="math display">\[
+\frac{{\rm d}}{{\rm d}s}(u_\mu u^\mu)=0,
+\]</span> and therefore we find Minkowski’s equation <span class="math display">\[
+f^\mu u_\mu = 0.
+\]</span></p></li>
+<li><p>We take the following form for the 4-force <span class="math display">\[
+f^\mu = \gamma\begin{pmatrix} g \\ \boldsymbol{f} \end{pmatrix},
+\]</span> and the usual form of the 4-momentum <span class="math display">\[
+p^\mu = \begin{pmatrix} \mathcal{E}/c \\ \boldsymbol{p} \end{pmatrix},
+\]</span> which are related as <span class="math display">\[
+f^\mu = c\frac{{\rm d}p^\mu}{{\rm d}s}.
+\]</span> Thus the 3-force part of the 4-force is <span class="math display">\[
+\boldsymbol{f} = \gamma^{-1}c\frac{{\rm d}\boldsymbol{p}}{{\rm d}s} = \gamma^{-1}c\frac{{\rm d}t}{{\rm d}s}\frac{{\rm d}\boldsymbol{p}}{{\rm d}t}.
+\]</span> Since time in our frame and the proper time are related as <span class="math display">\[
+\frac{{\rm d}t}{{\rm d}s}=\frac{\gamma}{c},
+\]</span> we obtain <span class="math display">\[
+\boldsymbol{f}=\frac{{\rm d}\boldsymbol{p}}{{\rm d}t},
+\]</span> showing that <span class="math inline">\(\boldsymbol{f}\)</span> is the relativistic 3-force since it is the derivative of the relativistic 3-momentum in a particular frame. Given also that <span class="math display">\[
+f^\mu u_\mu = 0,
+\]</span> then this constraint becomes <span class="math display">\[
+\gamma^2(g-\boldsymbol{f}\cdot\boldsymbol{v}/c)=0,
+\]</span> from which we extract that <span class="math display">\[
+g = \frac{\boldsymbol{f}\cdot\boldsymbol{v}}{c}.
+\]</span></p></li>
+<li><p>Equating the time-component of <span class="math display">\[
+f^\mu = c\frac{{\rm d}p^\mu}{{\rm d}s}.
+\]</span> give <span class="math display">\[
+g = \gamma^{-1}\frac{{\rm d}\mathcal{E}}{{\rm d}s} = \frac{1}{c}\frac{{\rm d}\mathcal{E}}{{\rm d}t},
+\]</span> which is the rate of change of energy in our frame. The rate of change of energy is the rate at which work is done which is <span class="math display">\[
+\boldsymbol{f}\cdot\boldsymbol{v} = \frac{{\rm d}\mathcal{E}}{{\rm d}t},
+\]</span> so <span class="math inline">\(g\)</span> agrees with our physical expectations.</p></li>
+<li><p>For circular motion in regular mechanics the force always acts perpendicular to the velocity and therefore does no work on the particle. The motion has a changing velocity 3-vector but its speed remains constant. In relativity Minkowski’s equation <span class="math inline">\(f^\mu u_\mu = 0\)</span> has the same form, but now encodes a fundamental constraint that the 4-force cannot change the magnitude of the 4-velocity.</p></li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -408,6 +474,61 @@ f^{\mu} u_{\mu} = 0.
 </ol>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>2. Relativistic particle Lagrangian</strong></p>
+<ol type="a">
+<li><p>The action is <span class="math display">\[
+\mathcal{S} = \int_{t_0}^{t_1}{\rm d}t\,L,
+\]</span> which for the worldline between events <span class="math inline">\(t_0\)</span> and <span class="math inline">\(t_1\)</span> is Lorentz invariant. We can change the frame in which we work at each time <span class="math inline">\(t\)</span> between <span class="math inline">\(t_0\)</span> and <span class="math inline">\(t_1\)</span>. For this reason we can use the proper time <span class="math inline">\(s\)</span>, which is the time as measured in a momentarily co-moving reference frame with the particle, as a parameter. Then <span class="math display">\[
+{\rm d}t = \frac{{\rm d}t}{{\rm d}s}{\rm d}s=\frac{\gamma}{c}{\rm d}s.
+\]</span> The initial and final events on the worldline are labelled as <span class="math inline">\(s_0\)</span> and <span class="math inline">\(s_1\)</span>, so <span class="math display">\[
+\mathcal{S} = \int_{t_0}^{t_1}{\rm d}t\,L, = \int_{s_0}^{s_1}{\rm d}s\,\frac{\gamma}{c}L.
+\]</span> Since <span class="math inline">\(S\)</span> and <span class="math inline">\({\rm d}s\)</span> are Lorentz invariant then <span class="math inline">\(\gamma L\)</span> must also be Lorentz invariant.</p></li>
+<li><p>Try <span class="math inline">\(L = \gamma mc^2\)</span>. We then compute the contributions to the Euler-Lagrange equations <span class="math display">\[
+\frac{\partial L}{\partial x^i} = 0,
+\]</span> and <span class="math display">\[
+\frac{\partial L}{\partial \dot{x}^i} =
+\frac{\partial}{\partial v^i} \left[
+mc^2(1-v^2/c^2)^{-1/2}\right] = \gamma^3 m v^i.
+\]</span> Together these give <span class="math display">\[
+\frac{d}{dt}(\gamma^3 m v^i)=0.
+\]</span> However, for a free particle the 4-force is zero <span class="math display">\[
+f^\mu = mc^2\frac{{\rm d}u^\mu}{{\rm d}s} = 0
+\]</span> so for the spatial components of <span class="math inline">\(U^\mu\)</span> we have <span class="math display">\[
+\frac{{\rm d}u^j}{{\rm d}s} = \frac{{\rm d}}{{\rm d}s}(\gamma v^j) = \frac{\gamma}{c}\frac{{\rm d}}{{\rm d}t}(\gamma v^j) = 0
+\]</span> hence multiplying by <span class="math inline">\(m\)</span> we instead have <span class="math display">\[
+\frac{{\rm d}}{{\rm d}t}(\gamma m v^j) = \frac{{\rm d}p^j}{{\rm d}t} = 0,
+\]</span> giving that the relativistic 3-momentum does not change with time. In contrast <span class="math inline">\(L = \gamma mc^2\)</span> does not produce this result.</p></li>
+<li><p>Instead choose <span class="math display">\[
+L=-\frac{mc^2}{\gamma} = -mc^2\sqrt{1-\frac{v^2}{c^2}}.
+\]</span> Again computing the Euler-Lagrange contributions gives <span class="math display">\[
+\frac{\partial L}{\partial x^i}=0,
+\]</span> and <span class="math display">\[
+\frac{\partial L}{\partial \dot{x}^i} =\frac{\partial}{\partial v^i}\left(-mc^2\sqrt{1-\frac{v^2}{c^2}}\right) = m\gamma v^i.
+\]</span> This confirms that the canonical momentum of this Lagrangian is indeed the relativistic 3-momentum <span class="math inline">\(p^i\)</span>. Moreover the Euler–Lagrange equation now yields <span class="math display">\[
+\frac{d}{dt}(m\gamma v^i) = 0, \qquad i=1,2,3,
+\]</span> as required for a free relativistic particle.</p></li>
+<li><p>Use the standard relation <span class="math inline">\(L = \dot{x}^i p_i - H\)</span> connecting the Lagrangian and Hamiltonian, and then compute <span class="math display">\[
+H = \dot{x}^i p_i - L = \gamma m v^i v_i + \frac{mc^2}{\gamma} = \gamma mc^2\left(\frac{v^2}{c^2} + \frac{1}{\gamma^2}\right) = \gamma mc^2,
+\]</span> hence we recover the relativistic energy as required.</p></li>
+<li><p>Inserting <span class="math inline">\(L_{\mathrm{free}} \equiv -m c^2/\gamma\)</span> into the action gives <span class="math display">\[
+\mathcal{S} = -\int_{s_0}^{s_1}{\rm d}s\, \frac{\gamma}{c}\frac{mc^2}{\gamma} = -mc\int_{s_0}^{s_1}{\rm d}s.
+\]</span> Since <span class="math inline">\(m\)</span>, <span class="math inline">\(c\)</span> and the integral over the proper time are all Lorentz invariant we confirm that the action <span class="math inline">\(\mathcal{S}\)</span> is Lorentz invariant, as expected. Moreover, as the action is the integral over the proper time along the worldline this shows that the trajectory of the particle will be the one which minimises the space-time interval between its endpoints – it is a geodesic. Altogether our workings above confirm that despite looking weird is the correct Lagrangian for a relativistic particle.</p></li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -425,6 +546,86 @@ f^{\mu} u_{\mu} = 0.
 <li><p>Find the 1,2,3-components of the canonical relativistic momentum <span class="math inline">\(p^j\)</span>; what do you notice?</p></li>
 <li><p>The relativistic energy (0-component of the canonical momentum <span class="math inline">\(p^0\)</span>) is provided by the relativistic Hamiltonian <span class="math inline">\(H = \sum_{j=1}^3 p^j \dot{x}^j - L.\)</span> Compute <span class="math inline">\(H.\)</span></p></li>
 </ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Interacting Lagrangian for relativistic particle</strong></p>
+<ol type="a">
+<li><p>Consider the relativistic Lagrangian for a particle interacting with a 4-potential <span class="math display">\[
+L = -\frac{mc^2}{\gamma} - \frac{\phi^\mu u_\mu}{\gamma},
+\]</span> where the Lorentz factor is the standard <span class="math display">\[
+\gamma = \frac{1}{\sqrt{1-\frac{v^2}{c^2}}}.
+\]</span> In the non-relativistic limit <span class="math display">\[
+v \ll c,
+\]</span> we expand<br>
+<span class="math display">\[
+\gamma^{-1} = \left(1-\frac{v^2}{c^2}\right)^{1/2} \approx 1 - \frac{v^2}{2c^2}.
+\]</span> Thus the free particle contribution becomes <span class="math display">\[
+L_{\text{free}} = -\frac{mc^2}{\gamma} \approx -mc^2\left(1-\frac{v^2}{2c^2}\right),
+\]</span> and hence <span class="math display">\[
+L_{\text{free}} \approx -mc^2 + \frac{1}{2}mv^2,
+\]</span> to first order in <span class="math inline">\((v/c)^2\)</span>. We therefore recover the non-relativistic kinetic energy minus the relativistic rest energy. For the interaction term we write the 4-potential as <span class="math display">\[
+\phi^\mu = \begin{pmatrix}\Phi \\ \boldsymbol{\phi} \end{pmatrix},
+\]</span> and the 4-velocity <span class="math display">\[
+u^\mu = \gamma \begin{pmatrix} 1 \\ \boldsymbol{v}/c \end{pmatrix}.
+\]</span> Then we have <span class="math display">\[
+\phi^\mu u_\mu = \gamma(\Phi - \boldsymbol{\phi}\cdot\boldsymbol{v}/c),
+\]</span> so dividing by <span class="math inline">\(\gamma\)</span> gives this term as <span class="math display">\[
+\frac{\phi^\mu u_\mu}{\gamma} =
+    \Phi - \frac{\boldsymbol{\phi}\cdot\boldsymbol{v}}{c},
+\]</span> in any limit. The full Lagrangian in the non-relativistic limit becomes <span class="math display">\[
+L \approx -mc^2 + \frac{1}{2}mv^2 - \Phi + \frac{\boldsymbol{\phi}\cdot\boldsymbol{v}}{c}.
+\]</span> The constant term <span class="math inline">\(mc^2\)</span> does not contribute to the Euler–Lagrange equations, so it may be ignored. Therefore we recover the Newtonian structure <span class="math inline">\(L = \text{KE} - \text{PE}\)</span>, but have acquired an additional velocity-dependent interaction term which represents the magnetic contribution.</p></li>
+<li><p>The canonical momentum is defined as <span class="math display">\[
+p_j = \frac{\partial L}{\partial \dot{x}_j} = \frac{\partial L}{\partial v_j}.
+\]</span> Starting from the relativistic Lagrangian <span class="math display">\[
+L = -mc^2\sqrt{1-\frac{v^2}{c^2}} - \left(\Phi - \frac{\boldsymbol{\phi}\cdot\boldsymbol{v}}{c}\right),
+\]</span> we compute the derivative of the kinetic term as <span class="math display">\[
+\frac{\partial}{\partial v_j}\sqrt{1-\frac{v^2}{c^2}} = -\frac{v_j}{c^2}\left(1-\frac{v^2}{c^2}\right)^{-1/2},
+\]</span> to obtain <span class="math display">\[
+\frac{\partial}{\partial v_j}\left[-mc^2\sqrt{1-\frac{v^2}{c^2}}\right] = m\gamma v_j,
+\]</span> which is the relativistic 3-momentum as expected from question <strong>2.</strong>. However, here the interaction term gives <span class="math display">\[
+\frac{\partial}{\partial v_j} \left(\frac{\boldsymbol{\phi}\cdot\boldsymbol{v}}{c}\right) = \frac{\phi_j}{c},
+\]</span> so the canonical momentum now becomes <span class="math display">\[
+p_j = m\gamma v_j + \frac{\phi_j}{c}.
+\]</span> This has the same structure as the canonical momentum appearing in electromagnetism (reviewed later in <a href="./em_revision.html">Review on Electromagnetism</a>), <span class="math display">\[
+\boldsymbol{p} = m\gamma \boldsymbol{v} + q\boldsymbol{A},
+\]</span> if we identify from the non-relativistic Lagrangian for a charged particle in an EM field as <span class="math display">\[
+\Phi = qV,
+\]</span> and <span class="math display">\[
+\boldsymbol{\phi} = qc\,\boldsymbol{A}.
+\]</span> The gives us a strong indication of how interactions of matter fields with electromagnetic interactions may be accounted for in their Lagrangian. We will use this result later in the course.</p></li>
+<li><p>As stated the Hamiltonian is defined by <span class="math display">\[
+H = \sum_{i=1}^{3} p_i \dot{x}_i - L,
+\]</span> and substituting the canonical momentum gives <span class="math display">\[
+H = \boldsymbol{p}\cdot\boldsymbol{v} - L.
+\]</span> Using <span class="math display">\[
+\boldsymbol{p} = m\gamma\boldsymbol{v} + \frac{\boldsymbol{\phi}}{c},
+\]</span> we obtain <span class="math display">\[
+\boldsymbol{p}\cdot\boldsymbol{v} = m\gamma v^2 +
+\frac{\boldsymbol{\phi}\cdot\boldsymbol{v}}{c}.
+\]</span> Hence <span class="math display">\[
+H = m\gamma v^2 + \frac{\boldsymbol{\phi}\cdot\boldsymbol{v}}{c} + \frac{mc^2}{\gamma} + \Phi - \frac{\boldsymbol{\phi}\cdot\boldsymbol{v}}{c}.
+\]</span> The interaction terms cancel, leaving <span class="math display">\[
+H = mc^2\gamma + \Phi.
+\]</span> Thus the Hamiltonian is the sum of relativistic energy and potential energy <span class="math display">\[
+H = E_{\text{rel}} + \Phi.
+\]</span></p></li>
+</ol>
+<p>The relativistic Lagrangian we have found here, <span class="math inline">\(L = -mc^2/\gamma - \phi^{\mu}u_{\mu}/\gamma,\)</span> has two terms; the first term was chosen to give the correct equation of motion for a free-particle (see question <strong>2.</strong>). The second term, representing an interaction with some external potential (whose gradient gives the force), couples the potential with the 4-velocity, the particle’s key dynamical variable. The Lagrangian densities for fields we will investigate later will also have this general character. The treatment will also be symmetric in space and time, unlike the Euler-Lagrange equations here.</p>
+<p>We have thus shown that the form of the Lorentz force Lagrangian, complete with the vector potential and the 3-velocity, arises very naturally from relativistic considerations; the Lorentz force arises from <span class="math inline">\(\phi^{\mu} = q c A^{\mu}\)</span>, where <span class="math inline">\(A^\mu\)</span> is the 4-potential defined later in <a href="./em_lagrangian.html">Lagrangian approach to EM</a>. We will investigate this further when we derive the relativistic Lorentz equation of motion from the relativistic Lorentz force Lagrangian with this form. A starting point for this is already apparent in the next question.</p>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -456,6 +657,81 @@ e_z &amp; -b_y &amp; b_x &amp; 0
 \end{array}\right),
 \]</span> find an expression for <span class="math inline">\(\boldsymbol{f}\)</span> in terms of 3-vectors <span class="math inline">\(\boldsymbol{e}\)</span> and <span class="math inline">\(\boldsymbol{b}.\)</span> Does this expression look familiar?</p></li>
 </ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>4. A 4-velocity dependent 4-force</strong></p>
+<ol type="a">
+<li><p>If we take the 4-force with the form <span class="math display">\[
+f^\mu = T^{\mu\nu}u_\nu,
+\]</span> then from the Minkowski equation, <span class="math display">\[
+f^\mu U_\mu = T^{\mu\nu}u_\mu u_\nu = 0
+\]</span> The 4-velocity here is arbitrary, any particle travelling with any <span class="math inline">\(u^\mu\)</span> experiencing <span class="math inline">\(f^\mu\)</span> will satisfy this equation. We decompose <span class="math inline">\(T^{\mu\nu}\)</span> into its symmetric and antisymmetric parts <span class="math display">\[
+T^{\mu\nu} = S^{\mu\nu} + A^{\mu\nu},
+\]</span> with <span class="math display">\[
+S^{\mu\nu}=\frac{1}{2}(T^{\mu\nu}+T^{\nu\mu}),
+\]</span> <span class="math display">\[
+A^{\mu\nu}=\frac{1}{2}(T^{\mu\nu}-T^{\nu\mu}).
+\]</span> where <span class="math display">\[
+S^{\mu\nu} = S^{\nu\mu},
+\qquad
+A^{\mu\nu} = -A^{\nu\mu}.
+\]</span> Now for the antisymmetric part <span class="math display">\[
+A^{\mu\nu}u_\mu u_\nu = -A^{\mu\nu}u_\nu u_\mu = -A^{\mu\nu}u_\mu u_\nu,
+\]</span> hence <span class="math display">\[
+A^{\mu\nu}u_\mu u_\nu = 0,
+\]</span> as required.</p></li>
+<li><p>If <span class="math inline">\(T^{\mu\nu}u_\mu u_\nu = 0\)</span> we need to show that <span id="eq-symmetric"><span class="math display">\[
+S^{\mu\nu}u_\mu u_\nu = 0,
+\tag{1}\]</span></span> for any <span class="math inline">\(u^\mu\)</span>. Since <span class="math inline">\(S^{\mu\nu}\)</span> is, by assumption, independent of <span class="math inline">\(u^\mu\)</span> its elements in a given frame are fixed. We therefore pick various <span class="math inline">\(u^\mu\)</span> and demonstrate that <a href="#eq-symmetric" class="quarto-xref">Equation&nbsp;<span>1</span></a> various elements of <span class="math inline">\(S^{\mu\nu}\)</span> have to be zero. For example, we start by choosing <span class="math display">\[
+u^\mu = \begin{pmatrix} 1 \\ \boldsymbol{0} \end{pmatrix},
+\]</span> hence <a href="#eq-symmetric" class="quarto-xref">Equation&nbsp;<span>1</span></a> reduces to <span class="math inline">\(S^{00} = 0\)</span>, establishing this element vanishes. Next we choose a pair of 4-velocities along the <span class="math inline">\(x\)</span>-axis with equal and opposite velocities (so identical <span class="math inline">\(\gamma\)</span> factors): <span class="math display">\[
+u^\mu_\pm = \gamma\begin{pmatrix} 1 \\ \pm (v/c)\boldsymbol{e}_1 \end{pmatrix},
+\]</span> which gives two equations <span class="math display">\[
+S^{\mu\nu}u^\mu_\pm u^\nu_\pm = \gamma^2\left(\pm\frac{v}{c}(S^{10} + S^{01})+S^{11}\frac{v^2}{c^2}\right) = 0
+\]</span> Taking the sum and the difference of these two equations then gives <span class="math display">\[
+S^{11} = 0, \quad {\rm and} \quad (S^{10} + S^{01}) = 0 \implies S^{10} = S^{01} = 0.
+\]</span> Choosing new pairs along the <span class="math inline">\(y\)</span>-axis similarly shows that <span class="math inline">\(S^{22} = 0\)</span> along with <span class="math inline">\(S^{20} = S^{02} = 0\)</span>, and the <span class="math inline">\(z\)</span>-axis to show that <span class="math inline">\(S^{33} = 0\)</span> and <span class="math inline">\(S^{30} = S^{03} = 0\)</span>. Pickng 4-velocities orientated along two spatial axes can then eliminate the remaining 3 elements showing all <span class="math inline">\(S^{\mu\nu} = 0\)</span> for <a href="#eq-symmetric" class="quarto-xref">Equation&nbsp;<span>1</span></a> to be satisfied for all <span class="math inline">\(u^\mu\)</span>. Hence we conclude that <span class="math display">\[
+T^{\mu\nu} = A^{\mu\nu},
+\]</span> so <span class="math inline">\(T^{\mu\nu}\)</span> must be antisymmetric.</p></li>
+<li><p>Let <span class="math inline">\(T^{\mu\nu}\)</span> be built from two 3-vectors <span class="math inline">\(\boldsymbol{e}\)</span> and <span class="math inline">\(\boldsymbol{b}\)</span> as <span class="math display">\[
+T^{\mu\nu}= \begin{pmatrix}
+        0 &amp; -e_x &amp; -e_y &amp; -e_z \\
+        e_x &amp; 0 &amp; -b_z &amp; b_y \\
+        e_y &amp; b_z &amp; 0 &amp; -b_x \\
+        e_z &amp; -b_y &amp; b_x &amp; 0
+    \end{pmatrix},
+\]</span> with <span class="math display">\[
+f^\mu=T^{\mu\nu}u_\nu, \qquad u^\nu=\gamma \begin{pmatrix} 1\\ \boldsymbol{v}/c \end{pmatrix} \qquad {\rm hence} \qquad u_\nu=\gamma \begin{pmatrix} 1\\ -\boldsymbol{v}/c \end{pmatrix}
+\]</span> We can evaluate <span class="math inline">\(f^\mu\)</span> directly by matrix-vector multiplication: <span class="math display">\[
+f^\mu = \begin{pmatrix}
+        0 &amp; -e_x &amp; -e_y &amp; -e_z \\
+        e_x &amp; 0 &amp; -b_z &amp; b_y \\
+        e_y &amp; b_z &amp; 0 &amp; -b_x \\
+        e_z &amp; -b_y &amp; b_x &amp; 0
+    \end{pmatrix} \gamma \begin{pmatrix} 1\\ -v_x/c \\  -v_y/c \\ -v_z/c \end{pmatrix} = \gamma \begin{pmatrix} \boldsymbol{e}\cdot\boldsymbol{v} \\ e_x + b_zv_y/c - b_yv_z/c \\
+    e_y -b_zv_x/c + b_xv_z/c \\
+    e_z + b_yv_x/c - b_xv_y/c\end{pmatrix}.
+\]</span> Compared to question <strong>1.</strong> we note that the time-component gives <span class="math inline">\(g = \boldsymbol{e}\cdot\boldsymbol{v}\)</span>, which looks like the rate of working being done, while the force 3-vector is <span class="math display">\[
+\boldsymbol{f} = \boldsymbol{e} + \frac{\boldsymbol{v}\times\boldsymbol{b}}{c}.
+\]</span> This part has the same form as the Lorentz force law <span class="math display">\[
+\boldsymbol{f} = q\boldsymbol{E}+q\frac{\boldsymbol{v}\times\boldsymbol{B}}{c},
+\]</span> once we identify: <span class="math display">\[
+\boldsymbol{e}=q\boldsymbol{E}, \qquad \boldsymbol{b}=qc\boldsymbol{B}.
+\]</span> This result will be crucial for us to identify the Faraday tensor in a later lecture.</p></li>
+</ol>
+</div>
 </div>
 </div>
 

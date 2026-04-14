@@ -313,6 +313,12 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./quantum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic Quantum Mechanics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./epilogue.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Epilogue</span></a>
   </div>
@@ -763,11 +769,11 @@ Example of invariance again
     \delta\mathcal{L}(x,\varphi,\partial\varphi, \delta_S\varphi) = a^\mu\left(\frac{\partial \mathcal{L}}{\partial\varphi}\partial_\mu\varphi + \frac{\partial \mathcal{L}}{\partial\partial_\nu\varphi}\partial_\nu\partial_\mu\varphi\right).
 \]</span> To apply Noether’s theorem we need to write this change in the Lagrangian as a 4-divergence term.</p>
 <div class="page-columns page-full"><p>We do this by considering the “total” partial derivative of <span class="math inline">\(\mathcal{L}(x)\)</span>  <span class="math display">\[
-    \partial_\mu \mathcal{L}(x) = \partial_\mu\mathcal{L}(x,\varphi,\partial\mu) + \frac{\partial}{\partial\varphi}\mathcal{L}(x,\varphi,\partial\varphi)\partial_\mu\varphi + \frac{\partial}{\partial\partial_\nu\varphi}\mathcal{L}(x,\varphi,\partial\varphi) \partial_\nu\partial_\mu\varphi.
-\]</span> Here <span class="math inline">\(\partial_\mu\mathcal{L}(x,\varphi,\partial\mu)\)</span> means the partial derivative of any dependence of the Lagrangian on space-time that is not contained in its dependence on the field or its derivative. Clearly if <span class="math inline">\(\mathcal{L}\)</span> has such explicit dependence on space-time it cannot be translationally invariant to arbitrary shifts in space and time. Thus we have <span class="math display">\[
+    \partial_\mu \mathcal{L}(x) = \partial_\mu\mathcal{L}(x,\varphi,\partial\varphi) + \frac{\partial}{\partial\varphi}\mathcal{L}(x,\varphi,\partial\varphi)\partial_\mu\varphi + \frac{\partial}{\partial\partial_\nu\varphi}\mathcal{L}(x,\varphi,\partial\varphi) \partial_\nu\partial_\mu\varphi.
+\]</span> Here <span class="math inline">\(\partial_\mu\mathcal{L}(x,\varphi,\partial\varphi)\)</span> means the partial derivative of any dependence of the Lagrangian on space-time that is not contained in its dependence on the field or its derivative. Clearly if <span class="math inline">\(\mathcal{L}\)</span> has such explicit dependence on space-time it cannot be translationally invariant to arbitrary shifts in space and time. Thus we have <span class="math display">\[
   \partial_\mu\mathcal{L}(x,\varphi,\partial\varphi) = 0,
-\]</span> meaning <span class="math inline">\(\mathcal{L}(x,\varphi,\partial\mu) = \mathcal{L}(\varphi,\partial\mu)\)</span>. In this case <span class="math display">\[
-    \partial_\mu \mathcal{L}(x) = \frac{\partial}{\partial\varphi}\mathcal{L}(\varphi,\partial\mu) + \frac{\partial}{\partial\partial_\nu\varphi}\mathcal{L}(\varphi,\partial\mu) \partial_\mu\partial_\nu\varphi,
+\]</span> meaning <span class="math inline">\(\mathcal{L}(x,\varphi,\partial\varphi) = \mathcal{L}(\varphi,\partial\varphi)\)</span>. In this case <span class="math display">\[
+    \partial_\mu \mathcal{L}(x) = \frac{\partial}{\partial\varphi}\mathcal{L}(\varphi,\partial\varphi) + \frac{\partial}{\partial\partial_\nu\varphi}\mathcal{L}(\varphi,\partial\varphi) \partial_\mu\partial_\nu\varphi,
 \]</span> and we immediately identify <span class="math display">\[
     \delta\mathcal{L}(x,\varphi,\partial\varphi, \delta_S\varphi) = a^\mu \partial_\mu \mathcal{L}(x).
 \]</span> In this case we see that the Lagrangian is <strong>not</strong> invariant to the symmetry transformation <span class="math inline">\(S\)</span>, so is a more complex situation. However, we can rewrite its variation as a 4-divergence term term with some index manipulation <span class="math display">\[

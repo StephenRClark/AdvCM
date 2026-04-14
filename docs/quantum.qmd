@@ -1,0 +1,271 @@
+# Relativistic Quantum Mechanics
+
+
+<!-- 
+
+Content:
+
+Quantum wavefunctions as a "classical" complex field
+Einstein-Plank relation
+de Broglie relation
+4-vector formulation of these
+Plane-wave to motivate Energy and Momentum operators
+
+Construct Schrodinger equation and its essential properties. Mention spin has to be bolted on by hand. Not relativistic.
+
+Include drop-down box for the Schrodinger Lagrangian and Noether current - state don't derive.
+
+Motivate coupling to EM via the classical non-relativistic Lagrangian, leading to the covariant derivative for minimal coupling. Discuss gauge transformations and how a local phase transformation is required to make the covariant derivative "covariant".
+
+Introduce the Klein-Gordon equation 
+Discuss properties and plane-wave solutions (has been discussed earlier so can be a recap)
+Focus on the complex Lagrangian (mention real one) and compute its Noether current. 
+Discuss problems with the KG equation, negative probability density, negative energies.
+
+Show KG equation is covariant.
+
+Mention KG is not really minimally coupled (like Schrodinger)
+
+Motivate the Dirac equation in its Schrodinger-like form - by introducing 4-spinors (a new object). Show how it can be written in a covariant form once we account for 4-spinors transforming under Lorentz transformations. Derive the Noether current.
+Move to interacting Dirac equation and show it is minimally coupled. 
+
+Arrive at the "classical" QED Lagrangian.
+
+ -->
+
+This final **non-examinable** lecture is a very brief introduction to *Relativistic Quantum Mechanics*. The aim is to give a flavour of the subject and to show how the tools we have developed in this course can be used to understand some of the key features of relativistic quantum theories, such as the Klein-Gordon and Dirac equations, and how they couple to electromagnetism. The purpose is to provide a nice stepping stone from this course to the 4th year Quantum Field Theory course. [While the content in this lecture makes for great exam questions, it has to be non-examinable, since after all this is a course on Advanced Classical Mechanics, not Quantum Mechanics!]{.aside} 
+
+## Quantum mechanics as a classical field theory
+So far we have considered fields as real and complex scalar fields, as well as 4-vector/one-form and tensor fields. Our use of complex scalar fields has been purely as a mathematical tool to make the algebra simpler, and we did not assign any physical significance to the complex field beyond this. Consequently the mathematical tools we have developed for classical field theories, Lagrangians, relativistic Euler-Lagrange equations, Noether currents etc., can be readily applied to quantum mechanics by interpreting the wavefunction $\psi$ itself as a classical complex scalar field. Of course this there will be some subtleties in doing this, since in quantum mechanics the complex character of the field is fundamental to its interpretation.
+
+The basic observational facts of quantum mechanics are encapsulated in the Einstein-Plank relation
+$$
+    \mathcal{E} = \hbar \omega,
+$$
+and the de Broglie relation
+$$
+    \boldsymbol{p} = \hbar \boldsymbol{k},
+$$
+which relate the relativistic energy $\mathcal{E}$ and relativistic 3-momentum $\boldsymbol{p}$ of a particle to the angular frequency $\omega$ and wavevector $\boldsymbol{k}$ of its associated wave. What is not often made clear in early quantum mechanics courses is that these relations are actually relativistic, and that they can be expressed in a 4-vector form as 
+$$
+    p^\mu = \hbar k^\mu, \quad {\rm or} \quad \begin{pmatrix} \mathcal{E}/c \\ \boldsymbol{p} \end{pmatrix} = \hbar \begin{pmatrix} \omega/c \\ \boldsymbol{k} \end{pmatrix}.
+$$
+This relation applies to **all** quantum theories, relativistic or otherwise. 
+
+A quantum wave with well-defined $\boldsymbol{k}$ and $\omega$ is called a plane-wave, and has the form
+$$
+    \psi(t, \boldsymbol{r}) = A e^{-i\omega t + i \boldsymbol{k} \cdot \boldsymbol{r}} = A e^{-i k_\mu x^\mu}.
+$${#eq-plane-wave}
+From this "solution" we can motivate the form of the energy and momentum operators in quantum mechanics, which are given by
+$$
+    \hat{\mathcal{E}} = i \hbar \frac{\partial}{\partial t}, \quad {\rm and} \quad \hat{\boldsymbol{p}} = -i \hbar \nabla.
+$$
+The reason for this is seen once we apply these operators to the plane-wave solution we get
+$$
+    \hat{\mathcal{E}} \psi(t, \boldsymbol{r})= i \hbar \frac{\partial}{\partial t} \left( A e^{-i\omega t + i \boldsymbol{k} \cdot \boldsymbol{r}} \right) = \hbar \omega \psi(t, \boldsymbol{r}) = \mathcal{E} \psi(t, \boldsymbol{r}),
+$$
+and
+$$    
+    \hat{\boldsymbol{p}} \psi(t, \boldsymbol{r}) = -i \hbar \nabla \left( A e^{-i\omega t + i \boldsymbol{k} \cdot \boldsymbol{r}} \right) = \hbar \boldsymbol{k} \psi(t, \boldsymbol{r}) = \boldsymbol{p} \psi(t, \boldsymbol{r}).
+$$
+As expected the plane-wave in @eq-plane-wave is an eigenstate of the energy and momentum operators, with eigenvalues given by the Einstein-Plank and de Broglie relations. Again the operators $\hat{\mathcal{E}}$ and $\hat{\boldsymbol{p}}$ are a very general results and apply to all quantum theories, relativistic or otherwise.
+
+To build a quantum wave theory we want it to be:
+
+1. built from $\hat{\mathcal{E}}$ and $\hat{\boldsymbol{p}}$ via a dispersion relation relating these two quantities and
+
+2. to be linear in the wavefunction $\psi(t, \boldsymbol{r}).$ so that it supports the superposition of solutions expected of a wave theory.
+
+The simplest example of this is Schrodinger's equation
+$$
+    i \hbar \frac{\partial}{\partial t} \psi(t, \boldsymbol{r}) = \left( -\frac{\hbar^2}{2m} \nabla^2 + V(\boldsymbol{r}) \right) \psi(t, \boldsymbol{r}).
+$${#eq-schrodinger}
+well known to you from earlier quantum mechanics courses.
+
+::: {.callout-note appearance="simple" icon=false}
+## Constructing Schrodinger's equation
+
+Schrodinger constructed his famous equation by appealing to classical non-relativistic mechanics. The non-relativistic energy is given by the Hamiltonian
+$$
+    \mathcal{E} = H(\boldsymbol{r},\boldsymbol{p}).
+$${#eq-nr-dispersion}
+Next, we introduce the position operator defined by the action on any wavefunction as
+$$
+    \hat{\boldsymbol{r}}\psi(t, \boldsymbol{r}) = \boldsymbol{r}\psi(t, \boldsymbol{r}).
+$$
+Then we "first" quantize the classical system by making the replacement $\boldsymbol{r} \to \hat{\boldsymbol{r}}$ $\boldsymbol{p} \to \hat{\boldsymbol{p}}$ and $\mathcal{E} \to \hat{\mathcal{E}}$ in @eq-nr-dispersion. For a single-particle in a potential $V(\boldsymbol{r})$ the non-relativistic Hamiltonian will be
+$$
+    H(\boldsymbol{r},\boldsymbol{p}) = \frac{\boldsymbol{p}^2}{2m} + V(\boldsymbol{r}),
+$$
+which quantizes as
+$$
+    H(\boldsymbol{r},\boldsymbol{p}) \to H(\hat{\boldsymbol{r}},\hat{\boldsymbol{p}}) = -\frac{\hbar^2}{2m} \nabla^2 + V(\hat{\boldsymbol{r}}).
+$$
+The resulting time-dependent Schrodinger equation is then
+$$
+    i \hbar \frac{\partial}{\partial t} \psi(t, \boldsymbol{r}) = \left( -\frac{\hbar^2}{2m} \nabla^2 + V(\boldsymbol{r}) \right) \psi(t, \boldsymbol{r}).
+$$
+:::
+
+There are a few crucial points to notice about Schrodinger's equation. 
+
+- It is first-order in time, but second-order in space. This means that the time evolution of the wavefunction is determined by its value at a single time, but its spatial profile is determined by its value and first spatial derivative at a single time. This is a consequence of the non-relativistic dispersion relation $\mathcal{E} = \boldsymbol{p}^2/2m + V(\boldsymbol{r})$ being first-order in energy but second-order in momentum.
+
+- It is not Lorentz covariant, since it treats time and space differently. This is again a consequence of it being constructed using the non-relativistic dispersion relation.
+
+- It looks like the diffusion equation, but with an imaginary unit $i$. This is again a consequence of the non-relativistic dispersion relation being parabolic in momentum. 
+
+- It is intrinsically complex, this is essential for the Schrodinger equation to support wave-like solutions and the superposition principle.
+
+::: {.callout-note appearance="simple" icon=false}
+## Schrodinger equation is intrinsically complex
+
+We can expand upon this point more. Suppose that we have a free particle with $V(\boldsymbol{r}) = 0$, then plane-wave solutions have
+$$
+    \mathcal{E} = \frac{\boldsymbol{p}^2}{2m} = \frac{\hbar^2 \boldsymbol{k}^2}{2m} \geq 0,
+$$
+so the energy is always positive. This is sensible since it tells us that the energy of particle is bounded from below meaning there exists a well-defined ground state for a free-particle. It also means the angular frequency $\omega = \mathcal{E}/\hbar \geq 0$. 
+
+Now consider the Fourier transform of a real function $f(t,\boldsymbol{r}) \to F(\omega, \boldsymbol{k})$. Since $f(t,\boldsymbol{r})$ is real, its Fourier transform must satisfy the conjugate symmetry condition
+$$
+    F(-\omega, -\boldsymbol{k}) = F^*(\omega, \boldsymbol{k}).
+$$
+This means that if $F(\omega, \boldsymbol{k})$ is non-zero for some $\omega$ and $\boldsymbol{k}$, then it must also be non-zero for $-\omega$ and $-\boldsymbol{k}$. This is a problem for the Schrodinger equation since the dispersion relation only allows for $\omega \geq 0$, so if we have a solution with $\omega > 0$ then we must also have a solution with $\omega < 0$ which is not allowed by the dispersion relation. This means that the Schrodinger equation cannot support real solutions. They must be intrinsically complex to be consistent with its dispersion relation.
+
+Another way to see this is that all solutions to the time-dependent Schrodinger equation are complex. Take an eigenstate of the Hamiltonian
+$$
+    H(\hat{\boldsymbol{r}},\hat{\boldsymbol{p}})\phi( \boldsymbol{r}) = \mathcal{E}\phi( \boldsymbol{r}),
+$$
+with energy $\mathcal{E}$, then its time-evolving solutions are given by
+$$
+    \psi(t, \boldsymbol{r}) = e^{-i\mathcal{E}t/\hbar} \phi( \boldsymbol{r}),
+$$ 
+meaning they pick up a complex phase factor as they evolve in time. All other solutions are constructed as superpositions of these energy eigenstates, so they will also be complex.
+:::
+
+To move to a relativistic quantum theory we need to change the dispersion relation from $\mathcal{E} = \frac{\boldsymbol{p}^2}{2m}$ to a relativistic one 
+$$
+    \mathcal{E}^2 = \boldsymbol{p}^2 c^2 + m^2 c^4.
+$$ 
+If we want to keep our theory first-order in time, as the Schrodinger equation is, then we need to take the square-root of this dispersion relation
+$$
+    \mathcal{E} = \sqrt{\boldsymbol{p}^2 c^2 + m^2 c^4}.
+$$
+The question is do we take the $+$ or $-$ square-root? The negative root appears troublesome since it would allow for unbounded negative energies suggesting the theory does not have a stable well-defined ground state. Suppose we just take the $+$ root, then we arrive at the equation
+$$
+    i \hbar \frac{\partial}{\partial t} \varphi(t, \boldsymbol{r}) = \sqrt{-\hbar^2 c^2 \nabla^2 + m^2 c^4} ~\varphi(t, \boldsymbol{r}),
+$$
+for a complex scalar field $\varphi(t, \boldsymbol{r})$. This equation has many problems, it is non-local in space since the square-root of the Laplacian is a non-local operator, and it is not Lorentz covariant since it still treats time and space differently.
+
+An immediate alternative is to avoid the square-root entirely and instead directly quantize the relativistic dispersion relation as
+$$
+    (i\hbar\partial_t)^2 \varphi(t, \boldsymbol{r}) = (-\hbar^2 c^2 \nabla^2 + m^2 c^4) \varphi(t, \boldsymbol{r}).
+$$
+This rearranges to
+$$
+    \left(\frac{1}{c^2}\partial^2_t - \nabla^2 + \frac{m^2 c^2}{\hbar^2}\right)\varphi(t, \boldsymbol{r}) = 0,
+$$
+or in a more compact 4-vector form
+$$
+    \left(\partial_\mu \partial^\mu + \frac{m^2 c^2}{\hbar^2}\right)\varphi(t, \boldsymbol{r}) = 0,
+$${#eq-kg_eq}
+and we arrive at the Klein-Gordon (KG) equation where the Lorentz constant $\hbar/mc$ is the reduced Compton wavelength. The KG equation is second-order in time and space, and is relativistically covariant since it is essentially the wave equation with a mass term which we have considered earlier in [Plane-waves and particle flows](planewaves.qmd). [In fact Schrodinger wrote down the KG equation before he wrote down his famous equation, but he rejected because it failed to reproduce the correct energy level structure for hydrogen.]{.aside} There we solved the @eq-kg_eq for a plane-wave and found
+$$
+     k_\mu k^\mu = \frac{m^2 c^2}{\hbar^2},
+$$
+giving a dispersion relation
+$$
+  (\hbar\omega)^2 = |\hbar\boldsymbol{k}|^2c^2 + m^2c^4,
+$${#eq-kg_wave_dispersion}
+consistent with the relativistic energy-momentum relation $\mathcal{E}^2 = p^2c^2 + m^2c^4$ for a particle with mass $m$. An immediately consequence of this is that
+$$
+    \hbar\omega = \pm \sqrt{|\hbar\boldsymbol{k}|^2c^2 + m^2c^4},
+$$
+and so the KG equations supports both positive and negative energy solutions. This is a major problem for interpretating the KG equation as a single-particle quantum theory since there won't be a stable ground state. One could think that the negative energy solutions can just be rejected as a mathematical artefact. The issue is that even if we start with an initial state comprising a superposition of only positive energy solutions, the time evolution of the wavefunction according to @eq-kg_eq will inevitably introduce negative energy solutions into the superposition. They are intrinisic to the KG equation and cannot be ignored. 
+
+Another issue is that @eq-kg_eq is second-order in time meaning that the evolution of the wavefunction from $t=0$ is determined not just by $\varphi(0,\boldsymbol{r})$ but also its first time-derivative $\partial_t\varphi(t,\boldsymbol{r})|_{t=0}$. This is a radical conceptual departure from the Schrodinger equation where the wavefunction $\psi(t,\boldsymbol{r})$ at any point in time $t$ is considered as containing all the information about the system and its evolution. There are futher issues with the KG equation which are best revealed by applying the tools of classical field theory to it.
+
+<!-- 
+Add reduction of KG equation to Schrodinger equation in non-relativistic limit
+--> 
+
+## Lagrangian formulation and Noether currents
+Like any classical field we can write down a Lagrangian for the Schrodinger and KG equations, and apply the relativistic Euler-Lagrange equations to derive these equations of motion. We can also identify symmetries of these Lagrangians and compute the associated Noether currents.
+
+### Schrodinger Lagrangian
+Although it is not relativistic we can nonetheless construct a Lagrangian such that the Schrodinger equation is arises from the relativistic Euler-Lagrange equations. Specifically, it is given by
+$$
+    \mathcal{L}_{\rm TDSE} = \frac{i\hbar}{2} \left( \psi^* \frac{\partial \psi}{\partial t} - \psi \frac{\partial \psi^*}{\partial t} \right) - \frac{\hbar^2}{2m} \nabla \psi^* \cdot \nabla \psi - V(\boldsymbol{r}) \psi^* \psi.
+$$
+Here $\psi$ and $\psi^*$ are treated as independent fields, and we apply the relativistic Euler-Lagrange equations to $\mathcal{L}_{\rm TDSE}$ to the conjugate $\psi^*$ as
+$$
+    \frac{\partial \mathcal{L}_{\rm TDSE}}{\partial \psi^*} - \partial_\mu \frac{\partial \mathcal{L}_{\rm TDSE}}{\partial (\partial_\mu \psi^*)} = 0,
+$$
+which yields the Schrodinger equation @eq-schrodinger for $\psi(t,\boldsymbol{r})$. Despite the Lagrangian $\mathcal{L}_{\rm TDSE}$ being intrinsically complex, and not being Lorentz scalar, we can still apply the tools of classical field theory to it. For example, it possesses a global $U(1)$ symmetry under the transformation
+$$
+    \psi(t,\boldsymbol{r}) \to e^{i\alpha}\psi(t,\boldsymbol{r}), \quad {\rm and} \quad \psi^*(t,\boldsymbol{r}) \to e^{-i\alpha}\psi^*(t,\boldsymbol{r}),
+$$
+for constant $\alpha$. We see that $\mathcal{L}_{\rm TDSE}$ is invariant to this transformation so applying Noether's theorem is straightforward and yields the conserved current
+$$
+    j^\mu_{\rm TDSE} = \begin{pmatrix} |\psi|^2 \\
+     \frac{\hbar}{2mi} \left( \psi^* \nabla \psi - \psi \nabla \psi^* \right) \end{pmatrix}.  
+$$
+Notice that the time-component of this current $j^0 = |\psi|^2$ is the probability density and is manifestly positive definite, while the spatial components are the 3-vector
+$$
+    \boldsymbol{j} = \frac{\hbar}{2mi} \left( \psi^* \nabla \psi - \psi \nabla \psi^* \right),
+$$
+which is the well-known probability current density for the Schrodinger equation. 
+
+Despite appearances $j^\mu_{\rm TDSE}$ is **not** a bonifide 4-vector since it was derived from a non-covariant Lagrangian, but it does still obey a continuity equation $\partial_\mu j^\mu_{\rm TDSE} = 0$ equivalent to
+$$
+    \partial_t |\psi|^2 + \nabla \cdot \boldsymbol{j} = 0,
+$$ 
+for an associated conserved charge 
+$$    
+    P(t) = \int {\rm d}^3\boldsymbol{r} ~|\psi(t,\boldsymbol{r})|^2,    
+$$
+which is the total probability of finding the particle somewhere in space. Thus, we have established that the global $U(1)$ symmetry of the Schrodinger Lagrangian is associated with the conservation of total probability. This is a key feature of non-relativistic quantum mechanics which we will aim to reproduce in the relativistic regime. 
+
+### Klein-Gordon Lagrangian
+Having arrived at the KG equation in @eq-kg_eq we can now proceed to write down an Lagrangian for it, identify its symmetries and compute the associated Noether currents using the field theory tools we developed. To set the scene it is worth applying these tools first to the Schrodinger equation, even though this is not a relativistic theory, to remind ourselves of probability currents.
+
+The KG equation supports both real and complex solutions $\varphi(t, \boldsymbol{r})$ so can be derived from the Lagrangian densities
+$$
+\begin{align}
+    \mathcal{L}^{(\mathbb{R})}_{\rm KG} &= \partial_\mu\varphi\partial^\mu\varphi - \left(\frac{mc}{\hbar}\right)^2\varphi^2 \quad\quad \rm{real}~\varphi, \\
+    \mathcal{L}^{(\mathbb{C})}_{\rm KG} &= \partial_\mu\varphi\partial^\mu\varphi^* - \left(\frac{mc}{\hbar}\right)^2\varphi^*\varphi \quad \rm{complex}~\varphi.
+\end{align}
+$$
+As usual we demand that the Lagrangian density $\mathcal{L}$ is a real Lorentz scalar for either field. The complex version is most relevant for relativistic quantum mechanics. In this case we treat $\varphi$ and $\varphi^*$ as independent fields, and applying the relativistic Euler-Lagrange equations to $\mathcal{L}^{(\mathbb{C})}_{\rm KG}$ to the conjugate $\varphi^*$ field yields the KG equation for $\varphi$.
+
+A key feature of $\mathcal{L}^{(\mathbb{C})}_{\rm KG}$ is that it possesses a global $U(1)$ symmetry under the transformation 
+$$
+    \varphi \to e^{i\alpha}\varphi
+$$
+for constant $\alpha$. Since $\mathcal{L}^{(\mathbb{C})}_{\rm KG}$ is invariant to this transformation applying Noether's theorem is straightforward and yields the conserved current
+$$
+    j^\mu = i \left( \varphi^* \partial^\mu \varphi - \varphi \partial^\mu \varphi^* \right),   
+$$
+with an associated conserved charge is given by
+$$
+    Q = \int d^3\boldsymbol{r} ~j^0,                   
+$$
+and satisfying the continuity equation
+$$
+    \partial_\mu j^\mu = 0.
+$$
+The spatial components of this current $j^i$ can be interpreted as a particle flow, while the charge $Q$ can be interpreted as a particle number, analogous to does in the Schrodinger equation. However, the problem with the KG equation is that $j^0$ is not positive definite. We can see this by writing
+$$
+    j^0 = \frac{2}{c}{\rm Im} \left\{ \varphi^* \partial_t \varphi \right\},
+$$
+so if we take a plane-wave solution of the form
+$$    
+    \varphi(t, \boldsymbol{r}) = A e^{-i\omega t + i \boldsymbol{k} \cdot \boldsymbol{r}},
+$$
+then the conserved charge density is given by
+$$    
+    j^0 = 2\frac{\omega}{c} |A|^2.
+$$
+For the positive energy solution with $\omega > 0$ we have $j^0 > 0$, but for the negative energy solution with $\omega < 0$ we have $j^0 < 0$. Consequently, we can't interpret $j^0$ as a probability density. [Actually $j^\mu$ behaves more like an electrical charge density which can be positive or negative, but to make this interpretation more rigorous requires tools from quantum field theory]{.aside} This is one of the key issues with interpreting the KG equation as a bonifide single-particle quantum theory.
+
+

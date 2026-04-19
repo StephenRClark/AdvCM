@@ -313,8 +313,8 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./epilogue.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Epilogue</span></a>
+  <a href="./quantum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic Quantum Mechanics</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -993,9 +993,9 @@ Dual Faraday tensor
 \]</span> As with <a href="#eq-curl_grad" class="quarto-xref">Equation&nbsp;<span>12.31</span></a> we have that <span class="math display">\[
     {\rm curl}[\tilde{\partial}\varphi(x)]_{\mu\nu} =  \partial_\mu \partial_\nu\varphi(x) - \partial_\nu \partial_\mu\varphi(x) = 0,
 \]</span> again due to the commutativity of derivatives. So the one-form curl has detected that our one-form field is really a scalar field in disguise.</p>
-<p>However, the 3-vector curl returns another 3-vector field. The relativistic version is more elegant. The derivative one-form <span class="math inline">\(\partial_\mu\)</span> elevates a scalar field to a one-form field, while the one-form curl elevates a one-form field to a rank-2 tensor field. So we can now ask what is the “curl” of a rank-2 tensor field? The answer is <span class="math display">\[
+<p>Note that the 3-vector curl returns another 3-vector field. The relativistic version is more elegant. The derivative one-form <span class="math inline">\(\partial_\mu\)</span> elevates a scalar field to a one-form field (like <span class="math inline">\(\nabla\)</span> elevates a scalar field to a 3-vector field), while the one-form curl elevates a one-form field to a rank-2 tensor field. So we can now ask what is the “curl” of a rank-2 tensor field? The answer is <span class="math display">\[
     {\rm curl}[\pmb{\symbb{T}}(x)]_{\mu\nu\rho} = \partial_\mu T_{\nu\rho}(x) + \partial_\nu T_{\rho\mu}(x) + \partial_\rho T_{\mu\nu}(x),
-\]</span> which generates a rank-2 tensor field. What makes this a curl is that <span id="eq-curl_curl"><span class="math display">\[
+\]</span> which generates a rank-3 tensor field. What makes this a curl is that <span id="eq-curl_curl"><span class="math display">\[
     {\rm curl}[{\rm curl}[\tilde{V}(x)]]_{\mu\nu\rho} = 0,
 \tag{12.32}\]</span></span> once again due to the commutativity of derivatives, so the curl of a curl vanishes.</p>
 <p>The rank-2 tensor curl therefore detects whether the input field is genuinely a rank-2 tensor field or if it is a one-form field in disguise. The key point we notice here is that the Bianchi identity is <span class="math display">\[

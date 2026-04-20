@@ -369,6 +369,29 @@ window.Quarto = {
 <p>In the lecture we derived it for a simple scalar field <span class="math inline">\(\varphi(x)\)</span>. Suppose instead of a single Lorentz scalar field we have a system described by a set of Lorentz scalar fields forming a multicomponent field <span class="math inline">\(\varphi_q(x)\)</span>, with <span class="math inline">\(q\)</span> indexing over the components. Write down a plausible generalisation of Noether’s theorem for such a system.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Noether’s theorem for a multi-component field</strong></p>
+<p>For a multi-component Lorentz scalar field <span class="math inline">\(\varphi_q(x)\)</span> we will have a multi-component symmetry induced variation <span class="math inline">\(\delta_S\varphi_q\)</span>. We still have a Lagrangian depending on <span class="math inline">\(\varphi_q\)</span> and its derivatives <span class="math inline">\(\partial\varphi_q\)</span>, for all <span class="math inline">\(q\)</span>, so <span class="math display">\[
+    \delta \mathcal{L}(x, \varphi_q, \partial\varphi_q, \delta_S\varphi_q) = \frac{\partial \mathcal{L}}{\partial \varphi_q}\delta_S\varphi_q + \frac{\partial \mathcal{L}}{\partial(\partial_\mu \varphi_q)}\partial_\mu \delta_S\varphi_q + \cdots
+\]</span> Exactly what we had before, but now we must sum over the components <span class="math inline">\(q\)</span>. We could follow the whole derivation through again, but it is clear that if <span class="math display">\[
+    \delta \mathcal{L} = \partial_\mu \mathcal{J}^\mu,
+\]</span> then we get <span class="math display">\[
+    j^\mu = \sum_q \frac{\partial \mathcal{L}}{\partial(\partial_\mu \varphi_q)} \delta_S \varphi_q - \mathcal{J}^\mu,
+\]</span> retaining an explicit summation over the <span class="math inline">\(q\)</span> index.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -390,6 +413,64 @@ window.Quarto = {
 \]</span> Show explicitly that <span class="math inline">\(\mathcal{L}_{\rm two}\)</span> is invariant under this transformation. Compute the infinitesimal variations to the fields <span class="math inline">\(\delta_S\varphi_q\)</span> from this transformations and compute the corresponding Noether current for this symmetry. Verify that the current is 4-divergence-free.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>2. Two-component real scalar field</strong></p>
+<p>Specialise to a two-component field <span class="math inline">\(\phi_1(x)\)</span> and <span class="math inline">\(\phi_2(x)\)</span> governed by a Lagrangian <span class="math display">\[
+    \mathcal{L}_{\rm two} = \partial_\mu \phi_1 \partial^\mu \phi_1 + \partial_\mu \phi_2 \partial^\mu \phi_2.
+\]</span> This is the sum of two separate wave-equation (d’Alembert) Lagrangians we have encountered before. Now we rotate these components by an angle <span class="math inline">\(\alpha\)</span>: <span class="math display">\[
+\begin{align}
+    \phi_1 &amp;\rightarrow \cos\alpha \, \phi_1 + \sin\alpha \, \phi_2, \\
+    \phi_2 &amp;\rightarrow -\sin\alpha \, \phi_1 + \cos\alpha \, \phi_2.
+\end{align}
+\]</span> So <span class="math inline">\(\mathcal{L}_{\text{two}}\)</span> after this rotation is: <span class="math display">\[
+\begin{align}
+    \mathcal{L}'_{\text{two}} &amp;= \partial_\mu(\cos\alpha \phi_1 + \sin\alpha \phi_2)\partial^\mu(\cos\alpha \phi_1 + \sin\alpha \phi_2) \\
+    &amp;\quad + \partial_\mu(-\sin\alpha \phi_1 + \cos\alpha \phi_2)\partial^\mu(-\sin\alpha \phi_1 + \cos\alpha \phi_2).
+\end{align}
+\]</span> Expand: <span class="math display">\[
+\begin{align}
+    \mathcal{L}'_{\text{two}} &amp;= \cos^2\alpha \, \partial_\mu \phi_1 \partial^\mu \phi_1 + \cos\alpha \sin\alpha \, \partial_\mu \phi_1 \partial^\mu \phi_2 \\
+    &amp;\quad + \sin^2\alpha \, \partial_\mu \phi_2 \partial^\mu \phi_2 + \sin\alpha \cos\alpha \, \partial_\mu \phi_2 \partial^\mu \phi_1 \\
+    &amp;\quad + \sin^2\alpha \, \partial_\mu \phi_1 \partial^\mu \phi_1 - \sin\alpha \cos\alpha \, \partial_\mu \phi_1 \partial^\mu \phi_2 \\
+    &amp;\quad + \cos^2\alpha \, \partial_\mu \phi_2 \partial^\mu \phi_2 - \cos\alpha \sin\alpha \, \partial_\mu \phi_2 \partial^\mu \phi_1, \\
+    &amp;= \partial_\mu \phi_1 \partial^\mu \phi_1 + \partial_\mu \phi_2 \partial^\mu \phi_2, \\
+    &amp;= \mathcal{L}_{\text{two}},
+\end{align}
+\]</span> So <span class="math inline">\(\delta \mathcal{L} = 0\)</span> since the Lagrangian is invariant.</p>
+<p>Now consider infinitesimal transformations: <span class="math display">\[
+    \delta \phi_1 = \alpha \phi_2 + \dots, \qquad \delta \phi_2 = -\alpha \phi_1 + \dots.
+\]</span> The Noether current in this context is <span class="math display">\[
+    j^\mu = \sum_q \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi_q)} \delta \phi_q.
+\]</span> so using <span class="math display">\[
+    \frac{\partial \mathcal{L}}{\partial(\partial_\mu \phi_q)} = 2 \partial^\mu \phi_q,
+\]</span> we obtain <span class="math display">\[
+    j^\mu = 2 \partial^\mu \phi_1 (\alpha \phi_2) + 2 \partial^\mu \phi_2 (-\alpha \phi_1).
+\]</span> Hence <span class="math display">\[
+    j^\mu = 2\alpha \left( \phi_2 \partial^\mu \phi_1 - \phi_1 \partial^\mu \phi_2 \right).
+\]</span> The scale factors of 2 and <span class="math inline">\(\alpha\)</span> are irrelevant, so we can drop them. We then verify the 4-current has zero 4-divergence: <span class="math display">\[
+    \partial_\mu j^\mu = \partial_\mu \phi_2 \partial^\mu \phi_1 + \phi_2 \partial_\mu \partial^\mu \phi_1 -
+    \partial_\mu \phi_1 \partial^\mu \phi_2 - \phi_1 \partial_\mu \partial^\mu \phi_2.
+\]</span> The first and third terms cancel, leaving <span class="math display">\[
+    \partial_\mu j^\mu = \phi_2 \partial_\mu \partial^\mu \phi_1 - \phi_1 \partial_\mu \partial^\mu \phi_2.
+\]</span> Using the Euler–Lagrange equations <span class="math display">\[
+    \partial_\mu \partial^\mu \phi_1 = 0, \qquad \partial_\mu \partial^\mu \phi_2 = 0,
+\]</span> we then obtain <span class="math display">\[
+    \partial_\mu j^\mu = 0,
+\]</span> so <span class="math inline">\(j^\mu\)</span> does indeed represent a conserved quantity.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -406,6 +487,62 @@ window.Quarto = {
 \]</span> is invariant to a phase shift of the field <span class="math inline">\(\varphi \rightarrow  e^{{\rm i}\alpha}\varphi\)</span>, with <span class="math inline">\(\alpha\)</span> a real constant, find its Noether current, and shows it is 4-divergence-free.</p>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. A complex scalar field</strong></p>
+<p>If <span class="math inline">\(\varphi(x)\)</span> is complex then it is really a two component scalar field: <span class="math display">\[
+    \varphi(x) = \varphi_1(x) + i\varphi_2(x)
+\]</span> with independent real and imaginary parts. We can equally perform a change of basis by <span class="math inline">\(\pi/4\)</span> in the Argand plane and take: <span class="math display">\[
+    \varphi(x) = \varphi_1(x) + i\varphi_2(x), \qquad \varphi^*(x) = \varphi_1(x) - i\varphi_2(x).
+\]</span> so we can also treat the field and its complex conjugate independent. We can then construct a complex Lagrangian as given <span class="math display">\[
+    \mathcal{L}_{\text{complex}} = \partial_\mu \varphi \partial^\mu \varphi^* - m^2 \varphi^* \varphi,
+\]</span> which includes a usual “wave” term along with a new “mass” term. Notice that <span class="math inline">\(\mathcal{L}_{\text{complex}}\)</span> is real-valued Lorentz scalar, as it must be. If we transform the “wave” term back into the real and imaginary parts we find that <span class="math display">\[
+\begin{align}
+    \partial_\mu \varphi \partial^\mu \varphi^* &amp;= \partial_\mu(\varphi_1 + i\varphi_2)\partial^\mu(\varphi_1 - i\varphi_2), \\
+    &amp;= \partial_\mu \varphi_1 \partial^\mu \varphi_1 + \partial_\mu \varphi_2 \partial^\mu \varphi_2 + \text{cross terms cancel}, \\
+    &amp;= \mathcal{L}_{\text{two}},
+\end{align}
+\]</span> so this part of <span class="math inline">\(\mathcal{L}_{\text{complex}}\)</span> is actually identical to the two component field problem in <strong>2.</strong>. The “mass” term however changes the physics of this problem, as we will explore at the very end of this course.</p>
+<p>The Lagrangian <span class="math inline">\(\mathcal{L}_{\text{complex}}\)</span> is clearly invariant under <span class="math display">\[
+    \varphi \rightarrow e^{i\alpha}\varphi, \qquad \varphi^* \rightarrow e^{-i\alpha}\varphi^*
+\]</span> with <span class="math inline">\(\alpha\)</span> real. So <span class="math inline">\(\delta \mathcal{L} = 0\)</span>. Examining the infinitesimal we find to lowest order: <span class="math display">\[
+    \delta \varphi = i\alpha \varphi + \dots, \qquad \delta \varphi^* = -i\alpha \varphi^* + \dots
+\]</span> so using <span class="math display">\[
+\frac{\partial \mathcal{L}}{\partial(\partial_\mu \varphi)} = \partial^\mu \varphi^*
+\]</span> and <span class="math display">\[
+\frac{\partial \mathcal{L}}{\partial(\partial_\mu \varphi^*)} = \partial^\mu \varphi
+\]</span> the Noether current <span class="math display">\[
+    j^\mu_{\text{complex}} = \frac{\partial \mathcal{L}}{\partial(\partial_\mu \varphi)}\delta \varphi + \frac{\partial \mathcal{L}}{\partial(\partial_\mu \varphi^*)}\delta \varphi^*.
+\]</span> evaluates as <span class="math display">\[
+    j^\mu_{\text{complex}} = i\alpha(\varphi \partial^\mu \varphi^* - \varphi^* \partial^\mu \varphi).
+\]</span> Again we can drop the scale factor <span class="math inline">\(\alpha\)</span> and just use <span class="math display">\[
+    j^\mu_{\text{complex}} = i(\varphi \partial^\mu \varphi^* - \varphi^* \partial^\mu \varphi)
+\]</span> Again we check it is 4-divergence free and get <span class="math display">\[
+\begin{align}
+    \partial_\mu j^\mu_{\text{complex}} &amp;= i(\partial_\mu \varphi \partial^\mu \varphi^* + \varphi \partial_\mu\partial^\mu \varphi^* -
+    \partial_\mu \varphi^* \partial^\mu \varphi - \varphi^* \partial_\mu\partial^\mu \varphi), \\
+    &amp;= i( \varphi \partial_\mu\partial^\mu \varphi^* - \varphi^* \partial_\mu\partial^\mu \varphi)
+\end{align}
+\]</span> after cancelling terms. Then by using the Euler-Lagrange equation for this theory <span class="math display">\[
+    (\partial_\mu\partial^\mu + m^2)\varphi = 0,
+\]</span> and its conjugate <span class="math display">\[
+    (\partial_\mu\partial^\mu + m^2)\varphi^* = 0,
+\]</span> we see that <span class="math display">\[
+    \partial_\mu j^\mu_{\text{complex}} = i( \varphi (-m\varphi^*) - \varphi^* (-m\varphi)) = 0
+\]</span> as required.</p>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -420,6 +557,38 @@ window.Quarto = {
 <p>In the lectures we considered Lagrangian densities <span class="math inline">\(\mathcal{L}(\varphi,\partial\varphi)\)</span> without any explicit space-time dependence and showed that they possess a symmetry for space-time translations <span class="math inline">\(x^\nu \rightarrow x^\nu - a^\nu\)</span> performed on the <span class="math inline">\(\varphi\)</span>. For each translation direction <span class="math inline">\(\nu=0,1,2,3,\)</span> we obtained a 4-current described by the rank-2 stress-energy tensor: <span class="math display">\[
     T^{\mu\nu} = \frac{\partial \mathcal{L}}{\partial (\partial_{\mu} \varphi)} \partial^{\nu} \varphi - \mathcal{L} \eta^{\mu\nu}.
 \]</span> Show in general that each of these currents are 4-divergence free <span class="math inline">\(\partial_\mu T^{\mu\nu} = 0\)</span>.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>4. Verifying the stress-energy tensor</strong></p>
+<p>In this question we are working backwards from our derivation of the stress-energy tensor. We start with the stress-energy tensor of a scalar field: <span class="math display">\[
+    T^{\mu\nu} = \frac{\partial \mathcal{L}}{\partial(\partial_\mu \varphi)}\partial^\nu \varphi - \eta^{\mu\nu}\mathcal{L},
+\]</span> and then compute <span class="math display">\[
+\begin{align}
+    \partial_\mu T^{\mu\nu} &amp;= \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial(\partial_\mu \varphi)}\partial^\nu \varphi\right) - \partial^\nu \mathcal{L}, \\
+    &amp;= \partial_\mu\left(\frac{\partial \mathcal{L}}{\partial(\partial_\mu \varphi)}\right)\partial^\nu \varphi +
+    \frac{\partial \mathcal{L}}{\partial(\partial_\mu \varphi)}\partial_\mu\partial^\nu \varphi - \partial^\nu \mathcal{L}, \\
+    &amp;= \frac{\partial \mathcal{L}}{\partial\varphi}\partial^\nu \varphi +
+    \frac{\partial \mathcal{L}}{\partial(\partial_\mu \varphi)}\partial_\mu\partial^\nu \varphi - \partial^\nu \mathcal{L},
+\end{align}
+\]</span> where in the final step we have used the Euler-Lagrange equations. Now we use that the Lagrangian <span class="math inline">\(\mathcal{L}(\varphi,\partial\varphi)\)</span> is a function only of the field and its derivative, so has no explicit dependence on <span class="math inline">\(x\)</span>. Consequently, the “total” partial derivative of the Lagrangian follows as <span class="math display">\[
+    \partial^\nu \mathcal{L} = \frac{\partial \mathcal{L}}{\partial\varphi}\partial^\nu \varphi +
+    \frac{\partial \mathcal{L}}{\partial(\partial_\mu \varphi)}\partial_\mu\partial^\nu \varphi,
+\]</span> hence, it cancels the first two terms giving <span class="math display">\[
+    \partial_\mu T^{\mu\nu} = 0.
+\]</span> The importance of <span class="math inline">\(T^{\mu\nu}\)</span> stems from it being the source term for the gravitational field in general relativity, corresponding to the curvature of spacetime.</p>
+</div>
 </div>
 </div>
 

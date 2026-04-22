@@ -313,6 +313,12 @@ window.Quarto = {
   </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./quantum.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic Quantum Mechanics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./epilogue.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Epilogue</span></a>
   </div>
@@ -748,7 +754,7 @@ and combining terms after “see-sawing” the indices. We are then left to comp
 \]</span> where <span class="math inline">\(\Gamma^{\rho\mu\nu}\)</span> is called the Belifante tensor which is antisymmetric in its first two indices <span class="math display">\[
     \Gamma^{\rho\mu\nu} = -\Gamma^{\mu\rho\nu}.
 \]</span> We are free to add such a term to the stress-energy tensor since it does not effect its 4-divergence <span class="math display">\[
-    \partial_\mu T^{\mu\nu} = \partial_\mu T^{\mu\nu}_{\rm can} + \partial_\mu\partial_\rho \Gamma^{\rho\mu\nu} = \partial_\mu T^{\mu\nu}_{\rm can} = 0,
+    \partial_\mu T^{\mu\nu}_{\rm EM} = \partial_\mu T^{\mu\nu}_{\rm can} + \partial_\mu\partial_\rho \Gamma^{\rho\mu\nu} = \partial_\mu T^{\mu\nu}_{\rm can} = 0,
 \]</span> where we used the symmetry of the derivatives <span class="math inline">\(\partial_\mu\partial_\rho\)</span> and antisymmetry of <span class="math inline">\(\Gamma^{\rho\mu\nu}\)</span>. For this trick to be useful we need to be able to readily construct a Belifante tensor using the basic ingredients of our theory. A good choice is <span id="eq-belifante"><span class="math display">\[
     \Gamma^{\rho\mu\nu} = -\frac{1}{\mu_0}F^{\rho\mu}A^\nu,
 \tag{13.23}\]</span></span> which has the required property and whose form is motivated by its similarity to the first term <a href="#eq-Temcan" class="quarto-xref">Equation&nbsp;<span>13.22</span></a>. Adding the 4-divergence of this term fixes the EM stress-energy as <span id="eq-Tem"><span class="math display">\[
@@ -957,7 +963,7 @@ c^{-2} \dot{\boldsymbol{S}} - \boldsymbol{\nabla}\cdot \boldsymbol{\sigma} = - \
 </ol>
 <div class="page-columns page-full"><p>As an example we can apply this approach for <span class="math inline">\(X = \varphi\)</span> is a real Lorentz scalar field. In this case properties 1. and 2. give a general Lagrangian <span class="math display">\[
     \mathcal{L}_{\rm s} = a_1 \varphi + a_2 \varphi^2 + a_3 \partial_\mu\varphi\partial^\mu \varphi,
-\]</span> where <span class="math inline">\(a_1,a_2,a_3\)</span> are Lorentz scalar coefficients. Property <strong>3.</strong> demands that <span class="math inline">\(\mathcal{L}_{\rm s}\)</span> is invariant to the field transformation <span class="math inline">\(\varphi \mapsto \varphi + g\)</span>, where <span class="math inline">\(g\)</span> is an arbitrary Lorentz scalar constant. It is easy to show this invariance requires <span class="math inline">\(a_1 = a_2 = 0\)</span> giving the d’Alembert Lagrangian as the unique scalar field theory up to an overall constant. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">The <strong>mock exam paper</strong> has a section C problem on the content of this section. Some of the statements below are question in this problem.</span></div></div>
+\]</span> where <span class="math inline">\(a_1,a_2,a_3\)</span> are Lorentz scalar coefficients. Property <strong>3.</strong> demands that <span class="math inline">\(\mathcal{L}_{\rm s}\)</span> is invariant to the field transformation <span class="math inline">\(\varphi \mapsto \varphi + g\)</span>, where <span class="math inline">\(g\)</span> is an arbitrary Lorentz scalar constant. It is easy to show this invariance requires <span class="math inline">\(a_1 = a_2 = 0\)</span> giving the d’Alembert Lagrangian as the unique scalar field theory up to an overall constant. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">The <strong>mock exam paper</strong> has a section C problem on the content of this section. Some of the statements below are questions in this problem.</span></div></div>
 <p>A much less trivial example, relevant to this lecture, is when <span class="math inline">\(X = A^\mu\)</span>, a real-valued 4-vector field, much like electromagnetism. In this case the application of properties 1. and 2. give a general Lagrangian with numerous terms <span id="eq-L4vec"><span class="math display">\[
 \begin{align}
 \mathcal{L}_{\rm v} &amp;= b_1 A_\mu A^\mu + b_2 \partial_\mu A^\mu + b_3 (\partial_\mu A^\mu) (\partial_\nu A^\nu)\\
@@ -1088,7 +1094,7 @@ c^{-2} \dot{\boldsymbol{S}} - \boldsymbol{\nabla}\cdot \boldsymbol{\sigma} = - \
 </div>
 </div>
 </div>
-<p>The Lagrangian we have ended up with doesn’t look gauge invariant. However, we can easily manipulate it an explicitly gauge invariant form by spliting the term: <span class="math display">\[
+<p>The Lagrangian we have ended up with doesn’t look gauge invariant. However, we can easily manipulate it an explicitly gauge invariant form by splitting the term: <span class="math display">\[
     \mathcal{L}_v = \frac{1}{2} b_4 \left[ (\partial_\mu A_\nu) F^{\mu\nu} + (\partial_\nu A_\mu) F^{\nu\mu}\right].
 \]</span> We then use antisymmetry of <span class="math inline">\(F^{\mu\nu}\)</span> <span class="math display">\[
 \begin{align}
@@ -1110,7 +1116,7 @@ End of the course
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Well done! You’ve reached the last part of examinable material in the course. However, there is more to explore if you are up for it. There is a <strong>non-examinable</strong> bonus lecture on <a href="quantum.qmd">Relativistic Quantum Mechanics</a> to give you a taste of how we can describe the matter field Lagrangian <span class="math inline">\(\mathcal{L}_{\rm matter}\)</span> mentioned above. There is also an in-depth <a href="./epilogue.html">epilogue</a> for the course which summarises what we have achieved and maps out where you can go next with the tools you have learnt. Hopefully you will see there is lots of exciting physics to explore.</p>
+<p>Well done! You’ve reached the last part of examinable material in the course. However, there is more to explore if you are up for it. There is a <strong>non-examinable</strong> bonus lecture on <a href="./quantum.html">Relativistic Quantum Mechanics</a> to give you a taste of how we can describe the matter field Lagrangian <span class="math inline">\(\mathcal{L}_{\rm matter}\)</span> mentioned above. There is also an in-depth <a href="./epilogue.html">epilogue</a> for the course which summarises what we have achieved and maps out where you can go next with the tools you have learnt. Hopefully you will see there is lots of exciting physics to explore.</p>
 </div>
 </div>
 

@@ -1,0 +1,1497 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.5.56">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>14&nbsp; Relativistic Quantum Mechanics – Advanced Classical Mechanics (Relativistic Fields)</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./epilogue.html" rel="next">
+<link href="./example_class5.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="nav-sidebar docked slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./quantum.html"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic Quantum Mechanics</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation docked overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header sidebar-header-stacked">
+      <a href="./index.html" class="sidebar-logo-link">
+      <img src="./figures/acm.png" alt="" class="sidebar-logo py-0 d-lg-inline d-none">
+      </a>
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Advanced Classical Mechanics (Relativistic Fields)</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Preface</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Introduction</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./books.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Recommended Books</span></a>
+  </div>
+</li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false">
+ <span class="menu-text">I: Special Relativity</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./principle_relativity.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Principle of relativity</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./lorentz_transform.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Lorentz transformation</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./space_time.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Minkowski space-time</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 1</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./4vectors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Introducing 4-vectors</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false">
+ <span class="menu-text">II: Tensors and Fields</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./oneforms.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">One-forms</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./tensors.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tensors</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class2.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 2</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./kinematics.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Relativistic kinematics</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./planewaves.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Plane-waves and particle flow</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false">
+ <span class="menu-text">III: Lagrangian field theory</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./field_theory.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Building a field theory</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class3.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 3</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./symmetries.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Symmetries and Noether’s theorem</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false">
+ <span class="menu-text">IV: Relativistic Electrodynamics</span></a>
+          <a class="sidebar-item-toggle text-start collapsed" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="false" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 ">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_revision.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Revision of Electromagnetism</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./faraday.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Faraday tensor and relativistic Maxwell equations</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class4.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 4</span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./em_lagrangian.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">Lagrangian approach to EM</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./example_class5.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Example Class 5</span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./quantum.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic Quantum Mechanics</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./epilogue.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Epilogue</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./acknowledgements.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Acknowledgements</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#quantum-mechanics-as-a-classical-field-theory" id="toc-quantum-mechanics-as-a-classical-field-theory" class="nav-link active" data-scroll-target="#quantum-mechanics-as-a-classical-field-theory"><span class="header-section-number">14.1</span> Quantum mechanics as a classical field theory</a></li>
+  <li><a href="#lagrangian-formulation-and-noether-currents" id="toc-lagrangian-formulation-and-noether-currents" class="nav-link" data-scroll-target="#lagrangian-formulation-and-noether-currents"><span class="header-section-number">14.2</span> Lagrangian formulation and Noether currents</a>
+  <ul class="collapse">
+  <li><a href="#schrödinger-lagrangian" id="toc-schrödinger-lagrangian" class="nav-link" data-scroll-target="#schrödinger-lagrangian"><span class="header-section-number">14.2.1</span> Schrödinger Lagrangian</a></li>
+  <li><a href="#klein-gordon-lagrangian" id="toc-klein-gordon-lagrangian" class="nav-link" data-scroll-target="#klein-gordon-lagrangian"><span class="header-section-number">14.2.2</span> Klein-Gordon Lagrangian</a></li>
+  </ul></li>
+  <li><a href="#historical-context" id="toc-historical-context" class="nav-link" data-scroll-target="#historical-context"><span class="header-section-number">14.3</span> Historical context</a>
+  <ul class="collapse">
+  <li><a href="#describing-the-hydrogen-atom" id="toc-describing-the-hydrogen-atom" class="nav-link" data-scroll-target="#describing-the-hydrogen-atom"><span class="header-section-number">14.3.1</span> Describing the hydrogen atom</a></li>
+  <li><a href="#describing-spin" id="toc-describing-spin" class="nav-link" data-scroll-target="#describing-spin"><span class="header-section-number">14.3.2</span> Describing spin</a></li>
+  </ul></li>
+  <li><a href="#the-dirac-equation" id="toc-the-dirac-equation" class="nav-link" data-scroll-target="#the-dirac-equation"><span class="header-section-number">14.4</span> The Dirac equation</a>
+  <ul class="collapse">
+  <li><a href="#factorising-the-square-root" id="toc-factorising-the-square-root" class="nav-link" data-scroll-target="#factorising-the-square-root"><span class="header-section-number">14.4.1</span> Factorising the square-root</a></li>
+  <li><a href="#properties-of-the-hatboldsymbolalpha-and-hatbeta-matrices" id="toc-properties-of-the-hatboldsymbolalpha-and-hatbeta-matrices" class="nav-link" data-scroll-target="#properties-of-the-hatboldsymbolalpha-and-hatbeta-matrices"><span class="header-section-number">14.4.2</span> Properties of the <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span> matrices</a></li>
+  <li><a href="#covariant-form" id="toc-covariant-form" class="nav-link" data-scroll-target="#covariant-form"><span class="header-section-number">14.4.3</span> Covariant form</a></li>
+  </ul></li>
+  <li><a href="#the-dirac-lagrangian" id="toc-the-dirac-lagrangian" class="nav-link" data-scroll-target="#the-dirac-lagrangian"><span class="header-section-number">14.5</span> The Dirac Lagrangian</a></li>
+  <li><a href="#noether-current-for-the-dirac-lagrangian" id="toc-noether-current-for-the-dirac-lagrangian" class="nav-link" data-scroll-target="#noether-current-for-the-dirac-lagrangian"><span class="header-section-number">14.6</span> Noether current for the Dirac Lagrangian</a></li>
+  <li><a href="#what-we-cant-cover-here" id="toc-what-we-cant-cover-here" class="nav-link" data-scroll-target="#what-we-cant-cover-here"><span class="header-section-number">14.7</span> What we can’t cover here</a></li>
+  <li><a href="#minimal-coupling" id="toc-minimal-coupling" class="nav-link" data-scroll-target="#minimal-coupling"><span class="header-section-number">14.8</span> Minimal coupling</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">Relativistic Quantum Mechanics</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<!-- 
+
+Content:
+
+Derive the Noether current.
+Move to interacting Dirac equation and show it is minimally coupled. 
+
+Motivate coupling to EM via the classical non-relativistic Lagrangian, leading to the covariant derivative for minimal coupling. Discuss gauge transformations and how a local phase transformation is required to make the covariant derivative "covariant".
+
+Mention KG is not really minimally coupled (like Schrödinger)
+
+Arrive at the "classical" QED Lagrangian.
+
+-->
+<div class="page-columns page-full"><p>This final <strong>non-examinable</strong> lecture is a very brief introduction to <em>Relativistic Quantum Mechanics</em>. The aim is to give a flavour of the subject and to show how the tools we have developed in this course can be used to understand some of the key features of relativistic quantum theories, such as the Klein-Gordon and Dirac equations, and how they couple to electromagnetism. The purpose is to provide a useful stepping stone from this course to the 4th year Quantum Field Theory course. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">While the content in this lecture makes for great exam questions, it has to be non-examinable, since after all this is a course on Advanced Classical Mechanics, not Quantum Mechanics!</span></div></div>
+<section id="quantum-mechanics-as-a-classical-field-theory" class="level2" data-number="14.1">
+<h2 data-number="14.1" class="anchored" data-anchor-id="quantum-mechanics-as-a-classical-field-theory"><span class="header-section-number">14.1</span> Quantum mechanics as a classical field theory</h2>
+<p>So far we have considered fields as real and complex scalar fields, as well as 4-vector/one-form and tensor fields. Our use of complex scalar fields has been purely for algebraic convenience since they can be decomposed into independent real and imaginary parts each described by two real scalar fields. We did not assigned any physical significance to a complex field beyond this. Consequently, the mathematical tools we have developed for classical field theories, Lagrangians, relativistic Euler-Lagrange equations, Noether currents etc., can formally be applied to quantum mechanics by simply interpreting the wavefunction <span class="math inline">\(\psi\)</span> itself as a classical complex scalar field. Of course this there will be some subtleties in doing this, since in quantum mechanics the complex character of the field is fundamental to its interpretation.</p>
+<p>The basic observational facts of quantum mechanics are encapsulated in the Einstein-Planck relation <span class="math display">\[
+    \mathcal{E} = \hbar \omega,
+\]</span> and the de Broglie relation <span class="math display">\[
+    \boldsymbol{p} = \hbar \boldsymbol{k},
+\]</span> which relate the relativistic energy <span class="math inline">\(\mathcal{E}\)</span> and relativistic 3-momentum <span class="math inline">\(\boldsymbol{p}\)</span> of a particle to the angular frequency <span class="math inline">\(\omega\)</span> and wavevector <span class="math inline">\(\boldsymbol{k}\)</span> of its associated wave. What is not often made clear in early quantum mechanics courses is that these relations are actually relativistic, and that they can be expressed in a 4-vector form as <span class="math display">\[
+    p^\mu = \hbar k^\mu, \quad {\rm or} \quad \begin{pmatrix} \mathcal{E}/c \\ \boldsymbol{p} \end{pmatrix} = \hbar \begin{pmatrix} \omega/c \\ \boldsymbol{k} \end{pmatrix}.
+\]</span> This relation applies to <strong>all</strong> quantum theories, relativistic or otherwise.</p>
+<p>A quantum wave with well-defined <span class="math inline">\(\boldsymbol{k}\)</span> and <span class="math inline">\(\omega\)</span> is called a plane-wave, and has the form <span id="eq-plane-wave"><span class="math display">\[
+    \psi(t, \boldsymbol{r}) = A e^{-i\omega t + i \boldsymbol{k} \cdot \boldsymbol{r}} = A e^{-i k_\mu x^\mu}.
+\tag{14.1}\]</span></span> From this “solution” we can motivate the form of the energy and momentum operators in quantum mechanics, which are given by <span id="eq-energy_momentum_operators"><span class="math display">\[
+    \hat{\mathcal{E}} = i \hbar \frac{\partial}{\partial t}, \quad {\rm and} \quad \hat{\boldsymbol{p}} = -i \hbar \nabla.
+\tag{14.2}\]</span></span> The reason for this is seen once we apply these operators to the plane-wave solution we get <span class="math display">\[
+    \hat{\mathcal{E}} \psi(t, \boldsymbol{r})= i \hbar \frac{\partial}{\partial t} \left( A e^{-i\omega t + i \boldsymbol{k} \cdot \boldsymbol{r}} \right) = \hbar \omega \psi(t, \boldsymbol{r}) = \mathcal{E} \psi(t, \boldsymbol{r}),
+\]</span> and <span class="math display">\[    
+    \hat{\boldsymbol{p}} \psi(t, \boldsymbol{r}) = -i \hbar \nabla \left( A e^{-i\omega t + i \boldsymbol{k} \cdot \boldsymbol{r}} \right) = \hbar \boldsymbol{k} \psi(t, \boldsymbol{r}) = \boldsymbol{p} \psi(t, \boldsymbol{r}).
+\]</span> As expected the plane-wave in <a href="#eq-plane-wave" class="quarto-xref">Equation&nbsp;<span>14.1</span></a> is an eigenstate of the energy and momentum operators, with eigenvalues given by the Einstein-Plank and de Broglie relations. Again the operators <span class="math inline">\(\hat{\mathcal{E}}\)</span> and <span class="math inline">\(\hat{\boldsymbol{p}}\)</span> are a very general results and apply to all quantum theories, relativistic or otherwise.</p>
+<p>To build a quantum wave theory we want it to be:</p>
+<ol type="1">
+<li><p>built from <span class="math inline">\(\hat{\mathcal{E}}\)</span> and <span class="math inline">\(\hat{\boldsymbol{p}}\)</span> in <a href="#eq-energy_momentum_operators" class="quarto-xref">Equation&nbsp;<span>14.2</span></a> via a dispersion relation relating these two quantities and</p></li>
+<li><p>to be linear in the wavefunction <span class="math inline">\(\psi(t, \boldsymbol{r})\)</span> so that it supports the superposition of solutions expected of a wave theory.</p></li>
+</ol>
+<p>The simplest example of this is Schrödinger’s equation <span id="eq-schrodinger"><span class="math display">\[
+    i \hbar \frac{\partial}{\partial t} \psi(t, \boldsymbol{r}) = \left( -\frac{\hbar^2}{2m} \nabla^2 + V(\boldsymbol{r}) \right) \psi(t, \boldsymbol{r}).
+\tag{14.3}\]</span></span> well known to you from earlier quantum mechanics courses.</p>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Constructing Schrödinger’s equation
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Schrödinger constructed his famous equation by appealing to classical non-relativistic mechanics. The non-relativistic energy is given by the Hamiltonian <span id="eq-nr-dispersion"><span class="math display">\[
+    \mathcal{E} = H(\boldsymbol{r},\boldsymbol{p}).
+\tag{14.4}\]</span></span> Next, we introduce the position operator defined by the action on any wavefunction as <span class="math display">\[
+    \hat{\boldsymbol{r}}\psi(t, \boldsymbol{r}) = \boldsymbol{r}\psi(t, \boldsymbol{r}).
+\]</span> Then we “first” quantize the classical system by making the replacement <span class="math inline">\(\boldsymbol{r} \to \hat{\boldsymbol{r}}\)</span>, <span class="math inline">\(\boldsymbol{p} \to \hat{\boldsymbol{p}}\)</span> and <span class="math inline">\(\mathcal{E} \to \hat{\mathcal{E}}\)</span> in <a href="#eq-nr-dispersion" class="quarto-xref">Equation&nbsp;<span>14.4</span></a>. For a single-particle in a potential <span class="math inline">\(V(\boldsymbol{r})\)</span> the non-relativistic Hamiltonian will be <span class="math display">\[
+    H(\boldsymbol{r},\boldsymbol{p}) = \frac{\boldsymbol{p}^2}{2m} + V(\boldsymbol{r}),
+\]</span> which quantizes as <span class="math display">\[
+    H(\boldsymbol{r},\boldsymbol{p}) \to H(\hat{\boldsymbol{r}},\hat{\boldsymbol{p}}) = -\frac{\hbar^2}{2m} \nabla^2 + V(\hat{\boldsymbol{r}}).
+\]</span> The resulting time-dependent Schrödinger equation is then <span class="math display">\[
+    i \hbar \frac{\partial}{\partial t} \psi(t, \boldsymbol{r}) = \left( -\frac{\hbar^2}{2m} \nabla^2 + V(\boldsymbol{r}) \right) \psi(t, \boldsymbol{r}).
+\]</span></p>
+</div>
+</div>
+<p>There are a few crucial points to notice about Schrödinger’s equation.</p>
+<ul>
+<li><p>It is first-order in time, but second-order in space. This means that the time evolution of the wavefunction is determined by its value at a single time, but its spatial profile is determined by its value and first spatial derivative at a single time. This is a consequence of the non-relativistic dispersion relation <span class="math inline">\(\mathcal{E} = \boldsymbol{p}^2/2m + V(\boldsymbol{r})\)</span> being first-order in energy but second-order in momentum.</p></li>
+<li><p>It is not Lorentz covariant, since it treats time and space differently. This is again a consequence of it being constructed using the non-relativistic dispersion relation.</p></li>
+<li><p>It looks like the diffusion equation, but with an imaginary unit <span class="math inline">\(i\)</span>. This is again a consequence of the non-relativistic dispersion relation being parabolic in momentum.</p></li>
+<li><p>It is intrinsically complex, this is essential for the Schrödinger equation to support wave-like solutions and the superposition principle.</p></li>
+</ul>
+<div class="callout callout-style-simple callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Schrödinger equation is intrinsically complex
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>We can expand upon this point more. Suppose that we have a free particle with <span class="math inline">\(V(\boldsymbol{r}) = 0\)</span>, then plane-wave solutions have <span class="math display">\[
+    \mathcal{E} = \frac{\boldsymbol{p}^2}{2m} = \frac{\hbar^2 \boldsymbol{k}^2}{2m} \geq 0,
+\]</span> so the energy is always positive. This is sensible since it tells us that the energy of particle is bounded from below meaning there exists a well-defined ground state for a free-particle. It also means the angular frequency <span class="math inline">\(\omega = \mathcal{E}/\hbar \geq 0\)</span>.</p>
+<p>Now consider the Fourier transform of a real function <span class="math inline">\(f(t,\boldsymbol{r}) \to F(\omega, \boldsymbol{k})\)</span>. Since <span class="math inline">\(f(t,\boldsymbol{r})\)</span> is real, its Fourier transform must satisfy the conjugate symmetry condition <span class="math display">\[
+    F(-\omega, -\boldsymbol{k}) = F^*(\omega, \boldsymbol{k}).
+\]</span> This means that if <span class="math inline">\(F(\omega, \boldsymbol{k})\)</span> is non-zero for some <span class="math inline">\(\omega\)</span> and <span class="math inline">\(\boldsymbol{k}\)</span>, then it must also be non-zero for <span class="math inline">\(-\omega\)</span> and <span class="math inline">\(-\boldsymbol{k}\)</span>. This is a problem for the Schrödinger equation since the dispersion relation only allows for <span class="math inline">\(\omega \geq 0\)</span>, so if we have a solution with <span class="math inline">\(\omega &gt; 0\)</span> then we must also have a solution with <span class="math inline">\(\omega &lt; 0\)</span> which is not allowed by the dispersion relation. This means that the Schrödinger equation cannot support real solutions. They must be intrinsically complex to be consistent with its dispersion relation.</p>
+<p>Another way to see this is that all solutions to the time-dependent Schrödinger equation are complex. Take an eigenstate of the Hamiltonian <span class="math display">\[
+    H(\hat{\boldsymbol{r}},\hat{\boldsymbol{p}})\phi( \boldsymbol{r}) = \mathcal{E}\phi( \boldsymbol{r}),
+\]</span> with energy <span class="math inline">\(\mathcal{E}\)</span>, then its time-evolving solutions are given by <span class="math display">\[
+    \psi(t, \boldsymbol{r}) = e^{-i\mathcal{E}t/\hbar} \phi( \boldsymbol{r}),
+\]</span> meaning they pick up a complex phase factor as they evolve in time. All other solutions are constructed as superpositions of these energy eigenstates, so they will also be complex.</p>
+</div>
+</div>
+<p>To move to a relativistic quantum theory we need to change the dispersion relation from <span class="math inline">\(\mathcal{E} = \frac{\boldsymbol{p}^2}{2m}\)</span> to a relativistic one <span class="math display">\[
+    \mathcal{E}^2 = \boldsymbol{p}^2 c^2 + m^2 c^4.
+\]</span> If we want to keep our theory first-order in time, as the Schrödinger equation is, then we need to take the square-root of this dispersion relation <span class="math display">\[
+    \mathcal{E} = \sqrt{\boldsymbol{p}^2 c^2 + m^2 c^4}.
+\]</span> The question is do we take the <span class="math inline">\(+\)</span> or <span class="math inline">\(-\)</span> square-root? The negative root appears troublesome since it would allow for unbounded negative energies suggesting the theory does not have a stable well-defined ground state. Suppose we just take the <span class="math inline">\(+\)</span> root, then we arrive at the equation <span class="math display">\[
+    i \hbar \frac{\partial}{\partial t} \varphi(t, \boldsymbol{r}) = \sqrt{-\hbar^2 c^2 \nabla^2 + m^2 c^4} ~\varphi(t, \boldsymbol{r}),
+\]</span> for a complex scalar field <span class="math inline">\(\varphi(t, \boldsymbol{r})\)</span>. This equation has many problems, it is non-local in space since the square-root of the Laplacian is a non-local operator, and it is not Lorentz covariant since it still treats time and space differently.</p>
+<p>An immediate alternative is to avoid the square-root entirely and instead directly quantize the relativistic dispersion relation as <span class="math display">\[
+    (i\hbar\partial_t)^2 \varphi(t, \boldsymbol{r}) = (-\hbar^2 c^2 \nabla^2 + m^2 c^4) \varphi(t, \boldsymbol{r}).
+\]</span> This rearranges to <span class="math display">\[
+    \left(\frac{1}{c^2}\partial^2_t - \nabla^2 + \frac{m^2 c^2}{\hbar^2}\right)\varphi(t, \boldsymbol{r}) = 0,
+\]</span> or in a more compact 4-vector form <span id="eq-kg_eq"><span class="math display">\[
+    \left(\partial_\mu \partial^\mu + \frac{m^2 c^2}{\hbar^2}\right)\varphi(t, \boldsymbol{r}) = 0,
+\tag{14.5}\]</span></span> and we arrive at the Klein-Gordon (KG) equation where the Lorentz constant <span class="math inline">\(\hbar/mc\)</span> is the reduced Compton wavelength. The KG equation is second-order in time and space, and is relativistically covariant since it is essentially the wave equation with a mass term which we have considered earlier in <a href="./planewaves.html">Plane-waves and particle flows</a>. There we solved the <a href="#eq-kg_eq" class="quarto-xref">Equation&nbsp;<span>14.5</span></a> for a plane-wave and found <span class="math display">\[
+     k_\mu k^\mu = \frac{m^2 c^2}{\hbar^2},
+\]</span> giving a dispersion relation <span id="eq-kg_wave_dispersion"><span class="math display">\[
+  (\hbar\omega)^2 = |\hbar\boldsymbol{k}|^2c^2 + m^2c^4,
+\tag{14.6}\]</span></span> consistent with the relativistic energy-momentum relation <span class="math inline">\(\mathcal{E}^2 = p^2c^2 + m^2c^4\)</span> for a particle with mass <span class="math inline">\(m\)</span>. An immediately consequence of this is that <span class="math display">\[
+    \hbar\omega = \pm \sqrt{|\hbar\boldsymbol{k}|^2c^2 + m^2c^4},
+\]</span> and so the KG equations supports both positive and negative energy solutions. This is a major problem for interpretating the KG equation as a single-particle quantum theory since there won’t be a stable ground state. One could think that the negative energy solutions can just be rejected as a mathematical artefact. The issue is that even if we start with an initial state comprising a superposition of only positive energy solutions, the time evolution of the wavefunction according to <a href="#eq-kg_eq" class="quarto-xref">Equation&nbsp;<span>14.5</span></a> will inevitably introduce negative energy solutions into the superposition. They are intrinisic to the KG equation and cannot be ignored.</p>
+<p>Another issue is that <a href="#eq-kg_eq" class="quarto-xref">Equation&nbsp;<span>14.5</span></a> is second-order in time meaning that the evolution of the wavefunction from <span class="math inline">\(t=0\)</span> is determined not just by <span class="math inline">\(\varphi(0,\boldsymbol{r})\)</span> but also its first time-derivative <span class="math inline">\(\partial_t\varphi(t,\boldsymbol{r})|_{t=0}\)</span>. This is a radical conceptual departure from the Schrödinger equation where the wavefunction <span class="math inline">\(\psi(t,\boldsymbol{r})\)</span> at any point in time <span class="math inline">\(t\)</span> is considered as containing all the information about the system and its evolution. There are futher issues with the KG equation which are best revealed by applying the tools of classical field theory to it.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-3-contents" aria-controls="callout-3" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Non-relativistic limit of the KG equation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-3" class="callout-3-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>The non-relativistic limit of the total energy for a particle is <span class="math display">\[
+    E = \frac{p^2}{2m} + mc^2 + \dots
+\]</span> and contains the rest mass energy as well as the kinetic energy. Let us write our relativistic wave function <span class="math inline">\(\varphi(t,\boldsymbol{r})\)</span> that is a solution to the Klein-Gordon equation in terms of another function <span class="math inline">\(\psi(t,\boldsymbol{r})\)</span> defined as <span id="eq-rest_energy_psi"><span class="math display">\[
+    \varphi(t,\boldsymbol{r})= \psi(t,\boldsymbol{r})e^{-i mc^2 t/\hbar}.
+\tag{14.7}\]</span></span> What we have done here is to add a time-dependent phase factor proportional to the rest energy. The purpose of this is revealed by substituting <a href="#eq-rest_energy_psi" class="quarto-xref">Equation&nbsp;<span>14.7</span></a> into <a href="#eq-kg_eq" class="quarto-xref">Equation&nbsp;<span>14.5</span></a> from which we get the following <span class="math display">\[
+    \left(-\frac{1}{c^2}\frac{\partial^2}{\partial t^2}  + \frac{2m i}{\hbar}\frac{\partial}{\partial t}  + \frac{m^2 c^2}{\hbar^2} +  \nabla^2 - \frac{m^2c^2}{\hbar^2}\right)\psi(t,\boldsymbol{r}) = 0.
+\]</span> We notice that two new terms have appeared, one which cancels the rest mass term and the other introduces a first derivative in time. Next we take the non-relativistic limit where <span class="math inline">\(c \rightarrow \infty\)</span> which causes the second time derivative to vanish and leaves <span class="math display">\[
+    i\hbar\frac{\partial}{\partial t}\psi(t,\boldsymbol{r}) =  -\frac{\hbar^2}{2m}\nabla^2 \psi(t,\boldsymbol{r}),
+\]</span> which we immediately recognise as the free-particle Schrödinger equation. Indeed, this tell us that the Klein-Gordon equation is the direct relativistic generalisation of the Schrödinger equation.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="lagrangian-formulation-and-noether-currents" class="level2 page-columns page-full" data-number="14.2">
+<h2 data-number="14.2" class="anchored" data-anchor-id="lagrangian-formulation-and-noether-currents"><span class="header-section-number">14.2</span> Lagrangian formulation and Noether currents</h2>
+<p>Like any classical field we can write down a Lagrangian for the Schrödinger and KG equations, and apply the relativistic Euler-Lagrange equations to derive these equations of motion. We can also identify symmetries of these Lagrangians and compute the associated Noether currents. To set the scene it is worth applying these tools first to the Schrödinger equation, even though this is not a relativistic theory.</p>
+<section id="schrödinger-lagrangian" class="level3" data-number="14.2.1">
+<h3 data-number="14.2.1" class="anchored" data-anchor-id="schrödinger-lagrangian"><span class="header-section-number">14.2.1</span> Schrödinger Lagrangian</h3>
+<p>Although it is not relativistic we can nonetheless construct a Lagrangian such that the Schrödinger equation is arises from the relativistic Euler-Lagrange equations. Specifically, it is given by <span class="math display">\[
+    \mathcal{L}_{\rm SE} = \frac{i\hbar}{2} \left( \psi^* \partial_t \psi - \psi \partial_t \psi^*\right) - \frac{\hbar^2}{2m} \nabla \psi^* \cdot \nabla \psi - V(\boldsymbol{r}) \psi^* \psi.
+\]</span> Here <span class="math inline">\(\psi\)</span> and <span class="math inline">\(\psi^*\)</span> are treated as independent fields, and we apply the relativistic Euler-Lagrange equations to <span class="math inline">\(\mathcal{L}_{\rm SE}\)</span> to the conjugate <span class="math inline">\(\psi^*\)</span> as <span class="math display">\[
+    \frac{\partial \mathcal{L}_{\rm SE}}{\partial \psi^*} - \partial_\mu \frac{\partial \mathcal{L}_{\rm SE}}{\partial (\partial_\mu \psi^*)} = 0,
+\]</span> which yields the Schrödinger equation <a href="#eq-schrodinger" class="quarto-xref">Equation&nbsp;<span>14.3</span></a> for <span class="math inline">\(\psi(t,\boldsymbol{r})\)</span>. Despite the Lagrangian <span class="math inline">\(\mathcal{L}_{\rm SE}\)</span> being intrinsically complex, and not being Lorentz scalar, we can still apply the tools of classical field theory to it. For example, since <span class="math inline">\(\psi\)</span> and <span class="math inline">\(\psi^*\)</span> appearing together in pairs in <span class="math inline">\(\mathcal{L}_{\rm SE}\)</span> it possesses a global <span class="math inline">\(U(1)\)</span> symmetry under the transformation <span class="math display">\[
+    \psi(t,\boldsymbol{r}) \to e^{i\alpha}\psi(t,\boldsymbol{r}), \quad {\rm and} \quad \psi^*(t,\boldsymbol{r}) \to e^{-i\alpha}\psi^*(t,\boldsymbol{r}),
+\]</span> for constant phase <span class="math inline">\(\alpha\)</span>. In the limit of small <span class="math inline">\(\alpha\)</span> we have <span class="math display">\[
+    \psi(t,\boldsymbol{r}) \approx \psi(t,\boldsymbol{r}) + i\alpha\psi(t,\boldsymbol{r}), \quad {\rm and} \quad \psi^*(t,\boldsymbol{r}) \approx \psi^*(t,\boldsymbol{r}) - i\alpha\psi^*(t,\boldsymbol{r}),
+\]</span> and as a result Noether’s theorem gives a 4-current <span class="math display">\[
+    j^\mu_{\rm SE} = \frac{\partial \mathcal{L}_{\rm SE}}{\partial (\partial_\mu \psi)} (i\alpha \psi) + \frac{\partial \mathcal{L}_{\rm SE}}{\partial (\partial_\mu \psi^*)} (-i\alpha \psi^*),
+\]</span> which evaluates as <span class="math display">\[
+    j^\mu_{\rm SE} = \begin{pmatrix} \rho_{\rm SE}(t,\boldsymbol{r})c \\
+     \boldsymbol{j}_{\rm SE}(t,\boldsymbol{r}) \end{pmatrix} =  -\hbar\alpha\begin{pmatrix} |\psi|^2c \\
+     \frac{\hbar}{2mi} \left( \psi^* \nabla \psi - \psi \nabla \psi^* \right) \end{pmatrix}.
+\]</span> As usual the Noether current has an arbitrary overall normalisation under rescaling of the symmetry parameter <span class="math inline">\(\alpha\)</span>. Consequently, we can divide through by <span class="math inline">\(-\hbar\alpha\)</span> to get a more standard form where <span class="math inline">\(\rho_{\rm SE}(t,\boldsymbol{r})\)</span> is the non-negative probability density of the particle and <span class="math inline">\(\boldsymbol{j}_{\rm SE}(t,\boldsymbol{r})\)</span> is the associated probability current density. These quantities should be recognisable from your earlier studies of the Schrödinger equation. Despite appearances <span class="math inline">\(j^\mu_{\rm SE}\)</span> is <strong>not</strong> a bonifide 4-vector since it was derived from a non-covariant Lagrangian. However, it does by construction obey the continuity equation <span class="math inline">\(\partial_\mu j^\mu_{\rm SE} = 0\)</span> equivalent to <span class="math display">\[
+    \partial_t \rho_{\rm SE}(t,\boldsymbol{r}) + \nabla \cdot \boldsymbol{j}_{\rm SE}(t,\boldsymbol{r}) = 0,
+\]</span> for an associated conserved charge <span class="math display">\[    
+    P(t) = \int_\mathcal{V} {\rm d}^3\boldsymbol{r} ~\rho_{\rm SE}(t,\boldsymbol{r}),    
+\]</span> which is the total probability of finding the particle in the 3-volume . Thus, we have established that the global <span class="math inline">\(U(1)\)</span> symmetry of the Schrödinger Lagrangian is associated with the conservation of total probability. Together with its lower bound on the energy of a free particle this probability interpretation of the Noether current is a key feature of non-relativistic quantum mechanics which we will aim to reproduce in the relativistic regime.</p>
+</section>
+<section id="klein-gordon-lagrangian" class="level3 page-columns page-full" data-number="14.2.2">
+<h3 data-number="14.2.2" class="anchored" data-anchor-id="klein-gordon-lagrangian"><span class="header-section-number">14.2.2</span> Klein-Gordon Lagrangian</h3>
+<p>Having arrived at the KG equation in <a href="#eq-kg_eq" class="quarto-xref">Equation&nbsp;<span>14.5</span></a> we can similarly write down an Lagrangian for it, identify its symmetries and compute the associated Noether currents. The KG equation supports both real and complex solutions <span class="math inline">\(\varphi(t, \boldsymbol{r})\)</span> so can be derived from the Lagrangian densities <span class="math display">\[
+\begin{align}
+    \mathcal{L}^{(\mathbb{R})}_{\rm KG} &amp;= \hbar c\left(\partial_\mu\varphi\partial^\mu\varphi - \left(\frac{mc}{\hbar}\right)^2\varphi^2\right) \quad\quad \rm{real}~\varphi, \\
+    \mathcal{L}^{(\mathbb{C})}_{\rm KG} &amp;= \hbar c\left(\partial_\mu\varphi\partial^\mu\varphi^* - \left(\frac{mc}{\hbar}\right)^2\varphi^*\varphi\right) \quad \rm{complex}~\varphi.
+\end{align}
+\]</span> As usual we demand that the Lagrangian density <span class="math inline">\(\mathcal{L}\)</span> is a real Lorentz scalar for either field, and the factor of <span class="math inline">\(\hbar c\)</span> ensures the correct units. The complex version is most relevant for relativistic quantum mechanics. In this case applying the relativistic Euler-Lagrange equations to <span class="math inline">\(\mathcal{L}^{(\mathbb{C})}_{\rm KG}\)</span> to the conjugate <span class="math inline">\(\varphi^*\)</span> field yields the KG equation for <span class="math inline">\(\varphi(x)\)</span>.</p>
+<p>Like the Schrödinger Lagrangian, <span class="math inline">\(\mathcal{L}^{(\mathbb{C})}_{\rm KG}\)</span> possesses a global <span class="math inline">\(U(1)\)</span> symmetry under the transformation <span class="math display">\[
+    \varphi(x) \to e^{i\alpha}\varphi(x), \quad {\rm and} \quad \varphi^*(x) \to e^{-i\alpha}\varphi^*(x),
+\]</span> for constant phase <span class="math inline">\(\alpha\)</span>. Applying Noether’s theorem (again dropping the overall factor of <span class="math inline">\(-\hbar\alpha\)</span>) yields the conserved current <span class="math display">\[
+    j^\mu_{\rm KG} = i c \left( \varphi^* \partial^\mu \varphi - \varphi \partial^\mu \varphi^* \right),   
+\]</span> with an associated conserved charge is given by <span class="math display">\[
+    Q = \int_\mathcal{V} {\rm d}^3\boldsymbol{r} ~j^0_{\rm KG}(t,\boldsymbol{r}),                   
+\]</span> and satisfying the continuity equation <span class="math display">\[
+    \partial_\mu j^\mu_{\rm KG} = 0.
+\]</span> Since <span class="math inline">\(j_{\rm KG}^\mu\)</span> is derived from a real Lorentz scalar Lagrangian it is a bonifide 4-vector, and the associated conserved charge <span class="math inline">\(Q\)</span> is Lorentz invariant.</p>
+<div class="page-columns page-full"><p>Writing out the components of <span class="math inline">\(j^\mu_{\rm KG}\)</span> we have <span class="math display">\[
+    j^\mu_{\rm KG} = \begin{pmatrix} \rho_{\rm KG}(t,\boldsymbol{r})c \\
+     \boldsymbol{j}_{\rm KG}(t,\boldsymbol{r}) \end{pmatrix} = \begin{pmatrix} i(\varphi^* \partial_t \varphi - \varphi \partial_t \varphi^*)\\
+      ic\left( \varphi^* \nabla \varphi - \varphi \nabla \varphi^* \right) \end{pmatrix}.
+\]</span> The spatial components of this current <span class="math inline">\(\boldsymbol{j}_{\rm KG}\)</span> is, upto a factor of <span class="math inline">\(-\hbar/2m\)</span>, formally the same as the probability current <span class="math inline">\(\boldsymbol{j}_{\rm SE}\)</span> for the Schrödinger equation. However, the time-component <span class="math inline">\(j^0\)</span> is very different. We can see this by writing <span class="math display">\[
+    j^0 = 2\,{\rm Im} \left\{ \varphi^* \partial_t \varphi \right\},
+\]</span> so if we take a plane-wave solution of the form <span class="math display">\[    
+    \varphi(t, \boldsymbol{r}) = A e^{-i\omega t + i \boldsymbol{k} \cdot \boldsymbol{r}},
+\]</span> then the conserved charge density is given by <span class="math display">\[    
+    \rho_{\rm KG}(x) = 2\frac{\omega}{c}|A|^2.
+\]</span> For positive energy solutions, with <span class="math inline">\(\omega &gt; 0\)</span>, we have <span class="math inline">\(j^0 &gt; 0\)</span>, but for the negative energy solution, with <span class="math inline">\(\omega &lt; 0\)</span>, we have <span class="math inline">\(j^0 &lt; 0\)</span>. Consequently, negative energy solutions directly prohibit the interpretation of <span class="math inline">\(\rho_{\rm KG}(x)\)</span> arising from the global <span class="math inline">\(U(1)\)</span> symmetry as a probability density.  This issue prevents the KG theory from being a physically consistent single-particle quantum theory.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Actually <span class="math inline">\(j^0_{\rm KG}\)</span> behaves like an electrical charge density which can be positive or negative. The reason for this is that the positive energy solutions correspond to particles with charge <span class="math inline">\(q\)</span> and mass <span class="math inline">\(m\)</span>, while the negative energy solutions correspond to antiparticles with charge <span class="math inline">\(-q\)</span> and mass <span class="math inline">\(m\)</span>. However, to make this identification rigorous requires sophisticated tools from next year’s quantum field theory course.</span></div></div>
+</section>
+</section>
+<section id="historical-context" class="level2 page-columns page-full" data-number="14.3">
+<h2 data-number="14.3" class="anchored" data-anchor-id="historical-context"><span class="header-section-number">14.3</span> Historical context</h2>
+<section id="describing-the-hydrogen-atom" class="level3 page-columns page-full" data-number="14.3.1">
+<h3 data-number="14.3.1" class="anchored" data-anchor-id="describing-the-hydrogen-atom"><span class="header-section-number">14.3.1</span> Describing the hydrogen atom</h3>
+<p>In fact Schrödinger wrote down the KG equation at the same time he wrote down his famous equation. At the time he was working on describing the electron in the hydrogen atom and trying to reproduce the increasingly accurate measurements of its energy level structure. Crude semi-classical models of the atom already indicated that the electron’s orbital motion should be described by a relativistic quantum theory, so naturally Schrödinger initially tried to use the KG equation, but he also computed it using his non-relativistic equation. He expected the KG equation to be more accurate.</p>
+<div class="page-columns page-full"><p>In <a href="#fig-hydrogen_spectrum" class="quarto-xref">Figure&nbsp;<span>14.1</span></a> the two spectra are shown side-by-side, along with that “observed” experimentally.  What is clear from this figure is that the Schrödinger equation predicts sets of degenerate energy levels called the “gross” structure, whereas in the real spectrum these levels are both shifted and split by relativistic effects giving “fine” structure. The KG equation does predict that such splittings occur but their value shows significant discrepancies with the observed fine structure.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Strictly speaking, the “observed” spectrum is actually the one computed using the Dirac equation which we will discuss shortly. It is not exact, but it is extremely accurate.</span></div></div>
+<p>For example, the ground state is shifted downwards in the KG equation by far more than observed. Beyond this, the remaining degeneracies of the levels is also wrong. For first excited states with <span class="math inline">\(n=2\)</span> the Schrödinger equation predicts a eight-fold degenerate energy level comprising one S orbital and three P orbitals, multiplied by two due to spin (see next). The KG equation predicts these levels are split by a large amount according to S and P, so giving two and six-fold degeneracies, respecitively. In reality the <span class="math inline">\(n=2\)</span> levels experience a much smaller split into two four-fold degenerate levels. So, despite being formally less accurate the Schrödinger equation result actually serves as a better starting point for understanding the energy level structure of hydrogen on top of which relativistic corrections can be added back perturbatively.</p>
+<div id="fig-hydrogen_spectrum" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hydrogen_spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/hydrogen_spectrum.png" class="img-fluid figure-img" width="800">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hydrogen_spectrum-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.1: The gross spectrum of hydrogen computed with the Schrödinger equation (middle), the Klein-Gordon equation (left), and the Dirac equation (right). The Dirac equation is the correct relativistic quantum theory for describing the electron and agrees very well with experimental observations.
+</figcaption>
+</figure>
+</div>
+<p>What this tells us is that the KG equation, while being a relativistic quantum theory, is not the correct relativistic quantum theory for describing the electron. It introduces the kinetic energy relativistic correction to the energy levels of hydrogen, but misses out other equally important and often opposing corrections (like spin-orbit coupling), and so rather than refining the gross energy level structure predicted by the Schrödinger equation it actually makes it irrecoverably worse.</p>
+</section>
+<section id="describing-spin" class="level3 page-columns page-full" data-number="14.3.2">
+<h3 data-number="14.3.2" class="anchored" data-anchor-id="describing-spin"><span class="header-section-number">14.3.2</span> Describing spin</h3>
+<div class="page-columns page-full"><p>Solving the hydrogen atom reveals that there is a deeper problem with the KG equation, which is that it does not account for the intrinsic spin of the electron. The Stern-Gerlach experiment shows that the electron is a spin-1/2 particle carrying an intrinsic “spin” angular momentum of <span class="math inline">\(\hbar/2\)</span> which is independent of its orbital motion. For the KG and Schrödinger we just multiplied the degeneracy of orbitals by two to account for this mysterious property.  The electron’s spin couples to its orbital motion and produces additional relativistic fine corrections of the energy levels of hydrogen.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Neither the Schrödinger equation nor the KG equation can account for spin-1/2 particles since they are both spin-0 theories.</span></div></div>
+<div id="fig-zeeman_split" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-zeeman_split-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/zeeman_splitting.png" class="img-fluid figure-img" width="300">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-zeeman_split-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.2: The Zeeman splitting of the energy levels of hydrogen in an external magnetic field exposes its spin degeneracy.
+</figcaption>
+</figure>
+</div>
+<p>Here again the Schrödinger equation, being non-relativistic, is a better platform for bolting on “by hand” the physics of spin. Specifically, we elevate the Schrödinger wavefunction to a two-component spinor wavefunction and add a Pauli term to the Hamiltonian which accounts for the coupling of the electron’s spin to an external magnetic field <span class="math inline">\(\boldsymbol{B}\)</span> as <span class="math display">\[
+    i\hbar \frac{\partial}{\partial t} \boldsymbol{\psi}(t, \boldsymbol{r}) = \left( -\frac{\hbar^2}{2m} \nabla^2 + V(\boldsymbol{r}) + \frac{e\hbar}{2mc} \hat{\boldsymbol{\sigma}} \cdot \boldsymbol{B} \right) \boldsymbol{\psi}(t, \boldsymbol{r}),
+\]</span> where the wave function <span class="math inline">\(\boldsymbol{\psi}(t, \boldsymbol{r})\)</span> is now a two-component spinor, <span class="math display">\[
+    \boldsymbol{\psi}(t, \boldsymbol{r}) = \begin{pmatrix} \psi_\uparrow(t, \boldsymbol{r}) \\ \psi_\downarrow(t, \boldsymbol{r}) \end{pmatrix},
+\]</span> describing the two spin states of the electron, and <span class="math inline">\(\hat{\boldsymbol{\sigma}}\)</span> is 3-vector of <span class="math inline">\(2 \times 2\)</span> Pauli matrices <span class="math display">\[
+    \hat{\boldsymbol{\sigma}} = \begin{pmatrix} \sigma_x \\ \sigma_y \\ \sigma_z \end{pmatrix}.
+\]</span> The Hilbert space of this theory is now the tensor product of the spatial Hilbert space <span class="math inline">\(L_2(\mathbb{R}^3)\)</span> of square-integrable functions on <span class="math inline">\(\mathbb{R}^3\)</span> and the two-dimensional spin Hilbert space <span class="math inline">\(\mathbb{C}^2\)</span>. The dot-product form of the Pauli term is motivated by the classical interaction energy of a magnetic moment <span class="math inline">\(\boldsymbol{\mu}\)</span> with a magnetic field <span class="math inline">\(\boldsymbol{B}\)</span> given by <span class="math inline">\(-\boldsymbol{\mu} \cdot \boldsymbol{B}\)</span>. From this we identify the electron’s intrinsic magnetic moment as being given by <span class="math inline">\(\hat{\boldsymbol{\mu}} = -\frac{e\hbar}{2mc}\hat{\boldsymbol{\sigma}}\)</span>. The Pauli term accounts for the Zeeman splitting of the energy levels of hydrogen in an external magnetic field, and can describe the spin discriminating dynamics of the Stern-Gerlach experiment using a spatially inhomogeneous magnetic field.</p>
+</section>
+</section>
+<section id="the-dirac-equation" class="level2 page-columns page-full" data-number="14.4">
+<h2 data-number="14.4" class="anchored" data-anchor-id="the-dirac-equation"><span class="header-section-number">14.4</span> The Dirac equation</h2>
+<p>There are a lot of unanswered questions at this point. Neither the KG equation or the Schrödinger equation naturally describe spin, while in the latter case we had to shoehorn it in ad-hoc style. It is therefore natural to ask if there is a consistent relativistic quantum theory which can account for the intrinsic spin of the electron and the relativistic corrections to the hydrogen atom. In 1928 Dirac was searching for a precisely this theory.</p>
+<section id="factorising-the-square-root" class="level3 page-columns page-full" data-number="14.4.1">
+<h3 data-number="14.4.1" class="anchored" data-anchor-id="factorising-the-square-root"><span class="header-section-number">14.4.1</span> Factorising the square-root</h3>
+<p>Dirac was guided by the following properties:</p>
+<ol type="1">
+<li><p>The equation should be invariant under Lorentz transformations, which implies that the derivatives in space and time must be of the same order (as they are in the wave equation and Klein-Gordon equation where they are both second order).</p></li>
+<li><p>The theory should be linear in the wavefunction <span class="math inline">\(\boldsymbol{\Psi}(t, \boldsymbol{r})\)</span> so that it supports the superposition of solutions expected of a wave theory.</p></li>
+<li><p>Free-particle energy eigenstates of the theory should possess energies that obey the relativistic relation <span class="math inline">\(E^2 = p^2c^2 + m^2c^4\)</span>.</p></li>
+<li><p>Energy <span class="math inline">\(\hat{\mathcal{E}}\)</span> and momentum operators <span class="math inline">\(\hat{\boldsymbol{p}}\)</span> in the theory will follow from the standard canonical quantization rules in <a href="#eq-energy_momentum_operators" class="quarto-xref">Equation&nbsp;<span>14.2</span></a>.</p></li>
+<li><p>The equation will have a form similar to the Schrödinger equation as <span class="math display">\[
+i \hbar \frac{\partial \boldsymbol{\Psi}(t,\boldsymbol{r})}{\partial t} = \hat{H}\boldsymbol{\Psi}(t,\boldsymbol{r}).
+\]</span> Being first order in time the form implies that knowledge of the putative object <span class="math inline">\(\boldsymbol{\Psi}(t,\boldsymbol{r})\)</span> at time <span class="math inline">\(t\)</span> should allow its subsequent form at any other time to be computed.</p></li>
+<li><p>Time evolution will be governed by a relativistic Hamiltonian <span class="math inline">\(\hat{H}\)</span> that is hermitian.</p></li>
+</ol>
+<p>Satisfying properties 5 and 6 above is highly constraining. It requires that <span class="math inline">\(\hat{H}\)</span> contains only first order derivatives in space, so <span class="math inline">\(\hat{\boldsymbol{p}}\)</span> must appear linearly in <span class="math inline">\(\hat{H}\)</span>. This is a major departure from the non-relativistic Schrödinger equation where the energy is quadratic in momentum.</p>
+<p>Dirac’s sizable wish-list is a much more extended version of our early approach to finding the Schrödinger and Klein-Gordon equations. To accomplish it Dirac first made an important observation about the expression <span class="math inline">\(E = (p^2c^2 + m^2c^4)^{1/2}\)</span> by considering a factorisation of the square-root of the form <span id="eq-energy_fac"><span class="math display">\[
+    E = \sqrt{p^2c^2 + m^2c^4} = \hat{\boldsymbol{\alpha}}\cdot \hat{\boldsymbol{p}} c + \hat{\beta} mc^2.
+\tag{14.8}\]</span></span> Owing to the dot product with momentum in this expression we have an object <span class="math display">\[
+    \hat{\boldsymbol{\alpha}} = \left(\begin{array}{c}
+    \hat{\alpha}_x  \\
+    \hat{\alpha}_y   \\
+    \hat{\alpha}_z  
+    \end{array}\right),
+\]</span> which has vector character, and another <span class="math inline">\(\hat{\beta}\)</span> with a scalar character. As will become clear very soon this factorisation is impossible if we take <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> to be an ordinary vector with scalar components and <span class="math inline">\(\hat{\beta}\)</span> as a scalar. For this reason we denote them with <span class="math inline">\(\hat{\cdot}\)</span> to indicate that they are in fact matrices.</p>
+<p>To determine <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span> we square the righthand side carefully by not assuming commutativity in the multiplication between the components of <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span>. This results in a long expression <span class="math display">\[
+\begin{align}
+    E^2 &amp;= (\hat{\boldsymbol{\alpha}}\cdot {\bf p} c + \hat{\beta} mc^2)(\hat{\boldsymbol{\alpha}}\cdot {\bf p} c + \hat{\beta} mc^2), \\
+    &amp;= \hat{\alpha}_x^2p_x^2c^2 + \hat{\alpha}_y^2p_y^2c^2 + \hat{\alpha}_z^2p_z^2c^2 + \hat{\beta}^2 m^2c^4 + (\hat{\boldsymbol{\alpha}}\cdot {\bf p} \hat{\beta} + \hat{\beta} \hat{\boldsymbol{\alpha}}\cdot {\bf p}) mc^3  \\
+    &amp; \quad + \, \Big((\hat{\alpha}_x\hat{\alpha}_y + \hat{\alpha}_y\hat{\alpha}_x)p_xp_y + (\hat{\alpha}_y\hat{\alpha}_z + \hat{\alpha}_z\hat{\alpha}_y)p_yp_z + (\hat{\alpha}_x\hat{\alpha}_z + \hat{\alpha}_z\hat{\alpha}_x)p_xp_z\Big)c^2.
+\end{align}
+\]</span> For this equation to reduce down to <span class="math inline">\(p^2c^2 + m^2c^4\)</span> the last four terms must vanish. First, we require that <span class="math display">\[
+    \hat{\boldsymbol{\alpha}}\hat{\beta} + \hat{\beta}\hat{\boldsymbol{\alpha}} = \{\hat{\boldsymbol{\alpha}},\hat{\beta}\} = 0,
+\]</span> where the curly braces denote the anticommutator. So <span class="math inline">\(\hat{\beta}\)</span> needs to anticommute with each component of <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span>. Second, we require that <span class="math display">\[
+    \{\hat{\alpha}_x,\hat{\alpha}_y\} = \{\hat{\alpha}_y,\hat{\alpha}_z\} = \{\hat{\alpha}_x,\hat{\alpha}_z\} = 0,
+\]</span> so each component of <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> anticommutes with the others. We therefore see that had <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span> been composed of scalars we would instead have commutivity and no such cancellations would be possible. Finally we require that <span class="math display">\[
+    \hat{\alpha}_x^2 = \hat{\alpha}_y^2 = \hat{\alpha}_z^2 = \hat{\beta}^2 = \mathbb{1},
+\]</span> namely these matrices must square to the identity. Provided these conditions are met then <a href="#eq-energy_fac" class="quarto-xref">Equation&nbsp;<span>14.8</span></a> is a valid factorisation of the relativistic energy relation once we read <span class="math inline">\(E\)</span> as being <span class="math inline">\(E \times \mathbb{1}\)</span>.</p>
+<p>Given this factorisation and following property 4 above Dirac then applied the canonical transformations to arrive at the equation <span id="eq-dirac_equation"><span class="math display">\[
+\begin{align}
+    i\hbar\frac{\partial}{\partial t}\boldsymbol{\Psi}(t,\boldsymbol{r}) &amp;= \left(c \hat{\boldsymbol{\alpha}}\cdot\hat{\bf p} + \hat{\beta} mc^2\right) \boldsymbol{\Psi}(t,\boldsymbol{r}), \\
+    &amp;= \left(-i\hbar c \hat{\boldsymbol{\alpha}}\cdot\nabla + \hat{\beta} mc^2\right) \boldsymbol{\Psi}(t,\boldsymbol{r}), \\
+    &amp;= \left(-i\hbar c \hat{\alpha}_x\frac{\partial}{\partial x}  -i\hbar c \hat{\alpha}_y\frac{\partial}{\partial y} -i\hbar c \hat{\alpha}_z\frac{\partial}{\partial z} + \hat{\beta} mc^2\right) \boldsymbol{\Psi}(t,\boldsymbol{r}).
+\end{align}
+\tag{14.9}\]</span></span> This is the Hamiltonian form of the Dirac equation. It is consistent with property 1 and satisfies property 5 in that the space and time derivatives are both first order. Notice that the object <span class="math inline">\(\boldsymbol{\Psi}(t,\boldsymbol{r})\)</span> is now a vector of wave functions, <span class="math display">\[
+    \boldsymbol{\Psi}(t,\boldsymbol{r}) =  \left(\begin{array}{ccc}
+    \psi_1(t,\boldsymbol{r})  \\
+    \psi_2(t,\boldsymbol{r})  \\
+    \vdots \\
+    \psi_d(t,\boldsymbol{r})    
+    \end{array}
+    \right),
+\]</span> usually called a <em>spinor</em> with some soon to be determined dimension <span class="math inline">\(d\)</span>. The <span class="math inline">\((d \times d)\)</span> matrices <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span> act on the spinor components of <span class="math inline">\(\boldsymbol{\Psi}(t,\boldsymbol{r})\)</span>. The Dirac equation is therefore a multi-component equation of motion.</p>
+<div class="page-columns page-full"><p>This multi-component form is entirely analogous to the Schrödinger equation for a spin-1/2 particle we “invented” above. There we introduced a new <span class="math inline">\(d=2\)</span> dimensional degree of freedom called spin (for spin-1/2) to our particle and expanded our Hilbert space to (<em>space</em>) <span class="math inline">\(\otimes\)</span> (<em>spin</em>) <span class="math inline">\(= L_2(\mathbb{R}^3) \otimes \mathbb{C}^2\)</span>. To factorise the relativistic energy-momentum relation here we were forced to introduce matrices and expand our wave function to a spinor, equivalent to a new degree of freedom.  As we shall comment on shortly this seemingly innocuous trick gives rise to both anti-particles and spin.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Since <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span> act on the new degree of freedom introduced by the factorisation distinct from the motional degree of freedom, they manifestly commute with differential operators on space like momentum <span class="math inline">\(\hat{\boldsymbol{p}}\)</span>.</span></div></div>
+</section>
+<section id="properties-of-the-hatboldsymbolalpha-and-hatbeta-matrices" class="level3 page-columns page-full" data-number="14.4.2">
+<h3 data-number="14.4.2" class="anchored" data-anchor-id="properties-of-the-hatboldsymbolalpha-and-hatbeta-matrices"><span class="header-section-number">14.4.2</span> Properties of the <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span> matrices</h3>
+<p>So what are the matrices <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span>? To answer this we start by deducing a number of properties they must obey:</p>
+<ul>
+<li><p><strong>Hermitian</strong> In order for our relativistic Hamiltonian in <a href="#eq-dirac_equation" class="quarto-xref">Equation&nbsp;<span>14.9</span></a> given by <span id="eq-dirac_hamiltonian"><span class="math display">\[
+  \hat{H} = c \hat{\boldsymbol{\alpha}}\cdot\hat{\boldsymbol{p}} + \hat{\beta} mc^2,
+\tag{14.10}\]</span></span> to be hermitian, we require that all the <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span> matrices are hermitian since the momentum operator <span class="math inline">\(\hat{\boldsymbol{p}}\)</span> is hermitian. This then satisfies property 6 above. Given that they also square to identity we therefore have, e.g., that <span class="math inline">\(\hat{\beta}^\dagger \hat{\beta} = \hat{\beta}\hat{\beta} = \mathbb{1}\)</span>, so <span class="math inline">\(\hat{\beta}\)</span> is also unitary. The same reasoning applies to <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> as well.</p></li>
+<li><p><strong>Eigenvalues are <span class="math inline">\(\pm 1\)</span></strong> Being hermitian tells us that the eigenvalues of <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span> must be real, but actually they are even more constrained than this. The eigenvalue equation for, e.g., the <span class="math inline">\(\hat{\beta}\)</span> matrix is <span class="math inline">\(\hat{\beta}{\bf u} = \lambda {\bf u}\)</span>. Given that <span class="math inline">\(\hat{\beta}^2 = \mathbb{1}\)</span> we therefore immediately know that <span class="math inline">\({\bf u} = \lambda^2{\bf u}\)</span> so <span class="math inline">\(\lambda = \pm 1\)</span>. The same reasoning applies to the <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> matrices as well.</p></li>
+<li><p><strong>Traceless</strong> The anticommutation relations, and squaring to identity tell us that <span class="math display">\[
+  \hat{\alpha}_x\hat{\beta} + \hat{\beta}\hat{\alpha}_x = \hat{\beta}\hat{\alpha}_x\hat{\beta} + \hat{\alpha}_x = 0.
+\]</span> If we now take the trace of this equation, recalling that for finite dimensional matrices the trace is cyclic so <span class="math inline">\({\rm tr}({\bf A}{\bf B}{\bf C}) = {\rm tr}({\bf C}{\bf B}{\bf A})\)</span>, then we have <span class="math display">\[
+\begin{align}
+  {\rm tr}(\hat{\beta}\hat{\alpha}_x\hat{\beta}) + {\rm tr}(\hat{\alpha}_x) &amp;= 0, \\
+  {\rm tr}(\hat{\beta}\hat{\beta}\hat{\alpha}_x) + {\rm tr}(\hat{\alpha}_x) &amp;= 0, \\
+  2{\rm tr}(\hat{\alpha}_x) &amp;= 0.
+\end{align}
+\]</span> The same line of reasoning applies to <span class="math inline">\(\hat{\alpha}_y\)</span>, <span class="math inline">\(\hat{\alpha}_z\)</span> and <span class="math inline">\(\hat{\beta}\)</span>, so we therefore conclude that all the <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span> matrices are <em>traceless</em>.</p></li>
+<li><p><strong>Dimension is even</strong> In general the diagonalisation of a matrix means that it decomposes into the form <span class="math inline">\({\bf A} = {\bf S} {\bf D} {\bf S}^{-1}\)</span>, where <span class="math inline">\({\bf S}\)</span> is non-singular matrix (similarity transformation) and <span class="math inline">\({\bf D}\)</span> is the diagonal matrix of eigenvalues. Taking the trace then gives that <span class="math display">\[
+  {\rm tr}({\bf A}) = {\rm tr}({\bf S} {\bf D} {\bf S}^{-1}) =  {\rm tr}({\bf S}^{-1}{\bf S} {\bf D}) = {\rm tr}({\bf D}).
+\]</span> The trace of a diagonalisable matrix is therefore the sum of its eigenvalues. Since the <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span> matrices are hermitian they are unitarily diagonalisable. Moreover, they are traceless and their eigenvalues are <span class="math inline">\(\pm 1\)</span>. This implies that they must have an even dimension and possess an equal number of <span class="math inline">\(+1\)</span> and <span class="math inline">\(-1\)</span> eigenvalues.</p></li>
+</ul>
+<p>With these properties at hand we can now try to make the smallest possible matrices compatible with them. Naturally our first attempt will be <span class="math inline">\(2 \times 2\)</span> matrices. Indeed, it would seem like we have plausible candidates already in the Pauli matrices <span class="math display">\[
+    \hat{\sigma}_x = \left(
+    \begin{array}{cc}
+    0  &amp;  1 \\
+    1  &amp;  0 \\
+    \end{array}\right), \quad
+    \hat{\sigma}_y = \left(
+    \begin{array}{cc}
+    0  &amp;  -i \\
+    i  &amp;  0 \\
+    \end{array}
+    \right),\quad
+    \hat{\sigma}_z = \left(
+    \begin{array}{cc}
+    1  &amp;  0 \\
+    0  &amp;  -1 \\
+    \end{array}
+    \right).
+\]</span> These are all hermitian, unitary, traceless matrices that mutually anticommute with one another exactly as we need. However, there are only three Pauli matrices, whereas <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span> together make a set of <strong>four</strong> mutually anticommuting matrices, which tells us that no two of them can be identical. We need four different matrices. You can convince yourself that it is not possible to find another <span class="math inline">\(2 \times 2\)</span> hermitian, unitary, traceless matrix that anticommutes with the Pauli matrices. We therefore conclude that the smallest dimension is <span class="math inline">\(4 \times 4\)</span>.</p>
+<div class="page-columns page-full"><p>Nonetheless we can use the Pauli matrices to construct four <span class="math inline">\(4 \times 4\)</span> matrices with all the required properties. One possible set  are the matrices <span id="eq-alpha_beta_matrices"><span class="math display">\[
+    \hat{\alpha}_i = \left(
+    \begin{array}{cc}
+    {\bf 0}  &amp;  \hat{\sigma}_i \\
+    \hat{\sigma}_i  &amp;  {\bf 0} \\
+    \end{array}
+    \right),
+    \quad
+    \hat{\beta} = \left(
+    \begin{array}{cc}
+    \mathbb{1}  &amp;  {\bf 0} \\
+    {\bf 0}  &amp;  -\mathbb{1} \\
+    \end{array}
+    \right),
+\tag{14.11}\]</span></span> where <span class="math inline">\(i = \{x,y,z\}\)</span> and we have used a <span class="math inline">\(2 \times 2\)</span> block matrix notation.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Despite all the constraining properties we derived they do not uniquely specify the <span class="math inline">\(\hat{\boldsymbol{\alpha}}\)</span> and <span class="math inline">\(\hat{\beta}\)</span> matrices. The version shown in are the standard Bjorken-Drell representation.</span></div></div>
+<div class="page-columns page-full"><p>The spinor in <a href="#eq-dirac_equation" class="quarto-xref">Equation&nbsp;<span>14.9</span></a> therefore has a concrete form as a vector <span class="math display">\[
+    \boldsymbol{\Psi}(t,\boldsymbol{r}) = \left(
+    \begin{array}{c}
+    \Psi_1(t,\boldsymbol{r})  \\
+    \Psi_2(t,\boldsymbol{r}) \\
+    \Psi_3(t,\boldsymbol{r})  \\
+    \Psi_4(t,\boldsymbol{r})
+    \end{array}\right),
+\]</span> composed of 4 component wave functions, which we call a 4-spinor. Solutions of the Dirac equation are therefore contained in the Hilbert space <span class="math inline">\(L_2(\mathbb{R}^3)\otimes \mathbb{C}^4\)</span> comprising of motion and the additional degree of freedom. </p><div class="no-row-height column-margin column-container"><span class="margin-aside">Both 4-spinor and a 4-vector both have four components, but they are very different objects as we shall comment on shortly.</span></div></div>
+<p>It is worth reflecting on what this form means. To factorise the relativistic energy-momentum relation we have had to introduce a new degree of freedom to the particle described by the 4-spinor. This will turn out to describe the intrinsic property of spin, which we previously had to bolt on ad-hoc to the Schrödinger equation. We can therefore see that the existence of spin originates from relativity.</p>
+</section>
+<section id="covariant-form" class="level3 page-columns page-full" data-number="14.4.3">
+<h3 data-number="14.4.3" class="anchored" data-anchor-id="covariant-form"><span class="header-section-number">14.4.3</span> Covariant form</h3>
+<p>While we have arrived at an equation with first order space and time derivatives it is not manifestly obvious from its Hamiltonian form that it is Lorentz covariant. We can remedy this by rewriting the equation in a more compact form and suggestive form as <span class="math display">\[
+\begin{align}
+    i\hbar\frac{\partial}{\partial t}\boldsymbol{\Psi}(t,\boldsymbol{r}) &amp;= \left(c \hat{\boldsymbol{\alpha}}\cdot\hat{\bf p} + \hat{\beta} mc^2\right) \boldsymbol{\Psi}(t,\boldsymbol{r}), \\
+    i\hbar c\partial_0\boldsymbol{\Psi}(x) + i\hbar c \hat{\boldsymbol{\alpha}}\cdot\nabla\boldsymbol{\Psi}(x) &amp;= \hat{\beta} mc^2 \boldsymbol{\Psi}(x), \\
+    i\hbar \hat{\beta}\partial_0\boldsymbol{\Psi}(x) + i\hbar \hat{\beta}\sum_{j=1}^3\hat{\alpha}_j\partial_j\boldsymbol{\Psi}(x) &amp;= mc \boldsymbol{\Psi}(x), \\
+    i\hbar \hat{\gamma}^\mu \partial_\mu \boldsymbol{\Psi}(x) &amp;= mc \boldsymbol{\Psi}(x).
+\end{align}
+\]</span> where we have introduced four <span class="math inline">\(4 \times 4\)</span> gamma matrices <span class="math inline">\(\hat{\gamma}^\mu\)</span> defined as <span class="math display">\[
+    \hat{\gamma}^\mu = \begin{pmatrix}\hat{\beta} \\
+    \hat{\beta}\hat{\alpha}_x \\ \hat{\beta}\hat{\alpha}_y \\ \hat{\beta}\hat{\alpha}_z
+    \end{pmatrix}.
+\]</span> Using our matrix representation in <a href="#eq-alpha_beta_matrices" class="quarto-xref">Equation&nbsp;<span>14.11</span></a> they are <span id="eq-gamma_matrices"><span class="math display">\[
+    \hat{\gamma}^0 = \left(
+    \begin{array}{cc}
+    \mathbb{1}  &amp;  {\bf 0} \\
+    {\bf 0}  &amp;  -\mathbb{1} \\
+    \end{array}
+    \right), \quad
+    \hat{\gamma}^i = \left(
+    \begin{array}{cc}
+    {\bf 0}  &amp;  -\hat{\sigma}_i \\
+    \hat{\sigma}_i  &amp;  {\bf 0} \\
+    \end{array}
+    \right).
+\tag{14.12}\]</span></span> The <span class="math inline">\(\hat{\gamma}\)</span> matrices are still unitary and traceless, but now only <span class="math inline">\(\hat{\gamma}^0\)</span> remains hermitian, while <span class="math inline">\(\hat{\gamma}^i\)</span> are anti-hermitian, so <span class="math inline">\((\hat{\gamma}^i)^\dagger = -\hat{\gamma}^i\)</span>. They also satisfy the anticommutation relation <span id="eq-clifford_algebra"><span class="math display">\[    
+    \{\hat{\gamma}^\mu, \hat{\gamma}^\nu\} = 2\eta^{\mu\nu}\mathbb{1},
+\tag{14.13}\]</span></span> where <span class="math inline">\(\eta^{\mu\nu}\)</span> is the Minkowski metric. This is called a Clifford algebra. In terms of these matrices the Dirac equation can be rewritten in the compact form <span id="eq-dirac_covariant"><span class="math display">\[    
+    (i\hbar \hat{\gamma}^\mu \partial_\mu - mc)\boldsymbol{\Psi}(x) = 0.
+\tag{14.14}\]</span></span> This equation has a covariant appearance.</p>
+<div class="page-columns page-full"><p>However, to show that it is indeed Lorentz covariant we need to understand how the 4-spinor <span class="math inline">\(\boldsymbol{\Psi}(x)\)</span> transforms under Lorentz transformations. If the components of <span class="math inline">\(\boldsymbol{\Psi}(x)\)</span> where all Lorentz scalar fields, like our earlier multi-component classical field examples, then it would transform as <span class="math display">\[
+    \boldsymbol{\Psi}'(x^{\bar{\nu}}) \overset{?}{=} \boldsymbol{\Psi}(\Lambda^\mu_\bar{\nu} x^\bar{\nu}),
+\]</span> for each component.  This means the components don’t get mixed, but for <a href="#eq-dirac_covariant" class="quarto-xref">Equation&nbsp;<span>14.14</span></a> to be covariant this would imply that that the <span class="math inline">\(\hat{\gamma}\)</span> matrices transform as 4-vectors as its upper index suggests, namely <span class="math display">\[
+    \bar{\gamma}^{\bar{\mu}} \overset{?}{=} \Lambda^{\bar{\mu}}_\nu \hat{\gamma}^\nu.
+\]</span> We put a bar on the <span class="math inline">\(\hat{\gamma}\)</span> matrices to indicate that they are the transformed matrices and are no longer represented by the same fixed set of matrices in <a href="#eq-gamma_matrices" class="quarto-xref">Equation&nbsp;<span>14.12</span></a>. Yet, the new set of matrices <span class="math inline">\(\bar{\gamma}^{\bar{\mu}}\)</span> would still obey the Clifford algebra <a href="#eq-clifford_algebra" class="quarto-xref">Equation&nbsp;<span>14.13</span></a> due to the invariance of the Minkowski metric under Lorentz transformations, and hence are satisfy the same algebraic properties as the original <span class="math inline">\(\hat{\gamma}^\mu\)</span> matrices.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">We write the <span class="math inline">\(\boldsymbol{\Psi}'(\bar{x})\)</span> as the spinor in frame <span class="math inline">\(\bar{S}\)</span> because the more obvious notation <span class="math inline">\(\bar{\boldsymbol{\Psi}}(\bar{x})\)</span> is reserved in Dirac theory for another object we will introduce shortly.</span></div></div>
+<p>This form of Lorentz covariance essentially involves a spinor basis change whenever we change inertial frame which suggests we have not entirely identified how the spinors really transform. To remedy this we can use that all valid representations of the Clifford <a href="#eq-clifford_algebra" class="quarto-xref">Equation&nbsp;<span>14.13</span></a> are related by a similarity transformation. This means that we can write the transformed <span class="math inline">\(\bar{\gamma}^{\bar{\mu}}\)</span> matrices as <span id="eq-gamma_transform"><span class="math display">\[    
+    \bar{\gamma}^{\bar{\mu}} = C^{-1}(\Lambda) \hat{\gamma}^{\bar \mu} C(\Lambda),
+\tag{14.15}\]</span></span> where <span class="math inline">\(C(\Lambda)\)</span> is a non-singular matrix that depends on the Lorentz transformation <span class="math inline">\(\Lambda\)</span> relating <span class="math inline">\(\bar{\gamma}^{\bar{\mu}}\)</span> back to the original set of matrices in <a href="#eq-gamma_matrices" class="quarto-xref">Equation&nbsp;<span>14.12</span></a>. In otherwords, the original matrices <span class="math inline">\(\hat{\gamma}\)</span> indexed by <span class="math inline">\(\bar{\mu}\)</span> for the new frame <span class="math inline">\(\bar S\)</span> are related to the same matrices <span class="math inline">\(\hat{\gamma}\)</span> indexed <span class="math inline">\(\bar{\mu}\)</span> for the original frame <span class="math inline">\(S\)</span> as <span id="eq-gamma_transform_2"><span class="math display">\[
+    \hat{\gamma}^{\bar{\mu}} = C(\Lambda) \Lambda^{\bar{\mu}}_\nu \hat{\gamma}^\nu C^{-1}(\Lambda).
+\tag{14.16}\]</span></span> So if we want the Dirac equation to have truely identical form in all inertial frames, e.g.&nbsp;always involves the same <span class="math inline">\(\hat{\gamma}\)</span> matrices, then we require that the 4-spinor <span class="math inline">\(\boldsymbol{\Psi}(x)\)</span> instead transforms as <span class="math display">\[    
+    \boldsymbol{\Psi}'(x^\bar{\mu}) = C(\Lambda)\boldsymbol{\Psi}(\Lambda^{\bar{\mu}}_\nu x^\nu).
+\]</span> meaning that its components get mixed by the <span class="math inline">\(C(\Lambda)\)</span> matrix when we transform between frames. So if we apply <span class="math inline">\(C(\Lambda)\)</span> to the Dirac equation in the original frame we have <span class="math display">\[
+\begin{align}
+    C(\Lambda)(i\hbar \hat{\gamma}^\mu \partial_\mu - mc)\boldsymbol{\Psi}(x) &amp;= 0, \\
+    (i\hbar C(\Lambda)\hat{\gamma}^\mu C^{-1}(\Lambda) \Lambda^\bar{\nu}_\mu \partial_\bar{\nu} - mc)C(\Lambda)\boldsymbol{\Psi}(x) &amp;= 0, \\
+    (i\hbar \hat{\gamma}^{\bar{\nu}} \partial_\bar{\nu} - mc)\boldsymbol{\Psi}'(\bar{x}) &amp;= 0,
+\end{align}
+\]</span> where we used <a href="#eq-gamma_transform_2" class="quarto-xref">Equation&nbsp;<span>14.16</span></a> to arrive at the last line. We have thus shown that the same Dirac equation, with the same <span class="math inline">\(\hat{\gamma}\)</span> matrices from <a href="#eq-gamma_matrices" class="quarto-xref">Equation&nbsp;<span>14.12</span></a>, holds in all inertial frames.</p>
+<p>We won’t derive the general form of <span class="math inline">\(C(\Lambda)\)</span> and rather just note that for a pure Lorentz boost the transformation is <span class="math display">\[
+    C(\Lambda) = e^{-\frac{1}{2}\xi\boldsymbol{n}\cdot \hat{\boldsymbol{\alpha}}},
+\]</span> where <span class="math inline">\(\xi = \tanh^{-1}(v/c)\)</span> is the rapidity of the boost and <span class="math inline">\(\boldsymbol{n}\)</span> is the unit vector in the direction of the boost. What we have discovered here is that the four component Dirac 4-spinor behaves very differently to the four component 4-vector. This is because <span class="math inline">\(\boldsymbol{\Psi}(x)\)</span> in fact transforms like two Weyl 2-spinor representations of the Lorentz group (see box below), so is a fundamentally new object from which to construct covariant field theories.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Representation of the Lorentz group
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>Way back in the lecture <a href="./4vectors.html">Introducing 4-vectors</a> some additional information drop-down boxes introduced Lie groups and key examples. This included the Lorentz group <span class="math inline">\({\rm SO}^+(1,3)\)</span> which is the group of proper orthochronous Lorentz transformations. There we discovered that the Lorentz group has a Lie algebra comprising of three generators for boosts obeying <span class="math display">\[
+    [\boldsymbol{K}_i,\boldsymbol{K}_j] = -\epsilon_{ijk}\boldsymbol{J}_k,
+\]</span> and three generators for rotations obeying <span class="math display">\[
+  [{\bf J}_i,{\bf J}_j] = \epsilon_{ijk}{\bf J}_k,
+\]</span> along with the mixed commutation relations <span class="math display">\[
+    [\boldsymbol{J}_i,\boldsymbol{K}_j] = \epsilon_{ijk}\boldsymbol{K}_k.
+\]</span> There we considered this Lie algebra in the context of 4-vectors, where the generators are represented explicitly by <span class="math inline">\(4 \times 4\)</span> matrices that act on 4-vectors. However, this is not the only way to represent the Lorentz group. In fact, there are infinitely many ways to represent the Lorentz group, and these different representations can be used to describe different types of fields and particles in relativistic quantum theories.</p>
+<p>We formulate this more precisely by combining the boost and rotation generators into two new sets of generators defined as <span class="math display">\[
+    \boldsymbol{A} = \frac{1}{2}(\boldsymbol{J} + i\boldsymbol{K}), \quad {\rm and} \quad \boldsymbol{B} = \frac{1}{2}(\boldsymbol{J} - i\boldsymbol{K}),
+\]</span> such that the Lie algebra of the Lorentz group can be rewritten as <span class="math display">\[
+    [\boldsymbol{A}_i,\boldsymbol{A}_j] = \epsilon_{ijk}\boldsymbol{A}_k, \quad [{\bf B}_i,{\bf B}_j] = \epsilon_{ijk}{\bf B}_k, \quad {\rm and} \quad [\boldsymbol{A}_i,\boldsymbol{B}_j] = 0,
+\]</span> as two commuting SU(2) Lie algebras. This shows that the Lorentz group is locally isomorphic to SU(2) <span class="math inline">\(\times\)</span> SU(2). The representations of the Lorentz group can therefore be labelled by two half-integer or integer numbers <span class="math inline">\((j_1,j_2)\)</span> corresponding to the representations of the two SU(2) groups. Each representation can be realised as a set of matrices that act on a vector space of dimension <span class="math inline">\((2j_1 + 1)(2j_2 + 1)\)</span>.</p>
+<p>The trivial Lorentz scalar representation is given by <span class="math inline">\((0,0)\)</span>. The 4-vector representation corresponds to the representation <span class="math inline">\((\frac{1}{2},\frac{1}{2})\)</span>, and so is four dimensional. However, in between these two representation there are two Weyl 2-spinor representations corresponding to <span class="math inline">\((\frac{1}{2},0)\)</span> and <span class="math inline">\((0,\frac{1}{2})\)</span>, which are both two-dimensional. These two representations describe left and right-handed chirality. The Dirac 4-spinor representation corresponds to the direct sum of these two Weyl representations, namely <span class="math inline">\((\frac{1}{2},0) \oplus (0,\frac{1}{2})\)</span>, which is four-dimensional. So 4-spinors are four dimensional for very different reasons to 4-vectors.</p>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-5-contents" aria-controls="callout-5" aria-expanded="true" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Relation of the Dirac equation to the Klein-Gordon equation
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-5" class="callout-5-contents callout-collapse collapse show">
+<div class="callout-body-container callout-body">
+<p>A major feature of the Dirac equation is that it can be shown to imply the Klein-Gordon equation. To see this we start with the Dirac equation in its covariant form as <span class="math display">\[
+    (i\hbar \hat{\gamma}^\mu \partial_\mu - mc)\boldsymbol{\Psi}(x) = 0.
+\]</span> If we apply the operator <span class="math inline">\((i\hbar \hat{\gamma}^\nu \partial_\nu + mc)\)</span> to this equation we have <span class="math display">\[
+\begin{align}
+    (i\hbar \hat{\gamma}^\nu \partial_\nu + mc)(i\hbar \hat{\gamma}^\mu \partial_\mu - mc)\boldsymbol{\Psi}(x) &amp;= 0, \\
+    \left(-\hbar^2 \hat{\gamma}^\nu \hat{\gamma}^\mu \partial_\nu \partial_\mu + m^2c^2\right)\boldsymbol{\Psi}(x) &amp;= 0, \\
+    \left(-\hbar^2 \frac{1}{2}\{\hat{\gamma}^\nu, \hat{\gamma}^\mu\} \partial_\nu \partial_\mu + m^2c^2\right)\boldsymbol{\Psi}(x) &amp;= 0, \\
+    \left(-\hbar^2 \eta^{\nu\mu} \partial_\nu \partial_\mu + m^2c^2\right)\boldsymbol{\Psi}(x) &amp;= 0.
+\end{align}
+\]</span> In the third line we rewritten the product of matrices as <span class="math display">\[
+    \hat{\gamma}^\nu \hat{\gamma}^\mu = \frac{1}{2}\{\hat{\gamma}^\nu, \hat{\gamma}^\mu\} + \frac{1}{2}[\hat{\gamma}^\nu, \hat{\gamma}^\mu],
+\]</span> and noting that the commutator term is antisymmetric in the indices <span class="math inline">\(\nu\)</span> and <span class="math inline">\(\mu\)</span> while the derivatives are symmetric so its contraction with the commutator vanishes. In the last line we used the Clifford algebra <a href="#eq-clifford_algebra" class="quarto-xref">Equation&nbsp;<span>14.13</span></a> satisfied by the <span class="math inline">\(\hat{\gamma}\)</span> matrices.</p>
+<p>We then arrive at the Klein-Gordon equation for each component of the 4-spinor <span class="math inline">\(\boldsymbol{\Psi}(x)\)</span>. So the Dirac equation implies the Klein-Gordon equation, but the converse is not true.</p>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="the-dirac-lagrangian" class="level2" data-number="14.5">
+<h2 data-number="14.5" class="anchored" data-anchor-id="the-dirac-lagrangian"><span class="header-section-number">14.5</span> The Dirac Lagrangian</h2>
+<p>Like with the Schrödinger and Klein-Gordon equations we also aim to derive the Dirac equation from a Lagrangian. To build a scalar out of a 4-spinor we could try using <span class="math display">\[
+\begin{align}
+    \boldsymbol{\Psi}^\dagger(x)\boldsymbol{\Psi}(x) &amp;= \begin{pmatrix}
+    \Psi_1^*(x) &amp;
+    \Psi_2^*(x) &amp;
+    \Psi_3^*(x) &amp;
+    \Psi_4^*(x)
+    \end{pmatrix}\left(
+    \begin{array}{c}
+    \Psi_1(x)  \\
+    \Psi_2(x) \\
+    \Psi_3(x)  \\
+    \Psi_4(x)
+    \end{array}\right), \\
+    &amp;= \sum_{a=1}^4 |\Psi_a(x)|^2.
+\end{align}
+\]</span> This quantity is postive-definite, however it is not a Lorentz scalar. To see this we can write the transformation of <span class="math inline">\(\boldsymbol{\Psi}(x)\)</span> under a Lorentz transformation <span class="math inline">\(\Lambda\)</span> as <span class="math display">\[    
+    \boldsymbol{\Psi}(x) \rightarrow \boldsymbol{\Psi}'(x^\bar{\mu}) = C(\Lambda)\boldsymbol{\Psi}(\Lambda^\bar{\mu}_\nu x^\nu).
+\]</span> Then the transformation of <span class="math inline">\(\boldsymbol{\Psi}^\dagger(x)\boldsymbol{\Psi}(x)\)</span> is given by <span class="math display">\[
+\begin{align}
+    \boldsymbol{\Psi}^\dagger(x)\boldsymbol{\Psi}(x) \rightarrow \boldsymbol{\Psi}'^\dagger(\bar{x})\boldsymbol{\Psi}'(\bar{x}) &amp;= \boldsymbol{\Psi}^\dagger(x)C^\dagger(\Lambda)C(\Lambda)\boldsymbol{\Psi}(x),
+\end{align}
+\]</span> however, since <span class="math inline">\(C^\dagger(\Lambda)C(\Lambda) \neq \mathbb{1}\)</span> this is not equivalent to <span class="math inline">\(\boldsymbol{\Psi}^\dagger(x)\boldsymbol{\Psi}(x)\)</span>, so it is not a Lorentz scalar.</p>
+<p>To build a Lorentz scalar we need a trick using the <span class="math inline">\(\hat{\gamma}^0\)</span> matrix. It can be shown that this matrix obeys the following property under conjugation by the Lorentz transformation mixing <span id="eq-gamma0"><span class="math display">\[
+    C^\dagger(\Lambda)\hat{\gamma}^0 C(\Lambda) = \hat{\gamma}^0.
+\tag{14.17}\]</span></span> To construct a Lorentz scalar we need to introduce the matrix <span class="math inline">\(\hat{\gamma}^0\)</span> and define the <em>adjoint spinor</em> <span class="math display">\[    
+    \bar{\boldsymbol{\Psi}}(x) = \boldsymbol{\Psi}^\dagger(x)\hat{\gamma}^0.
+\]</span> so it is a row vector with this form <span class="math display">\[
+    \bar{\boldsymbol{\Psi}}(x) = \begin{pmatrix}
+    \Psi_1^*(x) &amp;
+    \Psi_2^*(x) &amp;
+    -\Psi_3^*(x) &amp;
+    -\Psi_4^*(x)
+    \end{pmatrix}.
+\]</span> We can then use the adjoint spinor instead to form a scalar <span class="math inline">\(\bar{\boldsymbol{\Psi}}(x)\boldsymbol{\Psi}(x) = \boldsymbol{\Psi}^\dagger(x)\hat{\gamma}^0\boldsymbol{\Psi}(x)\)</span>. Crucially, this quantity behaves as a Lorentz scalar since <span class="math display">\[
+\begin{align}
+    \bar{\boldsymbol{\Psi}}(x)\boldsymbol{\Psi}(x) \rightarrow \bar{\boldsymbol{\Psi}}'(\bar{x})\boldsymbol{\Psi}'(\bar{x}) &amp;= \boldsymbol{\Psi}'^\dagger(\bar{x})\hat{\gamma}^0\boldsymbol{\Psi}'(\bar{x}), \\
+    &amp;= \boldsymbol{\Psi}^\dagger(x)C^\dagger(\Lambda)\hat{\gamma}^0C(\Lambda)\boldsymbol{\Psi}(x), \\
+    &amp;= \boldsymbol{\Psi}^\dagger(x)\hat{\gamma}^0\boldsymbol{\Psi}(x), \\
+    &amp;= \bar{\boldsymbol{\Psi}}(x)\boldsymbol{\Psi}(x).
+\end{align}
+\]</span> Notice also that <span class="math display">\[
+    \bar{\boldsymbol{\Psi}}(x)\boldsymbol{\Psi}(x) = |\psi_1(x)|^2 + |\psi_2(x)|^2 - |\psi_3(x)|^2 - |\psi_4(x)|^2.
+\]</span> This quantity is a good one to include in our Lagrangian for the Dirac theory.</p>
+<p>We can’t generate any dynamics from a Lagrangian without a derivative term? The most obvious would be to sandwich the Lorentz scalar operator <span class="math inline">\(\hat{\gamma}^\mu\partial_\mu\)</span> in between as <span class="math inline">\(\bar{\boldsymbol{\Psi}}(x)\hat{\gamma}^\mu\partial_\mu\boldsymbol{\Psi}(x)\)</span>? We can then check that this in an identical way <span class="math display">\[
+\begin{align}
+    \bar{\boldsymbol{\Psi}}(x)\boldsymbol{\Psi}(x) \rightarrow \bar{\boldsymbol{\Psi}}'(\bar{x})\hat{\gamma}^{\bar \mu}\partial_{\bar{\mu}}\boldsymbol{\Psi}'(\bar{x}) &amp;= \boldsymbol{\Psi}'^\dagger(\bar{x})\hat{\gamma}^0\hat{\gamma}^{\bar \mu}\partial_{\bar{\mu}}\boldsymbol{\Psi}'(\bar{x}), \\
+    &amp;= \boldsymbol{\Psi}^\dagger(x)C^\dagger(\Lambda)\hat{\gamma}^0 C(\Lambda) \hat{\gamma}^{\nu}\Lambda^{\bar{\mu}}_\nu C^{-1}(\Lambda)\partial_{\bar{\mu}}C(\Lambda)\boldsymbol{\Psi}(x), \\
+    &amp;= \boldsymbol{\Psi}^\dagger(x)C^\dagger(\Lambda)\hat{\gamma}^0 C(\Lambda) \hat{\gamma}^{\nu} \partial_{\nu} \boldsymbol{\Psi}(x), \\
+    &amp;= \boldsymbol{\Psi}^\dagger(x)\hat{\gamma}^0 \hat{\gamma}^{\nu} \partial_{\nu} \boldsymbol{\Psi}(x), \\
+    &amp;= \bar{\boldsymbol{\Psi}}(x)\hat{\gamma}^{\nu}\partial_{\nu}\boldsymbol{\Psi}(x),
+\end{align}
+\]</span> where the spinor and Lorentz transformation from <a href="#eq-gamma_transform_2" class="quarto-xref">Equation&nbsp;<span>14.16</span></a> and <a href="#eq-gamma0" class="quarto-xref">Equation&nbsp;<span>14.17</span></a> together ensuring it is Lorentz scalar. Using these pieces we construct a Dirac Lagrangian <span id="eq-dirac_lagrangian"><span class="math display">\[
+    \mathcal{L}_{\rm D} = i\hbar c \bar{\boldsymbol{\Psi}}\hat{\gamma}^{\mu}\partial_{\mu}\boldsymbol{\Psi} - mc^2 \bar{\boldsymbol{\Psi}}\boldsymbol{\Psi},
+\tag{14.18}\]</span></span> containing the kinetic energy and mass terms.</p>
+<p>Let’s now confirm this Lagrangian generates the Dirac equation. To do this we use the multi-component version of the relativistic Euler Lagrange equation <span class="math display">\[
+    \frac{\partial\mathcal{L}_{\rm D}}{\partial \bar{\Psi}_a} - \partial_\mu\frac{\partial\mathcal{L}_{\rm D}}{\partial_\mu\partial \bar{\Psi}_a} = 0,
+\]</span> varying the components <span class="math inline">\(a=1,2,3,4\)</span> of the adjoint spinor <span class="math inline">\(\bar{\boldsymbol{\Psi}}\)</span>. On first inspection to see how to compute this we expand the row and column vector multiplication in <span class="math inline">\(\mathcal{L}_{\rm D}\)</span> explicitly as <span class="math display">\[
+    \mathcal{L}_{\rm D} = i\hbar c\sum_{b,d=1}^4 \bar{\Psi}_b [\hat{\gamma}^\mu]_{bd}\partial_\mu \Psi_d - mc^2\sum_{b=1}^4 \bar{\Psi}_b \Psi_b,
+\]</span> but we have that <span id="eq-dirac_deriv"><span class="math display">\[
+    \frac{\partial\mathcal{L}_{\rm D}}{\partial_\mu\partial \bar{\Psi}_a} = 0,
+\tag{14.19}\]</span></span> since no derivative of the adjoint spinor is present, while <span class="math display">\[
+    \frac{\partial\mathcal{L}_{\rm D}}{\partial \bar{\Psi}_a} = i\hbar c  \sum_{d=1}^4 [\hat{\gamma}^\mu]_{ad}\partial_\mu \Psi_d - mc^2\Psi_a.
+\]</span> This expansion shows that we could have just differentiated with respect to a entire spinor as <span class="math display">\[
+    \frac{\partial\mathcal{L}_{\rm D}}{\partial \bar{\boldsymbol{\Psi}}} = i\hbar\hat{\gamma}^\mu\partial_\mu \boldsymbol{\Psi} - mc\boldsymbol{\Psi} = 0,
+\]</span> revealing the Dirac equation, <span id="eq-dirac_eq"><span class="math display">\[
+    i\hbar\hat{\gamma}^\mu\partial_\mu \boldsymbol{\Psi} = mc\boldsymbol{\Psi},
+\tag{14.20}\]</span></span> as required. If we varied instead components of the spinor <span class="math inline">\(\boldsymbol{\Psi}\)</span> then we get <span class="math display">\[
+    \frac{\partial\mathcal{L}_{\rm D}}{\partial_\mu\partial \boldsymbol{\Psi}} = i\hbar c\bar{\boldsymbol{\Psi}}\hat{\gamma}^\mu,
+\]</span> and <span class="math display">\[
+    \frac{\partial\mathcal{L}_{\rm D}}{\partial \boldsymbol{\Psi}} = -mc\bar{\boldsymbol{\Psi}},
+\]</span> which <span class="math display">\[
+    \frac{\partial\mathcal{L}_{\rm D}}{\partial \boldsymbol{\Psi}} - \partial_\mu\frac{\partial\mathcal{L}_{\rm D}}{\partial_\mu\partial \boldsymbol{\Psi}} = 0,
+\]</span> gives <span id="eq-dirac_adjoint"><span class="math display">\[
+    -i\hbar\partial_\mu\bar{\boldsymbol{\Psi}}\hat{\gamma}^\mu = mc \bar{\boldsymbol{\Psi}}.
+\tag{14.21}\]</span></span> This is the adjoint Dirac equation. Since it can be obtained by hermitian conjugating the Dirac equation and using the properties of <span class="math inline">\(\hat{\gamma}^\mu\)</span> matrices it contains no new information.</p>
+</section>
+<section id="noether-current-for-the-dirac-lagrangian" class="level2" data-number="14.6">
+<h2 data-number="14.6" class="anchored" data-anchor-id="noether-current-for-the-dirac-lagrangian"><span class="header-section-number">14.6</span> Noether current for the Dirac Lagrangian</h2>
+<p>As with the Schrödinger and KG equation the Dirac equation possesses a global U(1) symmetry under the transformation <span class="math display">\[
+    \boldsymbol{\Psi}(x) \to e^{i\kappa}\boldsymbol{\Psi}(x), \quad \bar{\boldsymbol{\Psi}}(x) \to e^{-i\kappa}\bar{\boldsymbol{\Psi}}(x),
+\]</span><br>
+where <span class="math inline">\(\kappa\)</span> is a real Lorentz scalar constant. It is clear that <span class="math inline">\(\mathcal{L}_{\rm D}\)</span> is invariant under this transformation since it is of bilinear form <span class="math inline">\(\bar{\boldsymbol{\Psi}} \cdots \boldsymbol{\Psi}(x)\)</span>. As before this means there is an associated Noether current for this symmetry. Generalising the expression for a real scalar field to a complex multi-component spinor we have <span class="math display">\[
+    j_{\rm D}^\mu = \sum_{a=1}^4\left(\frac{\partial\mathcal{L}_{\rm D}}{\partial_\mu\partial\Psi_a}\delta_S\Psi_a + \frac{\partial\mathcal{L}_{\rm D}}{\partial_\mu\partial\bar{\Psi}_a}\delta_S\bar{\Psi}_a \right),
+\]</span> where we treat the components of <span class="math inline">\(\boldsymbol{\Psi}\)</span> and <span class="math inline">\(\bar{\boldsymbol{\Psi}}\)</span> as independent variables, just like we treated <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\varphi^*\)</span> as independent for a complex scalar field.</p>
+<p>For the U(1) symmetry the first-order symmetry induced variations are <span class="math display">\[
+    \delta_S\Psi_a = i\kappa \Psi_a, \quad \delta_S\bar{\Psi}_a = -i\kappa \bar{\Psi}_a,
+\]</span> hence using <a href="#eq-dirac_deriv" class="quarto-xref">Equation&nbsp;<span>14.19</span></a> current follows as <span class="math display">\[
+\begin{align}
+     j_{\rm D}^\mu &amp;= \sum_{a=1}^4\frac{\partial\mathcal{L}_{\rm D}}{\partial_\mu\partial\Psi_a} i\kappa \Psi_a, \\
+     &amp;= \sum_{a=1}^4 i\hbar c (\bar{\boldsymbol{\Psi}}\hat{\gamma}^\mu)_a i\kappa \Psi_a, \\
+     &amp;= -\kappa\hbar c \bar{\boldsymbol{\Psi}}\hat{\gamma}^\mu\boldsymbol{\Psi}.
+\end{align}
+\]</span> Notice the final expression is a row-matrix-column vector multiplication so the spinor character is contracted out leaving only the 4-vector index <span class="math inline">\(\mu\)</span>, as expected. Typically the Dirac current is rescaled as <span class="math display">\[
+    j_{\rm D}^\mu = c \bar{\boldsymbol{\Psi}}\hat{\gamma}^\mu\boldsymbol{\Psi}.
+\]</span> As a Noether current is will manifestly obey <span class="math display">\[
+    \partial_\mu j^\mu_{\rm D} = 0,
+\]</span> which as always we can confirm by direct substitution and use of the Dirac equation <a href="#eq-dirac_eq" class="quarto-xref">Equation&nbsp;<span>14.20</span></a> and its adjoint <a href="#eq-dirac_adjoint" class="quarto-xref">Equation&nbsp;<span>14.21</span></a> as <span class="math display">\[
+\begin{align}
+    \partial_\mu j^\mu_{\rm D} &amp;= c\partial_\mu(\bar{\boldsymbol{\Psi}}\hat{\gamma}^\mu\boldsymbol{\Psi}), \\
+    &amp;= c(\partial_\mu\bar{\boldsymbol{\Psi}})\hat{\gamma}^\mu\boldsymbol{\Psi} + c\bar{\boldsymbol{\Psi}}\hat{\gamma}^\mu(\partial_\mu\boldsymbol{\Psi}), \\
+    &amp;= i\hbar mc^2\bar{\boldsymbol{\Psi}}\boldsymbol{\Psi} - i\hbar mc^2\bar{\boldsymbol{\Psi}}\boldsymbol{\Psi} = 0.
+\end{align}
+\]</span> Examining the conserved density we see that <span class="math display">\[
+\begin{align}
+    j^0_{\rm D} &amp;= c \bar{\boldsymbol{\Psi}}\hat{\gamma}^0\boldsymbol{\Psi}, \\
+    &amp;= c \boldsymbol{\Psi}^\dagger\hat{\gamma}^0\hat{\gamma}^0\boldsymbol{\Psi}, \\
+    &amp;= c \boldsymbol{\Psi}^\dagger\boldsymbol{\Psi}, \\
+    &amp;= c\sum_{a=1}^4 |\Psi_a(x)|^2,
+\end{align}
+\]</span> so we obtain now a postive definite quantity, analogous to the Schrödinger equation! The spatial part also simplifies to a 3-current <span class="math display">\[
+\begin{align}
+    \boldsymbol{j}_{\rm D} &amp;= c \bar{\boldsymbol{\Psi}}\begin{pmatrix}\hat{\gamma}^1 \\ \hat{\gamma}^2 \\ \hat{\gamma}^3\end{pmatrix} \boldsymbol{\Psi}, \\
+    &amp;= c \boldsymbol{\Psi}^\dagger\hat{\boldsymbol{\alpha}}\boldsymbol{\Psi},
+\end{align}
+\]</span> where the combination <span class="math inline">\(c\hat{\boldsymbol{\alpha}}\)</span> behaves like a velocity operator. These features of the Dirac equation are a great success of this approach.</p>
+</section>
+<section id="what-we-cant-cover-here" class="level2 page-columns page-full" data-number="14.7">
+<h2 data-number="14.7" class="anchored" data-anchor-id="what-we-cant-cover-here"><span class="header-section-number">14.7</span> What we can’t cover here</h2>
+<p>There is a great deal more we could say and calculate about the Dirac equation, but this final lecture has already been indulgent enough so we don’t have time. In particular, we could have worked out what free-particle spinor solutions the Dirac equation possesses. They are again plane-waves but now have a non-trivial momentum-dependent spinor attached to them. For an electron with momentum <span class="math inline">\(\boldsymbol{p}\)</span> we have two positive energy <span class="math inline">\(E = +\sqrt{p^2c^2 + m^2c^4}\)</span> solutions <span class="math display">\[
+\boldsymbol{\Psi}^+_{\uparrow,\boldsymbol{p}} = \begin{pmatrix}
+1  \\
+0 \\
+\frac{cp_z}{E_p+m_0c^2} \\
+\frac{c(p_x + i p_y)}{E_p+m_0c^2}
+\end{pmatrix}, \quad \boldsymbol{\Psi}^+_{\downarrow,\boldsymbol{p}} = \begin{pmatrix}
+0  \\
+1 \\
+\frac{c(p_x - i p_y)}{E_p+m_0c^2} \\
+-\frac{cp_z}{E_p+m_0c^2}
+\end{pmatrix},
+\]</span> and two negative energy <span class="math inline">\(E = -\sqrt{p^2c^2 + m^2c^4}\)</span> solutions <span class="math display">\[
+\boldsymbol{\Psi}^-_{\uparrow,\boldsymbol{p}} =
+\begin{pmatrix}
+-\frac{cp_z}{E_p+m_0c^2} \\
+-\frac{c(p_x + i p_y)}{E_p+m_0c^2} \\
+1 \\
+0
+\end{pmatrix}, \boldsymbol{\Psi}^-_{\downarrow,\boldsymbol{p}} =
+\begin{pmatrix}
+-\frac{c(p_x - i p_y)}{E_p+m_0c^2} \\
+\frac{cp_z}{E_p+m_0c^2} \\
+0  \\
+1
+\end{pmatrix}.
+\]</span> So we would discover that the Dirac equation is still plagued by negative energy solutions like the KG equation. The non-relativistic limit of the Dirac equation involves taking recognising that the positive energy solutions are dominated by the top 2-spinor, with the bottom 2-spinor having components of order <span class="math inline">\(v/c \ll 1\)</span> smaller. Eliminating these results in the spin-1/2 Schrödinger equation with the additional Pauli term. In this sense we can say that the Dirac equation manifestly describes spin-1/2 particles.</p>
+<div id="fig-antimatter" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-antimatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="figures/antimatter.png" class="img-fluid figure-img" width="800">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-antimatter-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figure&nbsp;14.3: The vacuum is considered to have all negative energy filled with electrons. A sufficiently high enough energy photon can excite a electron from the Dirac sea into a positive energy state, creating an electron-positron pair, and exciting some other particle (e.g.&nbsp;nucleus). Similarly an electron-positron pair can annihilate directly emitting at least two photons.
+</figcaption>
+</figure>
+</div>
+<div class="page-columns page-full"><p>Dirac’s own initial, but ultimately incorrect, resolution of the negative energy problem was to exploit the fermionic nature of the particle and fill all the negative energy states, akin to how a valence band is filled in a band insulating material. This way a positive energy electron can never populate any negative energy states due to Pauli exclusion.  A serendipitous feature of this Dirac sea picture of the vacuum is that it predicts the existence of anti-matter. Specifically, we can view a “hole” in this filled sea as a positively charged version of the electron, called the positron, and these can be both created and annihilated in pairs, as shown in <a href="#fig-antimatter" class="quarto-xref">Figure&nbsp;<span>14.3</span></a>. In the early 1930’s this was experimentally observed in cosmic ray cloud chamber tracks.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">Of course this raises many questions, like why don’t we see the -<span class="math inline">\(\infty\)</span> charge of this negative energy sea all around us!</span></div></div>
+<p>While this prediction of anti-matter was a great success for the Dirac equation the “hole” theory also represents the death-blow to our programme of developing a consistent relativistic quantum theory for a single-particle. To resolve the negative energy problem Dirac turned a single-particle problem into a theory containing infinitely many electrons. Indeed pair creation, which is a manifestly relativistic process suggests that it is nonsensical from the offset to think about only a single-particle at high enough energies. Relativistic quantum mechanics is a manifestly many-body problem so ultimately the issue of negative energies is only resolved fully for both the Dirac and KG equation by moving to the more sophisticated framework of quantum field theory.</p>
+</section>
+<section id="minimal-coupling" class="level2 page-columns page-full" data-number="14.8">
+<h2 data-number="14.8" class="anchored" data-anchor-id="minimal-coupling"><span class="header-section-number">14.8</span> Minimal coupling</h2>
+<div class="page-columns page-full"><p>To finish this lecture we should connect back our description of matter to electromagnetism by coupling the two theories. How can we do this in general? Consider again the classical Lorentz force Lagrangian and Hamiltonian reviewed at the end of the lecture <a href="./em_revision.html">Revision of Electromagnetism</a>. We found the Lorentz Lagrangian <span id="eq-lorentz_lag"><span class="math display">\[
+    L = \tfrac{1}{2}m \boldsymbol{v}\cdot\boldsymbol{v} - q V + q \boldsymbol{v}\cdot\boldsymbol{A},
+\tag{14.22}\]</span></span> which gives a canonical momentum conjugate to <span class="math inline">\(r_j\)</span> as <span class="math display">\[
+    \boldsymbol{p} =  m \boldsymbol{v} + q \boldsymbol{A},
+\]</span> and the corresponding Hamiltonian <span class="math display">\[
+    H = \frac{1}{2m}(\boldsymbol{p}-q \boldsymbol{A})^2 + q V.
+\]</span> Now suppose we want to quantise this Hamiltonian <span class="math inline">\(H = \mathcal{E}\)</span> using the operator replacements in <a href="#eq-energy_momentum_operators" class="quarto-xref">Equation&nbsp;<span>14.2</span></a>, noting that we always replace the canonical momentum, not kinematic momentum, with <span class="math inline">\(-i\hbar\nabla\)</span>. So we get a Schrödinger theory for a charged particle coupled to the EM field as <span class="math display">\[
+    i\hbar\left(\partial_t + \frac{iq}{\hbar}V\right)\psi(t,\boldsymbol{r}) = -\frac{\hbar^2}{2m}\left(\nabla-\frac{iq}{\hbar}\boldsymbol{A}\right)^2\psi(t,\boldsymbol{r}).
+\]</span> Despite being non-relativistic this expression actually contains quite a general minimal coupling recipe for any quantum theory. Specifically notice that the coupled theory appears to have simply had its derivatives replaced as <span id="eq-minimal1"><span class="math display">\[
+    \partial_t \to \partial_t + \frac{iq}{\hbar}V, \quad \nabla \to \nabla-\frac{iq}{\hbar}\boldsymbol{A}.
+\tag{14.23}\]</span></span> Given that <span class="math display">\[
+    \partial_\mu = \begin{pmatrix} \frac{1}{c}\partial_t \\ \nabla \end{pmatrix}, \quad {\rm and} \quad A_\mu = \begin{pmatrix} \frac{1}{c} V \\
+    -\boldsymbol{A} \end{pmatrix},
+\]</span> then we see that <a href="#eq-minimal1" class="quarto-xref">Equation&nbsp;<span>14.23</span></a> is expressed as <span class="math display">\[
+    \partial_\mu \to \partial_\mu + \frac{iq}{\hbar}A_\mu = D_\mu.
+\]</span> Here <span class="math inline">\(D_\mu\)</span> is called the <em>covariant derivative</em>. We can make any theory minimally couple to the EM field by making this replacement of the derivative one-form.  For example, the interacting KG equation is simply <span class="math display">\[
+    D_\mu D^\mu \varphi(x) + \frac{m^2c^2}{\hbar^2}\varphi(x) = 0.
+\]</span> Likewise, we can construct the interacting Dirac Lagrangian as <span class="math display">\[
+    \mathcal{L}_{\rm D-int} = i\hbar c \bar{\boldsymbol{\Psi}}\hat{\gamma}^{\mu}D_{\mu}\boldsymbol{\Psi} - mc^2 \bar{\boldsymbol{\Psi}}\boldsymbol{\Psi},
+\]</span> which we can expand as <span id="eq-dirac_int_lagrangian"><span class="math display">\[
+\begin{align}
+    \mathcal{L}_{\rm D-int} &amp;= i\hbar c \bar{\boldsymbol{\Psi}}\hat{\gamma}^{\mu}(\partial_\mu + \frac{iq}{\hbar}A_\mu)\boldsymbol{\Psi} - mc^2 \bar{\boldsymbol{\Psi}}\boldsymbol{\Psi}, \\
+    &amp;= i\hbar c \bar{\boldsymbol{\Psi}}\hat{\gamma}^{\mu}\partial_{\mu}\boldsymbol{\Psi} - mc^2 \bar{\boldsymbol{\Psi}}\boldsymbol{\Psi} - qc A_\mu \bar{\boldsymbol{\Psi}}\hat{\gamma}^{\mu}\boldsymbol{\Psi}, \\
+    &amp; = \mathcal{L}_{\rm D} - q A_\mu j^\mu_{\rm D}.
+\end{align}
+\tag{14.24}\]</span></span> The interacting Dirac Lagrangian is the free-particle Dirac Lagrangian plus a coupling term <span class="math inline">\(- q A_\mu j^\mu_{\rm D}\)</span> that is precisely of the form we anticipate, the 4-vector potential contracted with the charge 4-current.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">The term “minimal coupling” comes from the fact that it accounts directly only for the interaction between the fields and the charge distribution and not higher multipole moments of the charge distribution. This means that the charged particle in our theory is considered to be a pure electric monopole (recalling that there are no magnetic monopoles) with no additional internal structure that would give rise to dipole, quadrupole or higher contributions.</span></div></div>
+<p>An immediate quesiton about this prescription is surely now <span class="math inline">\(A_\mu\)</span> appears directly in our Lagrangian we have lost gauge invariance? Indeed we have, except if we elevate the global U(1) symmetry of the quantum theory to a <strong>local</strong> U(1) symmetry. Specifically, a gauge transformation of the EM field must now also perform a corresponding space-time dependent phase change of the 4-spinor as <span class="math display">\[
+    A_\mu \to A_\mu - \partial_\mu\chi(x), \quad {\rm and} \quad \boldsymbol{\Psi}(x) \to \boldsymbol{\Psi}(x)e^{iq\chi(x)/\hbar}.
+\]</span> By doing this <span class="math inline">\(D_\mu\)</span> is rendered gauge invariant, so any theory minimally coupled will be also.</p>
+<p>To obtain a complete theory of electrodynamics we also have to add the free Lagrangian of the EM field itself to arrive at the punchline of this lecture <span class="math display">\[
+\boxed{
+\begin{align}
+    \mathcal{L}_{\rm ED} &amp;= \mathcal{L}_{\rm D} - q A_\mu j^\mu_{\rm D} + \mathcal{L}_{\rm EM}, \\
+    &amp;= i\hbar c \bar{\boldsymbol{\Psi}}\hat{\gamma}^{\mu}(\partial_\mu + \frac{iq}{\hbar}A_\mu)\boldsymbol{\Psi} - mc^2 \bar{\boldsymbol{\Psi}}\boldsymbol{\Psi} - \frac{1}{4\mu_0}F^{\mu\nu}F_{\mu\nu}.
+\end{align}}
+\]</span> Quantising this Lagrangian to get quantum electrodynamics will be a major adventure for the <em>Quantum Fields and Particles</em> course next year!</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside"><strong>End of Lecture 14</strong>.</span></div></div>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const onCopySuccess = function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
+  });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./example_class5.html" class="pagination-link" aria-label="Example Class 5">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Example Class 5</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./epilogue.html" class="pagination-link" aria-label="Epilogue">
+        <span class="nav-page-text">Epilogue</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

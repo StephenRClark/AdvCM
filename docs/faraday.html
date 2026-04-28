@@ -893,24 +893,24 @@ The Levi-Civita symbol
 \]</span> where in Euclidean space the use of upper and lower indices is only to abide by Einstein summation convention and has no further significance since the metric is simply <span class="math inline">\(\delta^{ij}\)</span>. For this reason <span class="math inline">\(\epsilon^{ijk}\)</span> has the same elements as <span class="math inline">\(\epsilon_{ijk}\)</span>. Notice that if we just contract <span class="math inline">\(\boldsymbol{b}\)</span> with the <span class="math inline">\(\epsilon_{ijk}\)</span> then we get the <span class="math inline">\(3\times 3\)</span> antisymmetric matrix from earlier <span class="math display">\[
     \epsilon_{ijk}b^j = [\boldsymbol{b}\cdot\boldsymbol{J}]_{ik},
 \]</span> showing that its sign structure is derived from the Levi-Civita symbol.</p>
-<p>In special relativity we use the four dimensional symbol <span class="math inline">\(\epsilon_{\mu\nu\sigma\tau}\)</span> with the minor modification that indices now run from <span class="math inline">\(\mu = 0,1,2,3\)</span>, and the 24 permutations split as: <span class="math display">\[
-    \epsilon_{\mu\nu\sigma\tau} = \left\{\begin{matrix} +1 &amp; (\mu,\nu,\sigma,\tau) =&amp; (0,1,2,3), (0,2,3,1), (0,3,1,2), (2,1,3,0) \\
+<p>In special relativity we use the four dimensional symbol <span class="math inline">\(\epsilon^{\mu\nu\sigma\tau}\)</span> with the minor modification that indices now run from <span class="math inline">\(\mu = 0,1,2,3\)</span>, and the 24 permutations split as: <span class="math display">\[
+    \epsilon^{\mu\nu\sigma\tau} = \left\{\begin{matrix} +1 &amp; (\mu,\nu,\sigma,\tau) =&amp; (0,1,2,3), (0,2,3,1), (0,3,1,2), (2,1,3,0) \\
     &amp; &amp; (3,1,0,2), (1,3,2,0), (3,0,2,1), (1,2,0,3) \\
     &amp; &amp; (2,0,1,3), (1,0,3,2), (2,3,0,1), (3,2,1,0) \\
     &amp; &amp; \\
      -1 &amp; (\mu,\nu,\sigma,\tau)  =&amp;  (1,0,2,3), (1,2,3,0), (1,3,0,2), (2,0,3,1) \\
      &amp; &amp; (3,0,1,2), (0,3,2,1), (3,2,0,1), (0,2,1,3) \\
-     &amp; &amp; (2,1,0,3), (0,1,3,2), (2,3,1,0), (3,2,0,1) \\
+     &amp; &amp; (2,1,0,3), (0,1,3,2), (2,3,1,0), (3,1,2,0) \\
      \end{matrix} \right. .
-\]</span> Notice that cyclic permutations of <span class="math inline">\((0,1,2,3)\)</span> no longer give other even permutation since we need <span class="math inline">\(d-1=3\)</span> swaps. Now suppose we Lorentz transformed the <span class="math inline">\(\epsilon_{\mu\nu\sigma\tau}\)</span> we get <span class="math display">\[
-    \tilde{\epsilon}_{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}} = \Lambda^\alpha_\bar{\mu}\Lambda^\beta_\bar{\nu}\Lambda^\gamma_\bar{\sigma}\Lambda^\delta_\bar{\tau} \epsilon_{\alpha\beta\gamma\delta}.
+\]</span> Notice that cyclic permutations of <span class="math inline">\((0,1,2,3)\)</span> no longer give other even permutation since we need <span class="math inline">\(d-1=3\)</span> swaps. Now suppose we Lorentz transformed the <span class="math inline">\(\epsilon^{\mu\nu\sigma\tau}\)</span> we get <span class="math display">\[
+    \tilde{\epsilon}^{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}} = \Lambda_\alpha^\bar{\mu}\Lambda_\beta^\bar{\nu}\Lambda_\gamma^\bar{\sigma}\Lambda_\delta^\bar{\tau} \epsilon^{\alpha\beta\gamma\delta}.
 \]</span> We haven’t called the transformed tensor <span class="math inline">\(\epsilon\)</span> since we reserve this for a symbol which behaves as described in <a href="#eq-levi_civita" class="quarto-xref">Equation&nbsp;<span>12.26</span></a>. We therefore have to establish if <span class="math inline">\(\tilde{\epsilon}\)</span> is just symbol expressed in the indices of frame <span class="math inline">\(\bar S\)</span>. Using <a href="#eq-det" class="quarto-xref">Equation&nbsp;<span>12.27</span></a> we that the righthand side reduces to <span class="math display">\[
-      \tilde{\epsilon}_{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}} = {\rm det}(\boldsymbol{\Lambda})\epsilon_{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}}.
-\]</span> This means if we have a proper Lorentz transformation with <span class="math inline">\({\rm det}(\boldsymbol{\Lambda}) = 1\)</span>, e.g.&nbsp;boosts and rotations, then the tensor <span class="math inline">\(\tilde{\epsilon}_{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}} = \epsilon_{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}}\)</span>, so it has identical elements in in frame <span class="math inline">\(\bar S\)</span> as it did in frame <span class="math inline">\(S\)</span>. This is the reason we call it a <em>symbol</em>. If the Lorentz transformation involves time-reversal or a spatial reflection then we get a sign flip. For this reason <span class="math inline">\(\epsilon_{\mu\nu\sigma\tau}\)</span> is said to be a <em>pseudo-tensor</em>.</p>
-<p>We will also have need of <span class="math inline">\(\epsilon_{\mu\nu\sigma\tau}\)</span> with all its indices raised <span class="math display">\[
-    \epsilon^{\mu\nu\sigma\tau} = \eta^{\mu\alpha}\eta^{\nu\beta}\eta^{\sigma\gamma}\eta^{\tau\delta}\epsilon_{\alpha\beta\gamma\delta}.
+      \tilde{\epsilon}^{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}} = {\rm det}(\boldsymbol{\Lambda})\epsilon^{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}}.
+\]</span> This means if we have a proper Lorentz transformation with <span class="math inline">\({\rm det}(\boldsymbol{\Lambda}) = 1\)</span>, e.g.&nbsp;boosts and rotations, then the tensor <span class="math inline">\(\tilde{\epsilon}^{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}} = \epsilon^{\bar{\mu}\bar{\nu}\bar{\sigma}\bar{\tau}}\)</span>, so it has identical elements in in frame <span class="math inline">\(\bar S\)</span> as it did in frame <span class="math inline">\(S\)</span>. This is the reason we call it a <em>symbol</em>. If the Lorentz transformation involves time-reversal or a spatial reflection then we get a sign flip. Consequently <span class="math inline">\(\epsilon^{\mu\nu\sigma\tau}\)</span> is said to be a <em>pseudo-tensor</em>.</p>
+<p>We will also have need of <span class="math inline">\(\epsilon_{\mu\nu\sigma\tau}\)</span> with all its indices lowered <span class="math display">\[
+    \epsilon_{\mu\nu\sigma\tau} = \eta_{\mu\alpha}\eta_{\nu\beta}\eta_{\sigma\gamma}\eta_{\tau\delta}\epsilon^{\alpha\beta\gamma\delta}.
 \]</span> Irrespective of our metric signature this will flip the sign, for example <span class="math display">\[
-    \epsilon^{0123} = \eta^{00}\eta^{11}\eta^{22}\eta^{33}\epsilon_{0123} = -\epsilon_{0123}.
+    \epsilon_{0123} = \eta_{00}\eta_{11}\eta_{22}\eta_{33}\epsilon^{0123} = -\epsilon^{0123}.
 \]</span></p>
 </div>
 </div>

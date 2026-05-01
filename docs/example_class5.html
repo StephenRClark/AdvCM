@@ -382,9 +382,84 @@ window.Quarto = {
     \mathcal{L}_{\mathrm{KG}} = \mathcal{L}_{\mathrm{d'A}} + \frac{m^2 c^2}{\hbar^2} \varphi^2,
 \]</span> where a “mass” term has been added, motivated by the Einstein-Planck relation <span class="math inline">\(\mathcal{E} = \hbar\omega\)</span> and the de-Broglie relation <span class="math inline">\(\boldsymbol{p} = \hbar\boldsymbol{k}\)</span>.</p>
 <ol start="2" type="a">
-<li><p>Assuming the action <span class="math inline">\(\mathcal{S}\)</span> has the same units as <span class="math inline">\(\hbar\)</span> what units does a scalar field <span class="math inline">\(\varphi(x)\)</span> need to have? Given the “mass” terms is proportional to <span class="math inline">\(\varphi^2\)</span> use dimensional analysis involving the Lorentz scalars <span class="math inline">\(m\)</span>, <span class="math inline">\(c\)</span> and <span class="math inline">\(\hbar\)</span> to show its coefficients must be those used in <span class="math inline">\(\mathcal{L}_{\mathrm{KG}}\)</span>.</p></li>
-<li><p>What is Euler-Lagrange equation resulting from <span class="math inline">\(\mathcal{L}_{\mathrm{KG}}\)</span> and what is the dispersion relation plane-waves? Why is this said to describe a “massive” scalar field?</p></li>
+<li><p>Assuming the action <span class="math inline">\(\mathcal{S}\)</span> has the same units as <span class="math inline">\(\hbar\)</span> what units does a scalar field <span class="math inline">\(\varphi(x)\)</span> need to have? Given the “mass” term is proportional to <span class="math inline">\(\varphi^2\)</span> use dimensional analysis involving the Lorentz scalars <span class="math inline">\(m\)</span>, <span class="math inline">\(c\)</span> and <span class="math inline">\(\hbar\)</span> to show its coefficients must be those used in <span class="math inline">\(\mathcal{L}_{\mathrm{KG}}\)</span>.</p></li>
+<li><p>What is Euler-Lagrange equation resulting from <span class="math inline">\(\mathcal{L}_{\mathrm{KG}}\)</span> and what is the dispersion relation for plane-waves? Why is this said to describe a “massive” scalar field?</p></li>
 </ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>1. Adding a mass term to a scalar field</strong></p>
+<ol type="a">
+<li><p>We use the relativistic Euler-Lagrange equation <span class="math display">\[
+\frac{\partial \mathcal{L}}{\partial\varphi} - \partial_\mu\frac{\partial \mathcal{L}}{\partial\partial_\mu\varphi} = 0,
+\]</span> noting immediately that in our case <span class="math display">\[
+\frac{\partial \mathcal{L}_{\mathrm{d'A}}}{\partial\varphi} = 0,
+\]</span> and from the lecture <a href="./field_theory.html">Building a field theory</a> we know that <span class="math display">\[
+\frac{\partial \mathcal{L}_{\mathrm{d'A}}}{\partial \partial_\mu \phi} = -2 \eta^{\mu\nu} \partial_\nu \varphi = -2\partial^\mu\varphi,
+\]</span> hence the equation of motion is <span class="math display">\[
+\partial_\mu\partial^\mu\varphi(x) = 0,
+\]</span> which is the wave-equation. As described in <a href="./planewaves.html">Plane-waves and particle flow</a> we then insert (for convenience) a complex plane-wave <span class="math inline">\(\varphi(x) = ae^{ik_\mu x^\mu}\)</span> and compute <span class="math display">\[
+\partial_\mu e^{i k_\nu x^\nu} = ik_\mu e^{i k_\sigma x^\sigma},
+\]</span> so <span class="math display">\[
+\partial_\mu\partial^\mu \varphi(x) = (ik^\mu)(ik_\mu)\varphi(x) = -k_\mu k^\mu \varphi(x) = 0.
+\]</span> Given the plane-wave <span class="math inline">\(\varphi(x) \neq 0\)</span> unless its amplitude <span class="math inline">\(a = 0\)</span> it can only be a general solution to the wave-equation if <span class="math inline">\(k_\mu k^\mu = 0\)</span>. Hence the 4-wave-vector must be a lightlike 4-vector. This implies <span class="math display">\[
+k_\mu k^\mu = \left(\frac{\omega}{c}\right)^2 - \boldsymbol{k}\cdot\boldsymbol{k} = \left(\frac{\omega}{c}\right)^2 - |\boldsymbol{k}|^2 = 0,
+\]</span> or more compactly <span class="math display">\[
+\omega = \pm c|\boldsymbol{k}|.
+\]</span> From this we see that the wave has a phase velocity <span class="math display">\[
+v_p = \omega/k = \pm c,
+\]</span> where <span class="math inline">\(k = |\boldsymbol{k}|\)</span>, and a group velocity <span class="math display">\[
+v_g = \frac{{\rm d}\omega}{{\rm d}k} = \pm c.
+\]</span> This theory describes a dispersionless wave travelling at the speed of light.</p></li>
+<li><p>To fix the dimensions of a scalar field <span class="math inline">\(\varphi(x)\)</span> we work backwards from the action which is taken as having the units of <span class="math inline">\([{\tt energy}][{\tt time}]\)</span>, the same as the units of <span class="math inline">\(\hbar\)</span>. So since <span class="math display">\[
+\mathcal{S} = \int_\Omega {\rm d}^4x \mathcal{L}(x),
+\]</span> since <span class="math inline">\([{\rm d}^4x] = [{\tt length}]^4\)</span> then we infer that the Lagrangian (density) <span class="math display">\[
+[\mathcal{L}] = \frac{[{\tt energy}][{\tt time}]}{[{\tt length}]^{4}} = \frac{1}{c}\frac{[{\tt energy}]}{[{\tt length}]^{3}},
+\]</span> so, up to a factor of <span class="math inline">\(c^{-1}\)</span> has units of energy density. Examining the kinetic term we get a dimension of inverse length per derivative so <span class="math display">\[
+[\partial_{\mu}\varphi \partial^{\mu}\varphi] = [{\tt length}^{-2}][\varphi]^2 = [\mathcal{L}],
+\]</span> hence we get <span class="math display">\[
+[\varphi] = \sqrt{\frac{[{\tt energy}][{\tt time}]}{[{\tt length}]^2}}
+\]</span> Now if we take the coefficient of the mass term to be <span class="math inline">\(\alpha\)</span> then <span class="math display">\[
+\left[\alpha\varphi^2\right] = [\alpha]^2\frac{[{\tt energy}][{\tt time}]}{[{\tt length}]^2} = [\mathcal{L}],
+\]</span> hence <span class="math inline">\([\alpha] = [{\tt length}]^{-2}\)</span>. Next, we solve <span class="math display">\[
+[m^g c^h \hbar^q] = [{\tt length}]^{-2},
+\]</span> by expanding the dimensions as <span class="math display">\[
+[{\tt mass}]^g [{\tt length}]^h [{\tt time}]^{-h} [{\tt mass}]^q [{\tt length}]^{2q} [{\tt time}]^{-q} = [{\tt length}]^{-2},
+\]</span> from which we see that <span class="math inline">\(g = -q\)</span>, <span class="math inline">\(h = -q\)</span> and <span class="math inline">\(h + 2q = -2\)</span>, so <span class="math inline">\(q = -2\)</span>, <span class="math inline">\(h = 2\)</span> and <span class="math inline">\(g = 2\)</span> giving the coefficient of the “mass” term as <span class="math display">\[
+\left[\frac{m^2c^2}{\hbar^2}\right] = \frac{[{\tt mass}]^2 [{\tt length}]^2 [{\tt time}]^{-2}}{[{\tt mass}]^2[{\tt length}]^4[{\tt time}]^{-2}} = [{\tt length}]^{-2}.
+\]</span></p></li>
+<li><p>To find the equation of motion for the Klein-Gordon theory we need only compute one additional term <span class="math display">\[
+\frac{\partial \mathcal{L}_{\mathrm{KG}}}{\partial\varphi} = \frac{2m^2c^2}{\hbar^2}\varphi,
+\]</span> with the derivative term is identical to the d’Alembert case <span class="math display">\[
+\frac{\partial \mathcal{L}_{\mathrm{KG}}}{\partial \partial_\mu \phi} = -2 \eta^{\mu\nu} \partial_\nu \varphi = -2\partial^\mu\varphi,
+\]</span> so the relativistic Euler-Lagrange equation gives <span class="math display">\[
+2\frac{m^2c^2}{\hbar^2}\varphi(x) - (-2) \partial_\mu\partial^\mu\varphi(x) = 0,
+\]</span> so <span class="math display">\[
+\partial_\mu\partial^\mu\varphi(x) + \frac{m^2c^2}{\hbar^2}\varphi(x) = 0,
+\]</span> hence we acquire an additional term to the standard wave-equation. Inserting a plane-wave we can use the result from the first part to get <span class="math display">\[
+\left(-k_\mu k^\mu + \frac{m^2c^2}{\hbar^2}\right)\varphi(x) = 0,
+\]</span> hence <span class="math display">\[
+\frac{m^2c^2}{\hbar^2} - k_\mu k^\mu = 0.
+\]</span> Expanding out <span class="math display">\[
+\frac{m^2c^2}{\hbar^2} - \left(\frac{\omega}{c}\right)^2 + \boldsymbol{k}\cdot\boldsymbol{k} = 0
+\]</span> and rearranging <span class="math display">\[
+(\hbar\omega)^2 = (\hbar k)^2c^2 + m^2c^4.
+\]</span> If we insert the Einstein-Planck and de-Broglie relations we recover <span class="math display">\[
+\mathcal{E}^2 = p^2c^2 + m^2c^4,
+\]</span> or in otherwords the relativistic energy-momentum relation for a particle of mass <span class="math inline">\(m\)</span>. For this reason the term we added, with its delibrate factor of <span class="math inline">\(\hbar^2\)</span> and <span class="math inline">\(c^2\)</span> is called a “mass” term.</p></li>
+</ol>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -407,11 +482,82 @@ window.Quarto = {
 \]</span></p>
 <ol type="a">
 <li><p>Find the physical dimension of <span class="math inline">\(\mathcal{L}_{\mathrm{EM}}\)</span> and <span class="math inline">\(\mathcal{L}_{\mathrm{int}},\)</span> and check they agree. What dimension should <span class="math inline">\(\mu\)</span> in the Proca Lagrangian have? By analogy with the Klein-Gordon equation, what physical quantity does this suggest a Proca field has, which an electromagnetic field doesn’t?</p></li>
-<li><p>Identify a family of symmetries of <span class="math inline">\(\mathcal{L}_{\mathrm{EM}}\)</span> not shared by $_{}. What do you conclude about the “Proca potential” <span class="math inline">\(A_{\nu}\)</span>?</p></li>
+<li><p>Identify a family of symmetries of <span class="math inline">\(\mathcal{L}_{\mathrm{EM}}\)</span> not shared by <span class="math inline">\(\mathcal{L}_{\mathrm{Proca}}\)</span>. What do you conclude about the “Proca potential” <span class="math inline">\(A_{\nu}\)</span>?</p></li>
 <li><p>Use the relativistic Euler-Lagrange equation for <span class="math inline">\(\mathcal{L}_{\mathrm{Proca}}\)</span> with respect to <span class="math inline">\(A_{\mu}\)</span> to show the “homogeneous Proca equation” is <span id="eq-proca"><span class="math display">\[
 \partial_\mu F^{\mu\nu} + \mu^2A^\nu = 0.
 \tag{1}\]</span></span> What has happened to the Proca counterpart of the other relativistic Maxwell equation, i.e.&nbsp;Bianchi identity?</p></li>
 </ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<ol type="a">
+<li><p>Let’s start with the dimensions of force <span class="math inline">\(\boldsymbol{F}\)</span> are <span class="math display">\[
+[\boldsymbol{F}] = [{\tt mass}] [{\tt length}] [{\tt time}]^{-2}.
+\]</span> From the Lorentz force equation we know <span class="math display">\[
+[{\tt mass}] [{\tt length}] [{\tt time}]^{-2} = q(\boldsymbol{v} \times \boldsymbol{B}) = [{\tt charge}] [{\tt length}] [{\tt time}]^{-1} [\boldsymbol{B}],
+\]</span> so the magnetic field has units <span class="math display">\[
+[\boldsymbol{B}] = [{\tt charge}]^{-1} [{\tt mass}] [{\tt time}]^{-1}
+\]</span> So since the the 3-vector potential <span class="math inline">\(\boldsymbol{B} = \nabla \times \boldsymbol{A}\)</span>, then <span class="math display">\[
+[\boldsymbol{A}] = [{\tt charge}]^{-1} [{\tt mass}] [{\tt length}] [{\tt time}]^{-1},
+\]</span> which is also the dimensions of the 4-potential <span class="math inline">\(A^\mu\)</span>. The 3-current density <span class="math display">\[
+[\boldsymbol{j}] = [\rho \boldsymbol{v}] = [{\tt charge}] [{\tt length}]^{-3} \cdot [{\tt length}] [{\tt time}]^{-1} = [{\tt charge}]  [{\tt length}] ^{-2} [{\tt time}] ^{-1}.
+\]</span> Thus the interaction term has units <span class="math display">\[
+\begin{align}
+[\mathcal{L}_{\text{int}}] &amp;= [A_\mu J^\mu] = [{\tt charge}]^{-1} [{\tt mass}] [{\tt length}] [{\tt time}] ^{-2} \cdot [{\tt charge}] [{\tt length}]^{-2} [{\tt time}]^{-1}\\
+&amp;= [{\tt mass}] [{\tt length}]^{-1} [{\tt time}]^{-2}.
+\end{align}
+\]</span> These are the dimensions of energy density, since <span class="math display">\[
+[\text{energy density}] = [{\tt energy}] [{\tt length}]^{-3} = [{\tt mass}] [{\tt length}]^{-1} [{\tt time}]^{-2}.
+\]</span> This is the same units as <span class="math display">\[
+[\mathcal{L}_{\rm EM}] = \left[\frac{B^2}{\mu_0}\right],
+\]</span> justified by the expression for the energy density of the EM field. Clearly, by inspection of <span class="math inline">\(\mathcal{L}_{\text{Proca}}\)</span>, <span class="math display">\[
+\left[\frac{(\partial_\mu A_\nu)^2}{\mu_0}\right] = \left[\frac{\mu^2 A^2}{\mu_0}\right],
+\]</span> meaning that the dimensions of the Proca parameter is <span class="math display">\[
+[\mu] = [{\tt length}]^{-1},
+\]</span> an inverse length. Thus including an inverse length squared to a term with the field squared is reminiscent of adding <span class="math inline">\(m^2c^2/\hbar^2\)</span> to the Klein–Gordon Lagrangian density in <strong>1.</strong> to get the KG Lagrangian. We therefore postulate that the Proca Lagrangian corresponds to a massive field with mass <span class="math inline">\(m\)</span>, related to <span class="math inline">\(\mu\)</span> by <span class="math display">\[
+\mu = \frac{m\hbar}{c}.
+\]</span> Clearly, an EM field in Maxwell’s theory has no corresponding mass.</p></li>
+<li><p>For EM, the Lagrangian is invariant under gauge transformations <span class="math display">\[
+A_\mu \rightarrow \bar{A}_\mu = A_\mu - \partial_\mu \chi
+\]</span> for some Lorentz scalar field <span class="math inline">\(\chi\)</span>. And so <span class="math display">\[
+\delta \mathcal{L}_{EM} = 0,
+\]</span> under this transformation. However, <span class="math display">\[
+\mathcal{L}_{\text{Proca}} = \mathcal{L}_{EM} + \frac{\mu^2}{2\mu_0} A_\mu A^\mu,
+\]</span> so under the same transformation,<br>
+<span class="math display">\[
+\begin{align}
+\mathcal{L}_{\text{Proca}} &amp;\rightarrow \bar{\mathcal{L}}_{\text{Proca}} = \mathcal{L}_{EM} + \frac{\mu^2}{2\mu_0}(A_\mu - \partial_\mu \chi)(A^\mu - \partial^\mu \chi), \\
+&amp;= \mathcal{L}_{\text{Proca}} + \frac{\mu^2}{2\mu_0}(-2 \partial_\mu \chi A^\mu + \partial_\mu \chi \partial^\mu \chi).
+\end{align}
+\]</span> So under the transformation, <span class="math display">\[
+\bar{\mathcal{L}}_{\text{Proca}} \neq \mathcal{L}_{\text{Proca}}.
+\]</span> Hence the Proca Lagrangian is not invariant under gauge symmetry. We conclude that the “Proca potential” is physically fixed without gauge symmetry.</p></li>
+<li><p>The EL equation for the Proca Lagrangian is <span class="math display">\[
+\frac{\partial \mathcal{L}_{\text{Proca}}}{\partial A_\nu} - \partial_\mu \frac{\partial \mathcal{L}_{\text{Proca}}}{\partial(\partial_\mu A_\nu)} = 0.
+\]</span> Now, <span class="math display">\[
+\frac{\partial \mathcal{L}_{\text{Proca}}}{\partial A_\nu} = \frac{\mu^2}{2\mu_0} \frac{\partial (A_\mu A^\mu)}{\partial A_\nu} = \frac{\mu^2}{\mu_0} A^\nu.
+\]</span> Also, <span class="math display">\[
+\frac{\partial \mathcal{L}_{\text{Proca}}}{\partial(\partial_\mu A_\nu)} = \frac{\partial \mathcal{L}_{EM}}{\partial(\partial_\mu A_\nu)} = -\frac{1}{\mu_0} F^{\mu\nu}.
+\]</span> Thus <span class="math display">\[
+\partial_\mu F^{\mu\nu} + \mu^2 A^\nu = 0.
+\]</span> This is the homogeneous Proca equation, equivalent to the source-free Maxwell equation <span class="math display">\[
+\partial_\mu F^{\mu\nu} = 0.
+\]</span> The other Maxwell equation, the Bianchi identity, <span class="math display">\[
+\partial_\nu F_{\mu\rho} + \partial_\mu F_{\rho\nu} + \partial_\rho F_{\nu\mu} = 0,
+\]</span> also automatically holds for the Proca field tensor since it was defined as <span class="math inline">\(F_{\mu\nu} = \partial_{\mu} A_{\nu} - \partial_{\nu} A_{\mu}\)</span>.</p></li>
+</ol>
+</div>
 </div>
 </div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
@@ -433,6 +579,75 @@ window.Quarto = {
 </ol>
 </div>
 </div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-6-contents" aria-controls="callout-6" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-6" class="callout-6-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>3. Properties of the Proca equation</strong></p>
+<ol type="a">
+<li><p>From the homogeneous Proca equation in <a href="#eq-proca" class="quarto-xref">Equation&nbsp;<span>1</span></a> we have <span class="math display">\[
+\partial_\nu A^\nu = -\frac{1}{\mu^2} \partial_\nu \partial_\mu F^{\mu\nu}.
+\]</span> Now by antisymmetry, <span class="math display">\[
+\partial_\nu \partial_\mu F^{\mu\nu} = -\partial_\mu \partial_\nu F^{\mu\nu}
+\]</span> so the symmetry of the double derivative means <span class="math display">\[
+\partial_\nu \partial_\mu F^{\mu\nu} = 0.
+\]</span> Thus the Proca potential automatically obeys the Lorenz gauage condition <span class="math display">\[
+\partial_\mu A^\mu = 0,
+\]</span> but no gauge fixing had to be made. Now consider the Proca equation depending on <span class="math inline">\(A^\nu\)</span> has the form: <span class="math display">\[
+\partial_\mu(\partial^\mu A^\nu - \partial^\nu A^\mu) + \mu^2 A^\nu = 0
+\]</span> so <span class="math display">\[
+\partial_\mu\partial^\mu A^\nu - \partial^\nu(\partial_\mu A^\mu) + \mu^2 A^\nu = 0.
+\]</span> Using Lorenz condition, <span class="math display">\[
+\partial_\mu\partial^\mu A^\nu + \mu^2 A^\nu = 0,
+\]</span> which is the Klein–Gordon equation for each component.</p></li>
+<li><p>A complex plane wave solution of the Proca equation has the form <span class="math display">\[
+A^\nu = A^{(0)\nu} e^{-i k_\mu x^\mu},
+\]</span> for constant polarisation 4-vector <span class="math inline">\(A^{(0)\nu}\)</span>. Substituting this into Proca equation gives <span class="math display">\[
+(-k_\mu k^\mu + \mu^2) A^{(0)\nu} = 0,
+\]</span> thus <span class="math display">\[
+k_\mu k^\mu = \mu^2,
+\]</span> exactly as we had in <strong>1.</strong> for a massive scalar field. This is rewritten as <span class="math display">\[
+\frac{\omega^2}{c^2} - |\boldsymbol{k}|^2 = \mu^2.
+\]</span> and again identifying <span class="math display">\[
+E = \hbar \omega, \qquad \boldsymbol{p} = \hbar \boldsymbol{k},
+\]</span> we get <span class="math display">\[
+E^2 = m^2 c^4 + |\boldsymbol{p}|^2 c^2,
+\]</span> as expected for a massive relativistic particle. Now for the plane wave, the Proca field tensor is <span class="math display">\[
+F^{\mu\nu} = F^{(0)\mu\nu}e^{-i k_\sigma x^\sigma},
+\]</span> for a constant field tensor <span class="math display">\[
+F^{(0)\mu\nu} = -i(k^\mu A^{(0)\nu} - k^\nu A^{(0)\mu}).
+\]</span> So for a plane-wave the Proca equation becomes <span class="math display">\[
+-i k_\mu F^{(0)\mu\nu} = \mu^2 A^{(0)\nu},
+\]</span> and given the Proca analogous of the <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> fields we have <span class="math display">\[
+F^{(0)10} = E^{(0)}_x/c, \quad F^{(0)20} = E^{(0)}_y/c, \quad F^{(0)30} = E^{(0)}_z/c
+\]</span> we can evaluate <span class="math display">\[
+-i k_\mu F^{(0)\mu 0} = -i (-\boldsymbol{k})\cdot(+\boldsymbol{E}) = -\mu^2 A^{(0)0},
+\]</span> so we find that <span class="math display">\[
+\boldsymbol{k}\cdot\boldsymbol{E} = i\mu^2 A^{(0)0},
+\]</span> meaning the Proca <span class="math inline">\(\boldsymbol{E}\)</span> is not orthogonal to the 3-wave-vector <span class="math inline">\(\boldsymbol{k}\)</span> of the plane-wave indicating the Proca wave it is not a transverse wave.</p></li>
+<li><p>Working with <span class="math inline">\(\mathcal{L}_{\rm Proca-int}\)</span> the argument from the Euler-Lagrange equation is identical, except in the inhomogeneous case we have <span class="math display">\[
+\frac{\partial\mathcal{L}_{\rm Proca-int}}{\partial A_\nu} = \frac{\mu^2}{\mu_0}A^\nu - j^\nu
+\]</span> which gives the inhomogeneous Proca equation <span class="math display">\[
+\partial_\mu F^{\mu\nu} + \mu^2 A^\nu = \mu_0 j^\nu.
+\]</span> As expected this reduces to the usual relativistic Maxwell equation when the limit <span class="math inline">\(\mu \to 0\)</span> is taken. In this limit, taking divergence gives <span class="math display">\[
+\partial_\nu j^\nu = \mu_0^{-1}\partial_\nu \partial_\mu F^{\mu\nu} = 0,
+\]</span> for the same reasons as in part (a), so the current is 4-divergence free. For the inhomogeneous Proca equation we have instead <span class="math display">\[
+\partial_\nu j^\nu = \mu_0^{-1}(\partial_\nu \partial_\mu F^{\mu\nu} + \mu^2 \partial_\nu A^\nu).
+\]</span> Again the first term vanishes on the righthand side vanishes, so <span class="math display">\[
+\partial_\nu j^\nu = \mu_0^{-1} \mu^2 \partial_\nu A^\nu.
+\]</span> Thus current conservation holds only if Lorenz condition is satisfied for the Proca potential. Although we discussed the <span class="math inline">\(\partial_\nu A^\nu = 0\)</span> condition being satisfied by <span class="math inline">\(A^\nu\)</span> in part (a), we only proved it for the homogeneous case.</p></li>
+</ol>
+</div>
+</div>
+</div>
 <div class="callout callout-style-default callout-caution no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -449,6 +664,63 @@ window.Quarto = {
 \]</span> Assume spherical symmetry where you may find the formula for the radial Laplacian <span class="math display">\[
     \nabla^2 = \partial_r^2 + \frac{2}{r}\partial_r,
 \]</span> useful. How does this compare to the corresponding EM situation? If photons were to have mass, what elementary physical law of electromagnetism would have to be modified? Comment on the consequences of this.</p>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<i class="fa-regular fa-circle-check" aria-label="circle-check"></i> Solution
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>4. Proca electrostatics</strong></p>
+<p>Since the Proca field tensor obeys the Bianchi identity <span class="math display">\[
+    \partial_\nu F_{\mu\rho} + \partial_\mu F_{\rho\nu} + \partial_\rho F_{\nu\mu} = 0,
+\]</span> we know that its analogues of the <span class="math inline">\(\boldsymbol{E}\)</span> and <span class="math inline">\(\boldsymbol{B}\)</span> fields obey Maxwell’s equations (M1) and (M2) <span class="math display">\[
+    \nabla \cdot \boldsymbol{B} = 0, \quad \nabla \times \boldsymbol{E} + \dot{\boldsymbol{B}} = 0.
+\]</span> Given the inhomogeneous equation <span class="math display">\[
+    \partial_\mu F^{\mu\nu} + \mu^2 A^\nu = \mu_0 j^\nu,
+\]</span> and using <span class="math display">\[
+    A^\nu = (V/c, \boldsymbol{A}), \qquad J^\nu = (\rho c, \boldsymbol{J}),
+\]</span> we obtain from the 0-component: <span class="math display">\[
+    \nabla \cdot \boldsymbol{E} + \mu^2 V = \frac{\rho}{\varepsilon_0},
+\]</span> and from the <span class="math inline">\(i=1,2,3\)</span> components: <span class="math display">\[
+    \nabla \times \boldsymbol{B} - \frac{1}{c^2} \frac{\partial \boldsymbol{E}}{\partial t} + \mu^2 \boldsymbol{A} = \mu_0 \boldsymbol{J}.
+\]</span> If we are in Proca electrostatics then we expect that the electric field obeys <span class="math display">\[
+    \boldsymbol{E} = -\nabla V,
+\]</span> from <span class="math display">\[
+    E^j/c = \partial^j A^0 - \partial^0 A^j = -\partial_j V/c.
+\]</span> Thus we have <span class="math display">\[
+    -\nabla^2 V + \mu^2 V = \frac{\rho}{\varepsilon_0},
+\]</span> but if the charge is at the origin then for <span class="math inline">\(r&gt;0\)</span> <span class="math display">\[
+    \nabla^2 V = \mu^2 V.
+\]</span> Using spherical symmetry: <span class="math display">\[
+    \nabla^2 = \frac{d^2}{dr^2} + \frac{2}{r}\frac{d}{dr},
+\]</span> for functions with only radial dependence, the radial equation for the Proca scalar potential <span class="math inline">\(V(r)\)</span> is this ODE for <span class="math inline">\(r&gt;0\)</span> <span class="math display">\[
+    r V''(r) + 2 V'(r) = \mu^2 r V(r).
+\]</span> We now check the suggested form <span class="math display">\[
+    V(r) = \frac{q}{4\pi \varepsilon_0 r} e^{-\mu r},
+\]</span> by computing derivatives <span class="math display">\[
+    V'(r) = -\frac{q}{4\pi \varepsilon_0 r^2} e^{-\mu r} - \mu \frac{q}{4\pi \varepsilon_0 r} e^{-\mu r} = \left(-\mu -\frac{1}{r}\right)V(r)
+\]</span> and <span class="math display">\[
+    V'' =  -\mu\left(-\mu -\frac{1}{r}\right)V(r) + \frac{\mu}{r}V(r) + 2\frac{V(r)}{r^2} = \left(\mu^2 + \frac{2\mu}{r} + \frac{2}{r^2}\right)V(r).
+\]</span> Substitute back in <span class="math display">\[
+r V'' + 2 V' = f\left(\mu^2 + \frac{2\mu}{r} + \frac{2}{r^2}\right)V(r)+ 2\left(-\mu -\frac{1}{r}\right)V(r) = \mu^2 r V(r),
+\]</span> showing the solution holds. In the EM limit <span class="math inline">\(\mu \to 0\)</span>:<br>
+<span class="math display">\[
+    V \rightarrow \frac{q}{4\pi \varepsilon_0 r},
+\]</span> which is the familiar Coulomb potential. If photons had mass, the Coulomb force would need to be modified. Rather than following an inverse square law, the “massive EM” <span class="math inline">\(\boldsymbol{E}\)</span> field would fall off exponentially characteristic of Yukawa type potential: <span class="math display">\[
+    V \sim \frac{e^{-\mu r}}{r}.
+\]</span> This implies that forces due to massive fields fall off rapidly and only being significant within the Compton wavelength of the charge. For photon mass comparable to electron the range would be <span class="math display">\[
+\sim 10^{-12} \text{ m},
+\]</span> or about 1% of a Bohr radii, and is thus very short range. This is why it is hard to observe the effects of massive spin-1 particles.</p>
+<p>The Proca equation is “the” relativistic wave equation for a massive, spin-1 particle, and so provides the (non-quantized) field theory for vector bosons, such as the mediating particles of the nuclear forces (<span class="math inline">\(W^{\pm},Z\)</span> for the weak force, and gluons for the strong force) and some mesons (which are composite particles, but different from protons and neutrons). Further details of the physics of these particles is determined by interaction terms, which determine the coupling to other fields (both electromagnetic, and other kinds of interactions). Note that a Proca field/particle as considered here is not itself electrically charged.</p>
+</div>
 </div>
 </div>
 

@@ -506,11 +506,32 @@ window.Quarto = {
 <div id="callout-6" class="callout-6-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>3. A complex scalar field</strong></p>
-<p>If <span class="math inline">\(\varphi(x)\)</span> is complex then it is really a two component scalar field: <span class="math display">\[
+<p>Understanding how to deal with a complex field a subtle and elegant point worth expanding on. Given a complex scalar field <span class="math inline">\(\varphi(x)\)</span> and its complex conjugate <span class="math inline">\(\varphi^*(x)\)</span> you might naively think that these cannot be independent since <span class="math inline">\(\varphi^*\)</span> is entirely determined by <span class="math inline">\(\varphi\)</span> — if you know <span class="math inline">\(\varphi\)</span>, you know <span class="math inline">\(\varphi^*\)</span>. So how can we treat them as independent fields when applying the Euler-Lagrange equations?</p>
+<p>To justify this we first recognise that if<span class="math inline">\(\varphi(x)\)</span> is complex then it is really a two component scalar field <span class="math display">\[
     \varphi(x) = \varphi_1(x) + i\varphi_2(x)
-\]</span> with independent real and imaginary parts. We can equally perform a change of basis by <span class="math inline">\(\pi/4\)</span> in the Argand plane and take: <span class="math display">\[
+\]</span> with real and imaginary parts. There is no issue in accepting that the <span class="math inline">\(\varphi_1(x)\)</span> and <span class="math inline">\(\varphi_2(x)\)</span> are independent variables. Yet we can equally perform a change of basis in the Argand plane and take <span class="math display">\[
     \varphi(x) = \varphi_1(x) + i\varphi_2(x), \qquad \varphi^*(x) = \varphi_1(x) - i\varphi_2(x).
-\]</span> so we can also treat the field and its complex conjugate independent. We can then construct a complex Lagrangian as given <span class="math display">\[
+\]</span> Granted, <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\varphi^*\)</span> do not form an orthogonal basis in the Argand plane, but they are linearly independent and so span the same space. Given <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\varphi^*\)</span> are obtained by a simple linear change of variables from <span class="math inline">\((\varphi_1, \varphi_2)\)</span> to <span class="math inline">\((\varphi, \varphi^*)\)</span> as <span class="math display">\[
+    \begin{pmatrix}
+    \varphi \\
+    \varphi^*
+    \end{pmatrix}
+    =
+    \begin{pmatrix}1 &amp; i \\
+    1 &amp; -i
+    \end{pmatrix}
+    \begin{pmatrix}\varphi_1 \\
+    \varphi_2
+    \end{pmatrix},
+\]</span> and the Jacobian of this transformation is constant, variational calculus is unchanged. Any variation you can perform in the <span class="math inline">\((\varphi_1, \varphi_2)\)</span> basis has an exact equivalent in the <span class="math inline">\((\varphi, \varphi^*)\)</span> basis. So, we can treat the field and its complex conjugate independent (this is called Wirtinger calculus).</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="figures/argand_plane.png" class="img-fluid figure-img" width="200"></p>
+<figcaption>In the Argand plane a complex field <span class="math inline">\(\varphi\)</span> is represented by its independent real and imaginary parts. However, we are free to use the field itself and its complex conjugate as independent coordinates in which to describe the entire Argand plane. A variation <span class="math inline">\(\delta\varphi\)</span> of the field can then be described by its components along <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\varphi^*\)</span> directions (which we note are not orthogonal).</figcaption>
+</figure>
+</div>
+<p>It is important to understand that by “independent” we don’t mean <span class="math inline">\(\varphi\)</span> and <span class="math inline">\(\varphi^*\)</span> truly independent in an ontological sense of being unrelated to each other, nor in a physical sense as being entirely distinct degrees of freedom. It is a bookkeeping statement about the structure of the variational calculus. The space of functions (<span class="math inline">\(\varphi_1\)</span>, <span class="math inline">\(\varphi_2\)</span>) can be equally well coordinatised by (<span class="math inline">\(\varphi\)</span>, <span class="math inline">\(\varphi^*\)</span>), and that extremising the action in these new coordinates gives the same Euler-Lagrange equations of motion.The advantage is that we get to the answer with less algebraic labour by not having to decompose into real and imaginary parts at every step. This convenience is no different in spirit from using polar coordinates instead of Cartesian — the physics is the same, but the algebra may be cleaner.</p>
+<p>Using this approach we can then construct a complex Lagrangian as given <span class="math display">\[
     \mathcal{L}_{\text{complex}} = \partial_\mu \varphi \partial^\mu \varphi^* - m^2 \varphi^* \varphi,
 \]</span> which includes a usual “wave” term along with a new “mass” term. Notice that <span class="math inline">\(\mathcal{L}_{\text{complex}}\)</span> is real-valued Lorentz scalar, as it must be. If we transform the “wave” term back into the real and imaginary parts we find that <span class="math display">\[
 \begin{align}
